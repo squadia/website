@@ -145,7 +145,7 @@ const LandingDG = () => {
             }
             @keyframes drawArc {
               0% { stroke-dasharray: 0 132; }
-              100% { stroke-dasharray: 95 132; }
+              100% { stroke-dasharray: 120 132; }
             }
             @keyframes popDot {
               0% { opacity: 0; r: 0; }
@@ -370,7 +370,7 @@ const LandingDG = () => {
                     {/* Card 2 — Alignement équipes */}
                     <div className="dg-kpi-card" style={{ ...glassCard, position: 'relative' }}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Alignement équipes</div>
-                      <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>7.2/10</div>
+                      <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>9.1/10</div>
                       <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
                         <span style={{ color: '#44CCFF' }}>Marketing</span> × Ventes
                       </div>
@@ -384,7 +384,7 @@ const LandingDG = () => {
                             style={{ animation: 'drawArc 1.8s cubic-bezier(0.4,0,0.2,1) 0.9s forwards' }}
                           />
                         </svg>
-                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>7.2</div>
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>9.1</div>
                       </div>
                     </div>
 
