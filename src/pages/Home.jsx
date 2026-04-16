@@ -1589,6 +1589,7 @@ const HeroDynamic = React.memo(() => {
                   {persona.video && window.innerWidth > 768 && (
                     <video
                       src={persona.video}
+                      poster={persona.img}
                       muted
                       loop
                       playsInline
