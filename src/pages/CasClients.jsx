@@ -69,10 +69,39 @@ const StatCard = ({ stat, small = false }) => {
   );
 };
 
+const caseSEO = {
+  'pipeline-b2b': {
+    title: "Pipeline B2B from scratch — Cas client Squadia",
+    description: "Découvrez comment Squadia a construit un pipeline B2B complet sur un marché non cartographié. Stratégie, data et premiers résultats mesurables en 90 jours.",
+  },
+  'formation-ia-com': {
+    title: "Formation IA Communication — Cas client Squadia",
+    description: "Comment Squadia a formé des équipes communication à l'IA en partant d'une charte existante. Programme personnalisé, outils concrets, résultats mesurables.",
+  },
+  'crm-industrie': {
+    title: "CRM Industrie : de la contrainte à la croissance — Squadia",
+    description: "Comment Squadia a transformé un CRM perçu comme une contrainte en moteur commercial. Migration, structuration du pipeline et adoption par les équipes.",
+  },
+  'migration-crm': {
+    title: "Migration HubSpot en 3 semaines — Cas client Squadia",
+    description: "Comment Squadia a nettoyé 2 500 comptes et déployé HubSpot en 3 semaines. Structuration du pipeline, adoption équipes et premiers résultats immédiats.",
+  },
+  'formation-vente': {
+    title: "Formation Vente B2B — Méthode commune — Cas client Squadia",
+    description: "Comment Squadia a aligné juniors et seniors sur une méthode de vente commune. Formation B2B terrain, outils IA, résultats mesurables dès la semaine suivante.",
+  },
+};
+
 // --- Composant Detail ---
 const CaseDetail = ({ caseData }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
+    const seo = caseSEO[caseData.id];
+    if (seo) {
+      document.title = seo.title;
+      const metaDescription = document.querySelector('meta[name="description"]');
+      if (metaDescription) metaDescription.content = seo.description;
+    }
   }, [caseData]);
 
   if (!caseData) return null;
@@ -352,10 +381,10 @@ const CasClients = () => {
   const { caseId } = useParams();
 
   useEffect(() => {
-    document.title = "Cas clients Squadia — Leads, CRM, Automatisation et Formation IA";
+    document.title = "Cas clients Squadia — CRM, IA et Formation B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Decouvrez comment Squadia a aide des PME, ETI et grands groupes a structurer leur pipeline, automatiser leurs process et former leurs equipes a l'IA.";
+      metaDescription.content = "Découvrez comment Squadia a aidé des PME, ETI et grands groupes à structurer leur pipeline, automatiser leurs process et former leurs équipes à l'IA.";
     }
   }, []);
 

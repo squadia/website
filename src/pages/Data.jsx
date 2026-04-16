@@ -25,10 +25,10 @@ export default function Data() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   useEffect(() => {
-    document.title = "Data B2B pour PME et ETI — Nettoyer, segmenter et construire votre base CRM — Squadia";
+    document.title = "Data B2B — Nettoyage, segmentation et leads — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia nettoie votre CRM, structure votre segmentation ICP et construit vos bases de prospection B2B. Données fiables et exploitables en moins de 30 jours. PME et ETI en France.");
+      metaDescription.setAttribute('content', "Squadia nettoie votre CRM, structure votre segmentation ICP et construit vos bases de prospection B2B. Données fiables et exploitables en moins de 30 jours.");
     }
   }, []);
 

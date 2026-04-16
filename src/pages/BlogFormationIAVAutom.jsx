@@ -21,7 +21,7 @@ export default function BlogFormationIAVAutom() {
     document.title = "Formation IA ou Automatisation : quel ordre ? — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Faut-il former ses équipes à l'IA avant d'automatiser, ou l'inverse ? Squadia vous guide pour choisir le bon ordre et maximiser votre retour sur investissement.");
+      metaDescription.setAttribute('content', "Faut-il former ses équipes à l'IA avant d'automatiser, ou l'inverse ? Squadia vous guide pour choisir le bon ordre et maximiser votre ROI.");
     }
     window.scrollTo(0, 0);
   }, []);

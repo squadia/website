@@ -164,10 +164,10 @@ export default function DataLead() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Lead — Construire une base de prospection B2B qualifiée — Squadia";
+    document.title = "Data Lead — Base de prospection B2B qualifiée — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia construit votre base de contacts B2B sur le segment que vous ciblez. Fichier qualifié, enrichi et prêt à intégrer dans votre CRM. Pour PME et ETI en France.");
+      metaDescription.setAttribute('content', "Squadia construit votre base de contacts B2B ciblés. Fichier qualifié, enrichi et prêt à intégrer dans votre CRM. Pour PME et ETI en France.");
     }
   }, []);
 

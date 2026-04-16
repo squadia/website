@@ -18,7 +18,7 @@ export default function Ressources() {
     document.title = "Ressources Squadia — Guides, enquêtes et articles B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Guides pratiques, enquêtes exclusives et articles de fond sur la transformation commerciale B2B : IA, CRM, automatisation, prospection et formation. Par Squadia.");
+      metaDescription.setAttribute('content', "Guides pratiques, enquêtes exclusives et articles de fond sur la transformation commerciale B2B : IA, CRM, automatisation, prospection et formation.");
     }
     window.scrollTo(0, 0);
   }, []);

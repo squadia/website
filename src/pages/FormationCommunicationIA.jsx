@@ -56,10 +56,10 @@ const FormationCommunicationIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Communication et IA : produire plus, mieux, plus vite. — Squadia";
+    document.title = "Formation Communication & IA — 2 jours — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes communication à l’IA appliquée au message, au positionnement et à la production éditoriale. Programme 2 jours, outils concrets, ateliers pratiques.";
+      metaDescription.content = "Squadia forme vos équipes communication à l'IA appliquée au message et à la production éditoriale. Programme 2 jours, outils concrets, ateliers pratiques.";
     }
     window.scrollTo(0, 0);
   }, []);
@@ -96,7 +96,7 @@ const FormationCommunicationIA = () => {
               Communication et IA : produire plus, mieux, plus vite.
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
-              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur stratégie éditoriale, produire plus efficacement et automatiser ce qui peut l’être — sans perdre la qualité ni la voix de la marque.
+              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur stratégie éditoriale, produire plus efficacement et automatiser ce qui peut l'être — sans perdre la qualité ni la voix de la marque.
             </p>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
@@ -114,10 +114,10 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — À QUI S’ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 — À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700 }}>À qui s’adresse cette formation ?</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
@@ -152,7 +152,7 @@ const FormationCommunicationIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Fondamentaux IA et GPT :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comment ça fonctionne, ce qu’on peut en attendre, ce qu’on ne délègue pas</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comment ça fonctionne, ce qu'on peut en attendre, ce qu'on ne délègue pas</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -186,7 +186,7 @@ const FormationCommunicationIA = () => {
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Création et lancement d’une mini campagne — définition des personas, rédaction des messages, adaptation par canal.
+                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Création et lancement d'une mini campagne — définition des personas, rédaction des messages, adaptation par canal.
                   </p>
                 </div>
               </div>
@@ -196,7 +196,7 @@ const FormationCommunicationIA = () => {
             <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(37, 99, 235, 0.1)' }}>
               <div style={{ background: 'rgba(37, 99, 235, 0.1)', padding: '2rem 3rem', borderBottom: '1px solid rgba(37, 99, 235, 0.2)' }}>
                 <h3 style={{ fontSize: '1.8rem', color: '#2563EB', marginBottom: '0.5rem' }}>Jour 2 — Production, Visuels & Organisation Éditoriale</h3>
-                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Structurer une production de contenus fluide et innovante en automatisant la veille, en optimisant l’organisation éditoriale et en générant des visuels IA impactants.</p>
+                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Structurer une production de contenus fluide et innovante en automatisant la veille, en optimisant l'organisation éditoriale et en générant des visuels IA impactants.</p>
               </div>
               <div style={{ padding: '3rem' }}>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
@@ -218,20 +218,20 @@ const FormationCommunicationIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Générer des visuels IA :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>Dall·E, Kling, Fal.ai et autres — choisir le bon outil selon l’usage</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>Dall·E, Kling, Fal.ai et autres — choisir le bon outil selon l'usage</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Optimisation SEO :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>intégrer les outils d’analyse pour créer du contenu visible</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>intégrer les outils d'analyse pour créer du contenu visible</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#2563EB' }}>Cas pratique :</strong> Production d’un plan éditorial personnalisé — calendrier, formats, canaux, ressources.
+                    <strong style={{ color: '#2563EB' }}>Cas pratique :</strong> Production d'un plan éditorial personnalisé — calendrier, formats, canaux, ressources.
                   </p>
                 </div>
               </div>
@@ -301,19 +301,19 @@ const FormationCommunicationIA = () => {
         <div className="container fade-in text-center">
           <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
-            Une équipe formée sur la stratégie de contenu et les outils IA, c’est le point de départ. Pour aller plus loin — automatiser vos flux, structurer votre stratégie globale, générer plus de leads — Squadia intervient aussi sur les systèmes.
+            Une équipe formée sur la stratégie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin — automatiser vos flux, structurer votre stratégie globale, générer plus de leads — Squadia intervient aussi sur les systèmes.
           </p>
           <div className="grid-3" style={{ gap: '2rem' }}>
             <Link to="/strategie-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Stratégie IA</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Stratégie IA</h3>
               <ArrowRight color="#2563EB" />
             </Link>
             <Link to="/automatisation-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Automatisation</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Automatisation</h3>
               <ArrowRight color="#2563EB" />
             </Link>
             <Link to="/data" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Data</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Data</h3>
               <ArrowRight color="#2563EB" />
             </Link>
           </div>
@@ -328,11 +328,11 @@ const FormationCommunicationIA = () => {
             <div>
               <AccordionItem 
                 question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
-                answer="Non. Les outils utilisés sont accessibles sans développement ni code. L’objectif est de rendre les équipes autonomes sur des outils opérationnels dès le lendemain de la formation."
+                answer="Non. Les outils utilisés sont accessibles sans développement ni code. L'objectif est de rendre les équipes autonomes sur des outils opérationnels dès le lendemain de la formation."
               />
               <AccordionItem 
                 question="Est-ce que cette formation couvre la partie SEO ?" 
-                answer="Oui, le Jour 2 intègre les outils d’analyse et d’optimisation SEO dans la logique de production de contenu. L’objectif n’est pas de former des experts SEO, mais de produire du contenu qui se positionne."
+                answer="Oui, le Jour 2 intègre les outils d'analyse et d'optimisation SEO dans la logique de production de contenu. L'objectif n'est pas de former des experts SEO, mais de produire du contenu qui se positionne."
               />
               <AccordionItem 
                 question="Quelle différence avec la formation Marketing & IA ?" 
@@ -344,7 +344,7 @@ const FormationCommunicationIA = () => {
               />
               <AccordionItem 
                 question="Les outils mentionnés sont-ils inclus dans le tarif de la formation ?" 
-                answer="Les outils utilisés en formation sont généralement disponibles en version gratuite ou en essai. Aucun abonnement n’est requis pour participer. Si des outils payants sont recommandés, c’est indiqué clairement avec les alternatives disponibles."
+                answer="Les outils utilisés en formation sont généralement disponibles en version gratuite ou en essai. Aucun abonnement n'est requis pour participer. Si des outils payants sont recommandés, c'est indiqué clairement avec les alternatives disponibles."
               />
             </div>
           </div>

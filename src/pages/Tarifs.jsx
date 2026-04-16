@@ -231,10 +231,10 @@ const Tarifs = () => {
   const [activeTab, setActiveTab] = useState(tabsData[0].id);
 
   useEffect(() => {
-    document.title = "Tarifs Squadia — Stratégie IA, Leads, Automatisation, Formation pour PME et ETI";
+    document.title = "Tarifs Squadia — IA, Leads, Automatisation, Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez les tarifs Squadia pour la stratégie IA, la détection de leads, l'automatisation et la formation. Périmètre ajusté avant tout engagement. Pour PME et ETI en France.";
+      metaDescription.content = "Découvrez les tarifs Squadia : stratégie IA, détection de leads, automatisation et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
     }
   }, []);
 

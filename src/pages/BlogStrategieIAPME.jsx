@@ -16,7 +16,7 @@ export default function BlogStrategieIAPME() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   useEffect(() => {
-    document.title = "Comment mettre en place une stratégie IA en PME et ETI — Squadia";
+    document.title = "Stratégie IA en PME et ETI : la bonne séquence — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur stratégie IA pour obtenir un retour concret en 90 jours.";

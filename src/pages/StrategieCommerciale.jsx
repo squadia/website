@@ -228,10 +228,10 @@ export default function StrategieCommerciale() {
   ];
 
   useEffect(() => {
-    document.title = "Diagnostic & Performance Commerciale pour PME et ETI — Squadia";
+    document.title = "Stratégie Commerciale B2B — Méthode et Performance — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia structure votre développement commercial B2B : pipeline fiable, processus de vente documenté, alignement vente-marketing et sales playbook. Pour PME et ETI en France.");
+      metaDescription.setAttribute('content', "Squadia structure votre développement commercial B2B : pipeline fiable, méthode de vente documentée et alignement vente-marketing. Résultats en 30 jours.");
     }
   }, []);
 

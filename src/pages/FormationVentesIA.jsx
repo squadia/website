@@ -56,10 +56,10 @@ const FormationVentesIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA vente B2B : prospecter, qualifier et closer autrement. — Squadia";
+    document.title = "Formation Ventes & IA B2B — 2 jours — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes commerciales aux fondamentaux de la vente complexe et aux outils IA qui font la différence sur le terrain. Programme 2 jours, adapté aux profils mixtes juniors / seniors.";
+      metaDescription.content = "Squadia forme vos équipes commerciales à la vente complexe et aux outils IA. Programme 2 jours, cas pratiques, pour profils juniors et seniors. PME et ETI.";
     }
     window.scrollTo(0, 0);
   }, []);

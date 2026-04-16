@@ -56,10 +56,10 @@ const FormationMarketingIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA marketing : contenus, campagnes et analyse augmentés. — Squadia";
+    document.title = "Formation Marketing & IA — Contenus et campagnes — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes marketing à l’IA générative appliquée à la création de contenu. Programme 2 jours, outils concrets, ateliers pratiques. Pour PME et ETI en France.";
+      metaDescription.content = "Squadia forme vos équipes marketing à l'IA générative pour la création de contenu. Programme 2 jours, outils concrets, ateliers pratiques. PME et ETI.";
     }
     window.scrollTo(0, 0);
   }, []);
@@ -96,7 +96,7 @@ const FormationMarketingIA = () => {
               Formation IA marketing : contenus, campagnes et analyse augmentés.
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#9CA3AF', maxWidth: '850px', lineHeight: 1.6, marginBottom: '2rem' }}>
-              Rédaction, images, vidéos, podcasts, veille — les outils IA transforment la production de contenu. Pas pour remplacer les équipes, mais pour leur permettre de produire plus, mieux et plus vite. Ce programme de 2 jours couvre les fondamentaux, les bons outils et les cas d’usage concrets pour des profils marketing opérationnels.
+              Rédaction, images, vidéos, podcasts, veille — les outils IA transforment la production de contenu. Pas pour remplacer les équipes, mais pour leur permettre de produire plus, mieux et plus vite. Ce programme de 2 jours couvre les fondamentaux, les bons outils et les cas d'usage concrets pour des profils marketing opérationnels.
             </p>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
@@ -114,14 +114,14 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — À QUI S’ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 — À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700 }}>À qui s’adresse cette formation ?</h2>
+          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
-                Responsables marketing, communicants, créateurs de contenu ou dirigeants souhaitant comprendre, tester et intégrer l’intelligence artificielle dans leur production de contenu, tout en respectant le cadre légal et éthique européen.
+                Responsables marketing, communicants, créateurs de contenu ou dirigeants souhaitant comprendre, tester et intégrer l'intelligence artificielle dans leur production de contenu, tout en respectant le cadre légal et éthique européen.
               </p>
             </div>
             <div style={{ padding: '2.5rem', background: '#0D1A2E', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
@@ -144,7 +144,7 @@ const FormationMarketingIA = () => {
             <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(37, 99, 235, 0.1)' }}>
               <div style={{ background: 'rgba(37, 99, 235, 0.1)', padding: '2rem 3rem', borderBottom: '1px solid rgba(37, 99, 235, 0.2)' }}>
                 <h3 style={{ fontSize: '1.8rem', color: '#2563EB', marginBottom: '0.5rem' }}>Jour 1 — Fondamentaux & Premièrs Usages</h3>
-                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Comprendre les fondamentaux, les limites et les cadres d’usage de l’IA générative pour la création de contenu, tout en découvrant les outils clés et les bonnes pratiques de rédaction.</p>
+                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Comprendre les fondamentaux, les limites et les cadres d'usage de l'IA générative pour la création de contenu, tout en découvrant les outils clés et les bonnes pratiques de rédaction.</p>
               </div>
               <div style={{ padding: '3rem' }}>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
@@ -152,14 +152,14 @@ const FormationMarketingIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Cadre juridique et éthique :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>limites, risques et responsabilités liés à l’usage de l’IA (IA Act, RGPD, biais, transparence)</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>limites, risques et responsabilités liés à l'usage de l'IA (IA Act, RGPD, biais, transparence)</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Vigilances et points de contrôle :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>biais, hallucinations, ce qu’on ne délègue pas à l’IA</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>biais, hallucinations, ce qu'on ne délègue pas à l'IA</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -172,15 +172,15 @@ const FormationMarketingIA = () => {
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Panorama des cas d’usage professionnels :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Panorama des cas d'usage professionnels :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>communication, RH, marketing, formation</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d’images, son et vidéo :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>tour d’horizon des outils (mise à jour permanente)</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images, son et vidéo :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>tour d'horizon des outils (mise à jour permanente)</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -193,7 +193,7 @@ const FormationMarketingIA = () => {
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Rédaction et test de prompts IA adaptés à votre activité. Mise en place d’un agent (GPT) pour mieux gérer les tâches répétitives.
+                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Rédaction et test de prompts IA adaptés à votre activité. Mise en place d'un agent (GPT) pour mieux gérer les tâches répétitives.
                   </p>
                 </div>
               </div>
@@ -203,14 +203,14 @@ const FormationMarketingIA = () => {
             <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(37, 99, 235, 0.1)' }}>
               <div style={{ background: 'rgba(37, 99, 235, 0.1)', padding: '2rem 3rem', borderBottom: '1px solid rgba(37, 99, 235, 0.2)' }}>
                 <h3 style={{ fontSize: '1.8rem', color: '#2563EB', marginBottom: '0.5rem' }}>Jour 2 — Production Avancée & Automatisation</h3>
-                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Appliquer les outils d’IA pour produire, structurer et automatiser des contenus multimédias, en intégrant image, vidéo, podcast et veille intelligente dans une logique de campagne complète.</p>
+                <p style={{ color: '#9CA3AF', fontSize: '1.1rem' }}><strong>Objectif :</strong> Appliquer les outils d'IA pour produire, structurer et automatiser des contenus multimédias, en intégrant image, vidéo, podcast et veille intelligente dans une logique de campagne complète.</p>
               </div>
               <div style={{ padding: '3rem' }}>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d’images :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>choisir les bons outils, maîtriser les prompts visuels (angle, style, couleurs), retouche et recadrage IA</p>
                     </div>
                   </li>
@@ -232,7 +232,7 @@ const FormationMarketingIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Organisation et suivi de production :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>plan d’action, budget, calendrier, suivi via Notion</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>plan d'action, budget, calendrier, suivi via Notion</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -245,7 +245,7 @@ const FormationMarketingIA = () => {
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Création d’une double vidéo. Création d’un podcast en ligne. Prise en main des outils de génération de présentations avec IA. Découverte des outils d’automatisation et de veille.
+                    <strong style={{ color: '#2563EB' }}>Atelier pratique :</strong> Création d'une double vidéo. Création d'un podcast en ligne. Prise en main des outils de génération de présentations avec IA. Découverte des outils d'automatisation et de veille.
                   </p>
                 </div>
               </div>
@@ -315,19 +315,19 @@ const FormationMarketingIA = () => {
         <div className="container fade-in text-center">
           <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
-            Une équipe formée sur les bons outils IA, c’est le point de départ. Pour aller plus loin — automatiser vos flux de contenu, structurer votre stratégie, générer plus de leads — Squadia intervient aussi sur les systèmes.
+            Une équipe formée sur les bons outils IA, c'est le point de départ. Pour aller plus loin — automatiser vos flux de contenu, structurer votre stratégie, générer plus de leads — Squadia intervient aussi sur les systèmes.
           </p>
           <div className="grid-3" style={{ gap: '2rem' }}>
             <Link to="/strategie-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Stratégie IA</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Stratégie IA</h3>
               <ArrowRight color="#2563EB" />
             </Link>
             <Link to="/automatisation-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Automatisation</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Automatisation</h3>
               <ArrowRight color="#2563EB" />
             </Link>
             <Link to="/data" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l’offre Data</h3>
+              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Data</h3>
               <ArrowRight color="#2563EB" />
             </Link>
           </div>
@@ -342,11 +342,11 @@ const FormationMarketingIA = () => {
             <div>
               <AccordionItem 
                 question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
-                answer="Non. Les outils utilisés sont accessibles sans développement ni code. L’objectif est de rendre les équipes autonomes sur des outils qu’elles peuvent utiliser dès le lendemain."
+                answer="Non. Les outils utilisés sont accessibles sans développement ni code. L'objectif est de rendre les équipes autonomes sur des outils qu'elles peuvent utiliser dès le lendemain."
               />
               <AccordionItem 
                 question="Quels outils sont utilisés pendant la formation ?" 
-                answer="Les outils varient selon l’évolution rapide du marché IA. On travaille avec les outils les plus pertinents au moment de la session — génération de texte, image, vidéo, podcast, veille. La sélection est mise à jour régulièrement."
+                answer="Les outils varient selon l'évolution rapide du marché IA. On travaille avec les outils les plus pertinents au moment de la session — génération de texte, image, vidéo, podcast, veille. La sélection est mise à jour régulièrement."
               />
               <AccordionItem 
                 question="Cette formation est-elle adaptée aux petites équipes marketing ?" 
@@ -354,7 +354,7 @@ const FormationMarketingIA = () => {
               />
               <AccordionItem 
                 question="Le cadre légal est-il vraiment abordé ?" 
-                answer="Oui, dès le Jour 1. IA Act, RGPD, droits d’auteur, transparence — les points essentiels sont couverts de façon pratique, pas théorique."
+                answer="Oui, dès le Jour 1. IA Act, RGPD, droits d'auteur, transparence — les points essentiels sont couverts de façon pratique, pas théorique."
               />
               <AccordionItem 
                 question="Quelle différence avec la formation Communication & IA ?" 

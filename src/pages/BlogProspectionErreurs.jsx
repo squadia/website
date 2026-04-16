@@ -21,7 +21,7 @@ export default function BlogProspectionErreurs() {
     document.title = "Prospection multicanale B2B : 5 erreurs à éviter — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Découvrez les 5 erreurs les plus courantes en prospection multicanale B2B et comment les corriger. Conseils pratiques pour les équipes commerciales en PME et ETI.");
+      metaDescription.setAttribute('content', "Découvrez les 5 erreurs les plus courantes en prospection multicanale B2B et comment les corriger. Conseils pour équipes commerciales en PME et ETI.");
     }
     window.scrollTo(0, 0);
   }, []);

@@ -19,10 +19,10 @@ const DataB2B = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Nettoyage, segmentation et enrichissement de données B2B — Squadia";
+    document.title = "Nettoyage et segmentation de données B2B — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez l'importance du nettoyage et de la segmentation des données pour maximiser l'efficacité de vos campagnes de prospection B2B.";
+      metaDescription.content = "Découvrez comment nettoyer et segmenter vos données B2B pour maximiser l'efficacité de vos campagnes de prospection. Méthode Squadia pour PME et ETI.";
     }
   }, []);
 

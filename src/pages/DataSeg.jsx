@@ -161,10 +161,10 @@ export default function DataSeg() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Seg — Segmenter votre CRM pour une prospection active — Squadia";
+    document.title = "Data Seg — Segmentation CRM et scoring ICP — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM pour prioriser vos actions commerciales. Définition ICP, variables de scoring et architecture de donnée actionnable. Pour PME et ETI en France.");
+      metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM : définition ICP, variables de scoring et architecture de données actionnable. Résultats en 30 jours pour PME et ETI.");
     }
   }, []);
 

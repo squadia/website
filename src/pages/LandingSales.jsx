@@ -84,10 +84,10 @@ const LandingSales = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour les Directeurs Commerciaux — Pipeline fiable, CRM et performance commerciale B2B";
+    document.title = "Squadia pour Directeurs Commerciaux — CRM et pipeline B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia aide les directions commerciales B2B a fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d achat. CRM, automatisation et formation pour PME et ETI.";
+      metaDescription.content = "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d'achat. CRM et automatisation PME/ETI.";
     }
   }, []);
 

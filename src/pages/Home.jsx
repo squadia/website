@@ -1123,7 +1123,7 @@ const HeroDynamic = React.memo(() => {
     }, []);
 
     useEffect(() => {
-      document.title = "Squadia — Stratégie IA, CRM et Automatisation pour PME et ETI B2B";
+      document.title = "Squadia — Stratégie IA, CRM et Automatisation B2B";
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', "Squadia accompagne les PME et ETI B2B dans leur croissance : stratégie IA, migration CRM, automatisation des processus et formation commerciale. Basé à Paris.");

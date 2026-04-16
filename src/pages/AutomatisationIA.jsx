@@ -80,7 +80,7 @@ const renderPrice = (priceString) => {
 
 const AutomatisationIA = () => {
   useEffect(() => {
-    document.title = "Automatisation IA pour PME et ETI, CRM, vente et marketing — Squadia";
+    document.title = "Automatisation IA B2B — CRM, vente et marketing — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia automatise vos processus commerciaux et marketing avec l'IA. Workflows documentés, mesurables, maintenables par vos équipes. Pour PME et ETI en France.");

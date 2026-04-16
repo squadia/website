@@ -19,10 +19,10 @@ const FormationCommerciale = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation commerciale B2B et IA — Squadia";
+    document.title = "Formation commerciale B2B : méthode et outils IA — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez comment structurer une formation commerciale B2B efficace en associant méthode de vente complexe, sales awareness et outils d'intelligence artificielle.";
+      metaDescription.content = "Découvrez comment structurer une formation commerciale B2B avec méthode de vente complexe, sales awareness et outils IA. Pour équipes PME et ETI.";
     }
   }, []);
 

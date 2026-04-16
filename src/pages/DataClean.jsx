@@ -168,7 +168,7 @@ export default function DataClean() {
     document.title = "Data Clean — Nettoyer et normaliser votre CRM B2B — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia nettoie, déduplique et normalise votre base de données CRM. Préparez vos données pour la segmentation et la prospection active. Pour PME et ETI en France.");
+      metaDescription.setAttribute('content', "Squadia nettoie, déduplique et normalise votre base CRM. Préparez vos données pour la segmentation et la prospection active. Pour PME et ETI en France.");
     }
   }, []);
 

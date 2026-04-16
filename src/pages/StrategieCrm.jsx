@@ -404,10 +404,10 @@ export default function StrategieCrm() {
   const videoRef = React.useRef(null);
 
   useEffect(() => {
-    document.title = "Migration CRM et déploiement CRM pour PME et ETI — HubSpot, Pipedrive — Squadia";
+    document.title = "Migration CRM B2B — HubSpot, Pipedrive — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia cadre et déploie votre projet CRM : audit des processus, migration des données, structuration du pipeline et adoption par les équipes. HubSpot, Pipedrive, Salesforce. PME et ETI.");
+      metaDescription.setAttribute('content', "Squadia déploie votre CRM B2B de A à Z : audit, migration des données, structuration du pipeline et adoption par les équipes. HubSpot, Pipedrive, Salesforce.");
     }
   }, []);
 

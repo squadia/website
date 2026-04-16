@@ -85,10 +85,10 @@ const LandingDG = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour les Directeurs Generaux — Strategie IA et systeme de croissance PME ETI";
+    document.title = "Squadia pour les DG — Stratégie IA et croissance PME/ETI";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "57% des dirigeants testent des outils IA sans vision d ensemble. Squadia aide les DG de PME et ETI a transformer leur strategie en systeme de generation de revenus mesurable.";
+      metaDescription.content = "57% des dirigeants testent l'IA sans vision d'ensemble. Squadia aide les DG de PME/ETI à bâtir un système de génération de revenus mesurable en 90 jours.";
     }
   }, []);
 

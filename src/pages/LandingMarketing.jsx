@@ -84,10 +84,10 @@ const LandingMarketing = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour les Directeurs Marketing — Pipeline B2B, leads qualifies et automatisation IA";
+    document.title = "Squadia pour Directeurs Marketing — Pipeline B2B et IA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia aide les directions marketing B2B a structurer un pipeline fiable, qualifier leurs leads et automatiser leurs campagnes. Pour PME et ETI en France.";
+      metaDescription.content = "Squadia aide les directions marketing B2B à structurer un pipeline fiable, qualifier leurs leads et automatiser leurs campagnes. Pour PME et ETI en France.";
     }
   }, []);
 
