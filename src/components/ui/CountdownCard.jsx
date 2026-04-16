@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Calendar, Clock, Users } from 'lucide-react';
+import { Calendar, Clock, Users, MapPin } from 'lucide-react';
 
 export default function CountdownCard({ title, dateStart, dateLabel, attendees = 12, image }) {
   const [timeLeft, setTimeLeft] = useState(() =>
@@ -62,6 +62,10 @@ export default function CountdownCard({ title, dateStart, dateLabel, attendees =
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem' }}>
             <Calendar size={13} color="#44CCFF" />
             <span>{dateLabel}</span>
+          </div>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem' }}>
+            <MapPin size={13} color="#44CCFF" />
+            <span style={{ color: '#44CCFF', fontWeight: 500 }}>Paris</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem' }}>
             <Users size={13} color="#44CCFF" />
