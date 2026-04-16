@@ -99,9 +99,6 @@ export default function Data() {
               <Link to="/contact" style={{ backgroundColor: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
                 RDV avec un expert
               </Link>
-              <a href="#offres" onClick={(e) => smoothScroll(e, 'offres')} style={{ backgroundColor: 'transparent', color: '#2563EB', border: '1px solid #2563EB', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
-                Voir les offres
-              </a>
             </div>
           </div>
         </section>
@@ -156,7 +153,7 @@ export default function Data() {
                   <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Livraison d'un fichier propre et d'un rapport détaillant l'état de départ et les actions réalisées.</div>
                 </div>
               </div>
-              <Link to="/data/data-clean" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
+              <Link to="/data/data-clean" style={{ color: '#44CCFF', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
                 Découvrir Data Clean <ChevronDown size={14} style={{ transform: 'rotate(-90deg)' }} />
               </Link>
             </div>
@@ -182,7 +179,7 @@ export default function Data() {
                   <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Variables de scoring activables dans votre CRM pour que chaque commercial sache exactement où concentrer son temps.</div>
                 </div>
               </div>
-              <Link to="/data/data-seg" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
+              <Link to="/data/data-seg" style={{ color: '#44CCFF', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
                 Découvrir Data Seg <ChevronDown size={14} style={{ transform: 'rotate(-90deg)' }} />
               </Link>
             </div>
@@ -214,7 +211,7 @@ export default function Data() {
                   <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Les contacts sont livrés propres, segmentés et prêts à être activés dans vos séquences de prospection.</div>
                 </div>
               </div>
-              <Link to="/data/data-lead" style={{ color: '#2563EB', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
+              <Link to="/data/data-lead" style={{ color: '#44CCFF', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontSize: '1rem' }}>
                 Découvrir Data Lead <ChevronDown size={14} style={{ transform: 'rotate(-90deg)' }} />
               </Link>
             </div>
