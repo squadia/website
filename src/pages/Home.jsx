@@ -955,21 +955,42 @@ const HeroDynamic = React.memo(() => {
 
       {/* LEFT CONTENT */}
       <div className="hero-left">
-        <h1 style={{ color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: '2.5rem', maxWidth: '750px' }}>
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
+          style={{ color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
+        >
           Structurez votre système<br />
           de génération de revenus
-          <span className="hero-diagnostic-span" style={{ fontFamily: "'Corinthia', cursive", fontSize: '63px', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em' }}>
-            Du diagnostic à l'impact
-          </span>
-        </h1>
-        
-        <div style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}>
-          25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
-        </div>
+        </motion.h1>
 
-        <div>
-          <a 
-            href="#approche" 
+        <motion.div
+          className="hero-diagnostic-span"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.85, duration: 0.7, ease: 'easeOut' }}
+          style={{ fontFamily: "'Corinthia', cursive", fontSize: '63px', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
+        >
+          Du diagnostic à l'impact
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+          style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+        >
+          25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 0.6, ease: 'easeOut' }}
+        >
+          <a
+            href="#approche"
             className="hero-CTA"
             onClick={(e) => {
               e.preventDefault();
@@ -978,25 +999,45 @@ const HeroDynamic = React.memo(() => {
           >
             Découvrir l'approche
           </a>
-        </div>
+        </motion.div>
       </div>
 
       <div className="hero-stats-compact">
-        <div className="stat-item-compact">
+        <motion.div
+          className="stat-item-compact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.75, duration: 0.5, ease: 'easeOut' }}
+        >
           <div className="stat-num-compact">+20</div>
           <div className="stat-label-compact">ans d'expérience B2B</div>
-        </div>
-        <div className="stat-item-compact">
+        </motion.div>
+        <motion.div
+          className="stat-item-compact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.05, duration: 0.5, ease: 'easeOut' }}
+        >
           <div className="stat-num-compact">+120</div>
           <div className="stat-label-compact">entreprises accompagnées</div>
-        </div>
-        <div className="stat-item-compact">
+        </motion.div>
+        <motion.div
+          className="stat-item-compact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.35, duration: 0.5, ease: 'easeOut' }}
+        >
           <div className="stat-num-compact">+450</div>
           <div className="stat-label-compact">professionnels formés</div>
-        </div>
+        </motion.div>
       </div>
 
-      <div className="hero-marquee-inline">
+      <motion.div
+        className="hero-marquee-inline"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 2.75, duration: 0.7, ease: 'easeOut' }}
+      >
         <div className="hero-marquee-row">
           {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, ceaAtomique, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
             <img key={`H1-${i}`} src={src} className="hero-marquee-logo" alt="Client" />
@@ -1005,7 +1046,7 @@ const HeroDynamic = React.memo(() => {
             <img key={`H1-copy-${i}`} src={src} className="hero-marquee-logo" alt="Client" />
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 });
