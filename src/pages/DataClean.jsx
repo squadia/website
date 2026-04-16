@@ -583,16 +583,16 @@ export default function DataClean() {
           <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: "1. À quoi sert Data Clean ?", a: "À fiabiliser votre CRM en supprimant les doublons, les erreurs et les champs inutiles pour repartir sur une base exploitable." },
-              { q: "2. Quels types de problèmes sont corrigés ?", a: "Doublons, données incohérentes, champs vides, formats hétérogènes, erreurs de saisie." },
-              { q: "3. Est-ce que vous modifiez les données existantes ?", a: "Oui, mais de manière contrôlée : nettoyage + normalisation sans perte d'information utile." },
-              { q: "4. Est-ce que ça fonctionne avec tous les CRM ?", a: "Oui (HubSpot, Pipedrive, Salesforce, fichiers Excel, etc.)." },
-              { q: "5. Combien de temps ça prend ?", a: "Quelques jours à quelques semaines selon le volume et la qualité initiale." },
-              { q: "6. Est-ce que je garde la main sur mes données ?", a: "Oui, validation possible avant toute modification critique." },
-              { q: "7. Que vais-je recevoir concrètement ?", a: "Un CRM nettoyé + un rapport des actions réalisées." },
-              { q: "8. Est-ce que ça inclut de la segmentation ?", a: "Uniquement basique (tri simple). La segmentation avancée est dans Data Seg." },
-              { q: "9. Est-ce que ça améliore mes performances commerciales ?", a: "Oui, indirectement : meilleure délivrabilité, moins de pertes, base plus exploitable." },
-              { q: "10. Quand faut-il lancer un Data Clean ?", a: "Après une migration CRM, un changement d'équipe ou avant une campagne marketing." }
+              { q: "À quoi sert Data Clean ?", a: "À fiabiliser votre CRM en supprimant les doublons, les erreurs et les champs inutiles pour repartir sur une base exploitable." },
+              { q: "Quels types de problèmes sont corrigés ?", a: "Doublons, données incohérentes, champs vides, formats hétérogènes, erreurs de saisie." },
+              { q: "Est-ce que vous modifiez les données existantes ?", a: "Oui, mais de manière contrôlée : nettoyage + normalisation sans perte d'information utile." },
+              { q: "Est-ce que ça fonctionne avec tous les CRM ?", a: "Oui (HubSpot, Pipedrive, Salesforce, fichiers Excel, etc.)." },
+              { q: "Combien de temps ça prend ?", a: "Quelques jours à quelques semaines selon le volume et la qualité initiale." },
+              { q: "Est-ce que je garde la main sur mes données ?", a: "Oui, validation possible avant toute modification critique." },
+              { q: "Que vais-je recevoir concrètement ?", a: "Un CRM nettoyé + un rapport des actions réalisées." },
+              { q: "Est-ce que ça inclut de la segmentation ?", a: "Uniquement basique (tri simple). La segmentation avancée est dans Data Seg." },
+              { q: "Est-ce que ça améliore mes performances commerciales ?", a: "Oui, indirectement : meilleure délivrabilité, moins de pertes, base plus exploitable." },
+              { q: "Quand faut-il lancer un Data Clean ?", a: "Après une migration CRM, un changement d'équipe ou avant une campagne marketing." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>

@@ -352,23 +352,23 @@ const FormationVentesIA = () => {
             <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
             <div>
               <AccordionItem 
-                question="Q1 — Cette formation convient-elle aux équipes avec des niveaux très différents ?" 
+                question="Cette formation convient-elle aux équipes avec des niveaux très différents ?" 
                 answer="Oui, c'est précisément pour ça qu'elle a été conçue. Les modules sur la méthode et le plan de compte s'adressent à tous les niveaux. Les ateliers et jeux de rôles s'intensifient ou s'allègent selon le groupe. Les seniors ne sont jamais en terrain connu trop longtemps."
               />
               <AccordionItem 
-                question="Q2 — Faut-il avoir un compte client ou prospect réel pour participer ?" 
+                question="Faut-il avoir un compte client ou prospect réel pour participer ?" 
                 answer="C'est fortement recommandé. Les ateliers pratiques sont conçus pour travailler sur des cas réels des participants — pas sur des exercices fictifs. Plus le compte est concret, plus le travail est actionnable."
               />
               <AccordionItem 
-                question="Q3 — Quel niveau d'expérience avec l'IA est requis ?" 
+                question="Quel niveau d'expérience avec l'IA est requis ?" 
                 answer="Aucun. Les modules IA sont construits pour des non-initiés. On part des outils accessibles — Claude, Canva — et on les applique directement aux situations commerciales du quotidien."
               />
               <AccordionItem 
-                question="Q4 — Peut-on suivre seulement l'un des deux jours ?" 
+                question="Peut-on suivre seulement l'un des deux jours ?" 
                 answer="Les deux jours sont conçus en séquence logique : le Jour 1 prépare le terrain, le Jour 2 met en pratique. Suivre uniquement le Jour 2 sans le Jour 1 est possible mais déconseillé pour les équipes qui n'ont pas encore de méthode commune sur le plan de compte."
               />
               <AccordionItem 
-                question="Q5 — Quelle différence avec une formation commerciale classique ?" 
+                question="Quelle différence avec une formation commerciale classique ?" 
                 answer="Les fondamentaux sont les mêmes — écoute, qualification, objections. Ce qui change : on intègre les outils IA directement dans la méthode, pas en option. Un commercial qui suit cette formation repart avec une façon de préparer ses RDV, de produire ses propositions et de relancer ses prospects qui est concrètement différente de ce qu'il faisait avant."
               />
             </div>

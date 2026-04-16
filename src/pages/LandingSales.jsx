@@ -29,8 +29,8 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
           alignItems: 'center',
           textAlign: 'left',
           color: '#FFFFFF',
-          fontSize: '1.1rem',
-          fontWeight: 700,
+          fontSize: '1rem',
+          fontWeight: 600,
           background: 'none',
           border: 'none',
           cursor: 'pointer',
@@ -385,7 +385,7 @@ const LandingSales = () => {
                 <div style={{ marginBottom: '1.25rem', padding: '0.75rem', background: 'rgba(37,99,235,0.15)', display: 'inline-flex', borderRadius: '10px' }}>
                   {item.icon}
                 </div>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.75rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
+                <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
                 <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, fontSize: '0.95rem' }}>{item.desc}</p>
               </div>
             ))}

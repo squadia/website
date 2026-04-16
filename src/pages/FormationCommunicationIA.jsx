@@ -327,23 +327,23 @@ const FormationCommunicationIA = () => {
             <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
             <div>
               <AccordionItem 
-                question="Q1 — Faut-il avoir des compétences techniques pour suivre cette formation ?" 
+                question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
                 answer="Non. Les outils utilisés sont accessibles sans développement ni code. L’objectif est de rendre les équipes autonomes sur des outils opérationnels dès le lendemain de la formation."
               />
               <AccordionItem 
-                question="Q2 — Est-ce que cette formation couvre la partie SEO ?" 
+                question="Est-ce que cette formation couvre la partie SEO ?" 
                 answer="Oui, le Jour 2 intègre les outils d’analyse et d’optimisation SEO dans la logique de production de contenu. L’objectif n’est pas de former des experts SEO, mais de produire du contenu qui se positionne."
               />
               <AccordionItem 
-                question="Q3 — Quelle différence avec la formation Marketing & IA ?" 
+                question="Quelle différence avec la formation Marketing & IA ?" 
                 answer="La formation Communication & IA est centrée sur le message, le positionnement et la ligne éditoriale. La formation Marketing & IA est plus orientée production de contenu, campagnes et performance. Les deux sont complémentaires."
               />
               <AccordionItem 
-                question="Q4 — Peut-on former une équipe mixte communication + marketing ?" 
+                question="Peut-on former une équipe mixte communication + marketing ?" 
                 answer="Oui. En format intra, le programme peut être adapté pour couvrir les enjeux des deux pôles. On cadre ça ensemble en amont."
               />
               <AccordionItem 
-                question="Q5 — Les outils mentionnés sont-ils inclus dans le tarif de la formation ?" 
+                question="Les outils mentionnés sont-ils inclus dans le tarif de la formation ?" 
                 answer="Les outils utilisés en formation sont généralement disponibles en version gratuite ou en essai. Aucun abonnement n’est requis pour participer. Si des outils payants sont recommandés, c’est indiqué clairement avec les alternatives disponibles."
               />
             </div>

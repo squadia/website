@@ -341,23 +341,23 @@ const FormationMarketingIA = () => {
             <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
             <div>
               <AccordionItem 
-                question="Q1 — Faut-il avoir des compétences techniques pour suivre cette formation ?" 
+                question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
                 answer="Non. Les outils utilisés sont accessibles sans développement ni code. L’objectif est de rendre les équipes autonomes sur des outils qu’elles peuvent utiliser dès le lendemain."
               />
               <AccordionItem 
-                question="Q2 — Quels outils sont utilisés pendant la formation ?" 
+                question="Quels outils sont utilisés pendant la formation ?" 
                 answer="Les outils varient selon l’évolution rapide du marché IA. On travaille avec les outils les plus pertinents au moment de la session — génération de texte, image, vidéo, podcast, veille. La sélection est mise à jour régulièrement."
               />
               <AccordionItem 
-                question="Q3 — Cette formation est-elle adaptée aux petites équipes marketing ?" 
+                question="Cette formation est-elle adaptée aux petites équipes marketing ?" 
                 answer="Oui. Elle est conçue pour des profils opérationnels, pas des experts. Une personne seule ou une petite équipe de 2 à 3 personnes peut suivre et repartir avec des pratiques directement applicables."
               />
               <AccordionItem 
-                question="Q4 — Le cadre légal est-il vraiment abordé ?" 
+                question="Le cadre légal est-il vraiment abordé ?" 
                 answer="Oui, dès le Jour 1. IA Act, RGPD, droits d’auteur, transparence — les points essentiels sont couverts de façon pratique, pas théorique."
               />
               <AccordionItem 
-                question="Q5 — Quelle différence avec la formation Communication & IA ?" 
+                question="Quelle différence avec la formation Communication & IA ?" 
                 answer="La formation Marketing & IA est centrée sur la production de contenu, les campagnes et la performance. La formation Communication & IA est plus orientée message, positionnement et ligne éditoriale. Les deux sont complémentaires pour des organisations où marketing et communication sont séparés."
               />
             </div>

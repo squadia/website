@@ -48,8 +48,8 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
           alignItems: 'center',
           textAlign: 'left',
           color: '#FFFFFF',
-          fontSize: '1.1rem',
-          fontWeight: 700,
+          fontSize: '1rem',
+          fontWeight: 600,
           background: 'none',
           border: 'none',
           cursor: 'pointer',
@@ -458,7 +458,7 @@ const LandingDG = () => {
                 <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   {item.icon}
                 </div>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.9rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
+                <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.9rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
                 <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem' }}>{item.desc}</p>
               </div>
             ))}

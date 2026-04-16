@@ -577,14 +577,14 @@ export default function DataSeg() {
           <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: "1. À quoi sert Data Seg ?", a: "À structurer votre base pour cibler les bons prospects avec les bons messages." },
-              { q: "2. Quelle est la différence avec Data Clean ?", a: "Data Clean nettoie. Data Seg nettoie + enrichit + segmente finement." },
-              { q: "3. Qu’est-ce que vous ajoutez en plus ?", a: "ICP, critères de ciblage, enrichissement (emails, téléphones en option), segmentation avancée." },
-              { q: "4. Est-ce que vous pouvez définir mon ICP ?", a: "Oui, on le construit ou on l’affine avec vous ainsi que les personas." },
-              { q: "5. D’où viennent les données enrichies ?", a: "Nous utilisons jusqu’à 5 sources de données différentes. Ce sont des sources fiables type bases B2B, LinkedIn, outils spécialisés." },
-              { q: "6. Est-ce que la base est prête à être utilisée en prospection ?", a: "Oui, elle est directement exploitable pour des campagnes ciblées." },
-              { q: "7. Est-ce que je peux connecter ça à mes outils marketing ?", a: "Oui, export ou intégration directe dans votre CRM / outils de campagne." },
-              { q: "8. Dans quel cas choisir Data Seg ?", a: "Quand vous savez que c’est impossible de segmenter vos envoies de campagnes en fonction de type de comptes et qu’il est difficile dans votre système actuel d’en mesurer la progression." }
+              { q: "À quoi sert Data Seg ?", a: "À structurer votre base pour cibler les bons prospects avec les bons messages." },
+              { q: "Quelle est la différence avec Data Clean ?", a: "Data Clean nettoie. Data Seg nettoie + enrichit + segmente finement." },
+              { q: "Qu’est-ce que vous ajoutez en plus ?", a: "ICP, critères de ciblage, enrichissement (emails, téléphones en option), segmentation avancée." },
+              { q: "Est-ce que vous pouvez définir mon ICP ?", a: "Oui, on le construit ou on l’affine avec vous ainsi que les personas." },
+              { q: "D’où viennent les données enrichies ?", a: "Nous utilisons jusqu’à 5 sources de données différentes. Ce sont des sources fiables type bases B2B, LinkedIn, outils spécialisés." },
+              { q: "Est-ce que la base est prête à être utilisée en prospection ?", a: "Oui, elle est directement exploitable pour des campagnes ciblées." },
+              { q: "Est-ce que je peux connecter ça à mes outils marketing ?", a: "Oui, export ou intégration directe dans votre CRM / outils de campagne." },
+              { q: "Dans quel cas choisir Data Seg ?", a: "Quand vous savez que c’est impossible de segmenter vos envoies de campagnes en fonction de type de comptes et qu’il est difficile dans votre système actuel d’en mesurer la progression." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
