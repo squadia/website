@@ -74,16 +74,28 @@ const Navbar = () => {
         transition: 'all 0.5s ease'
       }}>
         {/* Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
-          <img src="/logo.png" alt="Squadia" className="logo" style={{ height: scrolled ? '28px' : '32px', width: 'auto', transition: 'all 0.5s' }} />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: -24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.9, ease: 'easeOut' }}
+        >
+          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+            <img src="/logo.png" alt="Squadia" className="logo" style={{ height: scrolled ? '28px' : '32px', width: 'auto', transition: 'all 0.5s' }} />
+          </Link>
+        </motion.div>
 
         {/* Desktop nav */}
-        <div className="desktop-nav" style={{
-          position: 'absolute', left: '50%', transform: 'translateX(-50%)',
-          display: 'flex', gap: scrolled ? '1.5rem' : '2rem', alignItems: 'center',
-          transition: 'all 0.5s ease'
-        }}>
+        <motion.div
+          className="desktop-nav"
+          initial={{ opacity: 0, y: -24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.35, duration: 0.9, ease: 'easeOut' }}
+          transformTemplate={(_, generated) => `translateX(-50%) ${generated}`}
+          style={{
+            position: 'absolute', left: '50%', transform: 'translateX(-50%)',
+            display: 'flex', gap: scrolled ? '1.5rem' : '2rem', alignItems: 'center',
+            transition: 'all 0.5s ease'
+          }}>
           <div data-dropdown="nos-services" onClick={() => setShowDropdown(!showDropdown)}
             style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer',
               fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500 }}>
@@ -92,16 +104,21 @@ const Navbar = () => {
           <Link to="/cas-clients" style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
           <Link to="/ressources"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
           <Link to="/tarifs"      style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
-        </div>
+        </motion.div>
 
         {/* Desktop CTA */}
-        <div className="desktop-nav">
+        <motion.div
+          className="desktop-nav"
+          initial={{ opacity: 0, y: -24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
+        >
           <Link to="/contact" className="btn-RDV" style={{
             padding: scrolled ? '6px 14px' : '8px 18px',
             fontSize: scrolled ? '12px' : '13px',
             transition: 'all 0.5s ease', textDecoration: 'none', display: 'inline-block'
           }}>Prendre RDV</Link>
-        </div>
+        </motion.div>
 
         {/* Hamburger button animé */}
         <button
