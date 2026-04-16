@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { casesData } from '../data/cases';
+import ClientLogosSection from '../components/ui/ClientLogosSection';
 import pipelineImg from '../assets/images/pipeline-b2b.jpeg';
 import formationImg from '../assets/images/formationB2B.png';
 import iaComImg from '../assets/images/iaetcom.png';
@@ -365,7 +366,10 @@ const CasClients = () => {
       {selectedCase ? (
         <CaseDetail caseData={selectedCase} />
       ) : (
-        <CasesList />
+        <>
+          <CasesList />
+          <ClientLogosSection />
+        </>
       )}
     </div>
   );
