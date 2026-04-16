@@ -576,11 +576,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
             ))}
           </div>
 
-          <div style={{ textAlign: 'center', marginTop: '5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+          <div style={{ textAlign: 'center', marginTop: '5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <p style={{ color: '#6B7280', fontSize: '0.95rem', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6 }}>
               Tous les prix sont donnés à titre indicatif hors taxes et peuvent faire l'objet de modification selon le volume, la complexité et les contraintes spécifiques.
             </p>
-            <p style={{ color: '#44CCFF', fontSize: '0.95rem', fontWeight: 600 }}>
+            <p style={{ color: '#44CCFF', fontSize: '0.95rem', fontWeight: 600, maxWidth: '800px', marginInline: 'auto' }}>
               Financement OPCO possible selon votre organisme paritaire. Nous contacter pour vérifier votre éligibilité.
             </p>
           </div>
@@ -615,7 +615,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 <Star color="#44CCFF" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Supports opérationnels</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Chaque participant repart avec des templates, des prompts prêts à l'emploi et un plan d'action personnel. Des outils qu'on utilise le lundi matin, pas un manuel qu'on ne rouvrira jamais.</p>
+              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Chaque participant repart avec des templates, des prompts prêts à l'emploi.</p>
             </div>
           </div>
         </div>
