@@ -1573,14 +1573,18 @@ const HeroDynamic = React.memo(() => {
                     if (window.innerWidth <= 768 || !persona.video) return;
                     const vid = e.currentTarget.querySelector('video');
                     const img = e.currentTarget.querySelector('img');
+                    const overlay = e.currentTarget.querySelector('.card-color-overlay');
                     if (vid) { vid.play(); }
                     if (img) { img.style.opacity = '0'; }
+                    if (overlay) { overlay.style.opacity = '0'; }
                   }}
                   onMouseLeave={(e) => {
                     const vid = e.currentTarget.querySelector('video');
                     const img = e.currentTarget.querySelector('img');
+                    const overlay = e.currentTarget.querySelector('.card-color-overlay');
                     if (vid) { vid.pause(); vid.currentTime = 0; }
                     if (img) { img.style.opacity = '1'; }
+                    if (overlay) { overlay.style.opacity = '1'; }
                   }}
                 >
                   {/* Vidéo — toujours présente, en dessous */}
@@ -1599,11 +1603,16 @@ const HeroDynamic = React.memo(() => {
                       }}
                     />
                   )}
+                  {/* Overlay couleur carte — couvre le noir de la vidéo, disparaît au survol */}
+                  <div
+                    className="card-color-overlay"
+                    style={{ position: 'absolute', inset: 0, background: '#0D0D25', zIndex: 2, transition: 'opacity 0.3s ease', pointerEvents: 'none' }}
+                  />
                   {/* Image statique — au-dessus, disparaît au survol */}
                   <img
                     src={persona.img}
                     alt={persona.title}
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', zIndex: 2, transition: 'opacity 0.3s ease' }}
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', zIndex: 3, transition: 'opacity 0.3s ease' }}
                   />
                   {/* Overlay gradient bas */}
                   <div style={{
