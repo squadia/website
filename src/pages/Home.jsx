@@ -1568,7 +1568,7 @@ const HeroDynamic = React.memo(() => {
                   }}
                 >
                 <div
-                  style={{ height: '310px', flexShrink: 0, overflow: 'hidden', position: 'relative' }}
+                  style={{ height: '310px', flexShrink: 0, overflow: 'hidden', position: 'relative', background: '#0D0D25' }}
                   onMouseEnter={(e) => {
                     if (window.innerWidth <= 768 || !persona.video) return;
                     const vid = e.currentTarget.querySelector('video');
