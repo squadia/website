@@ -2,6 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronDown, Target, Database, Zap, GraduationCap, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import gmImg from '../../assets/images/gm.png';
+import smImg from '../../assets/images/sm.png';
+import mmImg from '../../assets/images/mm.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -197,9 +200,9 @@ const Navbar = () => {
             <p style={{ textAlign: 'center' }}>Activez les quick wins et renforcez vos résultats</p>
             <div className="squad-persona-list">
               {[
-                { to: '/directeur-general', src: '/src/assets/images/gm.png', name: 'General Manager', sub: 'Vision, cap et transformation' },
-                { to: '/directeur-commercial', src: '/src/assets/images/sm.png', name: 'Sales Director', sub: 'Pipeline, deals et performance' },
-                { to: '/directeur-marketing', src: '/src/assets/images/mm.png', name: 'Marketing Director', sub: 'Acquisition, contenu et pipeline' },
+                { to: '/directeur-general', src: gmImg, name: 'General Manager', sub: 'Vision, cap et transformation' },
+                { to: '/directeur-commercial', src: smImg, name: 'Sales Director', sub: 'Pipeline, deals et performance' },
+                { to: '/directeur-marketing', src: mmImg, name: 'Marketing Director', sub: 'Acquisition, contenu et pipeline' },
               ].map(p => (
                 <Link key={p.to} to={p.to} className="squad-persona" onClick={() => setShowDropdown(false)}>
                   <img src={p.src} alt={p.name} />
@@ -645,9 +648,9 @@ const Navbar = () => {
                       <p className="mob-persona-sub" style={{ marginBottom: '10px' }}>Activez les quick wins selon votre fonction</p>
                       <div className="mob-persona-list">
                         {[
-                          { to: '/directeur-general', src: '/src/assets/images/gm.png', role: 'General Manager', desc: 'Vision, cap et transformation' },
-                          { to: '/directeur-commercial', src: '/src/assets/images/sm.png', role: 'Sales Director', desc: 'Pipeline, deals et performance' },
-                          { to: '/directeur-marketing', src: '/src/assets/images/mm.png', role: 'Marketing Director', desc: 'Acquisition, contenu et pipeline' },
+                          { to: '/directeur-general', src: gmImg, role: 'General Manager', desc: 'Vision, cap et transformation' },
+                          { to: '/directeur-commercial', src: smImg, role: 'Sales Director', desc: 'Pipeline, deals et performance' },
+                          { to: '/directeur-marketing', src: mmImg, role: 'Marketing Director', desc: 'Acquisition, contenu et pipeline' },
                         ].map(p => (
                           <Link key={p.to} className="mob-persona-item" to={p.to} onClick={closeMenu}>
                             <div className="mob-persona-avatar"><img src={p.src} alt={p.role} /></div>
