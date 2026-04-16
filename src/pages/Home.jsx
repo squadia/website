@@ -542,12 +542,10 @@ const HeroCSS = `
   background: linear-gradient(to right, rgba(5,5,16,0.88) 0%, rgba(5,5,16,0.70) 35%, rgba(5,5,16,0.30) 60%, rgba(5,5,16,0.10) 80%, transparent 100%);
 }
 .hero-stats-compact {
-  position: absolute;
-  bottom: 11rem;
-  left: 8%;
   display: flex;
   gap: 3rem;
   z-index: 7;
+  margin-top: 2.5rem;
 }
 .stat-item-compact {
   display: flex;
@@ -603,7 +601,7 @@ const HeroCSS = `
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 8%;
-  padding-top: 18vh;
+  padding-top: 13vh;
 }
 .hero-marquee-inline {
   position: absolute;
@@ -1000,36 +998,36 @@ const HeroDynamic = React.memo(() => {
             Découvrir l'approche
           </a>
         </motion.div>
-      </div>
 
-      <div className="hero-stats-compact">
-        <motion.div
-          className="stat-item-compact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.75, duration: 0.5, ease: 'easeOut' }}
-        >
-          <div className="stat-num-compact">+20</div>
-          <div className="stat-label-compact">ans d'expérience B2B</div>
-        </motion.div>
-        <motion.div
-          className="stat-item-compact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.05, duration: 0.5, ease: 'easeOut' }}
-        >
-          <div className="stat-num-compact">+120</div>
-          <div className="stat-label-compact">entreprises accompagnées</div>
-        </motion.div>
-        <motion.div
-          className="stat-item-compact"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2.35, duration: 0.5, ease: 'easeOut' }}
-        >
-          <div className="stat-num-compact">+450</div>
-          <div className="stat-label-compact">professionnels formés</div>
-        </motion.div>
+        <div className="hero-stats-compact">
+          <motion.div
+            className="stat-item-compact"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.75, duration: 0.5, ease: 'easeOut' }}
+          >
+            <div className="stat-num-compact">+20</div>
+            <div className="stat-label-compact">ans d'expérience B2B</div>
+          </motion.div>
+          <motion.div
+            className="stat-item-compact"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.05, duration: 0.5, ease: 'easeOut' }}
+          >
+            <div className="stat-num-compact">+120</div>
+            <div className="stat-label-compact">entreprises accompagnées</div>
+          </motion.div>
+          <motion.div
+            className="stat-item-compact"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 2.35, duration: 0.5, ease: 'easeOut' }}
+          >
+            <div className="stat-num-compact">+450</div>
+            <div className="stat-label-compact">professionnels formés</div>
+          </motion.div>
+        </div>
       </div>
 
       <motion.div
