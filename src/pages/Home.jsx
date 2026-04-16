@@ -1572,24 +1572,21 @@ const HeroDynamic = React.memo(() => {
                   onMouseEnter={(e) => {
                     if (window.innerWidth <= 768 || !persona.video) return;
                     const vid = e.currentTarget.querySelector('video');
-                    if (vid) { vid.play(); vid.style.opacity = '1'; }
+                    const img = e.currentTarget.querySelector('img');
+                    if (vid) { vid.play(); }
+                    if (img) { img.style.opacity = '0'; }
                   }}
                   onMouseLeave={(e) => {
                     const vid = e.currentTarget.querySelector('video');
-                    if (vid) { vid.pause(); vid.currentTime = 0; vid.style.opacity = '0'; }
+                    const img = e.currentTarget.querySelector('img');
+                    if (vid) { vid.pause(); vid.currentTime = 0; }
+                    if (img) { img.style.opacity = '1'; }
                   }}
                 >
-                  {/* Image statique — visible par défaut */}
-                  <img
-                    src={persona.img}
-                    alt={persona.title}
-                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
-                  />
-                  {/* Vidéo hover — desktop uniquement, invisible par défaut */}
+                  {/* Vidéo — toujours présente, en dessous */}
                   {persona.video && window.innerWidth > 768 && (
                     <video
                       src={persona.video}
-                      poster={persona.img}
                       muted
                       loop
                       playsInline
@@ -1598,12 +1595,16 @@ const HeroDynamic = React.memo(() => {
                         position: 'absolute', inset: 0,
                         width: '100%', height: '100%',
                         objectFit: 'cover', objectPosition: 'center top',
-                        opacity: 0,
-                        transition: 'opacity 0.3s ease',
                         pointerEvents: 'none',
                       }}
                     />
                   )}
+                  {/* Image statique — au-dessus, disparaît au survol */}
+                  <img
+                    src={persona.img}
+                    alt={persona.title}
+                    style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', zIndex: 2, transition: 'opacity 0.3s ease' }}
+                  />
                   {/* Overlay gradient bas */}
                   <div style={{
                     position: 'absolute', bottom: 0, left: 0, right: 0,
