@@ -76,7 +76,7 @@ const CasFormationVente = () => {
           </Link>
 
           <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1.8rem' }}>
-            {[{ label: 'Formation', color: '#2563EB', bg: 'rgba(37,99,235,0.1)' }].map(t => (
+            {[{ label: 'Formation', color: '#44CCFF', bg: 'rgba(37,99,235,0.1)' }].map(t => (
               <span key={t.label} style={{
                 padding: '0.35rem 0.9rem', borderRadius: '20px', fontSize: '0.78rem',
                 fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase',
@@ -101,7 +101,7 @@ const CasFormationVente = () => {
             background: 'rgba(37,99,235,0.06)', border: '1px solid rgba(37,99,235,0.2)',
             borderRadius: '12px', padding: '1rem 1.8rem'
           }}>
-            <span style={{ fontSize: '2.6rem', fontWeight: 700, color: '#2563EB', letterSpacing: '-0.03em' }}>2 j.</span>
+            <span style={{ fontSize: '2.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>2 j.</span>
             <div>
               <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#fff' }}>pour une méthode commune</div>
               <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>juniors, seniors, SDR et BDR alignés sur MEDDIC</div>
@@ -124,7 +124,7 @@ const CasFormationVente = () => {
                   position: 'absolute', top: 0, left: 0, right: 0, height: '1px',
                   background: 'linear-gradient(90deg, transparent, rgba(37,99,235,0.3), transparent)'
                 }} />
-                <div style={{ fontSize: '2.4rem', fontWeight: 700, color: '#2563EB', lineHeight: 1.1, marginBottom: '0.4rem' }}>{s.value}</div>
+                <div style={{ fontSize: '2.4rem', fontWeight: 700, color: '#44CCFF', lineHeight: 1.1, marginBottom: '0.4rem' }}>{s.value}</div>
                 <div style={{ fontSize: '0.95rem', color: '#fff', fontWeight: 500, marginBottom: '0.2rem' }}>{s.label}</div>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.35)' }}>{s.sub}</div>
               </div>
@@ -174,7 +174,7 @@ const CasFormationVente = () => {
                 borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
-                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#2563EB', letterSpacing: '0.08em', paddingTop: '4px' }}>
+                <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>
                   ÉTAPE {a.step}
                 </div>
                 <div>
@@ -193,7 +193,7 @@ const CasFormationVente = () => {
           <div style={{
             background: 'linear-gradient(135deg, rgba(37,99,235,0.06) 0%, rgba(6,10,28,0) 60%)',
             border: '1px solid rgba(37,99,235,0.15)',
-            borderLeft: '4px solid #2563EB',
+            borderLeft: '4px solid #44CCFF',
             borderRadius: '16px', padding: '3rem'
           }}>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(37,99,235,0.7)', marginBottom: '1.2rem' }}>Ce qui a changé</p>
@@ -218,7 +218,7 @@ const CasFormationVente = () => {
           </Link>
           <Link to="/cas-clients" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',
-            color: '#2563EB', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
+            color: '#44CCFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
           }}>
             Tous les cas clients <ArrowRight size={16} />
           </Link>
