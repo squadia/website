@@ -545,7 +545,7 @@ const HeroCSS = `
   display: flex;
   gap: 3rem;
   z-index: 7;
-  margin-top: 2.5rem;
+  margin-top: 1.5rem;
 }
 .stat-item-compact {
   display: flex;
@@ -611,7 +611,7 @@ const HeroCSS = `
   overflow: hidden;
   z-index: 6;
   background: rgba(5, 5, 16, 0.15);
-  padding: 1.5rem 0;
+  padding: 0.75rem 0;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -625,9 +625,9 @@ const HeroCSS = `
   animation: heroScrollRight 45s linear infinite;
 }
 .hero-marquee-logo {
-  height: 38px;
+  height: 26px;
   width: auto;
-  margin: 0 2.5rem;
+  margin: 0 2rem;
   opacity: 0.7;
   transition: opacity 0.3s;
   filter: grayscale(1) brightness(1.8);
@@ -968,7 +968,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.85, duration: 0.7, ease: 'easeOut' }}
-          style={{ fontFamily: "'Corinthia', cursive", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
+          style={{ fontFamily: "'Corinthia', cursive", fontSize: 'clamp(1.4rem, 2.6vw, 2.2rem)', fontWeight: 400, color: '#fff', display: 'block', marginTop: '0.8rem', letterSpacing: '0.02em', marginBottom: '1.5rem' }}
         >
           Du diagnostic à l'impact
         </motion.div>
@@ -977,7 +977,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
-          style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+          style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '1.8rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
           25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
         </motion.div>
