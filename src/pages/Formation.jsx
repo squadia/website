@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Check, ChevronDown, UserX, AlertTriangle, Compass, Briefcase, Megaphone, PieChart, GraduationCap, ArrowRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import imgVente from '../assets/images/formation/commercial.png';
+import imgMarketing from '../assets/images/formation/marketing.jpeg';
+import imgCommunication from '../assets/images/formation/communication.jpeg';
 
 const AccordionItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -194,39 +197,39 @@ const Formation = () => {
       </section>
 
       {/* ═══ SECTION 3 — CE QU'ON FORME (NEW DESIGN) ═══ */}
-      <section className="section-padding" style={{ background: '#F8F7F4' }}>
+      <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4.5rem', color: '#060612' }}>Une formation pour chaque métier.</h2>
-          
+          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
-            
-            <FormationCard 
+
+            <FormationCard
               category="Vente"
               title="Ventes & IA — Méthode, plan de compte et outils pour équipes commerciales B2B"
               forWho="Pour qui : Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune"
               description="Méthode MEDDIC, plan de compte structuré et IA en situation réelle. Vos commerciaux repartent avec des réflexes de terrain renforcés et des outils qu'ils utilisent dès le lundi suivant."
               link="/formation-ventes-et-ia"
-              image="https://images.unsplash.com/photo-1558223064-219505871f30?auto=format&fit=crop&q=80&w=1200"
+              image={imgVente}
               delay={0}
             />
 
-            <FormationCard 
+            <FormationCard
               category="Marketing"
               title="Marketing & IA — Créer, produire et automatiser ses contenus avec l IA"
               forWho="Pour qui : Responsables marketing et créateurs de contenu souhaitant produire plus vite sans sacrifier la qualité"
               description="Prompting efficace, production images vidéos podcasts et automatisation de la veille. Les bons réflexes, les bons outils, et une routine de production IA opérationnelle dès la fin de la formation."
               link="/formation-marketing-et-ia"
-              image="https://images.unsplash.com/photo-1522071823991-b1b5722a40d7?auto=format&fit=crop&q=80&w=1200"
+              image={imgMarketing}
               delay={0.15}
             />
 
-            <FormationCard 
+            <FormationCard
               category="Communication"
               title="Communication & IA — Structurer sa stratégie éditoriale et produire avec l IA"
               forWho="Pour qui : Directeurs communication, managers et équipes com cherchant à produire plus et mieux sur tous les canaux"
               description="Stratégie éditoriale structurée, prompting adapté à la voix de la marque et organisation de la production de contenu. Un plan éditorial opérationnel à l issue des 2 jours."
               link="/formation-communication-et-ia"
-              image="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1200"
+              image={imgCommunication}
               delay={0.30}
             />
 

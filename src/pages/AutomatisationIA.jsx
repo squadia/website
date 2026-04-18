@@ -136,8 +136,8 @@ const AutomatisationIA = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
             style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
-            Exécuter mieux,<br />
-            sans dépendre de ressources supplémentaires.
+            Libérez-vous de l'administratif.<br />
+            Concentrez-vous sur les priorités.
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}

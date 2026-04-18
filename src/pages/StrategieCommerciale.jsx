@@ -282,7 +282,7 @@ export default function StrategieCommerciale() {
 
           <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '8%' }}>
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '900px' }}>
-              Votre organisation commerciale a tout pour réussir.<br />Il manque juste le bon système
+              Votre organisation commerciale<br />a tout pour réussir.<br />Il manque juste le bon système
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '700px', marginBottom: '3rem', lineHeight: 1.5 }}>
               Marketing et ventes ne parlent pas le même langage. Le CRM ne reflète pas le terrain. Les prévisions reposent sur de l'optimisme. Vous le savez. La question c'est par où commencer.
@@ -603,21 +603,21 @@ export default function StrategieCommerciale() {
                   category: 'Sales Manager',
                   title: 'Mini-guide Sales Manager B2B : réussir vos 90 premiers jours',
                   description: 'Méthodes éprouvées, plans d\'action, IA, outils et conseils pratiques pour réussir votre prise de poste et atteindre vos premiers résultats.',
-                  link: '/guide-sales-manager',
+                  link: '/ressources/guide-sales-manager',
                   image: imgSalesManager,
                 },
                 {
                   category: 'Marketing Manager',
                   title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre stratégie',
                   description: 'Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.',
-                  link: '/guide-marketing-manager',
+                  link: '/ressources/guide-marketing-manager',
                   image: imgMarketingManager,
                 },
                 {
                   category: 'Channel Sales',
                   title: 'Channel Sales Plan : structurer et piloter votre réseau de partenaires',
                   description: 'Plan partenaire B2B clé en main : co-marketing, co-selling, KPIs trimestriels et rituels de pilotage pour développer votre channel.',
-                  link: '/channel-sales-plan',
+                  link: '/ressources/channel-sales-plan',
                   image: imgPlanPartenaire,
                 },
               ].map((ressource, idx) => (

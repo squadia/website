@@ -299,15 +299,15 @@ const FormationVentesIA = () => {
                   <span style={{ fontWeight: 700 }}>8 à 15 participants</span>
                 </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem', justifyContent: 'center' }}>
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '2rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)' }}>
-                  <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.5rem' }}>Tarif Inter</div>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 700 }}>À partir de 1 200 € HT / pers.</div>
+              <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center', alignItems: 'stretch' }}>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', flex: 1 }}>
+                  <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Inter</div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>1 200 € HT / pers.</div>
                 </div>
-                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '12px', border: '1px solid #2563EB', position: 'relative' }}>
-                  <div style={{ position: 'absolute', top: '-12px', right: '20px', background: '#2563EB', color: '#fff', padding: '2px 10px', borderRadius: '4px', fontSize: '0.7rem', fontWeight: 700 }}>RECOMMANDÉ</div>
-                  <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.5rem' }}>Tarif Intra</div>
-                  <div style={{ fontSize: '1.8rem', fontWeight: 700 }}>À partir de 4 500 € HT / groupe</div>
+                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #2563EB', flex: 1, position: 'relative' }}>
+                  <div style={{ position: 'absolute', top: '-11px', right: '12px', background: '#2563EB', color: '#fff', padding: '2px 8px', borderRadius: '4px', fontSize: '0.65rem', fontWeight: 700 }}>RECOMMANDÉ</div>
+                  <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Intra</div>
+                  <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>4 390 € HT / groupe</div>
                 </div>
               </div>
             </div>
