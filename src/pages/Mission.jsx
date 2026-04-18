@@ -98,7 +98,7 @@ const Mission = () => {
       }}>
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          padding: '56px 48px 56px 72px', position: 'relative', zIndex: 2,
+          paddingTop: '56px', paddingRight: '48px', paddingBottom: '56px', paddingLeft: '8%', position: 'relative', zIndex: 2,
         }}>
           <div style={{ position: 'absolute', right: '-100px', top: 0, bottom: 0, width: '180px', background: 'linear-gradient(to right,#0c0e12 20%,transparent 100%)', zIndex: 3, pointerEvents: 'none' }} />
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
