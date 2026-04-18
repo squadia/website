@@ -601,7 +601,7 @@ const HeroCSS = `
   flex-direction: column;
   justify-content: flex-start;
   padding-left: 8%;
-  padding-top: 13vh;
+  padding-top: 17vh;
 }
 .hero-marquee-inline {
   position: absolute;
