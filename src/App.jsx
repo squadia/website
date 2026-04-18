@@ -45,6 +45,7 @@ import BlogChangementCRM from './pages/BlogChangementCRM';
 import BlogFormationIAVAutom from './pages/BlogFormationIAVAutom';
 import MentionsLegales from './pages/MentionsLegales';
 import Data from './pages/Data';
+import Mission from './pages/Mission';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -107,6 +108,7 @@ function App() {
         <Route path="/formation-marketing-et-ia" element={<FormationMarketingIA />} />
         <Route path="/formation-communication-et-ia" element={<FormationCommunicationIA />} />
         <Route path="/mentions-legales" element={<MentionsLegales />} />
+        <Route path="/notre-mission" element={<Mission />} />
       </Routes>
       
       {/* Footer */}

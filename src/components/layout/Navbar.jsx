@@ -101,9 +101,10 @@ const Navbar = () => {
               fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500 }}>
             Nos Services <ChevronDown size={14} style={{ transition: 'transform 0.2s' }} />
           </div>
-          <Link to="/cas-clients" style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
-          <Link to="/ressources"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
-          <Link to="/tarifs"      style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
+          <Link to="/cas-clients"    style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
+          <Link to="/ressources"     style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
+          <Link to="/tarifs"         style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
+          <Link to="/notre-mission"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Notre Mission</Link>
         </motion.div>
 
         {/* Desktop CTA */}
@@ -693,6 +694,7 @@ const Navbar = () => {
                 { to: '/cas-clients', label: 'Cas clients' },
                 { to: '/tarifs', label: 'Tarifs' },
                 { to: '/ressources', label: 'Ressources' },
+                { to: '/notre-mission', label: 'Notre Mission' },
               ].map(link => (
                 <Link key={link.to} className="mob-nav-link" to={link.to} onClick={closeMenu}>
                   {link.label}<span className="mob-nav-arrow">›</span>
