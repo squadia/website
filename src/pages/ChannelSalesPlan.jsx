@@ -73,7 +73,7 @@ const ChannelSalesPlan = () => {
             <Handshake size={16} /> Outil gratuit
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
             Plan Partenaire — Developper votre reseau de partenaires B2B
           </h1>
           

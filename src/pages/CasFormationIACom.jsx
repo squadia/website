@@ -90,7 +90,7 @@ const CasFormationIACom = () => {
           </p>
 
           <h1 style={{
-            fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 700, lineHeight: 1.15,
+            fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, lineHeight: 1.15,
             maxWidth: '820px', marginBottom: '2.5rem', letterSpacing: '-0.02em'
           }}>
             Former des équipes communication à l'IA quand une charte existe mais que personne ne sait vraiment quoi en faire

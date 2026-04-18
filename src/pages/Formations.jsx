@@ -142,7 +142,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #0A0A1A)', }} />
 
         <div className="container fade-in" style={{ position: 'relative', zIndex: 4, textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700 }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700 }}>
             Former vos équipes, c'est la condition pour que tout le reste fonctionne.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.75)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '4rem' }}>
@@ -170,7 +170,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       <section className="section-padding" style={{ background: '#060612', padding: '48px 32px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: '3.5rem', fontWeight: 700, color: '#44CCFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, color: '#44CCFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Générer plus de traction
             </h2>
             <div style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.6)', maxWidth: '850px', marginInline: 'auto', fontWeight: 400, lineHeight: 1.5 }}>

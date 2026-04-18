@@ -288,7 +288,7 @@ const TechOrbitSection = () => {
       {/* Left side: Heading and Text */}
       <div style={{ width: '45%', zIndex: 1 }}>
         <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Stack Technologique</p>
-        <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+        <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, color: '#FFFFFF', marginBottom: '1.5rem', lineHeight: 1.1 }}>
           Des Technologies pour mieux vendre.
         </h2>
         <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.6)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
@@ -453,7 +453,7 @@ export default function StrategieCrm() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
+              style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
               Un CRM que vos équipes<br />utilisent vraiment.<br />Pas juste un outil.
             </motion.h1>
             <motion.p 

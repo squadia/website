@@ -92,7 +92,7 @@ const FormationVentesIA = () => {
 
         <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '120px', paddingBottom: '80px' }}>
           <div className="fade-in" style={{ maxWidth: '850px' }}>
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.8rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
               Formation IA vente B2B : prospecter, qualifier et closer autrement.
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>

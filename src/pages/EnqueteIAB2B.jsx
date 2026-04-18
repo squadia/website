@@ -26,7 +26,7 @@ const EnqueteIAB2B = () => {
               <Gift size={16} /> Tirage au sort : bon de 350 EUR
             </div>
             
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: '1.1', marginBottom: '2rem' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.1', marginBottom: '2rem' }}>
               Sales & Marketing Manager B2B : vos priorites face a l IA
             </h1>
             

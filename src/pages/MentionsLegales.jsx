@@ -67,7 +67,7 @@ const MentionsLegales = () => {
       {/* Hero */}
       <section className="container" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <div className="fade-in">
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 400, letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 400, letterSpacing: '-0.02em' }}>
             Mentions Légales
           </h1>
           <div style={{ width: '40px', height: '2px', background: 'var(--accent)', marginTop: '2rem', opacity: 0.5 }}></div>

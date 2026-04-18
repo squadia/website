@@ -44,7 +44,7 @@ const StrategieIAPME = () => {
               Stratégie IA
             </span>
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
             Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>

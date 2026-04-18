@@ -84,7 +84,7 @@ export default function Data() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
+              style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
               Votre CRM ne ment pas.<br />
               Il reflète ce qu'on y a mis.
             </motion.h1>
@@ -291,7 +291,7 @@ export default function Data() {
 
         {/* SECTION 6 — CTA FINAL */}
         <section id="calendrier" style={{ padding: '10rem 2rem', textAlign: 'center', backgroundColor: '#0A0A1A' }}>
-          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
             Prêt à faire de votre base un vrai levier de croissance ?
           </h2>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>

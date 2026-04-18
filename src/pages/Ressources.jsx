@@ -101,7 +101,7 @@ export default function Ressources() {
       {/* ═══ HERO ═══ */}
       <section style={{ paddingTop: '160px', paddingBottom: '60px', textAlign: 'center' }}>
         <div className="container fade-in">
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 900, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 900, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
             Ressources.
           </h1>
           <p style={{ fontSize: '1.1rem', color: '#9CA3AF', maxWidth: '600px', marginInline: 'auto', lineHeight: '1.6' }}>

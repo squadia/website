@@ -957,7 +957,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
-          style={{ color: '#fff', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
+          style={{ color: '#fff', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
         >
           Structurez votre système<br />
           de génération de revenus
@@ -968,7 +968,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.85, duration: 0.7, ease: 'easeOut' }}
-          style={{ fontFamily: "'Corinthia', cursive", fontSize: '63px', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
+          style={{ fontFamily: "'Corinthia', cursive", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
         >
           Du diagnostic à l'impact
         </motion.div>
@@ -977,7 +977,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
-          style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+          style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
           25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
         </motion.div>

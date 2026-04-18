@@ -273,7 +273,7 @@ const LandingDG = () => {
 
           <div style={{ flex: '0 0 65%', maxWidth: '850px', paddingRight: '2rem' }}>
             <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(2rem, 3.2vw, 2.8rem)',
               fontWeight: 700,
               lineHeight: 1.2,
               marginBottom: '1.5rem',

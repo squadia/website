@@ -92,7 +92,7 @@ const FormationMarketingIA = () => {
 
         <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '180px', paddingBottom: '100px' }}>
           <div className="fade-in">
-            <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', maxWidth: '900px', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700, color: '#FFFFFF' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700, color: '#FFFFFF' }}>
               Formation IA marketing : contenus, campagnes et analyse augmentés.
             </h1>
             <p style={{ fontSize: '1.25rem', color: '#9CA3AF', maxWidth: '850px', lineHeight: 1.6, marginBottom: '2rem' }}>

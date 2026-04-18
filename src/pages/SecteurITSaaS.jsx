@@ -91,7 +91,7 @@ const SecteurITSaaS = () => {
       {/* ═══ SECTION 1 — HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
             IT et SaaS : quand la methode de vente ne suit pas la complexite du produit.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: '1.6', marginBottom: '3rem' }}>

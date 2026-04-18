@@ -66,7 +66,7 @@ const Contact = () => {
       {/* ═══ HEADER / HERO ═══ */}
       <section className="container" style={{ paddingTop: '160px', paddingBottom: '60px', textAlign: 'center' }}>
         <div className="fade-in">
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
             Parlons de votre prochain<br />palier de croissance.
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '650px', marginInline: 'auto', lineHeight: 1.6 }}>

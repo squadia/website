@@ -18,7 +18,7 @@ const EnqueteIA2026 = () => {
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '100px', textAlign: 'center' }}>
         <div className="fade-in">
           <span className="tag-hero" style={{ background: 'rgba(37, 99, 235, 0.1)', color: 'var(--accent)' }}>RAPPORT EXCLUSIF</span>
-          <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', maxWidth: '1000px', marginInline: 'auto' }}>
+          <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto' }}>
             L'État de l'IA dans les PME & ETI Françaises
           </h1>
           <p className="subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', maxWidth: '750px', marginInline: 'auto' }}>

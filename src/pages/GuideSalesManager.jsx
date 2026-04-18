@@ -73,7 +73,7 @@ const GuideSalesManager = () => {
             <BookOpen size={16} /> Mini-guide gratuit
           </div>
 
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
             Mini-guide Sales Manager B2B : reussir vos 90 premiers jours
           </h1>
           

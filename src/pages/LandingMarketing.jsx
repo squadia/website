@@ -237,7 +237,7 @@ const LandingMarketing = () => {
           <div style={{ flex: '0 0 65%', maxWidth: '850px', paddingRight: '2rem' }}>
 
             <h1 style={{
-              fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', fontWeight: 700, lineHeight: 1.2,
+              fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.2,
               marginBottom: '1.5rem', letterSpacing: '-0.02em', color: '#FFFFFF',
               opacity: 0, animation: 'fadeContentM 1.2s ease 0.3s forwards'
             }}>

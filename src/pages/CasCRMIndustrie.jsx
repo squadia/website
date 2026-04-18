@@ -94,7 +94,7 @@ const CasCRMIndustrie = () => {
           </p>
 
           <h1 style={{
-            fontSize: 'clamp(2rem, 4vw, 3.2rem)', fontWeight: 700, lineHeight: 1.15,
+            fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, lineHeight: 1.15,
             maxWidth: '820px', marginBottom: '2.5rem', letterSpacing: '-0.02em'
           }}>
             Transformer un CRM contrainte en outil de croissance

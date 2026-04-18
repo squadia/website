@@ -144,7 +144,7 @@ export default function BlogStrategieIAPME() {
 
             {/* Title */}
             <h1 className="blog-article-h1" style={{
-              fontSize: 'clamp(2.2rem, 5vw, 3.5rem)',
+              fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)',
               fontWeight: 900,
               lineHeight: 1.1,
               color: '#FFFFFF',

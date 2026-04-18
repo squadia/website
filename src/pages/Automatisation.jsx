@@ -18,7 +18,7 @@ const Automatisation = () => {
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '100px' }}>
         <div className="fade-in">
           <span className="tag-hero">AUTOMATISATION IA</span>
-          <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', maxWidth: '850px' }}>
+          <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '850px' }}>
             Libérez votre cerveau. Automatisez le reste.
           </h1>
           <p className="subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', maxWidth: '750px' }}>

@@ -51,7 +51,7 @@ const DataB2B = () => {
                 Data B2B
               </span>
             </div>
-            <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', lineHeight: 1.2, marginBottom: '1.5rem', color: '#F9FAFB' }}>
+            <h1 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', lineHeight: 1.2, marginBottom: '1.5rem', color: '#F9FAFB' }}>
               Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit
             </h1>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'rgba(255,255,255,0.5)', fontSize: '0.95rem' }}>

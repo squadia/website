@@ -44,7 +44,7 @@ const FormationOuAutomatisation = () => {
               Transformation
             </span>
           </div>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
+          <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
             Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>

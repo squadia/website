@@ -326,7 +326,7 @@ const CasesList = () => {
     <div className="container section-padding" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
 
       <div className="fade-in" style={{ textAlign: 'center', marginBottom: '4rem' }}>
-        <h1 style={{ fontSize: '3.5rem', maxWidth: '900px', marginInline: 'auto', lineHeight: 1.1, marginBottom: '2rem' }}>
+        <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: 1.1, marginBottom: '2rem' }}>
           Ce qu'on a fait,<br />et ce que ça a changé.
         </h1>
         <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '3rem' }}>

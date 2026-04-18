@@ -33,7 +33,7 @@ const ConditionsParticipation = () => {
           </Link>
         </div>
 
-        <h1 className="fade-in" style={{ fontSize: 'clamp(2.5rem, 5vw, 3.5rem)', lineHeight: '1.2', marginBottom: '4rem', color: '#F9FAFB' }}>
+        <h1 className="fade-in" style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '4rem', color: '#F9FAFB' }}>
           Reglement du jeu concours Squadia
         </h1>
 
