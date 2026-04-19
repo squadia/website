@@ -1,3 +1,4 @@
+'use client';
 "use client";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Sparkles as SparklesComp } from "@/components/ui/sparkles";

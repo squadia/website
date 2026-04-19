@@ -1,11 +1,11 @@
+'use client';
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ChevronDown, Target, Database, Zap, GraduationCap, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import gmImg from '../../assets/images/gm.png';
-import smImg from '../../assets/images/sm.png';
-import mmImg from '../../assets/images/mm.png';
-
+const gmImg = '/assets/images/gm.png';
+const smImg = '/assets/images/sm.png';
+const mmImg = '/assets/images/mm.png';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -79,7 +79,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.9, ease: 'easeOut' }}
         >
-          <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+          <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
             <img src="/logo.png" alt="Squadia" className="logo" style={{ height: scrolled ? '28px' : '32px', width: 'auto', transition: 'all 0.5s' }} />
           </Link>
         </motion.div>
@@ -101,10 +101,10 @@ const Navbar = () => {
               fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500 }}>
             Nos Services <ChevronDown size={14} style={{ transition: 'transform 0.2s' }} />
           </div>
-          <Link to="/cas-clients"    style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
-          <Link to="/ressources"     style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
-          <Link to="/tarifs"         style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
-          <Link to="/notre-mission"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Notre Mission</Link>
+          <Link href="/cas-clients"    style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
+          <Link href="/ressources"     style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
+          <Link href="/tarifs"         style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
+          <Link href="/notre-mission"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Notre Mission</Link>
         </motion.div>
 
         {/* Desktop CTA */}
@@ -114,7 +114,7 @@ const Navbar = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.9, ease: 'easeOut' }}
         >
-          <Link to="/contact" className="btn-RDV" style={{
+          <Link href="/contact" className="btn-RDV" style={{
             padding: scrolled ? '6px 14px' : '8px 18px',
             fontSize: scrolled ? '12px' : '13px',
             transition: 'all 0.5s ease', textDecoration: 'none', display: 'inline-block'
@@ -164,52 +164,52 @@ const Navbar = () => {
 
           <div className="squad-items-wrap">
             <div style={{ display: activeCategory === 'strategie' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/strategie/commerciale">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/commerciale">
                 <span className="squad-item-title">Stratégie Commerciale</span><span className="squad-tag">Stratégie</span>
                 <p className="squad-item-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
               </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/strategie/crm">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/crm">
                 <span className="squad-item-title">Migration CRM</span><span className="squad-tag">Stratégie</span>
                 <p className="squad-item-desc">Déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption</p>
               </Link>
             </div>
             <div style={{ display: activeCategory === 'data' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/data/data-clean">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/data/data-clean">
                 <span className="squad-item-title">Data Clean</span><span className="squad-tag">Data</span>
                 <p className="squad-item-desc">Nettoyer et fiabiliser votre base CRM existante en supprimant doublons et erreurs</p>
               </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/data/data-seg">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/data/data-seg">
                 <span className="squad-item-title">Data Seg</span><span className="squad-tag">Data</span>
                 <p className="squad-item-desc">Segmenter votre base pour cibler les bons comptes au bon moment avec précision</p>
               </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/data/data-lead">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/data/data-lead">
                 <span className="squad-item-title">Data Lead</span><span className="squad-tag">Data</span>
                 <p className="squad-item-desc">Construire une base de prospection B2B qualifiée, vérifiée et prête à l'emploi</p>
               </Link>
-              <Link to="/data" onClick={() => setShowDropdown(false)} className="squad-all-link">Tous nos services Data →</Link>
+              <Link href="/data" onClick={() => setShowDropdown(false)} className="squad-all-link">Tous nos services Data →</Link>
             </div>
             <div style={{ display: activeCategory === 'automatisation' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/automatisation-ia">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/automatisation-ia">
                 <span className="squad-item-title">Automatisation IA</span><span className="squad-tag">Automatisation</span>
                 <p className="squad-item-desc">Plan Starter, Scale ou System adapté à vos besoins et à votre flux d'activité.</p>
               </Link>
             </div>
             <div style={{ display: activeCategory === 'formation' ? 'block' : 'none' }}>
               <div className="squad-formation-grid">
-                <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/formation-ventes-et-ia">
+                <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/formation-ventes-et-ia">
                   <span className="squad-item-title">Vente B2B et IA</span>
                   <p className="squad-item-desc">Prospecter, qualifier et closer autrement avec l'IA</p>
                 </Link>
-                <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/formation-marketing-et-ia">
+                <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/formation-marketing-et-ia">
                   <span className="squad-item-title">Marketing et IA</span>
                   <p className="squad-item-desc">Contenus, campagnes et analyse augmentée avec l'IA</p>
                 </Link>
-                <Link className="squad-item" onClick={() => setShowDropdown(false)} to="/formation-communication-et-ia">
+                <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/formation-communication-et-ia">
                   <span className="squad-item-title">Communication et IA</span>
                   <p className="squad-item-desc">Produire plus, mieux, plus vite : l'IA au service de votre message</p>
                 </Link>
               </div>
-              <Link to="/formations" onClick={() => setShowDropdown(false)} className="squad-all-link">Toutes nos formations →</Link>
+              <Link href="/formations" onClick={() => setShowDropdown(false)} className="squad-all-link">Toutes nos formations →</Link>
             </div>
           </div>
 
@@ -222,7 +222,7 @@ const Navbar = () => {
                 { to: '/directeur-commercial', src: smImg, name: 'Sales Director', sub: 'Pipeline, deals et performance' },
                 { to: '/directeur-marketing', src: mmImg, name: 'Marketing Director', sub: 'Acquisition, contenu et pipeline' },
               ].map(p => (
-                <Link key={p.to} to={p.to} className="squad-persona" onClick={() => setShowDropdown(false)}>
+                <Link key={p.to} href={p.to} className="squad-persona" onClick={() => setShowDropdown(false)}>
                   <img src={p.src} alt={p.name} />
                   <div className="squad-persona-info">
                     <span className="squad-persona-name">{p.name}</span>
@@ -529,7 +529,7 @@ const Navbar = () => {
         >
           {/* Header */}
           <div className="mob-header">
-            <Link to="/" onClick={closeMenu} style={{ flex: 1 }}>
+            <Link href="/" onClick={closeMenu} style={{ flex: 1 }}>
               <img src="/logo.png" alt="Squadia" style={{ height: '28px', width: 'auto' }} />
             </Link>
             <button
@@ -583,11 +583,11 @@ const Navbar = () => {
                     <div className="mob-panels" style={{ paddingBottom: '8px' }}>
                       {activeMobileCategory === 'strategie' && (
                         <>
-                          <Link className="mob-service-item" to="/strategie/commerciale" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/strategie/commerciale" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Stratégie Commerciale</span><span className="mob-service-tag">Stratégie</span></div>
                             <p className="mob-service-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
                           </Link>
-                          <Link className="mob-service-item" to="/strategie/crm" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/strategie/crm" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Migration CRM</span><span className="mob-service-tag">Stratégie</span></div>
                             <p className="mob-service-desc">Déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption</p>
                           </Link>
@@ -595,23 +595,23 @@ const Navbar = () => {
                       )}
                       {activeMobileCategory === 'data' && (
                         <>
-                          <Link className="mob-service-item" to="/data/data-clean" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/data/data-clean" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Data Clean</span><span className="mob-service-tag">Data</span></div>
                             <p className="mob-service-desc">Nettoyer et fiabiliser votre base CRM existante</p>
                           </Link>
-                          <Link className="mob-service-item" to="/data/data-seg" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/data/data-seg" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Data Seg</span><span className="mob-service-tag">Data</span></div>
                             <p className="mob-service-desc">Segmenter votre base pour cibler les bons comptes</p>
                           </Link>
-                          <Link className="mob-service-item" to="/data/data-lead" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/data/data-lead" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Data Lead</span><span className="mob-service-tag">Data</span></div>
                             <p className="mob-service-desc">Construire une base de prospection B2B qualifiée</p>
                           </Link>
-                          <Link className="mob-all-link" to="/data" onClick={closeMenu}>Tous nos services Data →</Link>
+                          <Link className="mob-all-link" href="/data" onClick={closeMenu}>Tous nos services Data →</Link>
                         </>
                       )}
                       {activeMobileCategory === 'automatisation' && (
-                        <Link className="mob-service-item" to="/automatisation-ia" onClick={closeMenu}>
+                        <Link className="mob-service-item" href="/automatisation-ia" onClick={closeMenu}>
                           <div className="mob-service-top"><span className="mob-service-title">Automatisation IA</span><span className="mob-service-tag">Automatisation</span></div>
                           <p className="mob-service-desc">Plan Starter, Scale ou System adapté à vos besoins</p>
                         </Link>
@@ -619,20 +619,20 @@ const Navbar = () => {
                       {activeMobileCategory === 'formation' && (
                         <>
                           <div className="mob-formation-grid">
-                            <Link className="mob-service-item" to="/formation-ventes-et-ia" onClick={closeMenu}>
+                            <Link className="mob-service-item" href="/formation-ventes-et-ia" onClick={closeMenu}>
                               <div className="mob-service-top"><span className="mob-service-title">Vente B2B et IA</span></div>
                               <p className="mob-service-desc">Prospecter et closer avec l'IA</p>
                             </Link>
-                            <Link className="mob-service-item" to="/formation-marketing-et-ia" onClick={closeMenu}>
+                            <Link className="mob-service-item" href="/formation-marketing-et-ia" onClick={closeMenu}>
                               <div className="mob-service-top"><span className="mob-service-title">Marketing et IA</span></div>
                               <p className="mob-service-desc">Contenus et campagnes augmentés</p>
                             </Link>
-                            <Link className="mob-service-item" to="/formation-communication-et-ia" onClick={closeMenu}>
+                            <Link className="mob-service-item" href="/formation-communication-et-ia" onClick={closeMenu}>
                               <div className="mob-service-top"><span className="mob-service-title">Communication et IA</span></div>
                               <p className="mob-service-desc">Produire plus, mieux, plus vite</p>
                             </Link>
                           </div>
-                          <Link className="mob-all-link" to="/formations" onClick={closeMenu}>Toutes nos formations →</Link>
+                          <Link className="mob-all-link" href="/formations" onClick={closeMenu}>Toutes nos formations →</Link>
                         </>
                       )}
                     </div>
@@ -670,7 +670,7 @@ const Navbar = () => {
                           { to: '/directeur-commercial', src: smImg, role: 'Sales Director', desc: 'Pipeline, deals et performance' },
                           { to: '/directeur-marketing', src: mmImg, role: 'Marketing Director', desc: 'Acquisition, contenu et pipeline' },
                         ].map(p => (
-                          <Link key={p.to} className="mob-persona-item" to={p.to} onClick={closeMenu}>
+                          <Link key={p.to} className="mob-persona-item" href={p.to} onClick={closeMenu}>
                             <div className="mob-persona-avatar"><img src={p.src} alt={p.role} /></div>
                             <div className="mob-persona-info">
                               <div className="mob-persona-role">{p.role}</div>
@@ -696,7 +696,7 @@ const Navbar = () => {
                 { to: '/ressources', label: 'Ressources' },
                 { to: '/notre-mission', label: 'Notre Mission' },
               ].map(link => (
-                <Link key={link.to} className="mob-nav-link" to={link.to} onClick={closeMenu}>
+                <Link key={link.to} className="mob-nav-link" href={link.to} onClick={closeMenu}>
                   {link.label}<span className="mob-nav-arrow">›</span>
                 </Link>
               ))}
@@ -706,7 +706,7 @@ const Navbar = () => {
 
           {/* ── CTA — enfant direct de mob-menu, toujours en bas ── */}
           <div className="mob-cta-block">
-            <Link className="mob-cta-btn" to="/contact" onClick={closeMenu}>Prendre RDV</Link>
+            <Link className="mob-cta-btn" href="/contact" onClick={closeMenu}>Prendre RDV</Link>
           </div>
         </motion.div>
       )}

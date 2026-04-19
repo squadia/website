@@ -1,0 +1,80 @@
+{
+  "pages": {
+    "/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/layout.css",
+      "static/chunks/app/layout.js"
+    ],
+    "/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/page.js"
+    ],
+    "/tarifs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/tarifs/page.js"
+    ],
+    "/notre-mission/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/notre-mission/page.js"
+    ],
+    "/strategie/commerciale/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/strategie/commerciale/page.js"
+    ],
+    "/cas-clients/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cas-clients/page.js"
+    ],
+    "/strategie/crm/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/strategie/crm/page.js"
+    ],
+    "/directeur-general/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/directeur-general/page.js"
+    ],
+    "/ressources/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/ressources/page.js"
+    ],
+    "/blog/prospection-multicanale-b2b-erreurs/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/blog/prospection-multicanale-b2b-erreurs/page.js"
+    ],
+    "/cas-clients/pipeline-b2b/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/cas-clients/pipeline-b2b/page.js"
+    ],
+    "/formations/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/formations/page.js"
+    ],
+    "/formation-ventes-et-ia/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/formation-ventes-et-ia/page.js"
+    ],
+    "/formation-communication-et-ia/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/formation-communication-et-ia/page.js"
+    ],
+    "/formation-marketing-et-ia/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/formation-marketing-et-ia/page.js"
+    ]
+  }
+}

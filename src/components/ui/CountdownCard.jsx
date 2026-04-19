@@ -1,5 +1,6 @@
+'use client';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { Calendar, Clock, Users, MapPin } from 'lucide-react';
 
 export default function CountdownCard({ title, dateStart, dateLabel, attendees = 12, image }) {
@@ -103,7 +104,7 @@ export default function CountdownCard({ title, dateStart, dateLabel, attendees =
       {/* ── CTA ── */}
       <div style={{ padding: '1.5rem' }}>
         <Link
-          to="/contact"
+          href="/contact"
           style={{
             display: 'block',
             background: 'linear-gradient(135deg, #2563EB, #1d4ed8)',

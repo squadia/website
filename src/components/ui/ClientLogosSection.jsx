@@ -1,24 +1,23 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 
 // Import Client Icons
-import ceaAlsace from '../../assets/images/icon/cea-alsace.png';
-import ceaAtomique from '../../assets/images/icon/cea-atomique.png';
-import cofaq from '../../assets/images/icon/cofaq.png';
-import dell from '../../assets/images/icon/dell-technologies.png';
-import franceHydrogene from '../../assets/images/icon/france-hydrogene.png';
-import fujitsu from '../../assets/images/icon/fujitsu.png';
-import groupama from '../../assets/images/icon/groupama.png';
-import laPoste from '../../assets/images/icon/groupe-la-poste.png';
-import inocel from '../../assets/images/icon/inocel.png';
-import meotec from '../../assets/images/icon/meotec.png';
-import oracle from '../../assets/images/icon/oracle.png';
-import ovh from '../../assets/images/icon/ovh-cloud.png';
-import lyon from '../../assets/images/icon/ville-de-lyon.png';
-import xerox from '../../assets/images/icon/xerox.png';
-
+const ceaAlsace = '/assets/images/icon/cea-alsace.png';
+const ceaAtomique = '/assets/images/icon/cea-atomique.png';
+const cofaq = '/assets/images/icon/cofaq.png';
+const dell = '/assets/images/icon/dell-technologies.png';
+const franceHydrogene = '/assets/images/icon/france-hydrogene.png';
+const fujitsu = '/assets/images/icon/fujitsu.png';
+const groupama = '/assets/images/icon/groupama.png';
+const laPoste = '/assets/images/icon/groupe-la-poste.png';
+const inocel = '/assets/images/icon/inocel.png';
+const meotec = '/assets/images/icon/meotec.png';
+const oracle = '/assets/images/icon/oracle.png';
+const ovh = '/assets/images/icon/ovh-cloud.png';
+const lyon = '/assets/images/icon/ville-de-lyon.png';
+const xerox = '/assets/images/icon/xerox.png';
 const allLogos = [
   dell, xerox, ovh, laPoste, groupama, lyon, 
   ceaAlsace, ceaAtomique, inocel, meotec, oracle, 
@@ -79,7 +78,7 @@ export default function ClientLogosSection() {
             Pour tout ou partie de leur stratégie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.
           </p>
 
-          <Link to="/cas-clients" className="hover-btn-transparent" style={{
+          <Link href="/cas-clients" className="hover-btn-transparent" style={{
             display: 'inline-flex',
             alignItems: 'center',
             backgroundColor: 'transparent',

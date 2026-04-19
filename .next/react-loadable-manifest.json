@@ -1,0 +1,86 @@
+{
+  "app/_client.jsx -> @/src/views/Home": {
+    "id": "app/_client.jsx -> @/src/views/Home",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_Home_jsx.js"
+    ]
+  },
+  "app/blog/prospection-multicanale-b2b-erreurs/_client.jsx -> @/src/views/BlogProspectionErreurs": {
+    "id": "app/blog/prospection-multicanale-b2b-erreurs/_client.jsx -> @/src/views/BlogProspectionErreurs",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_BlogProspectionErreurs_jsx.js"
+    ]
+  },
+  "app/cas-clients/_client.jsx -> @/src/views/CasClients": {
+    "id": "app/cas-clients/_client.jsx -> @/src/views/CasClients",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_CasClients_jsx.js"
+    ]
+  },
+  "app/cas-clients/pipeline-b2b/_client.jsx -> @/src/views/CasPipelineB2B": {
+    "id": "app/cas-clients/pipeline-b2b/_client.jsx -> @/src/views/CasPipelineB2B",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_CasPipelineB2B_jsx.js"
+    ]
+  },
+  "app/directeur-general/_client.jsx -> @/src/views/LandingDG": {
+    "id": "app/directeur-general/_client.jsx -> @/src/views/LandingDG",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_LandingDG_jsx.js"
+    ]
+  },
+  "app/formation-communication-et-ia/_client.jsx -> @/src/views/FormationCommunicationIA": {
+    "id": "app/formation-communication-et-ia/_client.jsx -> @/src/views/FormationCommunicationIA",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_FormationCommunicationIA_jsx.js"
+    ]
+  },
+  "app/formation-marketing-et-ia/_client.jsx -> @/src/views/FormationMarketingIA": {
+    "id": "app/formation-marketing-et-ia/_client.jsx -> @/src/views/FormationMarketingIA",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_FormationMarketingIA_jsx.js"
+    ]
+  },
+  "app/formation-ventes-et-ia/_client.jsx -> @/src/views/FormationVentesIA": {
+    "id": "app/formation-ventes-et-ia/_client.jsx -> @/src/views/FormationVentesIA",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_FormationVentesIA_jsx.js"
+    ]
+  },
+  "app/formations/_client.jsx -> @/src/views/Formations": {
+    "id": "app/formations/_client.jsx -> @/src/views/Formations",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_Formations_jsx.js"
+    ]
+  },
+  "app/notre-mission/_client.jsx -> @/src/views/Mission": {
+    "id": "app/notre-mission/_client.jsx -> @/src/views/Mission",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_Mission_jsx.js"
+    ]
+  },
+  "app/ressources/_client.jsx -> @/src/views/Ressources": {
+    "id": "app/ressources/_client.jsx -> @/src/views/Ressources",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_Ressources_jsx.js"
+    ]
+  },
+  "app/strategie/commerciale/_client.jsx -> @/src/views/StrategieCommerciale": {
+    "id": "app/strategie/commerciale/_client.jsx -> @/src/views/StrategieCommerciale",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_StrategieCommerciale_jsx.js"
+    ]
+  },
+  "app/strategie/crm/_client.jsx -> @/src/views/StrategieCrm": {
+    "id": "app/strategie/crm/_client.jsx -> @/src/views/StrategieCrm",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_StrategieCrm_jsx.js"
+    ]
+  },
+  "app/tarifs/_client.jsx -> @/src/views/Tarifs": {
+    "id": "app/tarifs/_client.jsx -> @/src/views/Tarifs",
+    "files": [
+      "static/chunks/_app-pages-browser_src_views_Tarifs_jsx.js"
+    ]
+  }
+}
