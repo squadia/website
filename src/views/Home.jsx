@@ -986,14 +986,6 @@ const HeroDynamic = React.memo(() => {
       {/* LEFT CONTENT */}
       <div className="hero-left">
         {/* BEAT 1 : pill + H1 */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
-          style={{ marginBottom: '1.25rem' }}
-        >
-          <span className="pill-tag">Conseil Commercial B2B</span>
-        </motion.div>
 
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
