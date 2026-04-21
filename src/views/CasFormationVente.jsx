@@ -26,7 +26,7 @@ const CasFormationVente = () => {
     {
       step: '02',
       title: 'Deux jours de mises en situation concrètes',
-      body: 'Jeux de rôles où les commerciaux tournaient sur différentes postures : acheteur, vendeur, manager : pour comprendre ce que l\'autre ressent et ce qu\'il cherche vraiment dans un échange. Travail sur la méthode MEDDIC pour que tout le monde parle le même langage quand'un deal progresse. Préparation de rendez-vous avec les outils disponibles, dont des outils IA et de social selling, avec des subtilités que beaucoup connaissaient de nom mais pas en pratique.'
+      body: 'Jeux de rôles où les commerciaux tournaient sur différentes postures : acheteur, vendeur, manager : pour comprendre ce que l\'autre ressent et ce qu\'il cherche vraiment dans un échange. Travail sur la méthode MEDDIC pour que tout le monde parle le même langage quand\'un deal progresse. Préparation de rendez-vous avec les outils disponibles, dont des outils IA et de social selling, avec des subtilités que beaucoup connaissaient de nom mais pas en pratique.'
     },
     {
       step: '03',
