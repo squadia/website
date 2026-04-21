@@ -135,7 +135,7 @@ const FormationCommunicationIA = () => {
               Communication et IA : produire plus, mieux, plus vite
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
-              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur stratégie éditoriale, produire plus efficacement et automatiser ce qui peut l'être : sans perdre la qualité ni la voix de la marque.
+              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur strategie éditoriale, produire plus efficacement et automatiser ce qui peut l'être : sans perdre la qualité ni la voix de la marque.
             </p>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
@@ -165,7 +165,7 @@ const FormationCommunicationIA = () => {
             </div>
             <div style={{ padding: '2.5rem', background: '#0D1A2E', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.6, color: '#F9FAFB' }}>
-                <strong>Ce que vos équipes repartent avec :</strong> une stratégie de contenu structurée, un plan éditorial opérationnel et les outils pour produire plus vite sans sacrifier la qualité.
+                <strong>Ce que vos équipes repartent avec :</strong> une strategie de contenu structurée, un plan éditorial opérationnel et les outils pour produire plus vite sans sacrifier la qualité.
               </p>
             </div>
           </div>
@@ -180,7 +180,7 @@ const FormationCommunicationIA = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* JOUR 1 */}
-            <DayBlock title="Jour 1 : Stratégie, Message & Prompting" objective="Comprendre et structurer sa stratégie de contenu en exploitant les bons outils IA.">
+            <DayBlock title="Jour 1 : Stratégie, Message & Prompting" objective="Comprendre et structurer sa strategie de contenu en exploitant les bons outils IA.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -332,7 +332,7 @@ const FormationCommunicationIA = () => {
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
-            Une équipe formée sur la stratégie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin : automatiser vos flux éditoriaux, centraliser votre organisation ou structurer vos données : Squadia intervient aussi sur les systèmes.
+            Une équipe formée sur la strategie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin : automatiser vos flux éditoriaux, centraliser votre organisation ou structurer vos données : Squadia intervient aussi sur les systèmes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
@@ -345,7 +345,7 @@ const FormationCommunicationIA = () => {
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Centralisez le partage d'information</h3>
                 <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Le CRM aide à centraliser le partage d'information stratégique pour l'interne comme pour l'externe : dans un calendrier éditorial commun, accessible à toutes les équipes.</p>
-                <Link href="/stratégie/crm" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                <Link href="/strategie/crm" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
                   Voir l'offre Stratégie CRM <ArrowRight size={16} />
                 </Link>
               </div>

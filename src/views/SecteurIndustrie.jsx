@@ -75,7 +75,7 @@ const SecteurIndustrie = () => {
     {
       question: "Votre CRM ne reflete pas la réalité du terrain ?",
       cta: "Voir l offre Strategie IA",
-      link: "/stratégie-ia"
+      link: "/strategie-ia"
     },
     {
       question: "Vos équipes ont besoin d'une méthode commune ?",

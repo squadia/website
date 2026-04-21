@@ -390,7 +390,7 @@ const AutomatisationIA = () => {
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <AccordionItem 
             question="Faut-il avoir un CRM déjà en place ?" 
-            answer={<>Oui, idéalement. L'automatisation connecte des briques existantes. Si votre CRM n'est pas prêt, nous pouvons vous accompagner sur la phase <Link href="/stratégie-crm" style={{ color: '#2563EB', textDecoration: 'underline' }}>Stratégie CRM</Link> au préalable.</>}
+            answer={<>Oui, idéalement. L'automatisation connecte des briques existantes. Si votre CRM n'est pas prêt, nous pouvons vous accompagner sur la phase <Link href="/strategie-crm" style={{ color: '#2563EB', textDecoration: 'underline' }}>Stratégie CRM</Link> au préalable.</>}
           />
           <AccordionItem 
             question="Mes équipes pourront-elles maintenir les process ?" 

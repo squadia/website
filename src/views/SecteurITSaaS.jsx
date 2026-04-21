@@ -46,7 +46,7 @@ const SecteurITSaaS = () => {
   const solutions = [
     {
       title: "Structurer la méthode de vente dans le CRM",
-      description: "MEDDIC, plan de compte, multi-sequence of events. On traduit la stratégie commerciale en processus concret dans le CRM pour que tout le monde parle le meme langage et que le management ait une visibilite réelle.",
+      description: "MEDDIC, plan de compte, multi-sequence of events. On traduit la strategie commerciale en processus concret dans le CRM pour que tout le monde parle le meme langage et que le management ait une visibilite réelle.",
       icon: <Database size={24} color="#2563EB" />
     },
     {

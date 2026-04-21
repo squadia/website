@@ -95,14 +95,14 @@ const LandingMarketing = () => {
     { title: 'Les leads sont générés, mais pas exploités', desc: "Le marketing produit des contacts. Les commerciaux les jugent non qualifiés. Le débat recommence à chaque réunion de pipe review sans que rien ne change vraiment. Le problème n'est pas le volume, c'est le manque de contexte et de timing.", icon: <Target color="#44CCFF" /> },
     { title: 'Les outils ne communiquent pas entre eux', desc: "CRM mal configuré, données éparpillées, séquences marketing déconnectées du pipeline commercial. Chaque outil fonctionne dans son coin. La vision globale n'existe pas et la contribution au chiffre reste impossible à prouver.", icon: <Zap color="#44CCFF" /> },
     { title: 'La pression sur le ROI marketing augmente', desc: "Les budgets sont questionnés. Les équipes sont jugées sur leur contribution au chiffre d'affaires, pas sur leurs impressions ou leur taux d'ouverture. Prouver la valeur du marketing avec des données fiables devient un enjeu stratégique.", icon: <BarChart3 color="#44CCFF" /> },
-    { title: 'Les initiatives IA bloquent faute de cadre', desc: "Des idées d'automatisation ou de personnalisation attendent depuis des mois. Sans stratégie validée au bon niveau, l'IT ou la direction générale freinent. Pas parce que les idées sont mauvaises, mais parce qu'elles n'ont pas de cadre.", icon: <ShieldAlert color="#44CCFF" /> },
+    { title: 'Les initiatives IA bloquent faute de cadre', desc: "Des idées d'automatisation ou de personnalisation attendent depuis des mois. Sans strategie validée au bon niveau, l'IT ou la direction générale freinent. Pas parce que les idées sont mauvaises, mais parce qu'elles n'ont pas de cadre.", icon: <ShieldAlert color="#44CCFF" /> },
     { title: 'Le marketing ne parle pas le même langage que les ventes', desc: "Les commerciaux attendent des leads chauds. Le marketing produit du volume. Entre les deux, personne ne s'entend sur ce qu'est un bon lead, ni sur qui fait quoi dans le parcours d'achat.", icon: <Percent color="#44CCFF" /> }
   ];
 
   const apports = [
     { title: "Des leads avec du contexte, pas juste des contacts", desc: "Signaux d'achat, changements de poste, recrutements stratégiques. Les leads Squadia arrivent avec une raison d'acheter maintenant et un angle d'approche. Vos commerciaux savent exactement pourquoi ils appellent." },
     { title: 'Un pipeline marketing structuré et mesurable', desc: "On aligne les actions marketing sur les objectifs commerciaux réels. Chaque campagne, chaque séquence, chaque lead est connecté à un indicateur de pipeline. La contribution au chiffre devient visible et défendable." },
-    { title: 'Une automatisation qui libère du temps pour la stratégie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment." },
+    { title: 'Une automatisation qui libère du temps pour la strategie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment." },
     { title: 'Une équipe formée pour exploiter les outils en place', desc: "Pas d'adoption en demi-teinte. On forme votre équipe sur les cas concrets de votre organisation pour que les outils servent vraiment, pas qu'ils restent sous-utilisés après 3 mois." }
   ];
 
@@ -491,7 +491,7 @@ const LandingMarketing = () => {
             </div>
             <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Marketing Manager</span>
-              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Marketing Manager B2B : structurer et piloter votre stratégie</h3>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Marketing Manager B2B : structurer et piloter votre strategie</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.</p>
               <span style={{ alignSelf: 'flex-start', background: '#FFFFFF', color: '#060612', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                 Télécharger gratuitement →

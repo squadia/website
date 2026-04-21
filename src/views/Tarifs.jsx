@@ -57,9 +57,9 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
 
 const tabsData = [
   {
-    id: 'stratégie',
+    id: 'strategie',
     label: 'Stratégie',
-    pageLink: '/stratégie-ia',
+    pageLink: '/strategie-ia',
     cards: [
       {
         title: 'Stratégie Commerciale',
@@ -235,7 +235,7 @@ const Tarifs = () => {
     document.title = "Tarifs Squadia : IA, Leads, Automatisation, Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez les tarifs Squadia : stratégie IA, détection de leads, automatisation et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
+      metaDescription.content = "Découvrez les tarifs Squadia : strategie IA, détection de leads, automatisation et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
     }
   }, []);
 

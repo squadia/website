@@ -75,7 +75,7 @@ export default function ClientLogosSection() {
             lineHeight: 1.6, 
             marginBottom: '3rem' 
           }}>
-            Pour tout ou partie de leur stratégie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.
+            Pour tout ou partie de leur strategie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.
           </p>
 
           <Link href="/cas-clients" className="hover-btn-transparent" style={{

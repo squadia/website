@@ -60,7 +60,7 @@ const getTagColor = (tag) => {
   const t = tag.toLowerCase();
   if (t.includes('lead')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   if (t.includes('automatisation')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
-  if (t.includes('stratégie') || t.includes('stratégie')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
+  if (t.includes('strategie') || t.includes('strategie')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   if (t.includes('formation')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   return { border: '#4B5563', bg: 'rgba(75, 85, 99, 0.1)', text: '#9CA3AF' };
 };
@@ -150,7 +150,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
       subtitle: "Aligner votre méthode et vos outils.",
       icon: <Target size={20} />,
       image: s1,
-      link: '/stratégie/commerciale',
+      link: '/strategie/commerciale',
       cta: "Découvrir nos Stratégies →",
       description: "Audit de vos processus, structuration de votre méthode de vente et architecture de votre CRM. Une base solide pour que l'IA et l'automatisation soient réellement efficaces."
     },
@@ -1023,7 +1023,7 @@ const HeroDynamic = React.memo(() => {
           className="hero-para-laptop"
           style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
-          25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
+          25 ans de vente B2B terrain. Squadia structure votre système commercial : strategie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
         </motion.div>
 
         {/* BEAT 3 : CTA + stats */}
@@ -1161,7 +1161,7 @@ const HeroDynamic = React.memo(() => {
       document.title = "Squadia : Stratégie IA, CRM et Automatisation B2B";
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
-        metaDescription.setAttribute('content', "Squadia accompagne les PME et ETI B2B dans leur croissance : stratégie IA, migration CRM, automatisation des processus et formation commerciale. Basé à Paris.");
+        metaDescription.setAttribute('content', "Squadia accompagne les PME et ETI B2B dans leur croissance : strategie IA, migration CRM, automatisation des processus et formation commerciale. Basé à Paris.");
       }
     }, []);
 
@@ -1566,7 +1566,7 @@ const HeroDynamic = React.memo(() => {
                 wordReveal: true,
                 title: 'Executive Team',
                 subtitle: 'Vision, cap et transformation',
-                text: "Vous avez la stratégie. Ce qui manque, c'est le système pour l'exécuter. On structure l'ensemble : de la méthode commerciale aux outils : pour que vos décisions se traduisent en résultats mesurables.",
+                text: "Vous avez la strategie. Ce qui manque, c'est le système pour l'exécuter. On structure l'ensemble : de la méthode commerciale aux outils : pour que vos décisions se traduisent en résultats mesurables.",
                 link: '/directeur-general',
               },
             ].map((persona) => (
@@ -1873,16 +1873,16 @@ const HeroDynamic = React.memo(() => {
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {[
               { 
-                q: "Faut-il avoir une stratégie IA définie pour travailler avec Squadia ?", 
+                q: "Faut-il avoir une strategie IA définie pour travailler avec Squadia ?", 
                 a: "Non. On intervient à toutes les étapes, y compris pour les entreprises qui partent de zéro et cherchent simplement à comprendre par où commencer." 
               },
               { 
                 q: "Quelle est la différence entre Squadia et une agence marketing ou une ESN ?", 
-                a: "Une agence travaille sur un levier. Une ESN déploie des outils. Squadia travaille sur le système complet : stratégie, données, outils, automatisation, formation. L'impact est toujours mesurable sur le pipeline et le chiffre d'affaires." 
+                a: "Une agence travaille sur un levier. Une ESN déploie des outils. Squadia travaille sur le système complet : strategie, données, outils, automatisation, formation. L'impact est toujours mesurable sur le pipeline et le chiffre d'affaires." 
               },
               { 
                 q: "Peut-on activer une seule brique sans prendre tout le système ?", 
-                a: <>Oui. <Link href="/stratégie/commerciale" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Stratégie</Link>, <Link href="/data" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Data</Link>, <Link href="/automatisation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Automatisation</Link> et <Link href="/formation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Formation</Link> peuvent être activés indépendamment.</> 
+                a: <>Oui. <Link href="/strategie/commerciale" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Stratégie</Link>, <Link href="/data" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Data</Link>, <Link href="/automatisation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Automatisation</Link> et <Link href="/formation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Formation</Link> peuvent être activés indépendamment.</> 
               },
               { 
                 q: "En combien de temps voit-on des résultats ?", 
@@ -1909,7 +1909,7 @@ const HeroDynamic = React.memo(() => {
       <section ref={section8Ref} className="section-padding" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
-            Prêt à transformer votre stratégie en système de génération de revenus ?
+            Prêt à transformer votre strategie en système de génération de revenus ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn pulse" style={{ 

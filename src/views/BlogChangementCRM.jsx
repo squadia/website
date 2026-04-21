@@ -259,7 +259,7 @@ export default function BlogChangementCRM() {
             Squadia accompagne les PME et ETI françaises dans la structuration de leur système de génération de revenus : du diagnostic à la mise en exécution.
           </p>
           <Link
-            href="/stratégie/crm"
+            href="/strategie/crm"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               background: '#2563EB', color: '#fff',

@@ -19,7 +19,7 @@ export default function BlogStrategieIAPME() {
     document.title = "Stratégie IA en PME et ETI : la bonne séquence : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur stratégie IA pour obtenir un retour concret en 90 jours.";
+      metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur strategie IA pour obtenir un retour concret en 90 jours.";
     }
     window.scrollTo(0, 0);
   }, []);
@@ -151,7 +151,7 @@ export default function BlogStrategieIAPME() {
               marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
-              Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats
+              Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats
             </h1>
 
             {/* Meta & Divider */}
@@ -307,7 +307,7 @@ export default function BlogStrategieIAPME() {
 
         <div className="article-body">
 
-          <p><em>Tout le monde parle de stratégie IA.</em></p>
+          <p><em>Tout le monde parle de strategie IA.</em></p>
           <p><em>Très peu d'entreprises en ont une qui fonctionne réellement.</em></p>
 
           <div className="article-pullquote">
@@ -434,7 +434,7 @@ export default function BlogStrategieIAPME() {
                 period: '3 – 12 mois',
                 color: '#7C3AED',
                 label: 'Moyen terme',
-                content: 'Alignement des données marketing et commerciales, mise en place d\'agents IA métier, intégration de l\'IA dans les processus de décision. C\'est à ce stade que la stratégie IA cesse d\'être une série d\'outils et devient un système cohérent.'
+                content: 'Alignement des données marketing et commerciales, mise en place d\'agents IA métier, intégration de l\'IA dans les processus de décision. C\'est à ce stade que la strategie IA cesse d\'être une série d\'outils et devient un système cohérent.'
               },
               {
                 period: '12 mois et au-delà',
@@ -491,10 +491,10 @@ export default function BlogStrategieIAPME() {
             Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-            Squadia accompagne les PME et ETI françaises de la définition de la stratégie à la mise en exécution opérationnelle.
+            Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
           </p>
           <Link
-            href="/stratégie-ia"
+            href="/strategie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               background: '#2563EB', color: '#fff',

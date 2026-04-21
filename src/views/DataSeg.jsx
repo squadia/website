@@ -37,7 +37,7 @@ const features = (img1, img2, img3, img4) => [
     id: 2,
     title: 'Critères de segmentation métiers',
     image: img2,
-    description: 'On convertit votre stratégie en critères de segmentation opérationnelle : secteur, tech stack, actualité business, recrutement en cours.',
+    description: 'On convertit votre strategie en critères de segmentation opérationnelle : secteur, tech stack, actualité business, recrutement en cours.',
   },
   {
     id: 3,

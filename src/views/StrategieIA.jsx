@@ -63,7 +63,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
     <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
       <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem', textAlign: 'center' }}>Livrables</p>
       <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#F9FAFB', marginBottom: '4rem', letterSpacing: '-0.02em' }}>
-        Une stratégie <span style={{ color: '#44CCFF' }}>ancrée dans l'exécution.</span>
+        Une strategie <span style={{ color: '#44CCFF' }}>ancrée dans l'exécution.</span>
       </h2>
 
       <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.5fr)', gap: '4rem', alignItems: 'start' }}>
@@ -119,7 +119,7 @@ export default function StrategieIA() {
     document.title = "Stratégie IA pour PME et ETI : Diagnostic, feuille de route et cas d'usage : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia structure votre stratégie IA : diagnostic de maturité, priorisation des cas d'usage à fort ROI et feuille de route exécutable. Premiers livrables en 60 jours.");
+      metaDescription.setAttribute('content', "Squadia structure votre strategie IA : diagnostic de maturité, priorisation des cas d'usage à fort ROI et feuille de route exécutable. Premiers livrables en 60 jours.");
     }
   }, []);
 
@@ -179,7 +179,7 @@ export default function StrategieIA() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
               style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
-              Squadia structure votre stratégie IA : diagnostic de maturité, priorisation des cas d'usage ROI et feuille de route exécutable. Pour que l'IA ne soit plus un test, mais un levier.
+              Squadia structure votre strategie IA : diagnostic de maturité, priorisation des cas d'usage ROI et feuille de route exécutable. Pour que l'IA ne soit plus un test, mais un levier.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
@@ -200,7 +200,7 @@ export default function StrategieIA() {
                 <VideoPlaceholder />
 
                 <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.8 }}>
-                  57% des dirigeants naviguent à vue : testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de stratégie en amont.
+                  57% des dirigeants naviguent à vue : testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de strategie en amont.
                 </p>
               </motion.div>
 

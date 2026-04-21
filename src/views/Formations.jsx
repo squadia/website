@@ -630,7 +630,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </p>
           
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>
-            <Link href="/stratégie-ia" className="pill-link">Structurer votre stratégie IA</Link>
+            <Link href="/strategie-ia" className="pill-link">Structurer votre strategie IA</Link>
             <Link href="/data" className="pill-link">Détecter vos leads qualifiés</Link>
             <Link href="/automatisation-ia" className="pill-link">Automatiser vos processus</Link>
           </div>

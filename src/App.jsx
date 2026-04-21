@@ -64,9 +64,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/stratégie-ia" element={<StrategieIA />} />
-        <Route path="/stratégie/commerciale" element={<StrategieCommerciale />} />
-        <Route path="/stratégie/crm" element={<StrategieCrm />} />
+        <Route path="/strategie-ia" element={<StrategieIA />} />
+        <Route path="/strategie/commerciale" element={<StrategieCommerciale />} />
+        <Route path="/strategie/crm" element={<StrategieCrm />} />
         <Route path="/data/data-clean" element={<DataClean />} />
         <Route path="/data/data-seg" element={<DataSeg />} />
         <Route path="/data/data-lead" element={<DataLead />} />
@@ -88,9 +88,9 @@ function App() {
         <Route path="/blog/prospection-multicanale-b2b-erreurs" element={<BlogProspectionErreurs />} />
         <Route path="/blog/formation-commerciale-b2b-ia" element={<FormationCommerciale />} />
         <Route path="/blog/nettoyage-segmentation-enrichissement-données-b2b" element={<DataB2B />} />
-        <Route path="/blog/stratégie-ia-pme-eti" element={<StrategieIAPME />} />
+        <Route path="/blog/strategie-ia-pme-eti" element={<StrategieIAPME />} />
         <Route path="/blog/formation-ia-ou-automatisation" element={<FormationOuAutomatisation />} />
-        <Route path="/blog/stratégie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
+        <Route path="/blog/strategie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
         <Route path="/blog/changement-crm-organisation" element={<BlogChangementCRM />} />
         <Route path="/blog/formation-ia-automatisation-ordre" element={<BlogFormationIAVAutom />} />
         <Route path="/ressources" element={<Ressources />} />
@@ -120,8 +120,8 @@ function App() {
             <div>
               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Solutions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                <li><Link href="/stratégie/commerciale" className="footer-link">Stratégie Commerciale</Link></li>
-                <li><Link href="/stratégie/crm" className="footer-link">Migration CRM</Link></li>
+                <li><Link href="/strategie/commerciale" className="footer-link">Stratégie Commerciale</Link></li>
+                <li><Link href="/strategie/crm" className="footer-link">Migration CRM</Link></li>
                 <li><Link href="/data/data-clean" className="footer-link">Data Clean</Link></li>
                 <li><Link href="/data/data-seg" className="footer-link">Data Seg</Link></li>
                 <li><Link href="/data/data-lead" className="footer-link">Data Lead</Link></li>

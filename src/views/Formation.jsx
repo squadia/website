@@ -225,7 +225,7 @@ const Formation = () => {
 
             <FormationCard
               category="Communication"
-              title="Communication & IA : Structurer sa stratégie éditoriale et produire avec l'IA"
+              title="Communication & IA : Structurer sa strategie éditoriale et produire avec l'IA"
               forWho="Pour qui : Directeurs communication, managers et équipes com cherchant à produire plus et mieux sur tous les canaux"
               description="Stratégie éditoriale structurée, prompting adapté à la voix de la marque et organisation de la production de contenu. Un plan éditorial opérationnel à l issue des 2 jours."
               link="/formation-communication-et-ia"
@@ -371,7 +371,7 @@ const Formation = () => {
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', fontSize: '1.1rem' }}>
               Une feuille de route IA adaptée à votre organisation, avec les cas d'usage qui font vraiment sens pour vous.
             </p>
-            <Link href="/stratégie-ia" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
+            <Link href="/strategie-ia" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
               Voir l'offre Stratégie IA <Compass size={18} />
             </Link>
           </div>

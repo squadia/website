@@ -65,7 +65,7 @@ const SecteurPublic = () => {
     {
       question: "Vous voulez aller plus loin apres la formation ?",
       cta: "Voir l offre Strategie IA",
-      link: "/stratégie-ia"
+      link: "/strategie-ia"
     },
     {
       question: "Vous cherchez a automatiser certains services ?",

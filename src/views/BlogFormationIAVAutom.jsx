@@ -237,13 +237,13 @@ export default function BlogFormationIAVAutom() {
           boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
         }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.2rem' }}>
-            Vous voulez structurer votre stratégie IA et savoir par où commencer ?
+            Vous voulez structurer votre strategie IA et savoir par où commencer ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '600px', marginInline: 'auto', marginBottom: '2.5rem' }}>
             Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
           </p>
           <Link
-            href="/stratégie-ia"
+            href="/strategie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               background: '#2563EB', color: '#fff',

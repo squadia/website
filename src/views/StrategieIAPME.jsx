@@ -22,7 +22,7 @@ const StrategieIAPME = () => {
     document.title = "Stratégie IA en PME et ETI : séquence et outils : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez comment mettre en place une stratégie IA efficace pour votre PME ou ETI. Séquence, outils, et premiers résultats concrets.";
+      metaDescription.content = "Découvrez comment mettre en place une strategie IA efficace pour votre PME ou ETI. Séquence, outils, et premiers résultats concrets.";
     }
   }, []);
 
@@ -46,7 +46,7 @@ const StrategieIAPME = () => {
             </span>
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
-            Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats
+            Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
             <div>Lecture : 7 min</div>
@@ -61,7 +61,7 @@ const StrategieIAPME = () => {
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
           <p style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
-            Tout le monde parle de stratégie IA.<br/><br/>
+            Tout le monde parle de strategie IA.<br/><br/>
             Très peu d'entreprises en ont une qui fonctionne réellement.<br/><br/>
             La différence ne vient pas du budget. Elle vient de la séquence.
           </p>
@@ -176,7 +176,7 @@ const StrategieIAPME = () => {
             </div>
             <div style={{ padding: '1.5rem', border: '1px solid #1A1A3A', borderRadius: '8px', background: '#0D0D25' }}>
               <h3 style={{ fontSize: '1.2rem', color: '#2563EB', marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}><span style={{ display: 'inline-block', width: '8px', height: '8px', background: '#2563EB', borderRadius: '50%', marginRight: '8px' }}></span> Moyen terme (3–12 mois)</h3>
-              <p>Alignement des données marketing et commerciales, mise en place d'agents IA métier, intégration de l'IA dans les processus de décision. C'est à ce stade que la stratégie IA cesse d'être une série d'outils et devient un système cohérent.</p>
+              <p>Alignement des données marketing et commerciales, mise en place d'agents IA métier, intégration de l'IA dans les processus de décision. C'est à ce stade que la strategie IA cesse d'être une série d'outils et devient un système cohérent.</p>
             </div>
             <div style={{ padding: '1.5rem', border: '1px solid #1A1A3A', borderRadius: '8px', background: '#0D0D25' }}>
               <h3 style={{ fontSize: '1.2rem', color: '#2563EB', marginBottom: '0.8rem', display: 'flex', alignItems: 'center' }}><span style={{ display: 'inline-block', width: '8px', height: '8px', background: '#2563EB', borderRadius: '50%', marginRight: '8px' }}></span> Long terme (12 mois et au-delà)</h3>
@@ -223,9 +223,9 @@ const StrategieIAPME = () => {
               Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-              Squadia accompagne les PME et ETI françaises de la définition de la stratégie à la mise en exécution opérationnelle.
+              Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
             </p>
-            <Link href="/stratégie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF', border: 'none' }}>
+            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF', border: 'none' }}>
               Découvrir l'offre Stratégie IA <ArrowRight size={18} />
             </Link>
           </div>

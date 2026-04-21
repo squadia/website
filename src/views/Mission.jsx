@@ -9,7 +9,7 @@ const Mission = () => {
     document.title = "Notre Mission : Squadia, conseil B2B en IA et performance commerciale";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Découvrez la mission de Squadia : réconcilier la stratégie et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.");
+      metaDescription.setAttribute('content', "Découvrez la mission de Squadia : réconcilier la strategie et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.");
     }
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mfv'); obs.unobserve(e.target); } });
@@ -162,10 +162,10 @@ const Mission = () => {
           <p className="mfu" style={{ fontFamily: fi, fontSize: '.875rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '460px', marginBottom: '40px' }}>Des positions opérationnelles, pas des valeurs d'affichage.</p>
           <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,.05)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.05)' }}>
             {[
-              { num: '01', title: 'La décision avant l\'outillage.', body: 'On évalue ce qui est le plus pertinent pour atteindre vos objectifs, puis on définit la stratégie, les outils et les process.' },
+              { num: '01', title: 'La décision avant l\'outillage.', body: 'On évalue ce qui est le plus pertinent pour atteindre vos objectifs, puis on définit la strategie, les outils et les process.' },
               { num: '02', title: 'Un système cohérent vaut plus que tout.', body: 'Un système cohérent est la clé de la réussite. Stratégie, Data, Automatisation, Formation, alignés et solidaires.' },
-              { num: '03', title: 'L\'IA, accélérateur complémentaire.', body: 'En complément d\'une stratégie claire, d\'une donnée propre et d\'une méthode solide, l\'IA amplifie ce qui fonctionne déjà.' },
-              { num: '04', title: 'Après la stratégie, l\'exécution.', body: 'Périmètre, livrables, calendrier, responsabilités. Définis ensemble avant le démarrage, dans l\'ordre des priorités.' },
+              { num: '03', title: 'L\'IA, accélérateur complémentaire.', body: 'En complément d\'une strategie claire, d\'une donnée propre et d\'une méthode solide, l\'IA amplifie ce qui fonctionne déjà.' },
+              { num: '04', title: 'Après la strategie, l\'exécution.', body: 'Périmètre, livrables, calendrier, responsabilités. Définis ensemble avant le démarrage, dans l\'ordre des priorités.' },
             ].map((c, i) => (
               <div key={i} className="conv-block mfu" style={{ transitionDelay: `${i * 0.08}s` }}>
                 <span style={{ fontFamily: fj, fontSize: '1.875rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#44CCFF', lineHeight: 1, display: 'block', marginBottom: '18px' }}>{c.num}</span>

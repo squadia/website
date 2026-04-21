@@ -53,8 +53,8 @@ export default function Ressources() {
   const articles = [
     {
       tag: "Stratégie IA",
-      title: "Comment mettre en place une stratégie IA en PME",
-      link: "/blog/stratégie-ia-pme-sequence",
+      title: "Comment mettre en place une strategie IA en PME",
+      link: "/blog/strategie-ia-pme-sequence",
       image: blog1,
       readTime: "8 min"
     },

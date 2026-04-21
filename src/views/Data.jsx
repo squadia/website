@@ -172,7 +172,7 @@ export default function Data() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
                 <div style={{ borderLeft: '3px solid #44CCFF', paddingLeft: '1.25rem' }}>
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.35rem' }}>Définition de l'ICP</div>
-                  <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Identification des profils clients idéaux à partir de vos données historiques et de votre stratégie commerciale.</div>
+                  <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6 }}>Identification des profils clients idéaux à partir de vos données historiques et de votre strategie commerciale.</div>
                 </div>
                 <div style={{ borderLeft: '3px solid #44CCFF', paddingLeft: '1.25rem' }}>
                   <div style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.35rem' }}>Scoring et priorisation</div>

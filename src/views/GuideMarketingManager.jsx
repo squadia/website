@@ -88,7 +88,7 @@ const GuideMarketingManager = () => {
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Maîtriser une stratégie de croissance fondée sur la data et l'IA
+                  Maîtriser une strategie de croissance fondée sur la data et l'IA
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>

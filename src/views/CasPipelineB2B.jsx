@@ -31,7 +31,7 @@ const CasPipelineB2B = () => {
     {
       step: '03',
       title: 'Stratégie d\'activation LinkedIn',
-      body: 'Conception d\'une stratégie LinkedIn qui positionnait l\'initiative comme une co-construction avec les futurs clients, pas une vente frontale. Les entreprises ciblées se sont senties impliquées dans quelque chose qui les concernait directement, avec la force de frappe d\'un groupe à 35 milliards derrière. Le site de présentation de l\'offre a aussi été produit dans le cadre de la mission.'
+      body: 'Conception d\'une strategie LinkedIn qui positionnait l\'initiative comme une co-construction avec les futurs clients, pas une vente frontale. Les entreprises ciblées se sont senties impliquées dans quelque chose qui les concernait directement, avec la force de frappe d\'un groupe à 35 milliards derrière. Le site de présentation de l\'offre a aussi été produit dans le cadre de la mission.'
     },
   ];
 

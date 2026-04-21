@@ -609,7 +609,7 @@ export default function StrategieCommerciale() {
                 },
                 {
                   category: 'Marketing Manager',
-                  title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre stratégie',
+                  title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre strategie',
                   description: 'Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.',
                   link: '/ressources/guide-marketing-manager',
                   image: imgMarketingManager,
@@ -848,7 +848,7 @@ export default function StrategieCommerciale() {
         {/* SECTION 8 : CTA FINAL */}
         <CtaSection
           headline="Votre équipe prête à l'action."
-          description="Une fois votre stratégie commerciale établie, il vous faut redescendre l'information à vos équipes et aligner avec la même approche de vente."
+          description="Une fois votre strategie commerciale établie, il vous faut redescendre l'information à vos équipes et aligner avec la même approche de vente."
           cardTitle="IA pour la vente"
           cardSubtitle="Former votre équipe commerciale"
           cardDescription="Méthode de vente, Approche Grands Comptes, Jeu de rôle : formez vos équipes à vendre avec l'IA."

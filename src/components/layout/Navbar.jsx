@@ -10,8 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('stratégie');
-  const [activeMobileCategory, setActiveMobileCategory] = useState('stratégie');
+  const [activeCategory, setActiveCategory] = useState('strategie');
+  const [activeMobileCategory, setActiveMobileCategory] = useState('strategie');
   const [showMobileServices, setShowMobileServices] = useState(false);
   const [showMobileRoles, setShowMobileRoles] = useState(false);
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
@@ -145,13 +145,13 @@ const Navbar = () => {
         <div className="squad-dropdown-inner">
           <div className="squad-categories" style={{ position: 'relative' }}>
             <div className="squad-glider-track">
-              <div className="squad-glider" style={{ transform: `translateY(${['stratégie','data','automatisation','formation'].indexOf(activeCategory) * 100}%)` }}>
+              <div className="squad-glider" style={{ transform: `translateY(${['strategie','data','automatisation','formation'].indexOf(activeCategory) * 100}%)` }}>
                 <div className="squad-glider-glow" />
                 <div className="squad-glider-trail" />
               </div>
             </div>
             {[
-              { id: 'stratégie', label: 'Stratégie', icon: <Target size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
+              { id: 'strategie', label: 'Stratégie', icon: <Target size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'data', label: 'Data', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'automatisation', label: 'Automatisation', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
@@ -163,12 +163,12 @@ const Navbar = () => {
           </div>
 
           <div className="squad-items-wrap">
-            <div style={{ display: activeCategory === 'stratégie' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/stratégie/commerciale">
+            <div style={{ display: activeCategory === 'strategie' ? 'block' : 'none' }}>
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/commerciale">
                 <span className="squad-item-title">Stratégie Commerciale</span><span className="squad-tag">Stratégie</span>
                 <p className="squad-item-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
               </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/stratégie/crm">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/crm">
                 <span className="squad-item-title">Migration CRM</span><span className="squad-tag">Stratégie</span>
                 <p className="squad-item-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
               </Link>
@@ -566,7 +566,7 @@ const Navbar = () => {
                     {/* Tabs 2×2 */}
                     <div className="mob-cat-tabs">
                       {[
-                        { id: 'stratégie', label: 'Stratégie' },
+                        { id: 'strategie', label: 'Stratégie' },
                         { id: 'data', label: 'Data' },
                         { id: 'automatisation', label: 'Automatisation' },
                         { id: 'formation', label: 'Formation' },
@@ -581,13 +581,13 @@ const Navbar = () => {
 
                     {/* Panels */}
                     <div className="mob-panels" style={{ paddingBottom: '8px' }}>
-                      {activeMobileCategory === 'stratégie' && (
+                      {activeMobileCategory === 'strategie' && (
                         <>
-                          <Link className="mob-service-item" href="/stratégie/commerciale" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/strategie/commerciale" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Stratégie Commerciale</span><span className="mob-service-tag">Stratégie</span></div>
                             <p className="mob-service-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
                           </Link>
-                          <Link className="mob-service-item" href="/stratégie/crm" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/strategie/crm" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Migration CRM</span><span className="mob-service-tag">Stratégie</span></div>
                             <p className="mob-service-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
                           </Link>

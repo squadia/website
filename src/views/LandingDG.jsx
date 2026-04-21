@@ -101,14 +101,14 @@ const LandingDG = () => {
 
   const apports = [
     { title: 'Un diagnostic avant tout investissement', desc: "On commence par comprendre votre organisation réelle : usages IA existants, qualité des données, frictions entre équipes, maturité des outils. On arbitre ce qui vaut la peine d'être fait maintenant et ce qui peut attendre." },
-    { title: 'Une stratégie modernisée, adaptée pour le Comex', desc: "Pas un plan théorique. Une feuille de route avec des cas d'usage priorisés, des pré-requis identifiés, une gouvernance claire et des indicateurs de pilotage. Ce que l'IT peut valider et ce que les métiers peuvent exécuter." },
+    { title: 'Une strategie modernisée, adaptée pour le Comex', desc: "Pas un plan théorique. Une feuille de route avec des cas d'usage priorisés, des pré-requis identifiés, une gouvernance claire et des indicateurs de pilotage. Ce que l'IT peut valider et ce que les métiers peuvent exécuter." },
     { title: 'Un système conçu par des acteurs robustes et fiables', desc: "Stratégie, leads, automatisation, formation. On intervient sur les 4 leviers en même temps ou séparément selon les priorités. L'objectif c'est un système cohérent, pas une accumulation de solutions." },
     { title: 'Des 1ers "quick win" en moins de 30 jours', desc: "Pas de transformation sur 18 mois avant de voir quelque chose. Les premiers livrables actionnables arrivent vite, et on mesure ce qui change." }
   ];
 
   const faqs = [
     { q: "Par où commencer quand on ne sait pas où l'IA peut vraiment aider ?", a: "On commence par un cadrage. On analyse votre organisation réelle, on identifie les cas d'usage à fort impact, on élimine ce qui ne vaut pas la peine. Ce travail de diagnostic prend 30 à 60 jours et produit une feuille de route exécutable." },
-    { q: "Squadia intervient-il uniquement sur l'IA ?", a: "Non. L'IA est un levier parmi d'autres. On travaille sur le système complet : stratégie, génération de leads, automatisation des process, formation des équipes. L'IA n'est pas une finalité, c'est un moyen d'aller plus vite et plus loin." },
+    { q: "Squadia intervient-il uniquement sur l'IA ?", a: "Non. L'IA est un levier parmi d'autres. On travaille sur le système complet : strategie, génération de leads, automatisation des process, formation des équipes. L'IA n'est pas une finalité, c'est un moyen d'aller plus vite et plus loin." },
     { q: 'Peut-on commencer par une seule brique ?', a: "Oui. Stratégie, Leads, Automatisation et Formation peuvent être activés indépendamment selon les priorités du moment." },
     { q: "Comment justifier l'investissement au board ou aux actionnaires ?", a: "On construit les indicateurs de pilotage avec vous dès le départ. Chaque mission produit des livrables mesurables : temps gagné, pipeline amélioré, coûts réduits, adoption des équipes. Les résultats sont documentables et présentables." }
   ];
@@ -621,7 +621,7 @@ const LandingDG = () => {
               },
               {
                 category: 'Marketing Manager',
-                title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre stratégie',
+                title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre strategie',
                 description: 'Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.',
                 link: '/ressources/guide-marketing-manager',
                 image: imgMarketingManager,
@@ -685,11 +685,11 @@ const LandingDG = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '1000px', marginInline: 'auto' }}>
 
-            <Link href="/blog/stratégie-ia-pme-eti" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
+            <Link href="/blog/strategie-ia-pme-eti" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(139,92,246,0.4)', backgroundColor: 'rgba(139,92,246,0.12)', color: '#A78BFA', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Stratégie IA</span>
-              <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats</h3>
+              <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 

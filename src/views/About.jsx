@@ -11,7 +11,7 @@ const About = () => {
     document.title = "À propos de Squadia : Experts B2B en IA, CRM et Automatisation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia est un cabinet de conseil spécialisé en transformation commerciale B2B : stratégie IA, migration CRM, automatisation et formation. 20 ans d'expertise, basé à Paris.");
+      metaDescription.setAttribute('content', "Squadia est un cabinet de conseil spécialisé en transformation commerciale B2B : strategie IA, migration CRM, automatisation et formation. 20 ans d'expertise, basé à Paris.");
     }
   }, []);
 
@@ -40,10 +40,10 @@ const About = () => {
         <div className="fade-in">
           <span className="tag-hero">NOTRE MISSION</span>
           <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px' }}>
-            Réconcilier la stratégie et l'exécution.
+            Réconcilier la strategie et l'exécution.
           </h1>
           <p className="subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', maxWidth: '700px' }}>
-            Squadia est né d'un constat simple : 80% des stratégies IA échouent par manque de structuration opérationnelle. Nous sommes là pour être les 20% restants.
+            Squadia est né d'un constat simple : 80% des strategies IA échouent par manque de structuration opérationnelle. Nous sommes là pour être les 20% restants.
           </p>
         </div>
       </section>
