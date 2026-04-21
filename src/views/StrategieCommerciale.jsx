@@ -108,7 +108,7 @@ const StrategyAccordionCommerciale = () => {
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Notre Système</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
             De la Stratégie à l'Exécution
           </h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 1.4fr)', gap: '6rem', alignItems: 'start', minHeight: '480px' }}>
@@ -211,7 +211,7 @@ export default function StrategieCommerciale() {
     { 
       short: "Sales Playbook", 
       full: <>Un sales playbook adapté<br />à vos cycles et cibles</>, 
-      desc: "Méthode MEDDIC, plan de compte, gestion des objections, préparation stratégique. Un référentiel commun que vos équipes utilisent vraiment — pas un document oublié.", 
+      desc: "Méthode MEDDIC, plan de compte, gestion des objections, préparation stratégique. Un référentiel commun que vos équipes utilisent vraiment : pas un document oublié.", 
       icon: <FileText size={24} />
     },
     { 
@@ -229,7 +229,7 @@ export default function StrategieCommerciale() {
   ];
 
   useEffect(() => {
-    document.title = "Stratégie Commerciale B2B — Méthode et Performance — Squadia";
+    document.title = "Stratégie Commerciale B2B : Méthode et Performance : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia structure votre développement commercial B2B : pipeline fiable, méthode de vente documentée et alignement vente-marketing. Résultats en 30 jours.");
@@ -271,7 +271,7 @@ export default function StrategieCommerciale() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 — HERO */}
+        {/* SECTION 1 : HERO */}
         <section id="hero" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{StrategieCommercialeCSS}</style>
           <img src={bgCommercial} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
@@ -294,12 +294,12 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 2 — DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
             <div style={{ position: 'sticky', top: '25vh' }}>
               <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>CE QU'ON OBSERVE SYSTÉMATIQUEMENT</p>
-              <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem', lineHeight: 1.2 }}>Dans vos comptes-rendus, vos meetings et votre CRM.</h2>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem', lineHeight: 1.2 }}>Dans vos comptes-rendus, vos meetings et votre CRM.</h2>
               <div style={{ width: '80px', height: '4px', backgroundColor: '#2563EB', borderRadius: '2px', marginBottom: '2rem' }} />
               
               <div style={{ position: 'relative' }}>
@@ -490,12 +490,12 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 2.2 — COMMENT ON TRAVAILLE */}
+        {/* SECTION 2.2 : COMMENT ON TRAVAILLE */}
         <section style={{ backgroundColor: '#0A0A1A', overflow: 'hidden' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '8rem 2rem 0' }}>
             {/* En-tête pleine largeur */}
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>COMMENT NOUS TRAVAILLONS</p>
-            <h2 style={{ fontSize: '2.2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Immersion sur le terrain avec votre équipe.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Immersion sur le terrain avec votre équipe.</h2>
           </div>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem 8rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
             {/* Texte à gauche */}
@@ -523,10 +523,10 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 3 — EXPANDING ACCORDION */}
+        {/* SECTION 3 : EXPANDING ACCORDION */}
         <section id="structure" style={{ backgroundColor: '#11111E' }}>
         <div style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
             Ce que nous structurons <span style={{ color: '#44CCFF' }}>concrètement.</span>
           </h2>
           
@@ -588,7 +588,7 @@ export default function StrategieCommerciale() {
         </div>
         </section>
 
-        {/* SECTION — DE LA STRATÉGIE À L'EXÉCUTION */}
+        {/* SECTION : DE LA STRATÉGIE À L'EXÉCUTION */}
         <section style={{ padding: '6rem 0', backgroundColor: '#11111E' }}>
           <StrategyAccordionCommerciale />
         </section>
@@ -597,7 +597,7 @@ export default function StrategieCommerciale() {
         <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
               {[
                 {
@@ -648,11 +648,11 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* PRICING SECTION — STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>NOS TARIFS</p>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
               Une approche modulable par briques.
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.45)', maxWidth: '700px', marginInline: 'auto' }}>
@@ -677,7 +677,7 @@ export default function StrategieCommerciale() {
               },
               {
                 title: 'Migration CRM',
-                subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption.",
+                subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption.",
                 items: [
                   "Audit des processus et données",
                   "Configuration cycles de vente",
@@ -745,21 +745,21 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
-        {/* SECTION 7 — FAQ */}
+        {/* SECTION 7 : FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, textAlign: 'center', marginBottom: '3rem', color: '#F9FAFB' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '3rem', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               {
                 q: "On a déjà essayé de mettre en place une méthode de vente. Ça n'a pas tenu. Pourquoi ce serait différent cette fois ?",
-                a: "Parce que la plupart des méthodes échouent pour la même raison : elles sont imposées de l'extérieur sans partir de ce qui existe déjà dans l'organisation. On commence par comprendre comment vos équipes travaillent vraiment avant de construire quoi que ce soit. Ce qu'on met en place, vos commerciaux le reconnaissent — parce que ça vient d'eux."
+                a: "Parce que la plupart des méthodes échouent pour la même raison : elles sont imposées de l'extérieur sans partir de ce qui existe déjà dans l'organisation. On commence par comprendre comment vos équipes travaillent vraiment avant de construire quoi que ce soit. Ce qu'on met en place, vos commerciaux le reconnaissent : parce que ça vient d'eux."
               },
               {
                 q: "Mes seniors sont là depuis longtemps. Ils ne vont pas accepter qu'on leur dise comment vendre.",
-                a: "C'est la résistance la plus fréquente — et la plus légitime. Un senior qui vend depuis 15 ans n'a pas besoin qu'on lui apprenne à vendre. Ce qu'on structure, c'est un référentiel commun qui capitalise sur ce que les meilleurs font déjà. On formalise leurs bons réflexes autant qu'on comble les angles morts. La méthode devient un outil pour eux, pas une contrainte imposée sur eux."
+                a: "C'est la résistance la plus fréquente : et la plus légitime. Un senior qui vend depuis 15 ans n'a pas besoin qu'on lui apprenne à vendre. Ce qu'on structure, c'est un référentiel commun qui capitalise sur ce que les meilleurs font déjà. On formalise leurs bons réflexes autant qu'on comble les angles morts. La méthode devient un outil pour eux, pas une contrainte imposée sur eux."
               },
               {
                 q: "Est-ce que vous intervenez uniquement sur la méthode de vente ou aussi sur le management commercial ?",
@@ -767,11 +767,11 @@ export default function StrategieCommerciale() {
               },
               {
                 q: "Comment se passe concrètement le démarrage d'une mission ?",
-                a: "On commence par un échange de qualification pour comprendre votre situation réelle : comment votre équipe est organisée, ce qui fonctionne, ce qui coince, ce que vous avez déjà essayé. Si le périmètre fait sens pour les deux parties, on cadre la mission — objectifs, livrables, calendrier — avant de démarrer. Rien ne commence sans un accord clair sur ce qu'on cherche à obtenir ensemble."
+                a: "On commence par un échange de qualification pour comprendre votre situation réelle : comment votre équipe est organisée, ce qui fonctionne, ce qui coince, ce que vous avez déjà essayé. Si le périmètre fait sens pour les deux parties, on cadre la mission : objectifs, livrables, calendrier : avant de démarrer. Rien ne commence sans un accord clair sur ce qu'on cherche à obtenir ensemble."
               },
               {
                 q: "En combien de temps voit-on des résultats ?",
-                a: "Les premiers effets visibles arrivent en 30 à 60 jours : un langage commun sur le pipeline, des rituels en place, des critères de qualification partagés. Les effets sur la performance commerciale réelle — taux de conversion, vélocité du cycle, fiabilité des prévisions — se mesurent sur 3 à 6 mois. On intègre les indicateurs de suivi dès le départ pour que vous puissiez mesurer ce qui change."
+                a: "Les premiers effets visibles arrivent en 30 à 60 jours : un langage commun sur le pipeline, des rituels en place, des critères de qualification partagés. Les effets sur la performance commerciale réelle : taux de conversion, vélocité du cycle, fiabilité des prévisions : se mesurent sur 3 à 6 mois. On intègre les indicateurs de suivi dès le départ pour que vous puissiez mesurer ce qui change."
               },
               {
                 q: "On n'a pas de CRM structuré. Est-ce que c'est un prérequis pour travailler avec vous ?",
@@ -782,7 +782,7 @@ export default function StrategieCommerciale() {
                 a: "Un cabinet de formation arrive avec un programme. Un consultant RH travaille sur les profils et les organisations. Squadia part du terrain commercial réel : comment vos équipes vendent aujourd'hui, où elles perdent du temps, où elles perdent des deals. Ce qu'on construit est spécifique à votre cycle de vente, vos cibles, vos situations. Pas un programme standard adapté à la marge."
               },
               {
-                q: "Est-ce que vous pouvez intervenir sur une seule partie — par exemple uniquement les rituels de pilotage ou uniquement le sales playbook ?",
+                q: "Est-ce que vous pouvez intervenir sur une seule partie : par exemple uniquement les rituels de pilotage ou uniquement le sales playbook ?",
                 a: "Oui. Chaque composante peut être activée indépendamment selon ce qui est prioritaire. Si le diagnostic montre que le problème principal est l'absence de rituels, on commence par là. Si c'est le discours commercial qui varie d'un commercial à l'autre, on commence par le playbook. Le périmètre est cadré ensemble avant démarrage."
               }
             ].map((faq, idx) => {
@@ -845,13 +845,13 @@ export default function StrategieCommerciale() {
         </section>
 
 
-        {/* SECTION 8 — CTA FINAL */}
+        {/* SECTION 8 : CTA FINAL */}
         <CtaSection
           headline="Votre équipe prête à l'action."
           description="Une fois votre stratégie commerciale établie, il vous faut redescendre l'information à vos équipes et aligner avec la même approche de vente."
           cardTitle="IA pour la vente"
           cardSubtitle="Former votre équipe commerciale"
-          cardDescription="Méthode de vente, Approche Grands Comptes, Jeu de rôle — formez vos équipes à vendre avec l'IA."
+          cardDescription="Méthode de vente, Approche Grands Comptes, Jeu de rôle : formez vos équipes à vendre avec l'IA."
           cardFeatures={[
             "Analyse stratégique compte",
             "Qualification & Meddic",

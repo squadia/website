@@ -3,7 +3,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { BarChart3, TrendingUp, Users, ArrowRight, Download, CheckCircle2 } from 'lucide-react';
 import Link from 'next/link';
 
-const EnqueteIA2026 = () => {
+const enquêteIA2026 = () => {
   useScrollReveal();
 
   const keyFindings = [
@@ -13,7 +13,7 @@ const EnqueteIA2026 = () => {
   ];
 
   return (
-    <div className="enquete-page">
+    <div className="enquête-page">
       {/* Hero */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '100px', textAlign: 'center' }}>
         <div className="fade-in">
@@ -135,7 +135,7 @@ const EnqueteIA2026 = () => {
       </section>
 
       <style>{`
-        .enquete-page { background: var(--bg-primary); }
+        .enquête-page { background: var(--bg-primary); }
       `}</style>
     </div>
   );
@@ -152,4 +152,4 @@ const inputStyle = {
   fontSize: '0.95rem'
 };
 
-export default EnqueteIA2026;
+export default enquêteIA2026;

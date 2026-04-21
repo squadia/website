@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const iaComImg = '/assets/images/iaetcom.png';
 const CasFormationIACom = () => {
   useEffect(() => {
-    document.title = "Cas client — Formation IA Communication · Squadia";
+    document.title = "Cas client : Formation IA Communication · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -26,7 +26,7 @@ const CasFormationIACom = () => {
     {
       step: '02',
       title: 'Deux jours de formation pratique par équipe',
-      body: 'Chaque session construite autour des cas concrets de leur quotidien. Comment identifier quelles tâches confier à l\'IA sans perdre en qualité sur des communications officielles. Comment adapter un même message à des publics très différents — habitants, commerçants, jeunes, seniors — sur des canaux qui n\'ont rien à voir entre eux. Comment choisir entre les outils disponibles selon les besoins métier, de la production de texte à la création d\'images et de vidéos. Comment travailler avec les agences partenaires en exprimant mieux et plus vite les attentes.'
+      body: 'Chaque session construite autour des cas concrets de leur quotidien. Comment identifier quelles tâches confier à l\'IA sans perdre en qualité sur des communications officielles. Comment adapter un même message à des publics très différents : habitants, commerçants, jeunes, seniors : sur des canaux qui n\'ont rien à voir entre eux. Comment choisir entre les outils disponibles selon les besoins métier, de la production de texte à la création d\'images et de vidéos. Comment travailler avec les agences partenaires en exprimant mieux et plus vite les attentes.'
     },
     {
       step: '03',
@@ -51,7 +51,7 @@ const CasFormationIACom = () => {
           objectFit: 'cover', objectPosition: 'center',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal vert/sombre — couvre ~65% depuis la gauche */}
+        {/* Masque diagonal vert/sombre : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.92) 0%, rgba(14,26,45,0.80) 38%, rgba(14,26,45,0.50) 58%, rgba(14,26,45,0.08) 72%, transparent 82%)',
@@ -93,7 +93,7 @@ const CasFormationIACom = () => {
             fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, lineHeight: 1.15,
             maxWidth: '820px', marginBottom: '2.5rem', letterSpacing: '-0.02em'
           }}>
-            Former des équipes communication à l'IA quand une charte existe mais que personne ne sait vraiment quoi en faire
+            Former des équipes communication à l'IA quand'une charte existe mais que personne ne sait vraiment quoi en faire
           </h1>
 
           <div style={{
@@ -138,7 +138,7 @@ const CasFormationIACom = () => {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
           <div>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.8rem' }}>Le contexte</p>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
               Une charte rédigée, des équipes bloquées.
             </h2>
           </div>

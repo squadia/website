@@ -85,7 +85,7 @@ const LandingDG = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour les DG — Stratégie IA et croissance PME/ETI";
+    document.title = "Squadia pour les DG : Stratégie IA et croissance PME/ETI";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "57% des dirigeants testent l'IA sans vision d'ensemble. Squadia aide les DG de PME/ETI à bâtir un système de génération de revenus mesurable en 90 jours.";
@@ -242,7 +242,7 @@ const LandingDG = () => {
         }} />
 
 
-        {/* Gradient fade + label — élément indépendant bord droit complet */}
+        {/* Gradient fade + label : élément indépendant bord droit complet */}
         <div style={{
           position: 'absolute',
           bottom: 0, right: 0,
@@ -300,7 +300,7 @@ const LandingDG = () => {
               58% des dirigeants de PME et ETI considèrent l'IA comme un enjeu de survie. Mais 57% naviguent encore à vue, testant des outils sans vision d'ensemble ni méthode claire. Squadia structure ce qui permet de passer de la décision au résultat.
             </p>
             
-            {/* Cards container — Glassmorphisme premium + SVG animés */}
+            {/* Cards container : Glassmorphisme premium + SVG animés */}
             <div style={{
               display: 'flex',
               gap: '1.2rem',
@@ -309,7 +309,7 @@ const LandingDG = () => {
               animation: 'fadeContent 1.2s ease 0.5s forwards'
             }}>
 
-              {/* Styles partagés des cartes — identique kpi-card Home */}
+              {/* Styles partagés des cartes : identique kpi-card Home */}
               {(() => {
                 const glassCard = {
                   flex: '1 1 190px',
@@ -318,14 +318,14 @@ const LandingDG = () => {
                 };
                 return (
                   <>
-                    {/* Card 1 — Performance globale */}
+                    {/* Card 1 : Performance globale */}
                     <div className="dg-kpi-card" style={glassCard}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance globale</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+31%</div>
                       <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
                         <span style={{ color: '#44CCFF' }}>Croissance</span> 90 jours
                       </div>
-                      {/* Sparkline — fill séparé sans stroke, ligne animée */}
+                      {/* Sparkline : fill séparé sans stroke, ligne animée */}
                       <svg viewBox="0 0 100 32" width="100%" height="34" style={{ display: 'block', overflow: 'visible' }}>
                         <defs>
                           <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
@@ -336,7 +336,7 @@ const LandingDG = () => {
                             <rect x="0" y="0" width="100" height="32" />
                           </clipPath>
                         </defs>
-                        {/* Zone de remplissage — stroke none explicite */}
+                        {/* Zone de remplissage : stroke none explicite */}
                         <path
                           d="M0 25 L20 28 L40 22 L60 14 L80 18 L100 0 L100 32 L0 32 Z"
                           fill="url(#fillGrad)"
@@ -367,7 +367,7 @@ const LandingDG = () => {
                       </svg>
                     </div>
 
-                    {/* Card 2 — Alignement équipes */}
+                    {/* Card 2 : Alignement équipes */}
                     <div className="dg-kpi-card" style={{ ...glassCard, position: 'relative' }}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Alignement équipes</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>9.1/10</div>
@@ -388,12 +388,12 @@ const LandingDG = () => {
                       </div>
                     </div>
 
-                    {/* Card 3 — Prochaine Initiative */}
+                    {/* Card 3 : Prochaine Initiative */}
                     <div className="dg-kpi-card" style={glassCard}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Prochaine Initiative</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>CRM IA</div>
                       <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                        <span style={{ color: '#44CCFF' }}>Démarrage</span> J+14 — ROI ×3
+                        <span style={{ color: '#44CCFF' }}>Démarrage</span> J+14 : ROI ×3
                       </div>
                       {/* Barres animées avec hauteurs croissantes */}
                       <svg viewBox="0 0 90 30" width="90" height="30" style={{ display: 'block' }}>
@@ -425,7 +425,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
         {/* Halo lumineux côté droit */}
         <div style={{
@@ -441,7 +441,7 @@ const LandingDG = () => {
           zIndex: 0
         }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
             {enjeux.map((item, i) => (
               <div key={i} style={{
@@ -466,10 +466,10 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les dirigeants</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les dirigeants</h2>
           <div className="grid-2" style={{ gap: '2rem' }}>
             {apports.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
@@ -481,12 +481,12 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B — LA VISION SYSTEMIQUE ═══ */}
+      {/* ═══ SECTION 3B : LA VISION SYSTEMIQUE ═══ */}
       <section style={{ backgroundColor: '#050510', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem 0' }}>
           {/* En-tête pleine largeur */}
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>VISION SYSTÉMIQUE</p>
-          <h2 style={{ fontSize: '2.25rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2, maxWidth: '900px' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2, maxWidth: '900px' }}>
             L'IA, levier de croissance pour les dirigeants de PME ?
           </h2>
         </div>
@@ -501,7 +501,7 @@ const LandingDG = () => {
               Ce qui coûte, c'est de laisser 50% du temps de ses équipes partir en tâches administratives et saisies manuelles. Ce n'est pas un problème de motivation. C'est un problème de système.
             </p>
             <p>
-              L'IA règle ça — et va plus loin : des interactions clients plus rapides, des services mieux personnalisés, une capacité à délivrer que vos concurrents ne proposent pas encore.
+              L'IA règle ça : et va plus loin : des interactions clients plus rapides, des services mieux personnalisés, une capacité à délivrer que vos concurrents ne proposent pas encore.
             </p>
             <p>
               Chez Squadia, on structure ce qui permet d'en tirer un impact réel. Sur vos équipes, vos process et l'expérience que vous offrez à vos clients.
@@ -529,12 +529,12 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>CAS CLIENTS</p>
-            <h2 style={{ fontSize: '2.625rem', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
           </div>
 
@@ -609,7 +609,7 @@ const LandingDG = () => {
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {[
               {
@@ -658,11 +658,11 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — FAQ ═══ */}
+      {/* ═══ SECTION 5 : FAQ ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
-            <h2 style={{ fontSize: '2.25rem', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
             <div>
               {faqs.map((faq, idx) => (
                 <AccordionItem 
@@ -682,10 +682,10 @@ const LandingDG = () => {
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '1000px', marginInline: 'auto' }}>
 
-            <Link href="/blog/strategie-ia-pme-eti" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
+            <Link href="/blog/stratégie-ia-pme-eti" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(139,92,246,0.4)', backgroundColor: 'rgba(139,92,246,0.12)', color: '#A78BFA', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Stratégie IA</span>
@@ -705,13 +705,13 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding container" style={{ textAlign: 'center' }}>
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
             Vous voulez comprendre ce que Squadia peut changer pour votre organisation ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

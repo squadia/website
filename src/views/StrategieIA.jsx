@@ -31,7 +31,7 @@ const features = (img1, img2, img3, img4) => [
     id: 2,
     title: 'Priorisation par impact ROI',
     image: img2,
-    description: 'On n\'identifie pas tout ce qui est possible — on priorise ce qui a le plus d\'impact sur votre productivité ou vos coûts dans les 90 jours.',
+    description: 'On n\'identifie pas tout ce qui est possible : on priorise ce qui a le plus d\'impact sur votre productivité ou vos coûts dans les 90 jours.',
   },
   {
     id: 3,
@@ -62,7 +62,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
   return (
     <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
       <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem', textAlign: 'center' }}>Livrables</p>
-      <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: 700, textAlign: 'center', color: '#F9FAFB', marginBottom: '4rem', letterSpacing: '-0.02em' }}>
+      <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#F9FAFB', marginBottom: '4rem', letterSpacing: '-0.02em' }}>
         Une stratégie <span style={{ color: '#44CCFF' }}>ancrée dans l'exécution.</span>
       </h2>
 
@@ -116,7 +116,7 @@ export default function StrategieIA() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   useEffect(() => {
-    document.title = "Stratégie IA pour PME et ETI — Diagnostic, feuille de route et cas d'usage — Squadia";
+    document.title = "Stratégie IA pour PME et ETI : Diagnostic, feuille de route et cas d'usage : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia structure votre stratégie IA : diagnostic de maturité, priorisation des cas d'usage à fort ROI et feuille de route exécutable. Premiers livrables en 60 jours.");
@@ -150,7 +150,7 @@ export default function StrategieIA() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 — HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <img src={fondIA} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(10,10,26,0.40)' }} />
@@ -187,20 +187,20 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 2 — DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem', borderBottom: '1px solid #1A1A2E' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' }}>Le constat</p>
 
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>L'absence de cadre : la première cause d'échec.</h2>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>L'absence de cadre : la première cause d'échec.</h2>
                 <div style={{ width: '80px', height: '4px', backgroundColor: '#2563EB', borderRadius: '2px', marginBottom: '2rem' }} />
                 
                 <VideoPlaceholder />
 
                 <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.8 }}>
-                  57% des dirigeants naviguent à vue — testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de stratégie en amont.
+                  57% des dirigeants naviguent à vue : testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de stratégie en amont.
                 </p>
               </motion.div>
 
@@ -226,7 +226,7 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 3 — LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={fondIA} 
           img2={fondIA} 
@@ -234,10 +234,10 @@ export default function StrategieIA() {
           img4={fondIA} 
         />
 
-        {/* PRICING SECTION — STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
               Une approche modulable par briques.
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.45)', maxWidth: '700px', marginInline: 'auto' }}>
@@ -261,7 +261,7 @@ export default function StrategieIA() {
               },
               {
                 title: 'Migration CRM',
-                subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption.",
+                subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption.",
                 items: [
                   "Audit processus et données",
                   "Configuration cycles de vente",
@@ -342,10 +342,10 @@ export default function StrategieIA() {
 
         {/* FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Faut-il déjà avoir des outils IA pour démarrer ?', a: "Non. On intervient à tous les niveaux de maturité — y compris pour les organisations qui partent de zéro et cherchent simplement à comprendre par où commencer." },
+              { q: 'Faut-il déjà avoir des outils IA pour démarrer ?', a: "Non. On intervient à tous les niveaux de maturité : y compris pour les organisations qui partent de zéro et cherchent simplement à comprendre par où commencer." },
               { q: "Quels sont les livrables concrets ?", a: "Diagnostic structuré, cas d'usage priorisés avec ROI projeté, et feuille de route multi-horizons exécutable." },
               { q: "Comment justifier l'investissement ?", a: "Chaque mission produit des livrables mesurables : temps gagné, productivité accrue, réduction de coûts. On construit les KPIs avec vous." }
             ].map((faq, idx) => (
@@ -364,7 +364,7 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 6 — CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <Feature1 
           title="Prêt à transformer vos ambitions IA en résultats mesurables ?"
           description="Fini la navigation à vue. Squadia construit votre système de croissance assisté par l'IA."

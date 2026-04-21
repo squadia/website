@@ -57,9 +57,9 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
 
 const tabsData = [
   {
-    id: 'strategie',
+    id: 'stratégie',
     label: 'Stratégie',
-    pageLink: '/strategie-ia',
+    pageLink: '/stratégie-ia',
     cards: [
       {
         title: 'Stratégie Commerciale',
@@ -76,7 +76,7 @@ const tabsData = [
       },
       {
         title: 'Migration CRM',
-        subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption.",
+        subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption.",
         items: [
           "Audit des processus réels et des données existantes",
           "Configuration adaptée à vos cycles de vente",
@@ -232,7 +232,7 @@ const Tarifs = () => {
   const [activeTab, setActiveTab] = useState(tabsData[0].id);
 
   useEffect(() => {
-    document.title = "Tarifs Squadia — IA, Leads, Automatisation, Formation";
+    document.title = "Tarifs Squadia : IA, Leads, Automatisation, Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez les tarifs Squadia : stratégie IA, détection de leads, automatisation et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
@@ -243,7 +243,7 @@ const Tarifs = () => {
 
   return (
     <div className="tarifs-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -255,7 +255,7 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — ONGLETS PAR BRIQUE ═══ */}
+      {/* ═══ SECTION 2 : ONGLETS PAR BRIQUE ═══ */}
       <section className="container" style={{ paddingBottom: '80px' }}>
         <div className="fade-in">
           {/* Tabs Navigation */}
@@ -410,7 +410,7 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — NOTE TARIFAIRE ═══ */}
+      {/* ═══ SECTION 3 : NOTE TARIFAIRE ═══ */}
       <section className="container" style={{ paddingBottom: '60px' }}>
         <div className="fade-in" style={{ background: '#111827', padding: '2rem', borderRadius: '1rem', border: '1px solid #1A1A3A', textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', maxWidth: '900px', marginInline: 'auto' }}>
@@ -419,13 +419,13 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — RÉFÉRENCES CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 5 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 5 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', maxWidth: '800px', marginInline: 'auto', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '1rem' }}>
             Une question sur nos offres ?
           </h2>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>

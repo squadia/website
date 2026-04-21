@@ -10,8 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('strategie');
-  const [activeMobileCategory, setActiveMobileCategory] = useState('strategie');
+  const [activeCategory, setActiveCategory] = useState('stratégie');
+  const [activeMobileCategory, setActiveMobileCategory] = useState('stratégie');
   const [showMobileServices, setShowMobileServices] = useState(false);
   const [showMobileRoles, setShowMobileRoles] = useState(false);
   const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
@@ -145,13 +145,13 @@ const Navbar = () => {
         <div className="squad-dropdown-inner">
           <div className="squad-categories" style={{ position: 'relative' }}>
             <div className="squad-glider-track">
-              <div className="squad-glider" style={{ transform: `translateY(${['strategie','data','automatisation','formation'].indexOf(activeCategory) * 100}%)` }}>
+              <div className="squad-glider" style={{ transform: `translateY(${['stratégie','data','automatisation','formation'].indexOf(activeCategory) * 100}%)` }}>
                 <div className="squad-glider-glow" />
                 <div className="squad-glider-trail" />
               </div>
             </div>
             {[
-              { id: 'strategie', label: 'Stratégie', icon: <Target size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
+              { id: 'stratégie', label: 'Stratégie', icon: <Target size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'data', label: 'Data', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'automatisation', label: 'Automatisation', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
@@ -163,14 +163,14 @@ const Navbar = () => {
           </div>
 
           <div className="squad-items-wrap">
-            <div style={{ display: activeCategory === 'strategie' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/commerciale">
+            <div style={{ display: activeCategory === 'stratégie' ? 'block' : 'none' }}>
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/stratégie/commerciale">
                 <span className="squad-item-title">Stratégie Commerciale</span><span className="squad-tag">Stratégie</span>
                 <p className="squad-item-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
               </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/crm">
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/stratégie/crm">
                 <span className="squad-item-title">Migration CRM</span><span className="squad-tag">Stratégie</span>
-                <p className="squad-item-desc">Déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption</p>
+                <p className="squad-item-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
               </Link>
             </div>
             <div style={{ display: activeCategory === 'data' ? 'block' : 'none' }}>
@@ -320,7 +320,7 @@ const Navbar = () => {
         .squad-item:hover { background: rgba(255,255,255,0.04); }
         .squad-item-title { color: #fff; font-size: 14px; font-weight: 500; display: inline; margin-right: 8px; }
         .squad-tag { background: rgba(68,204,255,0.09); border: 1px solid rgba(68,204,255,0.22); color: #44CCFF; font-size: 10px; padding: 2px 8px; border-radius: 20px; vertical-align: middle; }
-        .squad-item-desc { color: rgba(255,255,255,0.65); font-size: 13px; margin-top: 3px; line-height: 1.5; }
+        .squad-item-desc { color: rgba(255,255,255,0.65); font-size: 0.875rem; margin-top: 3px; line-height: 1.5; }
         .squad-formation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
         .squad-all-link { display: block; margin-top: 10px; padding: 8px 12px; color: #44CCFF; font-size: 13px; text-decoration: none; border-top: 1px solid rgba(255,255,255,0.06); }
         .squad-personas { padding: 20px; background: rgba(68,204,255,0.06); border: 1px solid rgba(68,204,255,0.15); border-radius: 10px; margin-left: 20px; }
@@ -332,7 +332,7 @@ const Navbar = () => {
         .squad-persona img { width: 58px; height: 58px; border-radius: 50%; margin-right: 14px; object-fit: cover; }
         .squad-persona-info { display: flex; flex-direction: column; }
         .squad-persona-name { color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 500; }
-        .squad-persona-sub { color: rgba(255,255,255,0.62); font-size: 12px; margin-top: 3px; }
+        .squad-persona-sub { color: rgba(255,255,255,0.62); font-size: 0.875rem; margin-top: 3px; }
         .squad-persona:hover .squad-persona-name { color: #fff; }
 
         @media (max-width: 860px) {
@@ -401,7 +401,7 @@ const Navbar = () => {
           letter-spacing: 0.08em; text-transform: uppercase;
           color: rgba(249,250,251,0.4);
         }
-        /* Category tabs — grille 2×2 pour tout afficher sans scroll horizontal */
+        /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
         .mob-cat-tabs {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -516,7 +516,7 @@ const Navbar = () => {
     </nav>
 
     {/* ══════════════════════════════
-        MOBILE MENU — hors du <nav>
+        MOBILE MENU : hors du <nav>
     ══════════════════════════════ */}
     <AnimatePresence>
       {isOpen && (
@@ -566,7 +566,7 @@ const Navbar = () => {
                     {/* Tabs 2×2 */}
                     <div className="mob-cat-tabs">
                       {[
-                        { id: 'strategie', label: 'Stratégie' },
+                        { id: 'stratégie', label: 'Stratégie' },
                         { id: 'data', label: 'Data' },
                         { id: 'automatisation', label: 'Automatisation' },
                         { id: 'formation', label: 'Formation' },
@@ -581,15 +581,15 @@ const Navbar = () => {
 
                     {/* Panels */}
                     <div className="mob-panels" style={{ paddingBottom: '8px' }}>
-                      {activeMobileCategory === 'strategie' && (
+                      {activeMobileCategory === 'stratégie' && (
                         <>
-                          <Link className="mob-service-item" href="/strategie/commerciale" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/stratégie/commerciale" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Stratégie Commerciale</span><span className="mob-service-tag">Stratégie</span></div>
                             <p className="mob-service-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
                           </Link>
-                          <Link className="mob-service-item" href="/strategie/crm" onClick={closeMenu}>
+                          <Link className="mob-service-item" href="/stratégie/crm" onClick={closeMenu}>
                             <div className="mob-service-top"><span className="mob-service-title">Migration CRM</span><span className="mob-service-tag">Stratégie</span></div>
-                            <p className="mob-service-desc">Déployer un CRM que vos équipes utilisent vraiment — de l'audit à l'adoption</p>
+                            <p className="mob-service-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
                           </Link>
                         </>
                       )}
@@ -704,7 +704,7 @@ const Navbar = () => {
 
           </div>
 
-          {/* ── CTA — enfant direct de mob-menu, toujours en bas ── */}
+          {/* ── CTA : enfant direct de mob-menu, toujours en bas ── */}
           <div className="mob-cta-block">
             <Link className="mob-cta-btn" href="/contact" onClick={closeMenu}>Prendre RDV</Link>
           </div>

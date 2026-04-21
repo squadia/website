@@ -2,7 +2,7 @@ import React from 'react';
 import CardFlip from './flip-card';
 
 /**
- * CtaSection — Section CTA finale réutilisable avec CardFlip 3D
+ * CtaSection : Section CTA finale réutilisable avec CardFlip 3D
  * Props:
  *   - headline:    Titre principal (h2)
  *   - description: Sous-titre explicatif

@@ -72,23 +72,23 @@ const StatCard = ({ stat, small = false }) => {
 
 const caseSEO = {
   'pipeline-b2b': {
-    title: "Pipeline B2B from scratch — Cas client Squadia",
+    title: "Pipeline B2B from scratch : Cas client Squadia",
     description: "Découvrez comment Squadia a construit un pipeline B2B complet sur un marché non cartographié. Stratégie, data et premiers résultats mesurables en 90 jours.",
   },
   'formation-ia-com': {
-    title: "Formation IA Communication — Cas client Squadia",
+    title: "Formation IA Communication : Cas client Squadia",
     description: "Comment Squadia a formé des équipes communication à l'IA en partant d'une charte existante. Programme personnalisé, outils concrets, résultats mesurables.",
   },
   'crm-industrie': {
-    title: "CRM Industrie : de la contrainte à la croissance — Squadia",
+    title: "CRM Industrie : de la contrainte à la croissance : Squadia",
     description: "Comment Squadia a transformé un CRM perçu comme une contrainte en moteur commercial. Migration, structuration du pipeline et adoption par les équipes.",
   },
   'migration-crm': {
-    title: "Migration HubSpot en 3 semaines — Cas client Squadia",
+    title: "Migration HubSpot en 3 semaines : Cas client Squadia",
     description: "Comment Squadia a nettoyé 2 500 comptes et déployé HubSpot en 3 semaines. Structuration du pipeline, adoption équipes et premiers résultats immédiats.",
   },
   'formation-vente': {
-    title: "Formation Vente B2B — Méthode commune — Cas client Squadia",
+    title: "Formation Vente B2B : Méthode commune : Cas client Squadia",
     description: "Comment Squadia a aligné juniors et seniors sur une méthode de vente commune. Formation B2B terrain, outils IA, résultats mesurables dès la semaine suivante.",
   },
 };
@@ -132,7 +132,7 @@ const CaseDetail = ({ caseData }) => {
 
       <div style={{ background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '3rem', position: 'relative', overflow: 'hidden' }}>
         <div style={{ marginBottom: '2rem' }}>
-          <h2 style={{ fontSize: '1rem', color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#9CA3AF', textTransform: 'uppercase', letterSpacing: '1px', marginBottom: '1rem' }}>
             {caseData.client}
           </h2>
           <h1 style={{ fontSize: '2.5rem', lineHeight: 1.2, marginBottom: '1.5rem', maxWidth: '900px' }}>
@@ -197,18 +197,18 @@ const CaseDetail = ({ caseData }) => {
         );
 
         const cardsMap = {
-          'strategie-ia-pme-eti': createCard('/blog/strategie-ia-pme-eti', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats'),
+          'stratégie-ia-pme-eti': createCard('/blog/stratégie-ia-pme-eti', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une stratégie IA en PME et ETI : séquence, outils et premiers résultats'),
           'formation-ia-ou-automatisation': createCard('/blog/formation-ia-ou-automatisation', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Transformation', 'Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?'),
           'prospection-multicanale-b2b-erreurs': createCard('/blog/prospection-multicanale-b2b-erreurs', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Prospection', 'Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter'),
           'formation-commerciale-b2b-ia': createCard('/blog/formation-commerciale-b2b-ia', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Formation commerciale', 'Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l\'IA'),
-          'nettoyage-segmentation-enrichissement': createCard('/blog/nettoyage-segmentation-enrichissement-donnees-b2b', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Data B2B', 'Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit')
+          'nettoyage-segmentation-enrichissement': createCard('/blog/nettoyage-segmentation-enrichissement-données-b2b', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Data B2B', 'Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit')
         };
 
         const recs = {
           'pipeline-b2b': ['prospection-multicanale-b2b-erreurs', 'nettoyage-segmentation-enrichissement'],
           'formation-ia-com': ['formation-ia-ou-automatisation', 'formation-commerciale-b2b-ia'],
-          'crm-industrie': ['strategie-ia-pme-eti', 'formation-ia-ou-automatisation'],
-          'migration-crm': ['strategie-ia-pme-eti', 'nettoyage-segmentation-enrichissement'],
+          'crm-industrie': ['stratégie-ia-pme-eti', 'formation-ia-ou-automatisation'],
+          'migration-crm': ['stratégie-ia-pme-eti', 'nettoyage-segmentation-enrichissement'],
           'formation-vente': ['formation-commerciale-b2b-ia', 'formation-ia-ou-automatisation']
         };
 
@@ -217,7 +217,7 @@ const CaseDetail = ({ caseData }) => {
 
         return (
           <div style={{ marginTop: '6rem' }}>
-            <h2 style={{ fontSize: '2rem', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
             <div className="grid-2" style={{ gap: '2rem', maxWidth: '1000px', marginInline: 'auto' }}>
               {keysToRender.map(k => <React.Fragment key={k}>{cardsMap[k]}</React.Fragment>)}
             </div>
@@ -382,7 +382,7 @@ const CasClients = () => {
   const { caseId } = useParams();
 
   useEffect(() => {
-    document.title = "Cas clients Squadia — CRM, IA et Formation B2B";
+    document.title = "Cas clients Squadia : CRM, IA et Formation B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez comment Squadia a aidé des PME, ETI et grands groupes à structurer leur pipeline, automatiser leurs process et former leurs équipes à l'IA.";

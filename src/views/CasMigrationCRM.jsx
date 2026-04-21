@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const hubspotImg = '/assets/images/hubspotcrm.jpeg';
 const CasMigrationCRM = () => {
   useEffect(() => {
-    document.title = "Cas client — Migration CRM HubSpot · Squadia";
+    document.title = "Cas client : Migration CRM HubSpot · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -32,7 +32,7 @@ const CasMigrationCRM = () => {
     {
       step: '02',
       title: 'Déploiement HubSpot et dashboards internationaux',
-      body: 'Configuration de HubSpot avec les bons dashboards pour suivre le développement sur les différents pays cibles. Mise en place des automatisations nécessaires à l\'intérieur et à l\'extérieur du CRM pour alerter les bonnes personnes au bon moment — deals qui progressent, seuils de valeur atteints, relances à déclencher.'
+      body: 'Configuration de HubSpot avec les bons dashboards pour suivre le développement sur les différents pays cibles. Mise en place des automatisations nécessaires à l\'intérieur et à l\'extérieur du CRM pour alerter les bonnes personnes au bon moment : deals qui progressent, seuils de valeur atteints, relances à déclencher.'
     },
     {
       step: '03',
@@ -169,13 +169,13 @@ const CasMigrationCRM = () => {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
           <div>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.8rem' }}>Le contexte</p>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
               Une force de vente sur Excel, un marché international qui n'attend pas.
             </h2>
           </div>
           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             <p>
-              Cette startup grenobloise développe une technologie de pile à combustible applicable aux transports maritimes, routiers et aériens. Marché en forte croissance, concurrence internationale intense, beaucoup investi en R&D. Quand ils arrivent avec leur projet, leur force de vente travaille encore sur des fichiers Excel. Les données sont éparpillées, sans cohérence entre elles. Certaines colonnes sont renseignées d'un côté et vides de l'autre. Aucun système d'alerte quand un deal progresse ou atteint un certain niveau de valeur. Et surtout, aucune méthode de vente commune pour que tout le monde parle le même langage en interne.
+              Cette startup grenobloise développe une technologie de pile à combustible applicable aux transports maritimes, routiers et aériens. Marché en forte croissance, concurrence internationale intense, beaucoup investi en R&D. Quand ils arrivent avec leur projet, leur force de vente travaille encore sur des fichiers Excel. Les données sont éparpillées, sans cohérence entre elles. Certaines colonnes sont renseignées d'un côté et vides de l'autre. Aucun système d'alerte quand'un deal progresse ou atteint un certain niveau de valeur. Et surtout, aucune méthode de vente commune pour que tout le monde parle le même langage en interne.
             </p>
             <p style={{ marginTop: '1.4rem' }}>
               Ils savaient qu'ils voulaient HubSpot. Ils avaient déjà une idée du budget. Ce qu'ils n'avaient pas encore, c'était la structure pour en tirer de la valeur rapidement.

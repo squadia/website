@@ -6,7 +6,7 @@ const MentionsLegales = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Mentions Légales — Squadia";
+    document.title = "Mentions Légales : Squadia";
   }, []);
 
   const sections = [
@@ -40,7 +40,7 @@ const MentionsLegales = () => {
       title: "Propriété intellectuelle",
       content: (
         <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-          L'ensemble des contenus présents sur ce site — textes, visuels, structure et éléments graphiques — sont la propriété exclusive de Squadia. Toute reproduction, même partielle, est interdite sans autorisation préalable.
+          L'ensemble des contenus présents sur ce site : textes, visuels, structure et éléments graphiques : sont la propriété exclusive de Squadia. Toute reproduction, même partielle, est interdite sans autorisation préalable.
         </p>
       )
     },
@@ -82,7 +82,7 @@ const MentionsLegales = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(0, 3).map((section, index) => (
                 <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>
@@ -92,7 +92,7 @@ const MentionsLegales = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(3).map((section, index) => (
                 <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: '1.25rem', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>

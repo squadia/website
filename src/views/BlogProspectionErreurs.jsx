@@ -19,7 +19,7 @@ export default function BlogProspectionErreurs() {
   }, []);
 
   useEffect(() => {
-    document.title = "Prospection multicanale B2B : 5 erreurs à éviter — Squadia";
+    document.title = "Prospection multicanale B2B : 5 erreurs à éviter : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Découvrez les 5 erreurs les plus courantes en prospection multicanale B2B et comment les corriger. Conseils pour équipes commerciales en PME et ETI.");
@@ -214,7 +214,7 @@ export default function BlogProspectionErreurs() {
           border: '1px solid rgba(37,99,235,0.25)',
           borderRadius: '1.25rem', padding: '3rem', textAlign: 'center'
         }}>
-          <h2 style={{ fontSize: '1.7rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
             Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>

@@ -16,7 +16,7 @@ export default function BlogStrategieIAPME() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   useEffect(() => {
-    document.title = "Stratégie IA en PME et ETI : la bonne séquence — Squadia";
+    document.title = "Stratégie IA en PME et ETI : la bonne séquence : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur stratégie IA pour obtenir un retour concret en 90 jours.";
@@ -316,7 +316,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce que tout le monde a vu arriver — et que peu ont vraiment suivi</h2>
+          <h2>Ce que tout le monde a vu arriver : et que peu ont vraiment suivi</h2>
 
           <p>Il y a trois ans, GPT-3 était une curiosité de labo. En moins d'un an, GPT-4 était connecté à internet, capable de chercher, de lire, de répondre en temps réel. En parallèle, la génération d'images a évolué à une vitesse que personne n'avait vraiment anticipée. Tout ça en 18 mois.</p>
 
@@ -324,7 +324,7 @@ export default function BlogStrategieIAPME() {
 
           <p>Ce n'est plus un outil qu'on interroge. C'est un système qui agit. Un client télécharge un document sur votre site : un agent identifie son rôle, son secteur, son entreprise, rédige un message personnalisé, crée une tâche dans votre CRM, l'assigne à un commercial, et envoie une séquence de suivi adaptée. Sans intervention humaine. En temps réel.</p>
 
-          <p>Puis est arrivé le MCP — la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. <strong>L'IA devient architecte de processus, pas seulement exécutant de tâches.</strong></p>
+          <p>Puis est arrivé le MCP : la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. <strong>L'IA devient architecte de processus, pas seulement exécutant de tâches.</strong></p>
 
           <p>Ce que ça signifie concrètement : le champ du possible s'est élargi plus vite que la capacité de la plupart des organisations à le cartographier. Et c'est précisément là que le problème commence.</p>
 
@@ -336,7 +336,7 @@ export default function BlogStrategieIAPME() {
 
           <p>La séquence typique : un grand cabinet ou une ESN identifie une opportunité IA, constitue une équipe, réfléchit à une offre, la formalise, la valide en interne, la lance sur le marché. Problème : entre le moment où l'offre a été conçue et celui où elle est commercialisée, l'IA a évolué. <strong>L'offre est déjà partiellement obsolète à son lancement.</strong></p>
 
-          <p>Les structures agiles — qui peuvent pivoter en semaines, pas en trimestres — ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.</p>
+          <p>Les structures agiles : qui peuvent pivoter en semaines, pas en trimestres : ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.</p>
 
           <div className="article-highlight-box">
             <h3>Pour une PME ou une ETI qui cherche un partenaire IA</h3>
@@ -349,7 +349,7 @@ export default function BlogStrategieIAPME() {
 
           <div className="article-stat">
             <div className="article-stat-number">80%</div>
-            <div className="article-stat-label">des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas — parce que les entreprises ont répondu à la mauvaise question.</div>
+            <div className="article-stat-label">des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas : parce que les entreprises ont répondu à la mauvaise question.</div>
           </div>
 
           <p>Elles ont demandé : <em>quel outil utiliser ?</em> Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong></p>
@@ -361,7 +361,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce qu'il est déjà possible de faire — et que beaucoup ignorent</h2>
+          <h2>Ce qu'il est déjà possible de faire : et que beaucoup ignorent</h2>
 
           <p>Il n'est pas nécessaire de vouloir aller sur la Lune pour tirer parti de l'IA. Si l'objectif est d'aller de Paris à Limoges dans les meilleures conditions, pas besoin d'une fusée. Il y a besoin du bon train.</p>
 
@@ -487,14 +487,14 @@ export default function BlogStrategieIAPME() {
           textAlign: 'center'
         }}>
           <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: '1rem' }}>Passez à l'action</p>
-          <h2 style={{ fontSize: '1.7rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.2 }}>
             Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
             Squadia accompagne les PME et ETI françaises de la définition de la stratégie à la mise en exécution opérationnelle.
           </p>
           <Link
-            href="/strategie-ia"
+            href="/stratégie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               background: '#2563EB', color: '#fff',

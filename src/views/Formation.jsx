@@ -128,7 +128,7 @@ const Formation = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA pour les équipes vente, marketing et communication — Squadia";
+    document.title = "Formation IA pour les équipes vente, marketing et communication : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes à l'IA appliquée à leur métier. Cas pratiques, outils réels, autonomie durable. Pour PME et ETI en France.";
@@ -137,7 +137,7 @@ const Formation = () => {
 
   return (
     <div className="formation-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -157,10 +157,10 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — LE PROBLÈME ═══ */}
+      {/* ═══ SECTION 2 : LE PROBLÈME ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '1.5rem' }}>Ce qu'on observe dans la plupart des entreprises.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '1.5rem' }}>Ce qu'on observe dans la plupart des entreprises.</h2>
           
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', maxWidth: '800px', textAlign: 'center', marginInline: 'auto', lineHeight: '1.6', marginBottom: '4rem' }}>
             <strong style={{ color: 'white', fontWeight: 600 }}>66% des entreprises qui réussissent leur transformation IA ont formé leurs équipes en amont</strong> (Bpifrance, 2026). Et pourtant, c'est encore l'étape que la plupart sautent.
@@ -196,16 +196,16 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QU'ON FORME (NEW DESIGN) ═══ */}
+      {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
 
             <FormationCard
               category="Vente"
-              title="Ventes & IA — Méthode, plan de compte et outils pour équipes commerciales B2B"
+              title="Ventes & IA : Méthode, plan de compte et outils pour équipes commerciales B2B"
               forWho="Pour qui : Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune"
               description="Méthode MEDDIC, plan de compte structuré et IA en situation réelle. Vos commerciaux repartent avec des réflexes de terrain renforcés et des outils qu'ils utilisent dès le lundi suivant."
               link="/formation-ventes-et-ia"
@@ -215,7 +215,7 @@ const Formation = () => {
 
             <FormationCard
               category="Marketing"
-              title="Marketing & IA — Créer, produire et automatiser ses contenus avec l IA"
+              title="Marketing & IA : Créer, produire et automatiser ses contenus avec l'IA"
               forWho="Pour qui : Responsables marketing et créateurs de contenu souhaitant produire plus vite sans sacrifier la qualité"
               description="Prompting efficace, production images vidéos podcasts et automatisation de la veille. Les bons réflexes, les bons outils, et une routine de production IA opérationnelle dès la fin de la formation."
               link="/formation-marketing-et-ia"
@@ -225,7 +225,7 @@ const Formation = () => {
 
             <FormationCard
               category="Communication"
-              title="Communication & IA — Structurer sa stratégie éditoriale et produire avec l IA"
+              title="Communication & IA : Structurer sa stratégie éditoriale et produire avec l'IA"
               forWho="Pour qui : Directeurs communication, managers et équipes com cherchant à produire plus et mieux sur tous les canaux"
               description="Stratégie éditoriale structurée, prompting adapté à la voix de la marque et organisation de la production de contenu. Un plan éditorial opérationnel à l issue des 2 jours."
               link="/formation-communication-et-ia"
@@ -237,10 +237,10 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — LES FORMATS ═══ */}
+      {/* ═══ SECTION 4 : LES FORMATS ═══ */}
       <section id="formats" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem' }}>Choisissez le format adapté à votre organisation.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Choisissez le format adapté à votre organisation.</h2>
           
           <div style={{ 
             display: 'grid', 
@@ -361,34 +361,34 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
           
           <div style={{ background: '#0D0D25', padding: '3.5rem', borderRadius: '12px', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', marginInline: 'auto' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Vos équipes sont formées. L'étape suivante, c'est structurer les bons outils et les bons process pour aller plus loin.</h3>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', fontSize: '1.1rem' }}>
               Une feuille de route IA adaptée à votre organisation, avec les cas d'usage qui font vraiment sens pour vous.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
+            <Link href="/stratégie-ia" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
               Voir l'offre Stratégie IA <Compass size={18} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #111' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '2.5rem', margin: '0 0 0.5rem 0' }}>Questions fréquentes</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', margin: '0 0 0.5rem 0' }}>Questions fréquentes</h2>
             <p style={{ fontSize: '1.25rem', color: 'var(--accent)', margin: 0 }}>sur l'offre Formation</p>
           </div>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <AccordionItem 
               question="Faut-il avoir des outils IA déjà en place pour suivre une formation ?" 
-              answer="Non. Les formations peuvent démarrer dès lors que les participants ont accès à un outil IA basique (ChatGPT, Copilot, Gemini). On part de ce que vous avez."
+              answer="Non. Les formations peuvent démarrer dès lors que les participants ont accès à un outil'IA basique (ChatGPT, Copilot, Gemini). On part de ce que vous avez."
             />
             <AccordionItem 
               question="Combien de personnes par session ?" 
@@ -410,10 +410,10 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 7 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
             Prêt à rendre vos équipes vraiment autonomes sur l'IA ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

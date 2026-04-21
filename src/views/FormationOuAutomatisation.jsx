@@ -19,7 +19,7 @@ const FormationOuAutomatisation = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation IA ou automatisation des process — Squadia";
+    document.title = "Formation IA ou automatisation des process : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez la bonne séquence pour transformer votre PME ou ETI avec l'IA. Formation des équipes ou automatisation des process : par quoi commencer ?";
@@ -34,7 +34,7 @@ const FormationOuAutomatisation = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -56,7 +56,7 @@ const FormationOuAutomatisation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -73,7 +73,7 @@ const FormationOuAutomatisation = () => {
             La transformation IA d'une entreprise repose sur deux piliers : former les talents pour qu'ils comprennent ce que l'IA peut faire dans leur métier, et adapter les process pour que cette compréhension produise quelque chose de concret. L'un sans l'autre ne fonctionne pas. Et pourtant, la plupart des entreprises n'en activent qu'un seul.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             La vraie question que se posent les dirigeants
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -86,7 +86,7 @@ const FormationOuAutomatisation = () => {
             Ce qu'on observe sur le terrain, après avoir accompagné des PME, des ETI, des établissements publics et des groupes nationaux, c'est que la séquence fait tout. L'erreur la plus fréquente n'est pas de choisir le mauvais outil. C'est de brûler les étapes.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Étape 1 : la formation comme outil de découverte
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -105,7 +105,7 @@ const FormationOuAutomatisation = () => {
             Ce qu'elle ne produit pas : un plan de transformation opérationnel intégré à votre stratégie d'entreprise. Ce n'est pas son rôle, et il faut l'accepter avant d'aller plus loin.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Étape 2 : faire le pont entre compréhension et système
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -115,13 +115,13 @@ const FormationOuAutomatisation = () => {
             Son rôle n'est pas de vous expliquer ce qu'est l'IA. C'est de faire le pont entre les attentes métier des uns et des autres et de les traduire en quelque chose d'actionnable.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            <strong>Les workflows automatisés d'abord :</strong> des chemins qui font que quand une action se produit quelque part dans votre système, une réaction intelligente se déclenche ailleurs. Un visiteur télécharge un document sur votre site ? Le commercial responsable reçoit une alerte, le score du prospect évolue, et si l'activité continue, ce prospect entre automatiquement dans une séquence de nurturing adaptée à son profil. Cela ne se configure pas en une heure. Cela se conçoit, se teste, se documente. Et quand c'est bien fait, ça tourne sans intervention humaine.
+            <strong>Les workflows automatisés d'abord :</strong> des chemins qui font que quand'une action se produit quelque part dans votre système, une réaction intelligente se déclenche ailleurs. Un visiteur télécharge un document sur votre site ? Le commercial responsable reçoit une alerte, le score du prospect évolue, et si l'activité continue, ce prospect entre automatiquement dans une séquence de nurturing adaptée à son profil. Cela ne se configure pas en une heure. Cela se conçoit, se teste, se documente. Et quand c'est bien fait, ça tourne sans intervention humaine.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             <strong>Les agents IA métier ensuite :</strong> des outils personnalisés qui permettent à vos équipes commerciales, marketing, communication de se démultiplier avec intelligence. Préparer un rendez-vous en 5 minutes au lieu de 45. Générer des variantes de campagne sur un compte spécifique sans repartir de zéro. Faire une veille sectorielle structurée sans y passer une demi-journée. Ce n'est pas de la magie. C'est de la conception rigoureuse d'agents calibrés sur vos processus réels.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Étape 3 : mesurer ce qu'on a mis en place
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -137,7 +137,7 @@ const FormationOuAutomatisation = () => {
             Si ce système n'est pas encore en place, c'est souvent le premier chantier à adresser avant même de parler d'automatisation ou de formation avancée. On ne peut pas piloter ce qu'on ne mesure pas.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Étape 4 : gérer les résistances
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -153,7 +153,7 @@ const FormationOuAutomatisation = () => {
             La meilleure façon d'amorcer le mouvement, c'est souvent de commencer avec les champions. Ceux qui sont déjà les meilleurs dans l'équipe et qui sont ouverts à essayer. Quand ils montrent ce que ça change concrètement dans leur quotidien, les autres suivent. Pas tous, pas tout de suite. Mais le mouvement commence.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Étape 5 : ancrer les habitudes dans la durée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -163,7 +163,7 @@ const FormationOuAutomatisation = () => {
             C'est souvent à cette étape que la confusion entre outils de performance et outils de surveillance refait surface. Beaucoup d'équipes ont confondu les deux, et le résultat est toujours le même : les commerciaux remplissent les champs du CRM pour satisfaire le manager, pas pour s'en servir eux-mêmes. Le système devient une contrainte de plus plutôt qu'un levier.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            La bonne approche, c'est de rendre visible la valeur que chaque outil apporte à celui qui l'utilise, pas seulement à celui qui supervise. Quand un commercial comprend que bien renseigner un compte dans son CRM lui permet de mieux préparer son prochain rendez-vous sur ce compte, il le fait différemment. Ce n'est plus une case à cocher. C'est une ressource qu'il enrichit pour lui-même.
+            La bonne approche, c'est de rendre visible la valeur que chaque outil apporte à celui qui l'utilise, pas seulement à celui qui supervise. Quand'un commercial comprend que bien renseigner un compte dans son CRM lui permet de mieux préparer son prochain rendez-vous sur ce compte, il le fait différemment. Ce n'est plus une case à cocher. C'est une ressource qu'il enrichit pour lui-même.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
             Les entreprises qui réussissent cette étape ne sont pas celles qui ont mis en place le meilleur outil. Ce sont celles qui ont réussi à créer une culture où l'amélioration continue est considérée comme normale, et où chaque itération, chaque discussion, chaque ajustement est vu comme une progression et non comme une remise en question.
@@ -190,9 +190,9 @@ const FormationOuAutomatisation = () => {
 
           {/* ══ SECTION ARTICLES (A lire aussi) ══ */}
           <div>
-            <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
             <div className="grid-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
-              <Link href="/blog/strategie-ia-pme-eti" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <Link href="/blog/stratégie-ia-pme-eti" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Stratégie IA</span>
                 </div>
@@ -217,7 +217,7 @@ const FormationOuAutomatisation = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#FFFFFF', border: 'none' }}>
+            <Link href="/stratégie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#FFFFFF', border: 'none' }}>
               Découvrir l'offre Stratégie IA <ArrowRight size={18} />
             </Link>
           </div>

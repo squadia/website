@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const transformerCRMImg = '/assets/images/transformerCRM.jpeg';
 const CasCRMIndustrie = () => {
   useEffect(() => {
-    document.title = "Cas client — Transformation CRM · Squadia";
+    document.title = "Cas client : Transformation CRM · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -26,12 +26,12 @@ const CasCRMIndustrie = () => {
     {
       step: '02',
       title: 'Structuration du CRM et méthode de vente commune',
-      body: 'Refonte du CRM pour que chaque commercial sache exactement ce qui est obligatoire, ce qui est optionnel, et pourquoi. Mise en place d\'une méthode de vente commune pour que "je m\'engage sur ce deal" veuille dire la même chose du terrain au COMEX — et que la supply chain puisse anticiper les commandes à venir.'
+      body: 'Refonte du CRM pour que chaque commercial sache exactement ce qui est obligatoire, ce qui est optionnel, et pourquoi. Mise en place d\'une méthode de vente commune pour que "je m\'engage sur ce deal" veuille dire la même chose du terrain au COMEX : et que la supply chain puisse anticiper les commandes à venir.'
     },
     {
       step: '03',
       title: 'Marketing multicanal et automatisation IA',
-      body: 'Déploiement d\'une approche marketing multicanal intégrant email, LinkedIn, Instagram et WhatsApp. Plusieurs initiatives d\'automatisation dont un système de réponse IA aux sollicitations clients en dehors des heures de bureau — réduisant les délais de réponse de plusieurs heures à quelques minutes.'
+      body: 'Déploiement d\'une approche marketing multicanal intégrant email, LinkedIn, Instagram et WhatsApp. Plusieurs initiatives d\'automatisation dont un système de réponse IA aux sollicitations clients en dehors des heures de bureau : réduisant les délais de réponse de plusieurs heures à quelques minutes.'
     },
   ];
 
@@ -142,7 +142,7 @@ const CasCRMIndustrie = () => {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
           <div>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.8rem' }}>Le contexte</p>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
               Un CRM vécu comme une contrainte. Un business en décroissance sans explication claire.
             </h2>
           </div>
@@ -151,7 +151,7 @@ const CasCRMIndustrie = () => {
               Nouveau contexte actionnarial, nouvelle feuille de route au COMEX. L'entreprise avait grandi avec un CRM fait maison, conçu il y a plusieurs années pour répondre aux besoins très spécifiques d'un client du groupe. Résultat : un outil devenu trop complexe à maintenir, avec des limitations techniques et de sécurité qui freinaient son adoption. Les commerciaux ne savaient plus ce qui était obligatoire à remplir de ce qui était optionnel. Les managers n'avaient pas de visibilité fiable sur le pipeline.
             </p>
             <p style={{ marginTop: '1.4rem' }}>
-              Il n'y avait pas non plus de méthode de vente commune. Quand un commercial disait qu'il s'engageait sur un deal, cet engagement ne voulait pas dire la même chose pour tout le monde. La supply chain n'avait aucune visibilité sur les commandes à venir. Et le marketing travaillait avec des agences externes sur des budgets qui auraient pu être mieux contrôlés avec un CRM bien configuré.
+              Il n'y avait pas non plus de méthode de vente commune. Quand'un commercial disait qu'il s'engageait sur un deal, cet engagement ne voulait pas dire la même chose pour tout le monde. La supply chain n'avait aucune visibilité sur les commandes à venir. Et le marketing travaillait avec des agences externes sur des budgets qui auraient pu être mieux contrôlés avec un CRM bien configuré.
             </p>
           </div>
         </div>

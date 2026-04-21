@@ -84,7 +84,7 @@ const LandingMarketing = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour Directeurs Marketing — Pipeline B2B et IA";
+    document.title = "Squadia pour Directeurs Marketing : Pipeline B2B et IA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia aide les directions marketing B2B à structurer un pipeline fiable, qualifier leurs leads et automatiser leurs campagnes. Pour PME et ETI en France.";
@@ -116,7 +116,7 @@ const LandingMarketing = () => {
   return (
     <div className="landing-marketing" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -260,7 +260,7 @@ const LandingMarketing = () => {
               opacity: 0, animation: 'fadeContentM 1.2s ease 0.5s forwards'
             }}>
 
-              {/* Card 1 — Leads qualifiés */}
+              {/* Card 1 : Leads qualifiés */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Leads qualifiés</div>
                 {/* Valeur + arc gauge sur la même ligne */}
@@ -278,16 +278,16 @@ const LandingMarketing = () => {
                   </div>
                 </div>
                 <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-                  <span style={{ color: '#44CCFF' }}>ce mois</span> — qualification +64%
+                  <span style={{ color: '#44CCFF' }}>ce mois</span> : qualification +64%
                 </div>
               </div>
 
-              {/* Card 2 — Pipeline marketing */}
+              {/* Card 2 : Pipeline marketing */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Pipeline marketing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>€ 210K</div>
                 <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                  <span style={{ color: '#44CCFF' }}>sur objectif</span> — € 350K
+                  <span style={{ color: '#44CCFF' }}>sur objectif</span> : € 350K
                 </div>
                 {/* Barre de progression 60% */}
                 <div style={{ position: 'relative', height: '6px', background: 'rgba(255,255,255,0.08)', borderRadius: '3px', overflow: 'hidden' }}>
@@ -306,12 +306,12 @@ const LandingMarketing = () => {
                 </div>
               </div>
 
-              {/* Card 3 — Séquence ICP */}
+              {/* Card 3 : Séquence ICP */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Séquence ICP active</div>
                 <div style={{ fontSize: '1.45rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>ETI Industrie</div>
                 <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                  <span style={{ color: '#44CCFF' }}>Taux ouverture</span> — 38%
+                  <span style={{ color: '#44CCFF' }}>Taux ouverture</span> : 38%
                 </div>
                 {/* Barres de réponse email */}
                 <svg viewBox="0 0 90 30" width="90" height="30" style={{ display: 'block' }}>
@@ -337,10 +337,10 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du marketing manager en 2026</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du marketing manager en 2026</h2>
           <div className="grid-3" style={{ gap: '2rem' }}>
             {enjeux.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', transition: 'transform 0.3s ease, border-color 0.3s ease' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
@@ -355,10 +355,10 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions marketing.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions marketing.</h2>
           <div className="grid-2" style={{ gap: '2rem' }}>
             {apports.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
@@ -370,11 +370,11 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B — GENERER DES LEADS ═══ */}
+      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container grid-2 fade-in" style={{ gap: '4rem', alignItems: 'center' }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', lineHeight: 1.2 }}>Le marketing détecte. Les commerciaux convertissent. Encore faut-il que les deux soient alignés.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Le marketing détecte. Les commerciaux convertissent. Encore faut-il que les deux soient alignés.</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
               <p>La génération de leads B2B ne se résume pas à produire du volume. Ce qui fait la différence c'est le timing et le contexte. Un lead arrive avec une raison d'acheter maintenant, un signal identifié, un angle d'approche. Pas juste un nom et un email.</p>
               <p>On travaille avec les directions marketing sur :</p>
@@ -399,12 +399,12 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>CAS CLIENTS</p>
-            <h2 style={{ fontSize: '2.625rem', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
           </div>
 
@@ -475,11 +475,11 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Une ressource pour vous.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Une ressource pour vous.</h2>
           <Link
             href="/ressources/guide-marketing-manager"
             style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(68,204,255,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#FFFFFF', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
@@ -501,11 +501,11 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
             <div>
               {faqs.map((faq, idx) => (
                 <AccordionItem 
@@ -524,7 +524,7 @@ const LandingMarketing = () => {
       {/* ══ SECTION ARTICLES (A lire aussi) ══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2rem', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
           <div className="grid-2" style={{ gap: '2rem', maxWidth: '1000px', marginInline: 'auto' }}>
             <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
@@ -534,7 +534,7 @@ const LandingMarketing = () => {
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 
-            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+            <Link href="/blog/nettoyage-segmentation-enrichissement-données-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
               </div>
@@ -545,13 +545,13 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding container" style={{ textAlign: 'center' }}>
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
             Prêt à transformer votre marketing en moteur de pipeline ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

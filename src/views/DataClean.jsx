@@ -97,7 +97,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Livrables</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
             Une donnée <span style={{ textDecoration: 'underline', color: '#FFFFFF' }}>actionnable</span> dès demain.
           </h2>
 
@@ -164,7 +164,7 @@ export default function DataClean() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Clean — Nettoyer et normaliser votre CRM B2B — Squadia";
+    document.title = "Data Clean : Nettoyer et normaliser votre CRM B2B : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia nettoie, déduplique et normalise votre base CRM. Préparez vos données pour la segmentation et la prospection active. Pour PME et ETI en France.");
@@ -198,7 +198,7 @@ export default function DataClean() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 — HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataCleanCSS}</style>
 
@@ -246,13 +246,13 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 2 — DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} style={{ position: 'sticky', top: '25vh' }}>
                 <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' }}>Audit Data</p>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>Le coût caché de la "Bad Data".</h2>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>Le coût caché de la "Bad Data".</h2>
                 <div style={{ width: '80px', height: '4px', backgroundColor: '#2563EB', borderRadius: '2px', marginBottom: '2rem' }} />
                 
                 <div style={{ position: 'relative' }}>
@@ -421,7 +421,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 3 — LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={baseUnifiee} 
           img2={dataEnrich} 
@@ -429,17 +429,17 @@ export default function DataClean() {
           img4={reglesImg} 
         />
 
-        {/* SECTION 5 — LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Une mission de nettoyage cadrée.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 — Audit gratuit', desc: 'Analyse du volume et de l\'état de santé de votre base. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 — Mapping logic', desc: 'On définit ensemble les règles de traitement : formats, priorités, fusions.' },
-              { step: '3', title: 'Étape 3 — Production', desc: 'Normalisation, dédoublonnage, enrichissement et validation des emails par nos experts.' },
-              { step: '4', title: 'Étape 4 — Export & Training', desc: 'Livraison de la base propre et formation rapide aux bonnes pratiques HubSpot.' }
+              { step: '1', title: 'Étape 1 : Audit gratuit', desc: 'Analyse du volume et de l\'état de santé de votre base. RDV de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Mapping logic', desc: 'On définit ensemble les règles de traitement : formats, priorités, fusions.' },
+              { step: '3', title: 'Étape 3 : Production', desc: 'Normalisation, dédoublonnage, enrichissement et validation des emails par nos experts.' },
+              { step: '4', title: 'Étape 4 : Export & Training', desc: 'Livraison de la base propre et formation rapide aux bonnes pratiques HubSpot.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -465,10 +465,10 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* PRICING SECTION — STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
               Une approche modulable par briques.
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.45)', maxWidth: '700px', marginInline: 'auto' }}>
@@ -574,12 +574,12 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { q: "À quoi sert Data Clean ?", a: "À fiabiliser votre CRM en supprimant les doublons, les erreurs et les champs inutiles pour repartir sur une base exploitable." },
@@ -608,13 +608,13 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 6 — CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <CtaSection
           headline="Prêt à faire de votre CRM un outil que vos équipes utilisent vraiment ?"
           description="Fini le temps perdu sur des fichiers sales. Passez à une donnée qui aide vos commerciaux à vendre."
           cardTitle="Data Clean"
           cardSubtitle="Repartez sur une base saine"
-          cardDescription="Le diagnostic est gratuit. Nous analysons l'état de votre base et vous proposons un plan d'action immédiat."
+          cardDescription="Le diagnostic'est gratuit. Nous analysons l'état de votre base et vous proposons un plan d'action immédiat."
           cardFeatures={[
             "Détection et fusion automatique des doublons",
             "Normalisation des champs (Siret, adresse, CA)",

@@ -43,7 +43,7 @@ const plans = [
     ],
   },
   {
-    name: "Formation Equipes",
+    name: "Formation équipes",
     description: "Formations ultra-pratiques pour rendre vos équipes autonomes sur l'IA.",
     price: 1200,
     yearlyPrice: 1200,

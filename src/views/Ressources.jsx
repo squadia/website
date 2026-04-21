@@ -15,7 +15,7 @@ export default function Ressources() {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Ressources Squadia — Guides, enquêtes et articles B2B";
+    document.title = "Ressources Squadia : Guides, enquêtes et articles B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Guides pratiques, enquêtes exclusives et articles de fond sur la transformation commerciale B2B : IA, CRM, automatisation, prospection et formation.");
@@ -26,7 +26,7 @@ export default function Ressources() {
   const resources = [
     {
       title: "Enquête IA B2B",
-      link: "/ressources/enquete-ia-b2b",
+      link: "/ressources/enquête-ia-b2b",
       icon: <BarChart size={24} color="#2563EB" />,
       cta: "Répondre"
     },
@@ -54,7 +54,7 @@ export default function Ressources() {
     {
       tag: "Stratégie IA",
       title: "Comment mettre en place une stratégie IA en PME",
-      link: "/blog/strategie-ia-pme-sequence",
+      link: "/blog/stratégie-ia-pme-sequence",
       image: blog1,
       readTime: "8 min"
     },
@@ -68,7 +68,7 @@ export default function Ressources() {
     {
       tag: "Data B2B",
       title: "Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit",
-      link: "/blog/nettoyage-segmentation-enrichissement-donnees-b2b",
+      link: "/blog/nettoyage-segmentation-enrichissement-données-b2b",
       image: nettoyageData,
       readTime: "8 min"
     },
@@ -153,7 +153,7 @@ export default function Ressources() {
       <section className="container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
           <div style={{ width: '4px', height: '24px', background: '#44CCFF', borderRadius: '2px' }} />
-          <h2 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB' }}>Articles</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB' }}>Articles</h2>
         </div>
 
         <div style={{

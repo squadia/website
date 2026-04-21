@@ -25,7 +25,7 @@ export default function Data() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   useEffect(() => {
-    document.title = "Data B2B — Nettoyage, segmentation et leads — Squadia";
+    document.title = "Data B2B : Nettoyage, segmentation et leads : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia nettoie votre CRM, structure votre segmentation ICP et construit vos bases de prospection B2B. Données fiables et exploitables en moins de 30 jours.");
@@ -59,7 +59,7 @@ export default function Data() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
 
-        {/* SECTION 1 — HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataCSS}</style>
 
@@ -103,11 +103,11 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 2 — CE QUE VOUS OBTENEZ CONCRÈTEMENT */}
+        {/* SECTION 2 : CE QUE VOUS OBTENEZ CONCRÈTEMENT */}
         <section id="offres" style={{ padding: '10rem 2rem', backgroundColor: '#050510', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: '50%', right: '10%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Ce que vous obtenez concrètement.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Ce que vous obtenez concrètement.</h2>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
               {[
@@ -131,15 +131,15 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 3A — DATA CLEAN (image gauche, texte droite) */}
+        {/* SECTION 3A : DATA CLEAN (image gauche, texte droite) */}
         <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataClean} alt="Data Clean — Nettoyer votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataClean} alt="Data Clean : Nettoyer votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
             <div>
               <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Data Clean</p>
-              <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Nettoyer et fiabiliser votre base.</h2>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Nettoyer et fiabiliser votre base.</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
                 Le CRM a été rempli sans règle commune. Résultat : personne ne lui fait confiance et les commerciaux gardent leurs vrais contacts dans Excel. On repart de zéro sur les bonnes bases.
               </p>
@@ -160,12 +160,12 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 3B — DATA SEG (texte gauche, image droite) */}
+        {/* SECTION 3B : DATA SEG (texte gauche, image droite) */}
         <section style={{ padding: '8rem 2rem', backgroundColor: '#050510' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div>
               <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Data Seg</p>
-              <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Identifier vos meilleurs segments.</h2>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Identifier vos meilleurs segments.</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
                 Les contacts sont là mais il n'y a pas de segmentation utile. Tout le monde est prioritaire, donc personne ne l'est vraiment. On structure la logique qui manque.
               </p>
@@ -184,20 +184,20 @@ export default function Data() {
               </Link>
             </div>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataSeg} alt="Data Seg — Segmenter votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataSeg} alt="Data Seg : Segmenter votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
           </div>
         </section>
 
-        {/* SECTION 3C — DATA LEAD (image gauche, texte droite) */}
+        {/* SECTION 3C : DATA LEAD (image gauche, texte droite) */}
         <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataLead} alt="Data Lead — Construire votre pipeline B2B" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataLead} alt="Data Lead : Construire votre pipeline B2B" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
             <div>
               <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Data Lead</p>
-              <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Bâtir votre pipeline de prospection.</h2>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Bâtir votre pipeline de prospection.</h2>
               <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
                 Un contact sur trois change de poste tous les 18 mois. Sans enrichissement actif, vous prospectez des adresses qui n'existent plus. On construit la base que vous n'avez pas encore.
               </p>
@@ -218,10 +218,10 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 4 — ET ENSUITE ? */}
+        {/* SECTION 4 : ET ENSUITE ? */}
         <section style={{ padding: '10rem 2rem', backgroundColor: '#050510' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
               Et ensuite ?
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2.5rem' }}>
@@ -258,18 +258,18 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 5 — FAQ */}
+        {/* SECTION 5 : FAQ */}
         <section id="faq" style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
             Questions fréquentes.
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
             {[
               { q: 'Dans quel état doit être mon CRM pour démarrer ?', a: "Peu importe l'état. C'est précisément l'objet du cadrage initial : comprendre ce qu'on a, ce qui manque et ce qu'on veut obtenir. On a travaillé sur des bases de quelques centaines de contacts comme sur des bases de plusieurs milliers." },
               { q: "Est-ce qu'on touche à notre CRM directement ?", a: "Ça dépend du périmètre défini en cadrage. Dans certains cas on travaille sur une extraction, on livre le fichier nettoyé et vous réintégrez. Dans d'autres, on intervient directement dans l'outil avec les accès que vous nous donnez." },
-              { q: "Qui est propriétaire des données après la mission ?", a: "Vous. Toujours. Squadia est prestataire, pas propriétaire. Pour les outils d'enrichissement externes, on privilégie que vous ouvriez votre propre compte — vous gardez ainsi le contrôle total de vos données et de vos crédits." },
-              { q: "Est-ce qu'un stagiaire ne pourrait pas faire ce travail ?", a: "La vraie difficulté n'est pas le nettoyage lui-même — c'est savoir quoi normaliser, comment segmenter pour que ça serve vraiment les équipes, et quelles variables créer pour que la base soit exploitable. C'est là que l'expérience terrain fait la différence." },
-              { q: "Combien de temps prend une mission Data ?", a: "Data Clean : 1 à 2 semaines. Data Seg : 2 à 4 semaines. Data Lead : 3 à 6 semaines. Les délais sont cadrés précisément avant chaque démarrage." }
+              { q: "Qui est propriétaire des données après la mission ?", a: "Vous. Toujours. Squadia est prestataire, pas propriétaire. Pour les outils d'enrichissement externes, on privilégie que vous ouvriez votre propre compte : vous gardez ainsi le contrôle total de vos données et de vos crédits." },
+              { q: "Est-ce qu'un stagiaire ne pourrait pas faire ce travail ?", a: "La vraie difficulté n'est pas le nettoyage lui-même : c'est savoir quoi normaliser, comment segmenter pour que ça serve vraiment les équipes, et quelles variables créer pour que la base soit exploitable. C'est là que l'expérience terrain fait la différence." },
+              { q: "Combien de temps prend'une mission Data ?", a: "Data Clean : 1 à 2 semaines. Data Seg : 2 à 4 semaines. Data Lead : 3 à 6 semaines. Les délais sont cadrés précisément avant chaque démarrage." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button
@@ -289,9 +289,9 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 6 — CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <section id="calendrier" style={{ padding: '10rem 2rem', textAlign: 'center', backgroundColor: '#0A0A1A' }}>
-          <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.5rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
             Prêt à faire de votre base un vrai levier de croissance ?
           </h2>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>

@@ -8,32 +8,32 @@ const SecteurPublic = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA pour les collectivites et organismes publics — Squadia";
+    document.title = "Formation IA pour les collectivites et organismes publics : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia forme les equipes des collectivites, administrations et organismes publics a l IA appliquee a la communication, la gestion et les services aux usagers.";
+      metaDescription.content = "Squadia forme les équipes des collectivites, administrations et organismes publics a l'IA appliquee a la communication, la gestion et les services aux usagers.";
     }
   }, []);
 
   const challenges = [
     {
       title: "Une charte IA existe mais personne ne sait vraiment quoi en faire",
-      description: "Elle a ete redigee. Elle couvre les grandes lignes. Mais entre la charte et le quotidien des agents, il y a un fosse. Les equipes ne savent pas concretement ce qu elles peuvent faire, ce qu elles ne peuvent pas faire, ni pourquoi.",
+      description: "Elle a ete redigee. Elle couvre les grandes lignes. Mais entre la charte et le quotidien des agents, il y a un fosse. Les équipes ne savent pas concrètement ce qu'elles peuvent faire, ce qu'elles ne peuvent pas faire, ni pourquoi.",
       icon: <BookOpen size={24} color="#2563EB" />
     },
     {
       title: "Les outils proliferent sans fil directeur",
-      description: "ChatGPT, Copilot, des outils d image... Chacun teste de son cote. Il n y a pas de methode commune, pas de veille structuree, pas de criteres pour choisir ce qui est vraiment utile pour l organisation.",
+      description: "ChatGPT, Copilot, des outils d image... Chacun teste de son cote. Il n'y a pas de méthode commune, pas de veille structuree, pas de criteres pour choisir ce qui est vraiment utile pour l organisation.",
       icon: <Target size={24} color="#2563EB" />
     },
     {
-      title: "Adapter les messages a des publics tres differents prend du temps",
+      title: "adapter les messages a des publics tres differents prend du temps",
       description: "Habitants, commercants, jeunes, seniors, partenaires institutionnels. Chaque public a ses codes, ses canaux, ses attentes. Produire du contenu adapte a chacun sans perdre en qualite, ca prend beaucoup de temps.",
       icon: <Users size={24} color="#2563EB" />
     },
     {
       title: "La conformite et la securite freinent l adoption",
-      description: "RGPD, donnees sensibles, validation IT, risques d usurpation. Les agents ont des contraintes reelles qui ne disparaissent pas avec l IA. Il faut un cadre clair pour avancer sans prendre de risques.",
+      description: "RGPD, données sensibles, validation IT, risques d usurpation. Les agents ont des contraintes réelles qui ne disparaissent pas avec l'IA. Il faut un cadre clair pour avancer sans prendre de risques.",
       icon: <Lock size={24} color="#2563EB" />
     }
   ];
@@ -41,7 +41,7 @@ const SecteurPublic = () => {
   const solutions = [
     {
       title: "Un programme adapte aux profils et aux enjeux metier",
-      description: "Avant chaque formation, un atelier de cadrage avec le responsable de service pour comprendre la seniorite des equipes, les usages existants et les priorites. Le programme est construit sur la realite des agents, pas sur un template generique.",
+      description: "Avant chaque formation, un atelier de cadrage avec le responsable de service pour comprendre la séniorité des équipes, les usages existants et les priorités. Le programme est construit sur la réalité des agents, pas sur un template générique.",
       icon: <CheckSquare size={24} color="#2563EB" />
     },
     {
@@ -56,7 +56,7 @@ const SecteurPublic = () => {
     },
     {
       title: "Ouvrir vers les prochaines etapes",
-      description: "Apres la formation, les equipes voient ce qu il est possible de faire avec l IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
+      description: "Apres la formation, les équipes voient ce qu'il est possible de faire avec l'IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
       icon: <FastForward size={24} color="#2563EB" />
     }
   ];
@@ -65,7 +65,7 @@ const SecteurPublic = () => {
     {
       question: "Vous voulez aller plus loin apres la formation ?",
       cta: "Voir l offre Strategie IA",
-      link: "/strategie-ia"
+      link: "/stratégie-ia"
     },
     {
       question: "Vous cherchez a automatiser certains services ?",
@@ -79,14 +79,14 @@ const SecteurPublic = () => {
   return (
     <div className="secteur-public-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
-            Secteur public : former les equipes a l IA sans perdre en qualite ni en conformite.
+            Secteur public : former les équipes a l'IA sans perdre en qualite ni en conformite.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: '1.6', marginBottom: '3rem' }}>
-            Vos equipes produisent du contenu, gerent des communications complexes, servent des publics tres differents. L IA peut les aider a aller plus vite et mieux. Encore faut-il leur donner une methode, un cadre, et des outils adaptes a leur realite, pas a celle d une startup.
+            Vos équipes produisent du contenu, gerent des communications complexes, servent des publics tres differents. L IA peut les aider a aller plus vite et mieux. Encore faut-il leur donner une méthode, un cadre, et des outils adaptes a leur réalité, pas a celle d'une startup.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#calendrier" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
@@ -99,11 +99,11 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — CE QUE VIVENT VOS EQUIPES ═══ */}
+      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
-            Ce qu on observe dans les collectivites et organismes publics.
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
+            Ce qu'on observe dans les collectivites et organismes publics.
           </h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -134,10 +134,10 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>
             Comment on travaille avec les collectivites et organismes publics.
           </h2>
           
@@ -169,11 +169,11 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — REFERENCES ═══ */}
+      {/* ═══ SECTION 4 : REFERENCES ═══ */}
       <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
-            Squadia a forme des equipes dans des collectivites et organismes publics en France.
+            Squadia a forme des équipes dans des collectivites et organismes publics en France.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '5rem', alignItems: 'center' }}>
             {clients.map((client, idx) => (
@@ -197,7 +197,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           {/* Note: changed standard grid to center 2 elements beautifully */}
@@ -226,11 +226,11 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', maxWidth: '850px', marginInline: 'auto', marginBottom: '3rem' }}>
-            On peut regarder ensemble comment former vos equipes sans perturber leur organisation.
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '850px', marginInline: 'auto', marginBottom: '3rem' }}>
+            On peut regarder ensemble comment former vos équipes sans perturber leur organisation.
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#calendrier" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>

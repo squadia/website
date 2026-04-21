@@ -7,10 +7,10 @@ const ChannelSalesPlan = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Plan Partenaire B2B — Structurer et piloter votre reseau de partenaires — Squadia";
+    document.title = "Plan Partenaire B2B : Structurer et piloter votre réseau de partenaires : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Telechargez notre Channel Sales Plan pour structurer vos partenariats B2B, developper des synergies de co-marketing et co-selling, et piloter la performance avec des KPIs trimestriels.";
+      metaDescription.content = "Téléchargez notre Channel Sales Plan pour structurer vos partenariats B2B, développer des synergies de co-marketing et co-selling, et piloter la performance avec des KPIs trimestriels.";
     }
   }, []);
 
@@ -74,33 +74,33 @@ const ChannelSalesPlan = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Plan Partenaire — Developper votre reseau de partenaires B2B
+            Plan Partenaire : développer votre réseau de partenaires B2B
           </h1>
           
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>
-            Creez ou developpez votre reseau de partenaires B2B sans vous eparpiller.
+            Créez ou développez votre réseau de partenaires B2B sans vous éparpiller.
           </p>
 
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
-            <h2 style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>{"Ce que vous allez trouver\u00A0:"}</h2>
             
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Structurer vos partenariats autour d un plan clair et activable
+                  Structurer vos partenariats autour d'un plan clair et activable
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Developper des synergies d actions de co-marketing et de co-selling
+                  développer des synergies d'actions de co-marketing et de co-selling
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Piloter la performance avec des indicateurs cles, suivis a chaque trimestre
+                  Piloter la performance avec des indicateurs cles, suivis à chaque trimestre
                 </span>
               </li>
             </ul>
@@ -199,7 +199,7 @@ const ChannelSalesPlan = () => {
                 </button>
 
                 <p style={{ fontSize: '0.75rem', color: '#6B7280', fontStyle: 'italic', textAlign: 'center', marginTop: '1rem', lineHeight: 1.5 }}>
-                  En telechargeant ce plan, j accepte de recevoir par email des contenus et communications de la part de Squadia. Il sera possible de se desinscrire a tout moment.
+                  En Téléchargeant ce plan, j'accepte de recevoir par email des contenus et communications de la part de Squadia. Il sera possible de se désinscrire à tout moment.
                 </p>
 
               </form>

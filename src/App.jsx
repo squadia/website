@@ -23,7 +23,7 @@ import DataB2B from './views/DataB2B';
 import StrategieIAPME from './views/StrategieIAPME';
 import FormationOuAutomatisation from './views/FormationOuAutomatisation';
 import Ressources from './views/Ressources';
-import EnqueteIAB2B from './views/EnqueteIAB2B';
+import enquêteIAB2B from './views/enquêteIAB2B';
 import GuideSalesManager from './views/GuideSalesManager';
 import GuideMarketingManager from './views/GuideMarketingManager';
 import ChannelSalesPlan from './views/ChannelSalesPlan';
@@ -64,9 +64,9 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/strategie-ia" element={<StrategieIA />} />
-        <Route path="/strategie/commerciale" element={<StrategieCommerciale />} />
-        <Route path="/strategie/crm" element={<StrategieCrm />} />
+        <Route path="/stratégie-ia" element={<StrategieIA />} />
+        <Route path="/stratégie/commerciale" element={<StrategieCommerciale />} />
+        <Route path="/stratégie/crm" element={<StrategieCrm />} />
         <Route path="/data/data-clean" element={<DataClean />} />
         <Route path="/data/data-seg" element={<DataSeg />} />
         <Route path="/data/data-lead" element={<DataLead />} />
@@ -87,14 +87,14 @@ function App() {
         <Route path="/blog" element={<Navigate href="/ressources" replace />} />
         <Route path="/blog/prospection-multicanale-b2b-erreurs" element={<BlogProspectionErreurs />} />
         <Route path="/blog/formation-commerciale-b2b-ia" element={<FormationCommerciale />} />
-        <Route path="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" element={<DataB2B />} />
-        <Route path="/blog/strategie-ia-pme-eti" element={<StrategieIAPME />} />
+        <Route path="/blog/nettoyage-segmentation-enrichissement-données-b2b" element={<DataB2B />} />
+        <Route path="/blog/stratégie-ia-pme-eti" element={<StrategieIAPME />} />
         <Route path="/blog/formation-ia-ou-automatisation" element={<FormationOuAutomatisation />} />
-        <Route path="/blog/strategie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
+        <Route path="/blog/stratégie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
         <Route path="/blog/changement-crm-organisation" element={<BlogChangementCRM />} />
         <Route path="/blog/formation-ia-automatisation-ordre" element={<BlogFormationIAVAutom />} />
         <Route path="/ressources" element={<Ressources />} />
-        <Route path="/ressources/enquete-ia-b2b" element={<EnqueteIAB2B />} />
+        <Route path="/ressources/enquête-ia-b2b" element={<enquêteIAB2B />} />
         <Route path="/ressources/guide-sales-manager" element={<GuideSalesManager />} />
         <Route path="/ressources/guide-marketing-manager" element={<GuideMarketingManager />} />
         <Route path="/ressources/channel-sales-plan" element={<ChannelSalesPlan />} />
@@ -120,8 +120,8 @@ function App() {
             <div>
               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Solutions</h4>
               <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                <li><Link href="/strategie/commerciale" className="footer-link">Stratégie Commerciale</Link></li>
-                <li><Link href="/strategie/crm" className="footer-link">Migration CRM</Link></li>
+                <li><Link href="/stratégie/commerciale" className="footer-link">Stratégie Commerciale</Link></li>
+                <li><Link href="/stratégie/crm" className="footer-link">Migration CRM</Link></li>
                 <li><Link href="/data/data-clean" className="footer-link">Data Clean</Link></li>
                 <li><Link href="/data/data-seg" className="footer-link">Data Seg</Link></li>
                 <li><Link href="/data/data-lead" className="footer-link">Data Lead</Link></li>
@@ -176,7 +176,7 @@ function App() {
             <div>
               <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Ressources</h4>
               <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                <li><Link href="/ressources/enquete-ia-b2b" className="footer-link">Enquête IA 2026</Link></li>
+                <li><Link href="/ressources/enquête-ia-b2b" className="footer-link">Enquête IA 2026</Link></li>
                 <li><Link href="/ressources/guide-sales-manager" className="footer-link">Guide Sales Manager</Link></li>
                 <li><Link href="/ressources/guide-marketing-manager" className="footer-link">Guide Marketing Manager</Link></li>
                 <li><Link href="/ressources/channel-sales-plan" className="footer-link">Channel Sales Plan</Link></li>
@@ -191,9 +191,9 @@ function App() {
                 <img src="/logo.png" alt="Squadia" style={{ height: '32px', width: 'auto', marginBottom: '1.5rem' }} />
               </Link>
               <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-                2026 Squadia — SIRET 45243901100027<br />
+                2026 Squadia : SIRET 45243901100027<br />
                 193 Av. de France, 75013 Paris<br />
-                contact@squadia.io — +33 7 82 84 35 64
+                contact@squadia.io : +33 7 82 84 35 64
               </div>
             </div>
             

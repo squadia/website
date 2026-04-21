@@ -80,7 +80,7 @@ const renderPrice = (priceString) => {
 
 const AutomatisationIA = () => {
   useEffect(() => {
-    document.title = "Automatisation IA B2B — CRM, vente et marketing — Squadia";
+    document.title = "Automatisation IA B2B : CRM, vente et marketing : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia automatise vos processus commerciaux et marketing avec l'IA. Workflows documentés, mesurables, maintenables par vos équipes. Pour PME et ETI en France.");
@@ -111,7 +111,7 @@ const AutomatisationIA = () => {
   return (
     <div style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* SECTION 1 — HERO PREMIUM */}
+      {/* SECTION 1 : HERO PREMIUM */}
       <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
         
         {/* BACKGROUND */}
@@ -157,11 +157,11 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 2 — CONCRÈTEMENT */}
+      {/* SECTION 2 : CONCRÈTEMENT */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#050510', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: '50%', right: '10%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Ce que vous obtenez concrètement.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Ce que vous obtenez concrètement.</h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
             {[
@@ -185,7 +185,7 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 3A — CYCLE DE VENTE (image gauche, texte droite) */}
+      {/* SECTION 3A : CYCLE DE VENTE (image gauche, texte droite) */}
       <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
@@ -193,7 +193,7 @@ const AutomatisationIA = () => {
           </div>
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Automatisation</p>
-            <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation du cycle de vente</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation du cycle de vente</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
               De l'avant-vente à l'après-vente, chaque étape du cycle commercial est automatisée pour accélérer la conversion sans actions manuelles.
             </p>
@@ -211,12 +211,12 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 3B — MARKETING & SITE WEB (texte gauche, image droite) */}
+      {/* SECTION 3B : MARKETING & SITE WEB (texte gauche, image droite) */}
       <section style={{ padding: '8rem 2rem', backgroundColor: '#050510' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Automatisation</p>
-            <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation marketing & site web</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation marketing & site web</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
               Les signaux comportementaux de vos prospects déclenchent automatiquement les bonnes actions au moment opportun.
             </p>
@@ -237,15 +237,15 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 3C — COMMUNICATION & CONTENUS (image gauche, texte droite) */}
-      <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
+      {/* SECTION 3C : COMMUNICATION & CONTENUS (image gauche, texte droite) */}
+      <section id="automatisation-communication-contenus" style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
           <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
             <img src={auto3} alt="Automatisation communication & contenus" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           <div>
             <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Automatisation</p>
-            <h2 style={{ fontSize: '2rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation communication & contenus</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.25rem', lineHeight: 1.3 }}>Automatisation communication & contenus</h2>
             <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
               Créez et diffusez des contenus à grande échelle sans perdre en cohérence ni en personnalisation.
             </p>
@@ -263,10 +263,10 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 4 — FORFAITS */}
+      {/* SECTION 4 : FORFAITS */}
       <section id="forfaits" style={{ padding: '10rem 2rem', backgroundColor: '#050510' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Le périmètre adapté à votre situation.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Le périmètre adapté à votre situation.</h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'stretch' }}>
             
@@ -381,16 +381,16 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* SECTION 5 — FAQ */}
+      {/* SECTION 5 : FAQ */}
       <section style={{ padding: '10rem 2rem', maxWidth: '850px', margin: '0 auto' }}>
-        <h2 style={{ fontSize: '2.5rem', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Questions fréquentes.</h2>
+        <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '4rem', color: '#fff' }}>Questions fréquentes.</h2>
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
           <AccordionItem 
             question="Faut-il avoir un CRM déjà en place ?" 
-            answer={<>Oui, idéalement. L'automatisation connecte des briques existantes. Si votre CRM n'est pas prêt, nous pouvons vous accompagner sur la phase <Link href="/strategie-crm" style={{ color: '#2563EB', textDecoration: 'underline' }}>Stratégie CRM</Link> au préalable.</>}
+            answer={<>Oui, idéalement. L'automatisation connecte des briques existantes. Si votre CRM n'est pas prêt, nous pouvons vous accompagner sur la phase <Link href="/stratégie-crm" style={{ color: '#2563EB', textDecoration: 'underline' }}>Stratégie CRM</Link> au préalable.</>}
           />
           <AccordionItem 
             question="Mes équipes pourront-elles maintenir les process ?" 
@@ -407,7 +407,7 @@ const AutomatisationIA = () => {
         </div>
       </section>
 
-      {/* SECTION 6 — CTA FINAL */}
+      {/* SECTION 6 : CTA FINAL */}
       <CtaSection
         headline="Prêt à libérer vos experts des tâches sans valeur ?"
         description="Fini le temps gaspillé sur des tâches répétitives. Vos équipes se concentrent sur ce qui génère de la valeur."

@@ -60,7 +60,7 @@ const getTagColor = (tag) => {
   const t = tag.toLowerCase();
   if (t.includes('lead')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   if (t.includes('automatisation')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
-  if (t.includes('strategie') || t.includes('stratégie')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
+  if (t.includes('stratégie') || t.includes('stratégie')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   if (t.includes('formation')) return { border: '#2563EB', bg: 'rgba(37, 99, 235, 0.1)', text: '#2563EB' };
   return { border: '#4B5563', bg: 'rgba(75, 85, 99, 0.1)', text: '#9CA3AF' };
 };
@@ -145,16 +145,20 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
     {
       id: 1,
       title: 'Stratégie',
+      tint: '#2563EB',
+      tintRgba: 'rgba(37, 99, 235, 0.45)',
       subtitle: "Aligner votre méthode et vos outils.",
       icon: <Target size={20} />,
       image: s1,
-      link: '/strategie/commerciale',
+      link: '/stratégie/commerciale',
       cta: "Découvrir nos Stratégies →",
       description: "Audit de vos processus, structuration de votre méthode de vente et architecture de votre CRM. Une base solide pour que l'IA et l'automatisation soient réellement efficaces."
     },
     {
       id: 2,
       title: 'Data B2B',
+      tint: '#44CCFF',
+      tintRgba: 'rgba(68, 204, 255, 0.45)',
       subtitle: "Pour que vos données travaillent avant vos commerciaux.",
       icon: <Database size={20} />,
       image: s2,
@@ -165,6 +169,8 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
     {
       id: 3,
       title: 'Automatisation IA',
+      tint: '#8350e8',
+      tintRgba: 'rgba(131, 80, 232, 0.45)',
       subtitle: "Exécuter sans dépendre de ressources supplémentaires.",
       icon: <Zap size={20} />,
       image: s3,
@@ -175,6 +181,8 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
     {
       id: 4,
       title: 'Formation IA métiers',
+      tint: '#fb923c',
+      tintRgba: 'rgba(251, 146, 60, 0.45)',
       subtitle: "Pour que vos équipes utilisent vraiment ce qu'on met en place.",
       icon: <GraduationCap size={20} />,
       image: s4,
@@ -202,7 +210,8 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
           right: '-100px',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)',
+          background: `radial-gradient(circle, ${activeItem.tintRgba} 0%, transparent 70%)`,
+          transition: 'background 0.6s ease',
           filter: 'blur(110px)',
           zIndex: 0,
           pointerEvents: 'none'
@@ -222,7 +231,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Notre Système</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
             De la Stratégie à l'Exécution
           </h2>
 
@@ -253,8 +262,8 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                       <div 
                         key={`bar-${activeId}`}
                         style={{ 
-                          height: '100%', 
-                          background: '#FFFFFF', 
+                          height: '100%',
+                          background: item.tint,
                           animation: 'drawProgressAccordionHome 10s linear forwards' 
                         }} 
                       />
@@ -286,7 +295,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                         alignItems: 'center',
                         gap: '0.75rem'
                       }}>
-                        <span style={{ color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.4)' }}>{item.icon}</span>
+                        <span style={{ color: isOpen ? item.tint : 'rgba(255,255,255,0.4)' }}>{item.icon}</span>
                         {item.title}
                       </h3>
                       <AnimatePresence>
@@ -296,9 +305,9 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                             animate={{ opacity: 1, height: 'auto' }}
                             exit={{ opacity: 0, height: 0 }}
                             transition={{ duration: 0.2 }}
-                            style={{ 
-                              fontStyle: 'italic', 
-                              color: '#44CCFF', 
+                            style={{
+                              fontStyle: 'italic',
+                              color: item.tint,
                               fontSize: '13px', 
                               marginTop: '4px',
                               overflow: 'hidden'
@@ -310,7 +319,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                       </AnimatePresence>
                     </div>
                     {isOpen ? (
-                      <ChevronDown size={20} color="#2563EB" style={{ marginTop: '0.6rem', transition: 'color 0.2s' }} />
+                      <ChevronDown size={20} color={item.tint} style={{ marginTop: '0.6rem', transition: 'color 0.2s' }} />
                     ) : (
                       <ChevronRight size={20} color="rgba(255,255,255,0.3)" style={{ marginTop: '0.6rem', transition: 'color 0.2s' }} />
                     )}
@@ -516,7 +525,7 @@ const slidesData = [
     blocks: [
       { top: "Performance globale", value: "+31%", accent: "Croissance", subtitle: "90 jours", graphic: <Sparkline /> },
       { top: "Alignement équipes", value: "7.2/10", accent: "Marketing", subtitle: "x Ventes", graphic: <ArcGauge value={72} /> },
-      { top: "Prochaine initiative", value: "CRM IA", accent: "Démarrage", subtitle: "J+14 — ROI x3" }
+      { top: "Prochaine initiative", value: "CRM IA", accent: "Démarrage", subtitle: "J+14 : ROI x3" }
     ]
   }
 ];
@@ -851,7 +860,7 @@ const HeroCSS = `
     font-size: 38px !important;
     margin-top: 0.75rem !important;
   }
-  /* Texte secondaire "25 ans..." — plus gros et poussé vers le bas */
+  /* Texte secondaire "25 ans..." : plus gros et poussé vers le bas */
   .hero-left > div:nth-child(2) {
     font-size: 1.05rem !important;
     line-height: 1.65 !important;
@@ -896,7 +905,7 @@ const HeroCSS = `
   }
 }
 
-/* ── LAPTOP (≤ 1440px) — hero uniquement ── */
+/* ── LAPTOP (≤ 1440px) : hero uniquement ── */
 @media (max-width: 1440px) {
   .hero-left {
     padding-top: 17vh !important;
@@ -976,21 +985,32 @@ const HeroDynamic = React.memo(() => {
 
       {/* LEFT CONTENT */}
       <div className="hero-left">
+        {/* BEAT 1 : pill + H1 */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2, duration: 0.5, ease: 'easeOut' }}
+          style={{ marginBottom: '1.25rem' }}
+        >
+          <span className="pill-tag">Conseil Commercial B2B</span>
+        </motion.div>
+
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, duration: 0.7, ease: 'easeOut' }}
+          transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#fff', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
         >
           Structurez votre système<br />
           de génération de revenus
         </motion.h1>
 
+        {/* BEAT 2 : script tagline + body */}
         <motion.div
           className="hero-diagnostic-span"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.85, duration: 0.7, ease: 'easeOut' }}
+          transition={{ delay: 0.7, duration: 0.7, ease: 'easeOut' }}
           style={{ fontFamily: "'Allison', cursive", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
         >
           Du diagnostic à l'impact
@@ -999,17 +1019,18 @@ const HeroDynamic = React.memo(() => {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.6, ease: 'easeOut' }}
+          transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
           className="hero-para-laptop"
           style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
           25 ans de vente B2B terrain. Squadia structure votre système commercial : stratégie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
         </motion.div>
 
+        {/* BEAT 3 : CTA + stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 0.6, ease: 'easeOut' }}
+          transition={{ delay: 1.1, duration: 0.6, ease: 'easeOut' }}
         >
           <a
             href="#approche"
@@ -1023,42 +1044,32 @@ const HeroDynamic = React.memo(() => {
           </a>
         </motion.div>
 
-        <div className="hero-stats-compact">
-          <motion.div
-            className="stat-item-compact"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.75, duration: 0.5, ease: 'easeOut' }}
-          >
+        <motion.div
+          className="hero-stats-compact"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.25, duration: 0.5, ease: 'easeOut' }}
+        >
+          <div className="stat-item-compact">
             <div className="stat-num-compact">+20</div>
             <div className="stat-label-compact">ans d'expérience B2B</div>
-          </motion.div>
-          <motion.div
-            className="stat-item-compact"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.05, duration: 0.5, ease: 'easeOut' }}
-          >
+          </div>
+          <div className="stat-item-compact">
             <div className="stat-num-compact">+120</div>
             <div className="stat-label-compact">entreprises accompagnées</div>
-          </motion.div>
-          <motion.div
-            className="stat-item-compact"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 2.35, duration: 0.5, ease: 'easeOut' }}
-          >
+          </div>
+          <div className="stat-item-compact">
             <div className="stat-num-compact">+450</div>
             <div className="stat-label-compact">professionnels formés</div>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
       </div>
 
       <motion.div
         className="hero-marquee-inline"
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 2.75, duration: 0.7, ease: 'easeOut' }}
+        transition={{ delay: 1.8, duration: 0.7, ease: 'easeOut' }}
       >
         <div className="hero-marquee-row">
           {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, ceaAtomique, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
@@ -1147,7 +1158,7 @@ const HeroDynamic = React.memo(() => {
     }, []);
 
     useEffect(() => {
-      document.title = "Squadia — Stratégie IA, CRM et Automatisation B2B";
+      document.title = "Squadia : Stratégie IA, CRM et Automatisation B2B";
       const metaDescription = document.querySelector('meta[name="description"]');
       if (metaDescription) {
         metaDescription.setAttribute('content', "Squadia accompagne les PME et ETI B2B dans leur croissance : stratégie IA, migration CRM, automatisation des processus et formation commerciale. Basé à Paris.");
@@ -1155,7 +1166,7 @@ const HeroDynamic = React.memo(() => {
     }, []);
 
     useEffect(() => {
-      // Desktop only — skip on mobile
+      // Desktop only : skip on mobile
       if (window.innerWidth <= 768) return;
 
       // Inject ElevenLabs script once
@@ -1194,8 +1205,8 @@ const HeroDynamic = React.memo(() => {
     }, []);
 
     return (
-      <div className="home-page" style={{ backgroundColor: bgColor, color: '#F9FAFB', transition: 'background-color 0.1s ease-out' }}>
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      <div className="home-page" style={{ backgroundColor: bgColor, color: '#F9FAFB', transition: 'background-color 0.4s ease-out' }}>
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <style>{HeroCSS}</style>
 
       <HeroDynamic />
@@ -1217,7 +1228,7 @@ const HeroDynamic = React.memo(() => {
               {/* TITRE (Moved inside sticky column) */}
               <div style={{ marginBottom: '2.5rem' }}>
                 <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Le constat</p>
-                <h2 style={{ fontSize: 'clamp(1.8rem, 3.2vw, 2.6rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.5rem', lineHeight: 1.1 }}>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.5rem', lineHeight: 1.1 }}>
                   Vous sentez qu'il manque quelque chose.
                 </h2>
                 <div style={{ width: '50px', height: '4px', backgroundColor: '#44CCFF', borderRadius: '2px' }} />
@@ -1512,19 +1523,19 @@ const HeroDynamic = React.memo(() => {
           </div>
         </div>
       </section>
-              {/* ═══ SECTION 5 — STRATÉGIE ET EXÉCUTION (ACCORDION) ═══ */}
+              {/* ═══ SECTION 5 : STRATÉGIE ET EXÉCUTION (ACCORDION) ═══ */}
       <section id="systeme" className="section-padding" style={{ paddingTop: '5rem', backgroundColor: 'transparent' }}>
         <div className="container" style={{ height: '820px' }}>
           <StrategyAccordion s1={s1} s2={s2} s3={s3} s4={s4} />
         </div>
       </section>
 
-      {/* ═══ SECTION 5B — PERSONAS TRIPTYCH ═══ */}
+      {/* ═══ SECTION 5B : PERSONAS TRIPTYCH ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>POUR QUI</p>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem' }}>
               Une approche sur mesure selon votre rôle
             </h2>
           </div>
@@ -1555,7 +1566,7 @@ const HeroDynamic = React.memo(() => {
                 wordReveal: true,
                 title: 'Executive Team',
                 subtitle: 'Vision, cap et transformation',
-                text: "Vous avez la stratégie. Ce qui manque, c'est le système pour l'exécuter. On structure l'ensemble — de la méthode commerciale aux outils — pour que vos décisions se traduisent en résultats mesurables.",
+                text: "Vous avez la stratégie. Ce qui manque, c'est le système pour l'exécuter. On structure l'ensemble : de la méthode commerciale aux outils : pour que vos décisions se traduisent en résultats mesurables.",
                 link: '/directeur-general',
               },
             ].map((persona) => (
@@ -1650,7 +1661,7 @@ const HeroDynamic = React.memo(() => {
                     if (overlay) { overlay.style.opacity = '1'; }
                   }}
                 >
-                  {/* Vidéo — toujours présente, en dessous */}
+                  {/* Vidéo : toujours présente, en dessous */}
                   {persona.video && window.innerWidth > 768 && (
                     <video
                       src={persona.video}
@@ -1666,12 +1677,12 @@ const HeroDynamic = React.memo(() => {
                       }}
                     />
                   )}
-                  {/* Overlay couleur carte — couvre le noir de la vidéo, disparaît au survol */}
+                  {/* Overlay couleur carte : couvre le noir de la vidéo, disparaît au survol */}
                   <div
                     className="card-color-overlay"
                     style={{ position: 'absolute', inset: 0, background: '#0D0D25', zIndex: 2, transition: 'opacity 0.3s ease', pointerEvents: 'none' }}
                   />
-                  {/* Image statique — au-dessus, disparaît au survol */}
+                  {/* Image statique : au-dessus, disparaît au survol */}
                   <img
                     src={persona.img}
                     alt={persona.title}
@@ -1731,12 +1742,12 @@ const HeroDynamic = React.memo(() => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 6 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>CAS CLIENTS</p>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>
               Résultats concrets
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>
@@ -1855,10 +1866,10 @@ const HeroDynamic = React.memo(() => {
 
       
 
-      {/* ═══ SECTION 7 — FAQ ═══ */}
+      {/* ═══ SECTION 7 : FAQ ═══ */}
       <section className="section-padding">
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Questions fréquentes</h2>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             {[
               { 
@@ -1871,7 +1882,7 @@ const HeroDynamic = React.memo(() => {
               },
               { 
                 q: "Peut-on activer une seule brique sans prendre tout le système ?", 
-                a: <>Oui. <Link href="/strategie/commerciale" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Stratégie</Link>, <Link href="/data" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Data</Link>, <Link href="/automatisation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Automatisation</Link> et <Link href="/formation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Formation</Link> peuvent être activés indépendamment.</> 
+                a: <>Oui. <Link href="/stratégie/commerciale" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Stratégie</Link>, <Link href="/data" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Data</Link>, <Link href="/automatisation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Automatisation</Link> et <Link href="/formation-ia" style={{ color: '#44CCFF', textDecoration: 'underline' }}>Formation</Link> peuvent être activés indépendamment.</> 
               },
               { 
                 q: "En combien de temps voit-on des résultats ?", 
@@ -1894,10 +1905,10 @@ const HeroDynamic = React.memo(() => {
         </div>
       </section>
 
-      {/* ═══ SECTION 8 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section ref={section8Ref} className="section-padding" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
             Prêt à transformer votre stratégie en système de génération de revenus ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

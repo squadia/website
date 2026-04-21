@@ -19,7 +19,7 @@ export default function BlogFormationIAVAutom() {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation IA ou Automatisation : quel ordre ? — Squadia";
+    document.title = "Formation IA ou Automatisation : quel ordre ? : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Faut-il former ses équipes à l'IA avant d'automatiser, ou l'inverse ? Squadia vous guide pour choisir le bon ordre et maximiser votre ROI.");
@@ -188,7 +188,7 @@ export default function BlogFormationIAVAutom() {
           
           <div className="article-highlight-box">
             <h3>Les workflows automatisés</h3>
-            <p>Concevoir des chemins qui font que quand une action se produit, une réaction intelligente se déclenche automatiquement ailleurs dans votre système.</p>
+            <p>Concevoir des chemins qui font que quand'une action se produit, une réaction intelligente se déclenche automatiquement ailleurs dans votre système.</p>
           </div>
 
           <div className="article-highlight-box">
@@ -236,14 +236,14 @@ export default function BlogFormationIAVAutom() {
           borderRadius: '1.25rem', padding: '3.5rem', textAlign: 'center',
           boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
         }}>
-          <h2 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.2rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.2rem' }}>
             Vous voulez structurer votre stratégie IA et savoir par où commencer ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '600px', marginInline: 'auto', marginBottom: '2.5rem' }}>
             Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
           </p>
           <Link
-            href="/strategie-ia"
+            href="/stratégie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
               background: '#2563EB', color: '#fff',

@@ -12,14 +12,14 @@ const Formations = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formations IA pour équipes commerciales, marketing et communication — Squadia";
+    document.title = "Formations IA pour équipes commerciales, marketing et communication : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes vente, marketing et communication à l IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
+      metaDescription.content = "Squadia forme vos équipes vente, marketing et communication à l'IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
     } else {
       const meta = document.createElement('meta');
       meta.name = "description";
-      meta.content = "Squadia forme vos équipes vente, marketing et communication à l IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
+      meta.content = "Squadia forme vos équipes vente, marketing et communication à l'IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
       document.head.appendChild(meta);
     }
     window.scrollTo(0, 0);
@@ -133,7 +133,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
   return (
     <div className="formations-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Fond pleine page */}
         <img src={formationBg} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
@@ -166,11 +166,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
+      {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
       <section className="section-padding" style={{ background: '#060612', padding: '48px 32px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, color: '#44CCFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#44CCFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Générer plus de traction
             </h2>
             <div style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.6)', maxWidth: '850px', marginInline: 'auto', fontWeight: 400, lineHeight: 1.5 }}>
@@ -281,10 +281,10 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
+      {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4.5rem', color: '#FFFFFF', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#FFFFFF', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             
@@ -322,11 +322,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — TABLEAU COMPARATIF ═══ */}
+      {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '0.75rem' }}>Choisissez votre programme</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem' }}>Choisissez votre programme</h2>
             <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>Même durée, même exigence, même suivi. Ce qui change c'est votre métier.</p>
           </div>
           
@@ -418,10 +418,10 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
 
-      {/* ═══ SECTION 6 — MODALITÉS ET TARIFS ═══ */}
+      {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '5rem', textAlign: 'center', fontWeight: 700 }}>Formats et tarifs</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '5rem', textAlign: 'center', fontWeight: 700 }}>Formats et tarifs</h2>
           
           <div 
             style={{ 
@@ -588,20 +588,20 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </section>
 
 
-      {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 — CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
+      {/* ═══ SECTION 7 : CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '6rem', textAlign: 'center', fontWeight: 700 }}>Ce que nous apportons de différent</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '6rem', textAlign: 'center', fontWeight: 700 }}>Ce que nous apportons de différent</h2>
           <div className="grid-3" style={{ gap: '4rem' }}>
             <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
               <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
                 <Target color="#44CCFF" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Formation personnalisable</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique — on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
+              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique : on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
             </div>
             <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
               <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
@@ -621,7 +621,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 — INTERNAL LINKING (NEW) ═══ */}
+      {/* ═══ SECTION 8 : INTERNAL LINKING (NEW) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h3 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>La formation n'est que le début</h3>
@@ -630,17 +630,17 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </p>
           
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>
-            <Link href="/strategie-ia" className="pill-link">Structurer votre stratégie IA</Link>
+            <Link href="/stratégie-ia" className="pill-link">Structurer votre stratégie IA</Link>
             <Link href="/data" className="pill-link">Détecter vos leads qualifiés</Link>
             <Link href="/automatisation-ia" className="pill-link">Automatiser vos processus</Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 8 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: 'linear-gradient(rgba(10,10,26,1) 0%, rgba(5,5,16,1) 100%)', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '3rem', marginBottom: '1.5rem', fontWeight: 700 }}>Vous ne savez pas encore quelle formation correspond à votre équipe ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem', fontWeight: 700 }}>Vous ne savez pas encore quelle formation correspond à votre équipe ?</h2>
           <p style={{ fontSize: '1.3rem', color: '#9CA3AF', marginBottom: '4rem' }}>On cadre ça ensemble en 20 minutes.</p>
           <a href={pipedrivePlaceholder} className="btn btn-primary pulse" style={{ padding: '1.5rem 3.5rem', fontSize: '1.2rem', fontWeight: 700, borderRadius: '8px' }}>
             Prendre RDV

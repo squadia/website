@@ -7,10 +7,10 @@ const GuideSalesManager = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Mini-guide Sales Manager B2B — Reussir vos 90 premiers jours — Squadia";
+    document.title = "Mini-guide Sales Manager B2B : réussir vos 90 premiers jours : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Methodes eprouvees, plans d action, IA, outils et conseils pratiques pour reussir votre prise de poste de Sales Manager et atteindre vos premiers resultats.";
+      metaDescription.content = "méthodes éprouvées, plans d action, IA, outils et conseils pratiques pour réussir votre prise de poste de Sales Manager et atteindre vos premiers résultats.";
     }
   }, []);
 
@@ -74,15 +74,15 @@ const GuideSalesManager = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Mini-guide Sales Manager B2B : reussir vos 90 premiers jours
+            Mini-guide Sales Manager B2B : réussir vos 90 premiers jours
           </h1>
           
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>
-            Methodes eprouvees, plans d action, IA, outils et conseils pratiques pour reussir votre prise de poste et atteindre vos premiers resultats.
+            méthodes éprouvées, plans d action, IA, outils et conseils pratiques pour réussir votre prise de poste et atteindre vos premiers résultats.
           </p>
 
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
-            <h2 style={{ fontSize: '1.4rem', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
             
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -94,13 +94,13 @@ const GuideSalesManager = () => {
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Utiliser notre plan et conseils pour developper le channel
+                  Utiliser notre plan et conseils pour développer le channel
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Mesurer l impact avec des KPIs penses pour les equipes commerciales et le COMEX
+                  Mesurer l impact avec des KPIs pensés pour les équipes commerciales et le COMEX
                 </span>
               </li>
             </ul>
@@ -199,7 +199,7 @@ const GuideSalesManager = () => {
                 </button>
 
                 <p style={{ fontSize: '0.75rem', color: '#6B7280', fontStyle: 'italic', textAlign: 'center', marginTop: '1rem', lineHeight: 1.5 }}>
-                  En telechargeant ce guide, j accepte de recevoir par email des contenus et communications de la part de Squadia. Il sera possible de se desinscrire a tout moment.
+                  En Téléchargeant ce guide, j'accepte de recevoir par email des contenus et communications de la part de Squadia. Il sera possible de se désinscrire à tout moment.
                 </p>
 
               </form>

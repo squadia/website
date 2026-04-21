@@ -95,7 +95,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Livrables</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.8vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
             Une donnée <span style={{ textDecoration: 'underline', color: '#FFFFFF' }}>intelligente</span> pour vos équipes.
           </h2>
 
@@ -162,7 +162,7 @@ export default function DataSeg() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Seg — Segmentation CRM et scoring ICP — Squadia";
+    document.title = "Data Seg : Segmentation CRM et scoring ICP : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM : définition ICP, variables de scoring et architecture de données actionnable. Résultats en 30 jours pour PME et ETI.");
@@ -196,7 +196,7 @@ export default function DataSeg() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 — HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataSegCSS}</style>
 
@@ -242,13 +242,13 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 2 — DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
                 <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' }}>Segmentation</p>
-                <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>La fin du "spray and pray".</h2>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>La fin du "spray and pray".</h2>
                 <div style={{ width: '80px', height: '4px', backgroundColor: '#2563EB', borderRadius: '2px', marginBottom: '2rem' }} />
                 
                 <div style={{ position: 'relative' }}>
@@ -417,7 +417,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 3 — LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={icpImg} 
           img2={segmentationImg} 
@@ -425,17 +425,17 @@ export default function DataSeg() {
           img4={architectureImg} 
         />
 
-        {/* SECTION 5 — LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Le déroulé de Data Seg.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 — Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 — Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
-              { step: '3', title: 'Étape 3 — Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
-              { step: '4', title: 'Étape 4 — Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
+              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
+              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
+              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -461,10 +461,10 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* PRICING SECTION — STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
               Une approche modulable par briques.
             </h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.45)', maxWidth: '700px', marginInline: 'auto' }}>
@@ -570,12 +570,12 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { q: "À quoi sert Data Seg ?", a: "À structurer votre base pour cibler les bons prospects avec les bons messages." },
@@ -602,7 +602,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 6 — CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <CtaSection
           headline="Votre base est prête pour la prospection active."
           description="Fini le temps perdu à chercher le bon contact. Vos commerciaux se concentrent sur ce qu'ils font de mieux : vendre."

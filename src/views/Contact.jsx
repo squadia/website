@@ -7,7 +7,7 @@ const Contact = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Contact — Prendre rendez-vous avec Squadia";
+    document.title = "Contact : Prendre rendez-vous avec Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Prenez rendez-vous avec l'équipe Squadia pour discuter de votre projet IA, CRM ou automatisation B2B. Disponible par téléphone, email ou directement en ligne.");

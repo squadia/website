@@ -19,7 +19,7 @@ const StrategieIAPME = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Stratégie IA en PME et ETI : séquence et outils — Squadia";
+    document.title = "Stratégie IA en PME et ETI : séquence et outils : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez comment mettre en place une stratégie IA efficace pour votre PME ou ETI. Séquence, outils, et premiers résultats concrets.";
@@ -34,7 +34,7 @@ const StrategieIAPME = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -56,7 +56,7 @@ const StrategieIAPME = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -66,8 +66,8 @@ const StrategieIAPME = () => {
             La différence ne vient pas du budget. Elle vient de la séquence.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Ce que tout le monde a vu arriver — et que peu ont vraiment suivi
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+            Ce que tout le monde a vu arriver : et que peu ont vraiment suivi
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Il y a trois ans, GPT-3 était une curiosité de labo. En moins d'un an, GPT-4 était connecté à internet, capable de chercher, de lire, de répondre en temps réel. En parallèle, la génération d'images a évolué à une vitesse que personne n'avait vraiment anticipée. Tout ça en 18 mois.
@@ -79,13 +79,13 @@ const StrategieIAPME = () => {
             Ce n'est plus un outil qu'on interroge. C'est un système qui agit. Un client télécharge un document sur votre site : un agent identifie son rôle, son secteur, son entreprise, rédige un message personnalisé, crée une tâche dans votre CRM, l'assigne à un commercial, et envoie une séquence de suivi adaptée. Sans intervention humaine. En temps réel.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Puis est arrivé le MCP — la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. L'IA devient architecte de processus, pas seulement exécutant de tâches.
+            Puis est arrivé le MCP : la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. L'IA devient architecte de processus, pas seulement exécutant de tâches.
           </p>
           <p style={{ marginBottom: '3rem', padding: '1.5rem', background: '#0D0D25', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
             Ce que ça signifie concrètement : <strong>le champ du possible s'est élargi plus vite que la capacité de la plupart des organisations à le cartographier.</strong> Et c'est précisément là que le problème commence.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Pourquoi même les grands groupes se font dépasser
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -95,13 +95,13 @@ const StrategieIAPME = () => {
             La séquence typique : un grand cabinet ou une ESN identifie une opportunité IA, constitue une équipe, réfléchit à une offre, la formalise, la valide en interne, la lance sur le marché. Problème : entre le moment où l'offre a été conçue et celui où elle est commercialisée, l'IA a évolué. L'offre est déjà partiellement obsolète à son lancement.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Les structures agiles — qui peuvent pivoter en semaines, pas en trimestres — ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.
+            Les structures agiles : qui peuvent pivoter en semaines, pas en trimestres : ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Pour une PME ou une ETI qui cherche un partenaire IA, ça a une implication directe : la taille du cabinet n'est pas un indicateur de pertinence dans un domaine qui évolue aussi vite.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Le vrai chiffre qu'il faut avoir en tête
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -114,8 +114,8 @@ const StrategieIAPME = () => {
             En France, le paradoxe est particulièrement net : 94% des dirigeants déclarent vouloir investir dans l'IA. Seulement 2% estiment avoir obtenu un retour sur investissement réel en 2024. L'écart entre intention et résultat, c'est une question de méthode, pas de budget.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Ce qu'il est déjà possible de faire — et que beaucoup ignorent
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+            Ce qu'il est déjà possible de faire : et que beaucoup ignorent
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Il n'est pas nécessaire de vouloir aller sur la Lune pour tirer parti de l'IA. Si l'objectif est d'aller de Paris à Limoges dans les meilleures conditions, pas besoin d'une fusée. Il y a besoin du bon train.
@@ -132,7 +132,7 @@ const StrategieIAPME = () => {
             Le coût réel d'une automatisation bien conçue sur des outils du marché tourne entre 0,05 et 0,10€ par exécution. Ce qui se mesure, c'est la valeur produite par rapport à ce qu'on dépensait avant.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Un signe révélateur que peu de dirigeants prennent au sérieux
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -148,7 +148,7 @@ const StrategieIAPME = () => {
             Et il y a déjà des solutions accessibles pour y remédier, rapidement, sans attendre un projet de transformation à deux ans.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Les 3 questions à se poser avant de choisir un outil
           </h2>
           <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -166,7 +166,7 @@ const StrategieIAPME = () => {
             </div>
           </div>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Comment séquencer
           </h2>
           <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -198,7 +198,7 @@ const StrategieIAPME = () => {
 
           {/* ══ SECTION ARTICLES (A lire aussi) ══ */}
           <div>
-            <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
             <div className="grid-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
               <Link href="/blog/formation-ia-ou-automatisation" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
@@ -225,7 +225,7 @@ const StrategieIAPME = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les PME et ETI françaises de la définition de la stratégie à la mise en exécution opérationnelle.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF', border: 'none' }}>
+            <Link href="/stratégie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF', border: 'none' }}>
               Découvrir l'offre Stratégie IA <ArrowRight size={18} />
             </Link>
           </div>

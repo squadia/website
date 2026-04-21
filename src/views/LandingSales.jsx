@@ -84,7 +84,7 @@ const LandingSales = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour Directeurs Commerciaux — CRM et pipeline B2B";
+    document.title = "Squadia pour Directeurs Commerciaux : CRM et pipeline B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d'achat. CRM et automatisation PME/ETI.";
@@ -102,7 +102,7 @@ const LandingSales = () => {
   const apports = [
     { title: "Des leads avec une vraie raison d'acheter maintenant", desc: "Signaux d'achat, nouveaux C-level en poste, recrutements stratégiques, appels d'offres avant publication. Vos commerciaux arrivent sur des comptes en situation d'achat, pas sur des contacts froids sans contexte." },
     { title: 'Un CRM qui se met à jour sans effort', desc: "Comptes-rendus automatiques après visioconférence, enrichissement des contacts, mise à jour des opportunités en temps réel. Moins de saisie manuelle, plus de temps sur le terrain. Et une visibilité réelle sur le pipeline pour le management." },
-    { title: 'Une méthode de vente commune dans le CRM', desc: "MEDDIC, plan de compte, engagement clair sur les deals. Quand un commercial dit qu'il s'engage sur une opportunité, ça veut dire la même chose pour tout le monde, du terrain au COMEX. La supply chain peut anticiper, le marketing peut s'aligner." },
+    { title: 'Une méthode de vente commune dans le CRM', desc: "MEDDIC, plan de compte, engagement clair sur les deals. Quand'un commercial dit qu'il s'engage sur une opportunité, ça veut dire la même chose pour tout le monde, du terrain au COMEX. La supply chain peut anticiper, le marketing peut s'aligner." },
     { title: 'Des équipes formées pour être en amont plutôt qu\'en réaction', desc: "On donne aux juniors les outils pour prospecter efficacement et aux seniors les bonnes raisons de s'y remettre quand les opportunités sont vraiment qualifiées. Les deux ressortent avec une méthode commune et des réflexes partagés." }
   ];
 
@@ -116,7 +116,7 @@ const LandingSales = () => {
   return (
     <div className="landing-sales" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -292,7 +292,7 @@ const LandingSales = () => {
               opacity: 0,
               animation: 'fadeContentS 1.2s ease 0.5s forwards'
             }}>
-              {/* Card 1 — Performance pipeline */}
+              {/* Card 1 : Performance pipeline */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance pipeline</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+23%</div>
@@ -324,12 +324,12 @@ const LandingSales = () => {
                 </svg>
               </div>
 
-              {/* Card 2 — Deals en closing */}
+              {/* Card 2 : Deals en closing */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF', position: 'relative' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Deals en closing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+18</div>
                 <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-                  <span style={{ color: '#44CCFF' }}>ce mois</span> — 3 en final
+                  <span style={{ color: '#44CCFF' }}>ce mois</span> : 3 en final
                 </div>
                 <div style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', width: '52px', height: '52px' }}>
                   <svg viewBox="0 0 52 52" width="52" height="52" style={{ transform: 'rotate(-90deg)' }}>
@@ -343,12 +343,12 @@ const LandingSales = () => {
                 </div>
               </div>
 
-              {/* Card 3 — Signal détecté */}
+              {/* Card 3 : Signal détecté */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Signal détecté</div>
                 <div style={{ fontSize: '1.5rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>Dir. Achat</div>
                 <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                  <span style={{ color: '#44CCFF' }}>Prise de poste</span> — il y a 3h
+                  <span style={{ color: '#44CCFF' }}>Prise de poste</span> : il y a 3h
                 </div>
                 <svg viewBox="0 0 90 30" width="90" height="30" style={{ display: 'block' }}>
                   {[
@@ -372,11 +372,11 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section style={{ position: 'relative', overflow: 'hidden', padding: '10rem 2rem', background: '#050510' }}>
         <div style={{ position: 'absolute', right: '10%', top: '50%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: '2.25rem', marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>Contraintes du sales manager en 2026</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>Contraintes du sales manager en 2026</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
             {enjeux.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
@@ -393,10 +393,10 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions commerciales.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions commerciales.</h2>
           <div className="grid-2" style={{ gap: '2rem' }}>
             {apports.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
@@ -408,11 +408,11 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B — FORMATION ET DATA ═══ */}
+      {/* ═══ SECTION 3B : FORMATION ET DATA ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ maxWidth: '900px', margin: '0 auto 4rem auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem', lineHeight: 1.2 }}>Mettre en place une méthode de vente commune sur les comptes stratégiques.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Mettre en place une méthode de vente commune sur les comptes stratégiques.</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'justify' }}>
               <p>Sur les comptes complexes, chaque commercial qui travaille à sa façon c'est du chiffre d'affaires qui part. Une méthode commune change ça.</p>
               <p>On travaille avec vos équipes sur la qualification des opportunités, la construction de plans de compte actionnables et l'utilisation des outils IA pour préparer chaque rendez-vous et anticiper vos concurrents.</p>
@@ -497,12 +497,12 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>CAS CLIENTS</p>
-            <h2 style={{ fontSize: '2.625rem', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
           </div>
 
@@ -573,11 +573,11 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Une ressource pour vous.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Une ressource pour vous.</h2>
           <Link
             href="/ressources/guide-sales-manager"
             style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(68,204,255,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#FFFFFF', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
@@ -599,11 +599,11 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
             <div>
               {faqs.map((faq, idx) => (
                 <AccordionItem 
@@ -624,7 +624,7 @@ const LandingSales = () => {
       {/* ══ SECTION ARTICLES (A lire aussi) ══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2rem', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
           <div className="grid-3" style={{ gap: '2rem' }}>
             <Link href="/blog/formation-commerciale-b2b-ia" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
@@ -642,7 +642,7 @@ const LandingSales = () => {
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 
-            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+            <Link href="/blog/nettoyage-segmentation-enrichissement-données-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
               </div>
@@ -653,13 +653,13 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE — ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 8 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A', textAlign: 'center' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
             Prêt à fiabiliser votre pipeline et sécuriser vos objectifs ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

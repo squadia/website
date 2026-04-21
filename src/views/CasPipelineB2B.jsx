@@ -6,7 +6,7 @@ const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const bgUseCase = '/assets/images/bgusecase.png';
 const CasPipelineB2B = () => {
   useEffect(() => {
-    document.title = "Cas client — Pipeline B2B from scratch · Squadia";
+    document.title = "Cas client : Pipeline B2B from scratch · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -51,7 +51,7 @@ const CasPipelineB2B = () => {
           objectFit: 'cover', objectPosition: 'center top',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal bleu — couvre ~65% depuis la gauche */}
+        {/* Masque diagonal bleu : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.97) 0%, rgba(14,26,45,0.93) 38%, rgba(14,26,45,0.72) 58%, rgba(14,26,45,0.15) 72%, transparent 82%)',
@@ -113,7 +113,7 @@ const CasPipelineB2B = () => {
             <span style={{ fontSize: '2.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>+39</span>
             <div>
               <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#fff' }}>opportunités générées</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>en 2 mois — objectif initial doublé</div>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>en 2 mois : objectif initial doublé</div>
             </div>
           </div>
         </div>
@@ -147,7 +147,7 @@ const CasPipelineB2B = () => {
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '5rem', alignItems: 'start' }}>
           <div>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.3)', marginBottom: '0.8rem' }}>Le contexte</p>
-            <h2 style={{ fontSize: '1.8rem', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff' }}>
               Un marché inexploré, sans base, sans méthode, sans visibilité.
             </h2>
           </div>

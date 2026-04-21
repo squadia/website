@@ -19,7 +19,7 @@ const FormationCommerciale = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation commerciale B2B : méthode et outils IA — Squadia";
+    document.title = "Formation commerciale B2B : méthode et outils IA : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez comment structurer une formation commerciale B2B avec méthode de vente complexe, sales awareness et outils IA. Pour équipes PME et ETI.";
@@ -34,7 +34,7 @@ const FormationCommerciale = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '80vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgFormation} alt="" style={{
@@ -76,7 +76,7 @@ const FormationCommerciale = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -87,20 +87,20 @@ const FormationCommerciale = () => {
             Former des équipes commerciales B2B, c'est précisément travailler sur ces trois dimensions à la fois.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             La méthode de vente, socle que beaucoup d'entreprises n'ont pas encore posé
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Challenger Selling chez Dell et d'autres grands noms de l'IT, MEDDIC chez des acteurs de la vente complexe, SPIN Selling pour les phases de découverte approfondies. Ces méthodes ne sont pas des gadgets académiques. Elles répondent à une réalité simple : sans cadre commun, chaque commercial parle son propre langage.
           </p>
           <p style={{ marginBottom: '1.5rem', padding: '1.5rem', background: '#0D0D25', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
-            MEDDIC en particulier structure ce que trop d'équipes laissent flou. Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion. <strong>Quand un commercial dit qu'il s'engage sur un deal, ça doit vouloir dire la même chose pour tout le monde, du terrain au COMEX.</strong> Si ce n'est pas le cas, le manager ne peut pas piloter, la supply chain ne peut pas anticiper, et les prévisions restent des paris.
+            MEDDIC en particulier structure ce que trop d'équipes laissent flou. Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion. <strong>Quand'un commercial dit qu'il s'engage sur un deal, ça doit vouloir dire la même chose pour tout le monde, du terrain au COMEX.</strong> Si ce n'est pas le cas, le manager ne peut pas piloter, la supply chain ne peut pas anticiper, et les prévisions restent des paris.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Ce qu'on observe dans les entreprises qui n'ont pas encore de méthode installée : les commerciaux font le lièvre sur des propositions commerciales sans savoir s'ils ont vraiment coché les bonnes cases. Ils ont l'impression d'avoir bien travaillé un deal, mais ils ne peuvent pas le démontrer. Et le manager qui a la responsabilité d'un chiffre ne sait pas sur quoi s'appuyer pour défendre ses projections.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Le sales awareness, ce que la méthode seule ne donne pas
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -113,7 +113,7 @@ const FormationCommerciale = () => {
             Le sales awareness ne s'apprend pas dans un manuel. Il se développe par l'exposition à des situations réelles, par le jeu de rôles, par le retour d'expérience structuré. C'est pour ça que nos formations commerciales intègrent des mises en situation concrètes où les participants jouent à tour de rôle l'acheteur, le commercial et le manager. Ce changement de perspective change la façon dont on prépare et conduit les rendez-vous.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Ce que l'IA change dans la préparation et la conduite des rendez-vous B2B
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -129,7 +129,7 @@ const FormationCommerciale = () => {
             Ce n'est pas une liste d'outils pour faire joli. C'est une façon concrète de récupérer du temps sur les tâches à faible valeur pour le concentrer sur ce qui crée vraiment de la valeur : la relation, la compréhension des enjeux, la construction de la confiance.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Junior et senior n'ont pas besoin de la même chose
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -139,7 +139,7 @@ const FormationCommerciale = () => {
             Les former de la même façon, c'est perdre du temps et frustrer tout le monde. Une formation efficace s'adapte au niveau, aux typologies de comptes travaillés, et aux situations réelles que chaque commercial va rencontrer.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Vendre par les fonctionnalités, l'erreur classique
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -149,7 +149,7 @@ const FormationCommerciale = () => {
             C'est valable pour le pitch oral, mais aussi pour la façon dont on prépare une proposition commerciale, dont on structure un plan de compte, dont on anticipe les objections. L'IA peut aider à générer plusieurs angles d'approche sur un compte spécifique en quelques minutes. Ce qui prenait une demi-heure de réflexion peut se faire en itérant rapidement avec le bon outil.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Un deal se gagne rarement seul
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -159,7 +159,7 @@ const FormationCommerciale = () => {
             Apprendre à orchestrer les ressources autour de soi sans autorité hiérarchique, c'est l'un des sauts de maturité les plus importants dans une carrière commerciale. Et ça change complètement la façon de gérer un territoire.
           </p>
 
-          <h2 style={{ fontSize: '1.8rem', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Ce que ça change dans les résultats
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -173,7 +173,7 @@ const FormationCommerciale = () => {
 
           {/* ══ SECTION ARTICLES (A lire aussi) ══ */}
           <div>
-            <h2 style={{ fontSize: '2rem', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
             <div className="grid-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
               <Link href="/blog/formation-ia-ou-automatisation" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
@@ -182,7 +182,7 @@ const FormationCommerciale = () => {
                 <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
-              <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <Link href="/blog/nettoyage-segmentation-enrichissement-données-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #2563EB', backgroundColor: 'rgba(37, 99, 235, 0.1)', color: '#2563EB' }}>Data B2B</span>
                 </div>

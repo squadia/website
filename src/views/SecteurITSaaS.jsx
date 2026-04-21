@@ -8,10 +8,10 @@ const SecteurITSaaS = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Strategie IA et CRM pour les entreprises IT et SaaS — Squadia";
+    document.title = "Strategie IA et CRM pour les entreprises IT et SaaS : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Squadia aide les editeurs logiciels, integrateurs et entreprises tech a structurer leur pipeline commercial, automatiser leur prospection et former leurs equipes a l IA.";
+      metaDescription.content = "Squadia aide les editeurs logiciels, integrateurs et entreprises tech a structurer leur pipeline commercial, automatiser leur prospection et former leurs équipes a l'IA.";
     }
   }, []);
 
@@ -23,7 +23,7 @@ const SecteurITSaaS = () => {
     },
     {
       title: "Personne n a la meme vision du pipeline",
-      description: "Les commerciaux ont chacun leur methode. Un deal marque gagne pour l un ne veut pas dire la meme chose pour l autre. Le management ne peut pas piloter ce qu il ne comprend pas.",
+      description: "Les commerciaux ont chacun leur méthode. Un deal marque gagne pour l un ne veut pas dire la meme chose pour l autre. Le management ne peut pas piloter ce qu'il ne comprend pas.",
       icon: <Search size={24} color="#2563EB" />
     },
     {
@@ -33,25 +33,25 @@ const SecteurITSaaS = () => {
     },
     {
       title: "L IA est testee mais pas structuree",
-      description: "Quelques commerciaux utilisent ChatGPT pour rediger des emails. D autres ne touchent pas a l IA. Il n y a pas de methode commune, pas de regle d usage, et personne ne sait ce qui fonctionne vraiment.",
+      description: "Quelques commerciaux utilisent ChatGPT pour rediger des emails. D autres ne touchent pas a l'IA. Il n'y a pas de méthode commune, pas de regle d usage, et personne ne sait ce qui fonctionne vraiment.",
       icon: <Cpu size={24} color="#2563EB" />
     },
     {
       title: "Les initiatives metier se heurtent aux contraintes IT",
-      description: "Les equipes ont des idees, l envie d avancer, parfois deja des outils en tete. Mais sans cadre valide en amont, l IT bloque pour des raisons de securite ou de conformite. Pas parce qu ils ont tort, mais parce que personne n a pose les bonnes questions au bon niveau avant de lancer quoi que ce soit.",
+      description: "Les équipes ont des idees, l'envie d avancer, parfois deja des outils en tete. Mais sans cadre valide en amont, l'IT bloque pour des raisons de securite ou de conformite. Pas parce qu'ils ont tort, mais parce que personne n a pose les bonnes questions au bon niveau avant de lancer quoi que ce soit.",
       icon: <ShieldAlert size={24} color="#2563EB" />
     }
   ];
 
   const solutions = [
     {
-      title: "Structurer la methode de vente dans le CRM",
-      description: "MEDDIC, plan de compte, multi-sequence of events. On traduit la strategie commerciale en processus concret dans le CRM pour que tout le monde parle le meme langage et que le management ait une visibilite reelle.",
+      title: "Structurer la méthode de vente dans le CRM",
+      description: "MEDDIC, plan de compte, multi-sequence of events. On traduit la stratégie commerciale en processus concret dans le CRM pour que tout le monde parle le meme langage et que le management ait une visibilite réelle.",
       icon: <Database size={24} color="#2563EB" />
     },
     {
       title: "Identifier les bons comptes au bon moment",
-      description: "Detection de signaux d achat, recrutements strategiques, changements de direction. On identifie les comptes IT et SaaS qui ont une vraie raison d avancer maintenant, avant que la concurrence ne soit en place.",
+      description: "Detection de signaux d'achat, recrutements strategiques, changements de direction. On identifie les comptes IT et SaaS qui ont une vraie raison d avancer maintenant, avant que la concurrence ne soit en place.",
       icon: <Search size={24} color="#2563EB" />
     },
     {
@@ -60,8 +60,8 @@ const SecteurITSaaS = () => {
       icon: <Clock size={24} color="#2563EB" />
     },
     {
-      title: "Former les equipes sur les cas concrets du metier",
-      description: <>Pas une formation generique sur l IA. Une formation sur comment preparer un rendez-vous sur un grand compte avec <a href="http://Humantic.io" target="_blank" rel="noopener noreferrer" style={{ color: '#2563EB', textDecoration: 'underline' }}>Humantic.io</a>, comment qualifier une opportunite avec MEDDIC, comment utiliser l IA pour construire un plan de compte solide.</>,
+      title: "Former les équipes sur les cas concrets du metier",
+      description: <>Pas une formation générique sur l'IA. Une formation sur comment préparer un rendez-vous sur un grand compte avec <a href="http://Humantic.io" target="_blank" rel="noopener noreferrer" style={{ color: '#2563EB', textDecoration: 'underline' }}>Humantic.io</a>, comment qualifier une opportunite avec MEDDIC, comment utiliser l'IA pour construire un plan de compte solide.</>,
       icon: <Users size={24} color="#2563EB" />
     }
   ];
@@ -73,12 +73,12 @@ const SecteurITSaaS = () => {
       link: "/data"
     },
     {
-      question: "Vos commerciaux manquent de methode commune ?",
+      question: "Vos commerciaux manquent de méthode commune ?",
       cta: "Voir l offre Formation",
       link: "/formation-ia"
     },
     {
-      question: "Votre CRM ne reflete pas la realite du terrain ?",
+      question: "Votre CRM ne reflete pas la réalité du terrain ?",
       cta: "Voir l offre Automatisation",
       link: "/automatisation-ia"
     }
@@ -89,14 +89,14 @@ const SecteurITSaaS = () => {
   return (
     <div className="secteur-it-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
-            IT et SaaS : quand la methode de vente ne suit pas la complexite du produit.
+            IT et SaaS : quand la méthode de vente ne suit pas la complexite du produit.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: '1.6', marginBottom: '3rem' }}>
-            Vous vendez des solutions complexes a des organisations qui prennent du temps a decider. Vos commerciaux connaissent le produit. Mais ils n ont pas toujours la methode pour naviguer dans des cycles de vente longs, des interlocuteurs multiples et des appels d offres ou ils arrivent trop tard.
+            Vous vendez des solutions complexes a des organisations qui prennent du temps a decider. Vos commerciaux connaissent le produit. Mais ils n ont pas toujours la méthode pour naviguer dans des cycles de vente longs, des interlocuteurs multiples et des appels d offres ou ils arrivent trop tard.
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#calendrier" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
@@ -109,11 +109,11 @@ const SecteurITSaaS = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — CE QUE VIVENT VOS EQUIPES ═══ */}
+      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', marginInline: 'auto' }}>
-            Ce qu on entend le plus souvent dans les equipes commerciales IT et SaaS.
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', marginInline: 'auto' }}>
+            Ce qu'on entend le plus souvent dans les équipes commerciales IT et SaaS.
           </h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -144,11 +144,11 @@ const SecteurITSaaS = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', textAlign: 'center', marginBottom: '4rem' }}>
-            Comment on travaille avec les equipes IT et SaaS.
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>
+            Comment on travaille avec les équipes IT et SaaS.
           </h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem' }}>
@@ -179,11 +179,11 @@ const SecteurITSaaS = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — REFERENCES ═══ */}
+      {/* ═══ SECTION 4 : REFERENCES ═══ */}
       <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
-            Squadia a accompagne des equipes commerciales dans des entreprises IT et tech en France, de la structuration CRM a la formation des equipes.
+            Squadia a accompagne des équipes commerciales dans des entreprises IT et tech en France, de la structuration CRM a la formation des équipes.
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '4rem', alignItems: 'center' }}>
             {clients.map((client, idx) => (
@@ -207,7 +207,7 @@ const SecteurITSaaS = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div className="grid-3" style={{ gap: '2rem' }}>
@@ -235,10 +235,10 @@ const SecteurITSaaS = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: '2.5rem', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
             On peut regarder ensemble ou ca coince dans votre cycle de vente.
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>

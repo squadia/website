@@ -8,7 +8,7 @@ const About = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "À propos de Squadia — Experts B2B en IA, CRM et Automatisation";
+    document.title = "À propos de Squadia : Experts B2B en IA, CRM et Automatisation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia est un cabinet de conseil spécialisé en transformation commerciale B2B : stratégie IA, migration CRM, automatisation et formation. 20 ans d'expertise, basé à Paris.");
@@ -102,7 +102,7 @@ const About = () => {
       {/* CTA */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', textAlign: 'center' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '2rem' }}>Prêt à passer à l'exécution ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem' }}>Prêt à passer à l'exécution ?</h2>
           <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1.2rem 3rem' }}>Planifier un échange</Link>
         </div>
       </section>

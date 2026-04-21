@@ -5,6 +5,9 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, ChevronDown, Globe, MessageSquare, Layout, Activity, Search, ArrowRight } from 'lucide-react';
 import CtaSection from '../components/ui/CtaSection';
 const bgCommunication = '/assets/images/formation/communication.jpeg';
+const imgCRM = '/assets/images/hubspotcrm.jpeg';
+const imgAutoComm = '/assets/images/automatisation/auto3.webp';
+const imgData = '/assets/images/data/data.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
 
 const DayBlock = ({ title, objective, children }) => {
@@ -92,7 +95,7 @@ const FormationCommunicationIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Communication & IA — 2 jours — Squadia";
+    document.title = "Formation Communication & IA : 2 jours : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes communication à l'IA appliquée au message et à la production éditoriale. Programme 2 jours, outils concrets, ateliers pratiques.";
@@ -105,7 +108,7 @@ const FormationCommunicationIA = () => {
   return (
     <div className="formation-communication-ia" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 — HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgCommunication} alt="" style={{
@@ -126,19 +129,19 @@ const FormationCommunicationIA = () => {
           background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
         }} />
 
-        <div className="container" style={{ position: 'relative', zIndex: 3, paddingTop: '120px', paddingBottom: '80px' }}>
-          <div className="fade-in" style={{ maxWidth: '850px' }}>
+        <div style={{ position: 'relative', zIndex: 3, paddingLeft: '8%', paddingRight: '5%', width: '100%' }}>
+          <div className="fade-in" style={{ maxWidth: '750px' }}>
             <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
-              Communication et IA : produire plus, mieux, plus vite.
+              Communication et IA : produire plus, mieux, plus vite
             </h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
-              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur stratégie éditoriale, produire plus efficacement et automatiser ce qui peut l'être — sans perdre la qualité ni la voix de la marque.
+              Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur stratégie éditoriale, produire plus efficacement et automatiser ce qui peut l'être : sans perdre la qualité ni la voix de la marque.
             </p>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontWeight: 500 }}>
                 <Globe size={18} color="#44CCFF" />
-                <span>Langues disponibles : <strong style={{ color: '#FFFFFF' }}>FR — EN — ES</strong></span>
+                <span>Langues disponibles : <strong style={{ color: '#FFFFFF' }}>FR : EN : ES</strong></span>
               </div>
             </div>
 
@@ -150,14 +153,14 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 — À QUI S'ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
-                Managers et communicants cherchant à créer des messages clairs et engageants dans un environnement saturé. Adaptée aux équipes communication internes, aux chargés de communication et aux directions souhaitant structurer leur production éditoriale avec les outils IA.
+                Managers et communicants cherchant à créer des messages clairs et engageants dans un environnement saturé. adaptée aux équipes communication internes, aux chargés de communication et aux directions souhaitant structurer leur production éditoriale avec les outils IA.
               </p>
             </div>
             <div style={{ padding: '2.5rem', background: '#0D1A2E', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
@@ -169,15 +172,15 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 — PROGRAMME ═══ */}
+      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
       <section id="programme" className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Programme — 2 jours</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Programme : 2 jours</h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* JOUR 1 */}
-            <DayBlock title="Jour 1 — Stratégie, Message & Prompting" objective="Comprendre et structurer sa stratégie de contenu en exploitant les bons outils IA.">
+            <DayBlock title="Jour 1 : Stratégie, Message & Prompting" objective="Comprendre et structurer sa stratégie de contenu en exploitant les bons outils IA.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -205,34 +208,34 @@ const FormationCommunicationIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération de contenus structurés :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>posts, emails, landing pages — méthode et exemples</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>posts, emails, landing pages : méthode et exemples</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Adapter le message par canal et par audience :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>adapter le message par canal et par audience :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>ne pas produire un seul format pour tout le monde</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Création et lancement d'une mini campagne — définition des personas, rédaction des messages, adaptation par canal.
+                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Création et lancement d'une mini campagne : définition des personas, rédaction des messages, adaptation par canal.
                   </p>
                 </div>
               </div>
             </DayBlock>
 
             {/* JOUR 2 */}
-            <DayBlock title="Jour 2 — Production, Visuels & Organisation Éditoriale" objective="Structurer une production de contenus fluide et innovante en automatisant la veille, en optimisant l'organisation éditoriale et en générant des visuels IA impactants.">
+            <DayBlock title="Jour 2 : Production, Visuels & Organisation Éditoriale" objective="Structurer une production de contenus fluide et innovante en automatisant la veille, en optimisant l'organisation éditoriale et en générant des visuels IA impactants.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Automatiser sa veille :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>veille technologique, concurrentielle, tendances — automatisée avec les bons outils</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>veille technologique, concurrentielle, tendances : automatisée avec les bons outils</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -246,7 +249,7 @@ const FormationCommunicationIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Générer des visuels IA :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>Dall·E, Kling, Fal.ai et autres — choisir le bon outil selon l'usage</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>Dall·E, Kling, Fal.ai et autres : choisir le bon outil selon l'usage</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -259,7 +262,7 @@ const FormationCommunicationIA = () => {
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Cas pratique :</strong> Production d'un plan éditorial personnalisé — calendrier, formats, canaux, ressources.
+                    <strong style={{ color: '#44CCFF' }}>Cas pratique :</strong> Production d'un plan éditorial personnalisé : calendrier, formats, canaux, ressources.
                   </p>
                 </div>
               </div>
@@ -278,10 +281,10 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 — MODALITÉS ═══ */}
+      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
           <div style={{ background: '#0D1A2E', borderRadius: '24px', padding: '4rem', border: '1px solid rgba(37, 99, 235, 0.1)', position: 'relative', maxWidth: '900px', marginInline: 'auto' }}>
             <div className="grid-2" style={{ gap: '3rem' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -299,15 +302,15 @@ const FormationCommunicationIA = () => {
                 </div>
                 <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1rem' }}>
                   <span style={{ color: '#9CA3AF' }}>Langues</span>
-                  <span style={{ fontWeight: 700 }}>FR — EN — ES</span>
+                  <span style={{ fontWeight: 700 }}>FR : EN : ES</span>
                 </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center', alignItems: 'stretch' }}>
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', flex: 1 }}>
+                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', flex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                   <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Inter</div>
                   <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>1 200 € HT / pers.</div>
                 </div>
-                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #2563EB', flex: 1, position: 'relative' }}>
+                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #2563EB', flex: 1, position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
                   <div style={{ position: 'absolute', top: '-11px', right: '12px', background: '#2563EB', color: '#fff', padding: '2px 8px', borderRadius: '4px', fontSize: '0.65rem', fontWeight: 700 }}>RECOMMANDÉ</div>
                   <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Intra</div>
                   <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>4 390 € HT / groupe</div>
@@ -324,35 +327,69 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 — BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
-        <div className="container fade-in text-center">
-          <h2 style={{ fontSize: '2.5rem', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
+        <div className="container fade-in">
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
-            Une équipe formée sur la stratégie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin — automatiser vos flux, structurer votre stratégie globale, générer plus de leads — Squadia intervient aussi sur les systèmes.
+            Une équipe formée sur la stratégie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin : automatiser vos flux éditoriaux, centraliser votre organisation ou structurer vos données : Squadia intervient aussi sur les systèmes.
           </p>
-          <div className="grid-3" style={{ gap: '2rem' }}>
-            <Link href="/strategie-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Stratégie IA</h3>
-              <ArrowRight color="#2563EB" />
-            </Link>
-            <Link href="/automatisation-ia" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Automatisation</h3>
-              <ArrowRight color="#2563EB" />
-            </Link>
-            <Link href="/data" style={{ padding: '2.5rem', background: '#0A0A1A', border: '1px solid #1A1A3A', borderRadius: '12px', textDecoration: 'none', transition: 'all 0.3s ease' }} onMouseEnter={e => e.currentTarget.style.borderColor = '#2563EB' } onMouseLeave={e => e.currentTarget.style.borderColor = '#1A1A3A' }>
-              <h3 style={{ color: '#F9FAFB', marginBottom: '1rem' }}>Voir l'offre Data</h3>
-              <ArrowRight color="#2563EB" />
-            </Link>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
+
+            {/* Carte 1 : Stratégie CRM */}
+            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <img src={imgCRM} alt="Stratégie CRM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
+              </div>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Centralisez le partage d'information</h3>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Le CRM aide à centraliser le partage d'information stratégique pour l'interne comme pour l'externe : dans un calendrier éditorial commun, accessible à toutes les équipes.</p>
+                <Link href="/stratégie/crm" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                  Voir l'offre Stratégie CRM <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Carte 2 : Automatisation communication & contenus */}
+            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <img src={imgAutoComm} alt="Automatisation communication & contenus" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
+              </div>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Automatisez votre production éditoriale</h3>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Créez et diffusez des contenus à grande échelle sans perdre en cohérence : posts, emails, vidéos personnalisées générés à partir de vos données métier.</p>
+                <Link href="/automatisation-ia#automatisation-communication-contenus" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                  Voir l'offre Automatisation <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
+            {/* Carte 3 : Data */}
+            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <img src={imgData} alt="Data" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
+              </div>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Structurez vos données</h3>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base de données propre et segmentée, c'est le carburant de tous vos contenus et actions marketing. Zéro doublon, zéro opportunité manquée.</p>
+                <Link href="/data" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
+                  Voir l'offre Data <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 6 — FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
-            <h2 style={{ fontSize: '2.5rem', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
             <div>
               <AccordionItem 
                 question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
@@ -379,13 +416,13 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 7 — CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <CtaSection
         headline="Prêt à structurer la communication de votre organisation avec l'IA ?"
-        description="Message clair, production accélérée, ligne éditoriale cohérente — formez vos équipes communication aux outils qui font la différence."
+        description="Message clair, production accélérée, ligne éditoriale cohérente : formez vos équipes communication aux outils qui font la différence."
         cardTitle="Communication & IA"
         cardSubtitle="Équipe éditoriale renforcée"
-        cardDescription="Stratégie de contenu, prompting avancé, visuels IA et organisation éditoriale — 2 jours pour transformer la production."
+        cardDescription="Stratégie de contenu, prompting avancé, visuels IA et organisation éditoriale : 2 jours pour transformer la production."
         cardFeatures={[
           "Stratégie de contenu",
           "Prompting & ligne éditoriale",
