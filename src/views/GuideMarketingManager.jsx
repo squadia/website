@@ -94,7 +94,7 @@ const GuideMarketingManager = () => {
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
                 <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                 <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
-                  Découvrir les compétences cles pour vos équipes en 2025
+                  Découvrir les compétences cles pour vos équipes en 2026
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>

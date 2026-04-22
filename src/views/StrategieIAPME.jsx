@@ -139,7 +139,7 @@ const StrategieIAPME = () => {
             Regardez votre site internet.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Est-il lisible sur mobile ? S'adapte-t-il à toutes les tailles d'écran ? Ressemble-t-il à quelque chose de propre et fonctionnel en 2025 ? Beaucoup d'entreprises françaises ont du retard sur ce point, et ce retard est visible immédiatement par leurs clients et prospects.
+            Est-il lisible sur mobile ? S'adapte-t-il à toutes les tailles d'écran ? Ressemble-t-il à quelque chose de propre et fonctionnel en 2026 ? Beaucoup d'entreprises françaises ont du retard sur ce point, et ce retard est visible immédiatement par leurs clients et prospects.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
             Ce n'est pas un détail. Si le niveau de maturité digitale se voit sur la vitrine, il se retrouve généralement dans les processus internes : CRM mal structuré, données dispersées, pas d'automatisation, reporting manuel. Le site est souvent le symptôme d'un retard plus profond.

@@ -7,7 +7,7 @@ const enquêteIA2026 = () => {
   useScrollReveal();
 
   const keyFindings = [
-    { label: 'Adoption IA', value: '74%', desc: 'des PME françaises ont lancé au moins un pilote IA en 2025.' },
+    { label: 'Adoption IA', value: '74%', desc: 'des PME françaises ont lancé au moins un pilote IA en 2026.' },
     { label: 'Impact ROI', value: 'x3.2', desc: 'de retour sur investissement moyen pour les projets orientés leads.' },
     { label: 'Goulots d\'étranglement', value: '82%', desc: 'citent l\'exécution comme principal frein à la mise en production.' },
   ];

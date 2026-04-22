@@ -119,7 +119,7 @@ export default function BlogFormationIAVAutom() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#D1D5DB', fontSize: '0.95rem' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar size={16} color="#2563EB" /> Avril 2025
+                  <Calendar size={16} color="#2563EB" /> Avril 2026
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Clock size={16} color="#2563EB" /> 7 min de lecture

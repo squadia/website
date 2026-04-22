@@ -162,7 +162,7 @@ export default function BlogStrategieIAPME() {
             }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#D1D5DB', fontSize: '0.95rem' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar size={16} color="#2563EB" /> Avril 2025
+                  <Calendar size={16} color="#2563EB" /> Avril 2026
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Clock size={16} color="#2563EB" /> 8 min de lecture
@@ -390,7 +390,7 @@ export default function BlogStrategieIAPME() {
 
           <p>Regardez votre site internet.</p>
 
-          <p>Est-il lisible sur mobile ? S'adapte-t-il à toutes les tailles d'écran ? Ressemble-t-il à quelque chose de propre et fonctionnel en 2025 ? Beaucoup d'entreprises françaises ont du retard sur ce point, et ce retard est visible immédiatement par leurs clients et prospects.</p>
+          <p>Est-il lisible sur mobile ? S'adapte-t-il à toutes les tailles d'écran ? Ressemble-t-il à quelque chose de propre et fonctionnel en 2026 ? Beaucoup d'entreprises françaises ont du retard sur ce point, et ce retard est visible immédiatement par leurs clients et prospects.</p>
 
           <div className="article-pullquote">
             <p>Le site est souvent le symptôme d'un retard plus profond : CRM mal structuré, données dispersées, pas d'automatisation, reporting manuel.</p>
