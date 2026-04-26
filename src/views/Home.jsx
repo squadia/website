@@ -43,7 +43,6 @@ const s3 = '/assets/images/service3.png';
 const s4 = '/assets/images/service4.png';
 // Import Client Icons
 const ceaAlsace = '/assets/images/icon/cea-alsace.png';
-const ceaAtomique = '/assets/images/icon/cea-atomique.png';
 const cofaq = '/assets/images/icon/cofaq.png';
 const dell = '/assets/images/icon/dell-technologies.png';
 const franceHydrogene = '/assets/images/icon/france-hydrogene.png';
@@ -1064,10 +1063,10 @@ const HeroDynamic = React.memo(() => {
         transition={{ delay: 1.8, duration: 0.7, ease: 'easeOut' }}
       >
         <div className="hero-marquee-row">
-          {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, ceaAtomique, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
+          {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
             <img key={`H1-${i}`} src={src} className="hero-marquee-logo" alt="Client" />
           ))}
-          {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, ceaAtomique, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
+          {[dell, xerox, ovh, laPoste, groupama, lyon, ceaAlsace, inocel, meotec, oracle, fujitsu, cofaq].map((src, i) => (
             <img key={`H1-copy-${i}`} src={src} className="hero-marquee-logo" alt="Client" />
           ))}
         </div>
