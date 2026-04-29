@@ -5,6 +5,7 @@ import { ArrowRight } from 'lucide-react';
 
 // Import Client Icons
 const ceaAlsace = '/assets/images/icon/cea-alsace.png';
+const ceaAtomique = '/assets/images/icon/cea-atomique.png';
 const cofaq = '/assets/images/icon/cofaq.png';
 const dell = '/assets/images/icon/dell-technologies.png';
 const franceHydrogene = '/assets/images/icon/france-hydrogene.png';
@@ -18,8 +19,8 @@ const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
 const allLogos = [
-  dell, xerox, ovh, laPoste, groupama, lyon, 
-  ceaAlsace, inocel, meotec, oracle, 
+  dell, xerox, ovh, laPoste, groupama, lyon,
+  ceaAlsace, ceaAtomique, inocel, meotec, oracle,
   fujitsu, cofaq, franceHydrogene
 ];
 
