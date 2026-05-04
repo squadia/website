@@ -1019,7 +1019,7 @@ const HeroDynamic = React.memo(() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6, ease: 'easeOut' }}
           className="hero-para-laptop"
-          style={{ fontSize: '1.125rem', color: '#94A3B8', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+          style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.78)', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
           25 ans de terrain B2B. Une méthode, des outils, des équipes formées. Premiers résultats en 30 jours.
         </motion.div>
