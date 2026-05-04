@@ -299,43 +299,117 @@ const FormationMarketingIA = () => {
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
-          <div style={{ background: '#0D1A2E', borderRadius: '24px', padding: '4rem', border: '1px solid rgba(37, 99, 235, 0.1)', position: 'relative', maxWidth: '900px', marginInline: 'auto' }}>
-            <div className="grid-2" style={{ gap: '3rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Durée</span>
-                  <span style={{ fontWeight: 700 }}>2 jours</span>
+          <div style={{ 
+            background: '#0D1A2E', 
+            borderRadius: '24px', 
+            border: '1px solid rgba(37, 99, 235, 0.1)', 
+            position: 'relative', 
+            maxWidth: '1200px', 
+            marginInline: 'auto',
+            marginTop: '80px',
+            overflow: 'visible'
+          }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 2.2fr', alignItems: 'stretch' }}>
+              
+              {/* Gauche : Image + Halo */}
+              <div style={{ 
+                position: 'relative', 
+                minHeight: '320px', 
+                background: 'rgba(0,0,0,0.15)',
+                borderTopLeftRadius: '24px',
+                borderBottomLeftRadius: '24px',
+              }}>
+                {/* Intense Blue Halo */}
+                <div style={{
+                    position: 'absolute',
+                    top: '60%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: '350px',
+                    height: '350px',
+                    background: 'radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%)',
+                    filter: 'blur(60px)',
+                    zIndex: 0,
+                    pointerEvents: 'none'
+                }} />
+                
+                <img 
+                  src="/assets/images/cta.png" 
+                  alt="Formation et suivi" 
+                  style={{ 
+                    position: 'absolute', 
+                    bottom: 0, 
+                    left: '50%',
+                    transform: 'translateX(-50%)',
+                    height: '115%',
+                    width: 'auto',
+                    zIndex: 10,
+                    objectFit: 'contain',
+                    objectPosition: 'bottom',
+                    pointerEvents: 'none'
+                  }} 
+                />
+              </div>
+
+              {/* Droite : Contenu */}
+              <div style={{ 
+                padding: '2rem 3rem',
+                background: 'rgba(0,0,0,0.15)',
+                borderTopRightRadius: '24px',
+                borderBottomRightRadius: '24px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'center'
+              }}>
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '3rem', marginBottom: '2rem', alignItems: 'stretch' }}>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'center' }}>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Durée</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>2 jours</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Référence</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>T-MKT01</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Suivi post-training</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>1 heure en visio</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Langues</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
+                    </div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Groupe</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>6 à 12 participants</span>
+                    </div>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Inter</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F9FAFB' }}>1 200 € HT</div>
+                      <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par personne</div>
+                    </div>
+                    <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #2563EB', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: '#fff', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
+                      <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#60A5FA' }}>4 390 € HT</div>
+                      <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par groupe</div>
+                    </div>
+                  </div>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Référence</span>
-                  <span style={{ fontWeight: 700 }}>T-MKT01</span>
+                <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.2rem', marginBottom: '1.5rem' }}>
+                  <p style={{ color: '#9CA3AF', fontSize: '0.85rem', marginBottom: '0.3rem' }}>
+                    Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage.
+                  </p>
+                  <p style={{ color: '#6B7280', fontSize: '0.75rem', fontStyle: 'italic' }}>
+                    * groupe de 6 à 12 personnes
+                  </p>
                 </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Suivi post-training</span>
-                  <span style={{ fontWeight: 700 }}>1 heure en visio</span>
-                </div>
-                <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '1rem' }}>
-                  <span style={{ color: '#9CA3AF' }}>Langues</span>
-                  <span style={{ fontWeight: 700 }}>FR : EN : ES</span>
+                <div style={{ textAlign: 'center' }}>
+                  <a href={pipedriveLink} className="btn btn-primary" style={{ background: '#2563EB', padding: '0.8rem 2.5rem', borderRadius: '8px', fontWeight: 700 }}>Nous contacter</a>
                 </div>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'row', gap: '1rem', justifyContent: 'center', alignItems: 'stretch' }}>
-                <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', flex: 1, textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                  <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Inter</div>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>1 200 € HT / pers.</div>
-                </div>
-                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem', borderRadius: '12px', border: '1px solid #2563EB', flex: 1, position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center' }}>
-                  <div style={{ position: 'absolute', top: '-11px', right: '12px', background: '#2563EB', color: '#fff', padding: '2px 8px', borderRadius: '4px', fontSize: '0.65rem', fontWeight: 700 }}>RECOMMANDÉ</div>
-                  <div style={{ color: '#9CA3AF', fontSize: '0.8rem', marginBottom: '0.4rem' }}>Tarif Intra</div>
-                  <div style={{ fontSize: '1.15rem', fontWeight: 700 }}>4 390 € HT / groupe</div>
-                </div>
-              </div>
-            </div>
-            <p style={{ marginTop: '3rem', color: '#6B7280', fontSize: '0.9rem', textAlign: 'center' }}>
-              Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage.
-            </p>
-            <div style={{ marginTop: '3rem', textAlign: 'center' }}>
-              <a href={pipedriveLink} className="btn btn-primary" style={{ background: '#2563EB', padding: '1rem 3rem' }}>Nous contacter</a>
             </div>
           </div>
         </div>

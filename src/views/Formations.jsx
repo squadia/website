@@ -8,6 +8,11 @@ const formationBg = '/assets/images/formationB2B.png';
 const salesImg = '/assets/images/formation/commercial.png';
 const marketingImg = '/assets/images/formation/marketing.jpeg';
 const communicationImg = '/assets/images/formation/communication.jpeg';
+
+// Internal links images
+const autoProcessImg = '/assets/images/automatisation/automatisationbg.jpeg';
+const dataLeadImg = '/assets/images/datalead/datalead.jpeg';
+const stratCommercialeImg = '/assets/images/commerciale-meeting.png';
 const Formations = () => {
   useScrollReveal();
 
@@ -621,30 +626,150 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : INTERNAL LINKING (NEW) ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
-        <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h3 style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>La formation n'est que le début</h3>
-          <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.5)', marginBottom: '2rem' }}>
-            Squadia intervient aussi sur les systèmes qui font travailler vos équipes au quotidien.
-          </p>
+      {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
+      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+        <div className="container fade-in">
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>La formation n'est que le début</h2>
+            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.5)', maxWidth: '800px', marginInline: 'auto' }}>
+              Squadia intervient aussi sur les systèmes qui font travailler vos équipes au quotidien.
+            </p>
+          </div>
           
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center', marginTop: '24px' }}>
-            <Link href="/strategie-ia" className="pill-link">Structurer votre strategie IA</Link>
-            <Link href="/data" className="pill-link">Détecter vos leads qualifiés</Link>
-            <Link href="/automatisation-ia" className="pill-link">Automatiser vos processus</Link>
+          <div className="grid-3" style={{ gap: '2rem' }}>
+            {/* Block 1: Automatisation */}
+            <Link href="/automatisation-ia" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div 
+                className="hover-card-alt"
+                style={{ 
+                  textAlign: 'left', 
+                  background: 'rgba(255,255,255,0.02)', 
+                  borderRadius: '24px', 
+                  border: '1px solid rgba(255,255,255,0.03)', 
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ height: '180px', overflow: 'hidden' }}>
+                  <img src={autoProcessImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Automatiser vos processus</h3>
+                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                    Libérez vos équipes des tâches répétitives pour les concentrer sur la vente et la création de valeur.
+                  </p>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                    Découvrir l'automatisation <ArrowRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Block 2: Data */}
+            <Link href="/data" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div 
+                className="hover-card-alt"
+                style={{ 
+                  textAlign: 'left', 
+                  background: 'rgba(255,255,255,0.02)', 
+                  borderRadius: '24px', 
+                  border: '1px solid rgba(255,255,255,0.03)', 
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ height: '180px', overflow: 'hidden' }}>
+                  <img src={dataLeadImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Détecter vos leads qualifiés</h3>
+                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                    Utilisez la data et l'IA pour identifier les comptes à fort potentiel avant la concurrence.
+                  </p>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                    Voir nos solutions data <ArrowRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </Link>
+
+            {/* Block 3: Strategie */}
+            <Link href="/strategie/commerciale" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div 
+                className="hover-card-alt"
+                style={{ 
+                  textAlign: 'left', 
+                  background: 'rgba(255,255,255,0.02)', 
+                  borderRadius: '24px', 
+                  border: '1px solid rgba(255,255,255,0.03)', 
+                  overflow: 'hidden',
+                  height: '100%',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  transition: 'all 0.3s ease'
+                }}
+              >
+                <div style={{ height: '180px', overflow: 'hidden' }}>
+                  <img src={stratCommercialeImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                </div>
+                <div style={{ padding: '2rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Structurer votre stratégie</h3>
+                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                    Définissez un cadre clair et une méthode de vente robuste pour une performance durable.
+                  </p>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                    Optimiser votre stratégie <ArrowRight size={14} />
+                  </div>
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </section>
 
       {/* ═══ SECTION 8 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: 'linear-gradient(rgba(10,10,26,1) 0%, rgba(5,5,16,1) 100%)', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
-        <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem', fontWeight: 700 }}>Vous ne savez pas encore quelle formation correspond à votre équipe ?</h2>
-          <p style={{ fontSize: '1.3rem', color: '#9CA3AF', marginBottom: '4rem' }}>On cadre ça ensemble en 20 minutes.</p>
-          <a href={pipedrivePlaceholder} className="btn btn-primary pulse" style={{ padding: '1.5rem 3.5rem', fontSize: '1.2rem', fontWeight: 700, borderRadius: '8px' }}>
-            Prendre RDV
-          </a>
+      <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
+        {/* Glow effect */}
+        <div style={{
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '600px',
+          height: '600px',
+          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%)',
+          filter: 'blur(80px)',
+          zIndex: 0,
+          pointerEvents: 'none'
+        }} />
+
+        <div className="container fade-in" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
+          <div style={{ 
+            maxWidth: '900px', 
+            margin: '0 auto', 
+            padding: '5rem 3rem',
+            background: 'rgba(255, 255, 255, 0.02)',
+            borderRadius: '32px',
+            border: '1px solid rgba(255, 255, 255, 0.05)',
+            backdropFilter: 'blur(10px)'
+          }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>
+              Vous ne savez pas<br />
+              <span style={{ color: 'rgba(255,255,255,0.6)' }}>quelle formation correspond à votre équipe ?</span>
+            </h2>
+            <p style={{ fontSize: '1.25rem', color: '#9CA3AF', marginBottom: '3.5rem', fontWeight: 400 }}>
+              Recevez votre plan de formation idéale en 30 minutes.
+            </p>
+            <a href={pipedrivePlaceholder} className="btn btn-primary pulse" style={{ padding: '1.25rem 3rem', fontSize: '1.1rem', fontWeight: 700, borderRadius: '12px' }}>
+              Prendre RDV
+            </a>
+          </div>
         </div>
       </section>
 
@@ -761,6 +886,12 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           border-color: #44CCFF;
           color: #44CCFF;
           transform: translateY(-2px);
+        }
+        .hover-card-alt:hover {
+          transform: translateY(-8px);
+          border-color: rgba(68, 204, 255, 0.3) !important;
+          background: rgba(255, 255, 255, 0.04) !important;
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
         .desktop-only {
           display: block;
