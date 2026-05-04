@@ -536,7 +536,7 @@ const HeroCSS = `
   overflow: hidden;
   width: 100%;
   min-height: 100vh;
-  background: transparent;
+  background: #050510;
 }
 .hero-mask {
   position: absolute;
@@ -958,11 +958,8 @@ const HeroDynamic = React.memo(() => {
   return (
     <section className="hero-dynamic">
       {/* BACKGROUND desktop */}
-      <motion.img
+      <img
         src={slidesData[0].bgImg}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.8 }}
         className="hero-bg hero-bg-desktop"
         alt=""
       />
@@ -987,35 +984,44 @@ const HeroDynamic = React.memo(() => {
       <div className="hero-left">
         {/* BEAT 1 : pill + H1 */}
 
+        {/* Logo qualifier line */}
+        <motion.p
+          initial={{ opacity: 0, y: 15 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 0.6, ease: 'easeOut' }}
+          style={{
+            fontSize: '0.9rem',
+            color: '#44CCFF',
+            fontWeight: 700,
+            textTransform: 'uppercase',
+            letterSpacing: '0.12em',
+            marginTop: '0.25rem',
+            marginBottom: '1.5rem',
+          }}
+        >
+          Agence de performance commerciale B2B, accélérée par l'IA
+        </motion.p>
+
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
-          style={{ color: '#fff', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
+          style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
         >
-          Structurez votre système<br />
-          de génération de revenus
+          Structurer la vente<br />
+          Fiabiliser le pipeline<br />
+          Former les équipes
         </motion.h1>
 
-        {/* BEAT 2 : script tagline + body */}
-        <motion.div
-          className="hero-diagnostic-span"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ delay: 0.7, duration: 0.7, ease: 'easeOut' }}
-          style={{ fontFamily: "'Allison', cursive", fontSize: 'clamp(1.8rem, 4vw, 3rem)', fontWeight: 400, color: '#fff', display: 'block', marginTop: '1.2rem', letterSpacing: '0.02em', marginBottom: '2.5rem' }}
-        >
-          Du diagnostic à l'impact
-        </motion.div>
-
+        {/* BEAT 2 : subtitle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.6, ease: 'easeOut' }}
+          transition={{ delay: 0.7, duration: 0.6, ease: 'easeOut' }}
           className="hero-para-laptop"
-          style={{ fontSize: 'clamp(1rem, 1.4vw, 1.15rem)', color: 'rgba(255,255,255,0.78)', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+          style={{ fontSize: '1.125rem', color: '#94A3B8', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
         >
-          25 ans de vente B2B terrain. Squadia structure votre système commercial : strategie, data, automatisation et formation.<br /><strong style={{ color: '#FFFFFF' }}>Premiers résultats en 30 jours.</strong>
+          25 ans de terrain B2B. Une méthode, des outils, des équipes formées. Premiers résultats en 30 jours.
         </motion.div>
 
         {/* BEAT 3 : CTA + stats */}
@@ -1023,13 +1029,27 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6, ease: 'easeOut' }}
+          style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
         >
           <a
-            href="#approche"
+            href="/contact"
+            className="hero-CTA"
+            style={{ background: '#2563EB' }}
+          >
+            Prendre RDV
+          </a>
+          <a
+            href="#les-4-briques"
             className="hero-CTA"
             onClick={(e) => {
               e.preventDefault();
-              document.querySelector('#approche')?.scrollIntoView({ behavior: 'smooth' });
+              document.querySelector('#les-4-briques')?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            style={{
+              background: 'transparent',
+              border: '1px solid #2563EB',
+              color: '#F9FAFB',
+              boxShadow: 'none',
             }}
           >
             Découvrir l'approche
@@ -1043,8 +1063,8 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 1.25, duration: 0.5, ease: 'easeOut' }}
         >
           <div className="stat-item-compact">
-            <div className="stat-num-compact">+20</div>
-            <div className="stat-label-compact">ans d'expérience B2B</div>
+            <div className="stat-num-compact">+25 ans</div>
+            <div className="stat-label-compact">de vente B2B terrain</div>
           </div>
           <div className="stat-item-compact">
             <div className="stat-num-compact">+120</div>
@@ -1204,6 +1224,8 @@ const HeroDynamic = React.memo(() => {
       <HeroDynamic />
 
       <section id="approche" ref={section4Ref} style={{ position: 'relative', backgroundColor: 'transparent' }}>
+        {/* anchor for hero CTA */}
+        <span id="les-4-briques" style={{ position: 'absolute', top: '-80px' }} />
         <div className="container" style={{ padding: '10rem 2rem' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 1.35fr', gap: '4rem', alignItems: 'start' }}>
             

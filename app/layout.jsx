@@ -72,7 +72,9 @@ export default function RootLayout({ children }) {
       <body>
         <ScrollToTop />
         <Navbar />
-        {children}
+        <main style={{ minHeight: '100vh' }}>
+          {children}
+        </main>
 
         {/* Footer */}
         <footer style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>

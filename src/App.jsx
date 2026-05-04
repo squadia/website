@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useLayoutEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/layout/Navbar';
 import Home from './views/Home';
@@ -49,7 +49,7 @@ import Mission from './views/Mission';
 
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!hash) {
       window.scrollTo(0, 0);
     }
@@ -62,55 +62,56 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/strategie-ia" element={<StrategieIA />} />
-        <Route path="/strategie/commerciale" element={<StrategieCommerciale />} />
-        <Route path="/strategie/crm" element={<StrategieCrm />} />
-        <Route path="/data/data-clean" element={<DataClean />} />
-        <Route path="/data/data-seg" element={<DataSeg />} />
-        <Route path="/data/data-lead" element={<DataLead />} />
-        <Route path="/automatisation-ia" element={<AutomatisationIA />} />
-        <Route path="/formation-ia" element={<Formation />} />
-        <Route path="/directeur-commercial" element={<LandingSales />} />
-        <Route path="/directeur-general" element={<LandingDG />} />
-        <Route path="/directeur-marketing" element={<LandingMarketing />} />
-        <Route path="/a-propos" element={<About />} />
-        <Route path="/tarifs" element={<Tarifs />} />
-        <Route path="/cas-clients/pipeline-b2b" element={<CasPipelineB2B />} />
-        <Route path="/cas-clients/formation-ia-com" element={<CasFormationIACom />} />
-        <Route path="/cas-clients/crm-industrie" element={<CasCRMIndustrie />} />
-        <Route path="/cas-clients/migration-crm" element={<CasMigrationCRM />} />
-        <Route path="/cas-clients/formation-vente" element={<CasFormationVente />} />
-        <Route path="/cas-clients/:caseId?" element={<CasClients />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/blog" element={<Navigate href="/ressources" replace />} />
-        <Route path="/blog/prospection-multicanale-b2b-erreurs" element={<BlogProspectionErreurs />} />
-        <Route path="/blog/formation-commerciale-b2b-ia" element={<FormationCommerciale />} />
-        <Route path="/blog/nettoyage-segmentation-enrichissement-données-b2b" element={<DataB2B />} />
-        <Route path="/blog/strategie-ia-pme-eti" element={<StrategieIAPME />} />
-        <Route path="/blog/formation-ia-ou-automatisation" element={<FormationOuAutomatisation />} />
-        <Route path="/blog/strategie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
-        <Route path="/blog/changement-crm-organisation" element={<BlogChangementCRM />} />
-        <Route path="/blog/formation-ia-automatisation-ordre" element={<BlogFormationIAVAutom />} />
-        <Route path="/ressources" element={<Ressources />} />
-        <Route path="/ressources/enquête-ia-b2b" element={<enquêteIAB2B />} />
-        <Route path="/ressources/guide-sales-manager" element={<GuideSalesManager />} />
-        <Route path="/ressources/guide-marketing-manager" element={<GuideMarketingManager />} />
-        <Route path="/ressources/channel-sales-plan" element={<ChannelSalesPlan />} />
-        <Route path="/ressources/conditions-participation" element={<ConditionsParticipation />} />
-        <Route path="/data" element={<Data />} />
-        <Route path="/secteur-it-saas" element={<SecteurITSaaS />} />
-        <Route path="/secteur-industrie" element={<SecteurIndustrie />} />
-        <Route path="/secteur-public" element={<SecteurPublic />} />
-        <Route path="/formations" element={<Formations />} />
-        <Route path="/formation-ventes-et-ia" element={<FormationVentesIA />} />
-        <Route path="/formation-marketing-et-ia" element={<FormationMarketingIA />} />
-        <Route path="/formation-communication-et-ia" element={<FormationCommunicationIA />} />
-        <Route path="/mentions-legales" element={<MentionsLegales />} />
-        <Route path="/notre-mission" element={<Mission />} />
-      </Routes>
-      
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/strategie-ia" element={<StrategieIA />} />
+          <Route path="/strategie/commerciale" element={<StrategieCommerciale />} />
+          <Route path="/strategie/crm" element={<StrategieCrm />} />
+          <Route path="/data/data-clean" element={<DataClean />} />
+          <Route path="/data/data-seg" element={<DataSeg />} />
+          <Route path="/data/data-lead" element={<DataLead />} />
+          <Route path="/automatisation-ia" element={<AutomatisationIA />} />
+          <Route path="/formation-ia" element={<Formation />} />
+          <Route path="/directeur-commercial" element={<LandingSales />} />
+          <Route path="/directeur-general" element={<LandingDG />} />
+          <Route path="/directeur-marketing" element={<LandingMarketing />} />
+          <Route path="/a-propos" element={<About />} />
+          <Route path="/tarifs" element={<Tarifs />} />
+          <Route path="/cas-clients/pipeline-b2b" element={<CasPipelineB2B />} />
+          <Route path="/cas-clients/formation-ia-com" element={<CasFormationIACom />} />
+          <Route path="/cas-clients/crm-industrie" element={<CasCRMIndustrie />} />
+          <Route path="/cas-clients/migration-crm" element={<CasMigrationCRM />} />
+          <Route path="/cas-clients/formation-vente" element={<CasFormationVente />} />
+          <Route path="/cas-clients/:caseId?" element={<CasClients />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Navigate href="/ressources" replace />} />
+          <Route path="/blog/prospection-multicanale-b2b-erreurs" element={<BlogProspectionErreurs />} />
+          <Route path="/blog/formation-commerciale-b2b-ia" element={<FormationCommerciale />} />
+          <Route path="/blog/nettoyage-segmentation-enrichissement-données-b2b" element={<DataB2B />} />
+          <Route path="/blog/strategie-ia-pme-eti" element={<StrategieIAPME />} />
+          <Route path="/blog/formation-ia-ou-automatisation" element={<FormationOuAutomatisation />} />
+          <Route path="/blog/strategie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
+          <Route path="/blog/changement-crm-organisation" element={<BlogChangementCRM />} />
+          <Route path="/blog/formation-ia-automatisation-ordre" element={<BlogFormationIAVAutom />} />
+          <Route path="/ressources" element={<Ressources />} />
+          <Route path="/ressources/enquête-ia-b2b" element={<enquêteIAB2B />} />
+          <Route path="/ressources/guide-sales-manager" element={<GuideSalesManager />} />
+          <Route path="/ressources/guide-marketing-manager" element={<GuideMarketingManager />} />
+          <Route path="/ressources/channel-sales-plan" element={<ChannelSalesPlan />} />
+          <Route path="/ressources/conditions-participation" element={<ConditionsParticipation />} />
+          <Route path="/data" element={<Data />} />
+          <Route path="/secteur-it-saas" element={<SecteurITSaaS />} />
+          <Route path="/secteur-industrie" element={<SecteurIndustrie />} />
+          <Route path="/secteur-public" element={<SecteurPublic />} />
+          <Route path="/formations" element={<Formations />} />
+          <Route path="/formation-ventes-et-ia" element={<FormationVentesIA />} />
+          <Route path="/formation-marketing-et-ia" element={<FormationMarketingIA />} />
+          <Route path="/formation-communication-et-ia" element={<FormationCommunicationIA />} />
+          <Route path="/mentions-legales" element={<MentionsLegales />} />
+          <Route path="/notre-mission" element={<Mission />} />
+        </Routes>
+      </div>
       {/* Footer */}
       <footer style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>
         <div className="container">
