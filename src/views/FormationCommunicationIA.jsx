@@ -209,7 +209,7 @@ const FormationCommunicationIA = () => {
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>adapter le message par canal et par audience :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Adapter le message par canal et par audience :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>ne pas produire un seul format pour tout le monde</p>
                     </div>
                   </li>
