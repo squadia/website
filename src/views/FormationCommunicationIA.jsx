@@ -189,7 +189,7 @@ const FormationCommunicationIA = () => {
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
                       <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Les fondamentaux :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>quel IA (LLM) pour quel besoin, compréhension des limites, vocabulaire et concepts pour mieux s'y retrouver</p>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>quelle IA (LLM) pour quel besoin, compréhension des limites, vocabulaire et concepts pour mieux s'y retrouver</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
