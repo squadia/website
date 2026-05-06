@@ -176,7 +176,8 @@ const FormationMarketingIA = () => {
       {/* ═══ SECTION 3 : PROGRAMME ═══ */}
       <section id="programme" className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours (mise en pratique, outils, méthodes)</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '0.75rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours</h2>
+          <p style={{ fontSize: '1.1rem', color: '#9CA3AF', textAlign: 'center', marginBottom: '4rem' }}>mise en pratique, outils, méthodes</p>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
