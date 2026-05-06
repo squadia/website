@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, ChevronDown, Globe, Layout, Image, Video, Mic, Calendar, ArrowRight } from 'lucide-react';
 import CtaSection from '../components/ui/CtaSection';
+import ClientLogosSection from '../components/ui/ClientLogosSection';
 const bgMarketing = '/assets/images/formation/marketing.jpeg';
 const imgDataClean = '/assets/images/dataclean/data-clean.jpeg';
 const imgDataSeg = '/assets/images/dataseg/data-seg.jpeg';
@@ -425,7 +426,7 @@ const FormationMarketingIA = () => {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
             {/* Carte 1 : Data Clean */}
-            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataClean} alt="Data Clean" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
@@ -433,14 +434,17 @@ const FormationMarketingIA = () => {
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Nettoyez votre base</h3>
                 <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Doublons supprimés, champs normalisés, données manquantes comblées : une base propre pour que vos campagnes touchent les bonnes personnes.</p>
-                <Link href="/data/data-clean" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                  Voir Data Clean <ArrowRight size={16} />
+                <Link href="/data/data-clean" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
+                    Data Clean <ArrowRight size={16} />
+                  </span>
                 </Link>
               </div>
             </div>
 
             {/* Carte 2 : Data Seg */}
-            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataSeg} alt="Data Seg" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
@@ -448,14 +452,17 @@ const FormationMarketingIA = () => {
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Segmentez pour mieux cibler</h3>
                 <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Créez des segments actionnables par secteur, taille, comportement ou stade du cycle : pour personnaliser chaque message et maximiser l'engagement.</p>
-                <Link href="/data/data-seg" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                  Voir Data Seg <ArrowRight size={16} />
+                <Link href="/data/data-seg" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
+                    Data Seg <ArrowRight size={16} />
+                  </span>
                 </Link>
               </div>
             </div>
 
             {/* Carte 3 : Data Lead */}
-            <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataLead} alt="Data Lead" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
@@ -463,8 +470,11 @@ const FormationMarketingIA = () => {
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Enrichissez vos prospects</h3>
                 <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Identifiez vos prospects à fort potentiel, enrichissez leurs profils et alimentez vos campagnes avec des données fraîches et qualifiées.</p>
-                <Link href="/data/data-lead" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem' }}>
-                  Voir Data Lead <ArrowRight size={16} />
+                <Link href="/data/data-lead" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                  <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
+                    Data Lead <ArrowRight size={16} />
+                  </span>
                 </Link>
               </div>
             </div>
@@ -503,6 +513,11 @@ const FormationMarketingIA = () => {
           </div>
         </div>
       </section>
+
+      {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
+      <ClientLogosSection 
+        description="Pour aider leurs équipes de marketing à structurer le rendu de leur prompt, automatiser des assistants pour linkedin , la veille ou encore la production d'infographie, d'extraction de datas, ou d' UGC." 
+      />
 
       {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <CtaSection

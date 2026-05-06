@@ -24,7 +24,8 @@ const allLogos = [
   fujitsu, cofaq, franceHydrogene
 ];
 
-export default function ClientLogosSection() {
+export default function ClientLogosSection({ description }) {
+  const defaultDescription = "Pour tout ou partie de leur strategie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.";
   const row1Logos = allLogos.slice(0, 7);
   const row2Logos = allLogos.slice(7, 14);
   const row3Logos = [...allLogos].reverse().slice(0, 7);
@@ -75,7 +76,7 @@ export default function ClientLogosSection() {
             lineHeight: 1.6, 
             marginBottom: '3rem' 
           }}>
-            Pour tout ou partie de leur strategie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.
+            {description || defaultDescription}
           </p>
 
           <Link href="/cas-clients" className="hover-btn-transparent" style={{
