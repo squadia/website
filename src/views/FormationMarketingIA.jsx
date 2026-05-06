@@ -405,7 +405,7 @@ const FormationMarketingIA = () => {
                     Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage.
                   </p>
                   <p style={{ color: '#6B7280', fontSize: '0.75rem', fontStyle: 'italic' }}>
-                    * groupe de 6 à 12 personnes
+                    * groupe jusqu'à 12 personnes
                   </p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
