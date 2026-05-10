@@ -84,6 +84,8 @@
     line-height: 1.1;
   }
 
+  h1, h2 { text-wrap: balance; }
+
   a {
     text-decoration: none;
     color: inherit;
@@ -305,7 +307,17 @@ html {
 @media (max-width: 768px) {
   .desktop-only { display: none !important; }
   .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-  h1 { font-size: 3rem !important; }
+
+  /* ── Typographie mobile (variables définies à 480px, fallbacks ici) ── */
+  h1 { font-size: var(--m-h1, clamp(1.75rem, 7.5vw, 2.25rem)) !important; line-height: 1.25 !important; }
+  h2 { font-size: var(--m-h2, clamp(1.4rem, 6vw, 1.75rem))    !important; line-height: 1.25 !important; }
+  h3 { font-size: var(--m-h3, 1.125rem)                        !important; line-height: 1.25 !important; }
+  h4 { font-size: var(--m-h4, 1rem)                            !important; line-height: 1.25 !important; }
+  p  { font-size: var(--m-body, 0.95rem)                       !important; line-height: 1.6  !important; }
+
+  /* ── Taille minimum lisible ── */
+  p, li, span, a, button { font-size: max(13px, 1em); }
+
   .section-padding { padding: 6rem 0; }
   /* Hamburger visible sur mobile */
   .hamburger-btn { display: flex !important; }
@@ -349,11 +361,21 @@ html {
    ═══════════════════════════════════════════════ */
 @media (max-width: 480px) {
 
-  /* ── TYPOGRAPHY ── */
-  h1 { font-size: clamp(1.75rem, 8vw, 2.2rem) !important; line-height: 1.2 !important; }
-  h2 { font-size: clamp(1.4rem, 6.5vw, 1.75rem) !important; line-height: 1.25 !important; }
-  h3 { font-size: 1.1rem !important; line-height: 1.4 !important; }
-  p  { font-size: 0.95rem !important; line-height: 1.65 !important; }
+  /* ── TYPOGRAPHY : échelle mobile stricte ── */
+  :root {
+    --m-h1:    clamp(1.75rem, 7.5vw, 2.25rem); /* 28–36px */
+    --m-h2:    clamp(1.4rem, 6vw, 1.75rem);    /* 22–28px */
+    --m-h3:    1.125rem;                        /* 18px    */
+    --m-h4:    1rem;                            /* 16px    */
+    --m-body:  0.95rem;                         /* 15px    */
+    --m-small: 0.8125rem;                       /* 13px    */
+    --m-tiny:  0.75rem;                         /* 12px MIN */
+  }
+  h1 { font-size: var(--m-h1) !important;   line-height: 1.25 !important; }
+  h2 { font-size: var(--m-h2) !important;   line-height: 1.25 !important; }
+  h3 { font-size: var(--m-h3) !important;   line-height: 1.25 !important; }
+  h4 { font-size: var(--m-h4) !important;   line-height: 1.25 !important; }
+  p  { font-size: var(--m-body) !important; line-height: 1.6  !important; }
 
   /* ── CONTAINER & SPACING ── */
   /* Seulement les paddings latéraux : ne pas écraser le paddingTop inline des hero */
@@ -515,13 +537,16 @@ html {
     width: 100% !important;
   }
 
-  /* ── LARGE FONT SIZES (inline) ── */
+  /* ── LARGE FONT SIZES (inline) ──
+     Remplacé par les règles h1/h2/h3/h4/p !important ci-dessus (768px + 480px).
+     [style*="fontSize:"] conservé en commentaire pour référence.
   [style*="fontSize: '3.5rem"]  { font-size: 1.9rem !important; }
   [style*="fontSize: '3rem"]    { font-size: 1.75rem !important; }
   [style*="fontSize: '2.5rem"]  { font-size: 1.5rem !important; }
   [style*="fontSize: '2rem"]    { font-size: 1.35rem !important; }
   [style*="fontSize: '1.8rem"]  { font-size: 1.15rem !important; }
   [style*="fontSize: 'clamp"]   { font-size: clamp(1.6rem, 7vw, 2rem) !important; }
+  ── */
 
   /* ── INLINE PADDINGS too large ── */
   [style*="padding: '4rem"] { padding: 2rem 1.25rem !important; }
