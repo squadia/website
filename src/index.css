@@ -354,6 +354,23 @@ html {
 
   /* ── Blog : réduire la taille du titre ── */
   .blog-article-h1 { font-size: clamp(1.5rem, 6.5vw, 2rem) !important; }
+
+  /* ── Heroes autres pages : padding-top 160/180/200px → 88px ── */
+  .container[style*="padding-top: 160px"],
+  .container[style*="padding-top: 180px"],
+  .container[style*="padding-top: 200px"],
+  section[style*="padding-top: 160px"],
+  section[style*="padding-top: 180px"],
+  section[style*="padding-top: 200px"],
+  div[style*="padding-top: 160px"],
+  div[style*="padding-top: 180px"],
+  div[style*="padding-top: 200px"] {
+    padding-top: 88px !important;
+    padding-bottom: 40px !important;
+  }
+
+  /* ── Supprime white-space: nowrap sur mobile ── */
+  [style*="white-space: nowrap"] { white-space: normal !important; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -557,6 +574,16 @@ html {
   /* ── OVERFLOW PROTECTION ── */
   * { max-width: 100%; }
   pre, code, table { overflow-x: auto; }
+}
+
+/* ── Stats hero : grille verticale sur très petits écrans ── */
+@media (max-width: 360px) {
+  .hero-stats-compact {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+  }
+  .stat-item-compact { flex: none !important; }
 }
 
 /* Tablet (481–768px) */

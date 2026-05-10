@@ -789,9 +789,9 @@ const HeroCSS = `
   .hero-bg-mobile  { display: block; }
   .hero-bg-desktop { display: none !important; }
 
-  /* Hero : hauteur pleine page fixe pour que l'image couvre tout */
+  /* Hero : height auto pour éviter le débordement iPhone SE / Galaxy A */
   .hero-dynamic {
-    height: 100svh !important;
+    height: auto !important;
     min-height: 100svh !important;
   }
 
@@ -814,7 +814,7 @@ const HeroCSS = `
     display: flex !important;
     flex-direction: column !important;
     justify-content: space-between !important;
-    padding: 90px 1.4rem 1.5rem !important;
+    padding: 88px 1.4rem 32px !important;
     z-index: 3;
   }
   /* KPI cards droite : masquées sur mobile */
@@ -836,13 +836,13 @@ const HeroCSS = `
     align-items: center !important;
     text-align: center !important;
   }
-  .stat-num-compact  { font-size: 18px !important; }
+  .stat-num-compact  { font-size: 17px !important; }
   .stat-label-compact {
     font-size: 10px !important;
     line-height: 1.35 !important;
     text-align: center !important;
     white-space: normal !important;
-    max-width: 80px;
+    max-width: 90px;
   }
   /* Marquee logos */
   .hero-marquee-inline {
@@ -852,7 +852,7 @@ const HeroCSS = `
   }
   /* Titre hero */
   .hero-left h1 {
-    font-size: clamp(2.2rem, 9vw, 2.8rem) !important;
+    font-size: clamp(1.75rem, 7vw, 2.25rem) !important;
     margin-bottom: 0 !important;
   }
   /* Sous-titre "Du diagnostic à l'impact." */
@@ -867,13 +867,20 @@ const HeroCSS = `
     margin-top: 4.5rem !important;
     margin-bottom: 0 !important;
   }
-  /* CTA button */
+  /* CTA buttons */
   .hero-CTA {
     width: 100% !important;
     justify-content: center !important;
-    font-size: 1rem !important;
-    padding: 0.9rem 1.5rem !important;
+    font-size: 15px !important;
+    padding: 14px 20px !important;
   }
+  .hero-cta-block {
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+  /* <br> desktop cachés sur mobile */
+  .desktop-br { display: none !important; }
   /* Logo marquee images */
   .hero-marquee-logo {
     height: 26px !important;
@@ -881,7 +888,7 @@ const HeroCSS = `
   }
   /* Vitesse du défilement logos sur mobile */
   .hero-marquee-row {
-    animation-duration: 18s !important;
+    animation-duration: 35s !important;
   }
 
   /* ── Réduction espacements sections ── */
@@ -1008,8 +1015,8 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
         >
-          Structurer la vente<br />
-          Fiabiliser le pipeline<br />
+          Structurer la vente<br className="desktop-br" />
+          Fiabiliser le pipeline<br className="desktop-br" />
           Former les équipes
         </motion.h1>
 
@@ -1029,6 +1036,7 @@ const HeroDynamic = React.memo(() => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.1, duration: 0.6, ease: 'easeOut' }}
+          className="hero-cta-block"
           style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
         >
           <a
