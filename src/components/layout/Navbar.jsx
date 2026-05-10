@@ -14,7 +14,8 @@ const Navbar = () => {
   const [activeMobileCategory, setActiveMobileCategory] = useState('strategie');
   const [showMobileServices, setShowMobileServices] = useState(false);
   const [showMobileRoles, setShowMobileRoles] = useState(false);
-  const [isMobile, setIsMobile] = useState(() => typeof window !== 'undefined' && window.innerWidth <= 768);
+  const [isMobile, setIsMobile] = useState(false); // false côté SSR, sync au mount
+  const [isReady, setIsReady] = useState(false);   // délai anti-tap fantôme
   const dropdownRef = useRef(null);
 
   useEffect(() => {
@@ -24,10 +25,18 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    setIsMobile(window.innerWidth <= 768); // sync initial au mount (évite mismatch SSR)
     const handleResize = () => setIsMobile(window.innerWidth <= 768);
     window.addEventListener('resize', handleResize);
     return () => window.removeEventListener('resize', handleResize);
   }, []);
+
+  // Délai 300ms avant interactivité du drawer (anti-tap fantôme)
+  useEffect(() => {
+    if (!isOpen) { setIsReady(false); return; }
+    const t = setTimeout(() => setIsReady(true), 300);
+    return () => clearTimeout(t);
+  }, [isOpen]);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -49,6 +58,9 @@ const Navbar = () => {
       document.removeEventListener('keydown', onKey);
     };
   }, [isOpen]);
+
+  // Garantit le scroll-unlock au démontage (navigation sans closeMenu)
+  useEffect(() => () => { document.body.style.overflow = ''; }, []);
 
   useEffect(() => {
     window.squadSetCat = (name) => setActiveCategory(name);
@@ -263,7 +275,7 @@ const Navbar = () => {
 
         /* ── HAMBURGER animé ── */
         .hamburger-btn {
-          width: 40px; height: 40px;
+          width: 44px; height: 44px;
           align-items: center; justify-content: center;
           cursor: pointer; background: none; border: none;
           position: relative; z-index: 1100; flex-shrink: 0;
@@ -371,6 +383,11 @@ const Navbar = () => {
             width: auto !important;
             max-width: none !important;
           }
+        }
+
+        /* ── TABS ≤360px (très petits écrans) ── */
+        @media (max-width: 360px) {
+          .mob-cat-tab { font-size: 11px !important; padding: 6px 8px !important; }
         }
 
         /* ── MOBILE MENU ── */
@@ -530,19 +547,19 @@ const Navbar = () => {
           {/* Header */}
           <div className="mob-header">
             <Link href="/" onClick={closeMenu} style={{ flex: 1 }}>
-              <img src="/logo.png" alt="Squadia" style={{ height: '28px', width: 'auto' }} />
+              <img src="/logo.png" alt="Squadia" style={{ width: 'auto' }} />
             </Link>
             <button
               onClick={closeMenu}
               aria-label="Fermer le menu"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '8px' }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', flexShrink: 0 }}
             >
               <X size={24} />
             </button>
           </div>
 
-          {/* Body */}
-          <div className="mob-body">
+          {/* Body — pointer-events désactivés 300ms après ouverture (anti-tap fantôme) */}
+          <div className="mob-body" style={{ pointerEvents: isReady ? 'auto' : 'none' }}>
 
             {/* ── 1. NOS SERVICES (accordéon) ── */}
             <div className="mob-accordion-section">

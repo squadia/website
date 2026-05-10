@@ -481,9 +481,6 @@ html {
     width: 100% !important;
   }
 
-  /* ── NAVBAR logo ── */
-  .logo { height: 24px !important; }
-
   /* ── IMAGES ── */
   img { max-width: 100% !important; height: auto !important; }
   /* Tall fixed-height images in alternating sections */
