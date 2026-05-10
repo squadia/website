@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import Navbar from '../src/components/layout/Navbar';
+import FooterMobile from '../src/components/layout/FooterMobile';
 import '../src/App.css';
 import '../src/index.css';
 
@@ -80,7 +81,7 @@ export default function RootLayout({ children }) {
         {/* Footer */}
         <footer style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>
           <div className="container">
-            <div className="footer-grid">
+            <div className="footer-grid desktop-only">
 
               {/* COLONNE 1 */}
               <div>
@@ -151,7 +152,9 @@ export default function RootLayout({ children }) {
 
             </div>
 
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #1A1A3A', gap: '2rem' }}>
+            <FooterMobile />
+
+            <div className="footer-bottom" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #1A1A3A', gap: '2rem' }}>
               <div>
                 <Link href="/">
                   <img src="/logo.png" alt="Squadia" style={{ height: '32px', width: 'auto', marginBottom: '1.5rem' }} />

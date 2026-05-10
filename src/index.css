@@ -550,22 +550,7 @@ html {
   [style*="padding: '3rem"]   { padding: 1.75rem 1.25rem !important; }
 
   /* ── FOOTER ── */
-  .footer-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 1.5rem !important; }
-  footer [style*="display: 'flex"][style*="justifyContent: 'space-between"] {
-    flex-direction: column !important;
-    gap: 1.5rem !important;
-  }
-  /* Logo footer plus petit */
-  footer img[alt="Squadia"] {
-    height: 22px !important;
-    margin-bottom: 1rem !important;
-  }
-  /* Bas de footer : liens social en ligne */
-  footer [style*="display: flex"][style*="gap: '1.5rem"] {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    margin-top: 0 !important;
-  }
+  /* footer-grid caché via .desktop-only, FooterMobile prend le relais */
 
   /* ── NAVBAR dropdown full-screen already handled ── */
 
@@ -620,6 +605,76 @@ html {
 
 @media (min-width: 769px) {
   .mobile-only { display: none !important; }
+}
+
+/* ─── FOOTER ACCORDÉON MOBILE ─── */
+
+/* Caché sur desktop, visible uniquement via .mobile-only sur ≤768px */
+.footer-accordion { display: none; }
+
+@media (max-width: 768px) {
+  .footer-accordion { display: block; margin-bottom: 2rem; }
+
+  .footer-acc-section {
+    border-bottom: 1px solid rgba(68, 204, 255, 0.08);
+  }
+  .footer-acc-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 12px 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: left;
+    min-height: 44px;
+  }
+  .footer-acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 300ms ease;
+  }
+  .footer-acc-panel.open { max-height: 500px; }
+  .footer-acc-panel ul { padding: 4px 16px 16px; list-style: none; margin: 0; }
+  .footer-acc-link {
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+    line-height: 2;
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .footer-acc-link:hover,
+  .footer-acc-link:active { color: #44CCFF; }
+
+  /* ── Bloc bas footer (logo + adresse + social) ── */
+  .footer-bottom {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 1.5rem !important;
+  }
+  .footer-bottom > div:first-child {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .footer-bottom img[alt="Squadia"] {
+    height: 24px !important;
+    margin-bottom: 0.75rem !important;
+  }
+  .footer-bottom > div:last-child {
+    display: flex !important;
+    justify-content: center !important;
+    flex-wrap: wrap !important;
+    gap: 24px !important;
+    font-size: 14px !important;
+    margin-top: 0 !important;
+  }
 }
 
 /* ─── CTA EN ENSUITE EFFECTS ─── */
