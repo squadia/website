@@ -141,6 +141,13 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
 
 const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
   const [activeId, setActiveId] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const items = [
     {
       id: 1,
@@ -195,11 +202,12 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
   const activeItem = items.find(i => i.id === activeId);
 
   useEffect(() => {
+    if (isMobile) return;
     const timer = setInterval(() => {
       setActiveId(prev => (prev === items.length ? 1 : prev + 1));
     }, 10000);
     return () => clearInterval(timer);
-  }, [items.length]);
+  }, [items.length, isMobile]);
 
   return (
     <div style={{ padding: '0 2vw', position: 'relative' }}>
@@ -212,20 +220,20 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
           height: '600px',
           background: `radial-gradient(circle, ${activeItem.tintRgba} 0%, transparent 70%)`,
           transition: 'background 0.6s ease',
-          filter: 'blur(110px)',
+          filter: isMobile ? 'blur(40px)' : 'blur(110px)',
           zIndex: 0,
           pointerEvents: 'none'
       }} />
-      <div style={{ 
+      <div style={{
         position: 'relative',
-        padding: '4rem 4rem', 
-        maxWidth: '1200px', 
+        padding: isMobile ? '24px 16px' : '4rem 4rem',
+        maxWidth: '1200px',
         margin: '0 auto',
         backgroundColor: '#0D0D25',
-        borderRadius: '32px',
-        border: '2px solid #44CCFF',
+        borderRadius: isMobile ? '18px' : '32px',
+        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
         color: '#FFFFFF',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         zIndex: 1,
         overflow: 'hidden'
       }}>
@@ -235,12 +243,13 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
             De la Stratégie à l'Exécution
           </h2>
 
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 1.4fr)', 
-            gap: '6rem', 
-            alignItems: 'start', 
-            minHeight: '480px'
+          <div style={{
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
+            gap: isMobile ? '24px' : '6rem',
+            alignItems: 'start',
+            minHeight: isMobile ? 'auto' : '480px'
           }}>
           
           {/* Accordion List */}
@@ -285,9 +294,9 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                     }}
                   >
                     <div style={{ flex: 1 }}>
-                      <h3 style={{ 
-                        fontSize: '1.25rem', 
-                        fontWeight: isOpen ? 700 : 400, 
+                      <h3 style={{
+                        fontSize: isMobile ? '16px' : '1.25rem',
+                        fontWeight: isOpen ? 700 : 400,
                         color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)',
                         margin: 0,
                         transition: 'color 0.2s ease, font-weight 0.2s ease',
@@ -331,10 +340,10 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                     transition: 'all 0.25s ease',
                     opacity: isOpen ? 1 : 0
                   }}>
-                    <p style={{ 
+                    <p style={{
                       color: 'rgba(255,255,255,0.88)',
                       lineHeight: 1.6,
-                      fontSize: '1rem',
+                      fontSize: isMobile ? '14px' : '1rem',
                       marginTop: '8px',
                       paddingBottom: '1.5rem',
                       maxWidth: '90%'
@@ -348,7 +357,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
           </div>
 
           {/* Contextual Image & CTA */}
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center', order: isMobile ? -1 : undefined }}>
             <AnimatePresence mode="wait">
               <motion.div
                 key={`media-block-${activeId}`}
@@ -374,15 +383,17 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                   />
                 </div>
                 
-                <Link href={activeItem.link} style={{ 
-                  backgroundColor: '#2563EB', 
-                  color: '#FFFFFF', 
-                  fontWeight: 600, 
-                  padding: '1.1rem 2.8rem', 
-                  borderRadius: '8px', 
-                  display: 'inline-flex', 
-                  alignItems: 'center', 
-                  fontSize: '1rem',
+                <Link href={activeItem.link} style={{
+                  backgroundColor: '#2563EB',
+                  color: '#FFFFFF',
+                  fontWeight: 600,
+                  padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
+                  borderRadius: '8px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  justifyContent: isMobile ? 'center' : undefined,
+                  width: isMobile ? '100%' : undefined,
+                  fontSize: isMobile ? '15px' : '1rem',
                   textDecoration: 'none',
                   boxShadow: '0 10px 25px rgba(37, 99, 235, 0.25)',
                   transition: 'transform 0.2s ease'
@@ -1432,7 +1443,7 @@ const HeroDynamic = React.memo(() => {
               style={{
                 position: isMobile ? 'relative' : 'sticky',
                 top: isMobile ? 'auto' : '38vh',
-                marginBottom: isMobile ? '1.5rem' : '30vh',
+                marginBottom: isMobile ? '24px' : '30vh',
                 zIndex: idx + 10,
                 overflow: 'visible'
               }}
@@ -1441,8 +1452,8 @@ const HeroDynamic = React.memo(() => {
                   <div style={{
                     position: 'absolute',
                     top: '-43px',
-                    left: `min(${idx * 180}px, calc(${idx} * min(180px, 28vw)))`,
-                    width: 'min(180px, 28vw)',
+                    left: isMobile ? '16px' : `min(${idx * 180}px, calc(${idx} * min(180px, 28vw)))`,
+                    width: isMobile ? '140px' : 'min(180px, 28vw)',
                     height: '44px',
                     backgroundColor: '#0D0D25',
                     border: '1px solid rgba(68, 204, 255, 0.2)',
@@ -1477,13 +1488,13 @@ const HeroDynamic = React.memo(() => {
                   <div style={{
                     display: 'flex',
                     gap: '2.5rem',
-                    padding: '4.5rem 2.5rem 2.5rem 2.5rem',
+                    padding: isMobile ? '40px 20px 20px 20px' : '4.5rem 2.5rem 2.5rem 2.5rem',
                     backgroundColor: '#0D0D25',
                     borderRadius: '0 1.5rem 1.5rem 1.5rem',
                     border: '1px solid rgba(68, 204, 255, 0.2)',
                     backdropFilter: 'blur(20px)',
                     boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8)',
-                    minHeight: '350px',
+                    minHeight: isMobile ? 'auto' : '350px',
                     position: 'relative',
                     zIndex: 2
                   }}>
@@ -1502,37 +1513,37 @@ const HeroDynamic = React.memo(() => {
                       }} />
                     )}
 
-                    <div style={{ 
-                      width: '64px', 
-                      height: '64px', 
-                      backgroundColor: 'rgba(68,204,255,0.08)', 
-                      borderRadius: '14px', 
-                      display: 'flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center', 
+                    <div style={{
+                      width: isMobile ? '48px' : '64px',
+                      height: isMobile ? '48px' : '64px',
+                      backgroundColor: 'rgba(68,204,255,0.08)',
+                      borderRadius: '14px',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       flexShrink: 0,
                       border: '1px solid rgba(68,204,255,0.2)',
-                      marginTop: '0' // Neutralized margin
+                      marginTop: '0'
                     }}>
-                      <item.icon size={32} color="#44CCFF" />
+                      <item.icon size={isMobile ? 24 : 32} color="#44CCFF" />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <p style={{ 
-                        fontStyle: 'italic', 
-                        color: '#F9FAFB', 
-                        marginBottom: '1rem', 
-                        fontSize: '1.25rem',
+                      <p style={{
+                        fontStyle: 'italic',
+                        color: '#F9FAFB',
+                        marginBottom: '1rem',
+                        fontSize: isMobile ? '16px' : '1.25rem',
                         lineHeight: 1.4,
                         fontWeight: 500,
-                        marginTop: '0' // Neutralized margin
+                        marginTop: '0'
                       }}>
                         {item.title}
                       </p>
-                      <p style={{ 
-                        color: 'rgba(255,255,255,0.45)', 
+                      <p style={{
+                        color: 'rgba(255,255,255,0.45)',
                         lineHeight: 1.7,
-                        fontSize: '0.95rem',
-                        marginTop: '1.5rem' // Standardized spacing
+                        fontSize: isMobile ? '14px' : '0.95rem',
+                        marginTop: '1.5rem'
                       }}>
                         {item.desc}
                       </p>

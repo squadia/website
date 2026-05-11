@@ -38,6 +38,13 @@ import VideoPlaceholder from '../components/ui/VideoPlaceholder';
 
 const StrategyAccordionCommerciale = () => {
   const [activeId, setActiveId] = useState(1);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const items = [
     {
       id: 1,
@@ -84,11 +91,12 @@ const StrategyAccordionCommerciale = () => {
   const activeItem = items.find(i => i.id === activeId);
 
   useEffect(() => {
+    if (isMobile) return;
     const timer = setInterval(() => {
       setActiveId(prev => (prev === items.length ? 1 : prev + 1));
     }, 10000);
     return () => clearInterval(timer);
-  }, [items.length]);
+  }, [items.length, isMobile]);
 
   return (
     <div style={{ padding: '0 2vw', position: 'relative' }}>
@@ -96,14 +104,17 @@ const StrategyAccordionCommerciale = () => {
         position: 'absolute', bottom: '-150px', right: '-100px',
         width: '600px', height: '600px',
         background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)',
-        filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none'
+        filter: isMobile ? 'blur(40px)' : 'blur(110px)', zIndex: 0, pointerEvents: 'none'
       }} />
       <div style={{
-        position: 'relative', padding: '4rem',
+        position: 'relative',
+        padding: isMobile ? '24px 16px' : '4rem',
         maxWidth: '1200px', margin: '0 auto',
-        backgroundColor: '#0D0D25', borderRadius: '32px',
-        border: '2px solid #44CCFF', color: '#FFFFFF',
-        boxShadow: '0 25px 50px -12px rgba(0,0,0,0.5)',
+        backgroundColor: '#0D0D25',
+        borderRadius: isMobile ? '18px' : '32px',
+        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
+        color: '#FFFFFF',
+        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0,0,0,0.5)',
         zIndex: 1, overflow: 'hidden'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -111,7 +122,14 @@ const StrategyAccordionCommerciale = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
             De la Stratégie à l'Exécution
           </h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.15fr) minmax(0, 1.4fr)', gap: '6rem', alignItems: 'start', minHeight: '480px' }}>
+          <div style={{
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
+            gap: isMobile ? '24px' : '6rem',
+            alignItems: 'start',
+            minHeight: isMobile ? 'auto' : '480px'
+          }}>
             <div>
               {items.map((item) => {
                 const isOpen = activeId === item.id;
@@ -127,7 +145,7 @@ const StrategyAccordionCommerciale = () => {
                       style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0.5rem 0 1.2rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
                     >
                       <div style={{ flex: 1 }}>
-                        <h3 style={{ fontSize: '1.25rem', fontWeight: isOpen ? 700 : 400, color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)', margin: 0, transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                        <h3 style={{ fontSize: isMobile ? '16px' : '1.25rem', fontWeight: isOpen ? 700 : 400, color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)', margin: 0, transition: 'color 0.2s ease', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
                           <span style={{ color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.4)' }}>{item.icon}</span>
                           {item.title}
                         </h3>
@@ -151,7 +169,7 @@ const StrategyAccordionCommerciale = () => {
                       }
                     </button>
                     <div style={{ maxHeight: isOpen ? '250px' : '0', overflow: 'hidden', transition: 'all 0.25s ease', opacity: isOpen ? 1 : 0 }}>
-                      <p style={{ color: 'rgba(255,255,255,0.88)', lineHeight: 1.6, fontSize: '1rem', marginTop: '8px', paddingBottom: '1.5rem', maxWidth: '90%' }}>
+                      <p style={{ color: 'rgba(255,255,255,0.88)', lineHeight: 1.6, fontSize: isMobile ? '14px' : '1rem', marginTop: '8px', paddingBottom: '1.5rem', maxWidth: '90%' }}>
                         {item.description}
                       </p>
                     </div>
@@ -159,7 +177,7 @@ const StrategyAccordionCommerciale = () => {
                 );
               })}
             </div>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem', alignItems: 'center', order: isMobile ? -1 : undefined }}>
               <AnimatePresence mode="wait">
                 <motion.div
                   key={`media-${activeId}`}
@@ -172,7 +190,15 @@ const StrategyAccordionCommerciale = () => {
                   <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', aspectRatio: '16/9', background: '#0D0D25', boxShadow: '0 20px 40px rgba(0,0,0,0.5)', width: '100%' }}>
                     <img src={activeItem.image} alt={activeItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <Link href={activeItem.link} style={{ backgroundColor: '#2563EB', color: '#FFFFFF', fontWeight: 600, padding: '1.1rem 2.8rem', borderRadius: '8px', display: 'inline-flex', alignItems: 'center', fontSize: '1rem', textDecoration: 'none', boxShadow: '0 10px 25px rgba(37,99,235,0.25)', transition: 'transform 0.2s ease' }}>
+                  <Link href={activeItem.link} style={{
+                    backgroundColor: '#2563EB', color: '#FFFFFF', fontWeight: 600,
+                    padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
+                    borderRadius: '8px', display: 'inline-flex', alignItems: 'center',
+                    justifyContent: isMobile ? 'center' : undefined,
+                    width: isMobile ? '100%' : undefined,
+                    fontSize: isMobile ? '15px' : '1rem',
+                    textDecoration: 'none', boxShadow: '0 10px 25px rgba(37,99,235,0.25)', transition: 'transform 0.2s ease'
+                  }}>
                     {activeItem.cta}
                   </Link>
                 </motion.div>
