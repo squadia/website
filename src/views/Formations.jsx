@@ -15,6 +15,13 @@ const dataLeadImg = '/assets/images/datalead/datalead.jpeg';
 const stratCommercialeImg = '/assets/images/commerciale-meeting.png';
 const Formations = () => {
   useScrollReveal();
+  const [isMobile, setIsMobile] = React.useState(false);
+  React.useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     document.title = "Formations IA pour équipes commerciales, marketing et communication : Squadia";
@@ -475,12 +482,12 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 badge: null
               }
             ].map((card, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
                 style={{
                   background: '#0D0D25',
                   border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
-                  padding: '3rem 2rem',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -488,7 +495,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 }}
               >
                 {card.badge && (
-                  <div style={{
+                  <div className="desktop-only" style={{
                     position: 'absolute',
                     top: '-12px',
                     left: '50%',
@@ -503,14 +510,21 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                     {card.badge}
                   </div>
                 )}
-                
-                <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem' }}>
+                {card.badge && (
+                  <div className="mobile-only" style={{ marginBottom: '8px' }}>
+                    <span style={{ display: 'inline-block', background: '#44CCFF', color: '#060612', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
+                      {card.badge}
+                    </span>
+                  </div>
+                )}
+
+                <h3 style={{ fontSize: isMobile ? '1.3rem' : '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
                   {card.subtitle}
                 </p>
-                
-                <div style={{ marginBottom: '2rem' }}>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#fff' }}>
+
+                <div style={{ marginBottom: '1.5rem', marginTop: isMobile ? '4px' : 0 }}>
+                  <div style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#fff' }}>
                     {(() => {
                       let displayPrice = card.price;
                       let prefix = null;
@@ -548,21 +562,21 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   </div>
                 </div>
                 
-                <div style={{ flexGrow: 1, marginBottom: '2rem' }}>
+                <div style={{ flexGrow: 1, marginBottom: '1.5rem' }}>
                   {card.items.map((item, iIdx) => (
-                    <div key={iIdx} style={{ display: 'flex', gap: '12px', marginBottom: '0.75rem', fontSize: '0.85rem', lineHeight: 1.4, color: 'rgba(255,255,255,0.7)' }}>
-                      <Check size={16} color="#44CCFF" style={{ flexShrink: 0 }} />
+                    <div key={iIdx} style={{ display: 'flex', gap: '10px', marginBottom: isMobile ? '8px' : '0.75rem', fontSize: isMobile ? '14px' : '0.85rem', lineHeight: isMobile ? 1.7 : 1.4, color: 'rgba(255,255,255,0.7)' }}>
+                      <Check size={16} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
-                
-                <a 
+
+                <a
                   href={pipedrivePlaceholder}
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
@@ -864,6 +878,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         @media (max-width: 768px) {
           .card-image-wrap { flex: 0.4; }
           .card-content-wrap { flex: 0.6; }
+          div[style*="grid-template-columns: repeat(3, 1fr)"] {
+            grid-template-columns: 1fr !important;
+          }
         }
         @media (max-width: 480px) {
           .formation-card-horizontal { flex-direction: column; }

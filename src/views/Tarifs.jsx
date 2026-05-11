@@ -230,6 +230,13 @@ const Tarifs = () => {
   const [openFAQ, setOpenFAQ] = useState(0);
   useScrollReveal();
   const [activeTab, setActiveTab] = useState(tabsData[0].id);
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     document.title = "Tarifs Squadia : IA, Leads, Automatisation, Formation";
@@ -259,7 +266,7 @@ const Tarifs = () => {
       <section className="container" style={{ paddingBottom: '80px' }}>
         <div className="fade-in">
           {/* Tabs Navigation */}
-          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
+          <div className="tarifs-tabs-nav" style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '4rem' }}>
             {tabsData.map(tab => (
               <button
                 key={tab.id}
@@ -291,12 +298,13 @@ const Tarifs = () => {
             }}
           >
             {activeTabData.cards.map((card, idx) => (
-              <div 
-                key={idx} 
+              <div
+                key={idx}
+                className="pricing-card"
                 style={{
                   background: '#0D0D25',
                   border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
-                  padding: '3rem 2rem',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -304,7 +312,7 @@ const Tarifs = () => {
                 }}
               >
                 {card.badge && (
-                  <div style={{
+                  <div className="desktop-only" style={{
                     position: 'absolute',
                     top: '-12px',
                     left: '50%',
@@ -319,14 +327,21 @@ const Tarifs = () => {
                     {card.badge}
                   </div>
                 )}
-                
-                <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem' }}>
+                {card.badge && (
+                  <div className="mobile-only" style={{ marginBottom: '8px' }}>
+                    <span style={{ display: 'inline-block', background: '#2563EB', color: 'white', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
+                      {card.badge}
+                    </span>
+                  </div>
+                )}
+
+                <h3 style={{ fontSize: isMobile ? '1.3rem' : '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
                   {card.subtitle}
                 </p>
-                
-                <div style={{ marginBottom: '2rem' }}>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 700, whiteSpace: 'nowrap' }}>
+
+                <div style={{ marginBottom: '1.5rem', marginTop: isMobile ? '4px' : 0 }}>
+                  <div className="pricing-price-hero" style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#fff' }}>
                     {(() => {
                       let displayPrice = card.price;
                       let prefix = null;
@@ -369,21 +384,21 @@ const Tarifs = () => {
                   )}
                 </div>
                 
-                <div style={{ flexGrow: 1, marginBottom: '2rem' }}>
+                <div style={{ flexGrow: 1, marginBottom: '1.5rem' }}>
                   {card.items.map((item, iIdx) => (
-                    <div key={iIdx} style={{ display: 'flex', gap: '12px', marginBottom: '0.75rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
-                      <Check size={16} color={card.badge ? "#2563EB" : "var(--accent)"} style={{ flexShrink: 0 }} />
+                    <div key={iIdx} style={{ display: 'flex', gap: '10px', marginBottom: isMobile ? '8px' : '0.75rem', fontSize: isMobile ? '14px' : '0.85rem', lineHeight: isMobile ? 1.7 : 1.4 }}>
+                      <Check size={16} color={card.badge ? "#2563EB" : "var(--accent)"} style={{ flexShrink: 0, marginTop: '2px' }} />
                       <span>{item}</span>
                     </div>
                   ))}
                 </div>
-                
-                <Link 
-                  href="/contact" 
+
+                <Link
+                  href="/contact"
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
@@ -444,11 +459,18 @@ const Tarifs = () => {
 
       <style>{`
         @media (max-width: 768px) {
-          div[style*="grid-template-columns: repeat(3, 1fr)"] {
-            grid-template-columns: 1fr !important;
-          }
+          div[style*="grid-template-columns: repeat(3, 1fr)"],
           div[style*="grid-template-columns: repeat(2, 1fr)"] {
             grid-template-columns: 1fr !important;
+          }
+          .tarifs-tabs-nav {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
+          }
+          .tarifs-tabs-nav button {
+            padding: 8px 12px !important;
+            font-size: 13px !important;
           }
         }
       `}</style>

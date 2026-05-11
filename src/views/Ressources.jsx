@@ -1,5 +1,5 @@
 'use client';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -13,6 +13,13 @@ const blog4 = '/assets/images/blog/blog4.jpeg';
 const formationCommercialeImg = '/assets/images/blog/formationcommercialeB2B.jpeg';
 export default function Ressources() {
   useScrollReveal();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   useEffect(() => {
     document.title = "Ressources Squadia : Guides, enquêtes et articles B2B";
@@ -158,78 +165,112 @@ export default function Ressources() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.5rem'
         }}>
           {articles.map((article, i) => (
-            <Link
-              key={i}
-              href={article.link}
-              style={{
-                position: 'relative',
-                height: '400px',
-                borderRadius: '1.5rem',
-                overflow: 'hidden',
-                border: '1px solid rgba(255,255,255,0.05)',
-                transition: 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
-                textDecoration: 'none',
-                display: 'block'
-              }}
-              onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
-            >
-              <img
-                src={article.image}
-                alt={article.title}
-                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
-              />
-              <div style={{
-                position: 'absolute',
-                inset: 0,
-                background: 'linear-gradient(to bottom, transparent 30%, rgba(10,10,26,0.5) 60%, rgba(10,10,26,0.95) 100%)',
-                zIndex: 1
-              }} />
-              <div style={{
-                position: 'absolute',
-                bottom: 0,
-                left: 0,
-                right: 0,
-                padding: '2rem',
-                zIndex: 2
-              }}>
-                <span style={{
-                  background: 'rgba(37,99,235,0.8)',
-                  backdropFilter: 'blur(4px)',
-                  color: '#FFFFFF',
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '9999px',
-                  fontSize: '0.7rem',
-                  fontWeight: 700,
-                  textTransform: 'uppercase',
-                  marginBottom: '1rem',
-                  display: 'inline-block'
-                }}>
-                  {article.tag}
-                </span>
-                <h3 style={{
-                  fontSize: '1.3rem',
-                  fontWeight: 700,
-                  color: '#FFFFFF',
-                  lineHeight: 1.3,
-                  marginBottom: '1rem',
-                  textShadow: '0 2px 10px rgba(0,0,0,0.5)'
-                }}>
-                  {article.title}
-                </h3>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                    <Clock size={14} /> {article.readTime}
-                  </span>
-                  <div style={{ width: '4px', height: '4px', background: 'rgba(255,255,255,0.3)', borderRadius: '50%' }} />
-                  <span>Lire l'article</span>
+            isMobile ? (
+              <Link
+                key={i}
+                href={article.link}
+                style={{
+                  background: '#0D0D25',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: '14px',
+                  overflow: 'hidden',
+                  textDecoration: 'none',
+                  display: 'flex',
+                  flexDirection: 'column'
+                }}
+              >
+                <div style={{ aspectRatio: '4/3', overflow: 'hidden' }}>
+                  <img
+                    src={article.image}
+                    alt={article.title}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  />
                 </div>
-              </div>
-            </Link>
+                <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                  <span style={{
+                    display: 'inline-block',
+                    background: 'rgba(37,99,235,0.15)',
+                    color: '#2563EB',
+                    padding: '3px 8px',
+                    borderRadius: '9999px',
+                    fontSize: '11px',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    alignSelf: 'flex-start'
+                  }}>
+                    {article.tag}
+                  </span>
+                  <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#F9FAFB', lineHeight: 1.4, margin: 0 }}>
+                    {article.title}
+                  </h3>
+                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '4px' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>
+                      <Clock size={12} /> {article.readTime}
+                    </span>
+                    <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600 }}>Lire →</span>
+                  </div>
+                </div>
+              </Link>
+            ) : (
+              <Link
+                key={i}
+                href={article.link}
+                style={{
+                  position: 'relative',
+                  height: '400px',
+                  borderRadius: '1.5rem',
+                  overflow: 'hidden',
+                  border: '1px solid rgba(255,255,255,0.05)',
+                  transition: 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
+                  textDecoration: 'none',
+                  display: 'block'
+                }}
+                onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.02)'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; }}
+              >
+                <img
+                  src={article.image}
+                  alt={article.title}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+                <div style={{
+                  position: 'absolute',
+                  inset: 0,
+                  background: 'linear-gradient(to bottom, transparent 30%, rgba(10,10,26,0.5) 60%, rgba(10,10,26,0.95) 100%)',
+                  zIndex: 1
+                }} />
+                <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem', zIndex: 2 }}>
+                  <span style={{
+                    background: 'rgba(37,99,235,0.8)',
+                    backdropFilter: 'blur(4px)',
+                    color: '#FFFFFF',
+                    padding: '0.25rem 0.75rem',
+                    borderRadius: '9999px',
+                    fontSize: '0.7rem',
+                    fontWeight: 700,
+                    textTransform: 'uppercase',
+                    marginBottom: '1rem',
+                    display: 'inline-block'
+                  }}>
+                    {article.tag}
+                  </span>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.3, marginBottom: '1rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                    {article.title}
+                  </h3>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                      <Clock size={14} /> {article.readTime}
+                    </span>
+                    <div style={{ width: '4px', height: '4px', background: 'rgba(255,255,255,0.3)', borderRadius: '50%' }} />
+                    <span>Lire l'article</span>
+                  </div>
+                </div>
+              </Link>
+            )
           ))}
         </div>
       </section>

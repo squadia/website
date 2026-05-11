@@ -233,8 +233,16 @@ const CaseDetail = ({ caseData }) => {
 // --- Composant Liste ---
 const CasesList = () => {
   const [filter, setFilter] = useState('Tous');
+  const [isMobile, setIsMobile] = useState(false);
   const filters = ['Tous', 'Stratégie', 'Data', 'Automatisation', 'Formation'];
   const router = useRouter();
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
 
   const filteredCases = casesData.filter(c => {
     if (filter === 'Tous') return true;
@@ -245,6 +253,45 @@ const CasesList = () => {
   const CaseCard = ({ c, large = false }) => {
     const img = caseImages[c.id] || null;
     const [hovered, setHovered] = React.useState(false);
+
+    if (isMobile) {
+      return (
+        <div
+          onClick={() => router.push(`/cas-clients/${c.id}`)}
+          style={{
+            background: '#0D0D25',
+            border: '1px solid rgba(255,255,255,0.1)',
+            borderRadius: '14px',
+            cursor: 'pointer',
+            overflow: 'hidden',
+            display: 'flex',
+            flexDirection: 'column',
+          }}
+        >
+          {img && (
+            <div style={{ aspectRatio: '16/9', overflow: 'hidden' }}>
+              <img src={img} alt={c.shortTitle} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+          )}
+          <div style={{ padding: '16px' }}>
+            <Tag>{c.tags[0]}</Tag>
+            <p style={{ marginTop: '10px', fontSize: '18px', fontWeight: 700, color: '#F9FAFB', lineHeight: 1.3, marginBottom: '6px' }}>
+              {c.shortTitle}
+            </p>
+            {c.kpiLabel && (
+              <p style={{ fontSize: '14px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5, marginBottom: '12px',
+                overflow: 'hidden', display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical' }}>
+                <span style={{ color: '#44CCFF', fontWeight: 700 }}>{c.kpi}</span> {c.kpiLabel}
+              </p>
+            )}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '5px', color: '#44CCFF', fontSize: '14px', fontWeight: 600 }}>
+              Lire le cas <ArrowRight size={13} />
+            </div>
+          </div>
+        </div>
+      );
+    }
+
     return (
     <div
       onClick={() => router.push(`/cas-clients/${c.id}`)}
@@ -267,7 +314,6 @@ const CasesList = () => {
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
     >
-      {/* Background photo */}
       {img && (
         <img src={img} alt="" style={{
           position: 'absolute', inset: 0, width: '100%', height: '100%',
@@ -278,7 +324,6 @@ const CasesList = () => {
           pointerEvents: 'none'
         }} />
       )}
-      {/* Gradient overlay to keep text readable */}
       {img && (
         <div style={{
           position: 'absolute', inset: 0, borderRadius: '16px',
@@ -289,7 +334,6 @@ const CasesList = () => {
           pointerEvents: 'none'
         }} />
       )}
-      {/* Subtle noise overlay */}
       <div style={{
         position: 'absolute', inset: 0, borderRadius: '16px',
         background: 'radial-gradient(ellipse at top right, rgba(68,204,255,0.06) 0%, transparent 65%)',
@@ -298,11 +342,9 @@ const CasesList = () => {
 
       <div style={{ position: 'relative', zIndex: 1 }}>
         <Tag>{c.tags[0]}</Tag>
-
         <div style={{ marginTop: '1.2rem', marginBottom: '0.5rem', fontSize: large ? '1.25rem' : '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>
           {c.shortTitle}
         </div>
-
         <div style={{ fontSize: large ? '2.8rem' : '2rem', fontWeight: 700, lineHeight: 1.1, color: '#44CCFF', marginBottom: '0.3rem', letterSpacing: '-0.02em' }}>
           {c.kpi}
         </div>
@@ -311,7 +353,6 @@ const CasesList = () => {
             {c.kpiLabel}
           </div>
         )}
-
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}>
           Voir l'étude complète <ArrowRight size={14} />
         </div>
@@ -352,15 +393,15 @@ const CasesList = () => {
       <div className="fade-in">
         {/* Ligne 1 : grande + petite */}
         {filteredCases.length > 0 && (
-          <div style={{ display: 'grid', gridTemplateColumns: '3fr 2fr', gap: '1rem', marginBottom: '1rem' }}>
-            {first && <CaseCard c={first} large={true} />}
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '3fr 2fr', gap: '1rem', marginBottom: '1rem' }}>
+            {first && <CaseCard c={first} large={!isMobile} />}
             {second && <CaseCard c={second} large={false} />}
           </div>
         )}
 
         {/* Ligne 2 : 3 cartes égales */}
         {rest.length > 0 && (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '1rem' }}>
             {rest.map(c => <CaseCard key={c.id} c={c} large={false} />)}
           </div>
         )}
