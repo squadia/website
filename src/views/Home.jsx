@@ -1027,7 +1027,7 @@ const HeroDynamic = React.memo(() => {
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '900px' }}
         >
           Renouez avec la croissance :<br className="desktop-br" />
-          Méthode, Outils et <span style={{ whiteSpace: 'nowrap' }}>Formation <img src="/assets/images/gemini-star.svg" alt="" style={{ display: 'inline-block', width: '0.85em', height: '0.85em', verticalAlign: 'middle', marginLeft: '0.1em', marginBottom: '0.1em' }} /></span>
+          Méthode, Outils et <span style={{ whiteSpace: 'nowrap' }}>Formation <img src="/geministar.png" alt="" style={{ display: 'inline-block', width: '0.85em', height: '0.85em', verticalAlign: 'middle', marginLeft: '0.1em', marginBottom: '0.1em' }} /></span>
         </motion.h1>
 
         {/* BEAT 2 : subtitle */}
