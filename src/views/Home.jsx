@@ -1026,9 +1026,9 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '750px' }}
         >
-          Stratégie commerciale, data<br className="desktop-br" />
-          et formation B2B<br className="desktop-br" />
-          accélérées par l'IA
+          Renouez avec la croissance B2B :<br className="desktop-br" />
+          méthode, outils et formation<br className="desktop-br" />
+          accélérés par l'IA
         </motion.h1>
 
         {/* BEAT 2 : subtitle */}
