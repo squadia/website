@@ -495,7 +495,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 }}
               >
                 {card.badge && (
-                  <div className="desktop-only" style={{
+                  <div className="formations-desktop-badge" style={{
                     position: 'absolute',
                     top: '-12px',
                     left: '50%',
@@ -910,11 +910,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           background: rgba(255, 255, 255, 0.04) !important;
           box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
         }
-        .desktop-only {
+        .formations-desktop-badge {
           display: block;
         }
         @media (max-width: 991px) {
-          .desktop-only { display: none; }
+          .formations-desktop-badge { display: none; }
           .synergy-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
       `}</style>
