@@ -158,7 +158,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
             Former vos équipes, c'est la condition pour que tout le reste fonctionne.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.75)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '4rem' }}>
-            Vous pouvez avoir les meilleurs outils, les meilleures automatisations, les meilleures données. Si vos équipes ne savent pas quoi en faire, tout ça ne sert à rien. La formation n'est pas la dernière étape, c'est souvent la première.
+            Vous pouvez avoir les meilleurs outils, les meilleures automatisations, les meilleures données si vos équipes ne savent pas quoi en faire, tout ça ne sert à rien. La formation est souvent la première étape de la transformation.
           </p>
           
           <div className="grid-3" style={{ maxWidth: '900px', marginInline: 'auto', gap: '2rem' }}>
