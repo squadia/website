@@ -1017,7 +1017,7 @@ const HeroDynamic = React.memo(() => {
             marginBottom: '1.5rem',
           }}
         >
-          Agence de performance commerciale B2B, accélérée par l'IA <img src="/geministar.png" alt="" style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle', marginLeft: '0.15em', marginBottom: '0.1em' }} />
+          Accélérateur vente et marketing boosté par l'IA <img src="/geministar.png" alt="" style={{ display: 'inline-block', width: '1em', height: '1em', verticalAlign: 'middle', marginLeft: '0.15em', marginBottom: '0.1em' }} />
         </motion.p>
 
         <motion.h1
