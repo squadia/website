@@ -74,7 +74,7 @@ const ChannelSalesPlan = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Plan Partenaire : développer votre réseau de partenaires B2B
+            Plan Partenaire: développer votre réseau de partenaires B2B
           </h1>
           
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>
@@ -82,7 +82,7 @@ const ChannelSalesPlan = () => {
           </p>
 
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>{"Ce que vous allez trouver\u00A0:"}</h2>
+            <h2 style={{ fontSize: '1rem', marginBottom: '1.5rem' }}>Ce que contient le plan</h2>
             
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
