@@ -132,7 +132,7 @@ const FormationVentesIA = () => {
 
         <div style={{ position: 'relative', zIndex: 3, paddingLeft: '8%', paddingRight: '5%', width: '100%' }}>
           <div className="fade-in" style={{ maxWidth: '750px' }}>
-            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>Formation IA vente B2B: prospecter, qualifier et closer autrement</h1>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>Formation IA vente B2B : prospecter, qualifier et closer autrement</h1>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
               Gagnez vos deals complexes grâce à une préparation millimétrée. Ce programme de 2 jours allie fondamentaux de la vente et outils IA pour renforcer votre posture et structurer vos plans de compte de manière convaincante.
             </p>
@@ -384,7 +384,7 @@ const FormationVentesIA = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Langues</span>
-                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR: EN: ES</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Groupe</span>

@@ -74,7 +74,7 @@ const ChannelSalesPlan = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Plan Partenaire: développer votre réseau de partenaires B2B
+            Plan Partenaire : développer votre réseau de partenaires B2B
           </h1>
           
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>

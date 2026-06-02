@@ -238,8 +238,8 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
         overflow: 'hidden'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Notre Système</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '3.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '0.75rem', letterSpacing: '0.12em', fontSize: '0.9rem', textAlign: 'center' }}>Notre Système</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2rem', lineHeight: 1.2 }}>
             De la Stratégie à l'Exécution
           </h2>
 
@@ -1026,8 +1026,7 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '900px' }}
         >
-          Renouez avec la croissance :<br className="desktop-br" />
-          Méthode, Outils et Formation
+          Vos équipes sont occupées…<br/>mais pas toujours sur ce qui compte
         </motion.h1>
 
         {/* BEAT 2 : subtitle */}
@@ -1036,9 +1035,11 @@ const HeroDynamic = React.memo(() => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.7, duration: 0.6, ease: 'easeOut' }}
           className="hero-para-laptop"
-          style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.78)', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '650px', lineHeight: 1.6 }}
+          style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.78)', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '760px', lineHeight: 1.6 }}
         >
-          25 ans de terrain B2B. Une méthode, des outils, des équipes formées. Premiers résultats en 30 jours.
+          <span style={{ whiteSpace: 'nowrap' }}>Vos commerciaux ne font pas assez d'appels. Pas assez de leads, trop d'admin.</span><br/>
+          Votre marketing : salons et pub pour seuls leviers. Données CRM obsolètes.<br/>
+          Aider les équipes à en sortir quand le CA recule, c'est notre terrain depuis 25 ans.
         </motion.div>
 
         {/* BEAT 3 : CTA + stats */}
