@@ -1039,7 +1039,7 @@ const HeroDynamic = React.memo(() => {
         >
           <span style={{ whiteSpace: 'nowrap' }}>Vos commerciaux ne font pas assez d'appels. Pas assez de leads, trop d'admin.</span><br/>
           Votre marketing : salons et pub pour seuls leviers. Données CRM obsolètes.<br/>
-          Aider les équipes à en sortir quand le CA recule, c'est notre terrain depuis 25 ans.
+          On vous aide à récupérer de la rentabilité. Méthode, Outils et Formation.
         </motion.div>
 
         {/* BEAT 3 : CTA + stats */}
