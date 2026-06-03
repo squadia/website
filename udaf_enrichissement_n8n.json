@@ -1,0 +1,305 @@
+{
+  "name": "UDAF — Enrichissement contacts communication",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "trigger-manual",
+      "name": "Démarrer",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "operation": "search",
+        "base": {
+          "__rl": true,
+          "value": "appXoTJTGAVk7tWPA",
+          "mode": "id"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblwafGlduTywebNb",
+          "mode": "id"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "id": "airtable-read",
+      "name": "Lire UDAF Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [220, 300],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "AIRTABLE_CREDENTIAL_ID",
+          "name": "Airtable account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "filter-not-udaf42",
+              "leftValue": "={{ $json.fields.UDAF }}",
+              "rightValue": "UDAF 42",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-udaf42",
+      "name": "Exclure UDAF 42",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "split-batches",
+      "name": "Traiter un par un",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://google.serper.dev/search",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-KEY",
+              "value": "2859d7bf94e24c68176bbe9729616dbfe676830c"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"q\": \"\\\"directeur communication\\\" OR \\\"directrice communication\\\" OR \\\"responsable communication\\\" UDAF \\\"{{ $json.fields.Ville }}\\\"\",\n  \"hl\": \"fr\",\n  \"gl\": \"fr\",\n  \"num\": 10\n}",
+        "options": {}
+      },
+      "id": "serper-search",
+      "name": "Recherche Serper",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://google.serper.dev/search",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "X-API-KEY",
+              "value": "2859d7bf94e24c68176bbe9729616dbfe676830c"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"q\": \"\\\"directeur communication\\\" OR \\\"directrice communication\\\" UDAF \\\"{{ $('Traiter un par un').item.json.fields.Ville }}\\\" site:linkedin.com\",\n  \"hl\": \"fr\",\n  \"gl\": \"fr\",\n  \"num\": 5\n}",
+        "options": {}
+      },
+      "id": "serper-linkedin",
+      "name": "Recherche LinkedIn",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 500]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Récupération des données source\nconst udafRecord = $('Traiter un par un').item.json;\nconst serperResults = $('Recherche Serper').item.json;\nconst linkedinResults = $('Recherche LinkedIn').item.json;\n\nconst udafName = udafRecord.fields.UDAF || '';\nconst ville = udafRecord.fields.Ville || '';\nconst recordId = udafRecord.id;\n\n// --- Extraction nom/prénom depuis les résultats Serper ---\nlet nom = '';\nlet prenom = '';\nlet jobTitle = '';\nlet linkedinUrl = '';\n\n// Regex pour détecter les noms propres\nconst nameRegex = /([A-ZÉÈÊËÀÂÎÏÔÙÛÜ][a-zéèêëàâîïôùûü]+(?:-[A-ZÉÈÊËÀÂÎÏÔÙÛÜ][a-zéèêëàâîïôùûü]+)?)\\s+([A-ZÉÈÊËÀÂÎÏÔÙÛÜ][A-ZÉÈÊËÀÂÎÏÔÙÛÜ]+(?:-[A-ZÉÈÊËÀÂÎÏÔÙÛÜ][A-ZÉÈÊËÀÂÎÏÔÙÛÜ]+)?)/;\nconst titleRegex = /directeur|directrice|responsable.*communication/i;\n\n// Parcourir les résultats organiques\nconst organicResults = serperResults.organic || [];\nfor (const result of organicResults) {\n  const text = (result.title || '') + ' ' + (result.snippet || '');\n  \n  if (titleRegex.test(text)) {\n    const nameMatch = text.match(nameRegex);\n    if (nameMatch) {\n      // Heuristique : prénom = 1er mot capitalisé (style titre), nom = tout majuscules\n      const part1 = nameMatch[1];\n      const part2 = nameMatch[2];\n      if (part2 === part2.toUpperCase()) {\n        prenom = part1;\n        nom = part2;\n      } else if (part1 === part1.toUpperCase()) {\n        nom = part1;\n        prenom = part2;\n      } else {\n        prenom = part1;\n        nom = part2;\n      }\n      // Extraire le titre\n      const titleMatch = text.match(/(directeur|directrice|responsable\\s+(?:de\\s+la\\s+)?communication)[\\s,–-]*/i);\n      if (titleMatch) {\n        jobTitle = titleMatch[0].trim();\n      }\n      break;\n    }\n  }\n}\n\n// Chercher LinkedIn dans les résultats LinkedIn\nconst linkedinOrganic = linkedinResults.organic || [];\nfor (const result of linkedinOrganic) {\n  if (result.link && result.link.includes('linkedin.com/in/')) {\n    linkedinUrl = result.link;\n    // Si on n'a pas encore de nom, tenter d'extraire du titre LinkedIn\n    if (!nom && result.title) {\n      const liTitle = result.title.replace(/\\s*[-–|].*$/, '').trim();\n      const parts = liTitle.split(' ');\n      if (parts.length >= 2) {\n        prenom = parts[0];\n        nom = parts.slice(1).join(' ');\n      }\n    }\n    if (!jobTitle && result.snippet) {\n      const titleMatch = result.snippet.match(/(directeur|directrice|responsable\\s+(?:de\\s+la\\s+)?communication)[^,\\n]*/i);\n      if (titleMatch) jobTitle = titleMatch[0].trim();\n    }\n    break;\n  }\n}\n\n// Résultat structuré\nreturn [{\n  json: {\n    recordId,\n    udaf: udafName,\n    ville,\n    nom,\n    prenom,\n    jobTitle,\n    linkedinUrl,\n    rawSnippets: organicResults.slice(0, 3).map(r => r.title + ' — ' + r.snippet)\n  }\n}];\n"
+      },
+      "id": "parse-results",
+      "name": "Extraire nom + LinkedIn",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1100, 400]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": false,
+            "leftValue": "",
+            "typeValidation": "strict"
+          },
+          "conditions": [
+            {
+              "id": "has-data",
+              "leftValue": "={{ $json.nom }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "filter-has-result",
+      "name": "Contact trouvé ?",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2,
+      "position": [1320, 400]
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "base": {
+          "__rl": true,
+          "value": "appXoTJTGAVk7tWPA",
+          "mode": "id"
+        },
+        "table": {
+          "__rl": true,
+          "value": "tblwafGlduTywebNb",
+          "mode": "id"
+        },
+        "id": "={{ $json.recordId }}",
+        "fields": {
+          "fieldMappingMode": "defineBelow",
+          "values": {
+            "string": [
+              {
+                "name": "Nom",
+                "value": "={{ $json.nom }}"
+              },
+              {
+                "name": "Prénom",
+                "value": "={{ $json.prenom }}"
+              },
+              {
+                "name": "JOB TITLE",
+                "value": "={{ $json.jobTitle }}"
+              },
+              {
+                "name": "Linkedin",
+                "value": "={{ $json.linkedinUrl }}"
+              }
+            ]
+          }
+        },
+        "options": {}
+      },
+      "id": "airtable-update",
+      "name": "Mettre à jour Airtable",
+      "type": "n8n-nodes-base.airtable",
+      "typeVersion": 2,
+      "position": [1540, 400],
+      "credentials": {
+        "airtableTokenApi": {
+          "id": "AIRTABLE_CREDENTIAL_ID",
+          "name": "Airtable account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "amount": 2,
+        "unit": "seconds"
+      },
+      "id": "wait-rate-limit",
+      "name": "Pause anti-rate-limit",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1540, 600]
+    }
+  ],
+  "connections": {
+    "Démarrer": {
+      "main": [
+        [{ "node": "Lire UDAF Airtable", "type": "main", "index": 0 }]
+      ]
+    },
+    "Lire UDAF Airtable": {
+      "main": [
+        [{ "node": "Exclure UDAF 42", "type": "main", "index": 0 }]
+      ]
+    },
+    "Exclure UDAF 42": {
+      "main": [
+        [{ "node": "Traiter un par un", "type": "main", "index": 0 }]
+      ]
+    },
+    "Traiter un par un": {
+      "main": [
+        [
+          { "node": "Recherche Serper", "type": "main", "index": 0 },
+          { "node": "Recherche LinkedIn", "type": "main", "index": 0 }
+        ]
+      ]
+    },
+    "Recherche Serper": {
+      "main": [
+        [{ "node": "Extraire nom + LinkedIn", "type": "main", "index": 0 }]
+      ]
+    },
+    "Recherche LinkedIn": {
+      "main": [
+        [{ "node": "Extraire nom + LinkedIn", "type": "main", "index": 1 }]
+      ]
+    },
+    "Extraire nom + LinkedIn": {
+      "main": [
+        [{ "node": "Contact trouvé ?", "type": "main", "index": 0 }]
+      ]
+    },
+    "Contact trouvé ?": {
+      "main": [
+        [{ "node": "Mettre à jour Airtable", "type": "main", "index": 0 }],
+        [{ "node": "Pause anti-rate-limit", "type": "main", "index": 0 }]
+      ]
+    },
+    "Mettre à jour Airtable": {
+      "main": [
+        [{ "node": "Pause anti-rate-limit", "type": "main", "index": 0 }]
+      ]
+    },
+    "Pause anti-rate-limit": {
+      "main": [
+        [{ "node": "Traiter un par un", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "meta": {
+    "instanceId": "udaf-enrichissement-v1"
+  }
+}
