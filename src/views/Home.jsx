@@ -589,7 +589,14 @@ const HeroCSS = `
   z-index: 1;
 }
 .hero-bg-mobile  { display: none; }
-.hero-bg-desktop { display: block; }
+.hero-bg-desktop {
+  display: block;
+  animation: heroReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+@keyframes heroReveal {
+  from { opacity: 0; transform: scale(1.12); }
+  to   { opacity: 1; transform: scale(1); }
+}
 .hero-char-wrapper {
   position: absolute;
   top: 0; right: 0;
