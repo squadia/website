@@ -27,14 +27,14 @@ const AccordionItem = ({ question, answer }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'var(--text-secondary)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -137,7 +137,7 @@ const Formation = () => {
 
   return (
     <div className="formation-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -157,7 +157,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : LE PROBLÈME ═══ */}
+      {/* ═══ SECTION 2 : LE PROBLÈME ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '1.5rem' }}>Ce qu'on observe dans la plupart des entreprises.</h2>
@@ -196,7 +196,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
+      {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
@@ -205,8 +205,8 @@ const Formation = () => {
 
             <FormationCard
               category="Vente"
-              title="Ventes & IA : Méthode, plan de compte et outils pour équipes commerciales B2B"
-              forWho="Pour qui : Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune"
+              title="Ventes & IA : Méthode, plan de compte et outils pour équipes commerciales B2B"
+              forWho="Pour qui : Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune"
               description="Méthode MEDDIC, plan de compte structuré et IA en situation réelle. Vos commerciaux repartent avec des réflexes de terrain renforcés et des outils qu'ils utilisent dès le lundi suivant."
               link="/formation-ventes-et-ia"
               image={imgVente}
@@ -215,8 +215,8 @@ const Formation = () => {
 
             <FormationCard
               category="Marketing"
-              title="Marketing & IA : Créer, produire et automatiser ses contenus avec l'IA"
-              forWho="Pour qui : Responsables marketing et créateurs de contenu souhaitant produire plus vite sans sacrifier la qualité"
+              title="Marketing & IA : Créer, produire et automatiser ses contenus avec l'IA"
+              forWho="Pour qui : Responsables marketing et créateurs de contenu souhaitant produire plus vite sans sacrifier la qualité"
               description="Prompting efficace, production images vidéos podcasts et automatisation de la veille. Les bons réflexes, les bons outils, et une routine de production IA opérationnelle dès la fin de la formation."
               link="/formation-marketing-et-ia"
               image={imgMarketing}
@@ -225,8 +225,8 @@ const Formation = () => {
 
             <FormationCard
               category="Communication"
-              title="Communication & IA : Structurer sa strategie éditoriale et produire avec l'IA"
-              forWho="Pour qui : Directeurs communication, managers et équipes com cherchant à produire plus et mieux sur tous les canaux"
+              title="Communication & IA : Structurer sa strategie éditoriale et produire avec l'IA"
+              forWho="Pour qui : Directeurs communication, managers et équipes com cherchant à produire plus et mieux sur tous les canaux"
               description="Stratégie éditoriale structurée, prompting adapté à la voix de la marque et organisation de la production de contenu. Un plan éditorial opérationnel à l issue des 2 jours."
               link="/formation-communication-et-ia"
               image={imgCommunication}
@@ -237,7 +237,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : LES FORMATS ═══ */}
+      {/* ═══ SECTION 4 : LES FORMATS ═══ */}
       <section id="formats" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Choisissez le format adapté à votre organisation.</h2>
@@ -266,7 +266,7 @@ const Formation = () => {
                 {[
                   "Fondamentaux IA appliqués aux métiers commerciaux et marketing",
                   "Méthodes de prompt et d'organisation",
-                  "Ateliers orientés production : résultats concrets dès la formation",
+                  "Ateliers orientés production : résultats concrets dès la formation",
                   "Supports et templates réutilisables inclus"
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '12px', marginBottom: '0.75rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
@@ -361,7 +361,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
@@ -378,7 +378,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #111' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -404,13 +404,13 @@ const Formation = () => {
             />
             <AccordionItem 
               question="Quelle différence avec une formation IA généraliste ?" 
-              answer="On ne forme pas sur l'IA en général. On forme sur l'IA appliquée au métier : comment prospecter mieux, comment préparer un rendez-vous différemment, comment produire du contenu plus vite sans perdre la qualité. L'objectif c'est que chaque participant reparte avec une vision élargie de ce que l'IA peut changer dans son quotidien, une méthode pour l'appliquer, et la posture pour continuer à progresser seul."
+              answer="On ne forme pas sur l'IA en général. On forme sur l'IA appliquée au métier : comment prospecter mieux, comment préparer un rendez-vous différemment, comment produire du contenu plus vite sans perdre la qualité. L'objectif c'est que chaque participant reparte avec une vision élargie de ce que l'IA peut changer dans son quotidien, une méthode pour l'appliquer, et la posture pour continuer à progresser seul."
             />
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>

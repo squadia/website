@@ -165,7 +165,7 @@ export default function Ressources() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.5rem'
         }}>
           {articles.map((article, i) => (
@@ -215,7 +215,7 @@ export default function Ressources() {
                   </div>
                 </div>
               </Link>
-            ) : (
+            ) : (
               <Link
                 key={i}
                 href={article.link}

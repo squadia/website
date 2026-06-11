@@ -89,11 +89,11 @@ const SecteurIndustrie = () => {
   return (
     <div className="secteur-industrie-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
-            Industrie et energie : prendre de l avance quand le marche change plus vite que l organisation.
+            Industrie et energie : prendre de l avance quand le marche change plus vite que l organisation.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: '1.6', marginBottom: '3rem' }}>
             Vos marches sont de niche, vos cycles de vente sont longs et vos concurrents avancent. Vos équipes ont l experience du terrain. Mais les outils, la méthode et la data ne suivent pas toujours. Squadia structure ce qui permet a vos commerciaux d etre en amont plutot qu en reaction.
@@ -109,7 +109,7 @@ const SecteurIndustrie = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
+      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
@@ -144,7 +144,7 @@ const SecteurIndustrie = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>
@@ -179,7 +179,7 @@ const SecteurIndustrie = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : REFERENCES ═══ */}
+      {/* ═══ SECTION 4 : REFERENCES ═══ */}
       <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
@@ -207,7 +207,7 @@ const SecteurIndustrie = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div className="grid-3" style={{ gap: '2rem' }}>
@@ -235,7 +235,7 @@ const SecteurIndustrie = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>

@@ -51,7 +51,7 @@ const CasFormationVente = () => {
           objectFit: 'cover', objectPosition: 'center 70%',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal orange/sombre : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal orange/sombre : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.92) 0%, rgba(14,26,45,0.82) 38%, rgba(14,26,45,0.52) 58%, rgba(14,26,45,0.08) 72%, transparent 82%)',
@@ -171,7 +171,7 @@ const CasFormationVente = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>

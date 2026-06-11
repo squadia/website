@@ -14,12 +14,12 @@ const MentionsLegales = () => {
       title: "Éditeur du site",
       content: (
         <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-          <p><strong>Raison sociale :</strong> Squadia</p>
-          <p><strong>Forme juridique :</strong> Entreprise Individuelle</p>
-          <p><strong>Adresse :</strong> 193 Avenue de France, 75013 Paris</p>
-          <p><strong>SIRET :</strong> 45243901100027</p>
-          <p><strong>Téléphone :</strong> +33 7 82 84 35 64</p>
-          <p><strong>Email :</strong> contact@squadia.io</p>
+          <p><strong>Raison sociale :</strong> Squadia</p>
+          <p><strong>Forme juridique :</strong> Entreprise Individuelle</p>
+          <p><strong>Adresse :</strong> 193 Avenue de France, 75013 Paris</p>
+          <p><strong>SIRET :</strong> 45243901100027</p>
+          <p><strong>Téléphone :</strong> +33 7 82 84 35 64</p>
+          <p><strong>Email :</strong> contact@squadia.io</p>
           <p style={{ marginTop: '1rem' }}><strong>Directeur de la publication :</strong> Jérôme Debruyne</p>
         </div>
       )
@@ -40,7 +40,7 @@ const MentionsLegales = () => {
       title: "Propriété intellectuelle",
       content: (
         <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-          L'ensemble des contenus présents sur ce site : textes, visuels, structure et éléments graphiques : sont la propriété exclusive de Squadia. Toute reproduction, même partielle, est interdite sans autorisation préalable.
+          L'ensemble des contenus présents sur ce site : textes, visuels, structure et éléments graphiques : sont la propriété exclusive de Squadia. Toute reproduction, même partielle, est interdite sans autorisation préalable.
         </p>
       )
     },

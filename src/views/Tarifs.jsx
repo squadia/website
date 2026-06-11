@@ -11,7 +11,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     <div style={{ 
       borderBottom: `1px solid ${borderColor}`, 
       padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
+      opacity: isOpen ? 1 : 0.45,
       transition: 'opacity 0.3s ease'
     }}>
       <button 
@@ -35,14 +35,14 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'rgba(255,255,255,0.4)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -102,7 +102,7 @@ const tabsData = [
           "Suppression des doublons et normalisation des champs",
           "Complétion des données manquantes",
           "Segmentation basique opérationnelle",
-          "Livrable : CRM nettoyé + rapport d'audit"
+          "Livrable : CRM nettoyé + rapport d'audit"
         ],
         price: 'À partir de 1 490 € HT',
         subPrice: null,
@@ -115,7 +115,7 @@ const tabsData = [
           "Définition ou validation de l'ICP",
           "Segmentation avancée et scoring des contacts",
           "Création de variables dynamiques personnalisées",
-          "Livrable : base structurée + documentation opérationnelle"
+          "Livrable : base structurée + documentation opérationnelle"
         ],
         price: 'À partir de 2 990 € HT',
         subPrice: null,
@@ -128,7 +128,7 @@ const tabsData = [
           "Cartographie du segment cible",
           "Construction d'un fichier de contacts qualifiés et vérifiés",
           "Enrichissement contacts selon périmètre défini",
-          "Livrable : base opérationnelle + intégration CRM (en option)"
+          "Livrable : base opérationnelle + intégration CRM (en option)"
         ],
         price: 'À partir de 4 990 € HT',
         subPrice: null,
@@ -191,7 +191,7 @@ const tabsData = [
         subtitle: "Pour apprendre dans un cadre multi-secteurs, avec d'autres équipes.",
         items: [
           "Fondamentaux IA appliqués aux métiers vente, marketing, communication",
-          "Ateliers orientés production : résultats concrets dès la formation",
+          "Ateliers orientés production : résultats concrets dès la formation",
           "Supports et templates réutilisables inclus"
         ],
         price: 'À partir de 1 500 € HT / pers.',
@@ -250,7 +250,7 @@ const Tarifs = () => {
 
   return (
     <div className="tarifs-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -262,7 +262,7 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : ONGLETS PAR BRIQUE ═══ */}
+      {/* ═══ SECTION 2 : ONGLETS PAR BRIQUE ═══ */}
       <section className="container" style={{ paddingBottom: '80px' }}>
         <div className="fade-in">
           {/* Tabs Navigation */}
@@ -276,9 +276,9 @@ const Tarifs = () => {
                   borderRadius: '9999px',
                   fontWeight: 700,
                   fontSize: '1rem',
-                  border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
-                  background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
-                  color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
+                  border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
+                  background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
+                  color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
                   transition: 'all var(--transition-fast)'
                 }}
               >
@@ -291,9 +291,9 @@ const Tarifs = () => {
           <div 
             style={{ 
               display: 'grid', 
-              gridTemplateColumns: activeTabData.cards.length === 2 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', 
+              gridTemplateColumns: activeTabData.cards.length === 2 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', 
               gap: '2rem',
-              maxWidth: activeTabData.cards.length === 2 ? '900px' : '100%',
+              maxWidth: activeTabData.cards.length === 2 ? '900px' : '100%',
               marginInline: 'auto'
             }}
           >
@@ -303,8 +303,8 @@ const Tarifs = () => {
                 className="pricing-card"
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
-                  padding: isMobile ? '24px 18px' : '3rem 2rem',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -398,12 +398,12 @@ const Tarifs = () => {
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: isMobile ? '14px' : '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#2563EB' : 'transparent',
+                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
+                    background: card.badge ? '#2563EB' : 'transparent',
                     color: '#FFFFFF',
                     textAlign: 'center',
                     textDecoration: 'none',
@@ -425,7 +425,7 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : NOTE TARIFAIRE ═══ */}
+      {/* ═══ SECTION 3 : NOTE TARIFAIRE ═══ */}
       <section className="container" style={{ paddingBottom: '60px' }}>
         <div className="fade-in" style={{ background: '#111827', padding: '2rem', borderRadius: '1rem', border: '1px solid #1A1A3A', textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', maxWidth: '900px', marginInline: 'auto' }}>
@@ -434,10 +434,10 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 5 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 5 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '1rem' }}>

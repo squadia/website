@@ -62,7 +62,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -172,7 +172,7 @@ export default function DataClean() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -198,7 +198,7 @@ export default function DataClean() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataCleanCSS}</style>
 
@@ -246,7 +246,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
@@ -345,7 +345,7 @@ export default function DataClean() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -421,7 +421,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={baseUnifiee} 
           img2={dataEnrich} 
@@ -429,17 +429,17 @@ export default function DataClean() {
           img4={reglesImg} 
         />
 
-        {/* SECTION 5 : LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Une mission de nettoyage cadrée.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 : Audit gratuit', desc: 'Analyse du volume et de l\'état de santé de votre base. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Mapping logic', desc: 'On définit ensemble les règles de traitement : formats, priorités, fusions.' },
-              { step: '3', title: 'Étape 3 : Production', desc: 'Normalisation, dédoublonnage, enrichissement et validation des emails par nos experts.' },
-              { step: '4', title: 'Étape 4 : Export & Training', desc: 'Livraison de la base propre et formation rapide aux bonnes pratiques HubSpot.' }
+              { step: '1', title: 'Étape 1 : Audit gratuit', desc: 'Analyse du volume et de l\'état de santé de votre base. RDV de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Mapping logic', desc: 'On définit ensemble les règles de traitement : formats, priorités, fusions.' },
+              { step: '3', title: 'Étape 3 : Production', desc: 'Normalisation, dédoublonnage, enrichissement et validation des emails par nos experts.' },
+              { step: '4', title: 'Étape 4 : Export & Training', desc: 'Livraison de la base propre et formation rapide aux bonnes pratiques HubSpot.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -465,7 +465,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
@@ -486,7 +486,7 @@ export default function DataClean() {
                   "Suppression des doublons et normalisation des champs",
                   "Complétion des données manquantes",
                   "Segmentation basique opérationnelle",
-                  "Livrable : CRM nettoyé + rapport d'audit"
+                  "Livrable : CRM nettoyé + rapport d'audit"
                 ],
                 price: '1 490 € HT',
                 prefix: 'À partir de',
@@ -499,7 +499,7 @@ export default function DataClean() {
                   "Définition ou validation de l'ICP",
                   "Segmentation avancée et scoring des contacts",
                   "Création de variables dynamiques personnalisées",
-                  "Livrable : base structurée + documentation opérationnelle"
+                  "Livrable : base structurée + documentation opérationnelle"
                 ],
                 price: '2 990 € HT',
                 prefix: 'À partir de',
@@ -512,7 +512,7 @@ export default function DataClean() {
                   "Cartographie du segment cible",
                   "Construction d'un fichier de contacts qualifiés et vérifiés",
                   "Enrichissement contacts selon périmètre défini",
-                  "Livrable : base opérationnelle + intégration CRM (en option)"
+                  "Livrable : base opérationnelle + intégration CRM (en option)"
                 ],
                 price: '4 990 € HT',
                 prefix: 'À partir de',
@@ -523,7 +523,7 @@ export default function DataClean() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -574,7 +574,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
@@ -584,19 +584,19 @@ export default function DataClean() {
             {[
               { q: "À quoi sert Data Clean ?", a: "À fiabiliser votre CRM en supprimant les doublons, les erreurs et les champs inutiles pour repartir sur une base exploitable." },
               { q: "Quels types de problèmes sont corrigés ?", a: "Doublons, données incohérentes, champs vides, formats hétérogènes, erreurs de saisie." },
-              { q: "Est-ce que vous modifiez les données existantes ?", a: "Oui, mais de manière contrôlée : nettoyage + normalisation sans perte d'information utile." },
+              { q: "Est-ce que vous modifiez les données existantes ?", a: "Oui, mais de manière contrôlée : nettoyage + normalisation sans perte d'information utile." },
               { q: "Est-ce que ça fonctionne avec tous les CRM ?", a: "Oui (HubSpot, Pipedrive, Salesforce, fichiers Excel, etc.)." },
               { q: "Combien de temps ça prend ?", a: "Quelques jours à quelques semaines selon le volume et la qualité initiale." },
               { q: "Est-ce que je garde la main sur mes données ?", a: "Oui, validation possible avant toute modification critique." },
               { q: "Que vais-je recevoir concrètement ?", a: "Un CRM nettoyé + un rapport des actions réalisées." },
               { q: "Est-ce que ça inclut de la segmentation ?", a: "Uniquement basique (tri simple). La segmentation avancée est dans Data Seg." },
-              { q: "Est-ce que ça améliore mes performances commerciales ?", a: "Oui, indirectement : meilleure délivrabilité, moins de pertes, base plus exploitable." },
+              { q: "Est-ce que ça améliore mes performances commerciales ?", a: "Oui, indirectement : meilleure délivrabilité, moins de pertes, base plus exploitable." },
               { q: "Quand faut-il lancer un Data Clean ?", a: "Après une migration CRM, un changement d'équipe ou avant une campagne marketing." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
                   <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
+                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
                 </button>
                 {openFAQ === idx && (
                   <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
@@ -608,7 +608,7 @@ export default function DataClean() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <CtaSection
           headline="Prêt à faire de votre CRM un outil que vos équipes utilisent vraiment ?"
           description="Fini le temps perdu sur des fichiers sales. Passez à une donnée qui aide vos commerciaux à vendre."

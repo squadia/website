@@ -51,7 +51,7 @@ const CasFormationIACom = () => {
           objectFit: 'cover', objectPosition: 'center',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal vert/sombre : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal vert/sombre : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.92) 0%, rgba(14,26,45,0.80) 38%, rgba(14,26,45,0.50) 58%, rgba(14,26,45,0.08) 72%, transparent 82%)',
@@ -144,10 +144,10 @@ const CasFormationIACom = () => {
           </div>
           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             <p>
-              La direction communication de cette grande collectivité avait déjà anticipé le sujet : une charte d'usage de l'IA avait été rédigée. Mais entre une charte écrite quelques mois plus tôt et la réalité quotidienne des équipes, il y avait un fossé. Les agents ne savaient pas concrètement ce qu'ils pouvaient faire, ce qu'ils ne pouvaient pas faire, ni pourquoi. Les outils proliféraient sans fil directeur pour choisir, tester ou valider ce qui était vraiment utile dans un contexte institutionnel.
+              La direction communication de cette grande collectivité avait déjà anticipé le sujet : une charte d'usage de l'IA avait été rédigée. Mais entre une charte écrite quelques mois plus tôt et la réalité quotidienne des équipes, il y avait un fossé. Les agents ne savaient pas concrètement ce qu'ils pouvaient faire, ce qu'ils ne pouvaient pas faire, ni pourquoi. Les outils proliféraient sans fil directeur pour choisir, tester ou valider ce qui était vraiment utile dans un contexte institutionnel.
             </p>
             <p style={{ marginTop: '1.4rem' }}>
-              Deux équipes très différentes : une première généraliste d'une douzaine de chargés de communication, une deuxième plus rédactionnelle. Pas le même rapport à l'outil, pas les mêmes blocages.
+              Deux équipes très différentes : une première généraliste d'une douzaine de chargés de communication, une deuxième plus rédactionnelle. Pas le même rapport à l'outil, pas les mêmes blocages.
             </p>
           </div>
         </div>
@@ -171,7 +171,7 @@ const CasFormationIACom = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>
@@ -220,7 +220,7 @@ const CasFormationIACom = () => {
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             color: '#44CCFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
           }}>
-            Cas suivant : Transformation CRM <ArrowRight size={16} />
+            Cas suivant : Transformation CRM <ArrowRight size={16} />
           </Link>
         </div>
       </section>

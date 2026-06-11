@@ -61,7 +61,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -173,7 +173,7 @@ export default function DataLead() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -209,7 +209,7 @@ export default function DataLead() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataLeadCSS}</style>
 
@@ -257,7 +257,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION 2 : POURQUOI (Sticky Stacking) */}
+        {/* SECTION 2 : POURQUOI (Sticky Stacking) */}
         <section id="pourquoi" style={{ position: 'relative', paddingBottom: '10vh' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
@@ -364,7 +364,7 @@ export default function DataLead() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -442,7 +442,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={criteriaImg}
           img2={verifyImg}
@@ -450,17 +450,17 @@ export default function DataLead() {
           img4={integrationImg}
         />
 
-        {/* SECTION 5 : LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Le déroulé d'une mission Data Lead.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 : Cadrage', desc: 'Définition du segment cible : secteur, géographie, taille, fonctions visées. Échange gratuit de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Cartographie', desc: 'Évaluation du volume adressable réel avant de démarrer la production.' },
-              { step: '3', title: 'Étape 3 : Construction', desc: 'Vérification unitaire de chaque contact : poste, entreprise active, email valide.' },
-              { step: '4', title: 'Étape 4 : Livraison', desc: 'Fichier injecté dans votre CRM. Documentation incluse.', extra: 'Délai : 3 à 6 semaines.' }
+              { step: '1', title: 'Étape 1 : Cadrage', desc: 'Définition du segment cible : secteur, géographie, taille, fonctions visées. Échange gratuit de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Cartographie', desc: 'Évaluation du volume adressable réel avant de démarrer la production.' },
+              { step: '3', title: 'Étape 3 : Construction', desc: 'Vérification unitaire de chaque contact : poste, entreprise active, email valide.' },
+              { step: '4', title: 'Étape 4 : Livraison', desc: 'Fichier injecté dans votre CRM. Documentation incluse.', extra: 'Délai : 3 à 6 semaines.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -487,7 +487,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
@@ -508,7 +508,7 @@ export default function DataLead() {
                   "Suppression des doublons et normalisation des champs",
                   "Complétion des données manquantes",
                   "Segmentation basique opérationnelle",
-                  "Livrable : CRM nettoyé + rapport d'audit"
+                  "Livrable : CRM nettoyé + rapport d'audit"
                 ],
                 price: '1 490 € HT',
                 prefix: 'À partir de',
@@ -521,7 +521,7 @@ export default function DataLead() {
                   "Définition ou validation de l'ICP",
                   "Segmentation avancée et scoring des contacts",
                   "Création de variables dynamiques personnalisées",
-                  "Livrable : base structurée + documentation opérationnelle"
+                  "Livrable : base structurée + documentation opérationnelle"
                 ],
                 price: '2 990 € HT',
                 prefix: 'À partir de',
@@ -534,7 +534,7 @@ export default function DataLead() {
                   "Cartographie du segment cible",
                   "Construction d'un fichier de contacts qualifiés et vérifiés",
                   "Enrichissement contacts selon périmètre défini",
-                  "Livrable : base opérationnelle + intégration CRM (en option)"
+                  "Livrable : base opérationnelle + intégration CRM (en option)"
                 ],
                 price: '4 990 € HT',
                 prefix: 'À partir de',
@@ -545,7 +545,7 @@ export default function DataLead() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -596,7 +596,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
@@ -604,19 +604,19 @@ export default function DataLead() {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Comment définissez-vous les critères de ciblage ?', a: "On part de votre ICP : secteur, taille, fonction, zone géographique, signaux d'achat. Le périmètre est cadré ensemble avant toute extraction. On ne livre pas de volume, on livre de la pertinence." },
-              { q: 'Quelle est la qualité des contacts livrés ?', a: "Chaque contact est vérifié manuellement avant livraison : email professionnel valide, fonction confirmée, entreprise active. On rejette systématiquement les faux positifs générés par l'automatisation seule." },
+              { q: 'Comment définissez-vous les critères de ciblage ?', a: "On part de votre ICP : secteur, taille, fonction, zone géographique, signaux d'achat. Le périmètre est cadré ensemble avant toute extraction. On ne livre pas de volume, on livre de la pertinence." },
+              { q: 'Quelle est la qualité des contacts livrés ?', a: "Chaque contact est vérifié manuellement avant livraison : email professionnel valide, fonction confirmée, entreprise active. On rejette systématiquement les faux positifs générés par l'automatisation seule." },
               { q: 'Sous quel délai reçoit-on les premiers leads ?', a: "Les premiers contacts arrivent sous 5 à 10 jours ouvrables après validation du périmètre et de l'ICP." },
               { q: 'Dans quel format sont livrés les leads ?', a: "Fichier CSV ou Google Sheets par défaut. Intégration directe dans votre CRM possible selon l'outil en place." },
               { q: 'Vos données sont-elles conformes au RGPD ?', a: "Oui. Les contacts livrés sont des professionnels dans un cadre B2B, ce qui relève du legitimate interest sous RGPD. On ne collecte ni ne traite de données personnelles grand public." },
               { q: 'Peut-on cibler un secteur ou une géographie spécifique ?', a: "Oui. Secteur, taille d'entreprise, zone géographique, fonction et niveau de séniorité sont tous paramétrables. Plus le ciblage est précis, meilleure est la qualité du flux livré." },
-              { q: 'Quelle différence avec un outil de prospection classique ?', a: "Les outils classiques livrent du volume. Squadia livre du contexte : un signal identifié, une raison d'acheter maintenant, un angle d'approche. Vos commerciaux savent pourquoi ils appellent avant de décrocher." },
-              { q: 'Peut-on coupler la data avec une séquence de prospection ?', a: "Oui, c'est l'objet du forfait Activation Plus : les leads sont livrés avec des messages personnalisés par signal et par interlocuteur, prêts à être utilisés immédiatement." }
+              { q: 'Quelle différence avec un outil de prospection classique ?', a: "Les outils classiques livrent du volume. Squadia livre du contexte : un signal identifié, une raison d'acheter maintenant, un angle d'approche. Vos commerciaux savent pourquoi ils appellent avant de décrocher." },
+              { q: 'Peut-on coupler la data avec une séquence de prospection ?', a: "Oui, c'est l'objet du forfait Activation Plus : les leads sont livrés avec des messages personnalisés par signal et par interlocuteur, prêts à être utilisés immédiatement." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
                   <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
+                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
                 </button>
                 {openFAQ === idx && (
                   <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
@@ -628,7 +628,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <section style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ 
             display: 'flex', 

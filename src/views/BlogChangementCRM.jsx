@@ -111,7 +111,7 @@ export default function BlogChangementCRM() {
               lineHeight: 1.1, color: '#FFFFFF', marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
-              Pourquoi les entreprises changent de CRM : et ce que ça révèle vraiment sur leur organisation
+              Pourquoi les entreprises changent de CRM : et ce que ça révèle vraiment sur leur organisation
             </h1>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -158,11 +158,11 @@ export default function BlogChangementCRM() {
           <hr />
 
           <h2>Ce qui déclenche vraiment un projet CRM</h2>
-          <p>Dans la plupart des cas, un projet CRM naît d'un événement interne fort : un changement d'actionnaire, une perte de chiffre d'affaires significative, une réorganisation, un départ de dirigeant clé. Un moment de rupture qui force l'entreprise à regarder en face ce qu'elle a vraiment comme assets : et ce qui ne fonctionne pas.</p>
-          <p>C'est à ce moment-là que les questions émergent. Pas "quel CRM choisir". Mais : est-ce qu'on a le contrôle qu'on devrait avoir sur nos contrats ? Est-ce qu'on comprend vraiment ce qui se passe sur nos territoires ? Est-ce que nos process sont clairs, fluides, respectés par tout le monde ?</p>
+          <p>Dans la plupart des cas, un projet CRM naît d'un événement interne fort : un changement d'actionnaire, une perte de chiffre d'affaires significative, une réorganisation, un départ de dirigeant clé. Un moment de rupture qui force l'entreprise à regarder en face ce qu'elle a vraiment comme assets : et ce qui ne fonctionne pas.</p>
+          <p>C'est à ce moment-là que les questions émergent. Pas "quel CRM choisir". Mais : est-ce qu'on a le contrôle qu'on devrait avoir sur nos contrats ? Est-ce qu'on comprend vraiment ce qui se passe sur nos territoires ? Est-ce que nos process sont clairs, fluides, respectés par tout le monde ?</p>
           
           <div className="article-pullquote">
-            <p>La réponse est presque toujours non. Et c'est là que le CRM entre dans la conversation : non pas comme solution technique, mais comme réponse à une perte de contrôle.</p>
+            <p>La réponse est presque toujours non. Et c'est là que le CRM entre dans la conversation : non pas comme solution technique, mais comme réponse à une perte de contrôle.</p>
           </div>
           
           <p>L'alignement marketing et ventes, lui, arrive bien plus tard. C'est une conséquence, pas un déclencheur.</p>
@@ -170,7 +170,7 @@ export default function BlogChangementCRM() {
           <hr />
 
           <h2>Ce que la perte de contrôle ressemble concrètement</h2>
-          <p>Voici ce que décrivent les dirigeants quand on creuse vraiment :</p>
+          <p>Voici ce que décrivent les dirigeants quand on creuse vraiment :</p>
           
           <div className="article-highlight-box">
             <h3>"Je n'ai pas la visibilité que je veux sur mon pipeline."</h3>
@@ -187,60 +187,60 @@ export default function BlogChangementCRM() {
             <p>Pas d'historique structuré, pas d'analyse des raisons de perte, pas de pattern identifiable. Chaque deal est une boîte noire.</p>
           </div>
 
-          <p>Ce n'est pas un problème de CRM. C'est un problème de <strong>système commercial</strong>. Le CRM est l'outil qui peut rendre ce système visible : à condition qu'on sache ce qu'on veut y mettre.</p>
+          <p>Ce n'est pas un problème de CRM. C'est un problème de <strong>système commercial</strong>. Le CRM est l'outil qui peut rendre ce système visible : à condition qu'on sache ce qu'on veut y mettre.</p>
 
           <hr />
 
-          <h2>L'erreur classique : changer d'outil sans changer les process</h2>
-          <p>La tentation est forte : acheter un nouveau CRM, migrer les données, former les équipes, et espérer que les problèmes disparaissent avec l'ancien logiciel.</p>
-          <p>Ça ne fonctionne pas. Parce que les problèmes décrits ci-dessus ne viennent pas du CRM. Ils viennent des process : ou de leur absence.</p>
+          <h2>L'erreur classique : changer d'outil sans changer les process</h2>
+          <p>La tentation est forte : acheter un nouveau CRM, migrer les données, former les équipes, et espérer que les problèmes disparaissent avec l'ancien logiciel.</p>
+          <p>Ça ne fonctionne pas. Parce que les problèmes décrits ci-dessus ne viennent pas du CRM. Ils viennent des process : ou de leur absence.</p>
           
           <div className="article-pullquote">
             <p>Un CRM mal structuré installé sur une nouvelle plateforme reste un CRM mal structuré.</p>
           </div>
           
-          <p>Des commerciaux qui ne mettaient pas le CRM à jour dans l'ancien outil ne le feront pas davantage dans le nouveau, sauf si on a résolu le vrai problème : pourquoi est-ce un point de friction pour eux ? Et là, on revient à une question de management, pas de technologie.</p>
+          <p>Des commerciaux qui ne mettaient pas le CRM à jour dans l'ancien outil ne le feront pas davantage dans le nouveau, sauf si on a résolu le vrai problème : pourquoi est-ce un point de friction pour eux ? Et là, on revient à une question de management, pas de technologie.</p>
 
           <hr />
 
           <h2>Ce qui doit changer avant le CRM</h2>
-          <p>Avant de toucher à l'outil, trois questions structurantes :</p>
+          <p>Avant de toucher à l'outil, trois questions structurantes :</p>
           
           <div className="article-highlight-box">
             <h3>1. Qu'est-ce qu'on veut que le CRM rende visible ?</h3>
-            <p>Pas en théorie : dans la pratique quotidienne du dirigeant. Quelles décisions doit-il permettre de prendre ? Si vous ne pouvez pas répondre précisément, le projet partira dans le mauvais sens.</p>
+            <p>Pas en théorie : dans la pratique quotidienne du dirigeant. Quelles décisions doit-il permettre de prendre ? Si vous ne pouvez pas répondre précisément, le projet partira dans le mauvais sens.</p>
           </div>
 
           <div className="article-highlight-box">
             <h3>2. Où sont les vrais points de friction dans l'adoption ?</h3>
-            <p>La mise à jour manuelle est chronophage. Aujourd'hui, cette tâche peut être automatisée : transcription d'appel, mise à jour auto du CRM. Identifier ces frictions multiplie le taux d'adoption.</p>
+            <p>La mise à jour manuelle est chronophage. Aujourd'hui, cette tâche peut être automatisée : transcription d'appel, mise à jour auto du CRM. Identifier ces frictions multiplie le taux d'adoption.</p>
           </div>
 
           <div className="article-highlight-box">
             <h3>3. Quels process veut-on standardiser ?</h3>
-            <p>Un CRM n'impose pas des process : il les reflète. Définir les étapes du pipeline, les critères de qualification et les règles de routage est un travail indispensable avant tout déploiement.</p>
+            <p>Un CRM n'impose pas des process : il les reflète. Définir les étapes du pipeline, les critères de qualification et les règles de routage est un travail indispensable avant tout déploiement.</p>
           </div>
 
           <hr />
 
-          <h2>Ce que le CRM doit contenir : et ce qui ne sert à rien</h2>
-          <p><strong>Ce qui doit être dans le CRM :</strong> la source et le contexte de chaque contact, le signal qui a déclenché la prise de contact commerciale, l'historique des interactions, le stade de maturité réel, et les raisons de perte précises.</p>
-          <p><strong>Ce qui encombre le CRM sans valeur :</strong> les champs remplis pour "faire propre", les étapes de pipeline qui reflètent l'interne plutôt que la maturité du prospect, et les imports de masse sans qualification.</p>
+          <h2>Ce que le CRM doit contenir : et ce qui ne sert à rien</h2>
+          <p><strong>Ce qui doit être dans le CRM :</strong> la source et le contexte de chaque contact, le signal qui a déclenché la prise de contact commerciale, l'historique des interactions, le stade de maturité réel, et les raisons de perte précises.</p>
+          <p><strong>Ce qui encombre le CRM sans valeur :</strong> les champs remplis pour "faire propre", les étapes de pipeline qui reflètent l'interne plutôt que la maturité du prospect, et les imports de masse sans qualification.</p>
 
           <div className="article-pullquote">
-            <p>La règle simple : si une donnée ne permet pas de prendre une meilleure décision commerciale, elle n'a pas sa place dans le CRM.</p>
+            <p>La règle simple : si une donnée ne permet pas de prendre une meilleure décision commerciale, elle n'a pas sa place dans le CRM.</p>
           </div>
 
           <hr />
 
           <h2>Le manager qui tire vraiment parti du CRM</h2>
-          <p>Un bon manager commercial donne à son équipe les moyens de travailler mieux : pas plus fort. Le CRM bien structuré permet une visibilité réelle sur le pipeline, d'identifier les deals à risque avant qu'ils soient perdus, et de coacher sur des faits plutôt que des impressions.</p>
+          <p>Un bon manager commercial donne à son équipe les moyens de travailler mieux : pas plus fort. Le CRM bien structuré permet une visibilité réelle sur le pipeline, d'identifier les deals à risque avant qu'ils soient perdus, et de coacher sur des faits plutôt que des impressions.</p>
           <p>En y ajoutant les outils d'analyse comportementale modernes, le CRM devient un levier de performance réel, pas un outil de reporting subi.</p>
 
           <hr />
 
           <h2>En résumé</h2>
-          <p>Les entreprises changent de CRM parce qu'elles ont perdu le contrôle de quelque chose d'important : et qu'elles cherchent à le reprendre. L'outil ne résout pas ce problème seul. Ce qui le résout, c'est la clarté sur ce qu'on veut voir, l'élimination des frictions, et la définition des process.</p>
+          <p>Les entreprises changent de CRM parce qu'elles ont perdu le contrôle de quelque chose d'important : et qu'elles cherchent à le reprendre. L'outil ne résout pas ce problème seul. Ce qui le résout, c'est la clarté sur ce qu'on veut voir, l'élimination des frictions, et la définition des process.</p>
           <p>Faire ça dans le bon ordre transforme un projet CRM en avantage opérationnel durable.</p>
         </div>
 
@@ -256,7 +256,7 @@ export default function BlogChangementCRM() {
             Vous êtes en train de reconsidérer votre organisation commerciale et vos outils ?
           </h2>
           <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-            Squadia accompagne les PME et ETI françaises dans la structuration de leur système de génération de revenus : du diagnostic à la mise en exécution.
+            Squadia accompagne les PME et ETI françaises dans la structuration de leur système de génération de revenus : du diagnostic à la mise en exécution.
           </p>
           <Link
             href="/strategie/crm"

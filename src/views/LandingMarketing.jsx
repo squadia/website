@@ -35,7 +35,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     <div style={{ 
       borderBottom: `1px solid ${borderColor}`, 
       padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
+      opacity: isOpen ? 1 : 0.45,
       transition: 'opacity 0.3s ease'
     }}>
       <button 
@@ -59,14 +59,14 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'rgba(255,255,255,0.4)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -107,16 +107,16 @@ const LandingMarketing = () => {
   ];
 
   const faqs = [
-    { q: 'Comment Squadia aide à qualifier les leads ?', a: "On travaille sur deux niveaux : la détection de signaux d'achat en amont (qui a une vraie raison d'acheter maintenant) et la contextualisation de chaque lead pour que vos commerciaux arrivent préparés, pas à froid." },
+    { q: 'Comment Squadia aide à qualifier les leads ?', a: "On travaille sur deux niveaux : la détection de signaux d'achat en amont (qui a une vraie raison d'acheter maintenant) et la contextualisation de chaque lead pour que vos commerciaux arrivent préparés, pas à froid." },
     { q: "Est-ce qu'on peut activer une seule brique sans tout restructurer ?", a: "Oui. On peut commencer par les leads, par l'automatisation ou par la formation selon la priorité du moment. Chaque brique fonctionne indépendamment." },
     { q: 'Combien de temps pour voir des résultats ?', a: "Les premiers leads qualifiés arrivent sous 5 à 10 jours après validation du périmètre. Les premiers effets sur le pipeline sont visibles en 30 à 60 jours." },
-    { q: 'Comment Squadia se différencie d\'une agence marketing classique ?', a: "Une agence travaille sur un levier isolé, souvent le contenu ou la publicité. Squadia travaille sur le système complet : données, outils, automatisation, formation. L'objectif c'est un pipeline mesurable, pas de la visibilité." }
+    { q: 'Comment Squadia se différencie d\'une agence marketing classique ?', a: "Une agence travaille sur un levier isolé, souvent le contenu ou la publicité. Squadia travaille sur le système complet : données, outils, automatisation, formation. L'objectif c'est un pipeline mesurable, pas de la visibilité." }
   ];
 
   return (
     <div className="landing-marketing" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -260,7 +260,7 @@ const LandingMarketing = () => {
               opacity: 0, animation: 'fadeContentM 1.2s ease 0.5s forwards'
             }}>
 
-              {/* Card 1 : Leads qualifiés */}
+              {/* Card 1 : Leads qualifiés */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Leads qualifiés</div>
                 {/* Valeur + arc gauge sur la même ligne */}
@@ -282,7 +282,7 @@ const LandingMarketing = () => {
                 </div>
               </div>
 
-              {/* Card 2 : Pipeline marketing */}
+              {/* Card 2 : Pipeline marketing */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Pipeline marketing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>€ 210K</div>
@@ -306,7 +306,7 @@ const LandingMarketing = () => {
                 </div>
               </div>
 
-              {/* Card 3 : Séquence ICP */}
+              {/* Card 3 : Séquence ICP */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Séquence ICP active</div>
                 <div style={{ fontSize: '1.45rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>ETI Industrie</div>
@@ -323,7 +323,7 @@ const LandingMarketing = () => {
                     { x: 64, h: 18, accent: false },
                   ].map((b, i) => (
                     <rect key={i} x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
                       style={{ opacity: 0, animation: `fadeContentM 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                     />
                   ))}
@@ -337,7 +337,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du marketing manager en 2026</h2>
@@ -355,7 +355,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions marketing.</h2>
@@ -370,16 +370,16 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
+      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container grid-2 fade-in" style={{ gap: '4rem', alignItems: 'center' }}>
           <div>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Le marketing détecte. Les commerciaux convertissent. Encore faut-il que les deux soient alignés.</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
               <p>La génération de leads B2B ne se résume pas à produire du volume. Ce qui fait la différence c'est le timing et le contexte. Un lead arrive avec une raison d'acheter maintenant, un signal identifié, un angle d'approche. Pas juste un nom et un email.</p>
-              <p>On travaille avec les directions marketing sur :</p>
+              <p>On travaille avec les directions marketing sur :</p>
               <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <li>La détection de signaux d'achat en amont : recrutements stratégiques, changements de direction, projets en cours</li>
+                <li>La détection de signaux d'achat en amont : recrutements stratégiques, changements de direction, projets en cours</li>
                 <li>La qualification des leads avant de les passer aux commerciaux pour éviter le débat éternel sur la qualité</li>
                 <li>L'alignement des KPIs marketing sur les objectifs pipeline et non sur des métriques de visibilité</li>
                 <li>L'automatisation des séquences de nurturing pour garder le contexte sans mobiliser l'équipe à chaque étape</li>
@@ -399,7 +399,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -445,12 +445,12 @@ const LandingMarketing = () => {
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -475,7 +475,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
@@ -501,7 +501,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
@@ -513,7 +513,7 @@ const LandingMarketing = () => {
                   question={faq.q} 
                   answer={faq.a} 
                   isOpen={openFAQ === idx}
-                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                 />
               ))}
             </div>
@@ -545,10 +545,10 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding container" style={{ textAlign: 'center' }}>
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>

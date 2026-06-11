@@ -43,7 +43,7 @@ const About = () => {
             Réconcilier la strategie et l'exécution.
           </h1>
           <p className="subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', maxWidth: '700px' }}>
-            Squadia est né d'un constat simple : 80% des strategies IA échouent par manque de structuration opérationnelle. Nous sommes là pour être les 20% restants.
+            Squadia est né d'un constat simple : 80% des strategies IA échouent par manque de structuration opérationnelle. Nous sommes là pour être les 20% restants.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ const About = () => {
                 La plupart des cabinets de conseil s'arrêtent au Powerpoint. La plupart des agences marketing s'arrêtent à l'outil. 
               </p>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
-                Squadia occupe l'espace entre les deux. Nous structurons votre système de génération de revenus de bout en bout : de la donnée brute à la signature finale, en passant par l'automatisation intelligente de vos process.
+                Squadia occupe l'espace entre les deux. Nous structurons votre système de génération de revenus de bout en bout : de la donnée brute à la signature finale, en passant par l'automatisation intelligente de vos process.
               </p>
               <div style={{ marginTop: '2rem', display: 'flex', gap: '2rem' }}>
                 <div>

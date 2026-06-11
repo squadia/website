@@ -95,7 +95,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     <div style={{ 
       borderBottom: `1px solid ${borderColor}`, 
       padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
+      opacity: isOpen ? 1 : 0.45,
       transition: 'opacity 0.3s ease'
     }}>
       <button 
@@ -119,14 +119,14 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: bodyColor
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -204,7 +204,7 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
   useEffect(() => {
     if (isMobile) return;
     const timer = setInterval(() => {
-      setActiveId(prev => (prev === items.length ? 1 : prev + 1));
+      setActiveId(prev => (prev === items.length ? 1 : prev + 1));
     }, 10000);
     return () => clearInterval(timer);
   }, [items.length, isMobile]);
@@ -220,20 +220,20 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
           height: '600px',
           background: `radial-gradient(circle, ${activeItem.tintRgba} 0%, transparent 70%)`,
           transition: 'background 0.6s ease',
-          filter: isMobile ? 'blur(40px)' : 'blur(110px)',
+          filter: isMobile ? 'blur(40px)' : 'blur(110px)',
           zIndex: 0,
           pointerEvents: 'none'
       }} />
       <div style={{
         position: 'relative',
-        padding: isMobile ? '24px 16px' : '4rem 4rem',
+        padding: isMobile ? '24px 16px' : '4rem 4rem',
         maxWidth: '1200px',
         margin: '0 auto',
         backgroundColor: '#0D0D25',
-        borderRadius: isMobile ? '18px' : '32px',
-        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
+        borderRadius: isMobile ? '18px' : '32px',
+        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
         color: '#FFFFFF',
-        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
         zIndex: 1,
         overflow: 'hidden'
       }}>
@@ -244,12 +244,12 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
           </h2>
 
           <div style={{
-            display: isMobile ? 'flex' : 'grid',
-            flexDirection: isMobile ? 'column' : undefined,
-            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
-            gap: isMobile ? '24px' : '6rem',
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
+            gap: isMobile ? '24px' : '6rem',
             alignItems: 'start',
-            minHeight: isMobile ? 'auto' : '480px'
+            minHeight: isMobile ? 'auto' : '480px'
           }}>
           
           {/* Accordion List */}
@@ -295,9 +295,9 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                   >
                     <div style={{ flex: 1 }}>
                       <h3 style={{
-                        fontSize: isMobile ? '16px' : '1.25rem',
-                        fontWeight: isOpen ? 700 : 400,
-                        color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)',
+                        fontSize: isMobile ? '16px' : '1.25rem',
+                        fontWeight: isOpen ? 700 : 400,
+                        color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)',
                         margin: 0,
                         transition: 'color 0.2s ease, font-weight 0.2s ease',
                         display: 'flex',
@@ -329,21 +329,21 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                     </div>
                     {isOpen ? (
                       <ChevronDown size={20} color={item.tint} style={{ marginTop: '0.6rem', transition: 'color 0.2s' }} />
-                    ) : (
+                    ) : (
                       <ChevronRight size={20} color="rgba(255,255,255,0.3)" style={{ marginTop: '0.6rem', transition: 'color 0.2s' }} />
                     )}
                   </button>
                   
                   <div style={{ 
-                    maxHeight: isOpen ? '250px' : '0', 
+                    maxHeight: isOpen ? '250px' : '0', 
                     overflow: 'hidden', 
                     transition: 'all 0.25s ease',
-                    opacity: isOpen ? 1 : 0
+                    opacity: isOpen ? 1 : 0
                   }}>
                     <p style={{
                       color: 'rgba(255,255,255,0.88)',
                       lineHeight: 1.6,
-                      fontSize: isMobile ? '14px' : '1rem',
+                      fontSize: isMobile ? '14px' : '1rem',
                       marginTop: '8px',
                       paddingBottom: '1.5rem',
                       maxWidth: '90%'
@@ -387,13 +387,13 @@ const StrategyAccordion = ({ s1, s2, s3, s4 }) => {
                   backgroundColor: '#2563EB',
                   color: '#FFFFFF',
                   fontWeight: 600,
-                  padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
+                  padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
                   borderRadius: '8px',
                   display: 'inline-flex',
                   alignItems: 'center',
-                  justifyContent: isMobile ? 'center' : undefined,
-                  width: isMobile ? '100%' : undefined,
-                  fontSize: isMobile ? '15px' : '1rem',
+                  justifyContent: isMobile ? 'center' : undefined,
+                  width: isMobile ? '100%' : undefined,
+                  fontSize: isMobile ? '15px' : '1rem',
                   textDecoration: 'none',
                   boxShadow: '0 10px 25px rgba(37, 99, 235, 0.25)',
                   transition: 'transform 0.2s ease'
@@ -536,7 +536,7 @@ const slidesData = [
     blocks: [
       { top: "Performance globale", value: "+31%", accent: "Croissance", subtitle: "90 jours", graphic: <Sparkline /> },
       { top: "Alignement équipes", value: "7.2/10", accent: "Marketing", subtitle: "x Ventes", graphic: <ArcGauge value={72} /> },
-      { top: "Prochaine initiative", value: "CRM IA", accent: "Démarrage", subtitle: "J+14 : ROI x3" }
+      { top: "Prochaine initiative", value: "CRM IA", accent: "Démarrage", subtitle: "J+14 : ROI x3" }
     ]
   }
 ];
@@ -803,11 +803,11 @@ const HeroCSS = `
     display: flex;
     flex-direction: column;
   }
-  /* Swap fond : version mobile */
+  /* Swap fond : version mobile */
   .hero-bg-mobile  { display: block; }
   .hero-bg-desktop { display: none !important; }
 
-  /* Hero : height auto pour éviter le débordement iPhone SE / Galaxy A */
+  /* Hero : height auto pour éviter le débordement iPhone SE / Galaxy A */
   .hero-dynamic {
     height: auto !important;
     min-height: 100svh !important;
@@ -823,7 +823,7 @@ const HeroCSS = `
       rgba(5,5,16,0.85) 100%
     ) !important;
   }
-  /* Contenu gauche : flex column pleine hauteur → CTA descend en bas */
+  /* Contenu gauche : flex column pleine hauteur → CTA descend en bas */
   .hero-left {
     position: relative !important;
     width: 100% !important;
@@ -835,7 +835,7 @@ const HeroCSS = `
     padding: 88px 1.4rem 32px !important;
     z-index: 3;
   }
-  /* KPI cards droite : masquées sur mobile */
+  /* KPI cards droite : masquées sur mobile */
   .hero-kpi-wrapper { display: none !important; }
   /* Stats */
   .hero-stats-compact {
@@ -878,7 +878,7 @@ const HeroCSS = `
     font-size: 38px !important;
     margin-top: 0.75rem !important;
   }
-  /* Texte secondaire "25 ans..." : plus gros et poussé vers le bas */
+  /* Texte secondaire "25 ans..." : plus gros et poussé vers le bas */
   .hero-left > div:nth-child(2) {
     font-size: 1.05rem !important;
     line-height: 1.65 !important;
@@ -915,14 +915,14 @@ const HeroCSS = `
     padding-bottom: 2.5rem !important;
   }
 
-  /* Accordion container : hauteur auto sur mobile */
+  /* Accordion container : hauteur auto sur mobile */
   .container[style*="height: 820px"],
   .container[style*="height:820px"] {
     height: auto !important;
     min-height: 0 !important;
   }
 
-  /* Section approche : padding réduit */
+  /* Section approche : padding réduit */
   .container[style*="padding: 10rem"],
   .container[style*="padding:10rem"] {
     padding-top: 2rem !important;
@@ -930,7 +930,7 @@ const HeroCSS = `
   }
 }
 
-/* ── LAPTOP (≤ 1440px) : hero uniquement ── */
+/* ── LAPTOP (≤ 1440px) : hero uniquement ── */
 @media (max-width: 1440px) {
   .hero-left {
     padding-top: 17vh !important;
@@ -1007,7 +1007,7 @@ const HeroDynamic = React.memo(() => {
 
       {/* LEFT CONTENT */}
       <div className="hero-left">
-        {/* BEAT 1 : pill + H1 */}
+        {/* BEAT 1 : pill + H1 */}
 
         {/* Logo qualifier line */}
         <motion.p
@@ -1036,7 +1036,7 @@ const HeroDynamic = React.memo(() => {
           Vos équipes sont occupées…<br/>mais pas toujours sur ce qui compte
         </motion.h1>
 
-        {/* BEAT 2 : subtitle */}
+        {/* BEAT 2 : subtitle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1045,11 +1045,11 @@ const HeroDynamic = React.memo(() => {
           style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.78)', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '760px', lineHeight: 1.6 }}
         >
           <span style={{ whiteSpace: 'nowrap' }}>Vos commerciaux ne font pas assez d'appels. Pas assez de leads, trop d'admin.</span><br/>
-          Votre marketing : salons et pub pour seuls leviers. Données CRM obsolètes.<br/>
+          Votre marketing : salons et pub pour seuls leviers. Données CRM obsolètes.<br/>
           On vous aide à récupérer de la rentabilité. Méthode, Outils et Formation.
         </motion.div>
 
-        {/* BEAT 3 : CTA + stats */}
+        {/* BEAT 3 : CTA + stats */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -1244,7 +1244,7 @@ const HeroDynamic = React.memo(() => {
 
     return (
       <div className="home-page" style={{ backgroundColor: bgColor, color: '#F9FAFB', transition: 'background-color 0.4s ease-out' }}>
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <style>{HeroCSS}</style>
 
       <HeroDynamic />
@@ -1365,7 +1365,7 @@ const HeroDynamic = React.memo(() => {
                   onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                   onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                 >
-                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                  {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                 </button>
 
                 {/* CENTRAL PLAY BUTTON */}
@@ -1448,9 +1448,9 @@ const HeroDynamic = React.memo(() => {
                   viewport={{ once: false, margin: "-10% 0px -25% 0px" }}
                   transition={{ duration: 0.8, ease: "easeOut" }}
               style={{
-                position: isMobile ? 'relative' : 'sticky',
-                top: isMobile ? 'auto' : '38vh',
-                marginBottom: isMobile ? '24px' : '30vh',
+                position: isMobile ? 'relative' : 'sticky',
+                top: isMobile ? 'auto' : '38vh',
+                marginBottom: isMobile ? '24px' : '30vh',
                 zIndex: idx + 10,
                 overflow: 'visible'
               }}
@@ -1459,8 +1459,8 @@ const HeroDynamic = React.memo(() => {
                   <div style={{
                     position: 'absolute',
                     top: '-43px',
-                    left: isMobile ? '16px' : `min(${idx * 180}px, calc(${idx} * min(180px, 28vw)))`,
-                    width: isMobile ? '140px' : 'min(180px, 28vw)',
+                    left: isMobile ? '16px' : `min(${idx * 180}px, calc(${idx} * min(180px, 28vw)))`,
+                    width: isMobile ? '140px' : 'min(180px, 28vw)',
                     height: '44px',
                     backgroundColor: '#0D0D25',
                     border: '1px solid rgba(68, 204, 255, 0.2)',
@@ -1495,13 +1495,13 @@ const HeroDynamic = React.memo(() => {
                   <div style={{
                     display: 'flex',
                     gap: '2.5rem',
-                    padding: isMobile ? '40px 20px 20px 20px' : '4.5rem 2.5rem 2.5rem 2.5rem',
+                    padding: isMobile ? '40px 20px 20px 20px' : '4.5rem 2.5rem 2.5rem 2.5rem',
                     backgroundColor: '#0D0D25',
                     borderRadius: '0 1.5rem 1.5rem 1.5rem',
                     border: '1px solid rgba(68, 204, 255, 0.2)',
                     backdropFilter: 'blur(20px)',
                     boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8)',
-                    minHeight: isMobile ? 'auto' : '350px',
+                    minHeight: isMobile ? 'auto' : '350px',
                     position: 'relative',
                     zIndex: 2
                   }}>
@@ -1521,8 +1521,8 @@ const HeroDynamic = React.memo(() => {
                     )}
 
                     <div style={{
-                      width: isMobile ? '48px' : '64px',
-                      height: isMobile ? '48px' : '64px',
+                      width: isMobile ? '48px' : '64px',
+                      height: isMobile ? '48px' : '64px',
                       backgroundColor: 'rgba(68,204,255,0.08)',
                       borderRadius: '14px',
                       display: 'flex',
@@ -1532,14 +1532,14 @@ const HeroDynamic = React.memo(() => {
                       border: '1px solid rgba(68,204,255,0.2)',
                       marginTop: '0'
                     }}>
-                      <item.icon size={isMobile ? 24 : 32} color="#44CCFF" />
+                      <item.icon size={isMobile ? 24 : 32} color="#44CCFF" />
                     </div>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                       <p style={{
                         fontStyle: 'italic',
                         color: '#F9FAFB',
                         marginBottom: '1rem',
-                        fontSize: isMobile ? '16px' : '1.25rem',
+                        fontSize: isMobile ? '16px' : '1.25rem',
                         lineHeight: 1.4,
                         fontWeight: 500,
                         marginTop: '0'
@@ -1549,7 +1549,7 @@ const HeroDynamic = React.memo(() => {
                       <p style={{
                         color: 'rgba(255,255,255,0.45)',
                         lineHeight: 1.7,
-                        fontSize: isMobile ? '14px' : '0.95rem',
+                        fontSize: isMobile ? '14px' : '0.95rem',
                         marginTop: '1.5rem'
                       }}>
                         {item.desc}
@@ -1563,14 +1563,14 @@ const HeroDynamic = React.memo(() => {
           </div>
         </div>
       </section>
-              {/* ═══ SECTION 5 : STRATÉGIE ET EXÉCUTION (ACCORDION) ═══ */}
+              {/* ═══ SECTION 5 : STRATÉGIE ET EXÉCUTION (ACCORDION) ═══ */}
       <section id="systeme" className="section-padding" style={{ paddingTop: '5rem', backgroundColor: 'transparent' }}>
         <div className="container" style={{ height: '820px' }}>
           <StrategyAccordion s1={s1} s2={s2} s3={s3} s4={s4} />
         </div>
       </section>
 
-      {/* ═══ SECTION 5B : PERSONAS TRIPTYCH ═══ */}
+      {/* ═══ SECTION 5B : PERSONAS TRIPTYCH ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -1610,7 +1610,7 @@ const HeroDynamic = React.memo(() => {
                 link: '/directeur-general',
               },
             ].map((persona) => (
-              /* Wrapper : contient le halo DERRIÈRE la carte */
+              /* Wrapper : contient le halo DERRIÈRE la carte */
               <div
                 key={persona.title}
                 style={{ position: 'relative' }}
@@ -1701,7 +1701,7 @@ const HeroDynamic = React.memo(() => {
                     if (overlay) { overlay.style.opacity = '1'; }
                   }}
                 >
-                  {/* Vidéo : toujours présente, en dessous */}
+                  {/* Vidéo : toujours présente, en dessous */}
                   {persona.video && window.innerWidth > 768 && (
                     <video
                       src={persona.video}
@@ -1717,12 +1717,12 @@ const HeroDynamic = React.memo(() => {
                       }}
                     />
                   )}
-                  {/* Overlay couleur carte : couvre le noir de la vidéo, disparaît au survol */}
+                  {/* Overlay couleur carte : couvre le noir de la vidéo, disparaît au survol */}
                   <div
                     className="card-color-overlay"
                     style={{ position: 'absolute', inset: 0, background: '#0D0D25', zIndex: 2, transition: 'opacity 0.3s ease', pointerEvents: 'none' }}
                   />
-                  {/* Image statique : au-dessus, disparaît au survol */}
+                  {/* Image statique : au-dessus, disparaît au survol */}
                   <img
                     src={persona.img}
                     alt={persona.title}
@@ -1754,7 +1754,7 @@ const HeroDynamic = React.memo(() => {
                         >{word}{' '}</span>
                       ))}
                     </p>
-                  ) : (
+                  ) : (
                     <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, flex: 1 }}>
                       {persona.text}
                     </p>
@@ -1782,7 +1782,7 @@ const HeroDynamic = React.memo(() => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 6 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -1857,12 +1857,12 @@ const HeroDynamic = React.memo(() => {
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -1906,7 +1906,7 @@ const HeroDynamic = React.memo(() => {
 
       
 
-      {/* ═══ SECTION 7 : FAQ ═══ */}
+      {/* ═══ SECTION 7 : FAQ ═══ */}
       <section className="section-padding">
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Questions fréquentes</h2>
@@ -1938,14 +1938,14 @@ const HeroDynamic = React.memo(() => {
                 question={faq.q}
                 answer={faq.a}
                 isOpen={openFAQ === idx}
-                onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
               />
             ))}
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section ref={section8Ref} className="section-padding" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>

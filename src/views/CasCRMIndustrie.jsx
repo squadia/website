@@ -148,7 +148,7 @@ const CasCRMIndustrie = () => {
           </div>
           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             <p>
-              Nouveau contexte actionnarial, nouvelle feuille de route au COMEX. L'entreprise avait grandi avec un CRM fait maison, conçu il y a plusieurs années pour répondre aux besoins très spécifiques d'un client du groupe. Résultat : un outil devenu trop complexe à maintenir, avec des limitations techniques et de sécurité qui freinaient son adoption. Les commerciaux ne savaient plus ce qui était obligatoire à remplir de ce qui était optionnel. Les managers n'avaient pas de visibilité fiable sur le pipeline.
+              Nouveau contexte actionnarial, nouvelle feuille de route au COMEX. L'entreprise avait grandi avec un CRM fait maison, conçu il y a plusieurs années pour répondre aux besoins très spécifiques d'un client du groupe. Résultat : un outil devenu trop complexe à maintenir, avec des limitations techniques et de sécurité qui freinaient son adoption. Les commerciaux ne savaient plus ce qui était obligatoire à remplir de ce qui était optionnel. Les managers n'avaient pas de visibilité fiable sur le pipeline.
             </p>
             <p style={{ marginTop: '1.4rem' }}>
               Il n'y avait pas non plus de méthode de vente commune. Quand'un commercial disait qu'il s'engageait sur un deal, cet engagement ne voulait pas dire la même chose pour tout le monde. La supply chain n'avait aucune visibilité sur les commandes à venir. Et le marketing travaillait avec des agences externes sur des budgets qui auraient pu être mieux contrôlés avec un CRM bien configuré.
@@ -175,7 +175,7 @@ const CasCRMIndustrie = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#A78BFA', letterSpacing: '0.08em', paddingTop: '4px' }}>
@@ -227,7 +227,7 @@ const CasCRMIndustrie = () => {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            Cas suivant : Migration CRM <ArrowRight size={16} />
+            Cas suivant : Migration CRM <ArrowRight size={16} />
           </Link>
         </div>
       </section>

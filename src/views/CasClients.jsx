@@ -44,7 +44,7 @@ const StatCard = ({ stat, small = false }) => {
   return (
     <div style={{ 
       background: '#0D0D25', 
-      padding: small ? '1rem' : '1.5rem', 
+      padding: small ? '1rem' : '1.5rem', 
       borderRadius: '8px', 
       border: '1px solid #1A1A3A', 
       display: 'flex', 
@@ -61,7 +61,7 @@ const StatCard = ({ stat, small = false }) => {
             {rest}
           </div>
         </>
-      ) : (
+      ) : (
         <div style={{ fontSize: small ? '0.85rem' : '1rem', color: 'var(--text-primary)', lineHeight: 1.4, fontWeight: 500, marginTop: small ? 0 : 'auto', marginBottom: small ? 'auto' : 'auto' }}>
           {stat}
         </div>
@@ -197,11 +197,11 @@ const CaseDetail = ({ caseData }) => {
         );
 
         const cardsMap = {
-          'strategie-ia-pme-eti': createCard('/blog/strategie-ia-pme-eti', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats'),
-          'formation-ia-ou-automatisation': createCard('/blog/formation-ia-ou-automatisation', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Transformation', 'Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?'),
-          'prospection-multicanale-b2b-erreurs': createCard('/blog/prospection-multicanale-b2b-erreurs', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Prospection', 'Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter'),
-          'formation-commerciale-b2b-ia': createCard('/blog/formation-commerciale-b2b-ia', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Formation commerciale', 'Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l\'IA'),
-          'nettoyage-segmentation-enrichissement': createCard('/blog/nettoyage-segmentation-enrichissement-donnees-b2b', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Data B2B', 'Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit')
+          'strategie-ia-pme-eti': createCard('/blog/strategie-ia-pme-eti', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats'),
+          'formation-ia-ou-automatisation': createCard('/blog/formation-ia-ou-automatisation', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Transformation', 'Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?'),
+          'prospection-multicanale-b2b-erreurs': createCard('/blog/prospection-multicanale-b2b-erreurs', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Prospection', 'Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter'),
+          'formation-commerciale-b2b-ia': createCard('/blog/formation-commerciale-b2b-ia', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Formation commerciale', 'Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l\'IA'),
+          'nettoyage-segmentation-enrichissement': createCard('/blog/nettoyage-segmentation-enrichissement-donnees-b2b', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Data B2B', 'Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit')
         };
 
         const recs = {
@@ -299,17 +299,17 @@ const CasesList = () => {
         background: c.bgGradient || '#0D0D25',
         border: '1px solid rgba(255,255,255,0.07)',
         borderRadius: '16px',
-        padding: large ? '2.8rem' : '2rem',
+        padding: large ? '2.8rem' : '2rem',
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'flex-end',
-        minHeight: large ? '320px' : '220px',
+        minHeight: large ? '320px' : '220px',
         position: 'relative',
         overflow: 'hidden',
         transition: 'transform 0.3s ease, border-color 0.3s ease',
-        borderColor: hovered ? 'rgba(68,204,255,0.35)' : 'rgba(255,255,255,0.07)',
-        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
+        borderColor: hovered ? 'rgba(68,204,255,0.35)' : 'rgba(255,255,255,0.07)',
+        transform: hovered ? 'translateY(-4px)' : 'translateY(0)',
       }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -319,7 +319,7 @@ const CasesList = () => {
           position: 'absolute', inset: 0, width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: 'center',
           borderRadius: '16px',
-          opacity: hovered ? 0.55 : 0.38,
+          opacity: hovered ? 0.55 : 0.38,
           transition: 'opacity 0.4s ease',
           pointerEvents: 'none'
         }} />
@@ -329,7 +329,7 @@ const CasesList = () => {
           position: 'absolute', inset: 0, borderRadius: '16px',
           background: hovered
             ? 'linear-gradient(to top, rgba(10,15,46,0.55) 20%, rgba(10,15,46,0.1) 100%)'
-            : 'linear-gradient(to top, rgba(10,15,46,0.75) 30%, rgba(10,15,46,0.25) 100%)',
+            : 'linear-gradient(to top, rgba(10,15,46,0.75) 30%, rgba(10,15,46,0.25) 100%)',
           transition: 'background 0.4s ease',
           pointerEvents: 'none'
         }} />
@@ -381,9 +381,9 @@ const CasesList = () => {
         {filters.map(f => (
           <button key={f} onClick={() => setFilter(f)} style={{
             padding: '0.5rem 1.1rem', borderRadius: '30px',
-            border: filter === f ? '1px solid #44CCFF' : '1px solid rgba(255,255,255,0.12)',
-            background: filter === f ? 'rgba(68,204,255,0.08)' : 'transparent',
-            color: filter === f ? '#44CCFF' : 'rgba(255,255,255,0.5)',
+            border: filter === f ? '1px solid #44CCFF' : '1px solid rgba(255,255,255,0.12)',
+            background: filter === f ? 'rgba(68,204,255,0.08)' : 'transparent',
+            color: filter === f ? '#44CCFF' : 'rgba(255,255,255,0.5)',
             fontSize: '0.9rem', fontWeight: 600, cursor: 'pointer', transition: 'all 0.2s ease'
           }}>{f}</button>
         ))}
@@ -391,7 +391,7 @@ const CasesList = () => {
 
       {/* Grille bento */}
       <div className="fade-in">
-        {/* Ligne 1 : grande + petite */}
+        {/* Ligne 1 : grande + petite */}
         {filteredCases.length > 0 && (
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '3fr 2fr', gap: '1rem', marginBottom: '1rem' }}>
             {first && <CaseCard c={first} large={!isMobile} />}
@@ -399,7 +399,7 @@ const CasesList = () => {
           </div>
         )}
 
-        {/* Ligne 2 : 3 cartes égales */}
+        {/* Ligne 2 : 3 cartes égales */}
         {rest.length > 0 && (
           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, 1fr)', gap: '1rem' }}>
             {rest.map(c => <CaseCard key={c.id} c={c} large={false} />)}
@@ -436,7 +436,7 @@ const CasClients = () => {
     <div className="cas-clients-page" style={{ background: 'var(--bg-primary)', minHeight: '100vh', color: '#F9FAFB' }}>
       {selectedCase ? (
         <CaseDetail caseData={selectedCase} />
-      ) : (
+      ) : (
         <>
           <CasesList />
           <ClientLogosSection />

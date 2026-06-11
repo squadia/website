@@ -36,7 +36,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     <div style={{ 
       borderBottom: `1px solid ${borderColor}`, 
       padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
+      opacity: isOpen ? 1 : 0.45,
       transition: 'opacity 0.3s ease'
     }}>
       <button 
@@ -60,14 +60,14 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'rgba(255,255,255,0.4)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -93,14 +93,14 @@ const LandingDG = () => {
   }, []);
 
   const enjeux = [
-    { title: 'Marketing et Ventes : parler le même langage', desc: "Le marketing produit des leads. Les commerciaux les trouvent mauvais. Le CRM n'est pas à jour. La performance globale souffre de chaque friction entre ces trois mondes, souvent en silence.", icon: <Target color="#44CCFF" /> },
+    { title: 'Marketing et Ventes : parler le même langage', desc: "Le marketing produit des leads. Les commerciaux les trouvent mauvais. Le CRM n'est pas à jour. La performance globale souffre de chaque friction entre ces trois mondes, souvent en silence.", icon: <Target color="#44CCFF" /> },
     { title: "Gestion des retards de la Feuille de route", desc: "Les priorités sont posées. Les équipes sont là. Mais entre la vision stratégique et ce qui se passe sur le terrain, quelque chose coince toujours. Et souvent personne ne sait exactement où.", icon: <BarChart3 color="#44CCFF" /> },
     { title: "L'IT freine, Les métiers veulent aller plus vite", desc: "Des projets IA et automatisation attendent depuis des mois. Pas parce que les idées manquent, mais parce que sans cadre validé au niveau COMEX, l'IT bloque pour des raisons de sécurité ou de conformité. C'est le signe qu'il manque une gouvernance IA claire.", icon: <ShieldCheck color="#44CCFF" /> },
     { title: 'Continuer à motiver les troupes', desc: "Les meilleurs profils veulent travailler dans des entreprises qui avancent. Quand les outils sont obsolètes, les process lourds et les perspectives floues, la rétention devient un problème de fond.", icon: <Rocket color="#44CCFF" /> }
   ];
 
   const apports = [
-    { title: 'Un diagnostic avant tout investissement', desc: "On commence par comprendre votre organisation réelle : usages IA existants, qualité des données, frictions entre équipes, maturité des outils. On arbitre ce qui vaut la peine d'être fait maintenant et ce qui peut attendre." },
+    { title: 'Un diagnostic avant tout investissement', desc: "On commence par comprendre votre organisation réelle : usages IA existants, qualité des données, frictions entre équipes, maturité des outils. On arbitre ce qui vaut la peine d'être fait maintenant et ce qui peut attendre." },
     { title: 'Une strategie modernisée, adaptée pour le Comex', desc: "Pas un plan théorique. Une feuille de route avec des cas d'usage priorisés, des pré-requis identifiés, une gouvernance claire et des indicateurs de pilotage. Ce que l'IT peut valider et ce que les métiers peuvent exécuter." },
     { title: 'Un système conçu par des acteurs robustes et fiables', desc: "Stratégie, leads, automatisation, formation. On intervient sur les 4 leviers en même temps ou séparément selon les priorités. L'objectif c'est un système cohérent, pas une accumulation de solutions." },
     { title: 'Des 1ers "quick win" en moins de 30 jours', desc: "Pas de transformation sur 18 mois avant de voir quelque chose. Les premiers livrables actionnables arrivent vite, et on mesure ce qui change." }
@@ -108,9 +108,9 @@ const LandingDG = () => {
 
   const faqs = [
     { q: "Par où commencer quand on ne sait pas où l'IA peut vraiment aider ?", a: "On commence par un cadrage. On analyse votre organisation réelle, on identifie les cas d'usage à fort impact, on élimine ce qui ne vaut pas la peine. Ce travail de diagnostic prend 30 à 60 jours et produit une feuille de route exécutable." },
-    { q: "Squadia intervient-il uniquement sur l'IA ?", a: "Non. L'IA est un levier parmi d'autres. On travaille sur le système complet : strategie, génération de leads, automatisation des process, formation des équipes. L'IA n'est pas une finalité, c'est un moyen d'aller plus vite et plus loin." },
+    { q: "Squadia intervient-il uniquement sur l'IA ?", a: "Non. L'IA est un levier parmi d'autres. On travaille sur le système complet : strategie, génération de leads, automatisation des process, formation des équipes. L'IA n'est pas une finalité, c'est un moyen d'aller plus vite et plus loin." },
     { q: 'Peut-on commencer par une seule brique ?', a: "Oui. Stratégie, Leads, Automatisation et Formation peuvent être activés indépendamment selon les priorités du moment." },
-    { q: "Comment justifier l'investissement au board ou aux actionnaires ?", a: "On construit les indicateurs de pilotage avec vous dès le départ. Chaque mission produit des livrables mesurables : temps gagné, pipeline amélioré, coûts réduits, adoption des équipes. Les résultats sont documentables et présentables." }
+    { q: "Comment justifier l'investissement au board ou aux actionnaires ?", a: "On construit les indicateurs de pilotage avec vous dès le départ. Chaque mission produit des livrables mesurables : temps gagné, pipeline amélioré, coûts réduits, adoption des équipes. Les résultats sont documentables et présentables." }
   ];
 
   return (
@@ -242,7 +242,7 @@ const LandingDG = () => {
         }} />
 
 
-        {/* Gradient fade + label : élément indépendant bord droit complet */}
+        {/* Gradient fade + label : élément indépendant bord droit complet */}
         <div style={{
           position: 'absolute',
           bottom: 0, right: 0,
@@ -300,7 +300,7 @@ const LandingDG = () => {
               58% des dirigeants de PME et ETI considèrent l'IA comme un enjeu de survie. Mais 57% naviguent encore à vue, testant des outils sans vision d'ensemble ni méthode claire. Squadia structure ce qui permet de passer de la décision au résultat.
             </p>
             
-            {/* Cards container : Glassmorphisme premium + SVG animés */}
+            {/* Cards container : Glassmorphisme premium + SVG animés */}
             <div style={{
               display: 'flex',
               gap: '1.2rem',
@@ -309,7 +309,7 @@ const LandingDG = () => {
               animation: 'fadeContent 1.2s ease 0.5s forwards'
             }}>
 
-              {/* Styles partagés des cartes : identique kpi-card Home */}
+              {/* Styles partagés des cartes : identique kpi-card Home */}
               {(() => {
                 const glassCard = {
                   flex: '1 1 190px',
@@ -318,14 +318,14 @@ const LandingDG = () => {
                 };
                 return (
                   <>
-                    {/* Card 1 : Performance globale */}
+                    {/* Card 1 : Performance globale */}
                     <div className="dg-kpi-card" style={glassCard}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance globale</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+31%</div>
                       <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
                         <span style={{ color: '#44CCFF' }}>Croissance</span> 90 jours
                       </div>
-                      {/* Sparkline : fill séparé sans stroke, ligne animée */}
+                      {/* Sparkline : fill séparé sans stroke, ligne animée */}
                       <svg viewBox="0 0 100 32" width="100%" height="34" style={{ display: 'block', overflow: 'visible' }}>
                         <defs>
                           <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
@@ -336,7 +336,7 @@ const LandingDG = () => {
                             <rect x="0" y="0" width="100" height="32" />
                           </clipPath>
                         </defs>
-                        {/* Zone de remplissage : stroke none explicite */}
+                        {/* Zone de remplissage : stroke none explicite */}
                         <path
                           d="M0 25 L20 28 L40 22 L60 14 L80 18 L100 0 L100 32 L0 32 Z"
                           fill="url(#fillGrad)"
@@ -357,17 +357,17 @@ const LandingDG = () => {
                         />
                         {/* Points séquentiels */}
                         {[[0,25],[20,28],[40,22],[60,14],[80,18],[100,0]].map(([cx,cy], i) => (
-                          <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
-                            fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
-                            stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
-                            strokeWidth={i === 5 ? 4 : 0}
+                          <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
+                            fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
+                            stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
+                            strokeWidth={i === 5 ? 4 : 0}
                             style={{ opacity: 0, animation: `fadeContent 0.25s ease ${1.5 + i * 0.08}s forwards` }}
                           />
                         ))}
                       </svg>
                     </div>
 
-                    {/* Card 2 : Alignement équipes */}
+                    {/* Card 2 : Alignement équipes */}
                     <div className="dg-kpi-card" style={{ ...glassCard, position: 'relative' }}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Alignement équipes</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>9.1/10</div>
@@ -388,7 +388,7 @@ const LandingDG = () => {
                       </div>
                     </div>
 
-                    {/* Card 3 : Prochaine Initiative */}
+                    {/* Card 3 : Prochaine Initiative */}
                     <div className="dg-kpi-card" style={glassCard}>
                       <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Prochaine Initiative</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>CRM IA</div>
@@ -406,7 +406,7 @@ const LandingDG = () => {
                         ].map((b, i) => (
                           <rect key={i}
                             x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                            fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                            fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
                             style={{ opacity: 0, animation: `fadeContent 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                           />
                         ))}
@@ -425,7 +425,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
         {/* Halo lumineux côté droit */}
         <div style={{
@@ -466,7 +466,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les dirigeants</h2>
@@ -481,7 +481,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : LA VISION SYSTEMIQUE ═══ */}
+      {/* ═══ SECTION 3B : LA VISION SYSTEMIQUE ═══ */}
       <section style={{ backgroundColor: '#050510', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem 0' }}>
           {/* En-tête pleine largeur */}
@@ -501,7 +501,7 @@ const LandingDG = () => {
               Ce qui coûte, c'est de laisser 50% du temps de ses équipes partir en tâches administratives et saisies manuelles. Ce n'est pas un problème de motivation. C'est un problème de système.
             </p>
             <p>
-              L'IA règle ça : et va plus loin : des interactions clients plus rapides, des services mieux personnalisés, une capacité à délivrer que vos concurrents ne proposent pas encore.
+              L'IA règle ça : et va plus loin : des interactions clients plus rapides, des services mieux personnalisés, une capacité à délivrer que vos concurrents ne proposent pas encore.
             </p>
             <p>
               Chez Squadia, on structure ce qui permet d'en tirer un impact réel. Sur vos équipes, vos process et l'expérience que vous offrez à vos clients.
@@ -529,7 +529,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -575,12 +575,12 @@ const LandingDG = () => {
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -658,7 +658,7 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : FAQ ═══ */}
+      {/* ═══ SECTION 5 : FAQ ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
@@ -670,7 +670,7 @@ const LandingDG = () => {
                   question={faq.q} 
                   answer={faq.a} 
                   isOpen={openFAQ === idx}
-                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                 />
               ))}
             </div>
@@ -705,10 +705,10 @@ const LandingDG = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding container" style={{ textAlign: 'center' }}>
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>

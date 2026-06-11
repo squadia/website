@@ -36,7 +36,7 @@ const AccordionItem = ({ question, answer }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: '#9CA3AF'
           }} 
           size={20}
@@ -44,7 +44,7 @@ const AccordionItem = ({ question, answer }) => {
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -109,7 +109,7 @@ const FormationVentesIA = () => {
   return (
     <div className="formation-ventes-ia" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgCommercial} alt="" style={{
@@ -152,26 +152,26 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
-                Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune : et leur donner les outils pour gagner plus de deals dans un contexte concurrentiel exigeant. adaptée aux profils mixtes juniors / seniors : les juniors repartent avec une méthode, les seniors avec des réflexes renforcés et des outils qu'ils transmettent à leur équipe.
+                Directeurs commerciaux et Sales Managers souhaitant structurer leur équipe sur une méthode commune : et leur donner les outils pour gagner plus de deals dans un contexte concurrentiel exigeant. adaptée aux profils mixtes juniors / seniors : les juniors repartent avec une méthode, les seniors avec des réflexes renforcés et des outils qu'ils transmettent à leur équipe.
               </p>
             </div>
             <div style={{ padding: '2.5rem', background: '#0D1A2E', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.6, color: '#F9FAFB' }}>
-                <strong>Ce que vos équipes repartent avec :</strong> une méthode commune, des réflexes de terrain renforcés, et des outils qu'ils utilisent dès le lundi suivant.
+                <strong>Ce que vos équipes repartent avec :</strong> une méthode commune, des réflexes de terrain renforcés, et des outils qu'ils utilisent dès le lundi suivant.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
+      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
       <section id="programme" className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '0.75rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours</h2>
@@ -180,7 +180,7 @@ const FormationVentesIA = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* JOUR 1 */}
-            <DayBlock title="Jour 1 : Avant la Salle" objective="Comprendre son compte, structurer son approche, préparer chaque rendez-vous avec un avantage.">
+            <DayBlock title="Jour 1 : Avant la Salle" objective="Comprendre son compte, structurer son approche, préparer chaque rendez-vous avec un avantage.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -235,7 +235,7 @@ const FormationVentesIA = () => {
             </DayBlock>
 
             {/* JOUR 2 */}
-            <DayBlock title="Jour 2 : Dans la Salle et Après" objective="Les réflexes qui font la différence : à l'ouverture, face aux objections, et dans la capacité à convertir après le rendez-vous.">
+            <DayBlock title="Jour 2 : Dans la Salle et Après" objective="Les réflexes qui font la différence : à l'ouverture, face aux objections, et dans la capacité à convertir après le rendez-vous.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
@@ -292,7 +292,7 @@ const FormationVentesIA = () => {
           {/* STICKY CARD */}
           <div style={{ position: 'sticky', top: '100px' }}>
             <CountdownCard
-              title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
+              title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
               dateStart={new Date('2026-06-25')}
               dateLabel="25 & 26 Juin 2026"
               image={bgCommercial}
@@ -302,7 +302,7 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
+      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
@@ -318,7 +318,7 @@ const FormationVentesIA = () => {
           }}>
             <div style={{ display: 'grid', gridTemplateColumns: '0.8fr 2.2fr', alignItems: 'stretch' }}>
               
-              {/* Gauche : Image + Halo */}
+              {/* Gauche : Image + Halo */}
               <div style={{ 
                 position: 'relative', 
                 minHeight: '320px', 
@@ -358,7 +358,7 @@ const FormationVentesIA = () => {
                 />
               </div>
 
-              {/* Droite : Contenu */}
+              {/* Droite : Contenu */}
               <div style={{ 
                 padding: '2rem 3rem',
                 background: 'rgba(0,0,0,0.15)',
@@ -407,7 +407,7 @@ const FormationVentesIA = () => {
                 </div>
                 <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.2rem', marginBottom: '1.5rem' }}>
                   <p style={{ color: '#9CA3AF', fontSize: '0.85rem', marginBottom: '0.3rem' }}>
-                    Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage. Les modules s'adaptent au niveau du groupe : juniors en structuration, seniors en renforcement.
+                    Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage. Les modules s'adaptent au niveau du groupe : juniors en structuration, seniors en renforcement.
                   </p>
                   <p style={{ color: '#6B7280', fontSize: '0.75rem', fontStyle: 'italic' }}>
                     * groupe jusqu'à 12 personnes
@@ -422,16 +422,16 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
-            Une équipe formée sur les bons réflexes commerciaux, c'est le point de départ. Pour aller plus loin : structurer les leads, automatiser les flux, fiabiliser le pipeline : Squadia intervient aussi sur les outils et les systèmes.
+            Une équipe formée sur les bons réflexes commerciaux, c'est le point de départ. Pour aller plus loin : structurer les leads, automatiser les flux, fiabiliser le pipeline : Squadia intervient aussi sur les outils et les systèmes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
-            {/* Carte 1 : Stratégie CRM */}
+            {/* Carte 1 : Stratégie CRM */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgCRM} alt="Stratégie CRM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -449,7 +449,7 @@ const FormationVentesIA = () => {
               </div>
             </div>
 
-            {/* Carte 2 : Automatisation cycle de vente */}
+            {/* Carte 2 : Automatisation cycle de vente */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgAutoVente} alt="Automatisation cycle de vente" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -467,7 +467,7 @@ const FormationVentesIA = () => {
               </div>
             </div>
 
-            {/* Carte 3 : Data */}
+            {/* Carte 3 : Data */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgData} alt="Data" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -489,7 +489,7 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
@@ -501,37 +501,37 @@ const FormationVentesIA = () => {
               />
               <AccordionItem 
                 question="Faut-il avoir un compte client ou prospect réel pour participer ?" 
-                answer="C'est fortement recommandé. Les ateliers pratiques sont conçus pour travailler sur des cas réels des participants : pas sur des exercices fictifs. Plus le compte est concret, plus le travail est actionnable."
+                answer="C'est fortement recommandé. Les ateliers pratiques sont conçus pour travailler sur des cas réels des participants : pas sur des exercices fictifs. Plus le compte est concret, plus le travail est actionnable."
               />
               <AccordionItem 
                 question="Quel niveau d'expérience avec l'IA est requis ?" 
-                answer="Aucun. Les modules IA sont construits pour des non-initiés. On part des outils accessibles : Claude, Canva : et on les applique directement aux situations commerciales du quotidien."
+                answer="Aucun. Les modules IA sont construits pour des non-initiés. On part des outils accessibles : Claude, Canva : et on les applique directement aux situations commerciales du quotidien."
               />
               <AccordionItem 
                 question="Peut-on suivre seulement l'un des deux jours ?" 
-                answer="Les deux jours sont conçus en séquence logique : le Jour 1 prépare le terrain, le Jour 2 met en pratique. Suivre uniquement le Jour 2 sans le Jour 1 est possible mais déconseillé pour les équipes qui n'ont pas encore de méthode commune sur le plan de compte."
+                answer="Les deux jours sont conçus en séquence logique : le Jour 1 prépare le terrain, le Jour 2 met en pratique. Suivre uniquement le Jour 2 sans le Jour 1 est possible mais déconseillé pour les équipes qui n'ont pas encore de méthode commune sur le plan de compte."
               />
               <AccordionItem 
                 question="Quelle différence avec une formation commerciale classique ?" 
-                answer="Les fondamentaux sont les mêmes : écoute, qualification, objections. Ce qui change : on intègre les outils IA directement dans la méthode, pas en option. Un commercial qui suit cette formation repart avec une façon de préparer ses RDV, de produire ses propositions et de relancer ses prospects qui est concrètement différente de ce qu'il faisait avant."
+                answer="Les fondamentaux sont les mêmes : écoute, qualification, objections. Ce qui change : on intègre les outils IA directement dans la méthode, pas en option. Un commercial qui suit cette formation repart avec une façon de préparer ses RDV, de produire ses propositions et de relancer ses prospects qui est concrètement différente de ce qu'il faisait avant."
               />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
+      {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
       <ClientLogosSection 
         description="Pour aider leurs équipes de vente à réussir leur RDV B2B c-level de la préparation à la gestion de l'entretien avec des méthodes de vente pour une vente sous contrôle ." 
       />
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <CtaSection
         headline="Prêt à donner à votre équipe commerciale un avantage réel sur le terrain ?"
         description="Une formation qui change la façon de préparer les RDV, de produire des propositions et de relancer les prospects."
         cardTitle="Formation Ventes & IA"
         cardSubtitle="Équipe commerciale renforcée"
-        cardDescription="Méthode, plan de compte, jeux de rôle C-level : 2 jours pour changer les réflexes de vente en profondeur."
+        cardDescription="Méthode, plan de compte, jeux de rôle C-level : 2 jours pour changer les réflexes de vente en profondeur."
         cardFeatures={[
           "Analyse stratégique compte",
           "Qualification & Meddic",

@@ -54,7 +54,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -124,7 +124,7 @@ export default function StrategieIA() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -150,7 +150,7 @@ export default function StrategieIA() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <img src={fondIA} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(10,10,26,0.40)' }} />
@@ -179,7 +179,7 @@ export default function StrategieIA() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
               style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
-              Squadia structure votre strategie IA : diagnostic de maturité, priorisation des cas d'usage ROI et feuille de route exécutable. Pour que l'IA ne soit plus un test, mais un levier.
+              Squadia structure votre strategie IA : diagnostic de maturité, priorisation des cas d'usage ROI et feuille de route exécutable. Pour que l'IA ne soit plus un test, mais un levier.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
@@ -187,7 +187,7 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem', borderBottom: '1px solid #1A1A2E' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
@@ -200,7 +200,7 @@ export default function StrategieIA() {
                 <VideoPlaceholder />
 
                 <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.45)', lineHeight: 1.8 }}>
-                  57% des dirigeants naviguent à vue : testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de strategie en amont.
+                  57% des dirigeants naviguent à vue : testant des outils sans vision d'ensemble. Le problème n'est pas l'outil. C'est l'absence de strategie en amont.
                 </p>
               </motion.div>
 
@@ -226,7 +226,7 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={fondIA} 
           img2={fondIA} 
@@ -234,7 +234,7 @@ export default function StrategieIA() {
           img4={fondIA} 
         />
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
@@ -289,7 +289,7 @@ export default function StrategieIA() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -345,14 +345,14 @@ export default function StrategieIA() {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Faut-il déjà avoir des outils IA pour démarrer ?', a: "Non. On intervient à tous les niveaux de maturité : y compris pour les organisations qui partent de zéro et cherchent simplement à comprendre par où commencer." },
+              { q: 'Faut-il déjà avoir des outils IA pour démarrer ?', a: "Non. On intervient à tous les niveaux de maturité : y compris pour les organisations qui partent de zéro et cherchent simplement à comprendre par où commencer." },
               { q: "Quels sont les livrables concrets ?", a: "Diagnostic structuré, cas d'usage priorisés avec ROI projeté, et feuille de route multi-horizons exécutable." },
-              { q: "Comment justifier l'investissement ?", a: "Chaque mission produit des livrables mesurables : temps gagné, productivité accrue, réduction de coûts. On construit les KPIs avec vous." }
+              { q: "Comment justifier l'investissement ?", a: "Chaque mission produit des livrables mesurables : temps gagné, productivité accrue, réduction de coûts. On construit les KPIs avec vous." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
                   <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
+                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
                 </button>
                 {openFAQ === idx && (
                   <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
@@ -364,7 +364,7 @@ export default function StrategieIA() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <Feature1 
           title="Prêt à transformer vos ambitions IA en résultats mesurables ?"
           description="Fini la navigation à vue. Squadia construit votre système de croissance assisté par l'IA."

@@ -158,7 +158,7 @@ export default function BlogFormationIAVAutom() {
           <p>Ce n'est pas la même chose. Et la confusion entre les deux coûte cher.</p>
           
           <div className="article-pullquote">
-            <p>La transformation IA d'une entreprise repose sur deux piliers : former les talents et adapter les process. L'un sans l'autre ne fonctionne pas.</p>
+            <p>La transformation IA d'une entreprise repose sur deux piliers : former les talents et adapter les process. L'un sans l'autre ne fonctionne pas.</p>
           </div>
 
           <p>Et pourtant, la plupart des entreprises n'en activent qu'un seul.</p>
@@ -166,24 +166,24 @@ export default function BlogFormationIAVAutom() {
           <hr />
 
           <h2>La vraie question que se posent les dirigeants</h2>
-          <p>La plupart des DG qui abordent le sujet de l'IA arrivent avec la même question implicite : <strong>par où est-ce qu'on commence ?</strong></p>
-          <p>Pas "quel outil acheter". Pas "combien ça coûte". Mais vraiment : quelle est la bonne séquence pour ne pas se planter ?</p>
+          <p>La plupart des DG qui abordent le sujet de l'IA arrivent avec la même question implicite : <strong>par où est-ce qu'on commence ?</strong></p>
+          <p>Pas "quel outil acheter". Pas "combien ça coûte". Mais vraiment : quelle est la bonne séquence pour ne pas se planter ?</p>
           <p>Ce qu'on observe sur le terrain, après avoir accompagné des PME, des ETI et des grands groupes, c'est que la séquence fait tout. L'erreur la plus fréquente n'est pas de choisir le mauvais outil. C'est de brûler les étapes.</p>
 
           <hr />
 
-          <h2>Étape 1 : la formation comme outil de découverte</h2>
+          <h2>Étape 1 : la formation comme outil de découverte</h2>
           <p>Avant de savoir ce que l'IA peut faire pour votre entreprise, vos équipes doivent comprendre ce que l'IA peut faire dans leur métier. C'est une condition réelle.</p>
           <p>Au bout de deux jours de pratique sur des cas concrets, les participants commencent à identifier où l'IA crée de la valeur dans leur contexte précis. C'est exactement l'objectif d'une bonne formation.</p>
 
           <div className="article-highlight-box">
-            <h3>Ce qu'une formation bien faite produit :</h3>
+            <h3>Ce qu'une formation bien faite produit :</h3>
             <p>Un état de l'art partagé, des premières intuitions sur les cas d'usage prioritaires, une culture commune et les prémices d'une feuille de route.</p>
           </div>
 
           <hr />
 
-          <h2>Étape 2 : faire le pont entre compréhension et système</h2>
+          <h2>Étape 2 : faire le pont entre compréhension et système</h2>
           <p>Une fois la compréhension acquise, le travail de mise en système peut commencer. Son rôle est de faire le pont entre les attentes métier et de les traduire en actions.</p>
           
           <div className="article-highlight-box">
@@ -193,12 +193,12 @@ export default function BlogFormationIAVAutom() {
 
           <div className="article-highlight-box">
             <h3>Les agents IA métier</h3>
-            <p>Des outils personnalisés pour se démultiplier avec intelligence : préparer un rendez-vous en 5 minutes, générer des variantes de campagne ou faire une veille sectorielle structurée.</p>
+            <p>Des outils personnalisés pour se démultiplier avec intelligence : préparer un rendez-vous en 5 minutes, générer des variantes de campagne ou faire une veille sectorielle structurée.</p>
           </div>
 
           <hr />
 
-          <h2>Étape 3 : mesurer ce qu'on a mis en place</h2>
+          <h2>Étape 3 : mesurer ce qu'on a mis en place</h2>
           <p>C'est là que le CRM joue son rôle de colonne vertébrale. Si vous avez des outils de mesure (net new meetings, taux de conversion), vous savez si votre transformation avance.</p>
           
           <div className="article-pullquote">
@@ -207,13 +207,13 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 4 : gérer les résistances</h2>
+          <h2>Étape 4 : gérer les résistances</h2>
           <p>Dans toute équipe, il y a ceux qui sont ouverts et ceux qui ont construit leurs habitudes sur des décennies. Gérer les résistances, c'est faire comprendre que l'IA n'est pas une remise en question de leur compétence, mais un moyen de faire moins de ce qui coûte du temps.</p>
           <p>La meilleure façon d'amorcer le mouvement est de commencer avec les <strong>champions</strong>, ceux qui sont déjà performants et ouverts au changement.</p>
 
           <hr />
 
-          <h2>Étape 5 : ancrer les habitudes dans la durée</h2>
+          <h2>Étape 5 : ancrer les habitudes dans la durée</h2>
           <p>Ce qui fait la différence, c'est la capacité à itérer et à construire des habitudes. Il faut rendre visible la valeur que chaque outil apporte à celui qui l'utilise, pas seulement à celui qui supervise.</p>
           
           <div className="article-highlight-box">

@@ -79,11 +79,11 @@ const SecteurPublic = () => {
   return (
     <div className="secteur-public-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
-            Secteur public : former les équipes a l'IA sans perdre en qualite ni en conformite.
+            Secteur public : former les équipes a l'IA sans perdre en qualite ni en conformite.
           </h1>
           <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', maxWidth: '800px', marginInline: 'auto', lineHeight: '1.6', marginBottom: '3rem' }}>
             Vos équipes produisent du contenu, gerent des communications complexes, servent des publics tres differents. L IA peut les aider a aller plus vite et mieux. Encore faut-il leur donner une méthode, un cadre, et des outils adaptes a leur réalité, pas a celle d'une startup.
@@ -99,7 +99,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
+      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
@@ -134,7 +134,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>
@@ -169,7 +169,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : REFERENCES ═══ */}
+      {/* ═══ SECTION 4 : REFERENCES ═══ */}
       <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
@@ -197,7 +197,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           {/* Note: changed standard grid to center 2 elements beautifully */}
@@ -226,7 +226,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '850px', marginInline: 'auto', marginBottom: '3rem' }}>

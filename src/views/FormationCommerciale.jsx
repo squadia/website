@@ -34,7 +34,7 @@ const FormationCommerciale = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '80vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgFormation} alt="" style={{
@@ -62,12 +62,12 @@ const FormationCommerciale = () => {
               </span>
             </div>
             <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2.5rem', color: '#FFFFFF', letterSpacing: '-0.02em', textShadow: '0 2px 10px rgba(0,0,0,0.3)' }}>
-              Formation commerciale B2B : devenir plus autonome et performant avec l'IA
+              Formation commerciale B2B : devenir plus autonome et performant avec l'IA
             </h1>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '1.5rem', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontWeight: 500 }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                 <div style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#2563EB' }}></div>
-                Lecture : 6 min
+                Lecture : 6 min
               </div>
               <div style={{ width: '1px', height: '14px', backgroundColor: 'rgba(255,255,255,0.2)' }}></div>
               <div>Insights Terrain</div>
@@ -76,7 +76,7 @@ const FormationCommerciale = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -91,20 +91,20 @@ const FormationCommerciale = () => {
             La méthode de vente, socle que beaucoup d'entreprises n'ont pas encore posé
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Challenger Selling chez Dell et d'autres grands noms de l'IT, MEDDIC chez des acteurs de la vente complexe, SPIN Selling pour les phases de découverte approfondies. Ces méthodes ne sont pas des gadgets académiques. Elles répondent à une réalité simple : sans cadre commun, chaque commercial parle son propre langage.
+            Challenger Selling chez Dell et d'autres grands noms de l'IT, MEDDIC chez des acteurs de la vente complexe, SPIN Selling pour les phases de découverte approfondies. Ces méthodes ne sont pas des gadgets académiques. Elles répondent à une réalité simple : sans cadre commun, chaque commercial parle son propre langage.
           </p>
           <p style={{ marginBottom: '1.5rem', padding: '1.5rem', background: '#0D0D25', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
             MEDDIC en particulier structure ce que trop d'équipes laissent flou. Metrics, Economic Buyer, Decision Criteria, Decision Process, Identify Pain, Champion. <strong>Quand'un commercial dit qu'il s'engage sur un deal, ça doit vouloir dire la même chose pour tout le monde, du terrain au COMEX.</strong> Si ce n'est pas le cas, le manager ne peut pas piloter, la supply chain ne peut pas anticiper, et les prévisions restent des paris.
           </p>
           <p style={{ marginBottom: '3rem' }}>
-            Ce qu'on observe dans les entreprises qui n'ont pas encore de méthode installée : les commerciaux font le lièvre sur des propositions commerciales sans savoir s'ils ont vraiment coché les bonnes cases. Ils ont l'impression d'avoir bien travaillé un deal, mais ils ne peuvent pas le démontrer. Et le manager qui a la responsabilité d'un chiffre ne sait pas sur quoi s'appuyer pour défendre ses projections.
+            Ce qu'on observe dans les entreprises qui n'ont pas encore de méthode installée : les commerciaux font le lièvre sur des propositions commerciales sans savoir s'ils ont vraiment coché les bonnes cases. Ils ont l'impression d'avoir bien travaillé un deal, mais ils ne peuvent pas le démontrer. Et le manager qui a la responsabilité d'un chiffre ne sait pas sur quoi s'appuyer pour défendre ses projections.
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Le sales awareness, ce que la méthode seule ne donne pas
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            La méthode crée le cadre. Le sales awareness, lui, c'est la conscience commerciale. La capacité à lire une situation en temps réel : comprendre que l'interlocuteur est dans une position politique compliquée en interne, qu'il ne peut pas nous dire tout ce qu'il sait, qu'il est sous pression ou à l'inverse qu'il a les pleins pouvoirs. Savoir quand poser une question de plus et quand s'arrêter. Comprendre ce que le silence signifie.
+            La méthode crée le cadre. Le sales awareness, lui, c'est la conscience commerciale. La capacité à lire une situation en temps réel : comprendre que l'interlocuteur est dans une position politique compliquée en interne, qu'il ne peut pas nous dire tout ce qu'il sait, qu'il est sous pression ou à l'inverse qu'il a les pleins pouvoirs. Savoir quand poser une question de plus et quand s'arrêter. Comprendre ce que le silence signifie.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
             C'est ce qui permet à un commercial d'être celui qui débloque les problèmes du client plutôt que celui qui les subit. Montrer de la valeur sans comprendre l'écosystème, les jeux politiques et les contraintes internes d'un compte, c'est souvent impossible.
@@ -126,14 +126,14 @@ const FormationCommerciale = () => {
             Pendant et après le rendez-vous, des outils comme Claude permettent de structurer rapidement les informations collectées, de préparer un résumé des engagements pris, de rédiger les prochaines étapes avec précision. Ce que certains commerciaux mettaient 45 minutes à faire après chaque rendez-vous peut se faire en 5 minutes avec une bonne méthode d'utilisation des outils.
           </p>
           <p style={{ marginBottom: '3rem', fontStyle: 'italic', color: '#F9FAFB' }}>
-            Ce n'est pas une liste d'outils pour faire joli. C'est une façon concrète de récupérer du temps sur les tâches à faible valeur pour le concentrer sur ce qui crée vraiment de la valeur : la relation, la compréhension des enjeux, la construction de la confiance.
+            Ce n'est pas une liste d'outils pour faire joli. C'est une façon concrète de récupérer du temps sur les tâches à faible valeur pour le concentrer sur ce qui crée vraiment de la valeur : la relation, la compréhension des enjeux, la construction de la confiance.
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Junior et senior n'ont pas besoin de la même chose
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Sur le terrain, ça saute aux yeux : un junior doit apprendre à tenir son premier rendez-vous sans perdre le fil, à qualifier sans brûler les étapes, à gérer le silence. Un senior, lui, doit travailler autre chose. La finesse, l'écoute active, la capacité à challenger un décideur expérimenté sans le braquer, à orchestrer les ressources internes autour d'un compte stratégique.
+            Sur le terrain, ça saute aux yeux : un junior doit apprendre à tenir son premier rendez-vous sans perdre le fil, à qualifier sans brûler les étapes, à gérer le silence. Un senior, lui, doit travailler autre chose. La finesse, l'écoute active, la capacité à challenger un décideur expérimenté sans le braquer, à orchestrer les ressources internes autour d'un compte stratégique.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Les former de la même façon, c'est perdre du temps et frustrer tout le monde. Une formation efficace s'adapte au niveau, aux typologies de comptes travaillés, et aux situations réelles que chaque commercial va rencontrer.
@@ -153,7 +153,7 @@ const FormationCommerciale = () => {
             Un deal se gagne rarement seul
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Sur le terrain, un commercial qui gagne ses deals tout seul, ça n'existe presque pas. Il y a presque toujours un moment où il faut embarquer quelqu'un : un collègue du marketing pour une action ciblée sur un compte, un partenaire indirect, une équipe technique pour répondre à une objection précise.
+            Sur le terrain, un commercial qui gagne ses deals tout seul, ça n'existe presque pas. Il y a presque toujours un moment où il faut embarquer quelqu'un : un collègue du marketing pour une action ciblée sur un compte, un partenaire indirect, une équipe technique pour répondre à une objection précise.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Apprendre à orchestrer les ressources autour de soi sans autorité hiérarchique, c'est l'un des sauts de maturité les plus importants dans une carrière commerciale. Et ça change complètement la façon de gérer un territoire.
@@ -166,7 +166,7 @@ const FormationCommerciale = () => {
             La formation commerciale n'est pas un bonus RH. C'est un investissement dans la capacité des équipes à être autonomes sur leur territoire, créatives dans leur approche, et rentables pour l'entreprise.
           </p>
           <p style={{ marginBottom: '3rem', fontWeight: 600, color: '#F9FAFB' }}>
-            Ce qu'on a retenu de nos années de vente et de formation : la vraie différence vient de la mise en pratique, de la continuité, et de la capacité à embarquer les autres avec soi. Pas du nombre de slides vues en formation.
+            Ce qu'on a retenu de nos années de vente et de formation : la vraie différence vient de la mise en pratique, de la continuité, et de la capacité à embarquer les autres avec soi. Pas du nombre de slides vues en formation.
           </p>
 
           <hr style={{ border: 'none', borderTop: '1px solid #1A1A3A', margin: '3rem 0' }} />

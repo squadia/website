@@ -202,7 +202,7 @@ const CasMigrationCRM = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>
@@ -254,7 +254,7 @@ const CasMigrationCRM = () => {
             onMouseEnter={e => e.currentTarget.style.opacity = '0.75'}
             onMouseLeave={e => e.currentTarget.style.opacity = '1'}
           >
-            Cas suivant : Formation Grand Compte <ArrowRight size={16} />
+            Cas suivant : Formation Grand Compte <ArrowRight size={16} />
           </Link>
         </div>
       </section>

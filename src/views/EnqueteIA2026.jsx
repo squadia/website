@@ -22,7 +22,7 @@ const enquêteIA2026 = () => {
             L'État de l'IA dans les PME & ETI Françaises
           </h1>
           <p className="subtitle" style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginTop: '2rem', maxWidth: '750px', marginInline: 'auto' }}>
-            Enquête 2026 : Comment les leaders transforment leur exécution commerciale grâce à l'IA générative.
+            Enquête 2026 : Comment les leaders transforment leur exécution commerciale grâce à l'IA générative.
           </p>
         </div>
       </section>
@@ -55,7 +55,7 @@ const enquêteIA2026 = () => {
                 'La stack technologique gagnante des entreprises à haute croissance.',
                 'Les 5 cas d\'usage IA qui génèrent du ROI en moins de 90 jours.',
                 'Pourquoi la plupart des SSII échouent sur les projets d\'exécution IA.',
-                'Grille de maturité : où se situe votre entreprise par rapport à vos concurrents ?'
+                'Grille de maturité : où se situe votre entreprise par rapport à vos concurrents ?'
               ].map((item, i) => (
                 <li key={i} style={{ display: 'flex', gap: '1rem', marginBottom: '1.2rem', alignItems: 'flex-start' }}>
                   <CheckCircle2 color="var(--accent)" size={20} style={{ flexShrink: 0, marginTop: '4px' }} />

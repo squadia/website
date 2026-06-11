@@ -209,7 +209,7 @@ const Mission = () => {
 
           <div className="team-grid-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px', alignItems: 'stretch' }}>
 
-            {/* KAVIDA : gauche */}
+            {/* KAVIDA : gauche */}
             <div className="team-card-m mfu">
               <div className="team-photo-m">
                 <img src={kavidaImg} alt="Kavida Angapin" className="photo-bw-m" style={{ objectPosition: 'center 10%' }} />
@@ -234,7 +234,7 @@ const Mission = () => {
               </div>
             </div>
 
-            {/* JÉRÔME : centre */}
+            {/* JÉRÔME : centre */}
             <div className="team-card-m founder-m mfu" style={{ transitionDelay: '.1s' }}>
               <div className="team-photo-m">
                 <img src={jeromeImg} alt="Jérôme DEBRUYNE" className="photo-jerome-m" />
@@ -264,7 +264,7 @@ const Mission = () => {
               </div>
             </div>
 
-            {/* JULIEN : droite */}
+            {/* JULIEN : droite */}
             <div className="team-card-m mfu" style={{ transitionDelay: '.2s' }}>
               <div className="team-photo-m">
                 <img src={julienImg} alt="Julien Le Maguer" className="photo-bw-m" style={{ objectPosition: 'center 8%' }} />

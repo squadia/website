@@ -18,7 +18,7 @@ const ProspectionErreurs = () => {
   return (
     <div className="blog-article" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -30,17 +30,17 @@ const ProspectionErreurs = () => {
             </span>
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
-            Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter
+            Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter
           </h1>
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', color: 'var(--text-secondary)', fontSize: '0.95rem' }}>
-            <div>Lecture : 4 min</div>
+            <div>Lecture : 4 min</div>
             <div>•</div>
             <div>Insights Terrain</div>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -52,46 +52,46 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 1 : confier les emails à des profils sans méthode
+            Erreur 1 : confier les emails à des profils sans méthode
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            Écrire un bon email de prospection, ce n'est pas facile. Sur Instagram, une image peut attirer l'oeil en un instant. Sur LinkedIn, un post peut être liké sans même être lu. Par email, vous n'avez qu'une seule arme : vos mots. Et ça ne s'improvise pas.
+            Écrire un bon email de prospection, ce n'est pas facile. Sur Instagram, une image peut attirer l'oeil en un instant. Sur LinkedIn, un post peut être liké sans même être lu. Par email, vous n'avez qu'une seule arme : vos mots. Et ça ne s'improvise pas.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Trop souvent, on confie l'emailing à des stagiaires ou à des profils juniors sans les avoir formés sur ce que ça demande. Résultat : des emails trop longs où l'on balance toutes les fonctionnalités du produit, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.
+            Trop souvent, on confie l'emailing à des stagiaires ou à des profils juniors sans les avoir formés sur ce que ça demande. Résultat : des emails trop longs où l'on balance toutes les fonctionnalités du produit, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.
           </p>
           <p style={{ marginBottom: '3rem', padding: '1.5rem', background: '#0D0D25', borderLeft: '4px solid #44CCFF', borderRadius: '4px' }}>
             <strong>Ce qui marche, c'est l'inverse.</strong> Des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation. Le premier email n'a pas besoin de tout dire. Il a besoin de donner envie de répondre.
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 2 : ignorer la fenêtre de tir
+            Erreur 2 : ignorer la fenêtre de tir
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Le timing, c'est ce qui fait la différence entre un email ignoré et un rendez-vous décroché.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Selon Gartner, 60% du budget d'un manager arrivé depuis moins de 6 mois est engagé dès sa prise de poste. C'est une fenêtre rare : la personne n'a pas encore ses fournisseurs habituels, elle doit prendre des décisions rapides et visibles, et elle est plus ouverte à de nouvelles solutions.
+            Selon Gartner, 60% du budget d'un manager arrivé depuis moins de 6 mois est engagé dès sa prise de poste. C'est une fenêtre rare : la personne n'a pas encore ses fournisseurs habituels, elle doit prendre des décisions rapides et visibles, et elle est plus ouverte à de nouvelles solutions.
           </p>
           <p style={{ marginBottom: '3rem' }}>
-            Sur le terrain, ça se traduit concrètement : utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Croisez avec leurs publications, leurs chantiers annoncés. Si vous connaissez leur feuille de route, votre email n'arrive plus dans le vide. Il arrive comme une réponse à un besoin actuel.
+            Sur le terrain, ça se traduit concrètement : utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Croisez avec leurs publications, leurs chantiers annoncés. Si vous connaissez leur feuille de route, votre email n'arrive plus dans le vide. Il arrive comme une réponse à un besoin actuel.
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 3 : écrire comme un catalogue, pas comme un humain
+            Erreur 3 : écrire comme un catalogue, pas comme un humain
           </h2>
           <p style={{ marginBottom: '1.5rem', fontStyle: 'italic' }}>
-            "Je vous contacte pour vous présenter notre solution innovante..." : si vous commencez comme ça, vous êtes déjà perdu.
+            "Je vous contacte pour vous présenter notre solution innovante..." : si vous commencez comme ça, vous êtes déjà perdu.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Un email ou un appel de prospection, c'est un premier contact humain. Votre prospect doit sentir que vous l'écoutez, que vous comprenez ses problématiques. Et quand'un prospect s'ouvre, c'est le moment de pratiquer l'écoute active : questions précises, reformulation, empathie.
+            Un email ou un appel de prospection, c'est un premier contact humain. Votre prospect doit sentir que vous l'écoutez, que vous comprenez ses problématiques. Et quand'un prospect s'ouvre, c'est le moment de pratiquer l'écoute active : questions précises, reformulation, empathie.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             C'est ce que travaillent des méthodes comme SPIN Selling, MEDDIC ou Challenger Selling. L'outil ne fait pas tout. La compétence relationnelle du commercial reste le levier principal. C'est pour ça qu'on forme les équipes chez Squadia à développer cette intelligence de situation, pas seulement à remplir des séquences.
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 4 : vouloir faire du volume sans cadence adaptée
+            Erreur 4 : vouloir faire du volume sans cadence adaptée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Envoyer 1 000 emails peut sembler ambitieux. Mais si votre équipe en envoie 50 par jour, il vous faudra trois semaines pour adresser votre cible. 10 000 contacts ? Comptez soixante semaines.
@@ -104,13 +104,13 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 5 : laisser marketing et ventes travailler en silos
+            Erreur 5 : laisser marketing et ventes travailler en silos
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
-            On le voit souvent : le marketing lance une campagne, mais les commerciaux ne la relaient pas. Ou les commerciaux prospectent, mais sans contenu ni support cohérent fourni par le marketing. Résultat : double dépense, zéro cohérence, et des prospects qui reçoivent des messages contradictoires.
+            On le voit souvent : le marketing lance une campagne, mais les commerciaux ne la relaient pas. Ou les commerciaux prospectent, mais sans contenu ni support cohérent fourni par le marketing. Résultat : double dépense, zéro cohérence, et des prospects qui reçoivent des messages contradictoires.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Ce qui marche, c'est l'alignement. Le marketing prépare des séquences et du contenu contextualisé. Les commerciaux s'en servent comme levier dans leurs interactions. Les deux équipes partagent les mêmes indicateurs : rendez-vous obtenus, taux d'engagement, opportunités créées.
+            Ce qui marche, c'est l'alignement. Le marketing prépare des séquences et du contenu contextualisé. Les commerciaux s'en servent comme levier dans leurs interactions. Les deux équipes partagent les mêmes indicateurs : rendez-vous obtenus, taux d'engagement, opportunités créées.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Quand cette synergie existe, l'impact est démultiplié. Un commercial devient deux à trois fois plus productif parce que chaque canal travaille pour lui au lieu de travailler à côté de lui.

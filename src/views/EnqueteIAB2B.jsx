@@ -21,14 +21,14 @@ const enquêteIAB2B = () => {
       <div style={{ flexGrow: 1, display: 'flex', alignItems: 'center' }}>
         <div className="container" style={{ paddingTop: '160px', paddingBottom: '80px', maxWidth: '900px', marginInline: 'auto' }}>
           
-          {/* ═══ SECTION 1 : HERO ═══ */}
+          {/* ═══ SECTION 1 : HERO ═══ */}
           <div className="fade-in" style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.5rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
-              <Gift size={16} /> Tirage au sort : bon de 350 EUR
+              <Gift size={16} /> Tirage au sort : bon de 350 EUR
             </div>
             
             <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.1', marginBottom: '2rem' }}>
-              Sales & Marketing Manager B2B : vos priorités face a l'IA
+              Sales & Marketing Manager B2B : vos priorités face a l'IA
             </h1>
             
             <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', lineHeight: '1.6' }}>
@@ -36,7 +36,7 @@ const enquêteIAB2B = () => {
             </p>
           </div>
 
-          {/* ═══ SECTION 2 : CE QU ON RECUEILLE ═══ */}
+          {/* ═══ SECTION 2 : CE QU ON RECUEILLE ═══ */}
           <div className="fade-in" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '3rem 2.5rem', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', textAlign: 'center' }}>Ce qu'on recueille dans cette étude :</h2>
             
@@ -62,7 +62,7 @@ const enquêteIAB2B = () => {
             </ul>
           </div>
 
-          {/* ═══ SECTION 3 : CTA ═══ */}
+          {/* ═══ SECTION 3 : CTA ═══ */}
           <div className="fade-in" style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <a 
               href="https://form.typeform.com/to/hUzNwyyR?typeform-source=www.squadia.io" 
@@ -75,7 +75,7 @@ const enquêteIAB2B = () => {
             </a>
           </div>
 
-          {/* ═══ SECTION 4 : CONDITIONS (discret) ═══ */}
+          {/* ═══ SECTION 4 : CONDITIONS (discret) ═══ */}
           <div className="fade-in" style={{ textAlign: 'center' }}>
             <Link 
               href="/ressources/conditions-participation" 

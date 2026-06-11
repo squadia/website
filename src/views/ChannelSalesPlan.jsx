@@ -66,7 +66,7 @@ const ChannelSalesPlan = () => {
 
       <div className="container grid-2 align-center" style={{ position: 'relative', zIndex: 2, paddingTop: '160px', paddingBottom: '80px', gap: '4rem' }}>
         
-        {/* ═══ COLONNE GAUCHE : HERO ET CONTENU ═══ */}
+        {/* ═══ COLONNE GAUCHE : HERO ET CONTENU ═══ */}
         <div className="fade-in">
           
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
@@ -74,7 +74,7 @@ const ChannelSalesPlan = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Plan Partenaire : développer votre réseau de partenaires B2B
+            Plan Partenaire : développer votre réseau de partenaires B2B
           </h1>
           
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>
@@ -108,7 +108,7 @@ const ChannelSalesPlan = () => {
 
         </div>
 
-        {/* ═══ COLONNE DROITE : FORMULAIRE ═══ */}
+        {/* ═══ COLONNE DROITE : FORMULAIRE ═══ */}
         <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
           <div style={{ background: 'rgba(17,24,39,0.25)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '3rem 2.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)' }}>
             
@@ -124,7 +124,7 @@ const ChannelSalesPlan = () => {
                   Vérifiez votre boîte de réception d'ici quelques instants.
                 </p>
               </div>
-            ) : (
+            ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                 
                 <div className="grid-2" style={{ gap: '1.2rem' }}>

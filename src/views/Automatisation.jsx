@@ -75,7 +75,7 @@ const Automatisation = () => {
         <div className="fade-in grid-2" style={{ alignItems: 'center' }}>
           <h2>"Est-ce que ça va déshumaniser ma relation client ?"</h2>
           <p style={{ color: 'var(--text-secondary)' }}>
-            Au contraire. En automatisant la collecte de données et la mise à jour du CRM, vous libérez du temps pour ce qui compte vraiment : l'écoute active et la créativité stratégique face au client. L'IA fait le travail de secrétaire, vous faites le travail de conseiller.
+            Au contraire. En automatisant la collecte de données et la mise à jour du CRM, vous libérez du temps pour ce qui compte vraiment : l'écoute active et la créativité stratégique face au client. L'IA fait le travail de secrétaire, vous faites le travail de conseiller.
           </p>
         </div>
       </section>

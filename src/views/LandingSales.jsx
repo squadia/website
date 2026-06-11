@@ -17,7 +17,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
     <div style={{ 
       borderBottom: `1px solid ${borderColor}`, 
       padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
+      opacity: isOpen ? 1 : 0.45,
       transition: 'opacity 0.3s ease'
     }}>
       <button 
@@ -41,14 +41,14 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'rgba(255,255,255,0.4)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -107,7 +107,7 @@ const LandingSales = () => {
   ];
 
   const faqs = [
-    { q: 'Comment améliorer la fiabilité du pipeline sans tout reconstruire ?', a: "On commence par un diagnostic des points de friction réels : pourquoi le CRM n'est pas mis à jour, pourquoi les prévisions sont floues, pourquoi certains commerciaux closent et d'autres non. Ensuite on structure ce qui manque, sans tout jeter." },
+    { q: 'Comment améliorer la fiabilité du pipeline sans tout reconstruire ?', a: "On commence par un diagnostic des points de friction réels : pourquoi le CRM n'est pas mis à jour, pourquoi les prévisions sont floues, pourquoi certains commerciaux closent et d'autres non. Ensuite on structure ce qui manque, sans tout jeter." },
     { q: 'Combien de temps pour avoir un pipeline fiable ?', a: "Les premiers signaux d'amélioration arrivent en 30 à 60 jours. Un CRM bien configuré et des automatisations en place changent les habitudes rapidement quand les commerciaux voient la valeur que ça leur apporte." },
     { q: 'Peut-on travailler uniquement sur la prospection ?', a: "Oui. La brique Data peut être activée indépendamment. On identifie les comptes qui ont une vraie raison d'acheter maintenant, avec les bons interlocuteurs et le bon angle d'approche." },
     { q: 'La formation commerciale, ça s\'adresse à quel niveau d\'expérience ?', a: "À tous les niveaux. Les juniors repartent avec une méthode structurée. Les seniors retrouvent de nouveaux réflexes et des outils qui leur font gagner du temps sur les tâches qu'ils n'aiment pas. Les deux ressortent avec un langage commun." }
@@ -116,7 +116,7 @@ const LandingSales = () => {
   return (
     <div className="landing-sales" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -292,7 +292,7 @@ const LandingSales = () => {
               opacity: 0,
               animation: 'fadeContentS 1.2s ease 0.5s forwards'
             }}>
-              {/* Card 1 : Performance pipeline */}
+              {/* Card 1 : Performance pipeline */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance pipeline</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+23%</div>
@@ -314,17 +314,17 @@ const LandingSales = () => {
                     style={{ animation: 'drawSparklineS 1.6s ease 0.9s forwards' }}
                   />
                   {[[0,28],[20,24],[40,20],[60,12],[80,16],[100,2]].map(([cx,cy], i) => (
-                    <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
-                      fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
-                      stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
-                      strokeWidth={i === 5 ? 4 : 0}
+                    <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
+                      fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
+                      stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
+                      strokeWidth={i === 5 ? 4 : 0}
                       style={{ opacity: 0, animation: `fadeContentS 0.25s ease ${1.5 + i * 0.08}s forwards` }}
                     />
                   ))}
                 </svg>
               </div>
 
-              {/* Card 2 : Deals en closing */}
+              {/* Card 2 : Deals en closing */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF', position: 'relative' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Deals en closing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+18</div>
@@ -343,7 +343,7 @@ const LandingSales = () => {
                 </div>
               </div>
 
-              {/* Card 3 : Signal détecté */}
+              {/* Card 3 : Signal détecté */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Signal détecté</div>
                 <div style={{ fontSize: '1.5rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>Dir. Achat</div>
@@ -359,7 +359,7 @@ const LandingSales = () => {
                     { x: 64, h: 22, accent: false },
                   ].map((b, i) => (
                     <rect key={i} x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
                       style={{ opacity: 0, animation: `fadeContentS 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                     />
                   ))}
@@ -372,7 +372,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section style={{ position: 'relative', overflow: 'hidden', padding: '10rem 2rem', background: '#050510' }}>
         <div style={{ position: 'absolute', right: '10%', top: '50%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
@@ -393,7 +393,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions commerciales.</h2>
@@ -408,7 +408,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : FORMATION ET DATA ═══ */}
+      {/* ═══ SECTION 3B : FORMATION ET DATA ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ maxWidth: '900px', margin: '0 auto 4rem auto', textAlign: 'center' }}>
@@ -416,7 +416,7 @@ const LandingSales = () => {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'justify' }}>
               <p>Sur les comptes complexes, chaque commercial qui travaille à sa façon c'est du chiffre d'affaires qui part. Une méthode commune change ça.</p>
               <p>On travaille avec vos équipes sur la qualification des opportunités, la construction de plans de compte actionnables et l'utilisation des outils IA pour préparer chaque rendez-vous et anticiper vos concurrents.</p>
-              <p>Résultat : des commerciaux qui parlent le même langage et des comptes stratégiques vraiment travaillés.</p>
+              <p>Résultat : des commerciaux qui parlent le même langage et des comptes stratégiques vraiment travaillés.</p>
             </div>
           </div>
 
@@ -497,7 +497,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -543,12 +543,12 @@ const LandingSales = () => {
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -573,7 +573,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
@@ -599,7 +599,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
@@ -611,7 +611,7 @@ const LandingSales = () => {
                   question={faq.q} 
                   answer={faq.a} 
                   isOpen={openFAQ === idx}
-                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                 />
               ))}
             </div>
@@ -653,10 +653,10 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A', textAlign: 'center' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>

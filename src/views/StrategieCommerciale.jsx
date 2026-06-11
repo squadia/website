@@ -93,7 +93,7 @@ const StrategyAccordionCommerciale = () => {
   useEffect(() => {
     if (isMobile) return;
     const timer = setInterval(() => {
-      setActiveId(prev => (prev === items.length ? 1 : prev + 1));
+      setActiveId(prev => (prev === items.length ? 1 : prev + 1));
     }, 10000);
     return () => clearInterval(timer);
   }, [items.length, isMobile]);
@@ -104,17 +104,17 @@ const StrategyAccordionCommerciale = () => {
         position: 'absolute', bottom: '-150px', right: '-100px',
         width: '600px', height: '600px',
         background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)',
-        filter: isMobile ? 'blur(40px)' : 'blur(110px)', zIndex: 0, pointerEvents: 'none'
+        filter: isMobile ? 'blur(40px)' : 'blur(110px)', zIndex: 0, pointerEvents: 'none'
       }} />
       <div style={{
         position: 'relative',
-        padding: isMobile ? '24px 16px' : '4rem',
+        padding: isMobile ? '24px 16px' : '4rem',
         maxWidth: '1200px', margin: '0 auto',
         backgroundColor: '#0D0D25',
-        borderRadius: isMobile ? '18px' : '32px',
-        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
+        borderRadius: isMobile ? '18px' : '32px',
+        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF',
         color: '#FFFFFF',
-        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0,0,0,0.5)',
+        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0,0,0,0.5)',
         zIndex: 1, overflow: 'hidden'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
@@ -123,12 +123,12 @@ const StrategyAccordionCommerciale = () => {
             De la Stratégie à l'Exécution
           </h2>
           <div style={{
-            display: isMobile ? 'flex' : 'grid',
-            flexDirection: isMobile ? 'column' : undefined,
-            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
-            gap: isMobile ? '24px' : '6rem',
+            display: isMobile ? 'flex' : 'grid',
+            flexDirection: isMobile ? 'column' : undefined,
+            gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1.4fr)',
+            gap: isMobile ? '24px' : '6rem',
             alignItems: 'start',
-            minHeight: isMobile ? 'auto' : '480px'
+            minHeight: isMobile ? 'auto' : '480px'
           }}>
             <div>
               {items.map((item) => {
@@ -192,11 +192,11 @@ const StrategyAccordionCommerciale = () => {
                   </div>
                   <Link href={activeItem.link} style={{
                     backgroundColor: '#2563EB', color: '#FFFFFF', fontWeight: 600,
-                    padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
+                    padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
                     borderRadius: '8px', display: 'inline-flex', alignItems: 'center',
-                    justifyContent: isMobile ? 'center' : undefined,
-                    width: isMobile ? '100%' : undefined,
-                    fontSize: isMobile ? '15px' : '1rem',
+                    justifyContent: isMobile ? 'center' : undefined,
+                    width: isMobile ? '100%' : undefined,
+                    fontSize: isMobile ? '15px' : '1rem',
                     textDecoration: 'none', boxShadow: '0 10px 25px rgba(37,99,235,0.25)', transition: 'transform 0.2s ease'
                   }}>
                     {activeItem.cta}
@@ -271,7 +271,7 @@ export default function StrategieCommerciale() {
   }, [structureItems.length]);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -297,7 +297,7 @@ export default function StrategieCommerciale() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section id="hero" style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{StrategieCommercialeCSS}</style>
           <img src={bgCommercial} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 0 }} />
@@ -320,7 +320,7 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
             <div style={{ position: 'sticky', top: '25vh' }}>
@@ -417,7 +417,7 @@ export default function StrategieCommerciale() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -516,7 +516,7 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 2.2 : COMMENT ON TRAVAILLE */}
+        {/* SECTION 2.2 : COMMENT ON TRAVAILLE */}
         <section style={{ backgroundColor: '#0A0A1A', overflow: 'hidden' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '8rem 2rem 0' }}>
             {/* En-tête pleine largeur */}
@@ -549,7 +549,7 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION 3 : EXPANDING ACCORDION */}
+        {/* SECTION 3 : EXPANDING ACCORDION */}
         <section id="structure" style={{ backgroundColor: '#11111E' }}>
         <div style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
@@ -565,11 +565,11 @@ export default function StrategieCommerciale() {
                   layout
                   onClick={() => setActiveStructureIdx(idx)}
                   style={{
-                    flex: isActive ? 2.5 : 1,
-                    backgroundColor: isActive ? 'rgba(68,204,255,0.05)' : '#11111E',
-                    border: isActive ? '2px solid #44CCFF' : '1px solid rgba(255,255,255,0.05)',
+                    flex: isActive ? 2.5 : 1,
+                    backgroundColor: isActive ? 'rgba(68,204,255,0.05)' : '#11111E',
+                    border: isActive ? '2px solid #44CCFF' : '1px solid rgba(255,255,255,0.05)',
                     borderRadius: '1.5rem',
-                    padding: isActive ? '2.4rem 1.4rem' : '2.5rem 1.5rem',
+                    padding: isActive ? '2.4rem 1.4rem' : '2.5rem 1.5rem',
                     cursor: 'pointer',
                     position: 'relative',
                     overflow: 'hidden',
@@ -587,8 +587,8 @@ export default function StrategieCommerciale() {
                       minWidth: '48px', maxWidth: '48px',
                       minHeight: '48px', maxHeight: '48px',
                       borderRadius: '12px', 
-                      background: isActive ? '#44CCFF' : 'rgba(255,255,255,0.05)', 
-                      color: isActive ? '#0A0A1A' : '#44CCFF',
+                      background: isActive ? '#44CCFF' : 'rgba(255,255,255,0.05)', 
+                      color: isActive ? '#0A0A1A' : '#44CCFF',
                       display: 'flex', alignItems: 'center', justifyContent: 'center',
                       marginBottom: '1.5rem',
                       flexShrink: 0
@@ -602,7 +602,7 @@ export default function StrategieCommerciale() {
                       <h3 style={{ fontSize: '1.4rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.2rem' }}>{item.full}</h3>
                       <p style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.6, fontSize: '0.95rem' }}>{item.desc}</p>
                     </motion.div>
-                  ) : (
+                  ) : (
                     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                       <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: 'rgba(255,255,255,0.3)', whiteSpace: 'nowrap', marginTop: '0.5rem' }}>{item.short}</h3>
                     </div>
@@ -614,7 +614,7 @@ export default function StrategieCommerciale() {
         </div>
         </section>
 
-        {/* SECTION : DE LA STRATÉGIE À L'EXÉCUTION */}
+        {/* SECTION : DE LA STRATÉGIE À L'EXÉCUTION */}
         <section style={{ padding: '6rem 0', backgroundColor: '#11111E' }}>
           <StrategyAccordionCommerciale />
         </section>
@@ -674,7 +674,7 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>NOS TARIFS</p>
@@ -719,7 +719,7 @@ export default function StrategieCommerciale() {
                 key={idx}
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -771,10 +771,10 @@ export default function StrategieCommerciale() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
-        {/* SECTION 7 : FAQ */}
+        {/* SECTION 7 : FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', marginBottom: '3rem', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -819,12 +819,12 @@ export default function StrategieCommerciale() {
                   style={{
                     borderBottom: '1px solid rgba(255,255,255,0.08)',
                     padding: '1.5rem 0',
-                    opacity: isOpen ? 1 : 0.45,
+                    opacity: isOpen ? 1 : 0.45,
                     transition: 'all 0.3s ease'
                   }}
                 >
                   <button
-                    onClick={() => setOpenFAQ(isOpen ? null : idx)}
+                    onClick={() => setOpenFAQ(isOpen ? null : idx)}
                     style={{
                       width: '100%',
                       display: 'flex',
@@ -843,16 +843,16 @@ export default function StrategieCommerciale() {
                     <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
                     <ChevronDown
                       size={20}
-                      color={isOpen ? "#44CCFF" : "#9CA3AF"}
+                      color={isOpen ? "#44CCFF" : "#9CA3AF"}
                       style={{
-                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
                         transition: 'transform 0.3s ease'
                       }}
                     />
                   </button>
                   <div
                     style={{
-                      maxHeight: isOpen ? '500px' : '0',
+                      maxHeight: isOpen ? '500px' : '0',
                       overflow: 'hidden',
                       transition: 'max-height 0.4s ease-in-out',
                       color: 'rgba(255,255,255,0.45)',
@@ -871,13 +871,13 @@ export default function StrategieCommerciale() {
         </section>
 
 
-        {/* SECTION 8 : CTA FINAL */}
+        {/* SECTION 8 : CTA FINAL */}
         <CtaSection
           headline="Votre équipe prête à l'action."
           description="Une fois votre strategie commerciale établie, il vous faut redescendre l'information à vos équipes et aligner avec la même approche de vente."
           cardTitle="IA pour la vente"
           cardSubtitle="Former votre équipe commerciale"
-          cardDescription="Méthode de vente, Approche Grands Comptes, Jeu de rôle : formez vos équipes à vendre avec l'IA."
+          cardDescription="Méthode de vente, Approche Grands Comptes, Jeu de rôle : formez vos équipes à vendre avec l'IA."
           cardFeatures={[
             "Analyse stratégique compte",
             "Qualification & Meddic",

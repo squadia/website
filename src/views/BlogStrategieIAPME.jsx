@@ -151,7 +151,7 @@ export default function BlogStrategieIAPME() {
               marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
-              Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats
+              Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats
             </h1>
 
             {/* Meta & Divider */}
@@ -316,17 +316,17 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce que tout le monde a vu arriver : et que peu ont vraiment suivi</h2>
+          <h2>Ce que tout le monde a vu arriver : et que peu ont vraiment suivi</h2>
 
           <p>Il y a trois ans, GPT-3 était une curiosité de labo. En moins d'un an, GPT-4 était connecté à internet, capable de chercher, de lire, de répondre en temps réel. En parallèle, la génération d'images a évolué à une vitesse que personne n'avait vraiment anticipée. Tout ça en 18 mois.</p>
 
-          <p>Puis est arrivée une autre rupture, plus discrète mais plus structurante : <strong>l'IA agentique</strong>.</p>
+          <p>Puis est arrivée une autre rupture, plus discrète mais plus structurante : <strong>l'IA agentique</strong>.</p>
 
-          <p>Ce n'est plus un outil qu'on interroge. C'est un système qui agit. Un client télécharge un document sur votre site : un agent identifie son rôle, son secteur, son entreprise, rédige un message personnalisé, crée une tâche dans votre CRM, l'assigne à un commercial, et envoie une séquence de suivi adaptée. Sans intervention humaine. En temps réel.</p>
+          <p>Ce n'est plus un outil qu'on interroge. C'est un système qui agit. Un client télécharge un document sur votre site : un agent identifie son rôle, son secteur, son entreprise, rédige un message personnalisé, crée une tâche dans votre CRM, l'assigne à un commercial, et envoie une séquence de suivi adaptée. Sans intervention humaine. En temps réel.</p>
 
-          <p>Puis est arrivé le MCP : la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. <strong>L'IA devient architecte de processus, pas seulement exécutant de tâches.</strong></p>
+          <p>Puis est arrivé le MCP : la capacité de connecter plusieurs applications autour d'un point central intelligent qui ne se contente pas d'exécuter : il comprend le contexte, décide quelle application activer, dans quel ordre, avec quelle logique. <strong>L'IA devient architecte de processus, pas seulement exécutant de tâches.</strong></p>
 
-          <p>Ce que ça signifie concrètement : le champ du possible s'est élargi plus vite que la capacité de la plupart des organisations à le cartographier. Et c'est précisément là que le problème commence.</p>
+          <p>Ce que ça signifie concrètement : le champ du possible s'est élargi plus vite que la capacité de la plupart des organisations à le cartographier. Et c'est précisément là que le problème commence.</p>
 
           <hr />
 
@@ -334,9 +334,9 @@ export default function BlogStrategieIAPME() {
 
           <p>On aurait pu penser que les grandes structures, avec leurs budgets et leurs équipes dédiées, auraient l'avantage. C'est souvent l'inverse.</p>
 
-          <p>La séquence typique : un grand cabinet ou une ESN identifie une opportunité IA, constitue une équipe, réfléchit à une offre, la formalise, la valide en interne, la lance sur le marché. Problème : entre le moment où l'offre a été conçue et celui où elle est commercialisée, l'IA a évolué. <strong>L'offre est déjà partiellement obsolète à son lancement.</strong></p>
+          <p>La séquence typique : un grand cabinet ou une ESN identifie une opportunité IA, constitue une équipe, réfléchit à une offre, la formalise, la valide en interne, la lance sur le marché. Problème : entre le moment où l'offre a été conçue et celui où elle est commercialisée, l'IA a évolué. <strong>L'offre est déjà partiellement obsolète à son lancement.</strong></p>
 
-          <p>Les structures agiles : qui peuvent pivoter en semaines, pas en trimestres : ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.</p>
+          <p>Les structures agiles : qui peuvent pivoter en semaines, pas en trimestres : ont un avantage structurel dans cet environnement. Pas parce qu'elles sont plus intelligentes. Parce qu'elles absorbent le changement plus vite.</p>
 
           <div className="article-highlight-box">
             <h3>Pour une PME ou une ETI qui cherche un partenaire IA</h3>
@@ -352,7 +352,7 @@ export default function BlogStrategieIAPME() {
             <div className="article-stat-label">des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas : parce que les entreprises ont répondu à la mauvaise question.</div>
           </div>
 
-          <p>Elles ont demandé : <em>quel outil utiliser ?</em> Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong></p>
+          <p>Elles ont demandé : <em>quel outil utiliser ?</em> Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong></p>
 
           <div className="article-stat">
             <div className="article-stat-number">94%</div>
@@ -361,11 +361,11 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce qu'il est déjà possible de faire : et que beaucoup ignorent</h2>
+          <h2>Ce qu'il est déjà possible de faire : et que beaucoup ignorent</h2>
 
           <p>Il n'est pas nécessaire de vouloir aller sur la Lune pour tirer parti de l'IA. Si l'objectif est d'aller de Paris à Limoges dans les meilleures conditions, pas besoin d'une fusée. Il y a besoin du bon train.</p>
 
-          <p>Ce qui existe déjà sur l'étagère et fonctionne aujourd'hui en PME et ETI :</p>
+          <p>Ce qui existe déjà sur l'étagère et fonctionne aujourd'hui en PME et ETI :</p>
 
           <div className="article-highlight-box">
             <h3>Agents vocaux et conversationnels</h3>
@@ -393,7 +393,7 @@ export default function BlogStrategieIAPME() {
           <p>Est-il lisible sur mobile ? S'adapte-t-il à toutes les tailles d'écran ? Ressemble-t-il à quelque chose de propre et fonctionnel en 2026 ? Beaucoup d'entreprises françaises ont du retard sur ce point, et ce retard est visible immédiatement par leurs clients et prospects.</p>
 
           <div className="article-pullquote">
-            <p>Le site est souvent le symptôme d'un retard plus profond : CRM mal structuré, données dispersées, pas d'automatisation, reporting manuel.</p>
+            <p>Le site est souvent le symptôme d'un retard plus profond : CRM mal structuré, données dispersées, pas d'automatisation, reporting manuel.</p>
           </div>
 
           <p>Et il y a déjà des solutions accessibles pour y remédier, rapidement, sans attendre un projet de transformation à deux ans.</p>
@@ -404,7 +404,7 @@ export default function BlogStrategieIAPME() {
 
           <div className="article-highlight-box">
             <h3>1. Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
-            <p>Pas en théorie. Demandez à vos commerciaux, vos équipes marketing, vos managers. Les réponses sont presque toujours les mêmes : préparation des rendez-vous, mise à jour du CRM, reporting, création de contenus répétitifs, veille. Ce sont les premiers candidats à l'automatisation.</p>
+            <p>Pas en théorie. Demandez à vos commerciaux, vos équipes marketing, vos managers. Les réponses sont presque toujours les mêmes : préparation des rendez-vous, mise à jour du CRM, reporting, création de contenus répétitifs, veille. Ce sont les premiers candidats à l'automatisation.</p>
           </div>
 
           <div className="article-highlight-box">

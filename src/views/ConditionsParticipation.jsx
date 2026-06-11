@@ -43,7 +43,7 @@ const ConditionsParticipation = () => {
           <section>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#44CCFF', marginBottom: '1rem' }}>Article 1 – Organisateur</h2>
             <p style={{ fontSize: '1.05rem', color: '#D1D5DB', lineHeight: 1.7 }}>
-              La societe SQUADIA, entreprise individuelle immatriculée au RCS de Créteil, dont le siege est situe au 70 rue Mirabeau a Ivry-sur-Seine, organise un jeu-concours gratuit sans obligation d'achat intitule : Sales & Marketing Manager B2B : vos priorités face a L IA (ci-apres le Jeu).
+              La societe SQUADIA, entreprise individuelle immatriculée au RCS de Créteil, dont le siege est situe au 70 rue Mirabeau a Ivry-sur-Seine, organise un jeu-concours gratuit sans obligation d'achat intitule : Sales & Marketing Manager B2B : vos priorités face a L IA (ci-apres le Jeu).
             </p>
           </section>
 
@@ -62,7 +62,7 @@ const ConditionsParticipation = () => {
               Cette exclusion s applique y compris dans l hypothese ou ces personnes auraient ete sollicitees directement ou indirectement par Squadia.
             </p>
             <p style={{ fontSize: '1.05rem', color: '#D1D5DB', lineHeight: 1.7, marginBottom: '1rem' }}>
-              Chaque participant doit fournir l ensemble des informations permettant son identification : nom, prenom, adresse email valide, numero de telephone et profil LinkedIn. Toute participation incomplete, erronee ou ne satisfaisant pas aux conditions ci-dessus sera automatiquement consideree comme nulle.
+              Chaque participant doit fournir l ensemble des informations permettant son identification : nom, prenom, adresse email valide, numero de telephone et profil LinkedIn. Toute participation incomplete, erronee ou ne satisfaisant pas aux conditions ci-dessus sera automatiquement consideree comme nulle.
             </p>
             <p style={{ fontSize: '1.05rem', color: '#D1D5DB', lineHeight: 1.7, marginBottom: '1rem' }}>
               En validant sa participation, le candidat reconnait que Squadia pourra, à tout moment et sur simple demande, exiger un justificatif attestant du respect de ces conditions. Le defaut de communication du justificatif entrainera l invalidation immediate de la participation.

@@ -60,7 +60,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -170,7 +170,7 @@ export default function DataSeg() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -196,7 +196,7 @@ export default function DataSeg() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataSegCSS}</style>
 
@@ -242,7 +242,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
@@ -341,7 +341,7 @@ export default function DataSeg() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -417,7 +417,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={icpImg} 
           img2={segmentationImg} 
@@ -425,17 +425,17 @@ export default function DataSeg() {
           img4={architectureImg} 
         />
 
-        {/* SECTION 5 : LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Le déroulé de Data Seg.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
-              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
-              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
+              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
+              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
+              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -461,7 +461,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
@@ -482,7 +482,7 @@ export default function DataSeg() {
                   "Suppression des doublons et normalisation des champs",
                   "Complétion des données manquantes",
                   "Segmentation basique opérationnelle",
-                  "Livrable : CRM nettoyé + rapport d'audit"
+                  "Livrable : CRM nettoyé + rapport d'audit"
                 ],
                 price: '1 490 € HT',
                 prefix: 'À partir de',
@@ -495,7 +495,7 @@ export default function DataSeg() {
                   "Définition ou validation de l'ICP",
                   "Segmentation avancée et scoring des contacts",
                   "Création de variables dynamiques personnalisées",
-                  "Livrable : base structurée + documentation opérationnelle"
+                  "Livrable : base structurée + documentation opérationnelle"
                 ],
                 price: '2 990 € HT',
                 prefix: 'À partir de',
@@ -508,7 +508,7 @@ export default function DataSeg() {
                   "Cartographie du segment cible",
                   "Construction d'un fichier de contacts qualifiés et vérifiés",
                   "Enrichissement contacts selon périmètre défini",
-                  "Livrable : base opérationnelle + intégration CRM (en option)"
+                  "Livrable : base opérationnelle + intégration CRM (en option)"
                 ],
                 price: '4 990 € HT',
                 prefix: 'À partir de',
@@ -519,7 +519,7 @@ export default function DataSeg() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -570,7 +570,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
@@ -590,7 +590,7 @@ export default function DataSeg() {
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
                   <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
+                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
                 </button>
                 {openFAQ === idx && (
                   <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
@@ -602,10 +602,10 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <CtaSection
           headline="Votre base est prête pour la prospection active."
-          description="Fini le temps perdu à chercher le bon contact. Vos commerciaux se concentrent sur ce qu'ils font de mieux : vendre."
+          description="Fini le temps perdu à chercher le bon contact. Vos commerciaux se concentrent sur ce qu'ils font de mieux : vendre."
           cardTitle="Data Seg"
           cardSubtitle="Cibler les bons comptes"
           cardDescription="Transformez votre CRM en une machine de guerre marketing avec une segmentation par ICP et des personas définis."

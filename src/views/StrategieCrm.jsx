@@ -94,7 +94,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 10000);
     return () => clearInterval(timer);
   }, [items.length]);
@@ -182,8 +182,8 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
                       <div style={{ flex: 1 }}>
                         <h3 style={{ 
                           fontSize: '1.25rem', 
-                          fontWeight: isOpen ? 700 : 400, 
-                          color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)',
+                          fontWeight: isOpen ? 700 : 400, 
+                          color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)',
                           margin: 0,
                           transition: 'color 0.2s ease, font-weight 0.2s ease',
                           display: 'flex',
@@ -199,10 +199,10 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
                     </button>
                     
                     <div style={{ 
-                      maxHeight: isOpen ? '250px' : '0', 
+                      maxHeight: isOpen ? '250px' : '0', 
                       overflow: 'hidden', 
                       transition: 'all 0.25s ease',
-                      opacity: isOpen ? 1 : 0
+                      opacity: isOpen ? 1 : 0
                     }}>
                       <p style={{ 
                         color: 'rgba(255,255,255,0.88)',
@@ -289,7 +289,7 @@ const TechOrbitSection = () => {
           Des Technologies pour mieux vendre.
         </h2>
         <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.6)', marginBottom: '2.5rem', lineHeight: 1.6 }}>
-          Nous intégrons les meilleurs outils du marché pour transformer votre CRM en véritable moteur de croissance. Prospection, enrichissement, téléphonie et IA : chaque brique est connectée à votre écosystème.
+          Nous intégrons les meilleurs outils du marché pour transformer votre CRM en véritable moteur de croissance. Prospection, enrichissement, téléphonie et IA : chaque brique est connectée à votre écosystème.
         </p>
         <div style={{ display: 'flex', gap: '1rem' }}>
           <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1rem 2rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.3s ease' }}
@@ -409,7 +409,7 @@ export default function StrategieCrm() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -435,7 +435,7 @@ export default function StrategieCrm() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           {/* Fond pleine page */}
           <img src={fondCrm} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
@@ -458,7 +458,7 @@ export default function StrategieCrm() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
               style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
-              Squadia structure votre projet CRM de bout en bout : audit, migration, configuration et adoption. Pour que le CRM devienne un vrai outil de pilotage, pas une contrainte administrative.
+              Squadia structure votre projet CRM de bout en bout : audit, migration, configuration et adoption. Pour que le CRM devienne un vrai outil de pilotage, pas une contrainte administrative.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
@@ -466,7 +466,7 @@ export default function StrategieCrm() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
@@ -564,7 +564,7 @@ export default function StrategieCrm() {
                       onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                       onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                     >
-                      {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                      {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                     </button>
   
                     {/* CENTRAL PLAY BUTTON */}
@@ -623,7 +623,7 @@ export default function StrategieCrm() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '3rem' }}>
                 {[
                   { title: "Ce qu'on migre. Ce qu'on laisse.", desc: "Tout transférer sans trier, c'est déménager le chaos dans un outil neuf." },
-                  { title: "Reconnecter sans tout casser.", desc: "ERP, téléphonie, marketing : une intégration mal anticipée et le go-live devient une gestion de crise." },
+                  { title: "Reconnecter sans tout casser.", desc: "ERP, téléphonie, marketing : une intégration mal anticipée et le go-live devient une gestion de crise." },
                   { title: "Remettre les process à plat.", desc: "Changer d'outil sans revoir sa méthode de vente, c'est rater la vraie opportunité." },
                   { title: "Nettoyer la data une bonne fois.", desc: "Une base non nettoyée arrive corrompue de l'autre côté. Ce qui entre sale ressort sale." }
                 ].map((item, idx) => (
@@ -649,10 +649,10 @@ export default function StrategieCrm() {
           img4={migrationTraining} 
         />
 
-        {/* SECTION 3.5 : TECHNOLOGIES */}
+        {/* SECTION 3.5 : TECHNOLOGIES */}
         <TechOrbitSection />
 
-        {/* ═══ SECTION 4 : CAS CLIENTS (Imported from DG) ═══ */}
+        {/* ═══ SECTION 4 : CAS CLIENTS (Imported from DG) ═══ */}
         <section className="section-padding" style={{ backgroundColor: '#050510' }}>
           <div className="container">
             <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -698,12 +698,12 @@ export default function StrategieCrm() {
                           <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
                           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
                         </div>
-                      ) : c.id === 'formation-vente' ? (
+                      ) : c.id === 'formation-vente' ? (
                         <div style={{ marginBottom: '1.4rem' }}>
                           <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                         </div>
-                      ) : (
+                      ) : (
                         <div style={{ marginBottom: '1.4rem' }}>
                           <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                           <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -729,7 +729,7 @@ export default function StrategieCrm() {
         </section>
 
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>NOS TARIFS</p>
@@ -773,7 +773,7 @@ export default function StrategieCrm() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -824,7 +824,7 @@ export default function StrategieCrm() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
@@ -832,15 +832,15 @@ export default function StrategieCrm() {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Quel CRM recommandez-vous pour une PME ?', a: "On travaille principalement avec HubSpot et Pipedrive. Le choix dépend toujours de votre contexte : taille de l'équipe, cycles de vente, intégrations existantes, budget. On ne recommande jamais un outil avant d'avoir compris comment vous vendez vraiment." },
+              { q: 'Quel CRM recommandez-vous pour une PME ?', a: "On travaille principalement avec HubSpot et Pipedrive. Le choix dépend toujours de votre contexte : taille de l'équipe, cycles de vente, intégrations existantes, budget. On ne recommande jamais un outil avant d'avoir compris comment vous vendez vraiment." },
               { q: "On a déjà un CRM, peut-on le restructurer sans tout recommencer ?", a: "Oui. La plupart de nos missions partent d'un CRM existant mal configuré ou sous-utilisé. On audite ce qui est en place, on identifie ce qui peut être conservé, et on restructure sans repartir de zéro." },
               { q: "Comment gérez-vous l'adoption des équipes ?", a: "L'adoption ne se décrète pas, elle se construit. On forme les équipes sur leurs cas réels, pas sur des scénarios génériques. Et on s'assure que l'outil leur facilite la vie plutôt qu'il ne leur en ajoute." },
-              { q: "Combien de temps dure un projet CRM ?", a: "Un projet de mise en place structurée prend entre 8 et 20 semaines selon le périmètre : de l'audit des processus au déploiement et à la formation. On cadre le calendrier précisément avant de démarrer." },
-              { q: "Est-ce que vous gérez aussi la migration des données depuis l'ancien outil ?", a: "Oui. La migration inclut le nettoyage, la déduplication et la vérification des données avant tout transfert. On ne migre pas du chaos : on le traite d'abord." },
-              { q: "Peut-on connecter le CRM à nos outils existants ?", a: "Dans la plupart des cas, oui. HubSpot et Pipedrive disposent de connecteurs natifs pour les outils courants. Pour les intégrations spécifiques : ERP, facturation, téléphonie : on évalue la faisabilité en amont et on intègre ça dans le périmètre de la mission." },
+              { q: "Combien de temps dure un projet CRM ?", a: "Un projet de mise en place structurée prend entre 8 et 20 semaines selon le périmètre : de l'audit des processus au déploiement et à la formation. On cadre le calendrier précisément avant de démarrer." },
+              { q: "Est-ce que vous gérez aussi la migration des données depuis l'ancien outil ?", a: "Oui. La migration inclut le nettoyage, la déduplication et la vérification des données avant tout transfert. On ne migre pas du chaos : on le traite d'abord." },
+              { q: "Peut-on connecter le CRM à nos outils existants ?", a: "Dans la plupart des cas, oui. HubSpot et Pipedrive disposent de connecteurs natifs pour les outils courants. Pour les intégrations spécifiques : ERP, facturation, téléphonie : on évalue la faisabilité en amont et on intègre ça dans le périmètre de la mission." },
               { q: "Faut-il arrêter l'ancien CRM avant de basculer sur le nouveau ?", a: "Non. On recommande systématiquement une période de coexistence courte entre les deux outils. Ça permet de valider que tout fonctionne avant de couper l'accès à l'ancien système et de ne perdre aucune opportunité en cours." },
-              { q: "Quel budget prévoir pour un projet CRM complet ?", a: "Un projet structuré : audit, configuration, migration et formation : démarre à partir de 5 990 € HT selon le périmètre. Les licences CRM viennent en plus et dépendent de l'outil retenu et du nombre d'utilisateurs. On cadre le budget précisément avant tout démarrage." },
-              { q: "Comment savoir si notre CRM actuel est vraiment le problème ?", a: "Souvent ce n'est pas l'outil qui est en cause, c'est la façon dont il a été configuré et adopté. On commence toujours par un audit avant de recommander quoi que ce soit : pour ne pas changer d'outil quand ce qu'il faut changer c'est le cadre dans lequel il s'inscrit." }
+              { q: "Quel budget prévoir pour un projet CRM complet ?", a: "Un projet structuré : audit, configuration, migration et formation : démarre à partir de 5 990 € HT selon le périmètre. Les licences CRM viennent en plus et dépendent de l'outil retenu et du nombre d'utilisateurs. On cadre le budget précisément avant tout démarrage." },
+              { q: "Comment savoir si notre CRM actuel est vraiment le problème ?", a: "Souvent ce n'est pas l'outil qui est en cause, c'est la façon dont il a été configuré et adopté. On commence toujours par un audit avant de recommander quoi que ce soit : pour ne pas changer d'outil quand ce qu'il faut changer c'est le cadre dans lequel il s'inscrit." }
             ].map((faq, idx) => {
               const isOpen = openFAQ === idx;
               return (
@@ -849,12 +849,12 @@ export default function StrategieCrm() {
                   style={{ 
                     borderBottom: '1px solid rgba(255,255,255,0.08)', 
                     padding: '1.5rem 0',
-                    opacity: isOpen ? 1 : 0.45,
+                    opacity: isOpen ? 1 : 0.45,
                     transition: 'all 0.3s ease'
                   }}
                 >
                   <button 
-                    onClick={() => setOpenFAQ(isOpen ? null : idx)}
+                    onClick={() => setOpenFAQ(isOpen ? null : idx)}
                     style={{ 
                       width: '100%', 
                       display: 'flex', 
@@ -873,16 +873,16 @@ export default function StrategieCrm() {
                     <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
                     <ChevronDown 
                       size={20} 
-                      color={isOpen ? "#44CCFF" : "#9CA3AF"} 
+                      color={isOpen ? "#44CCFF" : "#9CA3AF"} 
                       style={{ 
-                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
                         transition: 'transform 0.3s ease'
                       }} 
                     />
                   </button>
                   <div 
                     style={{ 
-                      maxHeight: isOpen ? '500px' : '0',
+                      maxHeight: isOpen ? '500px' : '0',
                       overflow: 'hidden',
                       transition: 'max-height 0.4s ease-in-out',
                       color: '#9CA3AF', 
@@ -900,7 +900,7 @@ export default function StrategieCrm() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
+        {/* SECTION 6 : CTA FINAL */}
         <CtaSection
           headline="Prêt à faire de votre CRM un vrai outil de pilotage ?"
           description="Fini le temps perdu à saisir des données inutiles. Passez à un CRM qui aide vos commerciaux à vendre."

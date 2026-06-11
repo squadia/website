@@ -145,7 +145,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
   return (
     <div className="formations-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Fond pleine page */}
         <img src={formationBg} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
@@ -178,7 +178,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
+      {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
       <section className="section-padding" style={{ background: '#060612', padding: '48px 32px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -236,7 +236,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   Marketing & IA
                 </div>
                 <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Formation IA marketing : contenus, campagnes et analyse augmentés.
+                  Formation IA marketing : contenus, campagnes et analyse augmentés.
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Vos équipes produisent des contenus qui attirent les bons prospects avant même que la vente décroche son téléphone. Le marketing arrête de produire pour produire. Il commence à produire pour convertir.
@@ -254,7 +254,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   Ventes & IA
                 </div>
                 <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Formation IA vente B2B : prospecter, qualifier et closer autrement.
+                  Formation IA vente B2B : prospecter, qualifier et closer autrement.
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Méthode MEDDIC, plan de compte, préparation C-level avec l'IA, traitement des objections. Vos commerciaux repartent avec des réflexes qu'ils appliquent dès la semaine suivante sur les comptes qui comptent vraiment.
@@ -272,7 +272,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   Communication & IA
                 </div>
                 <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Communication et IA : produire plus, mieux, plus vite.
+                  Communication et IA : produire plus, mieux, plus vite.
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Battle cards, veille automatisée, messages clés par persona. La communication structure ce dont les ventes ont besoin en RDV, renforce l'image de l'entreprise et génère de l inbound. Elle cesse d être réactive.
@@ -288,12 +288,12 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </div>
 
           <div style={{ textAlign: 'center', fontSize: '12px', color: 'rgba(255,255,255,0.22)', marginTop: '48px', fontStyle: 'italic', maxWidth: '540px', marginLeft: 'auto', marginRight: 'auto' }}>
-            Ces trois formations peuvent être suivies séparément ou dans l'ordre. Elles partagent une vision commune : l'IA comme levier de performance humaine, pas comme remplacement.
+            Ces trois formations peuvent être suivies séparément ou dans l'ordre. Elles partagent une vision commune : l'IA comme levier de performance humaine, pas comme remplacement.
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
+      {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#FFFFFF', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
@@ -302,7 +302,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
             
             <FormationCard 
               category="Vente"
-              title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
+              title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
               forWho="Sales Managers souhaitant structurer leur équipe sur une méthode commune"
               description="Méthode MEDDIC, plan de compte structuré et IA en situation réelle. Vos commerciaux repartent avec des réflexes de terrain renforcés et des outils qu'ils utilisent dès le lundi suivant."
               link="/formation-ventes-et-ia"
@@ -312,7 +312,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
             <FormationCard 
               category="Marketing"
-              title="Formation IA marketing : contenus, campagnes et analyse augmentés."
+              title="Formation IA marketing : contenus, campagnes et analyse augmentés."
               forWho="Responsables marketing et créateurs de contenu souhaitant produire avec l'IA"
               description="Prompting efficace, production images vidéos podcasts et automatisation de la veille. Les bons réflexes, les bons outils, et une routine de production IA opérationnelle dès la fin de la formation."
               link="/formation-marketing-et-ia"
@@ -322,7 +322,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
             <FormationCard 
               category="Communication"
-              title="Communication et IA : produire plus, mieux, plus vite."
+              title="Communication et IA : produire plus, mieux, plus vite."
               forWho="Managers et équipes communication cherchant plus d'impact sur tous les canaux"
               description="Stratégie éditoriale structurée, prompting adapté à la voix de la marque et organisation de la production de contenu. Un plan éditorial opérationnel à l issue des 2 jours."
               link="/formation-communication-et-ia"
@@ -334,7 +334,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
+      {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -430,7 +430,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
 
-      {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
+      {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '5rem', textAlign: 'center', fontWeight: 700 }}>Formats et tarifs</h2>
@@ -450,7 +450,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 subtitle: "Pour apprendre dans un cadre multi-secteurs, avec d'autres équipes.",
                 items: [
                   "Fondamentaux IA appliqués aux métiers vente, marketing, communication",
-                  "Ateliers orientés production : résultats concrets dès la formation",
+                  "Ateliers orientés production : résultats concrets dès la formation",
                   "Supports et templates réutilisables inclus",
                   "Suivi 1h coaching visio inclus"
                 ],
@@ -486,8 +486,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 key={idx}
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
-                  padding: isMobile ? '24px 18px' : '3rem 2rem',
+                  border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -576,13 +576,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: isMobile ? '14px' : '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#44CCFF' : 'transparent',
-                    color: card.badge ? '#060612' : '#FFFFFF',
+                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
+                    background: card.badge ? '#44CCFF' : 'transparent',
+                    color: card.badge ? '#060612' : '#FFFFFF',
                     textAlign: 'center',
                     textDecoration: 'none',
                     transition: 'all 0.3s',
@@ -607,10 +607,10 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </section>
 
 
-      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
       <ClientLogosSection />
 
-      {/* ═══ SECTION 7 : CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
+      {/* ═══ SECTION 7 : CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '6rem', textAlign: 'center', fontWeight: 700 }}>Ce que nous apportons de différent</h2>
@@ -640,7 +640,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
+      {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -747,7 +747,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
         {/* Glow effect */}
         <div style={{

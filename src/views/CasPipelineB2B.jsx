@@ -51,7 +51,7 @@ const CasPipelineB2B = () => {
           objectFit: 'cover', objectPosition: 'center top',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal bleu : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal bleu : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.97) 0%, rgba(14,26,45,0.93) 38%, rgba(14,26,45,0.72) 58%, rgba(14,26,45,0.15) 72%, transparent 82%)',
@@ -153,7 +153,7 @@ const CasPipelineB2B = () => {
           </div>
           <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '1.05rem', lineHeight: 1.8 }}>
             <p>
-              Ce groupe, connu du grand public sur ses activités historiques, cherchait à lancer une offre SaaS B2B sur un segment qu'il ne maîtrisait pas encore : les enseignes du commerce figital, ces marques nées en ligne qui ont aussi une présence physique. Pas de base de données, pas de fichier prospect, pas de visibilité sur qui cibler ni comment approcher ces entreprises au nom d'un groupe dont l'image n'était pas associée à ce type d'offre tech.
+              Ce groupe, connu du grand public sur ses activités historiques, cherchait à lancer une offre SaaS B2B sur un segment qu'il ne maîtrisait pas encore : les enseignes du commerce figital, ces marques nées en ligne qui ont aussi une présence physique. Pas de base de données, pas de fichier prospect, pas de visibilité sur qui cibler ni comment approcher ces entreprises au nom d'un groupe dont l'image n'était pas associée à ce type d'offre tech.
             </p>
             <p style={{ marginTop: '1.4rem' }}>
               La direction digitale et marketing voulait valider rapidement si le marché existait vraiment, avant d'engager des ressources plus lourdes.
@@ -230,7 +230,7 @@ const CasPipelineB2B = () => {
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             color: '#44CCFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
           }}>
-            Cas suivant : Transformation CRM <ArrowRight size={16} />
+            Cas suivant : Transformation CRM <ArrowRight size={16} />
           </Link>
         </div>
       </section>

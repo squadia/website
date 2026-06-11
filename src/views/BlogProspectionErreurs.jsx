@@ -159,24 +159,24 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 1 : confier les emails à des profils sans méthode</h2>
+          <h2>Erreur 1 : confier les emails à des profils sans méthode</h2>
           <p>Écrire un bon email de prospection, ce n'est pas facile. Par email, vous n'avez qu'une seule arme&nbsp;: <strong>vos mots.</strong> Et ça ne s'improvise pas.</p>
           <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.</p>
           
           <div className="article-pullquote">
-            <p>Ce qui marche, c'est l'inverse : des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation.</p>
+            <p>Ce qui marche, c'est l'inverse : des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation.</p>
           </div>
 
           <hr />
 
-          <h2>Erreur 2 : ignorer la fenêtre de tir</h2>
+          <h2>Erreur 2 : ignorer la fenêtre de tir</h2>
           <p>Le timing, c'est ce qui fait la différence entre un email ignoré et un rendez-vous décroché.</p>
           <p>Selon Gartner, <strong>60% du budget</strong> d'un manager arrivé depuis moins de 6 mois est engagé dès sa prise de poste. C'est une fenêtre rare&nbsp;: la personne n'a pas encore ses fournisseurs habituels.</p>
           <p>Utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Si vous connaissez leur feuille de route, votre email arrive comme une réponse à un besoin actuel.</p>
 
           <hr />
 
-          <h2>Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
+          <h2>Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
           <p><em>"Je vous contacte pour vous présenter notre solution innovante..."</em>&nbsp;: si vous commencez comme ça, vous êtes déjà perdu.</p>
           <p>Un email de prospection est un premier contact humain. Votre prospect doit sentir que vous comprenez ses problématiques. L'outil ne fait pas tout&nbsp;: la compétence relationnelle reste le levier principal.</p>
 
@@ -187,7 +187,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
+          <h2>Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
           <p>Envoyer 1 000 emails peut sembler ambitieux, mais si votre équipe n'est pas calibrée, vous vous épuiserez avant même de pouvoir mesurer l'impact.</p>
           
           <div className="article-pullquote">
@@ -198,7 +198,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 5 : laisser marketing et ventes travailler en silos</h2>
+          <h2>Erreur 5 : laisser marketing et ventes travailler en silos</h2>
           <p>C'est un classique&nbsp;: le marketing lance une campagne que les commerciaux ne relaient pas. Résultat&nbsp;: double dépense et messages contradictoires.</p>
           <p>Ce qui marche, c'est <strong>l'alignement.</strong> Le marketing prépare du contenu contextualisé, et les commerciaux s'en servent comme levier. Un commercial devient deux à trois fois plus productif quand chaque canal travaille pour lui.</p>
 
