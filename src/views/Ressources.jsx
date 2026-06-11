@@ -75,7 +75,7 @@ export default function Ressources() {
     {
       tag: "Data B2B",
       title: "Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit",
-      link: "/blog/nettoyage-segmentation-enrichissement-données-b2b",
+      link: "/blog/nettoyage-segmentation-enrichissement-donnees-b2b",
       image: nettoyageData,
       readTime: "8 min"
     },

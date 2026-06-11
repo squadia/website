@@ -89,7 +89,7 @@ function App() {
           <Route path="/blog" element={<Navigate href="/ressources" replace />} />
           <Route path="/blog/prospection-multicanale-b2b-erreurs" element={<BlogProspectionErreurs />} />
           <Route path="/blog/formation-commerciale-b2b-ia" element={<FormationCommerciale />} />
-          <Route path="/blog/nettoyage-segmentation-enrichissement-données-b2b" element={<DataB2B />} />
+          <Route path="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" element={<DataB2B />} />
           <Route path="/blog/strategie-ia-pme-eti" element={<StrategieIAPME />} />
           <Route path="/blog/formation-ia-ou-automatisation" element={<FormationOuAutomatisation />} />
           <Route path="/blog/strategie-ia-pme-sequence" element={<BlogStrategieIAPME />} />
