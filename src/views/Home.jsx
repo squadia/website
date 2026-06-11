@@ -1033,7 +1033,7 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '900px' }}
         >
-          Vos équipes sont occupées…<br/>mais pas toujours sur ce qui compte
+          Vos équipes ont le potentiel,<br/>Pas toujours les conditions pour l'exprimer.
         </motion.h1>
 
         {/* BEAT 2 : subtitle */}
@@ -1044,9 +1044,9 @@ const HeroDynamic = React.memo(() => {
           className="hero-para-laptop"
           style={{ fontSize: '1.125rem', color: 'rgba(255,255,255,0.78)', marginTop: '1.5rem', marginBottom: '3rem', fontWeight: 400, maxWidth: '760px', lineHeight: 1.6 }}
         >
-          <span style={{ whiteSpace: 'nowrap' }}>Vos commerciaux ne font pas assez d'appels. Pas assez de leads, trop d'admin.</span><br/>
-          Votre marketing : salons et pub pour seuls leviers. Données CRM obsolètes.<br/>
-          On vous aide à récupérer de la rentabilité. Méthode, Outils et Formation.
+          Squadia structure ce qui manque : Méthode, Outils, Formation et IA,<br/>
+          pour que vos équipes atteignent leurs objectifs.<br/>
+          <strong style={{ color: '#F9FAFB', fontWeight: 700 }}>Premiers résultats mesurables en 30 jours.</strong>
         </motion.div>
 
         {/* BEAT 3 : CTA + stats */}
