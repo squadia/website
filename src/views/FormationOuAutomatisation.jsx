@@ -212,7 +212,7 @@ const FormationOuAutomatisation = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #44CCFF', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez structurer votre strategie IA et savoir par où commencer ?
+              Vous voulez structurer votre strategie IA<br/>et savoir par où commencer ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.

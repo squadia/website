@@ -195,7 +195,7 @@ const FormationCommerciale = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #2563EB', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez structurer une formation commerciale adaptée à vos équipes ?
+              Vous voulez structurer une formation commerciale<br/>adaptée à vos équipes ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia conçoit des programmes sur mesure pour les directions commerciales, du junior au manager senior.

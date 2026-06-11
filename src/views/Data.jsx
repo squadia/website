@@ -292,7 +292,7 @@ export default function Data() {
         {/* SECTION 6 : CTA FINAL */}
         <section id="calendrier" style={{ padding: '10rem 2rem', textAlign: 'center', backgroundColor: '#0A0A1A' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
-            Prêt à faire de votre base un vrai levier de croissance ?
+            Prêt à faire de votre base<br/>un vrai levier de croissance ?
           </h2>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#FFFFFF', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>

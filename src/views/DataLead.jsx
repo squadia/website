@@ -646,7 +646,7 @@ export default function DataLead() {
             {/* Colonne Gauche: Texte + CTA */}
             <div style={{ flex: '1 1 400px', maxWidth: '600px' }}>
               <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-                Prêt à construire la base qui va alimenter votre pipeline ?
+                Prêt à construire la base<br/>qui va alimenter votre pipeline ?
               </h2>
               <p style={{ fontSize: '1.1rem', color: '#9CA3AF', marginBottom: '2.5rem', lineHeight: 1.6 }}>
                 Fini le temps perdu sur des fichiers génériques. Passez à la prospection haute définition.

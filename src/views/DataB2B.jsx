@@ -176,7 +176,7 @@ const DataB2B = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #2563EB', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez savoir si vos données sont prêtes pour votre prochaine campagne ?
+              Vous voulez savoir si vos données sont prêtes<br/>pour votre prochaine campagne ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les équipes marketing et commerciales dans la structuration de leur data, de la segmentation à l'activation.

@@ -367,7 +367,7 @@ const Formation = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
           
           <div style={{ background: '#0D0D25', padding: '3.5rem', borderRadius: '12px', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', marginInline: 'auto' }}>
-            <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Vos équipes sont formées. L'étape suivante, c'est structurer les bons outils et les bons process pour aller plus loin.</h3>
+            <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Vos équipes sont formées.<br/>L'étape suivante, c'est structurer les bons outils<br/>et les bons process pour aller plus loin.</h3>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', fontSize: '1.1rem' }}>
               Une feuille de route IA adaptée à votre organisation, avec les cas d'usage qui font vraiment sens pour vous.
             </p>

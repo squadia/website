@@ -220,7 +220,7 @@ const StrategieIAPME = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #2563EB', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
+              Vous voulez définir votre feuille de route IA<br/>avec un regard extérieur structurant ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.

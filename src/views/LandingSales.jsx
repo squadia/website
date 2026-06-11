@@ -660,7 +660,7 @@ const LandingSales = () => {
       <section className="section-padding" style={{ background: '#0A0A1A', textAlign: 'center' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
-            Prêt à fiabiliser votre pipeline et sécuriser vos objectifs ?
+            Prêt à fiabiliser votre pipeline<br/>et sécuriser vos objectifs ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>Prendre RDV</Link>

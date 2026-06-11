@@ -1949,7 +1949,7 @@ const HeroDynamic = React.memo(() => {
       <section ref={section8Ref} className="section-padding" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
-            Prêt à transformer votre strategie en système de génération de revenus ?
+            Prêt à transformer votre strategie<br/>en système de génération de revenus ?
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link href="/contact" className="btn pulse" style={{ 

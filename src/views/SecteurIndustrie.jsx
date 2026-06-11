@@ -239,7 +239,7 @@ const SecteurIndustrie = () => {
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
-            On peut regarder ensemble ce qui freine votre performance commerciale.
+            On peut regarder ensemble<br/>ce qui freine votre performance commerciale.
           </h2>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <a href="#calendrier" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
