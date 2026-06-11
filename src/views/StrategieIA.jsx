@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { 
-  AlertTriangle, 
-  GitMerge, 
-  HelpCircle, 
-  TrendingDown, 
-  CheckCircle, 
-  ChevronDown, 
+  AlertTriangle,
+  GitMerge,
+  HelpCircle,
+  TrendingDown,
+  CheckCircle,
+  ChevronDown,
   ChevronUp,
   Star,
-  Check
+  Check,
+  Rocket
 } from 'lucide-react';
 
 const fondIA = '/assets/images/bgdatalead.png';

@@ -1684,7 +1684,7 @@ const HeroDynamic = React.memo(() => {
                 <div
                   style={{ height: '310px', flexShrink: 0, overflow: 'hidden', position: 'relative', background: '#0D0D25' }}
                   onMouseEnter={(e) => {
-                    if (window.innerWidth <= 768 || !persona.video) return;
+                    if (isMobile || !persona.video) return;
                     const vid = e.currentTarget.querySelector('video');
                     const img = e.currentTarget.querySelector('img');
                     const overlay = e.currentTarget.querySelector('.card-color-overlay');
@@ -1702,7 +1702,7 @@ const HeroDynamic = React.memo(() => {
                   }}
                 >
                   {/* Vidéo : toujours présente, en dessous */}
-                  {persona.video && window.innerWidth > 768 && (
+                  {persona.video && !isMobile && (
                     <video
                       src={persona.video}
                       muted
