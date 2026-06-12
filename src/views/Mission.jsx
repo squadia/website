@@ -92,12 +92,16 @@ const Mission = () => {
       {/* ── HERO ── */}
       <div className="hero-grid-m" style={{
         minHeight: '100vh', maxHeight: '920px',
-        display: 'grid', gridTemplateColumns: '1fr 1fr',
+        display: 'flex', alignItems: 'center',
         position: 'relative', overflow: 'hidden', paddingTop: '80px', background: '#060612',
       }}>
+        {/* Image de fond plein écran */}
+        <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', zIndex: 0 }} />
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.82)', zIndex: 1 }} />
+
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          paddingTop: '56px', paddingRight: '48px', paddingBottom: '56px', paddingLeft: '8vw', position: 'relative', zIndex: 2,
+          paddingTop: '56px', paddingRight: '8vw', paddingBottom: '56px', paddingLeft: '8vw', position: 'relative', zIndex: 2, width: '100%', maxWidth: '900px', margin: '0 auto',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
           <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.75rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
@@ -119,10 +123,6 @@ const Mission = () => {
           </div>
         </div>
 
-        <div className="hero-right-m" style={{ background: '#060612', display: 'flex', alignItems: 'flex-end', justifyContent: 'center', overflow: 'hidden', position: 'relative' }}>
-          <img src="/assets/images/mission_jerome_debruyne.png" alt="Jérôme DEBRUYNE" style={{ height: '100%', width: 'auto', maxWidth: '100%', objectFit: 'contain', objectPosition: 'center bottom', display: 'block' }} />
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '38%', background: 'linear-gradient(to top, rgba(6,6,18,1) 0%, transparent 100%)', zIndex: 1, pointerEvents: 'none' }} />
-        </div>
       </div>
 
       {/* ── CE QU'ON OBSERVE ── */}
