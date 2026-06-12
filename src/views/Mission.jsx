@@ -95,8 +95,8 @@ const Mission = () => {
         display: 'flex', alignItems: 'center',
         position: 'relative', overflow: 'hidden', paddingTop: '80px', background: '#060612',
       }}>
-        {/* Image de fond — perso cadré à droite */}
-        <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'right center', zIndex: 0 }} />
+        {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
+        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/images/notremission/notremission_background.png)', backgroundSize: '70%', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat', zIndex: 0 }} />
         {/* Overlay global */}
         <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
@@ -109,7 +109,7 @@ const Mission = () => {
           paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '55%',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
-          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.75rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
+          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,3rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
             Ce qu'on a appris<br />Ce qu'on a décidé d'en faire
           </h1>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '.9375rem', lineHeight: 1.72, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
