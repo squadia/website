@@ -1,3 +1,25 @@
 {
-  "outputDirectory": "out"
+  "outputDirectory": "out",
+  "redirects": [
+    {
+      "source": "/formation-ia",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/formation-ia/",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/strategie-ia",
+      "destination": "/automatisation-ia",
+      "permanent": true
+    },
+    {
+      "source": "/strategie-ia/",
+      "destination": "/automatisation-ia",
+      "permanent": true
+    }
+  ]
 }

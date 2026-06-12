@@ -239,10 +239,10 @@ const Tarifs = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Tarifs Squadia : IA, Leads, Automatisation, Formation";
+    document.title = "Tarifs Squadia — Stratégie, Data, Automatisation, Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez les tarifs Squadia : strategie IA, détection de leads, automatisation et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
+      metaDescription.content = "Découvrez les tarifs Squadia : stratégie commerciale, data B2B, automatisation IA et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
     }
   }, []);
 
