@@ -48,21 +48,21 @@ const EnqueteIAB2B = () => {
             <h2 style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', marginBottom: '1.5rem' }}>Ce qu'on recueille dans cette étude :</h2>
 
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
-              <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                <CheckCircle2 size={18} color="#44CCFF" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '0.9rem', color: '#E5E7EB', lineHeight: 1.4 }}>
                   Les priorités des Sales & Marketing Managers pour 2026
                 </span>
               </li>
-              <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                <CheckCircle2 size={18} color="#44CCFF" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '0.9rem', color: '#E5E7EB', lineHeight: 1.4 }}>
                   Le rôle réel de l'IA dans la prospection et le marketing B2B
                 </span>
               </li>
-              <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+              <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                <CheckCircle2 size={18} color="#44CCFF" style={{ flexShrink: 0 }} />
+                <span style={{ fontSize: '0.9rem', color: '#E5E7EB', lineHeight: 1.4 }}>
                   Les budgets, défis et leviers de performance identifiés par vos pairs
                 </span>
               </li>
@@ -83,7 +83,7 @@ const EnqueteIAB2B = () => {
                 Participez à l'étude
               </h3>
               <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem', marginBottom: '0.5rem' }}>
-                5 minutes. Anonyme. Résultats partagés en avant-première.
+                5 minutes. Résultats partagés en avant-première.
               </p>
               <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
                 Tirage au sort le <strong style={{ color: '#F9FAFB' }}>31 décembre 2026</strong> parmi les participants.
