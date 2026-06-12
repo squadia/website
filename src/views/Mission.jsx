@@ -85,7 +85,14 @@ const Mission = () => {
           .three-col-m { grid-template-columns: 1fr !important; }
           .four-col-m { grid-template-columns: 1fr 1fr !important; }
           .team-grid-m { grid-template-columns: 1fr !important; }
-          .hero-left-m { padding: 40px 24px !important; width: 100% !important; }
+          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
+          .hero-bg-mission { display: none !important; }
+          .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
+          .hero-img-mobile-m { display: block !important; }
+          .hero-overlay-m { display: none !important; }
+          .hero-gradient-lr-m { display: none !important; }
+          .hero-gradient-bottom-m { display: none !important; }
+          .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
         }
       `}</style>
 
@@ -96,13 +103,18 @@ const Mission = () => {
         position: 'relative', overflow: 'hidden', paddingTop: '80px', background: '#060612',
       }}>
         {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
-        <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/images/notremission/notremission_background.png)', backgroundSize: '70%', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat', zIndex: 0 }} />
+        <div className="hero-bg-mission" style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/images/notremission/notremission_background.png)', backgroundSize: '70%', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat', zIndex: 0 }} />
         {/* Overlay global */}
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
+        <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
-        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.92) 0%, rgba(6,6,18,0.65) 50%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.92) 0%, rgba(6,6,18,0.65) 50%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Gradient bas : transition douce vers section suivante */}
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
+        {/* Image mobile : visible uniquement sur mobile */}
+        <div className="hero-img-mobile-m" style={{ display: 'none', width: '100%', height: '280px', overflow: 'hidden', flexShrink: 0 }}>
+          <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, transparent, #060612)' }} />
+        </div>
 
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
