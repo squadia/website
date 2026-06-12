@@ -33,7 +33,7 @@ export default function Ressources() {
   const resources = [
     {
       title: "Enquête IA B2B",
-      link: "/ressources/enquête-ia-b2b",
+      link: "/ressources/enquete-ia-b2b",
       icon: <BarChart size={24} color="#2563EB" />,
       cta: "Répondre"
     },

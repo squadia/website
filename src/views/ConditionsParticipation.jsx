@@ -17,7 +17,7 @@ const ConditionsParticipation = () => {
         
         <div className="fade-in" style={{ marginBottom: '3rem' }}>
           <Link 
-            href="/ressources/enquête-ia-b2b" 
+            href="/ressources/enquete-ia-b2b" 
             style={{ 
               display: 'inline-flex', 
               alignItems: 'center', 
