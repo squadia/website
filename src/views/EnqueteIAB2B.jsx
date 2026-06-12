@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { CheckCircle2, Gift, ExternalLink } from 'lucide-react';
+import { CheckCircle2, Castle, ExternalLink } from 'lucide-react';
 
 const enqueteBg = '/assets/images/ressources/general_manager_evaluating_the_future_of_ai_for_his_business.jpeg';
 
@@ -33,7 +33,7 @@ const EnqueteIAB2B = () => {
         <div className="fade-in">
 
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
-            <Gift size={16} /> Tirage au sort — bon de 350 EUR
+            <Castle size={16} /> Tirage au sort · Relais & Châteaux
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
@@ -77,7 +77,7 @@ const EnqueteIAB2B = () => {
 
             <div style={{ textAlign: 'center' }}>
               <div style={{ width: '64px', height: '64px', background: 'rgba(37,99,235,0.15)', border: '1px solid #44CCFF', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem auto' }}>
-                <Gift size={28} color="#44CCFF" />
+                <Castle size={28} color="#44CCFF" />
               </div>
               <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', fontWeight: 700 }}>
                 Participez à l'étude
