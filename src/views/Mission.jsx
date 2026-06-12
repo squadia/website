@@ -85,7 +85,7 @@ const Mission = () => {
           .three-col-m { grid-template-columns: 1fr !important; }
           .four-col-m { grid-template-columns: 1fr 1fr !important; }
           .team-grid-m { grid-template-columns: 1fr !important; }
-          .hero-left-m { padding: 40px 24px !important; }
+          .hero-left-m { padding: 40px 24px !important; width: 100% !important; }
         }
       `}</style>
 
@@ -95,20 +95,25 @@ const Mission = () => {
         display: 'flex', alignItems: 'center',
         position: 'relative', overflow: 'hidden', paddingTop: '80px', background: '#060612',
       }}>
-        {/* Image de fond plein écran */}
-        <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', zIndex: 0 }} />
-        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.82)', zIndex: 1 }} />
+        {/* Image de fond — perso cadré à droite */}
+        <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'right center', zIndex: 0 }} />
+        {/* Overlay global */}
+        <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
+        {/* Gradient gauche → droite : assombrit zone texte */}
+        <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.92) 0%, rgba(6,6,18,0.65) 50%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
+        {/* Gradient bas : transition douce vers section suivante */}
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
 
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          paddingTop: '56px', paddingRight: '8vw', paddingBottom: '56px', paddingLeft: '8vw', position: 'relative', zIndex: 2, width: '100%', maxWidth: '900px', margin: '0 auto',
+          paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '55%',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
           <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.75rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
             Ce qu'on a appris<br />Ce qu'on a décidé d'en faire
           </h1>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '.9375rem', lineHeight: 1.72, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
-            Vingt-cinq ans dans la vente B2B complexe. Ce qui fait gagner une entreprise sur le terrain, c'est rarement l'outil. C'est la méthode, la donnée et la capacité à faire fonctionner ces trois choses ensemble.
+            25 ans dans la vente B2B complexe. Ce qui fait gagner une entreprise sur le terrain, c'est rarement l'outil. C'est la méthode, la donnée et la capacité à faire fonctionner ces trois choses ensemble.
           </p>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '.9375rem', lineHeight: 1.72, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.17s' }}>
             J'ai créé Squadia pour transmettre ça ; aider les ETI et PME à structurer un système commercial qui tient dans la durée.
