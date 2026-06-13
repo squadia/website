@@ -75,9 +75,9 @@ const Mission = () => {
         .tag-m { font-size: .625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); color: #bcc8d1; display: inline-block; }
         .tag-blue-m { background: rgba(68,204,255,.08); border-color: rgba(68,204,255,.2); color: #44CCFF; }
         .tag-orange-m { background: rgba(234,88,12,.1); border-color: rgba(234,88,12,.2); color: #fb923c; }
-        .btn-primary-m { font-size: .875rem; font-weight: 700; background: #44CCFF; color: #003549; padding: 11px 26px; border-radius: 9px; text-decoration: none; display: inline-block; transition: all .15s; }
+        .btn-primary-m { font-size: 1.1rem; font-weight: 700; background: #44CCFF; color: #060612; padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
         .btn-primary-m:hover { background: #7ad0ff; transform: translateY(-1px); }
-        .btn-secondary-m { font-size: .875rem; font-weight: 700; background: rgba(255,255,255,.05); color: #e1e2e7; border: 1px solid rgba(255,255,255,.1); padding: 11px 26px; border-radius: 9px; text-decoration: none; display: inline-block; transition: all .15s; }
+        .btn-secondary-m { font-size: 1.1rem; font-weight: 700; background: rgba(255,255,255,.05); color: #e1e2e7; border: 1px solid rgba(255,255,255,.1); padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
         .btn-secondary-m:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
         @media (max-width: 768px) {
           .hero-grid-m { grid-template-columns: 1fr !important; }
@@ -121,10 +121,10 @@ const Mission = () => {
           paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '55%',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
-          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2.2rem,4vw,3.75rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
+          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
             Ce que nous avons appris,<br />Ce que nous apportons.
           </h1>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.175rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
             Nous avons forgé notre expérience des deux côtés ; du côté des leaders, du côté des challengers. Dans l'IT et les Services en B2B.
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
