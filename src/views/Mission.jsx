@@ -125,13 +125,13 @@ const Mission = () => {
 
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '55%',
+          paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '65%',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
           <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
             Ce que nous avons appris,<br />C'est ce que nous partageons.
           </h1>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.75, color: '#bcc8d1', marginBottom: '12px', maxWidth: '70ch', transitionDelay: '.12s' }}>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '70ch', transitionDelay: '.12s' }}>
             Nous avons forgé notre expérience B2B pendant plus de 25 ans,<br />Pour le Mid-Market comme pour les Grands Comptes,<br />Du côté des leaders comme celui des challengers<br />Tous secteurs confondus (Banque/Assurance, Médias, Santé, Privé-Public, etc).
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
