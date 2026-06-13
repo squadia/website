@@ -1033,7 +1033,7 @@ const HeroDynamic = React.memo(() => {
           transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
           style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 700, lineHeight: 1.1, marginBottom: 0, maxWidth: '900px' }}
         >
-          Vos équipes ont le potentiel,<br/>pas toujours les conditions pour y arriver.
+          Vos équipes ont le potentiel,<br/>pas toujours les conditions<br/>pour y arriver.
         </motion.h1>
 
         {/* BEAT 2 : subtitle */}
