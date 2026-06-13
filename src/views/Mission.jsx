@@ -150,9 +150,9 @@ const Mission = () => {
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur.<br />3 causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
-              { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads pour les commerciaux.", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
-              { icon: <IconDoc />, title: "Des commerciaux qui passent trop de temps sur l'admin.", body: "Reporting manuel, CRM mal renseigné, tâches répétitives. 50 % du temps commercial part ailleurs que sur la vente.", tag: "Temps mal alloué", delay: '.08s' },
-              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données.", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là — la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
+              { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
+              { icon: <IconDoc />, title: "Des commerciaux qui passent trop de temps sur l'admin", body: "Reporting manuel, CRM mal renseigné, tâches répétitives. 50 % du temps commercial part ailleurs que sur la vente.", tag: "Temps mal alloué", delay: '.08s' },
+              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là — la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
             ].map((c, i) => (
               <div key={i} style={{ position: 'relative', display: 'flex' }}>
                 {i === 2 && (
