@@ -114,7 +114,7 @@ const Mission = () => {
         {/* Overlay global */}
         <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.25)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
-        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.88) 0%, rgba(6,6,18,0.60) 40%, rgba(6,6,18,0.10) 65%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.95) 0%, rgba(6,6,18,0.85) 35%, rgba(6,6,18,0.55) 55%, rgba(6,6,18,0.10) 72%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Gradient bas : transition douce vers section suivante */}
         <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Image mobile : visible uniquement sur mobile */}
