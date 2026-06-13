@@ -306,9 +306,10 @@ const Mission = () => {
       {/* ── CTA FINAL ── */}
       <section style={{ background: '#060612', padding: '120px 0' }}>
         <div className="container">
-          <div className="mfu" style={{ background: 'rgba(20,24,30,.8)', border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', padding: '96px 56px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '420px' }}>
-            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', filter: 'grayscale(1) brightness(0.25)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 1 }}>
+          <div className="mfu" style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '560px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 64px' }}>
               <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
               <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '12px' }}>
                 Squadia est-il le bon partenaire<br />pour votre organisation ?
