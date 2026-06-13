@@ -147,7 +147,7 @@ const Mission = () => {
         <div className="container">
           <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre croyance</span>
           <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '500px', marginBottom: '40px' }}>Mais bien de l'intérieur. Trois causes que nous retrouvons dans presque chaque mission.</p>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '500px', marginBottom: '40px' }}>Mais bien de l'intérieur. Trois causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
               { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads pour les commerciaux.", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
@@ -160,8 +160,8 @@ const Mission = () => {
                 )}
                 <div className="glass-card-m glass-card-orange mfu" style={{ padding: '36px 28px', transitionDelay: c.delay, position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ width: '36px', height: '36px', borderRadius: '9px', background: 'rgba(234,88,12,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>{c.icon}</div>
-                  <h3 style={{ fontFamily: fj, fontSize: '1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#fb923c', marginBottom: '10px' }}>{c.title}</h3>
-                  <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
+                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#fb923c', marginBottom: '10px' }}>{c.title}</h3>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
                   <div style={{ marginTop: '20px' }}><span className="tag-m tag-orange-m">{c.tag}</span></div>
                 </div>
               </div>
@@ -176,7 +176,7 @@ const Mission = () => {
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce que nous apportons</span>
           <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '600px' }}>Pour résoudre ça, il faut être équipé.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '520px', marginBottom: '40px' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser. C'est ce que nous construisons pour les PME et ETI B2B.</p>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '520px', marginBottom: '40px' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser. C'est ce que nous construisons pour les PME et ETI B2B.</p>
           <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,.05)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.05)' }}>
             {[
               { num: '01', title: 'La décision avant l\'outillage.', body: 'On évalue ce qui est le plus pertinent pour atteindre vos objectifs, puis on définit la strategie, les outils et les process.' },
@@ -186,8 +186,8 @@ const Mission = () => {
             ].map((c, i) => (
               <div key={i} className="conv-block mfu" style={{ transitionDelay: `${i * 0.08}s` }}>
                 <span style={{ fontFamily: fj, fontSize: '1.875rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#44CCFF', lineHeight: 1, display: 'block', marginBottom: '18px' }}>{c.num}</span>
-                <h4 style={{ fontFamily: fj, fontSize: '1rem', fontWeight: 700, lineHeight: 1.25, color: '#fff', marginBottom: '10px' }}>{c.title}</h4>
-                <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{c.body}</p>
+                <h4 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.25, color: '#fff', marginBottom: '10px' }}>{c.title}</h4>
+                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{c.body}</p>
               </div>
             ))}
           </div>
@@ -207,7 +207,7 @@ const Mission = () => {
             ].map((s, i) => (
               <div key={i} className="glass-card-m glass-card-blue-border mfu" style={{ padding: '28px 24px', transitionDelay: s.delay }}>
                 <div style={{ fontFamily: fj, fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#44CCFF', lineHeight: 1, marginBottom: '10px' }}>{s.num}</div>
-                <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{s.body}</p>
+                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{s.body}</p>
                 <div style={{ marginTop: '14px', fontFamily: fi, fontSize: '.625rem', fontWeight: 700, color: '#4b5563', letterSpacing: '.06em', textTransform: 'uppercase' }}>{s.source}</div>
               </div>
             ))}
@@ -221,7 +221,7 @@ const Mission = () => {
           <div style={{ marginBottom: '48px' }}>
             <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>L'équipe</span>
             <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px' }}>Votre équipe dédiée.</h2>
-            <p className="mfu" style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '480px', marginTop: '8px' }}>Experts indépendants associés, chacun avec son domaine, sa structure et une complémentarité réelle sur le terrain.</p>
+            <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '480px', marginTop: '8px' }}>Experts indépendants associés, chacun avec son domaine, sa structure et une complémentarité réelle sur le terrain.</p>
           </div>
 
           <div className="team-grid-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px', alignItems: 'stretch' }}>
@@ -238,12 +238,12 @@ const Mission = () => {
                     <span className="tag-m">Experte associée</span>
                     <span className="tag-m">Transformation</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.0625rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Kavida Angapin</div>
-                  <div style={{ fontFamily: fi, fontSize: '.75rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Excellence opérationnelle, transformation</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Kavida Angapin</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Excellence opérationnelle, transformation</div>
                   <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Fondatrice, Neuroskills</div>
                 </div>
                 <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Directrice Excellence Opérationnelle Cegedim, spécialisée en change management et neurosciences appliquées aux équipes managers et terrain. Expérience internationale.</p>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Directrice Excellence Opérationnelle Cegedim, spécialisée en change management et neurosciences appliquées aux équipes managers et terrain. Expérience internationale.</p>
                   <a className="link-ext" href="https://www.linkedin.com/in/kavida-angapin" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
                     <IconLinkedin /> LinkedIn
                   </a>
@@ -263,12 +263,12 @@ const Mission = () => {
                     <span className="tag-m tag-blue-m">Stratégie B2B</span>
                     <span className="tag-m tag-blue-m">Expert IA</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.0625rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Jérôme DEBRUYNE</div>
-                  <div style={{ fontFamily: fi, fontSize: '.75rem', fontWeight: 500, color: '#44CCFF', marginBottom: '2px', lineHeight: 1.4 }}>Fondateur & CEO</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Jérôme DEBRUYNE</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#44CCFF', marginBottom: '2px', lineHeight: 1.4 }}>Fondateur & CEO</div>
                   <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Squadia</div>
                 </div>
                 <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Xerox, Dell, Oracle. De commercial sédentaire à manager, responsable du go-to-market France. Formateur Cegos et Comundi, IA appliquée aux métiers de la vente, du marketing et de la communication.</p>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Xerox, Dell, Oracle. De commercial sédentaire à manager, responsable du go-to-market France. Formateur Cegos et Comundi, IA appliquée aux métiers de la vente, du marketing et de la communication.</p>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '10px' }}>
                     <a className="link-ext" href="https://www.comundi.fr/formateurs/8307-debruyne-jerome.html" target="_blank" rel="noopener noreferrer">
                       <IconExternal /> Comundi
@@ -293,12 +293,12 @@ const Mission = () => {
                     <span className="tag-m">Expert associé</span>
                     <span className="tag-m">Revenue</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.0625rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Julien Le Maguer</div>
-                  <div style={{ fontFamily: fi, fontSize: '.75rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Développement commercial, revenue ops</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Julien Le Maguer</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Développement commercial, revenue ops</div>
                   <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Fondateur, JLM Consulting</div>
                 </div>
                 <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Inside Sales Manager SaaS. CRM et Customer Experience Trainer, formation sur le cycle de vente complet, BPO et accompagnement commercial terrain.</p>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Inside Sales Manager SaaS. CRM et Customer Experience Trainer, formation sur le cycle de vente complet, BPO et accompagnement commercial terrain.</p>
                   <a className="link-ext" href="https://www.linkedin.com/in/julien-lemaguer/" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
                     <IconLinkedin /> LinkedIn
                   </a>
@@ -321,7 +321,7 @@ const Mission = () => {
               <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '12px' }}>
                 Squadia est-il le bon partenaire<br />pour votre organisation ?
               </h2>
-              <p style={{ fontFamily: fi, fontSize: '1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
+              <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
               <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link className="btn-primary-m" href="/contact">Prendre RDV</Link>
                 <Link className="btn-secondary-m" href="/tarifs">Découvrir nos offres</Link>
