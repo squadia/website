@@ -227,35 +227,42 @@ export default function BlogFormationIAVAutom() {
           
           <p>L'IA transforme une entreprise quand ces cinq étapes sont articulées intelligemment, avec des objectifs mesurables à chaque jalon.</p>
         </div>
-
         {/* ═══ CTA BLOCK ═══ */}
         <div style={{
           marginTop: '5rem',
-          background: 'linear-gradient(135deg, rgba(37,99,235,0.15) 0%, rgba(68,204,255,0.1) 100%)',
-          border: '1px solid rgba(37,99,235,0.3)',
-          borderRadius: '1.25rem', padding: '3.5rem', textAlign: 'center',
-          boxShadow: '0 20px 40px rgba(0,0,0,0.2)'
+          border: '1px solid rgba(68,204,255,.1)',
+          borderRadius: '20px',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: '0 0 60px -20px rgba(68,204,255,.15)',
+          minHeight: '480px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
         }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.2rem' }}>
-            Vous voulez structurer votre strategie IA et savoir par où commencer ?
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: '1.1rem', lineHeight: 1.6, maxWidth: '600px', marginInline: 'auto', marginBottom: '2.5rem' }}>
-            Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
-          </p>
-          <Link
-            href="/strategie-ia"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#44CCFF', color: '#060612',
-              padding: '1.1rem 2.2rem', borderRadius: '0.6rem',
-              fontWeight: 700, fontSize: '1.05rem', textDecoration: 'none',
-              transition: 'all 0.2s'
-            }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 20px rgba(37,99,235,0.3)'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
-          >
-            Découvrir l'offre Stratégie IA <ArrowRight size={20} />
-          </Link>
+          <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+          <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
+            
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
+              Vous voulez structurer votre strategie IA et savoir par où commencer ?
+            </h2>
+            <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
+              Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
+            </p>
+            <Link
+              href="/strategie-ia"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                background: '#44CCFF', color: '#060612',
+                padding: '1rem 2rem', borderRadius: '0.5rem',
+                fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
+              }}
+            >
+              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
 
       </article>

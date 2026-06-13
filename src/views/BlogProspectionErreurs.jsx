@@ -206,31 +206,42 @@ export default function BlogProspectionErreurs() {
 
           <p>Eviter ces cinq erreurs, c'est transformer vos campagnes en rendez-vous concrets. Ce n'est pas une question de budget, c'est une <strong>question de méthode et de coordination.</strong></p>
         </div>
-
         {/* ═══ CTA BLOCK ═══ */}
         <div style={{
           marginTop: '5rem',
-          background: 'linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(124,58,237,0.08) 100%)',
-          border: '1px solid rgba(37,99,235,0.25)',
-          borderRadius: '1.25rem', padding: '3rem', textAlign: 'center'
+          border: '1px solid rgba(68,204,255,.1)',
+          borderRadius: '20px',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: '0 0 60px -20px rgba(68,204,255,.15)',
+          minHeight: '480px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
         }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
-            Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-            Squadia accompagne les équipes commerciales et marketing dans la structuration de leur prospection multicanale et l'optimisation de leur génération de leads.
-          </p>
-          <Link
-            href="/data/data-lead"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#44CCFF', color: '#060612',
-              padding: '1rem 2rem', borderRadius: '0.5rem',
-              fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
-            }}
-          >
-            Découvrir l'offre Data Lead <ArrowRight size={18} />
-          </Link>
+          <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+          <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
+            
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
+              Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
+            </h2>
+            <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
+              Squadia accompagne les équipes commerciales et marketing dans la structuration de leur prospection multicanale et l'optimisation de leur génération de leads.
+            </p>
+            <Link
+              href="/data/data-lead"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                background: '#44CCFF', color: '#060612',
+                padding: '1rem 2rem', borderRadius: '0.5rem',
+                fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
+              }}
+            >
+              Découvrir l'offre Data Lead <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
 
       </article>

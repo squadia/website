@@ -476,37 +476,42 @@ export default function BlogStrategieIAPME() {
           <p><em>Celles qui brûlent les étapes achètent de l'agitation, pas de la transformation.</em></p>
 
         </div>
-
         {/* ═══ CTA BLOCK ═══ */}
         <div style={{
           marginTop: '5rem',
-          background: 'linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(124,58,237,0.08) 100%)',
-          border: '1px solid rgba(37,99,235,0.25)',
-          borderRadius: '1.25rem',
-          padding: '3rem',
-          textAlign: 'center'
+          border: '1px solid rgba(68,204,255,.1)',
+          borderRadius: '20px',
+          textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          boxShadow: '0 0 60px -20px rgba(68,204,255,.15)',
+          minHeight: '480px',
+          display: 'flex',
+          flexDirection: 'column',
+          justifyContent: 'flex-end',
         }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: '1rem' }}>Passez à l'action</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.2 }}>
-            Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-            Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
-          </p>
-          <Link
-            href="/strategie-ia"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#44CCFF', color: '#060612',
-              padding: '1rem 2rem', borderRadius: '0.5rem',
-              fontWeight: 700, fontSize: '1rem',
-              textDecoration: 'none', transition: 'background 0.2s'
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
-            onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
-          >
-            Découvrir l'offre Stratégie IA <ArrowRight size={18} />
-          </Link>
+          <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+          <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
+            <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Passez à l'action</span>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
+              Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
+            </h2>
+            <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
+              Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
+            </p>
+            <Link
+              href="/strategie-ia"
+              style={{
+                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
+                background: '#44CCFF', color: '#060612',
+                padding: '1rem 2rem', borderRadius: '0.5rem',
+                fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
+              }}
+            >
+              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+            </Link>
+          </div>
         </div>
 
       </article>
