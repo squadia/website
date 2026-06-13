@@ -312,7 +312,7 @@ export default function StrategieCommerciale() {
               Ventes et le Marketing ont tout pour réussir,<br />il leur manque juste le bon système
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '700px', marginBottom: '3rem', lineHeight: 1.5 }}>
-              Marketing et ventes ne parlent pas le même langage. Le CRM ne reflète pas le terrain. Les prévisions reposent sur de l'optimisme. Vous le savez. La question c'est par où commencer.
+              Ce qui peut vous aider, c'est un regard extérieur et quelqu'un capable d'articuler méthode et technologie au bon moment, avec le bon dosage. C'est exactement ce que nous faisons.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.2rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1.05rem' }}>Notre Constat du Terrain</button>
