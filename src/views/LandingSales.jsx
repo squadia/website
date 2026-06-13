@@ -658,16 +658,22 @@ const LandingSales = () => {
       <ClientLogosSection />
 
       {/* ═══ SECTION 8 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A', textAlign: 'center' }}>
-        <div className="container fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
-            Prêt à fiabiliser votre pipeline<br/>et sécuriser vos objectifs ?
-          </h2>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>Prendre RDV</Link>
-            <Link href="/tarifs" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              Voir nos offres <ArrowRight size={18} />
-            </Link>
+      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+        <div className="container">
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '480px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '2rem', lineHeight: 1.2 }}>
+                Prêt à fiabiliser votre pipeline<br/>et sécuriser vos objectifs ?
+              </h2>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>Prendre RDV</Link>
+                <Link href="/tarifs" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  Voir nos offres <ArrowRight size={18} />
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
