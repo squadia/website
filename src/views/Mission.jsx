@@ -61,12 +61,12 @@ const Mission = () => {
         .glass-card-blue-border { border-left: 3px solid #44CCFF; }
         .conv-block { background: #111417; padding: 28px 22px; transition: background .2s; }
         .conv-block:hover { background: #161a1e; }
-        .team-card-m { background: rgba(17,20,23,.95); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s, transform .25s; transform: translateZ(0); backface-visibility: hidden; }
-        .team-card-m:hover { border-color: rgba(255,255,255,.12); transform: translateY(-3px); }
+        .team-card-m { background: rgba(17,20,23,.95); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
+        .team-card-m:hover { border-color: rgba(255,255,255,.12); }
         .team-card-m.founder-m { border-color: rgba(68,204,255,.18); background: linear-gradient(160deg, rgba(68,204,255,.05) 0%, rgba(17,20,23,.95) 50%); box-shadow: 0 0 40px -15px rgba(68,204,255,.18); }
         .team-photo-m { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; background: rgba(17,20,23,1); flex-shrink: 0; }
         .team-photo-m img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .4s ease; display: block; }
-        .team-card-m:hover .team-photo-m img { transform: scale(1.03); }
+        
         .photo-bw-m { filter: grayscale(1) contrast(1.08) brightness(0.88); }
         .photo-jerome-m { filter: contrast(1.02) brightness(0.9); }
         .team-photo-overlay { position: absolute; bottom: -2px; left: 0; right: 0; height: 55%; background: linear-gradient(to top, rgba(17,20,23,1) 0%, rgba(17,20,23,1) 20%, transparent 100%); z-index: 2; }
@@ -160,7 +160,7 @@ const Mission = () => {
                 )}
                 <div className="glass-card-m glass-card-orange mfu" style={{ padding: '36px 28px', transitionDelay: c.delay, position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
-                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#fb923c', background: 'rgba(234,88,12,.12)', border: '1px solid rgba(234,88,12,.25)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
+                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#f1f1f1', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(234,88,12,.5)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
                   </div>
                   <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#fb923c', marginBottom: '10px' }}>{c.title}</h3>
                   <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
