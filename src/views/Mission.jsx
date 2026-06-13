@@ -324,7 +324,6 @@ const Mission = () => {
               <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
               <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Link className="btn-primary-m" href="/contact">Prendre RDV</Link>
-                <Link className="btn-secondary-m" href="/tarifs">Découvrir nos offres</Link>
               </div>
             </div>
           </div>
