@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import Link from 'next/link';
-const jeromeImg = '/assets/images/notremission/jerome-final.png';
+const jeromeImg = '/assets/images/notremission/jerome-final.png?v=' + Date.now();
 const julienImg = '/assets/images/notremission/julien-final.png';
 const kavidaImg = '/assets/images/notremission/kavida-final.png';
 const Mission = () => {
