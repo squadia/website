@@ -125,7 +125,7 @@ const Mission = () => {
             Ce que nous avons appris,<br />C'est ce que nous partageons.
           </h1>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
-            Nous avons forgé notre expérience des deux côtés ; du côté des leaders, du côté des challengers.<br />Pour le mid-market comme pour les grands comptes.<br />Dans l'IT et les Services en B2B.
+            Nous avons forgé notre expérience des deux côtés ; du côté des leaders, du côté des challengers.<br />Pour le Mid-Market comme pour les Grands Comptes.<br />Dans l'IT et les Services en B2B.
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
             <a className="btn-primary-m" href="#croyance">Notre croyance</a>
