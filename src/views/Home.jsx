@@ -1946,23 +1946,21 @@ const HeroDynamic = React.memo(() => {
       </section>
 
       {/* ═══ SECTION 8 : CTA FINAL ═══ */}
-      <section ref={section8Ref} className="section-padding" style={{ borderTop: '1px solid rgba(255,255,255,0.1)' }}>
-        <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
-            Prêt à transformer votre strategie<br/>en système de génération de revenus ?
-          </h2>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn pulse" style={{ 
-              backgroundColor: '#2563EB', 
-              color: '#fff', 
-              padding: '1rem 2.5rem', 
-              fontSize: '1.1rem',
-              borderRadius: '8px',
-              fontWeight: 600,
-              textDecoration: 'none'
-            }}>
-              Prendre RDV
-            </Link>
+      <section ref={section8Ref} className="section-padding">
+        <div className="container">
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '480px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
+              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '2rem', lineHeight: 1.2 }}>
+                Prêt à transformer votre strategie<br/>en système de génération de revenus ?
+              </h2>
+              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
+                <Link href="/contact" className="btn pulse" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1rem 2.5rem', fontSize: '1.1rem', borderRadius: '8px', fontWeight: 600, textDecoration: 'none' }}>
+                  Prendre RDV
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
