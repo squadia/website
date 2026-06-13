@@ -147,7 +147,7 @@ const Mission = () => {
         <div className="container">
           <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre croyance</span>
           <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur. 3 causes que nous retrouvons dans presque chaque mission.</p>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur.<br />3 causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
               { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads pour les commerciaux.", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
