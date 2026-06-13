@@ -1958,7 +1958,7 @@ const HeroDynamic = React.memo(() => {
               </h2>
               <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
               <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link className="btn-primary-m" href="/contact">Prendre RDV</Link>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block' }}>Prendre RDV</Link>
               </div>
             </div>
           </div>
