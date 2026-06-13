@@ -225,7 +225,7 @@ const StrategieIAPME = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF', border: 'none' }}>
+            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
               Découvrir l'offre Stratégie IA <ArrowRight size={18} />
             </Link>
           </div>

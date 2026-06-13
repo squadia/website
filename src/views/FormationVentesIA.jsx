@@ -145,7 +145,7 @@ const FormationVentesIA = () => {
             </div>
 
             <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap' }}>
-              <a href="/contact" className="btn" style={{ background: '#2563EB', padding: '1.2rem 2.8rem', color: '#fff', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', boxShadow: '0 10px 20px rgba(37,99,235,0.2)' }}>Prendre RDV</a>
+              <a href="/contact" className="btn" style={{ background: '#2563EB', padding: '1.2rem 2.8rem', color: '#fff', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', boxShadow: '0 10px 20px rgba(68,204,255,0.2)' }}>Prendre RDV</a>
               <a href="#programme" className="btn btn-outline" style={{ padding: '1.2rem 2.8rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', backdropFilter: 'blur(8px)' }}>Voir le programme</a>
             </div>
           </div>
@@ -398,7 +398,7 @@ const FormationVentesIA = () => {
                       <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par personne</div>
                     </div>
                     <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #2563EB', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: '#fff', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
+                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#44CCFF', color: '#060612', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
                       <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
                       <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#60A5FA' }}>4 390 € HT</div>
                       <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par groupe</div>

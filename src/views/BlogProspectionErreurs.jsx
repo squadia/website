@@ -100,7 +100,7 @@ export default function BlogProspectionErreurs() {
 
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{
-                background: '#2563EB', color: '#FFFFFF',
+                background: '#44CCFF', color: '#060612',
                 padding: '0.35rem 1.25rem', borderRadius: '9999px',
                 fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase'
               }}>
@@ -224,7 +224,7 @@ export default function BlogProspectionErreurs() {
             href="/data/data-lead"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#2563EB', color: '#fff',
+              background: '#44CCFF', color: '#060612',
               padding: '1rem 2rem', borderRadius: '0.5rem',
               fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
             }}

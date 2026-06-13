@@ -183,7 +183,7 @@ export default function StrategieIA() {
               Squadia structure votre strategie IA : diagnostic de maturité, priorisation des cas d'usage ROI et feuille de route exécutable. Pour que l'IA ne soit plus un test, mais un levier.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
+              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
             </div>
           </div>
         </section>
@@ -333,7 +333,7 @@ export default function StrategieIA() {
                   ))}
                 </div>
 
-                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
+                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#44CCFF' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
                   RDV avec un expert
                 </button>
               </div>

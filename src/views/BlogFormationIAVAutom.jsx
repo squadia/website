@@ -100,7 +100,7 @@ export default function BlogFormationIAVAutom() {
 
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{
-                background: '#2563EB', color: '#FFFFFF',
+                background: '#44CCFF', color: '#060612',
                 padding: '0.35rem 1.25rem', borderRadius: '9999px',
                 fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase'
               }}>
@@ -246,7 +246,7 @@ export default function BlogFormationIAVAutom() {
             href="/strategie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#2563EB', color: '#fff',
+              background: '#44CCFF', color: '#060612',
               padding: '1.1rem 2.2rem', borderRadius: '0.6rem',
               fontWeight: 700, fontSize: '1.05rem', textDecoration: 'none',
               transition: 'all 0.2s'

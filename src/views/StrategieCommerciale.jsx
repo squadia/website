@@ -191,7 +191,7 @@ const StrategyAccordionCommerciale = () => {
                     <img src={activeItem.image} alt={activeItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
                   <Link href={activeItem.link} style={{
-                    backgroundColor: '#2563EB', color: '#FFFFFF', fontWeight: 600,
+                    backgroundColor: '#44CCFF', color: '#060612', fontWeight: 600,
                     padding: isMobile ? '14px 2rem' : '1.1rem 2.8rem',
                     borderRadius: '8px', display: 'inline-flex', alignItems: 'center',
                     justifyContent: isMobile ? 'center' : undefined,
@@ -315,7 +315,7 @@ export default function StrategieCommerciale() {
               Marketing et ventes ne parlent pas le même langage. Le CRM ne reflète pas le terrain. Les prévisions reposent sur de l'optimisme. Vous le savez. La question c'est par où commencer.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.2rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1.05rem' }}>Notre Constat du Terrain</button>
+              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.2rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', fontSize: '1.05rem' }}>Notre Constat du Terrain</button>
             </div>
           </div>
         </section>
@@ -763,7 +763,7 @@ export default function StrategieCommerciale() {
                   ))}
                 </div>
 
-                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
+                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#44CCFF' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
                   Prendre RDV
                 </button>
               </div>

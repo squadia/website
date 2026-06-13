@@ -217,7 +217,7 @@ const FormationOuAutomatisation = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#FFFFFF', border: 'none' }}>
+            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
               Découvrir l'offre Stratégie IA <ArrowRight size={18} />
             </Link>
           </div>

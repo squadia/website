@@ -74,7 +74,7 @@ const caseLabelsDG = {
 };
 
 const TagDG = ({ children }) => (
-  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2563EB', color: '#FFFFFF', border: 'none' }}>
+  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#44CCFF', color: '#060612', border: 'none' }}>
     {children}
   </span>
 );

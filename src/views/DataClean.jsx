@@ -241,7 +241,7 @@ export default function DataClean() {
               Doublons, emails invalides, structures incohérentes. Squadia nettoie et normalise votre base pour en faire le moteur de votre croissance.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <Link href="/contact" className="btn btn-primary" style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none' }}>RDV avec un expert</Link>
+              <Link href="/contact" className="btn btn-primary" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none' }}>RDV avec un expert</Link>
             </div>
           </div>
         </section>
@@ -566,7 +566,7 @@ export default function DataClean() {
                   ))}
                 </div>
 
-                <Link href="/contact" style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none', textAlign: 'center', display: 'block', boxSizing: 'border-box' }}>
+                <Link href="/contact" style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#44CCFF' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none', textAlign: 'center', display: 'block', boxSizing: 'border-box' }}>
                   RDV avec un expert
                 </Link>
               </div>

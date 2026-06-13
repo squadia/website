@@ -200,7 +200,7 @@ const FormationCommerciale = () => {
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
               Squadia conçoit des programmes sur mesure pour les directions commerciales, du junior au manager senior.
             </p>
-            <Link href="/formation-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#2563EB', color: '#FFFFFF' }}>
+            <Link href="/formation-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612' }}>
               Découvrir l'offre Formation <ArrowRight size={18} />
             </Link>
           </div>

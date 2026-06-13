@@ -96,7 +96,7 @@ export default function Data() {
               Un CRM mal structuré, c'est des commerciaux qui ne s'en servent pas. Avant d'automatiser ou de prospecter, il faut que la base soit propre, segmentée et exploitable.
             </motion.p>
             <div style={{ display: 'flex', gap: '1.2rem' }}>
-              <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
+              <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
                 RDV avec un expert
               </Link>
             </div>
@@ -295,7 +295,7 @@ export default function Data() {
             Prêt à faire de votre base<br/>un vrai levier de croissance ?
           </h2>
           <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#FFFFFF', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>
+            <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>
               RDV avec un expert
             </Link>
             <Link href="/tarifs" style={{ color: '#2563EB', border: '1px solid #2563EB', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>

@@ -55,7 +55,7 @@ const caseLabelsDG = {
 };
 
 const TagDG = ({ children }) => (
-  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#2563EB', color: '#FFFFFF', border: 'none' }}>
+  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#44CCFF', color: '#060612', border: 'none' }}>
     {children}
   </span>
 );
@@ -292,7 +292,7 @@ const TechOrbitSection = () => {
           Nous intégrons les meilleurs outils du marché pour transformer votre CRM en véritable moteur de croissance. Prospection, enrichissement, téléphonie et IA : chaque brique est connectée à votre écosystème.
         </p>
         <div style={{ display: 'flex', gap: '1rem' }}>
-          <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1rem 2rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.3s ease' }}
+          <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1rem 2rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', transition: 'all 0.3s ease' }}
             onMouseEnter={(e) => e.target.style.transform = 'translateY(-2px)'}
             onMouseLeave={(e) => e.target.style.transform = 'translateY(0)'}>
             Audit de votre stack
@@ -461,7 +461,7 @@ export default function StrategieCrm() {
               Squadia structure votre projet CRM de bout en bout : audit, migration, configuration et adoption. Pour que le CRM devienne un vrai outil de pilotage, pas une contrainte administrative.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
+              <button onClick={(e) => smoothScroll(e, 'diagnostic')} style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer' }}>RDV avec un expert</button>
             </div>
           </div>
         </section>
@@ -816,7 +816,7 @@ export default function StrategieCrm() {
                   ))}
                 </div>
 
-                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
+                <button onClick={(e) => smoothScroll(e, 'hero')} style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#44CCFF' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s' }}>
                   RDV avec un expert
                 </button>
               </div>

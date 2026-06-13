@@ -497,7 +497,7 @@ export default function BlogStrategieIAPME() {
             href="/strategie-ia"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#2563EB', color: '#fff',
+              background: '#44CCFF', color: '#060612',
               padding: '1rem 2rem', borderRadius: '0.5rem',
               fontWeight: 700, fontSize: '1rem',
               textDecoration: 'none', transition: 'background 0.2s'

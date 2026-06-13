@@ -100,10 +100,10 @@ const Mission = () => {
       <div className="hero-grid-m" style={{
         minHeight: '100vh', maxHeight: '920px',
         display: 'flex', alignItems: 'center',
-        position: 'relative', overflow: 'hidden', paddingTop: '80px', background: '#060612',
+        position: 'relative', overflow: 'hidden', paddingTop: '64px', background: '#060612',
       }}>
         {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
-        <div className="hero-bg-mission" style={{ position: 'absolute', inset: 0, backgroundImage: 'url(/assets/images/notremission/notremission_background.png)', backgroundSize: '70%', backgroundPosition: 'right center', backgroundRepeat: 'no-repeat', zIndex: 0 }} />
+        <img src="/assets/images/notremission/notremission_background.png" alt="" className="hero-bg-mission" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }} />
         {/* Overlay global */}
         <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
@@ -121,21 +121,14 @@ const Mission = () => {
           paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '55%',
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
-          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,3rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
-            Ce qu'on a appris<br />Ce qu'on a décidé d'en faire
+          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2.2rem,4vw,3.75rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
+            Ce que nous avons appris.<br />Ce que nous apportons.
           </h1>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '.9375rem', lineHeight: 1.72, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
-            25 ans dans la vente B2B complexe. Ce qui fait gagner une entreprise sur le terrain, c'est rarement l'outil. C'est la méthode, la donnée et la capacité à faire fonctionner ces trois choses ensemble.
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.175rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
+            Nous avons forgé notre expérience des deux côtés — du côté des leaders, du côté des challengers. Dans l'IT et les Services en B2B.
           </p>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '.9375rem', lineHeight: 1.72, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.17s' }}>
-            J'ai créé Squadia pour transmettre ça ; aider les ETI et PME à structurer un système commercial qui tient dans la durée.
-          </p>
-          <div className="mfu" style={{ fontFamily: fj, fontSize: '.75rem', fontWeight: 700, letterSpacing: '.08em', textTransform: 'uppercase', color: '#fff', display: 'flex', alignItems: 'center', gap: '12px', marginTop: '24px', transitionDelay: '.22s' }}>
-            <span style={{ display: 'block', width: '28px', height: '2px', background: '#44CCFF', flexShrink: 0 }} />
-            Jérôme, Fondateur
-          </div>
-          <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.27s' }}>
-            <a className="btn-primary-m" href="#constat">Constat terrain</a>
+          <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
+            <a className="btn-primary-m" href="#constat">Notre constat</a>
             <a className="btn-secondary-m" href="#equipe">L'équipe</a>
           </div>
         </div>
@@ -145,14 +138,14 @@ const Mission = () => {
       {/* ── CE QU'ON OBSERVE ── */}
       <section id="constat" style={{ background: '#060612', padding: '120px 0' }}>
         <div className="container">
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce qu'on observe</span>
-          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '560px' }}>Ce qui coince dans la plupart des organisations commerciales.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '.875rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '500px', marginBottom: '40px' }}>Trois réalités observées dans presque chaque mission.</p>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce que nous en retenons</span>
+          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '.875rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '500px', marginBottom: '40px' }}>Mais bien de l'intérieur. Trois causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
-              { icon: <IconTrend />, title: "La vente reste un art là où elle devrait devenir une science.", body: "Pipeline sur sentiment, pas sur des faits. Pas d'étapes définies, pas d'indicateurs. Un retard structurel, pas technologique.", tag: "Retard structurel", delay: '0s' },
-              { icon: <IconDoc />, title: "Peu d'outils. Encore moins de méthode.", body: "Reporting Excel, pas de coordination éditoriale, contribution marketing immesurable. Quand les outils existent, la méthode est rarement là.", tag: "Déficit opérationnel", delay: '.08s' },
-              { icon: <IconClock />, title: "L'IA est en phase d'adoption, pas encore en phase d'impact.", body: "50 % du temps commercial part en administratif. L'IA est déjà dans les outils ; les équipes ne savent pas encore vraiment s'en servir.", tag: "Adoption en cours", delay: '.16s' },
+              { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads pour les commerciaux.", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
+              { icon: <IconDoc />, title: "Des commerciaux qui passent trop de temps sur l'admin.", body: "Reporting manuel, CRM mal renseigné, tâches répétitives. 50 % du temps commercial part ailleurs que sur la vente.", tag: "Temps mal alloué", delay: '.08s' },
+              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données.", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là — la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
             ].map((c, i) => (
               <div key={i} style={{ position: 'relative', display: 'flex' }}>
                 {i === 2 && (
@@ -174,9 +167,9 @@ const Mission = () => {
       <section style={{ background: '#060612', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, right: '-200px', width: '500px', height: '100%', background: 'radial-gradient(ellipse,rgba(68,204,255,.04) 0%,transparent 70%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce en quoi on croit</span>
-          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '540px' }}>Quatre convictions qui guident chaque mission.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '.875rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '460px', marginBottom: '40px' }}>Des positions opérationnelles, pas des valeurs d'affichage.</p>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce que nous apportons</span>
+          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '8px', maxWidth: '600px' }}>Pour résoudre ça, il faut être équipé.</h2>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '.875rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '520px', marginBottom: '40px' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser. C'est ce que nous construisons pour les PME et ETI B2B.</p>
           <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,.05)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.05)' }}>
             {[
               { num: '01', title: 'La décision avant l\'outillage.', body: 'On évalue ce qui est le plus pertinent pour atteindre vos objectifs, puis on définit la strategie, les outils et les process.' },

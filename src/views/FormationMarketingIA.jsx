@@ -393,7 +393,7 @@ const FormationMarketingIA = () => {
                       <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par personne</div>
                     </div>
                     <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #2563EB', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: '#fff', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
+                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#44CCFF', color: '#060612', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
                       <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
                       <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#60A5FA' }}>4 390 € HT</div>
                       <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par groupe</div>

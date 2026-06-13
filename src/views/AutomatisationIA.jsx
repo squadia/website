@@ -147,7 +147,7 @@ const AutomatisationIA = () => {
             Vos équipes passent trop de temps sur des tâches répétitives qui ne génèrent rien. Squadia structure des systèmes qui tournent pendant que vos experts font leur vrai travail.
           </motion.p>
           <div style={{ display: 'flex', gap: '1.5rem' }}>
-            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#FFFFFF', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
+            <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
               Prendre RDV
             </Link>
             <a href="#forfaits" onClick={(e) => smoothScroll(e, 'forfaits')} style={{ backgroundColor: 'transparent', color: '#2563EB', border: '1px solid #2563EB', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.1rem' }}>
@@ -339,7 +339,7 @@ const AutomatisationIA = () => {
                 ))}
               </div>
 
-              <Link href="/contact" style={{ background: '#2563EB', color: '#fff', padding: '1rem', borderRadius: '0.5rem', textAlign: 'center', fontWeight: 700, textDecoration: 'none' }}>
+              <Link href="/contact" style={{ background: '#44CCFF', color: '#060612', padding: '1rem', borderRadius: '0.5rem', textAlign: 'center', fontWeight: 700, textDecoration: 'none' }}>
                 Choisir Scale
               </Link>
             </div>

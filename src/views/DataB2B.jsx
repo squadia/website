@@ -337,7 +337,7 @@ export default function DataB2B() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
             <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1rem' }}>
-                <span style={{ background: '#2563EB', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Prospection</span>
+                <span style={{ background: '#44CCFF', color: '#060612', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Prospection</span>
               </div>
               <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</p>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.9rem' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.4rem' }} /></div>
@@ -373,7 +373,7 @@ export default function DataB2B() {
             href="/data"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#2563EB', color: '#fff',
+              background: '#44CCFF', color: '#060612',
               padding: '1rem 2rem', borderRadius: '0.5rem',
               fontWeight: 700, fontSize: '1rem',
               textDecoration: 'none', transition: 'background 0.2s'
