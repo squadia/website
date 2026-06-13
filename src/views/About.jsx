@@ -77,7 +77,7 @@ const About = () => {
                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
                   "Nous ne vendons pas de jours/homme. Nous vendons des systèmes qui tournent. Si nous ne voyons pas de chemin clair vers un ROI positif sous 90 jours, nous ne prenons pas la mission."
                </p>
-               <div style={{ marginTop: '2rem', fontWeight: 700 }}>— L'équipe Squadia</div>
+               <div style={{ marginTop: '2rem', fontWeight: 700 }}>L'équipe Squadia</div>
             </div>
           </div>
         </div>

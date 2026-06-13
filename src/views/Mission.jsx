@@ -57,7 +57,7 @@ const Mission = () => {
         .mfu.mfv { opacity: 1; transform: translateY(0); }
         .glass-card-m { background: rgba(29,32,35,.7); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; transition: border-color .2s; }
         .glass-card-m:hover { border-color: rgba(255,255,255,.1); }
-        .glass-card-orange { border-left: 3px solid #ea580c; box-shadow: 0 0 40px -15px rgba(234,88,12,.1); }
+        .glass-card-orange { border-left: 3px solid #f87171; box-shadow: 0 0 40px -15px rgba(248,113,113,.1); }
         .glass-card-blue-border { border-left: 3px solid #44CCFF; }
         .conv-block { background: #111417; padding: 28px 22px; transition: background .2s; }
         .conv-block:hover { background: #161a1e; }
@@ -152,7 +152,7 @@ const Mission = () => {
             {[
               { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
               { icon: <IconDoc />, title: "Des commerciaux qui passent trop de temps sur l'admin", body: "Reporting manuel, CRM mal renseigné, tâches répétitives. 50 % du temps commercial part ailleurs que sur la vente.", tag: "Temps mal alloué", delay: '.08s' },
-              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là — la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
+              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là ; la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
             ].map((c, i) => (
               <div key={i} style={{ position: 'relative', display: 'flex' }}>
                 {i === 2 && (
@@ -160,9 +160,9 @@ const Mission = () => {
                 )}
                 <div className="glass-card-m glass-card-orange mfu" style={{ padding: '36px 28px', transitionDelay: c.delay, position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
-                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#f1f1f1', background: 'rgba(0,0,0,0.3)', border: '1px solid rgba(234,88,12,.5)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
+                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#f87171', background: 'rgba(248,113,113,.08)', border: '1px solid rgba(248,113,113,.3)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#fb923c', marginBottom: '10px' }}>{c.title}</h3>
+                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#f87171', marginBottom: '10px' }}>{c.title}</h3>
                   <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
                 </div>
               </div>

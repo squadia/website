@@ -529,9 +529,9 @@ export default function StrategieCommerciale() {
             <div style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
 <p><span style={{ color: '#F9FAFB', fontWeight: 600 }}>80% des acheteurs estiment que les commerciaux ne les ont pas compris.</span> Quand on a la tête dans le guidon, s'auto-évaluer est toujours compliqué. Quelques ajustements suffisent souvent à changer les résultats :</p>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem', margin: 0 }}>
-                <li>— une présentation mieux préparée,</li>
-                <li>— une objection mieux reformulée,</li>
-                <li>— une découverte poussée plus loin.</li>
+                <li>une présentation mieux préparée,</li>
+                <li>une objection mieux reformulée,</li>
+                <li>une découverte poussée plus loin.</li>
               </ul>
               <p>Encore faut-il les voir depuis l'extérieur.</p>
               <p style={{ color: '#F9FAFB', fontWeight: 600 }}>Ce que nous structurons après, vos équipes l'adoptent. Parce que ça vient de leur réalité, pas d'un template.</p>
