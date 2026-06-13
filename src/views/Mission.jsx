@@ -132,7 +132,7 @@ const Mission = () => {
             Ce que nous avons appris,<br />C'est ce que nous partageons.
           </h1>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '56ch', transitionDelay: '.12s' }}>
-            Nous avons forgé notre expérience B2B pendant plus de 25 ans ;<br />Pour le Mid-Market comme pour les Grands Comptes.<br />Du côté des leaders comme celui des challengers<br />Adressant la plupart des secteurs.
+            Nous avons forgé notre expérience B2B pendant plus de 25 ans,<br />Pour le Mid-Market comme pour les Grands Comptes,<br />Du côté des leaders comme celui des challengers<br />Tous secteurs confondus (Banque/Assurance, Médias, Santé, Privé-Public, etc).
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
             <a className="btn-primary-m" href="#croyance">Notre croyance</a>
