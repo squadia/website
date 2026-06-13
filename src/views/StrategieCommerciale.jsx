@@ -309,7 +309,7 @@ export default function StrategieCommerciale() {
 
           <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '8%' }}>
             <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '900px' }}>
-              Les Ventes et le Marketing ont tout pour réussir,<br />il leur manque juste le bon système
+              Ventes et le Marketing ont tout pour réussir,<br />il leur manque juste le bon système
             </motion.h1>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '700px', marginBottom: '3rem', lineHeight: 1.5 }}>
               Marketing et ventes ne parlent pas le même langage. Le CRM ne reflète pas le terrain. Les prévisions reposent sur de l'optimisme. Vous le savez. La question c'est par où commencer.
