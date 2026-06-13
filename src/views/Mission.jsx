@@ -313,16 +313,18 @@ const Mission = () => {
       {/* ── CTA FINAL ── */}
       <section style={{ background: '#060612', padding: '120px 0' }}>
         <div className="container">
-          <div className="mfu" style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '720px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+          <div className="mfu" style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '720px', display: 'flex', flexDirection: 'column' }}>
             <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
             <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 64px' }}>
-              <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-              <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '12px' }}>
-                Squadia est-il le bon partenaire<br />pour votre organisation ?
-              </h2>
-              <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
-              <div style={{ display: 'flex', gap: '14px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div style={{ textAlign: 'center' }}>
+                <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: 0 }}>
+                  Squadia est-il le bon partenaire<br />pour votre organisation ?
+                </h2>
+              </div>
+              <div style={{ textAlign: 'center', paddingBottom: '280px' }}>
+                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
                 <Link className="btn-primary-m" href="/contact">Prendre RDV</Link>
               </div>
             </div>
