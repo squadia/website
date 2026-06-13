@@ -112,9 +112,9 @@ const Mission = () => {
         {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
         <img src="/assets/images/notremission/notremission_background.png" alt="" className="hero-bg-mission" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }} />
         {/* Overlay global */}
-        <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.50)', zIndex: 1, pointerEvents: 'none' }} />
+        <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.25)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
-        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.92) 0%, rgba(6,6,18,0.65) 50%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.75) 0%, rgba(6,6,18,0.40) 50%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Gradient bas : transition douce vers section suivante */}
         <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Image mobile : visible uniquement sur mobile */}
