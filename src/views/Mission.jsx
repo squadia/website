@@ -159,10 +159,11 @@ const Mission = () => {
                   <div style={{ position: 'absolute', top: '-200px', right: '-200px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37,99,235,0.48) 0%, transparent 68%)', filter: 'blur(95px)', pointerEvents: 'none', zIndex: 0 }} />
                 )}
                 <div className="glass-card-m glass-card-orange mfu" style={{ padding: '36px 28px', transitionDelay: c.delay, position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <div style={{ width: '36px', height: '36px', borderRadius: '9px', background: 'rgba(234,88,12,.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '20px' }}>{c.icon}</div>
+                  <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
+                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#fb923c', background: 'rgba(234,88,12,.12)', border: '1px solid rgba(234,88,12,.25)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
+                  </div>
                   <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#fb923c', marginBottom: '10px' }}>{c.title}</h3>
                   <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
-                  <div style={{ marginTop: '20px' }}><span className="tag-m tag-orange-m">{c.tag}</span></div>
                 </div>
               </div>
             ))}
