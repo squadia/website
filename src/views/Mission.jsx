@@ -94,6 +94,13 @@ const Mission = () => {
           .hero-gradient-bottom-m { display: none !important; }
           .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
         }
+        .hero-bg-mission {
+          animation: missionBgReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+        }
+        @keyframes missionBgReveal {
+          from { opacity: 0; transform: scale(1.12); }
+          to   { opacity: 1; transform: scale(1); }
+        }
       `}</style>
 
       {/* ── HERO ── */}
