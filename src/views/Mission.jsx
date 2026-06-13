@@ -122,10 +122,10 @@ const Mission = () => {
         }}>
           <span className="mfu" style={{ fontFamily: fj, fontSize: '11px', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
           <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2.2rem,4vw,3.75rem)', fontWeight: 800, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
-            Ce que nous avons appris.<br />Ce que nous apportons.
+            Ce que nous avons appris,<br />Ce que nous apportons.
           </h1>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.175rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '46ch', transitionDelay: '.12s' }}>
-            Nous avons forgé notre expérience des deux côtés — du côté des leaders, du côté des challengers. Dans l'IT et les Services en B2B.
+            Nous avons forgé notre expérience des deux côtés ; du côté des leaders, du côté des challengers. Dans l'IT et les Services en B2B.
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
             <a className="btn-primary-m" href="#constat">Notre constat</a>
