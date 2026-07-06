@@ -20,6 +20,26 @@
       "source": "/strategie-ia/",
       "destination": "/automatisation-ia",
       "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-ou-automatisation",
+      "destination": "/blog/formation-ia-automatisation-ordre",
+      "permanent": true
+    },
+    {
+      "source": "/blog/formation-ia-ou-automatisation/",
+      "destination": "/blog/formation-ia-automatisation-ordre",
+      "permanent": true
+    },
+    {
+      "source": "/blog/strategie-ia-pme-eti",
+      "destination": "/blog/strategie-ia-pme-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/blog/strategie-ia-pme-eti/",
+      "destination": "/blog/strategie-ia-pme-sequence",
+      "permanent": true
     }
   ]
 }

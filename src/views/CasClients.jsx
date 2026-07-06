@@ -197,8 +197,8 @@ const CaseDetail = ({ caseData }) => {
         );
 
         const cardsMap = {
-          'strategie-ia-pme-eti': createCard('/blog/strategie-ia-pme-eti', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats'),
-          'formation-ia-ou-automatisation': createCard('/blog/formation-ia-ou-automatisation', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Transformation', 'Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?'),
+          'strategie-ia-pme-eti': createCard('/blog/strategie-ia-pme-sequence', { border: '#8B5CF6', bg: 'rgba(139, 92, 246, 0.1)', text: '#A78BFA' }, 'Stratégie IA', 'Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats'),
+          'formation-ia-ou-automatisation': createCard('/blog/formation-ia-automatisation-ordre', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Transformation', 'Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?'),
           'prospection-multicanale-b2b-erreurs': createCard('/blog/prospection-multicanale-b2b-erreurs', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Prospection', 'Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter'),
           'formation-commerciale-b2b-ia': createCard('/blog/formation-commerciale-b2b-ia', { border: '#44CCFF', bg: 'rgba(68, 204, 255, 0.1)', text: '#44CCFF' }, 'Formation commerciale', 'Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l\'IA'),
           'nettoyage-segmentation-enrichissement': createCard('/blog/nettoyage-segmentation-enrichissement-donnees-b2b', { border: '#F97316', bg: 'rgba(249, 115, 22, 0.1)', text: '#F97316' }, 'Data B2B', 'Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit')
