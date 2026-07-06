@@ -15,6 +15,13 @@ const course = {
   "provider": ORGANIZATION_REF,
   "inLanguage": "fr-FR",
   "url": "https://squadia.io/formation-ventes-et-ia",
+  "offers": {
+    "@type": "AggregateOffer",
+    "priceCurrency": "EUR",
+    "lowPrice": 1500,
+    "availability": "https://schema.org/InStock",
+    "category": "Formation professionnelle (tarifs HT)"
+  },
   "hasCourseInstance": {
     "@type": "CourseInstance",
     "courseMode": ["onsite", "online"],

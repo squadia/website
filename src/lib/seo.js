@@ -12,7 +12,8 @@ export const ORGANIZATION_REF = {
 };
 
 // Construit un schéma BlogPosting pour un article de blog.
-export function blogPosting({ slug, headline, description, datePublished, dateModified }) {
+// `image` : chemin absolu ('/assets/...') de l'illustration de l'article.
+export function blogPosting({ slug, headline, description, datePublished, dateModified, image }) {
   const url = `${SITE_URL}/blog/${slug}`;
   return {
     '@context': 'https://schema.org',
@@ -24,7 +25,7 @@ export function blogPosting({ slug, headline, description, datePublished, dateMo
     'mainEntityOfPage': { '@type': 'WebPage', '@id': url },
     'datePublished': datePublished,
     'dateModified': dateModified || datePublished,
-    'image': `${SITE_URL}/logo.png`,
+    'image': image ? `${SITE_URL}${image}` : `${SITE_URL}/logo.png`,
     'author': {
       '@type': 'Person',
       'name': 'Jérôme Debruyne',

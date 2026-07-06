@@ -10,7 +10,7 @@ export const metadata = { title: `${headline} — Squadia`, description };
 export default function Page() {
   return (
     <>
-      <JsonLd data={blogPosting({ slug: "formation-commerciale-b2b-ia", headline, description, datePublished: "2026-04-16" })} />
+      <JsonLd data={blogPosting({ slug: "formation-commerciale-b2b-ia", headline, description, datePublished: "2026-04-16", image: "/assets/images/blog/formationcommercialeB2B.jpeg" })} />
       <JsonLd data={breadcrumb([
         { name: "Accueil", path: "/" },
         { name: "Blog", path: "/ressources" },
