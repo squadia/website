@@ -19,8 +19,10 @@ function ScrollToTop() {
 const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "Organization",
+  "@id": "https://squadia.io/#organization",
   "name": "Squadia",
   "url": "https://squadia.io",
+  "logo": "https://squadia.io/logo.png",
   "description": "Squadia aide les PME et ETI françaises à structurer leur système de génération de revenus : stratégie IA, data, automatisation et formation commerciale.",
   "foundingDate": "2022",
   "founder": {
@@ -56,6 +58,16 @@ const schemaOrg = {
   ]
 };
 
+const schemaWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://squadia.io/#website",
+  "url": "https://squadia.io",
+  "name": "Squadia",
+  "inLanguage": "fr-FR",
+  "publisher": { "@id": "https://squadia.io/#organization" }
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="fr">
@@ -69,6 +81,10 @@ export default function RootLayout({ children }) {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaWebSite) }}
         />
       </head>
       <body>

@@ -243,12 +243,6 @@
 
   <!-- ═══ PAGES SECONDAIRES ═══ -->
   <url>
-    <loc>https://squadia.io/strategie-ia</loc>
-    <lastmod>2026-04-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
     <loc>https://squadia.io/a-propos</loc>
     <lastmod>2026-04-16</lastmod>
     <changefreq>yearly</changefreq>
