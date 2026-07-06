@@ -1,0 +1,80 @@
+# Squadia
+
+> Squadia est un cabinet de conseil B2B basé à Paris qui aide les PME et ETI françaises à structurer leur système de génération de revenus. Nous intervenons sur quatre leviers complémentaires : stratégie commerciale et IA, migration et fiabilisation du CRM, data B2B (nettoyage, segmentation, enrichissement), automatisation des processus et formation des équipes à l'IA.
+
+Squadia a été fondé en 2022 par Jérôme Debruyne, expert de la vente B2B complexe, de la stratégie IA et du CRM. Notre approche : réconcilier la stratégie et l'exécution pour bâtir un système de revenus mesurable en 90 jours, avec des workflows documentés et maintenables par vos propres équipes.
+
+- **Domaines d'expertise** : stratégie IA pour PME/ETI, automatisation CRM, data B2B, formation IA métiers, go-to-market ETI, prospection multicanale.
+- **Cible** : dirigeants (DG), directions commerciales et directions marketing de PME et ETI B2B en France.
+- **Contact** : contact@squadia.io — +33 7 82 84 35 64 — 193 Avenue de France, 75013 Paris.
+
+## Stratégie & CRM
+
+- [Stratégie commerciale](https://squadia.io/strategie/commerciale) : structuration du système de génération de revenus, go-to-market et pilotage de la performance commerciale B2B.
+- [Migration et structuration CRM](https://squadia.io/strategie/crm) : migration, fiabilisation et adoption du CRM pour un pipeline B2B fiable.
+
+## Data B2B
+
+- [Data Clean](https://squadia.io/data/data-clean) : nettoyage et fiabilisation des données de votre CRM.
+- [Data Seg](https://squadia.io/data/data-seg) : segmentation des comptes et contacts B2B.
+- [Data Lead](https://squadia.io/data/data-lead) : enrichissement des données et détection des signaux d'achat.
+- [Vue d'ensemble Data](https://squadia.io/data) : approche Squadia du nettoyage, de la segmentation et de l'enrichissement des données B2B.
+
+## Automatisation IA
+
+- [Automatisation IA B2B](https://squadia.io/automatisation-ia) : automatisation des processus commerciaux et marketing avec l'IA — workflows documentés, mesurables et maintenables par vos équipes.
+
+## Formations
+
+- [Catalogue des formations](https://squadia.io/formations) : formations IA appliquées aux métiers de la croissance B2B.
+- [Formation Vente B2B et IA](https://squadia.io/formation-ventes-et-ia) : former les équipes commerciales à l'usage de l'IA en prospection et en vente.
+- [Formation Marketing et IA](https://squadia.io/formation-marketing-et-ia) : IA appliquée à la génération et la qualification de leads B2B.
+- [Formation Communication et IA](https://squadia.io/formation-communication-et-ia) : IA au service de la communication et du contenu.
+
+## Par fonction
+
+- [Squadia pour Directeurs Généraux](https://squadia.io/directeur-general) : bâtir une vision IA et un système de revenus mesurable pour les PME/ETI.
+- [Squadia pour Directeurs Commerciaux](https://squadia.io/directeur-commercial) : fiabiliser le pipeline, structurer la prospection et exploiter les signaux d'achat.
+- [Squadia pour Directeurs Marketing](https://squadia.io/directeur-marketing) : pipeline B2B fiable, qualification des leads et automatisation des campagnes.
+
+## Secteurs
+
+- [IT & SaaS](https://squadia.io/secteur-it-saas) : accompagnement des éditeurs de logiciels et acteurs SaaS.
+- [Industrie](https://squadia.io/secteur-industrie) : structuration commerciale et CRM pour l'industrie.
+- [Secteur public](https://squadia.io/secteur-public) : accompagnement des acteurs du secteur public.
+
+## Cas clients
+
+- [Pipeline B2B](https://squadia.io/cas-clients/pipeline-b2b) : structuration d'un pipeline commercial B2B.
+- [CRM Industrie](https://squadia.io/cas-clients/crm-industrie) : projet CRM dans l'industrie.
+- [Migration CRM](https://squadia.io/cas-clients/migration-crm) : migration d'un CRM.
+- [Formation Vente](https://squadia.io/cas-clients/formation-vente) : formation d'une équipe commerciale à l'IA.
+- [Formation IA Communication](https://squadia.io/cas-clients/formation-ia-com) : formation d'une équipe communication à l'IA.
+- [Tous les cas clients](https://squadia.io/cas-clients)
+
+## Ressources
+
+- [Enquête IA B2B 2026](https://squadia.io/ressources/enquete-ia-b2b) : état des lieux de l'adoption de l'IA dans le B2B.
+- [Guide Sales Manager](https://squadia.io/ressources/guide-sales-manager) : guide de pilotage commercial.
+- [Guide Marketing Manager](https://squadia.io/ressources/guide-marketing-manager) : guide de pilotage marketing.
+- [Channel Sales Plan](https://squadia.io/ressources/channel-sales-plan) : plan de vente indirecte / channel.
+
+## Blog
+
+- [Stratégie IA pour PME et ETI — la séquence](https://squadia.io/blog/strategie-ia-pme-sequence)
+- [IA ou automatisation : dans quel ordre](https://squadia.io/blog/formation-ia-automatisation-ordre)
+- [Nettoyage, segmentation et enrichissement des données B2B](https://squadia.io/blog/nettoyage-segmentation-enrichissement-donnees-b2b)
+- [Formation commerciale B2B et IA](https://squadia.io/blog/formation-commerciale-b2b-ia)
+- [Prospection multicanale B2B : les erreurs à éviter](https://squadia.io/blog/prospection-multicanale-b2b-erreurs)
+- [Changement de CRM et organisation](https://squadia.io/blog/changement-crm-organisation)
+
+## Tarifs & Contact
+
+- [Tarifs](https://squadia.io/tarifs) : stratégie, data, automatisation et formation — périmètre ajusté avant engagement.
+- [Contact](https://squadia.io/contact) : prendre contact avec Squadia.
+
+## Optional
+
+- [Notre mission](https://squadia.io/notre-mission) : la mission, l'équipe et les valeurs de Squadia.
+- [À propos](https://squadia.io/a-propos)
+- [Mentions légales](https://squadia.io/mentions-legales)
