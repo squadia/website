@@ -535,7 +535,11 @@ const SignalAccordion = () => {
 // ═══ 04 — COMMENT ÇA MARCHE ═══
 const ToolBadge = ({ src, label, isMobile }) => (
   src ? (
-    <img src={src} alt={label} title={label} style={{ height: isMobile ? '22px' : '28px', width: 'auto', maxWidth: isMobile ? '72px' : '90px', objectFit: 'contain', borderRadius: '4px', filter: 'brightness(1.25)', backgroundColor: '#0A0A14', padding: isMobile ? '3px 6px' : '0', border: isMobile ? '1px solid rgba(255,255,255,0.08)' : 'none' }} />
+    isMobile ? (
+      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(68,204,255,0.08)', whiteSpace: 'nowrap' }}>{label}</span>
+    ) : (
+      <img src={src} alt={label} title={label} style={{ height: '28px', width: 'auto', maxWidth: '90px', objectFit: 'contain', borderRadius: '4px', filter: 'brightness(1.25)' }} />
+    )
   ) : (
     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(68,204,255,0.08)' }}>{label}</span>
   )
