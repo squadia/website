@@ -126,7 +126,7 @@ const HomeCSS = `
 .stat-num-compact { font-size: 22px; font-weight: 700; color: #44CCFF; }
 .stat-label-compact { font-size: 14px; color: var(--text-secondary); }
 .hero-dynamic * { box-sizing: border-box; }
-.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 1; transform: translateY(-75px); }
+.hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 1; }
 .hero-bg-mobile { display: none; }
 .hero-bg-desktop { display: block; animation: heroReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 .hero-bg-video { animation: heroRevealScale 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
@@ -377,9 +377,9 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   return (
     <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#050510' } : undefined}>
       <div className="hero-dynamic" style={!isMobile ? { position: 'sticky', top: 0, height: '100vh' } : undefined}>
-        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top', transform: 'translateY(-75px) scale(1.06)' }} />
+        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top', transform: 'translateY(-75px)' }} />
         {!isMobile && (
-          <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1, transform: 'translateY(-75px) scale(1.06)' }} />
+          <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1 }} />
         )}
         <div className="hero-mask" />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 5, background: 'linear-gradient(to bottom, transparent, #050510)' }} />
