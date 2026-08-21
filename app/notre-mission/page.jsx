@@ -1,10 +1,24 @@
 import PageClient from './_client';
+import { buildMetadata } from '@/src/lib/metadata';
+import JsonLd from '@/src/components/ui/JsonLd';
+import { breadcrumbSchema } from '@/src/lib/schemas';
 
-export const metadata = {
-  title: "Notre Mission \u2014 Squadia, conseil B2B en IA et performance commerciale",
-  description: "D\u00e9couvrez la mission de Squadia : r\u00e9concilier la strat\u00e9gie et l'ex\u00e9cution pour les \u00e9quipes commerciales B2B. Notre \u00e9quipe, nos valeurs et notre engagement.",
-};
+export const metadata = buildMetadata({
+  title: "Notre Mission — Squadia, conseil B2B en IA et performance commerciale",
+  description: "Découvrez la mission de Squadia : réconcilier l'intention et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.",
+  path: "/notre-mission",
+});
+
+const breadcrumb = breadcrumbSchema([
+  { name: "Accueil", path: "/" },
+  { name: "Notre Mission", path: "/notre-mission" },
+]);
 
 export default function Page() {
-  return <PageClient />;
+  return (
+    <>
+      <JsonLd data={[breadcrumb]} />
+      <PageClient />
+    </>
+  );
 }

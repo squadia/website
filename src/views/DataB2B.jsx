@@ -18,7 +18,7 @@ export default function DataB2B() {
   }, []);
 
   useEffect(() => {
-    document.title = "Nettoyage, segmentation et enrichissement des données B2B : Squadia";
+    document.title = "Nettoyage, segmentation et enrichissement des données B2B : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez comment nettoyer, segmenter et enrichir vos données B2B pour maximiser l'efficacité de vos campagnes de prospection. Méthode Squadia pour PME et ETI.";
@@ -123,7 +123,7 @@ export default function DataB2B() {
               marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
-              Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit
+              Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit
             </h1>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -229,8 +229,8 @@ export default function DataB2B() {
             border-radius: 0 0.75rem 0.75rem 0;
           }
           .article-pullquote p {
-            font-size: 1.1rem !important;
-            color: #E5E7EB !important;
+            font-size: 1.1rem !important;
+            color: #E5E7EB !important;
             font-style: italic;
             margin-bottom: 0 !important;
           }
@@ -254,7 +254,7 @@ export default function DataB2B() {
 
         <div className="article-body">
 
-          <p><em>Avant de lancer une campagne, avant de construire une séquence de prospection, avant même de choisir un outil : il y a un travail que personne n'a envie de faire et que tout le monde finit par regretter d'avoir sauté.</em></p>
+          <p><em>Avant de lancer une campagne, avant de construire une séquence de prospection, avant même de choisir un outil : il y a un travail que personne n'a envie de faire et que tout le monde finit par regretter d'avoir sauté.</em></p>
 
           <div className="article-pullquote">
             <p>Nettoyer ses données. Les segmenter. Les enrichir. Ce n'est pas glamour. Mais c'est ce qui sépare une campagne qui tourne de celle qui s'essouffle après deux semaines.</p>
@@ -262,15 +262,15 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>Le nettoyage : la vaisselle de la data</h2>
+          <h2>Le nettoyage : la vaisselle de la data</h2>
 
           <p>Le nettoyage, c'est un peu comme faire la vaisselle après un bon repas. Personne n'a envie. Mais si vous ne le faites pas, le prochain dîner sera un cauchemar.</p>
 
-          <p>Concrètement, ce que ça veut dire sur un fichier de prospection :</p>
+          <p>Concrètement, ce que ça veut dire sur un fichier de prospection :</p>
 
-          <p>Un email obsolète, c'est une opportunité qui part à la poubelle avant même d'avoir été lue. Jérémy Duchemin qui a quitté Pollux pour Tartanpion il y a six mois : si votre base ne le sait pas, votre message n'arrivera jamais au bon endroit. Et les doublons, c'est pire : deux commerciaux qui contactent le même décideur à trois jours d'intervalle, ça fait amateur.</p>
+          <p>Un email obsolète, c'est une opportunité qui part à la poubelle avant même d'avoir été lue. Jérémy Duchemin qui a quitté Pollux pour Tartanpion il y a six mois : si votre base ne le sait pas, votre message n'arrivera jamais au bon endroit. Et les doublons, c'est pire : deux commerciaux qui contactent le même décideur à trois jours d'intervalle, ça fait amateur.</p>
 
-          <p>Il y a aussi les titres trompeurs. Un "Sales Manager" n'est pas toujours un manager d'équipe : parfois c'est un commercial terrain sans budget ni décision. Envoyer le mauvais message au mauvais niveau hiérarchique, c'est du temps gaspillé des deux côtés.</p>
+          <p>Il y a aussi les titres trompeurs. Un "Sales Manager" n'est pas toujours un manager d'équipe : parfois c'est un commercial terrain sans budget ni décision. Envoyer le mauvais message au mauvais niveau hiérarchique, c'est du temps gaspillé des deux côtés.</p>
 
           <div className="article-highlight-box">
             <h3>Un détail que peu prennent au sérieux</h3>
@@ -279,30 +279,30 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>La segmentation : parler à tout le monde, c'est parler à personne</h2>
+          <h2>La segmentation : parler à tout le monde, c'est parler à personne</h2>
 
-          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence.</p>
+          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence.</p>
 
-          <p>Un compte Tier 1 mérite une approche personnalisée, une recherche préalable, un message construit autour de sa situation spécifique. Un compte Tier 3 peut recevoir une séquence plus automatisée. Ce n'est pas une question de respect : c'est une question d'allocation intelligente du temps de vos équipes.</p>
+          <p>Un compte Tier 1 mérite une approche personnalisée, une recherche préalable, un message construit autour de sa situation spécifique. Un compte Tier 3 peut recevoir une séquence plus automatisée. Ce n'est pas une question de respect : c'est une question d'allocation intelligente du temps de vos équipes.</p>
 
           <div className="article-pullquote">
-            <p>Le problème que la plupart des organisations rencontrent, c'est la fusion de bases. CRM, fichiers Excel, exports LinkedIn, listes achetées : quand tout ça se retrouve dans la même campagne sans avoir été réconcilié, la campagne est déjà périmée avant d'avoir commencé.</p>
+            <p>Le problème que la plupart des organisations rencontrent, c'est la fusion de bases. CRM, fichiers Excel, exports LinkedIn, listes achetées : quand tout ça se retrouve dans la même campagne sans avoir été réconcilié, la campagne est déjà périmée avant d'avoir commencé.</p>
           </div>
 
           <p>L'automatisation de cette étape n'est pas un luxe, c'est une condition pour que la machine tourne.</p>
 
           <hr />
 
-          <h2>L'enrichissement : vos données sont incomplètes, et ce n'est pas grave</h2>
+          <h2>L'enrichissement : vos données sont incomplètes, et ce n'est pas grave</h2>
 
           <p>La plupart des CRM ressemblent à un puzzle avec des pièces manquantes. C'est normal. Ce qui l'est moins, c'est de lancer une campagne sans avoir comblé les trous.</p>
 
-          <p>Quelques outils qui fonctionnent bien sur ce sujet :</p>
+          <p>Quelques outils qui fonctionnent bien sur ce sujet :</p>
 
           <ul>
             <li><strong>FullEnrich</strong> recoupe plusieurs sources avec un taux d'enrichissement autour de 80% : 8 numéros sur 10 trouvés via LinkedIn, et reste 100% GDPR compliant.</li>
             <li><strong>Cognism</strong> est certifié ISO et fiable sur la conformité, particulièrement utile pour les entreprises qui ont des exigences légales strictes sur leurs données.</li>
-            <li><strong>Dropcontact</strong> fait à la fois l'enrichissement, la déduplication et la vérification en un seul outil : pratique quand on veut centraliser.</li>
+            <li><strong>Dropcontact</strong> fait à la fois l'enrichissement, la déduplication et la vérification en un seul outil : pratique quand on veut centraliser.</li>
           </ul>
 
           <div className="article-highlight-box">
@@ -312,11 +312,11 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>Clay.com : puissant, mais pas pour tout le monde</h2>
+          <h2>Clay.com : puissant, mais pas pour tout le monde</h2>
 
           <p>Si vous ne connaissez pas <a href="http://Clay.com" target="_blank" rel="noopener noreferrer">Clay.com</a>, c'est un peu le Notion de la data commerciale. Vous créez des tableaux intelligents qui vont chercher de l'information automatiquement, la formatent et la rendent exploitable pour vos campagnes.</p>
 
-          <p>C'est puissant. C'est aussi cher et ça demande un certain niveau de maturité pour en tirer de la valeur. Dans les formations que Squadia anime sur ces sujets, on partage également des alternatives plus accessibles qui font 80% du travail pour une fraction du coût : selon la taille de l'équipe et le volume de contacts à traiter.</p>
+          <p>C'est puissant. C'est aussi cher et ça demande un certain niveau de maturité pour en tirer de la valeur. Dans les formations que Squadia anime sur ces sujets, on partage également des alternatives plus accessibles qui font 80% du travail pour une fraction du coût : selon la taille de l'équipe et le volume de contacts à traiter.</p>
 
           <hr />
 
@@ -327,7 +327,7 @@ export default function DataB2B() {
           <p>Ce ne sont pas des étapes techniques optionnelles. Ce sont les conditions de base pour qu'une campagne produise autre chose que du bruit.</p>
 
           <div className="article-pullquote">
-            <p>Et au fond, c'est la meilleure preuve de respect qu'on puisse donner à un prospect : lui parler correctement, avec les bonnes informations, au bon moment.</p>
+            <p>Et au fond, c'est la meilleure preuve de respect qu'on puisse donner à un prospect : lui parler correctement, avec les bonnes informations, au bon moment.</p>
           </div>
 
           <hr />
@@ -339,14 +339,14 @@ export default function DataB2B() {
               <div style={{ marginBottom: '1rem' }}>
                 <span style={{ background: '#44CCFF', color: '#060612', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Prospection</span>
               </div>
-              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</p>
+              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</p>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.9rem' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.4rem' }} /></div>
             </Link>
             <Link href="/blog/formation-commerciale-b2b-ia" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
               <div style={{ marginBottom: '1rem' }}>
                 <span style={{ background: '#10B981', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Formation</span>
               </div>
-              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</p>
+              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</p>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.9rem' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.4rem' }} /></div>
             </Link>
           </div>

@@ -17,7 +17,7 @@ export default function BlogChangementCRM() {
   }, []);
 
   useEffect(() => {
-    document.title = "Pourquoi les entreprises changent de CRM : Squadia";
+    document.title = "Pourquoi les entreprises changent de CRM : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Un projet CRM naît rarement d'un problème d'outil. Découvrez ce que ce changement révèle sur l'organisation et comment structurer votre système commercial.";
@@ -146,7 +146,7 @@ export default function BlogChangementCRM() {
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
           .article-pullquote { border-left: 3px solid #2563EB; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(37,99,235,0.06); border-radius: 0 0.75rem 0.75rem 0; }
-          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
+          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
           .article-highlight-box { background: #0D0D25; border: 1px solid #1A1A3A; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
           .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #60A5FA; margin-bottom: 0.75rem; }
         `}</style>
@@ -159,7 +159,7 @@ export default function BlogChangementCRM() {
 
           <h2>Ce qui déclenche vraiment un projet CRM</h2>
           <p>Dans la plupart des cas, un projet CRM naît d'un événement interne fort : un changement d'actionnaire, une perte de chiffre d'affaires significative, une réorganisation, un départ de dirigeant clé. Un moment de rupture qui force l'entreprise à regarder en face ce qu'elle a vraiment comme assets : et ce qui ne fonctionne pas.</p>
-          <p>C'est à ce moment-là que les questions émergent. Pas "quel CRM choisir". Mais : est-ce qu'on a le contrôle qu'on devrait avoir sur nos contrats ? Est-ce qu'on comprend vraiment ce qui se passe sur nos territoires ? Est-ce que nos process sont clairs, fluides, respectés par tout le monde ?</p>
+          <p>C'est à ce moment-là que les questions émergent. Pas "quel CRM choisir". Mais : est-ce qu'on a le contrôle qu'on devrait avoir sur nos contrats ? Est-ce qu'on comprend vraiment ce qui se passe sur nos territoires ? Est-ce que nos process sont clairs, fluides, respectés par tout le monde ?</p>
           
           <div className="article-pullquote">
             <p>La réponse est presque toujours non. Et c'est là que le CRM entre dans la conversation : non pas comme solution technique, mais comme réponse à une perte de contrôle.</p>
@@ -207,17 +207,17 @@ export default function BlogChangementCRM() {
           <p>Avant de toucher à l'outil, trois questions structurantes :</p>
           
           <div className="article-highlight-box">
-            <h3>1. Qu'est-ce qu'on veut que le CRM rende visible ?</h3>
+            <h3>1. Qu'est-ce qu'on veut que le CRM rende visible ?</h3>
             <p>Pas en théorie : dans la pratique quotidienne du dirigeant. Quelles décisions doit-il permettre de prendre ? Si vous ne pouvez pas répondre précisément, le projet partira dans le mauvais sens.</p>
           </div>
 
           <div className="article-highlight-box">
-            <h3>2. Où sont les vrais points de friction dans l'adoption ?</h3>
+            <h3>2. Où sont les vrais points de friction dans l'adoption ?</h3>
             <p>La mise à jour manuelle est chronophage. Aujourd'hui, cette tâche peut être automatisée : transcription d'appel, mise à jour auto du CRM. Identifier ces frictions multiplie le taux d'adoption.</p>
           </div>
 
           <div className="article-highlight-box">
-            <h3>3. Quels process veut-on standardiser ?</h3>
+            <h3>3. Quels process veut-on standardiser ?</h3>
             <p>Un CRM n'impose pas des process : il les reflète. Définir les étapes du pipeline, les critères de qualification et les règles de routage est un travail indispensable avant tout déploiement.</p>
           </div>
 
@@ -262,13 +262,13 @@ export default function BlogChangementCRM() {
           <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Structurer sa croissance</span>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous êtes en train de reconsidérer votre organisation commerciale et vos outils ?
+              Vous êtes en train de reconsidérer votre organisation commerciale et vos outils ?
             </h2>
             <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
               Squadia accompagne les PME et ETI françaises dans la structuration de leur système de génération de revenus : du diagnostic à la mise en exécution.
             </p>
             <Link
-              href="/strategie/crm"
+              href="/data"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 background: '#44CCFF', color: '#060612',
@@ -276,7 +276,7 @@ export default function BlogChangementCRM() {
                 fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
               }}
             >
-              Découvrir l'offre CRM <ArrowRight size={18} />
+              Découvrir l'offre Data <ArrowRight size={18} />
             </Link>
           </div>
         </div>

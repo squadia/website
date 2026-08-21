@@ -19,7 +19,7 @@ const StrategieIAPME = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Stratégie IA en PME et ETI : séquence et outils : Squadia";
+    document.title = "Stratégie IA en PME et ETI : séquence et outils : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Découvrez comment mettre en place une strategie IA efficace pour votre PME ou ETI. Séquence, outils, et premiers résultats concrets.";
@@ -34,7 +34,7 @@ const StrategieIAPME = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -42,7 +42,7 @@ const StrategieIAPME = () => {
           </Link>
           <div style={{ marginBottom: '2rem' }}>
             <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #2563EB', backgroundColor: 'rgba(37, 99, 235, 0.1)', color: '#2563EB' }}>
-              Stratégie IA
+              Transformation
             </span>
           </div>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: 1.2, marginBottom: '2rem' }}>
@@ -56,7 +56,7 @@ const StrategieIAPME = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -108,7 +108,7 @@ const StrategieIAPME = () => {
             80% des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas. Parce que les entreprises ont répondu à la mauvaise question.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
-            Elles ont demandé : quel outil utiliser ? Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong>
+            Elles ont demandé : quel outil utiliser ? Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong>
           </p>
           <p style={{ marginBottom: '3rem' }}>
             En France, le paradoxe est particulièrement net : 94% des dirigeants déclarent vouloir investir dans l'IA. Seulement 2% estiment avoir obtenu un retour sur investissement réel en 2024. L'écart entre intention et résultat, c'est une question de méthode, pas de budget.
@@ -124,9 +124,9 @@ const StrategieIAPME = () => {
             Ce qui existe déjà sur l'étagère et fonctionne aujourd'hui en PME et ETI :
           </p>
           <ul style={{ marginBottom: '1.5rem', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-            <li><strong>Agents vocaux et conversationnels</strong> : un agent capable de répondre aux questions des clients, des prospects ou des partenaires en dehors des heures ouvrables, sur vos produits, vos offres, vos tarifs. Squadia l'a mis en place sur sa propre page d'accueil. Ce n'est pas un prototype. C'est en production.</li>
-            <li><strong>Automatisation de workflows commerciaux</strong> : téléchargement d'un document, identification du profil, création d'une tâche commerciale, message personnalisé. Ce que des plateformes d'ABM vendaient à des dizaines de milliers d'euros par an, des systèmes d'automatisation modernes permettent de le reproduire pour une fraction du coût.</li>
-            <li><strong>Intelligence sur les comptes clés</strong> : suivre l'activité de vos comptes stratégiques, détecter les signaux d'achat, déclencher des actions ciblées. Sans investissement massif en infrastructure. Avec de la créativité dans la conception des workflows.</li>
+            <li><strong>Agents vocaux et conversationnels</strong> : un agent capable de répondre aux questions des clients, des prospects ou des partenaires en dehors des heures ouvrables, sur vos produits, vos offres, vos tarifs. Squadia l'a mis en place sur sa propre page d'accueil. Ce n'est pas un prototype. C'est en production.</li>
+            <li><strong>Automatisation de workflows commerciaux</strong> : téléchargement d'un document, identification du profil, création d'une tâche commerciale, message personnalisé. Ce que des plateformes d'ABM vendaient à des dizaines de milliers d'euros par an, des systèmes d'automatisation modernes permettent de le reproduire pour une fraction du coût.</li>
+            <li><strong>Intelligence sur les comptes clés</strong> : suivre l'activité de vos comptes stratégiques, détecter les signaux d'achat, déclencher des actions ciblées. Sans investissement massif en infrastructure. Avec de la créativité dans la conception des workflows.</li>
           </ul>
           <p style={{ marginBottom: '3rem', fontStyle: 'italic', color: '#F9FAFB' }}>
             Le coût réel d'une automatisation bien conçue sur des outils du marché tourne entre 0,05 et 0,10€ par exécution. Ce qui se mesure, c'est la valeur produite par rapport à ce qu'on dépensait avant.
@@ -153,15 +153,15 @@ const StrategieIAPME = () => {
           </h2>
           <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
+              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
               <p>Pas en théorie. Demandez à vos commerciaux, vos équipes marketing, vos managers. Les réponses sont presque toujours les mêmes : préparation des rendez-vous, mise à jour du CRM, reporting, création de contenus répétitifs, veille. Ce sont les premiers candidats à l'automatisation.</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Où nos données sont-elles suffisamment structurées pour qu'une IA s'en serve ?</h3>
+              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Où nos données sont-elles suffisamment structurées pour qu'une IA s'en serve ?</h3>
               <p>L'IA ne crée pas de valeur sur des données inexistantes ou chaotiques. Avant d'automatiser quoi que ce soit, il faut savoir dans quel état est votre CRM, vos fichiers contacts, vos historiques de campagnes. Si la donnée est mauvaise, l'automatisation amplifie le problème plutôt qu'elle ne le règle.</p>
             </div>
             <div>
-              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Quels résultats business veut-on obtenir dans les 90 prochains jours ?</h3>
+              <h3 style={{ fontSize: '1.3rem', color: '#F9FAFB', marginBottom: '0.8rem' }}>Quels résultats business veut-on obtenir dans les 90 prochains jours ?</h3>
               <p>Pas dans 3 ans. Dans 90 jours. Si vous ne pouvez pas nommer un indicateur concret qui devra avoir évolué dans trois mois, votre feuille de route est trop vague pour être actionnable.</p>
             </div>
           </div>
@@ -204,14 +204,14 @@ const StrategieIAPME = () => {
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #2563EB', backgroundColor: 'rgba(37, 130, 246, 0.1)', color: '#2563EB' }}>Transformation</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#2563EB', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
               <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #2563EB', backgroundColor: 'rgba(37, 99, 235, 0.1)', color: '#2563EB' }}>Prospection</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#2563EB', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
             </div>
@@ -220,13 +220,13 @@ const StrategieIAPME = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #2563EB', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez définir votre feuille de route IA<br/>avec un regard extérieur structurant ?
+              Vous voulez former vos équipes à l'IA<br/>avec un regard extérieur structurant ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-              Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
+              Squadia accompagne les PME et ETI françaises dans la montée en compétence IA de leurs équipes.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
-              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+            <Link href="/formations" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
+              Voir les formations IA <ArrowRight size={18} />
             </Link>
           </div>
 

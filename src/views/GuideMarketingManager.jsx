@@ -7,7 +7,7 @@ const GuideMarketingManager = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Mini-guide Marketing Manager B2B : réussir vos 90 premiers jours : Squadia";
+    document.title = "Mini-guide Marketing Manager B2B : réussir vos 90 premiers jours : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "méthodes éprouvées, plans d action, IA, outils et conseils pratiques pour réussir votre prise de poste de Marketing Manager et transformer votre service en moteur de croissance.";
@@ -66,7 +66,7 @@ const GuideMarketingManager = () => {
 
       <div className="container grid-2 align-center" style={{ position: 'relative', zIndex: 2, paddingTop: '160px', paddingBottom: '80px', gap: '4rem' }}>
         
-        {/* ═══ COLONNE GAUCHE : HERO ET CONTENU ═══ */}
+        {/* ═══ COLONNE GAUCHE : HERO ET CONTENU ═══ */}
         <div className="fade-in">
           
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
@@ -82,7 +82,7 @@ const GuideMarketingManager = () => {
           </p>
 
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
             
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
@@ -108,7 +108,7 @@ const GuideMarketingManager = () => {
 
         </div>
 
-        {/* ═══ COLONNE DROITE : FORMULAIRE ═══ */}
+        {/* ═══ COLONNE DROITE : FORMULAIRE ═══ */}
         <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
           <div style={{ background: 'rgba(17,24,39,0.25)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '3rem 2.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)' }}>
             
@@ -119,12 +119,12 @@ const GuideMarketingManager = () => {
             {isSuccess ? (
               <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid #10B981', padding: '2rem', borderRadius: '8px', textAlign: 'center' }}>
                 <CheckCircle2 size={48} color="#10B981" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontSize: '1.2rem', color: '#10B981', marginBottom: '0.5rem' }}>Guide envoyé !</h4>
+                <h4 style={{ fontSize: '1.2rem', color: '#10B981', marginBottom: '0.5rem' }}>Guide envoyé !</h4>
                 <p style={{ color: '#D1D5DB', fontSize: '0.95rem' }}>
                   Vérifiez votre boîte de réception d'ici quelques instants.
                 </p>
               </div>
-            ) : (
+            ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
                 
                 <div className="grid-2" style={{ gap: '1.2rem' }}>

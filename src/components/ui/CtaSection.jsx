@@ -20,10 +20,10 @@ export default function CtaSection({
   cardDescription,
   cardFeatures = [],
   cardColor = '#2563EB',
+  contained = false,
 }) {
-  return (
-    <section style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-      <div style={{
+  const inner = (
+    <div style={{
         display: 'flex',
         flexDirection: 'row',
         flexWrap: 'wrap',
@@ -91,6 +91,15 @@ export default function CtaSection({
         </div>
 
       </div>
+    );
+
+  if (contained) {
+    return inner;
+  }
+
+  return (
+    <section style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
+      {inner}
     </section>
   );
 }

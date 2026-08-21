@@ -16,10 +16,10 @@ export default function BlogStrategieIAPME() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
   useEffect(() => {
-    document.title = "Stratégie IA en PME et ETI : la bonne séquence : Squadia";
+    document.title = "Stratégie IA en PME et ETI : la bonne séquence : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur strategie IA pour obtenir un retour concret en 90 jours.";
+      metaDescription.content = "Séquence, outils et premiers résultats : comment les PME et ETI françaises peuvent structurer leur strategie IA pour obtenir un retour concret en 90 jours.";
     }
     window.scrollTo(0, 0);
   }, []);
@@ -138,7 +138,7 @@ export default function BlogStrategieIAPME() {
                 letterSpacing: '0.1em',
                 textTransform: 'uppercase'
               }}>
-                Stratégie IA
+                Transformation
               </span>
             </div>
 
@@ -260,8 +260,8 @@ export default function BlogStrategieIAPME() {
             border-radius: 0 0.75rem 0.75rem 0;
           }
           .article-pullquote p {
-            font-size: 1.1rem !important;
-            color: #E5E7EB !important;
+            font-size: 1.1rem !important;
+            color: #E5E7EB !important;
             font-style: italic;
             margin-bottom: 0 !important;
           }
@@ -349,10 +349,10 @@ export default function BlogStrategieIAPME() {
 
           <div className="article-stat">
             <div className="article-stat-number">80%</div>
-            <div className="article-stat-label">des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas : parce que les entreprises ont répondu à la mauvaise question.</div>
+            <div className="article-stat-label">des déploiements IA en PME n'atteignent jamais le niveau d'impact attendu. Pas parce que la technologie ne fonctionne pas : parce que les entreprises ont répondu à la mauvaise question.</div>
           </div>
 
-          <p>Elles ont demandé : <em>quel outil utiliser ?</em> Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong></p>
+          <p>Elles ont demandé : <em>quel outil utiliser ?</em> Alors que la bonne question est : <strong>où est-ce que l'IA crée réellement de la valeur dans mon organisation, compte tenu de mes processus, de mes données et de mes équipes ?</strong></p>
 
           <div className="article-stat">
             <div className="article-stat-number">94%</div>
@@ -403,17 +403,17 @@ export default function BlogStrategieIAPME() {
           <h2>Les 3 questions à se poser avant de choisir un outil</h2>
 
           <div className="article-highlight-box">
-            <h3>1. Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
+            <h3>1. Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
             <p>Pas en théorie. Demandez à vos commerciaux, vos équipes marketing, vos managers. Les réponses sont presque toujours les mêmes : préparation des rendez-vous, mise à jour du CRM, reporting, création de contenus répétitifs, veille. Ce sont les premiers candidats à l'automatisation.</p>
           </div>
 
           <div className="article-highlight-box">
-            <h3>2. Où nos données sont-elles suffisamment structurées pour qu'une IA s'en serve ?</h3>
+            <h3>2. Où nos données sont-elles suffisamment structurées pour qu'une IA s'en serve ?</h3>
             <p>L'IA ne crée pas de valeur sur des données inexistantes ou chaotiques. Avant d'automatiser quoi que ce soit, il faut savoir dans quel état est votre CRM, vos fichiers contacts, vos historiques de campagnes. Si la donnée est mauvaise, l'automatisation amplifie le problème plutôt qu'elle ne le règle.</p>
           </div>
 
           <div className="article-highlight-box">
-            <h3>3. Quels résultats business veut-on obtenir dans les 90 prochains jours ?</h3>
+            <h3>3. Quels résultats business veut-on obtenir dans les 90 prochains jours ?</h3>
             <p>Pas dans 3 ans. Dans 90 jours. Si vous ne pouvez pas nommer un indicateur concret qui devra avoir évolué dans trois mois, votre feuille de route est trop vague pour être actionnable.</p>
           </div>
 
@@ -428,7 +428,7 @@ export default function BlogStrategieIAPME() {
                 period: '0 – 90 jours',
                 color: '#2563EB',
                 label: 'Court terme',
-                content: 'Deux ou trois cas d\'usage à fort impact et faible complexité : automatisation de la prise de note et mise à jour CRM après les appels commerciaux, génération assistée de contenus marketing sur des formats répétitifs, veille sectorielle automatisée. Ces premiers résultats font gagner du temps immédiatement, et légitiment la démarche auprès des équipes sceptiques.'
+                content: 'Deux ou trois cas d\'usage à fort impact et faible complexité : automatisation de la prise de note et mise à jour CRM après les appels commerciaux, génération assistée de contenus marketing sur des formats répétitifs, veille sectorielle automatisée. Ces premiers résultats font gagner du temps immédiatement, et légitiment la démarche auprès des équipes sceptiques.'
               },
               {
                 period: '3 – 12 mois',
@@ -495,13 +495,13 @@ export default function BlogStrategieIAPME() {
           <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
             <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Passez à l'action</span>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous voulez définir votre feuille de route IA avec un regard extérieur structurant ?
+              Vous voulez former vos équipes à l'IA avec un regard extérieur structurant ?
             </h2>
             <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-              Squadia accompagne les PME et ETI françaises de la définition de la strategie à la mise en exécution opérationnelle.
+              Squadia accompagne les PME et ETI françaises dans la formation de leurs équipes à l'IA.
             </p>
             <Link
-              href="/strategie-ia"
+              href="/formations"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 background: '#44CCFF', color: '#060612',
@@ -509,7 +509,7 @@ export default function BlogStrategieIAPME() {
                 fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
               }}
             >
-              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+              Voir les formations IA <ArrowRight size={18} />
             </Link>
           </div>
         </div>

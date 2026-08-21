@@ -19,10 +19,10 @@ const FormationOuAutomatisation = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation IA ou automatisation des process : Squadia";
+    document.title = "Formation IA ou automatisation des process : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez la bonne séquence pour transformer votre PME ou ETI avec l'IA. Formation des équipes ou automatisation des process : par quoi commencer ?";
+      metaDescription.content = "Découvrez la bonne séquence pour transformer votre PME ou ETI avec l'IA. Formation des équipes ou automatisation des process : par quoi commencer ?";
     }
   }, []);
 
@@ -34,7 +34,7 @@ const FormationOuAutomatisation = () => {
         <div style={{ height: '100%', width: `${readingProgress}%`, background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)', transition: 'width 0.1s linear', boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)' }} />
       </div>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -56,7 +56,7 @@ const FormationOuAutomatisation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -87,7 +87,7 @@ const FormationOuAutomatisation = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Étape 1 : la formation comme outil de découverte
+            Étape 1 : la formation comme outil de découverte
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Avant de savoir ce que l'IA peut faire pour votre entreprise, vos équipes doivent comprendre ce que l'IA peut faire dans leur métier. C'est le point de départ, pas un préalable administratif, mais une condition réelle.
@@ -106,7 +106,7 @@ const FormationOuAutomatisation = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Étape 2 : faire le pont entre compréhension et système
+            Étape 2 : faire le pont entre compréhension et système
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Une fois que vos équipes ont une première compréhension du potentiel de l'IA dans leur métier, le travail de mise en système peut commencer vraiment.
@@ -122,7 +122,7 @@ const FormationOuAutomatisation = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Étape 3 : mesurer ce qu'on a mis en place
+            Étape 3 : mesurer ce qu'on a mis en place
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Avoir un sentiment sur ce qui fonctionne, c'est utile. Mais c'est encore mieux d'avoir des éléments factuels qui permettent de comprendre ce qui se passe réellement dans la progression des deals et dans l'activité des équipes.
@@ -138,7 +138,7 @@ const FormationOuAutomatisation = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Étape 4 : gérer les résistances
+            Étape 4 : gérer les résistances
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Dans toute équipe, il y a deux types de profils face au changement. Ceux qui sont naturellement ouverts, qui voient dans chaque nouvelle méthode ou outil une occasion de faire mieux, et ceux qui ont construit leurs habitudes sur 10, 15 ou 20 ans de terrain et qui ne voient pas pourquoi ils devraient changer.
@@ -154,7 +154,7 @@ const FormationOuAutomatisation = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Étape 5 : ancrer les habitudes dans la durée
+            Étape 5 : ancrer les habitudes dans la durée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Rome ne s'est pas faite en un jour, et une transformation commerciale non plus. Ce qui fait la différence entre les entreprises qui progressent vraiment et celles qui stagnent après un premier effort, c'est la capacité à itérer, à ajuster, et à construire des habitudes qui durent.
@@ -194,16 +194,16 @@ const FormationOuAutomatisation = () => {
             <div className="grid-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
               <Link href="/blog/strategie-ia-pme-eti" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Stratégie IA</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Transformation</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
               <Link href="/blog/formation-commerciale-b2b-ia" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #10B981', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#34D399' }}>Formation commerciale</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
             </div>
@@ -212,13 +212,13 @@ const FormationOuAutomatisation = () => {
           {/* ═══ CTA ARTICLE ═══ */}
           <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #44CCFF', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
             <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
-              Vous voulez structurer votre strategie IA<br/>et savoir par où commencer ?
+              Vous voulez former vos équipes à l'IA<br/>et savoir par où commencer ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-              Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
+              Squadia accompagne les directions générales, marketing et commerciales dans la montée en compétence IA de leurs équipes.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
-              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+            <Link href="/formations" className="btn btn-primary pulse" style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: '#44CCFF', color: '#060612', border: 'none' }}>
+              Voir les formations IA <ArrowRight size={18} />
             </Link>
           </div>
 

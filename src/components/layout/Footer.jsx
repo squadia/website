@@ -9,12 +9,11 @@ const Footer = () => (
         <div>
           <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Solutions</h4>
           <ul style={{ display: 'flex', flexDirection: 'column' }}>
-            <li><Link href="/strategie/commerciale" className="footer-link">Stratégie Commerciale</Link></li>
-            <li><Link href="/strategie/crm" className="footer-link">Migration CRM</Link></li>
+            <li><Link href="/prospection/campagne" className="footer-link">Campagne multicanale</Link></li>
+            <li><Link href="/prospection/cold-call" className="footer-link">Appels sortants</Link></li>
             <li><Link href="/data/data-clean" className="footer-link">Data Clean</Link></li>
             <li><Link href="/data/data-seg" className="footer-link">Data Seg</Link></li>
             <li><Link href="/data/data-lead" className="footer-link">Data Lead</Link></li>
-            <li><Link href="/automatisation-ia" className="footer-link">Automatisation</Link></li>
           </ul>
         </div>
         {/* COLONNE 2 */}
@@ -41,8 +40,8 @@ const Footer = () => (
           <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Cas clients</h4>
           <ul style={{ display: 'flex', flexDirection: 'column' }}>
             <li><Link href="/cas-clients/pipeline-b2b" className="footer-link">Pipeline B2B</Link></li>
-            <li><Link href="/cas-clients/crm-industrie" className="footer-link">CRM Industrie</Link></li>
-            <li><Link href="/cas-clients/migration-crm" className="footer-link">Migration CRM</Link></li>
+            <li><Link href="/cas-clients/crm-industrie" className="footer-link">Pipeline sans hasard</Link></li>
+            <li><Link href="/cas-clients/migration-crm" className="footer-link">Data cleaning CRM</Link></li>
             <li><Link href="/cas-clients/formation-vente" className="footer-link">Formation Vente</Link></li>
             <li><Link href="/cas-clients/formation-ia-com" className="footer-link">Formation IA Com</Link></li>
           </ul>
@@ -51,8 +50,8 @@ const Footer = () => (
         <div>
           <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Tarifs</h4>
           <ul style={{ display: 'flex', flexDirection: 'column' }}>
-            <li><Link href="/tarifs" className="footer-link">Stratégie IA</Link></li>
-            <li><Link href="/tarifs" className="footer-link">Automatisation</Link></li>
+            <li><Link href="/prospection/campagne" className="footer-link">Campagne multicanale</Link></li>
+            <li><Link href="/prospection/cold-call" className="footer-link">Appels sortants</Link></li>
             <li><Link href="/tarifs" className="footer-link">Formation</Link></li>
           </ul>
         </div>
@@ -73,9 +72,9 @@ const Footer = () => (
             <img src="/logo.png" alt="Squadia" style={{ height: '32px', width: 'auto', marginBottom: '1.5rem' }} />
           </Link>
           <div style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', lineHeight: 1.6 }}>
-            2026 Squadia : SIRET 45243901100027<br />
+            2026 Squadia : SIRET 45243901100027<br />
             193 Av. de France, 75013 Paris<br />
-            contact@squadia.io : +33 7 82 84 35 64
+            contact@squadia.io : +33 7 45 80 49 49
           </div>
         </div>
         <div style={{ display: 'flex', gap: '1.5rem', fontSize: '0.9rem', marginTop: '1rem' }}>

@@ -18,7 +18,7 @@ const plans = [
     buttonText: "Démarrer le diagnostic",
     buttonVariant: "outline",
     includes: [
-      "Inclus dans l'audit :",
+      "Inclus dans l'audit :",
       "Audit des processus sales/marketing",
       "Analyse de la stack technologique",
       "Plan d'action chiffré (ROI)",
@@ -35,7 +35,7 @@ const plans = [
     buttonVariant: "default",
     popular: true,
     includes: [
-      "Accompagnement continu :",
+      "Accompagnement continu :",
       "Installation du moteur de leads",
       "Automatisation des workflows",
       "Formation des équipes SDR/AE",
@@ -51,7 +51,7 @@ const plans = [
     buttonText: "Voir le catalogue",
     buttonVariant: "outline",
     includes: [
-      "Programme expert :",
+      "Programme expert :",
       "Sessions de 1 à 2 jours",
       "Ateliers sur vos propres comptes",
       "Support post-formation 30j",
@@ -235,7 +235,7 @@ export default function PricingSection6() {
                   ) : (
                     <>
                       <div className="price" style={{ fontSize: '2.2rem', fontWeight: 700 }}>
-                        {isYearly ? plan.yearlyPrice : plan.price} € {plan.isPerPerson ? '/ pers' : 'HT'}
+                        {isYearly ? plan.yearlyPrice : plan.price} € {plan.isPerPerson ? '/ pers' : 'HT'}
                       </div>
                       <div style={{ fontSize: '0.8rem', color: '#9CA3AF', marginTop: '0.5rem' }}>Périmètre ajusté avant démarrage.</div>
                     </>

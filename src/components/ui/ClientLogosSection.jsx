@@ -19,20 +19,30 @@ const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
 const allLogos = [
-  dell, xerox, ovh, laPoste, groupama, lyon,
-  ceaAlsace, ceaAtomique, inocel, meotec, oracle,
-  fujitsu, cofaq, franceHydrogene
+  { src: dell, alt: 'Dell Technologies' },
+  { src: xerox, alt: 'Xerox' },
+  { src: ovh, alt: 'OVHcloud' },
+  { src: laPoste, alt: 'Groupe La Poste' },
+  { src: groupama, alt: 'Groupama' },
+  { src: lyon, alt: 'Ville de Lyon' },
+  { src: ceaAlsace, alt: 'CEA Alsace' },
+  { src: ceaAtomique, alt: 'CEA' },
+  { src: inocel, alt: 'Inocel' },
+  { src: meotec, alt: 'Meotec' },
+  { src: oracle, alt: 'Oracle' },
+  { src: fujitsu, alt: 'Fujitsu' },
+  { src: cofaq, alt: 'Cofaq' },
+  { src: franceHydrogene, alt: 'France Hydrogène' }
 ];
 
-export default function ClientLogosSection({ description }) {
+export default function ClientLogosSection({ description, contained = false }) {
   const defaultDescription = "Pour tout ou partie de leur strategie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.";
   const row1Logos = allLogos.slice(0, 7);
   const row2Logos = allLogos.slice(7, 14);
   const row3Logos = [...allLogos].reverse().slice(0, 7);
 
-  return (
-    <section className="client-logos-section" style={{ padding: '8rem 2rem', position: 'relative' }}>
-      <div className="client-section-grid" style={{ 
+  const inner = (
+    <div className="client-section-grid" style={{
         maxWidth: '1200px', 
         margin: '0 auto',
         display: 'grid',
@@ -115,24 +125,24 @@ export default function ClientLogosSection({ description }) {
           {/* Row 1: Right to left, slow */}
           <div className="marquee-row-custom">
             <div className="marquee-content-custom scroll-left-slow">
-              {row1Logos.map((src, idx) => <img key={idx} src={src} alt="Client" className="marquee-logo-custom" />)}
-              {row1Logos.map((src, idx) => <img key={`dup-${idx}`} src={src} alt="Client" className="marquee-logo-custom" />)}
+              {row1Logos.map(({ src, alt }, idx) => <img key={idx} src={src} alt={alt} className="marquee-logo-custom" />)}
+              {row1Logos.map(({ src, alt }, idx) => <img key={`dup-${idx}`} src={src} alt={alt} className="marquee-logo-custom" />)}
             </div>
           </div>
 
           {/* Row 2: Left to right, faster */}
           <div className="marquee-row-custom">
             <div className="marquee-content-custom scroll-right-fast">
-              {row2Logos.map((src, idx) => <img key={idx} src={src} alt="Client" className="marquee-logo-custom" />)}
-              {row2Logos.map((src, idx) => <img key={`dup-${idx}`} src={src} alt="Client" className="marquee-logo-custom" />)}
+              {row2Logos.map(({ src, alt }, idx) => <img key={idx} src={src} alt={alt} className="marquee-logo-custom" />)}
+              {row2Logos.map(({ src, alt }, idx) => <img key={`dup-${idx}`} src={src} alt={alt} className="marquee-logo-custom" />)}
             </div>
           </div>
 
           {/* Row 3: Right to left, slower */}
           <div className="marquee-row-custom">
             <div className="marquee-content-custom scroll-left-slower">
-              {row3Logos.map((src, idx) => <img key={idx} src={src} alt="Client" className="marquee-logo-custom" />)}
-              {row3Logos.map((src, idx) => <img key={`dup-${idx}`} src={src} alt="Client" className="marquee-logo-custom" />)}
+              {row3Logos.map(({ src, alt }, idx) => <img key={idx} src={src} alt={alt} className="marquee-logo-custom" />)}
+              {row3Logos.map(({ src, alt }, idx) => <img key={`dup-${idx}`} src={src} alt={alt} className="marquee-logo-custom" />)}
             </div>
           </div>
 
@@ -207,14 +217,23 @@ export default function ClientLogosSection({ description }) {
           
           @media (max-width: 900px) {
             .client-section-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: 1fr !important;
             }
             .client-section-grid > div:first-child {
-              padding: 3rem 2rem 1rem 2rem !important;
+              padding: 3rem 2rem 1rem 2rem !important;
             }
           }
         `}</style>
       </div>
+    );
+
+  if (contained) {
+    return inner;
+  }
+
+  return (
+    <section className="client-logos-section" style={{ padding: '8rem 2rem', position: 'relative' }}>
+      {inner}
     </section>
   );
 }

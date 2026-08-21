@@ -3,12 +3,13 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { BookOpen, Users, Lock, FastForward, CheckSquare, Target, Settings, Brain, ArrowRight } from 'lucide-react';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const SecteurPublic = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA pour les collectivites et organismes publics : Squadia";
+    document.title = "Formation IA pour les collectivites et organismes publics : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme les équipes des collectivites, administrations et organismes publics a l'IA appliquee a la communication, la gestion et les services aux usagers.";
@@ -56,21 +57,21 @@ const SecteurPublic = () => {
     },
     {
       title: "Ouvrir vers les prochaines etapes",
-      description: "Apres la formation, les équipes voient ce qu'il est possible de faire avec l'IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
+      description: "Apres la formation, les équipes voient ce qu'il est possible de faire avec l'IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
       icon: <FastForward size={24} color="#2563EB" />
     }
   ];
 
   const blocks = [
     {
-      question: "Vous voulez aller plus loin apres la formation ?",
-      cta: "Voir l offre Strategie IA",
-      link: "/strategie-ia"
+      question: "Vous voulez structurer vos données avant d'aller plus loin ?",
+      cta: "Voir l offre Data",
+      link: "/data"
     },
     {
-      question: "Vous cherchez a automatiser certains services ?",
-      cta: "Voir l offre Automatisation",
-      link: "/automatisation-ia"
+      question: "Vous cherchez à activer vos contacts en campagnes ?",
+      cta: "Voir l offre Prospection",
+      link: "/prospection/campagne"
     }
   ];
 
@@ -79,7 +80,7 @@ const SecteurPublic = () => {
   return (
     <div className="secteur-public-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -99,7 +100,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
+      {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
@@ -134,7 +135,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>
@@ -169,7 +170,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : REFERENCES ═══ */}
+      {/* ═══ SECTION 4 : REFERENCES ═══ */}
       <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
@@ -197,7 +198,7 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           {/* Note: changed standard grid to center 2 elements beautifully */}
@@ -226,19 +227,24 @@ const SecteurPublic = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
-        <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '850px', marginInline: 'auto', marginBottom: '3rem' }}>
-            On peut regarder ensemble<br/>comment former vos équipes sans perturber leur organisation.
-          </h2>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="#calendrier" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-              Prendre RDV
-            </a>
-            <Link href="/cas-clients" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-              Voir nos cas clients
-            </Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>On peut regarder ensemble<br/>comment former vos équipes sans perturber leur organisation.</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour construire un plan de formation adapté.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

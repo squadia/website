@@ -25,19 +25,20 @@ const architectureImg = '/assets/images/dataseg/regles.jpeg';
 const datasegVideo = '/assets/video/data-seg.mp4';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const features = (img1, img2, img3, img4) => [
   {
     id: 1,
     title: 'Audit & Diagnostic ICP',
     image: img1,
-    description: 'On part de vos meilleurs clients : ce qui les caractérise, pourquoi ils ont signé, ce qu\'ils ont en commun. On croise avec vos ambitions de développement.',
+    description: 'On part de vos meilleurs clients : ce qui les caractérise, pourquoi ils ont signé, ce qu\'ils ont en commun. On croise avec vos ambitions de développement.',
   },
   {
     id: 2,
     title: 'Critères de segmentation métiers',
     image: img2,
-    description: 'On convertit votre strategie en critères de segmentation opérationnelle : secteur, tech stack, actualité business, recrutement en cours.',
+    description: 'On convertit votre strategie en critères de segmentation opérationnelle : secteur, tech stack, actualité business, recrutement en cours.',
   },
   {
     id: 3,
@@ -60,7 +61,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   React.useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -162,15 +163,15 @@ export default function DataSeg() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Seg : Segmentation CRM et scoring ICP : Squadia";
+    document.title = "Data Seg : Segmentation CRM et scoring ICP : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM : définition ICP, variables de scoring et architecture de données actionnable. Résultats en 30 jours pour PME et ETI.");
+      metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM : définition ICP, variables de scoring et architecture de données actionnable. Résultats en 30 jours pour PME et ETI.");
     }
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -196,7 +197,7 @@ export default function DataSeg() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataSegCSS}</style>
 
@@ -230,7 +231,15 @@ export default function DataSeg() {
               Ne parlez plus à tout le monde.<br />
               Parlez aux bons prospects.
             </motion.h1>
-            <motion.p 
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.15 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>68 %</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>de taux de gain en plus pour les entreprises avec un ICP clairement défini <span style={{ color: 'rgba(255,255,255,0.35)' }}>(TOPO Research, Gartner)</span></span>
+            </motion.div>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
@@ -243,7 +252,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 2 : DIAGNOSTIC */}
+        {/* SECTION 2 : DIAGNOSTIC */}
         <section id="diagnostic" style={{ padding: '10rem 2rem' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
@@ -342,7 +351,7 @@ export default function DataSeg() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -418,7 +427,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={icpImg} 
           img2={segmentationImg} 
@@ -426,17 +435,17 @@ export default function DataSeg() {
           img4={architectureImg} 
         />
 
-        {/* SECTION 5 : LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Le déroulé de Data Seg.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
-              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
-              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
+              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
+              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
+              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -462,7 +471,7 @@ export default function DataSeg() {
           </div>
         </section>
 
-        {/* PRICING SECTION : STYLE TARIFS */}
+        {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
@@ -509,7 +518,7 @@ export default function DataSeg() {
                   "Cartographie du segment cible",
                   "Construction d'un fichier de contacts qualifiés et vérifiés",
                   "Enrichissement contacts selon périmètre défini",
-                  "Livrable : base opérationnelle + intégration CRM (en option)"
+                  "Livrable : base opérationnelle + intégration CRM (en option)"
                 ],
                 price: '4 990 € HT',
                 prefix: 'À partir de',
@@ -520,7 +529,7 @@ export default function DataSeg() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -588,36 +597,44 @@ export default function DataSeg() {
               { q: "Est-ce que je peux connecter ça à mes outils marketing ?", a: "Oui, export ou intégration directe dans votre CRM / outils de campagne." },
               { q: "Dans quel cas choisir Data Seg ?", a: "Quand vous savez que c’est impossible de segmenter vos envoies de campagnes en fonction de type de comptes et qu’il est difficile dans votre système actuel d’en mesurer la progression." }
             ].map((faq, idx) => (
-              <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
-                <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
-                  <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
-                </button>
-                {openFAQ === idx && (
-                  <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
-                    {faq.a}
-                  </div>
-                )}
+              <div
+                key={idx}
+                onClick={() => toggleFAQ(idx)}
+                style={{ backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.18)', borderRadius: '16px', padding: '1.6rem', cursor: 'pointer', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem' }}>
+                  <span>{faq.q}</span>
+                  <ChevronDown style={{ transition: 'transform 0.3s ease', transform: openFAQ === idx ? 'rotate(180deg)' : 'rotate(0deg)', color: '#44CCFF', flexShrink: 0 }} />
+                </div>
+                <div style={{ maxHeight: openFAQ === idx ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease', opacity: openFAQ === idx ? 1 : 0 }}>
+                  <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{faq.a}</div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
-        <CtaSection
-          headline="Votre base est prête pour la prospection active."
-          description="Fini le temps perdu à chercher le bon contact. Vos commerciaux se concentrent sur ce qu'ils font de mieux : vendre."
-          cardTitle="Data Seg"
-          cardSubtitle="Cibler les bons comptes"
-          cardDescription="Transformez votre CRM en une machine de guerre marketing avec une segmentation par ICP et des personas définis."
-          cardFeatures={[
-            "Définition précise de l'ICP",
-            "Segmentation par types de comptes",
-            "Enrichissement LinkedIn & Emails",
-            "Variables de personnalisation IA"
-          ]}
-          cardColor="#2563EB"
-        />
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Votre base est prête<br/>pour la prospection active.</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>Vos commerciaux se concentrent sur ce qu'ils font de mieux : vendre.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       </div>
     </>
   );

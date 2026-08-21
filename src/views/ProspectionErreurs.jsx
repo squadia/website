@@ -8,7 +8,7 @@ const ProspectionErreurs = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Prospection multicanale B2B : 5 erreurs qui font perdre des leads : Squadia";
+    document.title = "Prospection multicanale B2B : 5 erreurs qui font perdre des leads : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "La prospection multicanale B2B est une question de méthode. Découvrez les 5 erreurs les plus fréquentes et nos conseils pour obtenir plus de rendez-vous qualifiés.";
@@ -18,7 +18,7 @@ const ProspectionErreurs = () => {
   return (
     <div className="blog-article" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
           <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
@@ -40,7 +40,7 @@ const ProspectionErreurs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
+      {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
           
@@ -52,7 +52,7 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 1 : confier les emails à des profils sans méthode
+            Erreur 1 : confier les emails à des profils sans méthode
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Écrire un bon email de prospection, ce n'est pas facile. Sur Instagram, une image peut attirer l'oeil en un instant. Sur LinkedIn, un post peut être liké sans même être lu. Par email, vous n'avez qu'une seule arme : vos mots. Et ça ne s'improvise pas.
@@ -65,7 +65,7 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 2 : ignorer la fenêtre de tir
+            Erreur 2 : ignorer la fenêtre de tir
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Le timing, c'est ce qui fait la différence entre un email ignoré et un rendez-vous décroché.
@@ -78,10 +78,10 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 3 : écrire comme un catalogue, pas comme un humain
+            Erreur 3 : écrire comme un catalogue, pas comme un humain
           </h2>
           <p style={{ marginBottom: '1.5rem', fontStyle: 'italic' }}>
-            "Je vous contacte pour vous présenter notre solution innovante..." : si vous commencez comme ça, vous êtes déjà perdu.
+            "Je vous contacte pour vous présenter notre solution innovante..." : si vous commencez comme ça, vous êtes déjà perdu.
           </p>
           <p style={{ marginBottom: '1.5rem' }}>
             Un email ou un appel de prospection, c'est un premier contact humain. Votre prospect doit sentir que vous l'écoutez, que vous comprenez ses problématiques. Et quand'un prospect s'ouvre, c'est le moment de pratiquer l'écoute active : questions précises, reformulation, empathie.
@@ -91,7 +91,7 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 4 : vouloir faire du volume sans cadence adaptée
+            Erreur 4 : vouloir faire du volume sans cadence adaptée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Envoyer 1 000 emails peut sembler ambitieux. Mais si votre équipe en envoie 50 par jour, il vous faudra trois semaines pour adresser votre cible. 10 000 contacts ? Comptez soixante semaines.
@@ -104,7 +104,7 @@ const ProspectionErreurs = () => {
           </p>
 
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
-            Erreur 5 : laisser marketing et ventes travailler en silos
+            Erreur 5 : laisser marketing et ventes travailler en silos
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             On le voit souvent : le marketing lance une campagne, mais les commerciaux ne la relaient pas. Ou les commerciaux prospectent, mais sans contenu ni support cohérent fourni par le marketing. Résultat : double dépense, zéro cohérence, et des prospects qui reçoivent des messages contradictoires.
@@ -130,14 +130,14 @@ const ProspectionErreurs = () => {
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
               <Link href="/blog/strategie-ia-pme-eti" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Stratégie IA</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Transformation</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
                 <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
             </div>

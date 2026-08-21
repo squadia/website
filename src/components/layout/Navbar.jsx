@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Target, Database, Zap, GraduationCap, X } from 'lucide-react';
+import { ChevronDown, Database, Zap, GraduationCap, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 const gmImg = '/assets/images/gm.png';
 const smImg = '/assets/images/sm.png';
@@ -10,8 +10,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showDropdown, setShowDropdown] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('strategie');
-  const [activeMobileCategory, setActiveMobileCategory] = useState('strategie');
+  const [activeCategory, setActiveCategory] = useState('data');
+  const [activeMobileCategory, setActiveMobileCategory] = useState('data');
   const [showMobileServices, setShowMobileServices] = useState(false);
   const [showMobileRoles, setShowMobileRoles] = useState(false);
   const [isMobile, setIsMobile] = useState(false); // false côté SSR, sync au mount
@@ -157,15 +157,14 @@ const Navbar = () => {
         <div className="squad-dropdown-inner">
           <div className="squad-categories" style={{ position: 'relative' }}>
             <div className="squad-glider-track">
-              <div className="squad-glider" style={{ transform: `translateY(${['strategie','data','automatisation','formation'].indexOf(activeCategory) * 100}%)` }}>
+              <div className="squad-glider" style={{ transform: `translateY(${['data','prospection','formation'].indexOf(activeCategory) * 100}%)` }}>
                 <div className="squad-glider-glow" />
                 <div className="squad-glider-trail" />
               </div>
             </div>
             {[
-              { id: 'strategie', label: 'Stratégie', icon: <Target size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'data', label: 'Data', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
-              { id: 'automatisation', label: 'Automatisation', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
+              { id: 'prospection', label: 'Prospection', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
             ].map(cat => (
               <div key={cat.id} className={`squad-cat ${activeCategory === cat.id ? 'active' : ''}`} onClick={() => setActiveCategory(cat.id)}>
@@ -175,16 +174,6 @@ const Navbar = () => {
           </div>
 
           <div className="squad-items-wrap">
-            <div style={{ display: activeCategory === 'strategie' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/commerciale">
-                <span className="squad-item-title">Stratégie Commerciale</span><span className="squad-tag">Stratégie</span>
-                <p className="squad-item-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
-              </Link>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/strategie/crm">
-                <span className="squad-item-title">Migration CRM</span><span className="squad-tag">Stratégie</span>
-                <p className="squad-item-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
-              </Link>
-            </div>
             <div style={{ display: activeCategory === 'data' ? 'block' : 'none' }}>
               <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/data/data-clean">
                 <span className="squad-item-title">Data Clean</span><span className="squad-tag">Data</span>
@@ -200,10 +189,14 @@ const Navbar = () => {
               </Link>
               <Link href="/data" onClick={() => setShowDropdown(false)} className="squad-all-link">Tous nos services Data →</Link>
             </div>
-            <div style={{ display: activeCategory === 'automatisation' ? 'block' : 'none' }}>
-              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/automatisation-ia">
-                <span className="squad-item-title">Automatisation IA</span><span className="squad-tag">Automatisation</span>
-                <p className="squad-item-desc">Plan Starter, Scale ou System adapté à vos besoins et à votre flux d'activité.</p>
+            <div style={{ display: activeCategory === 'prospection' ? 'block' : 'none' }}>
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/prospection/campagne">
+                <span className="squad-item-title">Campagnes email &amp; LinkedIn</span><span className="squad-tag">Prospection</span>
+                <p className="squad-item-desc">Séquences personnalisées, traitement des réponses et Repliik pour automatiser l'envoi</p>
+              </Link>
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/prospection/cold-call">
+                <span className="squad-item-title">Appels sortants</span><span className="squad-tag">Prospection</span>
+                <p className="squad-item-desc">Rendez-vous qualifiés pris par un commercial B2B senior avec un script validé ensemble</p>
               </Link>
             </div>
             <div style={{ display: activeCategory === 'formation' ? 'block' : 'none' }}>
@@ -218,7 +211,7 @@ const Navbar = () => {
                 </Link>
                 <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/formation-communication-et-ia">
                   <span className="squad-item-title">Communication et IA</span>
-                  <p className="squad-item-desc">Produire plus, mieux, plus vite : l'IA au service de votre message</p>
+                  <p className="squad-item-desc">Produire plus, mieux, plus vite : l'IA au service de votre message</p>
                 </Link>
               </div>
               <Link href="/formations" onClick={() => setShowDropdown(false)} className="squad-all-link">Toutes nos formations →</Link>
@@ -354,9 +347,9 @@ const Navbar = () => {
 
         /* ── MOBILE BREAKPOINT ── */
         @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .hamburger-btn { display: flex !important; }
-          .squad-dropdown { display: none !important; }
+          .desktop-nav { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+          .squad-dropdown { display: none !important; }
           .navbar-scrolled {
             top: 0 !important; width: 100% !important;
             border-radius: 0 !important;
@@ -369,25 +362,25 @@ const Navbar = () => {
           }
           /* Padding réduit pour garder logo + hamburger dans l'écran */
           .navbar-base > div {
-            padding-left: 1.25rem !important;
-            padding-right: 1rem !important;
-            height: 60px !important;
+            padding-left: 1.25rem !important;
+            padding-right: 1rem !important;
+            height: 60px !important;
           }
           /* Logo navbar réduit */
           .navbar-base .logo {
-            height: 22px !important;
+            height: 22px !important;
           }
-          /* Logo menu mobile : empêcher height:auto du CSS global */
+          /* Logo menu mobile : empêcher height:auto du CSS global */
           .mob-header img {
-            height: 26px !important;
-            width: auto !important;
-            max-width: none !important;
+            height: 26px !important;
+            width: auto !important;
+            max-width: none !important;
           }
         }
 
         /* ── TABS ≤360px (très petits écrans) ── */
         @media (max-width: 360px) {
-          .mob-cat-tab { font-size: 11px !important; padding: 6px 8px !important; }
+          .mob-cat-tab { font-size: 11px !important; padding: 6px 8px !important; }
         }
 
         /* ── MOBILE MENU ── */
@@ -418,7 +411,7 @@ const Navbar = () => {
           letter-spacing: 0.08em; text-transform: uppercase;
           color: rgba(249,250,251,0.4);
         }
-        /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
+        /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
         .mob-cat-tabs {
           display: grid;
           grid-template-columns: 1fr 1fr;
@@ -583,9 +576,8 @@ const Navbar = () => {
                     {/* Tabs 2×2 */}
                     <div className="mob-cat-tabs">
                       {[
-                        { id: 'strategie', label: 'Stratégie' },
                         { id: 'data', label: 'Data' },
-                        { id: 'automatisation', label: 'Automatisation' },
+                        { id: 'prospection', label: 'Prospection' },
                         { id: 'formation', label: 'Formation' },
                       ].map(tab => (
                         <button
@@ -598,18 +590,6 @@ const Navbar = () => {
 
                     {/* Panels */}
                     <div className="mob-panels" style={{ paddingBottom: '8px' }}>
-                      {activeMobileCategory === 'strategie' && (
-                        <>
-                          <Link className="mob-service-item" href="/strategie/commerciale" onClick={closeMenu}>
-                            <div className="mob-service-top"><span className="mob-service-title">Stratégie Commerciale</span><span className="mob-service-tag">Stratégie</span></div>
-                            <p className="mob-service-desc">Structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes</p>
-                          </Link>
-                          <Link className="mob-service-item" href="/strategie/crm" onClick={closeMenu}>
-                            <div className="mob-service-top"><span className="mob-service-title">Migration CRM</span><span className="mob-service-tag">Stratégie</span></div>
-                            <p className="mob-service-desc">Déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption</p>
-                          </Link>
-                        </>
-                      )}
                       {activeMobileCategory === 'data' && (
                         <>
                           <Link className="mob-service-item" href="/data/data-clean" onClick={closeMenu}>
@@ -627,11 +607,17 @@ const Navbar = () => {
                           <Link className="mob-all-link" href="/data" onClick={closeMenu}>Tous nos services Data →</Link>
                         </>
                       )}
-                      {activeMobileCategory === 'automatisation' && (
-                        <Link className="mob-service-item" href="/automatisation-ia" onClick={closeMenu}>
-                          <div className="mob-service-top"><span className="mob-service-title">Automatisation IA</span><span className="mob-service-tag">Automatisation</span></div>
-                          <p className="mob-service-desc">Plan Starter, Scale ou System adapté à vos besoins</p>
-                        </Link>
+                      {activeMobileCategory === 'prospection' && (
+                        <>
+                          <Link className="mob-service-item" href="/prospection/campagne" onClick={closeMenu}>
+                            <div className="mob-service-top"><span className="mob-service-title">Campagnes email &amp; LinkedIn</span><span className="mob-service-tag">Prospection</span></div>
+                            <p className="mob-service-desc">Séquences personnalisées, traitement des réponses et Repliik</p>
+                          </Link>
+                          <Link className="mob-service-item" href="/prospection/cold-call" onClick={closeMenu}>
+                            <div className="mob-service-top"><span className="mob-service-title">Appels sortants</span><span className="mob-service-tag">Prospection</span></div>
+                            <p className="mob-service-desc">Rendez-vous qualifiés par un commercial B2B senior</p>
+                          </Link>
+                        </>
                       )}
                       {activeMobileCategory === 'formation' && (
                         <>
@@ -721,7 +707,7 @@ const Navbar = () => {
 
           </div>
 
-          {/* ── CTA : enfant direct de mob-menu, toujours en bas ── */}
+          {/* ── CTA : enfant direct de mob-menu, toujours en bas ── */}
           <div className="mob-cta-block">
             <Link className="mob-cta-btn" href="/contact" onClick={closeMenu}>Prendre RDV</Link>
           </div>

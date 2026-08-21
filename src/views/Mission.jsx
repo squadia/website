@@ -6,10 +6,10 @@ const julienImg = '/assets/images/notremission/julien-final.png?v=' + Date.now()
 const kavidaImg = '/assets/images/notremission/kavida-final.png';
 const Mission = () => {
   useEffect(() => {
-    document.title = "Notre Mission : Squadia, conseil B2B en IA et performance commerciale";
+    document.title = "Notre Mission : Squadia, conseil B2B en IA et performance commerciale";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Découvrez la mission de Squadia : réconcilier la strategie et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.");
+      metaDescription.setAttribute('content', "Découvrez la mission de Squadia : réconcilier la strategie et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.");
     }
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mfv'); obs.unobserve(e.target); } });
@@ -80,19 +80,19 @@ const Mission = () => {
         .btn-secondary-m { font-size: 1.1rem; font-weight: 700; background: rgba(255,255,255,.05); color: #e1e2e7; border: 1px solid rgba(255,255,255,.1); padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
         .btn-secondary-m:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
         @media (max-width: 768px) {
-          .hero-grid-m { grid-template-columns: 1fr !important; }
-          .hero-right-m { display: none !important; }
-          .three-col-m { grid-template-columns: 1fr !important; }
-          .four-col-m { grid-template-columns: 1fr 1fr !important; }
-          .team-grid-m { grid-template-columns: 1fr !important; }
-          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
-          .hero-bg-mission { display: none !important; }
-          .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
-          .hero-img-mobile-m { display: block !important; }
-          .hero-overlay-m { display: none !important; }
-          .hero-gradient-lr-m { display: none !important; }
-          .hero-gradient-bottom-m { display: none !important; }
-          .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
+          .hero-grid-m { grid-template-columns: 1fr !important; }
+          .hero-right-m { display: none !important; }
+          .three-col-m { grid-template-columns: 1fr !important; }
+          .four-col-m { grid-template-columns: 1fr 1fr !important; }
+          .team-grid-m { grid-template-columns: 1fr !important; }
+          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
+          .hero-bg-mission { display: none !important; }
+          .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
+          .hero-img-mobile-m { display: block !important; }
+          .hero-overlay-m { display: none !important; }
+          .hero-gradient-lr-m { display: none !important; }
+          .hero-gradient-bottom-m { display: none !important; }
+          .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
         }
         .hero-bg-mission {
           animation: missionBgReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
@@ -110,7 +110,7 @@ const Mission = () => {
         position: 'relative', overflow: 'hidden', paddingTop: '64px', background: '#060612',
       }}>
         {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
-        <img src="/assets/images/notremission/notremission_background.png" alt="" className="hero-bg-mission" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', zIndex: 0 }} />
+        <img src="/assets/images/notremission/notremission_background.png" alt="" className="hero-bg-mission" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', filter: 'blur(2px)', transform: 'scale(1.02)', zIndex: 0 }} />
         {/* Overlay global */}
         <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.25)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
@@ -119,7 +119,7 @@ const Mission = () => {
         <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Image mobile : visible uniquement sur mobile */}
         <div className="hero-img-mobile-m" style={{ display: 'none', width: '100%', height: '280px', overflow: 'hidden', flexShrink: 0 }}>
-          <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' }} />
+          <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', filter: 'blur(2px)', transform: 'scale(1.02)' }} />
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, transparent, #060612)' }} />
         </div>
 
@@ -136,7 +136,7 @@ const Mission = () => {
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
             <a className="btn-primary-m" href="#croyance">Notre croyance</a>
-            <a className="btn-secondary-m" href="#equipe">L'équipe</a>
+            <a className="btn-secondary-m" href="#equipe">Votre équipe</a>
           </div>
         </div>
 
@@ -145,14 +145,14 @@ const Mission = () => {
       {/* ── CE QU'ON OBSERVE ── */}
       <section id="croyance" style={{ background: '#060612', padding: '120px 0' }}>
         <div className="container">
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre croyance</span>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre constat</span>
           <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur.<br />3 causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
               { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
               { icon: <IconDoc />, title: "Des commerciaux qui passent trop de temps sur l'admin", body: "Reporting manuel, CRM mal renseigné, tâches répétitives. 50 % du temps commercial part ailleurs que sur la vente.", tag: "Temps mal alloué", delay: '.08s' },
-              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là ; la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
+              { icon: <IconClock />, title: "Un management qui pilote sans voir les bonnes données", body: "Tableaux de bord incomplets, KPIs mal définis, décisions prises sur le ressenti. L'IA est là ; la méthode pour s'en servir, pas encore.", tag: "Pilotage à l'aveugle", delay: '.16s' },
             ].map((c, i) => (
               <div key={i} style={{ position: 'relative', display: 'flex' }}>
                 {i === 2 && (
@@ -162,7 +162,7 @@ const Mission = () => {
                   <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
                     <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#f87171', background: 'rgba(248,113,113,.08)', border: '1px solid rgba(248,113,113,.3)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.3, letterSpacing: '-.01em', color: '#f87171', marginBottom: '10px' }}>{c.title}</h3>
+                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 300, lineHeight: 1.3, letterSpacing: '-.01em', color: '#f87171', marginBottom: '10px' }}>{c.title}</h3>
                   <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
                 </div>
               </div>
@@ -175,7 +175,7 @@ const Mission = () => {
       <section style={{ background: '#060612', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: 0, right: '-200px', width: '500px', height: '100%', background: 'radial-gradient(ellipse,rgba(68,204,255,.04) 0%,transparent 70%)', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Ce que nous apportons</span>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre apport</span>
           <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem', maxWidth: '600px' }}>Pour résoudre ça, il faut être équipé.</h2>
           <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser.<br />C'est ce que nous construisons pour les PME et ETI B2B.</p>
           <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,.05)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.05)' }}>
@@ -195,23 +195,45 @@ const Mission = () => {
         </div>
       </section>
 
-      {/* ── QUELQUES CHIFFRES ── */}
+      {/* ── NOTRE CROYANCE (citation) ── */}
       <section style={{ background: '#080a0d', padding: '120px 0', borderTop: '1px solid rgba(255,255,255,.05)' }}>
         <div className="container">
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Quelques chiffres</span>
-          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '40px' }}>Le marché en 2026.</h2>
-          <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px' }}>
-            {[
-              { num: '58 %', body: "des dirigeants de PME et ETI considèrent l'IA comme un enjeu de survie.", source: 'Bpifrance 2026', delay: '0s' },
-              { num: '50 %', body: "du temps des commerciaux est consacré à des tâches administratives, pas à la vente.", source: 'Salesforce State of Sales', delay: '.08s' },
-              { num: '32 %', body: "des PME utilisent l'IA au quotidien. Les autres sont encore en phase d'exploration.", source: 'Bpifrance 2026', delay: '.16s' },
-            ].map((s, i) => (
-              <div key={i} className="glass-card-m glass-card-blue-border mfu" style={{ padding: '28px 24px', transitionDelay: s.delay }}>
-                <div style={{ fontFamily: fj, fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#44CCFF', lineHeight: 1, marginBottom: '10px' }}>{s.num}</div>
-                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{s.body}</p>
-                <div style={{ marginTop: '14px', fontFamily: fi, fontSize: '.625rem', fontWeight: 700, color: '#4b5563', letterSpacing: '.06em', textTransform: 'uppercase' }}>{s.source}</div>
+          <div className="mfu" style={{
+            position: 'relative',
+            border: '1px solid rgba(68,204,255,.35)',
+            borderRadius: '6px',
+            padding: '56px 48px',
+            overflow: 'hidden',
+            background: '#0a0d14',
+          }}>
+            {/* Motif de points en fond */}
+            <svg aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
+              <defs>
+                <pattern id="mission-croyance-dots" width="18" height="18" patternUnits="userSpaceOnUse">
+                  <circle cx="1.5" cy="1.5" r="1.2" fill="rgba(255,255,255,0.09)" />
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#mission-croyance-dots)" />
+            </svg>
+
+            {/* Repères d'angle */}
+            <div style={{ position: 'absolute', top: '-6px', left: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
+            <div style={{ position: 'absolute', top: '-6px', right: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
+            <div style={{ position: 'absolute', bottom: '-6px', left: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
+            <div style={{ position: 'absolute', bottom: '-6px', right: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
+
+            <div style={{ position: 'relative', zIndex: 1 }}>
+              <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '20px' }}>Notre croyance</span>
+              <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.9rem, 3.6vw, 3.1rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff', maxWidth: '780px', marginBottom: '1.5rem' }}>
+                &laquo;&nbsp;La chance est le moment où le travail rencontre l'opportunité.&nbsp;&raquo;
+              </h2>
+              <p style={{ fontFamily: fi, fontSize: '1.05rem', lineHeight: 1.6, color: '#bcc8d1', maxWidth: '620px', marginBottom: '2rem' }}>
+                Nous mettons toujours toutes les chances de notre côté pour réussir nos missions. C'est cette philosophie en laquelle nous croyons.
+              </p>
+              <div style={{ textAlign: 'right' }}>
+                <span style={{ fontFamily: fi, fontStyle: 'italic', fontSize: '1.05rem', fontWeight: 600, color: '#44CCFF', whiteSpace: 'nowrap' }}>Sénèque</span>
               </div>
-            ))}
+            </div>
           </div>
         </div>
       </section>
@@ -220,7 +242,7 @@ const Mission = () => {
       <section id="equipe" style={{ background: '#060612', padding: '120px 0' }}>
         <div className="container">
           <div style={{ marginBottom: '48px' }}>
-            <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>L'équipe</span>
+            <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Votre équipe</span>
             <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>Votre équipe dédiée.</h2>
             <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '480px', marginTop: '8px' }}>Experts indépendants associés, chacun avec son domaine, sa structure et une complémentarité réelle sur le terrain.</p>
           </div>
@@ -311,22 +333,22 @@ const Mission = () => {
         </div>
       </section>
 
-      {/* ── CTA FINAL ── */}
-      <section style={{ background: '#060612', padding: '120px 0' }}>
-        <div className="container">
-          <div className="mfu" style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '720px', display: 'flex', flexDirection: 'column' }}>
-            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 0', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div style={{ textAlign: 'center' }}>
+      {/* ── CTA FINAL : REJOIGNEZ-NOUS ── */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div className="mfu" style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
                 <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: 0 }}>
-                  Squadia est-il le bon partenaire<br />pour votre organisation ?
-                </h2>
+                <p style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Squadia est-il le bon partenaire<br />pour votre organisation ?</h2>
               </div>
-              <div style={{ textAlign: 'center', paddingBottom: '280px' }}>
-                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '360px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
-                <Link className="btn-primary-m" href="/contact">Prendre RDV</Link>
+              <div>
+                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>Prenons 30 minutes pour en discuter.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
               </div>
             </div>
           </div>

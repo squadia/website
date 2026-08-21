@@ -10,48 +10,40 @@ const imgCRM = '/assets/images/hubspotcrm.jpeg';
 const imgAutoVente = '/assets/images/automatisation/auto1.webp';
 const imgData = '/assets/images/data/data.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div style={{ borderBottom: '1px solid #1A1A3A', padding: '1.5rem 0' }}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ 
-          width: '100%', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          textAlign: 'left',
-          color: '#F9FAFB',
-          fontSize: '1.1rem',
-          fontWeight: 700,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0
-        }}
-      >
+    <div
+      onClick={() => setIsOpen(!isOpen)}
+      style={{
+        backgroundColor: '#0D0D25',
+        border: '1px solid rgba(68, 204, 255, 0.18)',
+        borderRadius: '16px',
+        padding: '1.6rem',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
+      }}
+    >
+      <div style={{
+        width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
+        color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+      }}>
         <span>{question}</span>
-        <ChevronDown 
-          style={{ 
-            transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: '#9CA3AF'
-          }} 
-          size={20}
-        />
-      </button>
-      <div 
-        style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
-          overflow: 'hidden', 
-          transition: 'max-height 0.3s ease-in-out',
-        }}
-      >
-        <p style={{ marginTop: '1rem', color: '#9CA3AF', lineHeight: 1.6, fontSize: '1.05rem' }}>
-          {answer}
-        </p>
+        <ChevronDown style={{
+          transition: 'transform 0.3s ease',
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          color: '#44CCFF', flexShrink: 0
+        }} />
+      </div>
+      <div style={{
+        maxHeight: isOpen ? '400px' : '0',
+        overflow: 'hidden',
+        transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
+        opacity: isOpen ? 1 : 0
+      }}>
+        <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
       </div>
     </div>
   );
@@ -63,7 +55,7 @@ const DayBlock = ({ title, objective, children }) => {
     <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(68, 204, 255, 0.1)' }}>
       <div style={{ background: 'rgba(68, 204, 255, 0.05)', padding: '2rem 3rem', borderBottom: open ? '1px solid rgba(68, 204, 255, 0.15)' : 'none' }}>
         <h3 style={{ fontSize: '1.8rem', color: '#44CCFF', marginBottom: '0.5rem' }}>{title}</h3>
-        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
+        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
         {!open && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
             <button onClick={() => setOpen(true)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(68,204,255,0.35)', color: '#44CCFF', fontSize: '0.875rem', fontWeight: 600, padding: '10px 24px', borderRadius: '9px', cursor: 'pointer', letterSpacing: '0.04em', transition: 'background 0.15s, border-color 0.15s' }}
@@ -96,7 +88,7 @@ const FormationVentesIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Ventes & IA B2B : 2 jours : Squadia";
+    document.title = "Formation Ventes & IA B2B : 2 jours : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes commerciales à la vente complexe et aux outils IA. Programme 2 jours, cas pratiques, pour profils juniors et seniors. PME et ETI.";
@@ -109,7 +101,7 @@ const FormationVentesIA = () => {
   return (
     <div className="formation-ventes-ia" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgCommercial} alt="" style={{
@@ -133,7 +125,11 @@ const FormationVentesIA = () => {
         <div style={{ position: 'relative', zIndex: 3, paddingLeft: '8%', paddingRight: '5%', width: '100%' }}>
           <div className="fade-in" style={{ maxWidth: '750px' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
-            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '2rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>Formation IA vente B2B : prospecter, qualifier et closer autrement</h1>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>Formation IA vente B2B : prospecter, qualifier et closer autrement</h1>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>3,7x</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '320px', lineHeight: 1.3 }}>plus de chances d'atteindre son quota pour les commerciaux qui utilisent bien l'IA <span style={{ color: 'rgba(255,255,255,0.35)' }}>(Gartner)</span></span>
+            </div>
             <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
               Gagnez vos deals complexes grâce à une préparation millimétrée. Ce programme de 2 jours allie fondamentaux de la vente et outils IA pour renforcer votre posture et structurer vos plans de compte de manière convaincante.
             </p>
@@ -141,7 +137,7 @@ const FormationVentesIA = () => {
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontWeight: 500 }}>
                 <Globe size={18} color="#44CCFF" />
-                <span>Langues disponibles : <strong style={{ color: '#FFFFFF' }}>FR : EN : ES</strong></span>
+                <span>Langues disponibles : <strong style={{ color: '#FFFFFF' }}>FR : EN : ES</strong></span>
               </div>
             </div>
 
@@ -153,10 +149,10 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
@@ -172,7 +168,7 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
+      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
       <section id="programme" className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '0.75rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours</h2>
@@ -181,110 +177,110 @@ const FormationVentesIA = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* JOUR 1 */}
-            <DayBlock title="Jour 1 : Avant la Salle" objective="Comprendre son compte, structurer son approche, préparer chaque rendez-vous avec un avantage.">
+            <DayBlock title="Jour 1 : Avant la Salle" objective="Comprendre son compte, structurer son approche, préparer chaque rendez-vous avec un avantage.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Analyse stratégique du compte :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>lire un compte avant d'y entrer : signaux externes, mouvements d'organisation, détection anticipée des appels d'offres avec outils IA</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Analyse stratégique du compte :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>lire un compte avant d'y entrer : signaux externes, mouvements d'organisation, détection anticipée des appels d'offres avec outils IA</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Cartographie des acteurs :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>champion, sponsor, allié, opposant : qui décide vraiment, qui influence, qui peut tout bloquer sans qu'on le voie venir. La distinction champion / sponsor, l'erreur la plus coûteuse en vente complexe</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Cartographie des acteurs :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>champion, sponsor, allié, opposant : qui décide vraiment, qui influence, qui peut tout bloquer sans qu'on le voie venir. La distinction champion / sponsor, l'erreur la plus coûteuse en vente complexe</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Qualification et langage commun :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>méthode MEDDIC appliquée : ce qu'on sait, ce qu'on ne sait pas encore, ce qu'on doit aller chercher avant de proposer quoi que ce soit</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Qualification et langage commun :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>méthode MEDDIC appliquée : ce qu'on sait, ce qu'on ne sait pas encore, ce qu'on doit aller chercher avant de proposer quoi que ce soit</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Construction du plan de compte :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les 6 sections, comment s'en servir pour mobiliser marketing, avant-vente, partenaires et direction : pas un document administratif, un outil de pilotage et de développement du compte</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Construction du plan de compte :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les 6 sections, comment s'en servir pour mobiliser marketing, avant-vente, partenaires et direction : pas un document administratif, un outil de pilotage et de développement du compte</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Mobiliser son écosystème :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comment activer les ressources internes et externes pour entrer sur un compte, s'y sécuriser et le développer : partenaires, marketing, événements, introductions</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Mobiliser son écosystème :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comment activer les ressources internes et externes pour entrer sur un compte, s'y sécuriser et le développer : partenaires, marketing, événements, introductions</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Préparer un premier RDV avec un prospect C-level :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Préparer un premier RDV avec un prospect C-level :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>recherche pré-call avec IA, lecture du profil comportemental de l'interlocuteur, adapter son angle d'entrée et son registre avant d'être dans la salle</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Chaque participant travaille sur un compte réel de son portefeuille : analyse, cartographie des acteurs, ébauche du plan de compte et identification des ressources à mobiliser. Restitution et comparaison en groupe.
+                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Chaque participant travaille sur un compte réel de son portefeuille : analyse, cartographie des acteurs, ébauche du plan de compte et identification des ressources à mobiliser. Restitution et comparaison en groupe.
                   </p>
                 </div>
               </div>
             </DayBlock>
 
             {/* JOUR 2 */}
-            <DayBlock title="Jour 2 : Dans la Salle et Après" objective="Les réflexes qui font la différence : à l'ouverture, face aux objections, et dans la capacité à convertir après le rendez-vous.">
+            <DayBlock title="Jour 2 : Dans la Salle et Après" objective="Les réflexes qui font la différence : à l'ouverture, face aux objections, et dans la capacité à convertir après le rendez-vous.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Ouverture de rendez-vous :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les 3 premières minutes : cadrage, objectif annoncé, gestion du temps, laisser la parole au bon moment. Ce qui se joue avant qu'on ait présenté quoi que ce soit</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Ouverture de rendez-vous :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les 3 premières minutes : cadrage, objectif annoncé, gestion du temps, laisser la parole au bon moment. Ce qui se joue avant qu'on ait présenté quoi que ce soit</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Body language et présence :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>posture, regard, voix, gestion du silence : ce que l'interlocuteur perçoit et retient avant même l'argument commercial</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Body language et présence :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>posture, regard, voix, gestion du silence : ce que l'interlocuteur perçoit et retient avant même l'argument commercial</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Écoute active et reformulation :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comprendre ce que le prospect dit vraiment : les biais d'écoute, la reformulation comme outil de qualification, pas seulement de politesse</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Écoute active et reformulation :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>comprendre ce que le prospect dit vraiment : les biais d'écoute, la reformulation comme outil de qualification, pas seulement de politesse</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Traitement des objections en vente complexe :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les objections fréquentes sur le prix, la concurrence, le timing : méthode de traitement, cas réels, ce qu'on ne dit surtout pas</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Traitement des objections en vente complexe :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>les objections fréquentes sur le prix, la concurrence, le timing : méthode de traitement, cas réels, ce qu'on ne dit surtout pas</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Gestion du cycle post-RDV :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>produire un compte-rendu utile dans l'heure, construire une relance qui apporte quelque chose, lire les signaux de progression ou de refroidissement : savoir quand accélérer, quand lâcher du lest</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Gestion du cycle post-RDV :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>produire un compte-rendu utile dans l'heure, construire une relance qui apporte quelque chose, lire les signaux de progression ou de refroidissement : savoir quand accélérer, quand lâcher du lest</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Claude en situation réelle :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>utiliser l'IA pendant le call, produire le compte-rendu en 5 minutes, générer un devis ou une présentation d'offre qui reprend les mots et les priorités du prospect : rendu visuel professionnel avec Canva en moins de 20 minutes. Ce que ça prenait 2 heures prend maintenant un quart d'heure.</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Claude en situation réelle :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>utiliser l'IA pendant le call, produire le compte-rendu en 5 minutes, générer un devis ou une présentation d'offre qui reprend les mots et les priorités du prospect : rendu visuel professionnel avec Canva en moins de 20 minutes. Ce que ça prenait 2 heures prend maintenant un quart d'heure.</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Jeux de rôles en rotation acheteur / vendeur / observateur sur des cas réels : puis production en direct d'un compte-rendu et d'une proposition commerciale sur un prospect réel du participant avec les outils vus en formation.
+                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Jeux de rôles en rotation acheteur / vendeur / observateur sur des cas réels : puis production en direct d'un compte-rendu et d'une proposition commerciale sur un prospect réel du participant avec les outils vus en formation.
                   </p>
                 </div>
               </div>
@@ -303,7 +299,7 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
+      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
@@ -385,7 +381,7 @@ const FormationVentesIA = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Langues</span>
-                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Groupe</span>
@@ -423,52 +419,52 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
             Une équipe formée sur les bons réflexes commerciaux, c'est le point de départ. Pour aller plus loin : structurer les leads, automatiser les flux, fiabiliser le pipeline : Squadia intervient aussi sur les outils et les systèmes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
-            {/* Carte 1 : Stratégie CRM */}
+            {/* Carte 1 : Data / CRM */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
-                <img src={imgCRM} alt="Stratégie CRM" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <img src={imgCRM} alt="Data et CRM B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Structurez votre CRM commercial</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Un CRM bien configuré, c'est un pipeline fiable, des opportunités tracées et une équipe qui sait exactement où elle en est : sans saisie manuelle superflue.</p>
-                <Link href="/strategie/crm" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Structurez vos données commerciales</h3>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base propre et un CRM bien configurés, c'est un pipeline fiable, des opportunités tracées et une équipe qui sait exactement où elle en est.</p>
+                <Link href="/data" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
-                    Stratégie CRM <ArrowRight size={16} />
+                    Data <ArrowRight size={16} />
                   </span>
                 </Link>
               </div>
             </div>
 
-            {/* Carte 2 : Automatisation cycle de vente */}
+            {/* Carte 2 : Prospection / campagnes */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
-                <img src={imgAutoVente} alt="Automatisation cycle de vente" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <img src={imgAutoVente} alt="Campagnes de prospection B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Automatisez votre cycle de vente</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Qualification, scoring, relances multicanales, suivi post-RDV : automatisez chaque étape pour que vos commerciaux se concentrent sur la conversion.</p>
-                <Link href="/automatisation-ia" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Lancer des campagnes de prospection</h3>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Qualification, scoring, relances multicanales, suivi post-RDV : des séquences pilotées par la data pour que vos commerciaux se concentrent sur la conversion.</p>
+                <Link href="/prospection/campagne" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
-                    Automatisation <ArrowRight size={16} />
+                    Prospection <ArrowRight size={16} />
                   </span>
                 </Link>
               </div>
             </div>
 
-            {/* Carte 3 : Data */}
+            {/* Carte 3 : Data */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgData} alt="Data" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -490,12 +486,12 @@ const FormationVentesIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <AccordionItem 
                 question="Cette formation convient-elle aux équipes avec des niveaux très différents ?" 
                 answer="Oui, c'est précisément pour ça qu'elle a été conçue. Les modules sur la méthode et le plan de compte s'adressent à tous les niveaux. Les ateliers et jeux de rôles s'intensifient ou s'allègent selon le groupe. Les seniors ne sont jamais en terrain connu trop longtemps."
@@ -510,7 +506,7 @@ const FormationVentesIA = () => {
               />
               <AccordionItem 
                 question="Peut-on suivre seulement l'un des deux jours ?" 
-                answer="Les deux jours sont conçus en séquence logique : le Jour 1 prépare le terrain, le Jour 2 met en pratique. Suivre uniquement le Jour 2 sans le Jour 1 est possible mais déconseillé pour les équipes qui n'ont pas encore de méthode commune sur le plan de compte."
+                answer="Les deux jours sont conçus en séquence logique : le Jour 1 prépare le terrain, le Jour 2 met en pratique. Suivre uniquement le Jour 2 sans le Jour 1 est possible mais déconseillé pour les équipes qui n'ont pas encore de méthode commune sur le plan de compte."
               />
               <AccordionItem 
                 question="Quelle différence avec une formation commerciale classique ?" 
@@ -522,25 +518,36 @@ const FormationVentesIA = () => {
       </section>
 
       {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
-      <ClientLogosSection 
-        description="Pour aider leurs équipes de vente à réussir leur RDV B2B c-level de la préparation à la gestion de l'entretien avec des méthodes de vente pour une vente sous contrôle ." 
-      />
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection
+            description="Pour aider leurs équipes de vente à réussir leur RDV B2B c-level de la préparation à la gestion de l'entretien avec des méthodes de vente pour une vente sous contrôle ."
+            contained={true}
+          />
+        </div>
+      </section>
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
-      <CtaSection
-        headline="Prêt à donner à votre équipe commerciale un avantage réel sur le terrain ?"
-        description="Une formation qui change la façon de préparer les RDV, de produire des propositions et de relancer les prospects."
-        cardTitle="Formation Ventes & IA"
-        cardSubtitle="Équipe commerciale renforcée"
-        cardDescription="Méthode, plan de compte, jeux de rôle C-level : 2 jours pour changer les réflexes de vente en profondeur."
-        cardFeatures={[
-          "Analyse stratégique compte",
-          "Qualification & Meddic",
-          "Jeux de rôle C-level",
-          "Outils IA terrain"
-        ]}
-        cardColor="#2563EB"
-      />
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à donner à votre équipe commerciale<br/>un avantage réel sur le terrain ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>2 jours pour changer les réflexes de vente en profondeur.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

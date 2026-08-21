@@ -8,6 +8,8 @@ const c1 = '/assets/images/c1.png';
 const fonds1 = '/assets/images/fonds1.png';
 const imgMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
 import { casesData } from '../data/cases';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
+const kickerStyle = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' };
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const formationImg = '/assets/images/formationB2B.png';
 const transformerCRMImg = '/assets/images/transformerCRM.jpeg';
@@ -19,7 +21,7 @@ const caseImagesDG = {
 
 const caseLabelsDG = {
   'pipeline-b2b': 'Leads',
-  'crm-industrie': 'Stratégie',
+  'crm-industrie': 'Prospection',
   'formation-vente': 'Formation',
 };
 
@@ -29,62 +31,46 @@ const TagDG = ({ children }) => (
   </span>
 );
 
-const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
-  const borderColor = 'rgba(255,255,255,0.08)';
-  return (
-    <div style={{ 
-      borderBottom: `1px solid ${borderColor}`, 
-      padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
-      transition: 'opacity 0.3s ease'
+const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
+  <div
+    onClick={onToggle}
+    style={{
+      backgroundColor: '#0D0D25',
+      border: '1px solid rgba(68, 204, 255, 0.18)',
+      borderRadius: '16px',
+      padding: '1.6rem',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease',
+    }}
+  >
+    <div style={{
+      width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
+      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
-      <button 
-        onClick={onToggle}
-        style={{ 
-          width: '100%', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          textAlign: 'left',
-          color: '#FFFFFF',
-          fontSize: '1rem',
-          fontWeight: 600,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0
-        }}
-      >
-        <span>{question}</span>
-        <ChevronDown 
-          style={{ 
-            transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: 'rgba(255,255,255,0.4)'
-          }} 
-        />
-      </button>
-      <div 
-        style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
-          overflow: 'hidden', 
-          transition: 'max-height 0.3s ease-in-out',
-        }}
-      >
-        <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-          {answer}
-        </p>
-      </div>
+      <span>{question}</span>
+      <ChevronDown style={{
+        transition: 'transform 0.3s ease',
+        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        color: '#44CCFF', flexShrink: 0
+      }} />
     </div>
-  );
-}
+    <div style={{
+      maxHeight: isOpen ? '400px' : '0',
+      overflow: 'hidden',
+      transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
+      opacity: isOpen ? 1 : 0
+    }}>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+    </div>
+  </div>
+);
 
 const LandingMarketing = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour Directeurs Marketing : Pipeline B2B et IA";
+    document.title = "Squadia pour Directeurs Marketing : Pipeline B2B et IA";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia aide les directions marketing B2B à structurer un pipeline fiable, qualifier leurs leads et automatiser leurs campagnes. Pour PME et ETI en France.";
@@ -100,23 +86,23 @@ const LandingMarketing = () => {
   ];
 
   const apports = [
-    { title: "Des leads avec du contexte, pas juste des contacts", desc: "Signaux d'achat, changements de poste, recrutements stratégiques. Les leads Squadia arrivent avec une raison d'acheter maintenant et un angle d'approche. Vos commerciaux savent exactement pourquoi ils appellent." },
-    { title: 'Un pipeline marketing structuré et mesurable', desc: "On aligne les actions marketing sur les objectifs commerciaux réels. Chaque campagne, chaque séquence, chaque lead est connecté à un indicateur de pipeline. La contribution au chiffre devient visible et défendable." },
-    { title: 'Une automatisation qui libère du temps pour la strategie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment." },
-    { title: 'Une équipe formée pour exploiter les outils en place', desc: "Pas d'adoption en demi-teinte. On forme votre équipe sur les cas concrets de votre organisation pour que les outils servent vraiment, pas qu'ils restent sous-utilisés après 3 mois." }
+    { title: "Des leads avec du contexte, pas juste des contacts", desc: "Signaux d'achat, changements de poste, recrutements stratégiques. Les leads Squadia arrivent avec une raison d'acheter maintenant et un angle d'approche. Vos commerciaux savent exactement pourquoi ils appellent.", icon: <Target color="#44CCFF" /> },
+    { title: 'Un pipeline marketing structuré et mesurable', desc: "On aligne les actions marketing sur les objectifs commerciaux réels. Chaque campagne, chaque séquence, chaque lead est connecté à un indicateur de pipeline. La contribution au chiffre devient visible et défendable.", icon: <BarChart3 color="#44CCFF" /> },
+    { title: 'Une automatisation qui libère du temps pour la strategie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment.", icon: <Zap color="#44CCFF" /> },
+    { title: 'Une équipe formée pour exploiter les outils en place', desc: "Pas d'adoption en demi-teinte. On forme votre équipe sur les cas concrets de votre organisation pour que les outils servent vraiment, pas qu'ils restent sous-utilisés après 3 mois.", icon: <CheckCircle2 color="#44CCFF" /> }
   ];
 
   const faqs = [
-    { q: 'Comment Squadia aide à qualifier les leads ?', a: "On travaille sur deux niveaux : la détection de signaux d'achat en amont (qui a une vraie raison d'acheter maintenant) et la contextualisation de chaque lead pour que vos commerciaux arrivent préparés, pas à froid." },
-    { q: "Est-ce qu'on peut activer une seule brique sans tout restructurer ?", a: "Oui. On peut commencer par les leads, par l'automatisation ou par la formation selon la priorité du moment. Chaque brique fonctionne indépendamment." },
-    { q: 'Combien de temps pour voir des résultats ?', a: "Les premiers leads qualifiés arrivent sous 5 à 10 jours après validation du périmètre. Les premiers effets sur le pipeline sont visibles en 30 à 60 jours." },
-    { q: 'Comment Squadia se différencie d\'une agence marketing classique ?', a: "Une agence travaille sur un levier isolé, souvent le contenu ou la publicité. Squadia travaille sur le système complet : données, outils, automatisation, formation. L'objectif c'est un pipeline mesurable, pas de la visibilité." }
+    { q: 'Comment Squadia aide à qualifier les leads ?', a: "On travaille sur deux niveaux : la détection de signaux d'achat en amont (qui a une vraie raison d'acheter maintenant) et la contextualisation de chaque lead pour que vos commerciaux arrivent préparés, pas à froid." },
+    { q: "Est-ce qu'on peut activer une seule brique sans tout restructurer ?", a: "Oui. On peut commencer par les leads, par l'automatisation ou par la formation selon la priorité du moment. Chaque brique fonctionne indépendamment." },
+    { q: 'Combien de temps pour voir des résultats ?', a: "Les premiers leads qualifiés arrivent sous 5 à 10 jours après validation du périmètre. Les premiers effets sur le pipeline sont visibles en 30 à 60 jours." },
+    { q: 'Comment Squadia se différencie d\'une agence marketing classique ?', a: "Une agence travaille sur un levier isolé, souvent le contenu ou la publicité. Squadia travaille sur le système complet : données, outils, automatisation, formation. L'objectif c'est un pipeline mesurable, pas de la visibilité." }
   ];
 
   return (
     <div className="landing-marketing" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -212,6 +198,14 @@ const LandingMarketing = () => {
         }} />
 
 
+        {/* Fade bas : transition douce vers la section suivante (#050510), évite la coupe nette de l'image */}
+        <div style={{
+          position: 'absolute', bottom: 0, left: 0, width: '100%', height: '260px',
+          background: 'linear-gradient(to bottom, transparent 0%, #050510 100%)',
+          zIndex: 4,
+          pointerEvents: 'none'
+        }} />
+
         {/* Gradient fade + label */}
         <div style={{
           position: 'absolute', bottom: 0, right: 0,
@@ -260,7 +254,7 @@ const LandingMarketing = () => {
               opacity: 0, animation: 'fadeContentM 1.2s ease 0.5s forwards'
             }}>
 
-              {/* Card 1 : Leads qualifiés */}
+              {/* Card 1 : Leads qualifiés */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Leads qualifiés</div>
                 {/* Valeur + arc gauge sur la même ligne */}
@@ -282,7 +276,7 @@ const LandingMarketing = () => {
                 </div>
               </div>
 
-              {/* Card 2 : Pipeline marketing */}
+              {/* Card 2 : Pipeline marketing */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Pipeline marketing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>€ 210K</div>
@@ -306,7 +300,7 @@ const LandingMarketing = () => {
                 </div>
               </div>
 
-              {/* Card 3 : Séquence ICP */}
+              {/* Card 3 : Séquence ICP */}
               <div className="dm-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Séquence ICP active</div>
                 <div style={{ fontSize: '1.45rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>ETI Industrie</div>
@@ -323,7 +317,7 @@ const LandingMarketing = () => {
                     { x: 64, h: 18, accent: false },
                   ].map((b, i) => (
                     <rect key={i} x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
                       style={{ opacity: 0, animation: `fadeContentM 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                     />
                   ))}
@@ -337,9 +331,10 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
+          <p style={kickerStyle}>Principaux freins</p>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du marketing manager en 2026</h2>
           <div className="grid-3" style={{ gap: '2rem' }}>
             {enjeux.map((item, i) => (
@@ -355,22 +350,104 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
-      <section className="section-padding container">
-        <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions marketing.</h2>
-          <div className="grid-2" style={{ gap: '2rem' }}>
-            {apports.map((item, i) => (
-              <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#F9FAFB' }}>{item.title}</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
+      {/* ═══ SECTION 3 : NOTRE SOLUTION (bento) ═══ */}
+      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+        <style>{`
+          .dc-bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 220px 220px auto; gap: 1.5rem; }
+          .dc-bento-hero { grid-column: 1 / 3; grid-row: 1 / 3; }
+          .dc-bento-stat-top { grid-column: 3; grid-row: 1; }
+          .dc-bento-feature { grid-column: 3; grid-row: 2; }
+          .dc-bento-bottom-1 { grid-column: 1; grid-row: 3; }
+          .dc-bento-bottom-2 { grid-column: 2; grid-row: 3; }
+          .dc-bento-bottom-3 { grid-column: 3; grid-row: 3; }
+          .dc-bento-card { border-radius: 22px; padding: 1.8rem; transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; }
+          .dc-bento-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); filter: brightness(1.15); }
+          @media (max-width: 900px) {
+            .dc-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .dc-bento-hero, .dc-bento-stat-top, .dc-bento-feature, .dc-bento-bottom-1, .dc-bento-bottom-2, .dc-bento-bottom-3 { grid-column: 1; grid-row: auto; }
+            .dc-bento-hero { min-height: 380px; }
+          }
+        `}</style>
+        <div className="container fade-in">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p style={kickerStyle}>Notre solution</p>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', lineHeight: 1.2 }}>Transformer votre marketing en moteur de pipeline</h2>
+          </div>
+          <div className="dc-bento">
+
+            {/* Carte héro : présentation de la solution */}
+            <div className="dc-bento-card dc-bento-hero" style={{
+              position: 'relative', overflow: 'hidden',
+              border: '1px solid rgba(68,204,255,0.18)',
+              display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            }}>
+              <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', opacity: 0.32, pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,6,18,0.95) 15%, rgba(6,6,18,0.55) 60%, rgba(6,6,18,0.3) 100%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '0.9rem', lineHeight: 1.2 }}>Le marketing comme moteur de pipeline</h3>
+                <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.65, maxWidth: '460px', margin: 0 }}>Générer du volume ne suffit plus. Squadia structure vos actions marketing pour qu'elles se traduisent en opportunités commerciales réelles, mesurables et alignées avec les objectifs de vente.</p>
               </div>
-            ))}
+            </div>
+
+            {/* Stat : leviers activés */}
+            <div className="dc-bento-card dc-bento-stat-top" style={{
+              background: 'linear-gradient(135deg, #44CCFF 0%, #1D4ED8 100%)', color: '#fff',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+            }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <BarChart3 size={20} color="#fff" />
+              </div>
+              <div>
+                <div style={{ fontSize: '2.4rem', fontWeight: 700, lineHeight: 1 }}>4</div>
+                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', marginTop: '0.3rem' }}>leviers activés en parallèle</div>
+                <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.65)', marginTop: '0.3rem' }}>Leads · Pipeline · Automatisation · Formation</div>
+              </div>
+            </div>
+
+            {/* Feature : équipe formée */}
+            <div className="dc-bento-card dc-bento-feature" style={{
+              background: 'rgba(68,204,255,0.07)', border: '1px solid rgba(68,204,255,0.3)', boxShadow: '0 0 40px -12px rgba(68,204,255,0.25)', color: '#F9FAFB',
+              display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(68,204,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                {apports[3].icon}
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{apports[3].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{apports[3].desc}</p>
+            </div>
+
+            {/* Bottom 1 : leads avec contexte */}
+            <div className="dc-bento-card dc-bento-bottom-1" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(68,204,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {apports[0].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{apports[0].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{apports[0].desc}</p>
+            </div>
+
+            {/* Bottom 2 : pipeline structuré */}
+            <div className="dc-bento-card dc-bento-bottom-2" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(68,204,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {apports[1].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{apports[1].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{apports[1].desc}</p>
+            </div>
+
+            {/* Bottom 3 : automatisation */}
+            <div className="dc-bento-card dc-bento-bottom-3" style={{ background: 'linear-gradient(135deg, #1D4ED8 0%, #0A0A1A 100%)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {apports[2].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{apports[2].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{apports[2].desc}</p>
+            </div>
+
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
+      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container grid-2 fade-in" style={{ gap: '4rem', alignItems: 'center' }}>
           <div>
@@ -399,7 +476,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -408,7 +485,7 @@ const LandingMarketing = () => {
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
             {casesData.filter(c => ['crm-industrie', 'pipeline-b2b', 'formation-vente'].includes(c.id)).map((c) => {
               const img = caseImagesDG[c.id];
               return (
@@ -442,15 +519,15 @@ const LandingMarketing = () => {
                     <div style={{ marginTop: '1.2rem', marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{c.shortTitle}</div>
                     {c.id === 'crm-industrie' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
-                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
-                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
+                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+185 opportunités</div>
+                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>injectées en pipeline en 4 mois</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -475,7 +552,7 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
@@ -492,7 +569,7 @@ const LandingMarketing = () => {
             </div>
             <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Marketing Manager</span>
-              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Marketing Manager B2B : structurer et piloter votre strategie</h3>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Marketing Manager B2B : structurer et piloter votre strategie</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.</p>
               <span style={{ alignSelf: 'flex-start', background: '#FFFFFF', color: '#060612', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                 Télécharger gratuitement →
@@ -502,19 +579,20 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
+          <div>
+            <p style={kickerStyle}>FAQ</p>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {faqs.map((faq, idx) => (
                 <AccordionItem 
                   key={idx} 
                   question={faq.q} 
                   answer={faq.a} 
                   isOpen={openFAQ === idx}
-                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                 />
               ))}
             </div>
@@ -531,7 +609,7 @@ const LandingMarketing = () => {
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
               </div>
-              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 
@@ -539,7 +617,7 @@ const LandingMarketing = () => {
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
               </div>
-              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
           </div>
@@ -547,19 +625,30 @@ const LandingMarketing = () => {
       </section>
 
       {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
-      <ClientLogosSection />
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection contained={true} />
+        </div>
+      </section>
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
-      <section className="section-padding container" style={{ textAlign: 'center' }}>
-        <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', maxWidth: '800px', marginInline: 'auto' }}>
-            Prêt à transformer votre marketing<br/>en moteur de pipeline ?
-          </h2>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>Prendre RDV</Link>
-            <Link href="/tarifs" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              Voir nos offres <ArrowRight size={18} />
-            </Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à transformer votre marketing<br/>en moteur de pipeline ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour évaluer votre potentiel de génération de leads.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>

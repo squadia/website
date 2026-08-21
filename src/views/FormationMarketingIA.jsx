@@ -10,48 +10,40 @@ const imgDataClean = '/assets/images/dataclean/data-clean.jpeg';
 const imgDataSeg = '/assets/images/dataseg/data-seg.jpeg';
 const imgDataLead = '/assets/images/datalead/datalead.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div style={{ borderBottom: '1px solid #1A1A3A', padding: '1.5rem 0' }}>
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        style={{ 
-          width: '100%', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          textAlign: 'left',
-          color: '#F9FAFB',
-          fontSize: '1.1rem',
-          fontWeight: 700,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0
-        }}
-      >
+    <div
+      onClick={() => setIsOpen(!isOpen)}
+      style={{
+        backgroundColor: '#0D0D25',
+        border: '1px solid rgba(68, 204, 255, 0.18)',
+        borderRadius: '16px',
+        padding: '1.6rem',
+        cursor: 'pointer',
+        transition: 'all 0.3s ease',
+      }}
+    >
+      <div style={{
+        width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
+        color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+      }}>
         <span>{question}</span>
-        <ChevronDown 
-          style={{ 
-            transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: '#9CA3AF'
-          }} 
-          size={20}
-        />
-      </button>
-      <div 
-        style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
-          overflow: 'hidden', 
-          transition: 'max-height 0.3s ease-in-out',
-        }}
-      >
-        <p style={{ marginTop: '1rem', color: '#9CA3AF', lineHeight: 1.6, fontSize: '1.05rem' }}>
-          {answer}
-        </p>
+        <ChevronDown style={{
+          transition: 'transform 0.3s ease',
+          transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          color: '#44CCFF', flexShrink: 0
+        }} />
+      </div>
+      <div style={{
+        maxHeight: isOpen ? '400px' : '0',
+        overflow: 'hidden',
+        transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
+        opacity: isOpen ? 1 : 0
+      }}>
+        <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
       </div>
     </div>
   );
@@ -63,7 +55,7 @@ const DayBlock = ({ title, objective, children }) => {
     <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(68, 204, 255, 0.1)' }}>
       <div style={{ background: 'rgba(68, 204, 255, 0.05)', padding: '2rem 3rem', borderBottom: open ? '1px solid rgba(68, 204, 255, 0.15)' : 'none' }}>
         <h3 style={{ fontSize: '1.8rem', color: '#44CCFF', marginBottom: '0.5rem' }}>{title}</h3>
-        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
+        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
         {!open && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
             <button onClick={() => setOpen(true)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(68,204,255,0.35)', color: '#44CCFF', fontSize: '0.875rem', fontWeight: 600, padding: '10px 24px', borderRadius: '9px', cursor: 'pointer', letterSpacing: '0.04em', transition: 'background 0.15s, border-color 0.15s' }}
@@ -96,7 +88,7 @@ const FormationMarketingIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Marketing & IA : Contenus et campagnes : Squadia";
+    document.title = "Formation Marketing & IA : Contenus et campagnes : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes marketing à l'IA générative pour la création de contenu. Programme 2 jours, outils concrets, ateliers pratiques. PME et ETI.";
@@ -109,7 +101,7 @@ const FormationMarketingIA = () => {
   return (
     <div className="formation-marketing-ia" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
         {/* Fond pleine page */}
         <img src={bgMarketing} alt="" style={{
@@ -133,9 +125,13 @@ const FormationMarketingIA = () => {
         <div style={{ position: 'relative', zIndex: 3, paddingLeft: '8%', paddingRight: '5%', width: '100%' }}>
           <div className="fade-in" style={{ maxWidth: '750px' }}>
             <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
-            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700, color: '#FFFFFF' }}>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', lineHeight: 1.1, marginBottom: '1.5rem', fontWeight: 700, color: '#FFFFFF' }}>
               Formation IA marketing : contenus, campagnes et analyse augmentés
             </h1>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>2,4x</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '320px', lineHeight: 1.3 }}>de ROI moyen pour la recherche de marché assistée par IA <span style={{ color: 'rgba(255,255,255,0.35)' }}>(McKinsey)</span></span>
+            </div>
             <p style={{ fontSize: '1.25rem', color: '#9CA3AF', maxWidth: '850px', lineHeight: 1.6, marginBottom: '2rem' }}>
               Rédaction, visuels, audio et veille : l'IA révolutionne votre production de contenu. En 2 jours, apprenez à produire plus et mieux sans remplacer l'humain. Une formation 100 % opérationnelle pour maîtriser les meilleurs outils et cas d'usage concrets.
             </p>
@@ -155,10 +151,10 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
+      {/* ═══ SECTION 2 : À QUI S'ADRESSE CETTE FORMATION ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
               <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
@@ -174,7 +170,7 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
+      {/* ═══ SECTION 3 : PROGRAMME ═══ */}
       <section id="programme" className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '0.75rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours</h2>
@@ -183,103 +179,103 @@ const FormationMarketingIA = () => {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {/* JOUR 1 */}
-            <DayBlock title="Jour 1 : Fondamentaux & Premiers Usages" objective="Comprendre les fondamentaux, les limites et les cadres d'usage de l'IA générative pour la création de contenu, tout en découvrant les outils clés et les bonnes pratiques de rédaction.">
+            <DayBlock title="Jour 1 : Fondamentaux & Premiers Usages" objective="Comprendre les fondamentaux, les limites et les cadres d'usage de l'IA générative pour la création de contenu, tout en découvrant les outils clés et les bonnes pratiques de rédaction.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Cadre juridique et éthique :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Cadre juridique et éthique :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>limites, risques et responsabilités liés à l'usage de l'IA (IA Act, RGPD, biais, transparence)</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Vigilances et points de contrôle :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Vigilances et points de contrôle :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>biais, hallucinations, ce qu'on ne délègue pas à l'IA</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Méthode RODEV :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>rédiger avec méthode pour les emails, les posts LinkedIn : rôle, contexte, exemples, itérations</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Méthode RODEV :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>rédiger avec méthode pour les emails, les posts LinkedIn : rôle, contexte, exemples, itérations</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Panorama des cas d'usage professionnels :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Panorama des cas d'usage professionnels :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>communication, RH, marketing, formation</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images, son et vidéo :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images, son et vidéo :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>tour d'horizon des outils (mise à jour permanente)</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Créer son premier GPT personnalisé :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Créer son premier GPT personnalisé :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>automatiser une tâche récurrente sans compétence technique</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Rédaction et test de prompts IA adaptés à votre activité. Mise en place d'un agent (GPT) pour mieux gérer les tâches répétitives.
+                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Rédaction et test de prompts IA adaptés à votre activité. Mise en place d'un agent (GPT) pour mieux gérer les tâches répétitives.
                   </p>
                 </div>
               </div>
             </DayBlock>
 
             {/* JOUR 2 */}
-            <DayBlock title="Jour 2 : Production Avancée & Automatisation" objective="Appliquer les outils d'IA pour produire, structurer et automatiser des contenus multimédias, en intégrant image, vidéo, podcast et veille intelligente dans une logique de campagne complète.">
+            <DayBlock title="Jour 2 : Production Avancée & Automatisation" objective="Appliquer les outils d'IA pour produire, structurer et automatiser des contenus multimédias, en intégrant image, vidéo, podcast et veille intelligente dans une logique de campagne complète.">
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération d'images :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>choisir les bons outils, maîtriser les prompts visuels (angle, style, couleurs), retouche et recadrage IA</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération de vidéos :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>UGC, communication interne, fidélisation : création de votre avatar vidéo</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Génération de vidéos :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>UGC, communication interne, fidélisation : création de votre avatar vidéo</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Création de podcasts IA :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Création de podcasts IA :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>dynamiser son contenu sans studio</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Organisation et suivi de production :</strong>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Organisation et suivi de production :</strong>
                       <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>plan d'action, budget, calendrier, suivi via Notion</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
                     <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Industrialisation de la veille :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>veille commerciale, technologique, concurrentielle : automatisée et à la demande</p>
+                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Industrialisation de la veille :</strong>
+                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>veille commerciale, technologique, concurrentielle : automatisée et à la demande</p>
                     </div>
                   </li>
                 </ul>
                 <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
                   <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Création d'une double vidéo. Création d'un podcast en ligne. Prise en main des outils de génération de présentations avec IA. Découverte des outils d'automatisation et de veille.
+                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Création d'une double vidéo. Création d'un podcast en ligne. Prise en main des outils de génération de présentations avec IA. Découverte des outils d'automatisation et de veille.
                   </p>
                 </div>
               </div>
@@ -298,7 +294,7 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
+      {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
@@ -380,7 +376,7 @@ const FormationMarketingIA = () => {
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Langues</span>
-                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
+                      <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
                       <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Groupe</span>
@@ -418,16 +414,16 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
           <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
             Une équipe formée sur les outils IA marketing, c'est le point de départ. Pour que vos campagnes performent vraiment, il faut une base de données fiable, segmentée et enrichie : Squadia intervient sur les trois niveaux.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
-            {/* Carte 1 : Data Clean */}
+            {/* Carte 1 : Data Clean */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataClean} alt="Data Clean" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -435,7 +431,7 @@ const FormationMarketingIA = () => {
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Nettoyez votre base</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Doublons supprimés, champs normalisés, données manquantes comblées : une base propre pour que vos campagnes touchent les bonnes personnes.</p>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Doublons supprimés, champs normalisés, données manquantes comblées : une base propre pour que vos campagnes touchent les bonnes personnes.</p>
                 <Link href="/data/data-clean" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
@@ -445,7 +441,7 @@ const FormationMarketingIA = () => {
               </div>
             </div>
 
-            {/* Carte 2 : Data Seg */}
+            {/* Carte 2 : Data Seg */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataSeg} alt="Data Seg" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -453,7 +449,7 @@ const FormationMarketingIA = () => {
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Segmentez pour mieux cibler</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Créez des segments actionnables par secteur, taille, comportement ou stade du cycle : pour personnaliser chaque message et maximiser l'engagement.</p>
+                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Créez des segments actionnables par secteur, taille, comportement ou stade du cycle : pour personnaliser chaque message et maximiser l'engagement.</p>
                 <Link href="/data/data-seg" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
@@ -463,7 +459,7 @@ const FormationMarketingIA = () => {
               </div>
             </div>
 
-            {/* Carte 3 : Data Lead */}
+            {/* Carte 3 : Data Lead */}
             <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgDataLead} alt="Data Lead" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
@@ -485,19 +481,19 @@ const FormationMarketingIA = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <AccordionItem 
                 question="Faut-il avoir des compétences techniques pour suivre cette formation ?" 
                 answer="Non. Les outils utilisés sont accessibles sans développement ni code. L'objectif est de rendre les équipes autonomes sur des outils qu'elles peuvent utiliser dès le lendemain."
               />
               <AccordionItem 
                 question="Quels outils sont utilisés pendant la formation ?" 
-                answer="Les outils varient selon l'évolution rapide du marché IA. On travaille avec les outils les plus pertinents au moment de la session : génération de texte, image, vidéo, podcast, veille. La sélection est mise à jour régulièrement."
+                answer="Les outils varient selon l'évolution rapide du marché IA. On travaille avec les outils les plus pertinents au moment de la session : génération de texte, image, vidéo, podcast, veille. La sélection est mise à jour régulièrement."
               />
               <AccordionItem 
                 question="Cette formation est-elle adaptée aux petites équipes marketing ?" 
@@ -517,25 +513,36 @@ const FormationMarketingIA = () => {
       </section>
 
       {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
-      <ClientLogosSection 
-        description="Pour aider leurs équipes de marketing à structurer le rendu de leur prompt, automatiser des assistants pour linkedin , la veille ou encore la production d'infographie, d'extraction de datas, ou d' UGC." 
-      />
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection
+            description="Pour aider leurs équipes de marketing à structurer le rendu de leur prompt, automatiser des assistants pour linkedin , la veille ou encore la production d'infographie, d'extraction de datas, ou d' UGC."
+            contained={true}
+          />
+        </div>
+      </section>
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
-      <CtaSection
-        headline="Prêt à accélérer la production de vos équipes marketing avec l'IA ?"
-        description="Texte, images, vidéos, podcasts, veille : formez vos équipes aux outils qui multiplient la capacité de production sans sacrifier la qualité."
-        cardTitle="Marketing & IA"
-        cardSubtitle="Production de contenu accélérée"
-        cardDescription="2 jours pour maîtriser l'IA générative appliquée au marketing : création, campagnes, automatisation."
-        cardFeatures={[
-          "Génération d'images & vidéos",
-          "Podcasts IA",
-          "Veille automatisée",
-          "Plan de contenu opérationnel"
-        ]}
-        cardColor="#2563EB"
-      />
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à accélérer la production<br/>de vos équipes marketing avec l'IA ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>2 jours pour maîtriser l'IA générative appliquée au marketing.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </div>
   );

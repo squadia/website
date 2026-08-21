@@ -3,13 +3,9 @@ import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } f
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import Home from './views/Home';
-import StrategieIA from './views/StrategieIA';
-import StrategieCommerciale from './views/StrategieCommerciale';
-import StrategieCrm from './views/StrategieCrm';
 import DataClean from './views/DataClean';
 import DataSeg from './views/DataSeg';
 import DataLead from './views/DataLead';
-import AutomatisationIA from './views/AutomatisationIA';
 import Formation from './views/Formation';
 import LandingSales from './views/LandingSales';
 import LandingDG from './views/LandingDG';
@@ -66,13 +62,9 @@ function App() {
       <div style={{ minHeight: '100vh' }}>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/strategie-ia" element={<StrategieIA />} />
-          <Route path="/strategie/commerciale" element={<StrategieCommerciale />} />
-          <Route path="/strategie/crm" element={<StrategieCrm />} />
           <Route path="/data/data-clean" element={<DataClean />} />
           <Route path="/data/data-seg" element={<DataSeg />} />
           <Route path="/data/data-lead" element={<DataLead />} />
-          <Route path="/automatisation-ia" element={<AutomatisationIA />} />
           <Route path="/formation-ia" element={<Formation />} />
           <Route path="/directeur-commercial" element={<LandingSales />} />
           <Route path="/directeur-general" element={<LandingDG />} />

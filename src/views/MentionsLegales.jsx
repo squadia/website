@@ -6,7 +6,7 @@ const MentionsLegales = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Mentions Légales : Squadia";
+    document.title = "Mentions Légales : Squadia";
   }, []);
 
   const sections = [
@@ -18,9 +18,9 @@ const MentionsLegales = () => {
           <p><strong>Forme juridique :</strong> Entreprise Individuelle</p>
           <p><strong>Adresse :</strong> 193 Avenue de France, 75013 Paris</p>
           <p><strong>SIRET :</strong> 45243901100027</p>
-          <p><strong>Téléphone :</strong> +33 7 82 84 35 64</p>
+          <p><strong>Téléphone :</strong> +33 7 45 80 49 49</p>
           <p><strong>Email :</strong> contact@squadia.io</p>
-          <p style={{ marginTop: '1rem' }}><strong>Directeur de la publication :</strong> Jérôme Debruyne</p>
+          <p style={{ marginTop: '1rem' }}><strong>Directeur de la publication :</strong> Jérôme Debruyne</p>
         </div>
       )
     },
@@ -49,7 +49,7 @@ const MentionsLegales = () => {
       content: (
         <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
           <p>Les informations collectées via les formulaires de contact sont utilisées uniquement pour répondre à vos demandes. Elles ne sont ni cédées ni revendues à des tiers.</p>
-          <p style={{ marginTop: '1rem' }}>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : <a href="mailto:contact@squadia.io" style={{ color: 'var(--accent)', textDecoration: 'none' }}>contact@squadia.io</a></p>
+          <p style={{ marginTop: '1rem' }}>Conformément au RGPD, vous disposez d'un droit d'accès, de rectification et de suppression de vos données. Pour exercer ce droit : <a href="mailto:contact@squadia.io" style={{ color: 'var(--accent)', textDecoration: 'none' }}>contact@squadia.io</a></p>
         </div>
       )
     },

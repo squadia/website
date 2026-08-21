@@ -83,7 +83,7 @@ const Automatisation = () => {
       {/* CTA */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', textAlign: 'center' }}>
         <div className="container fade-in">
-          <h2>Prêt à scaler sans recruter ?</h2>
+          <h2>Prêt à scaler sans recruter ?</h2>
           <div style={{ marginTop: '2.5rem' }}>
             <Link href="/contact" className="btn btn-primary pulse">Lancer mon premier workflow</Link>
           </div>

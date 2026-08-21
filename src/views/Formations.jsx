@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, RefreshCw, Star, ArrowRight, CheckCircle2, Layout, Users, Zap, BookOpen, Award, MessageSquare, Briefcase, Megaphone, PieChart, Check } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const formationBg = '/assets/images/formationB2B.png';
 const salesImg = '/assets/images/formation/commercial.png';
 const marketingImg = '/assets/images/formation/marketing.jpeg';
@@ -24,7 +25,7 @@ const Formations = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formations IA pour équipes commerciales, marketing et communication : Squadia";
+    document.title = "Formations IA pour équipes commerciales, marketing et communication : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes vente, marketing et communication à l'IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
@@ -145,7 +146,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
   return (
     <div className="formations-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Fond pleine page */}
         <img src={formationBg} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
@@ -178,7 +179,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
+      {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
       <section className="section-padding" style={{ background: '#060612', padding: '48px 32px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
@@ -293,7 +294,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
+      {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#FFFFFF', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
@@ -312,7 +313,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
             <FormationCard 
               category="Marketing"
-              title="Formation IA marketing : contenus, campagnes et analyse augmentés."
+              title="Formation IA marketing : contenus, campagnes et analyse augmentés."
               forWho="Responsables marketing et créateurs de contenu souhaitant produire avec l'IA"
               description="Prompting efficace, production images vidéos podcasts et automatisation de la veille. Les bons réflexes, les bons outils, et une routine de production IA opérationnelle dès la fin de la formation."
               link="/formation-marketing-et-ia"
@@ -334,7 +335,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
+      {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -430,15 +431,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
 
-      {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
+      {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '5rem', textAlign: 'center', fontWeight: 700 }}>Formats et tarifs</h2>
           
           <div 
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: 'repeat(3, 1fr)', 
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
               gap: '2rem',
               maxWidth: '1200px',
               marginInline: 'auto'
@@ -486,8 +487,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 key={idx}
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
-                  padding: isMobile ? '24px 18px' : '3rem 2rem',
+                  border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -576,13 +577,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: isMobile ? '14px' : '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#44CCFF' : 'transparent',
-                    color: card.badge ? '#060612' : '#FFFFFF',
+                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
+                    background: card.badge ? '#44CCFF' : 'transparent',
+                    color: card.badge ? '#060612' : '#FFFFFF',
                     textAlign: 'center',
                     textDecoration: 'none',
                     transition: 'all 0.3s',
@@ -607,10 +608,14 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </section>
 
 
-      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
-      <ClientLogosSection />
+      {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection contained={true} />
+        </div>
+      </section>
 
-      {/* ═══ SECTION 7 : CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
+      {/* ═══ SECTION 7 : CE QUE NOUS APPORTONS DE DIFFÉRENT ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '6rem', textAlign: 'center', fontWeight: 700 }}>Ce que nous apportons de différent</h2>
@@ -620,7 +625,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 <Target color="#44CCFF" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Formation personnalisable</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique : on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
+              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique : on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
             </div>
             <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
               <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
@@ -640,7 +645,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
+      {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -651,15 +656,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </div>
           
           <div className="grid-3" style={{ gap: '2rem' }}>
-            {/* Block 1: Automatisation */}
-            <Link href="/automatisation-ia" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-              <div 
+            {/* Block 1: Prospection / campagnes */}
+            <Link href="/prospection/campagne" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div
                 className="hover-card-alt"
-                style={{ 
-                  textAlign: 'left', 
-                  background: 'rgba(255,255,255,0.02)', 
-                  borderRadius: '24px', 
-                  border: '1px solid rgba(255,255,255,0.03)', 
+                style={{
+                  textAlign: 'left',
+                  background: 'rgba(255,255,255,0.02)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -668,15 +673,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 }}
               >
                 <div style={{ height: '180px', overflow: 'hidden' }}>
-                  <img src={autoProcessImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={autoProcessImg} alt="Campagnes de prospection multicanale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Automatiser vos processus</h3>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Lancer des campagnes de prospection</h3>
                   <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Libérez vos équipes des tâches répétitives pour les concentrer sur la vente et la création de valeur.
+                    Des séquences email, LinkedIn et téléphone pilotées par la data pour générer des rendez-vous qualifiés.
                   </p>
                   <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
-                    Découvrir l'automatisation <ArrowRight size={14} />
+                    Découvrir la prospection <ArrowRight size={14} />
                   </div>
                 </div>
               </div>
@@ -684,13 +689,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
             {/* Block 2: Data */}
             <Link href="/data" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-              <div 
+              <div
                 className="hover-card-alt"
-                style={{ 
-                  textAlign: 'left', 
-                  background: 'rgba(255,255,255,0.02)', 
-                  borderRadius: '24px', 
-                  border: '1px solid rgba(255,255,255,0.03)', 
+                style={{
+                  textAlign: 'left',
+                  background: 'rgba(255,255,255,0.02)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -699,7 +704,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 }}
               >
                 <div style={{ height: '180px', overflow: 'hidden' }}>
-                  <img src={dataLeadImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={dataLeadImg} alt="Détection de leads qualifiés grâce à la data B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
                   <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Détecter vos leads qualifiés</h3>
@@ -713,15 +718,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
               </div>
             </Link>
 
-            {/* Block 3: Strategie */}
-            <Link href="/strategie/commerciale" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
-              <div 
+            {/* Block 3: Formations complémentaires */}
+            <Link href="/formations" style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}>
+              <div
                 className="hover-card-alt"
-                style={{ 
-                  textAlign: 'left', 
-                  background: 'rgba(255,255,255,0.02)', 
-                  borderRadius: '24px', 
-                  border: '1px solid rgba(255,255,255,0.03)', 
+                style={{
+                  textAlign: 'left',
+                  background: 'rgba(255,255,255,0.02)',
+                  borderRadius: '24px',
+                  border: '1px solid rgba(255,255,255,0.03)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -730,15 +735,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 }}
               >
                 <div style={{ height: '180px', overflow: 'hidden' }}>
-                  <img src={stratCommercialeImg} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+                  <img src={stratCommercialeImg} alt="Formations IA pour équipes commerciales B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Structurer votre stratégie</h3>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Former vos équipes</h3>
                   <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
-                    Définissez un cadre clair et une méthode de vente robuste pour une performance durable.
+                    Des formations IA sur mesure pour rendre vos commerciaux, marketeurs et communicants autonomes.
                   </p>
                   <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
-                    Optimiser votre stratégie <ArrowRight size={14} />
+                    Voir les formations <ArrowRight size={14} />
                   </div>
                 </div>
               </div>
@@ -747,42 +752,24 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         </div>
       </section>
 
-      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
-        {/* Glow effect */}
-        <div style={{
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%, -50%)',
-          width: '600px',
-          height: '600px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, transparent 70%)',
-          filter: 'blur(80px)',
-          zIndex: 0,
-          pointerEvents: 'none'
-        }} />
-
-        <div className="container fade-in" style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-          <div style={{ 
-            maxWidth: '900px', 
-            margin: '0 auto', 
-            padding: '5rem 3rem',
-            background: 'rgba(255, 255, 255, 0.02)',
-            borderRadius: '32px',
-            border: '1px solid rgba(255, 255, 255, 0.05)',
-            backdropFilter: 'blur(10px)'
-          }}>
-            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', marginBottom: '1.5rem', fontWeight: 800, lineHeight: 1.2 }}>
-              Vous ne savez pas<br />
-              <span style={{ color: 'rgba(255,255,255,0.6)' }}>quelle formation correspond à votre équipe ?</span>
-            </h2>
-            <p style={{ fontSize: '1.25rem', color: '#9CA3AF', marginBottom: '3.5rem', fontWeight: 400 }}>
-              Recevez votre plan de formation idéale en 30 minutes.
-            </p>
-            <a href={pipedrivePlaceholder} className="btn btn-primary pulse" style={{ padding: '1.25rem 3rem', fontSize: '1.1rem', fontWeight: 700, borderRadius: '12px' }}>
-              Prendre RDV
-            </a>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Vous ne savez pas<br/>quelle formation correspond à votre équipe ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>Recevez votre plan de formation idéale en 30 minutes.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -873,13 +860,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
         @media (max-width: 991px) {
           .card-content-wrap { padding: 30px; }
-          .card-title-new { fontSize: 24px; }
+          .card-title-new { font-size: 24px; }
         }
         @media (max-width: 768px) {
           .card-image-wrap { flex: 0.4; }
           .card-content-wrap { flex: 0.6; }
           div[style*="grid-template-columns: repeat(3, 1fr)"] {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr !important;
           }
         }
         @media (max-width: 480px) {
@@ -915,7 +902,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         }
         @media (max-width: 991px) {
           .formations-desktop-badge { display: none; }
-          .synergy-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .synergy-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
       `}</style>
 

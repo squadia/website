@@ -13,12 +13,42 @@
     },
     {
       "source": "/strategie-ia",
-      "destination": "/automatisation-ia",
+      "destination": "/formations",
       "permanent": true
     },
     {
       "source": "/strategie-ia/",
-      "destination": "/automatisation-ia",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/automatisation-ia",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/automatisation-ia/",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/strategie/crm",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/strategie/crm/",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/strategie/commerciale",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/strategie/commerciale/",
+      "destination": "/prospection/campagne",
       "permanent": true
     }
   ]

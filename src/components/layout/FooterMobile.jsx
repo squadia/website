@@ -6,12 +6,11 @@ const SECTIONS = [
   {
     title: 'Solutions',
     links: [
-      { href: '/strategie/commerciale', label: 'Stratégie Commerciale' },
-      { href: '/strategie/crm',          label: 'Migration CRM' },
+      { href: '/prospection/campagne',   label: 'Campagne multicanale' },
+      { href: '/prospection/cold-call',  label: 'Appels sortants' },
       { href: '/data/data-clean',        label: 'Data Clean' },
       { href: '/data/data-seg',          label: 'Data Seg' },
       { href: '/data/data-lead',         label: 'Data Lead' },
-      { href: '/automatisation-ia',      label: 'Automatisation' },
     ],
   },
   {
@@ -35,8 +34,8 @@ const SECTIONS = [
     title: 'Cas clients',
     links: [
       { href: '/cas-clients/pipeline-b2b',    label: 'Pipeline B2B' },
-      { href: '/cas-clients/crm-industrie',   label: 'CRM Industrie' },
-      { href: '/cas-clients/migration-crm',   label: 'Migration CRM' },
+      { href: '/cas-clients/crm-industrie',   label: 'Pipeline sans hasard' },
+      { href: '/cas-clients/migration-crm',   label: 'Data cleaning CRM' },
       { href: '/cas-clients/formation-vente', label: 'Formation Vente' },
       { href: '/cas-clients/formation-ia-com',label: 'Formation IA Com' },
     ],
@@ -44,9 +43,9 @@ const SECTIONS = [
   {
     title: 'Tarifs',
     links: [
-      { href: '/tarifs', label: 'Stratégie IA' },
-      { href: '/tarifs', label: 'Automatisation' },
-      { href: '/tarifs', label: 'Formation' },
+      { href: '/prospection/campagne',  label: 'Campagne multicanale' },
+      { href: '/prospection/cold-call', label: 'Appels sortants' },
+      { href: '/tarifs', label: 'Nos tarifs' },
     ],
   },
   {

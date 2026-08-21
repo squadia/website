@@ -27,14 +27,14 @@ const AccordionItem = ({ question, answer }) => {
         <ChevronDown 
           style={{ 
             transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
             color: 'var(--text-secondary)'
           }} 
         />
       </button>
       <div 
         style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
+          maxHeight: isOpen ? '500px' : '0', 
           overflow: 'hidden', 
           transition: 'max-height 0.3s ease-in-out',
         }}
@@ -128,7 +128,7 @@ const Formation = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation IA pour les équipes vente, marketing et communication : Squadia";
+    document.title = "Formation IA pour les équipes vente, marketing et communication : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia forme vos équipes à l'IA appliquée à leur métier. Cas pratiques, outils réels, autonomie durable. Pour PME et ETI en France.";
@@ -137,7 +137,7 @@ const Formation = () => {
 
   return (
     <div className="formation-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
@@ -158,7 +158,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : LE PROBLÈME ═══ */}
+      {/* ═══ SECTION 2 : LE PROBLÈME ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '1.5rem' }}>Ce qu'on observe dans la plupart des entreprises.</h2>
@@ -197,7 +197,7 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
+      {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
       <section className="section-padding" style={{ background: '#0A0A1A' }}>
         <div className="container">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
@@ -238,14 +238,14 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : LES FORMATS ═══ */}
+      {/* ═══ SECTION 4 : LES FORMATS ═══ */}
       <section id="formats" className="section-padding" style={{ background: 'var(--bg-secondary)' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Choisissez le format adapté à votre organisation.</h2>
           
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(3, 1fr)', 
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
             gap: '2rem',
             alignItems: 'stretch'
           }}>
@@ -267,7 +267,7 @@ const Formation = () => {
                 {[
                   "Fondamentaux IA appliqués aux métiers commerciaux et marketing",
                   "Méthodes de prompt et d'organisation",
-                  "Ateliers orientés production : résultats concrets dès la formation",
+                  "Ateliers orientés production : résultats concrets dès la formation",
                   "Supports et templates réutilisables inclus"
                 ].map((item, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '12px', marginBottom: '0.75rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
@@ -362,24 +362,24 @@ const Formation = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
+      {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
           
           <div style={{ background: '#0D0D25', padding: '3.5rem', borderRadius: '12px', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', marginInline: 'auto' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Vos équipes sont formées.<br/>L'étape suivante, c'est structurer les bons outils<br/>et les bons process pour aller plus loin.</h3>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', fontSize: '1.1rem' }}>
               Une feuille de route IA adaptée à votre organisation, avec les cas d'usage qui font vraiment sens pour vous.
             </p>
-            <Link href="/strategie-ia" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
-              Voir l'offre Stratégie IA <Compass size={18} />
+            <Link href="/formations" className="btn btn-primary" style={{ display: 'inline-flex', gap: '0.5rem', alignItems: 'center' }}>
+              Voir les formations <Compass size={18} />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #111' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
@@ -388,11 +388,11 @@ const Formation = () => {
           </div>
           <div style={{ maxWidth: '800px', margin: '0 auto' }}>
             <AccordionItem 
-              question="Faut-il avoir des outils IA déjà en place pour suivre une formation ?" 
+              question="Faut-il avoir des outils IA déjà en place pour suivre une formation ?" 
               answer="Non. Les formations peuvent démarrer dès lors que les participants ont accès à un outil'IA basique (ChatGPT, Copilot, Gemini). On part de ce que vous avez."
             />
             <AccordionItem 
-              question="Combien de personnes par session ?" 
+              question="Combien de personnes par session ?" 
               answer="On privilégie les petits groupes pour garantir plus d'interactivité et une meilleure assimilation des concepts. En intra, on travaille avec des groupes de 6 à 10 personnes en moyenne."
             />
             <AccordionItem 
@@ -400,18 +400,18 @@ const Formation = () => {
               answer="Oui. Les formations intra peuvent couvrir plusieurs métiers dans une même session. Le programme est adapté en conséquence."
             />
             <AccordionItem 
-              question="Est-ce qu'on peut former uniquement sur un outil spécifique ?" 
+              question="Est-ce qu'on peut former uniquement sur un outil spécifique ?" 
               answer="On peut intégrer un outil spécifique dans le programme, mais on ne forme jamais sur un outil seul. L'enjeu c'est toujours de comprendre comment l'outil s'intègre dans une méthode de travail, pas juste de savoir l'utiliser."
             />
             <AccordionItem 
-              question="Quelle différence avec une formation IA généraliste ?" 
+              question="Quelle différence avec une formation IA généraliste ?" 
               answer="On ne forme pas sur l'IA en général. On forme sur l'IA appliquée au métier : comment prospecter mieux, comment préparer un rendez-vous différemment, comment produire du contenu plus vite sans perdre la qualité. L'objectif c'est que chaque participant reparte avec une vision élargie de ce que l'IA peut changer dans son quotidien, une méthode pour l'appliquer, et la posture pour continuer à progresser seul."
             />
           </div>
         </div>
       </section>
 
-      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
+      {/* ═══ SECTION 7 : CTA FINAL ═══ */}
       <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>

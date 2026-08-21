@@ -22,10 +22,10 @@ export default function Ressources() {
   }, []);
 
   useEffect(() => {
-    document.title = "Ressources Squadia : Guides, enquêtes et articles B2B";
+    document.title = "Ressources Squadia : Guides, enquêtes et articles B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Guides pratiques, enquêtes exclusives et articles de fond sur la transformation commerciale B2B : IA, CRM, automatisation, prospection et formation.");
+      metaDescription.setAttribute('content', "Guides pratiques, enquêtes exclusives et articles de fond sur la transformation commerciale B2B : IA, CRM, automatisation, prospection et formation.");
     }
     window.scrollTo(0, 0);
   }, []);
@@ -59,7 +59,7 @@ export default function Ressources() {
 
   const articles = [
     {
-      tag: "Stratégie IA",
+      tag: "Transformation",
       title: "Comment mettre en place une strategie IA en PME",
       link: "/blog/strategie-ia-pme-sequence",
       image: blog1,
@@ -67,28 +67,28 @@ export default function Ressources() {
     },
     {
       tag: "Transformation IA",
-      title: "Formation IA ou automatisation : quel ordre ?",
+      title: "Formation IA ou automatisation : quel ordre ?",
       link: "/blog/formation-ia-automatisation-ordre",
       image: blog3,
       readTime: "7 min"
     },
     {
       tag: "Data B2B",
-      title: "Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit",
+      title: "Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit",
       link: "/blog/nettoyage-segmentation-enrichissement-donnees-b2b",
       image: nettoyageData,
       readTime: "8 min"
     },
     {
       tag: "Formation",
-      title: "Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA",
+      title: "Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA",
       link: "/blog/formation-commerciale-b2b-ia",
       image: formationCommercialeImg,
       readTime: "7 min"
     },
     {
       tag: "Prospection",
-      title: "Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter",
+      title: "Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter",
       link: "/blog/prospection-multicanale-b2b-erreurs",
       image: blog4,
       readTime: "6 min"
@@ -165,7 +165,7 @@ export default function Ressources() {
 
         <div style={{
           display: 'grid',
-          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))',
           gap: '1.5rem'
         }}>
           {articles.map((article, i) => (
@@ -215,7 +215,7 @@ export default function Ressources() {
                   </div>
                 </div>
               </Link>
-            ) : (
+            ) : (
               <Link
                 key={i}
                 href={article.link}

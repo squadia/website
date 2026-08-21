@@ -1,10 +1,17 @@
 import PageClient from './_client';
+import JsonLd from '@/src/components/ui/JsonLd';
+import { websiteSchema } from '@/src/lib/schemas';
 
 export const metadata = {
-  title: "Squadia \u2014 Strat\u00e9gie IA, CRM et Automatisation B2B",
-  description: "Squadia accompagne les PME et ETI B2B dans leur croissance : strat\u00e9gie IA, migration CRM, automatisation des processus et formation commerciale. Bas\u00e9 \u00e0 Paris.",
+  title: "Squadia — Data, prospection multicanale et formation IA B2B",
+  description: "Squadia accompagne les PME et ETI B2B : data ciblée, campagnes de prospection multicanale et formations IA pour équipes commerciales, marketing et communication. Basé à Paris.",
 };
 
 export default function Page() {
-  return <PageClient />;
+  return (
+    <>
+      <JsonLd data={websiteSchema()} />
+      <PageClient />
+    </>
+  );
 }

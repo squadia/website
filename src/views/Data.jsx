@@ -6,6 +6,7 @@ import {
   Database, Target, TrendingUp,
   ChevronDown, ChevronUp, Check, Search, Rocket, Shield
 } from 'lucide-react';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const fondData = '/assets/images/data/data.jpeg';
 const fondDataClean = '/assets/images/dataclean/data-clean.jpeg';
@@ -25,7 +26,7 @@ export default function Data() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   useEffect(() => {
-    document.title = "Data B2B : Nettoyage, segmentation et leads : Squadia";
+    document.title = "Data B2B : Nettoyage, segmentation et leads : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia nettoie votre CRM, structure votre segmentation ICP et construit vos bases de prospection B2B. Données fiables et exploitables en moins de 30 jours.");
@@ -33,7 +34,7 @@ export default function Data() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -59,7 +60,7 @@ export default function Data() {
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
 
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataCSS}</style>
 
@@ -89,6 +90,14 @@ export default function Data() {
               Votre CRM ne ment pas.<br />
               Il reflète ce qu'on y a mis.
             </motion.h1>
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.15 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>15 %</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>du chiffre d'affaires perdu en moyenne à cause d'une mauvaise qualité de données <span style={{ color: 'rgba(255,255,255,0.35)' }}>(Gartner)</span></span>
+            </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -104,7 +113,7 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 2 : CE QUE VOUS OBTENEZ CONCRÈTEMENT */}
+        {/* SECTION 2 : CE QUE VOUS OBTENEZ CONCRÈTEMENT */}
         <section id="offres" style={{ padding: '10rem 2rem', backgroundColor: '#050510', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: '50%', right: '10%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
           <div style={{ maxWidth: '1200px', margin: '0 auto', position: 'relative', zIndex: 1 }}>
@@ -132,11 +141,11 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 3A : DATA CLEAN (image gauche, texte droite) */}
+        {/* SECTION 3A : DATA CLEAN (image gauche, texte droite) */}
         <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataClean} alt="Data Clean : Nettoyer votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataClean} alt="Data Clean : Nettoyer votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
             <div>
               <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Data Clean</p>
@@ -161,7 +170,7 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 3B : DATA SEG (texte gauche, image droite) */}
+        {/* SECTION 3B : DATA SEG (texte gauche, image droite) */}
         <section style={{ padding: '8rem 2rem', backgroundColor: '#050510' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div>
@@ -185,7 +194,7 @@ export default function Data() {
               </Link>
             </div>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataSeg} alt="Data Seg : Segmenter votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataSeg} alt="Data Seg : Segmenter votre base CRM" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
           </div>
         </section>
@@ -194,7 +203,7 @@ export default function Data() {
         <section style={{ padding: '8rem 2rem', backgroundColor: '#0A0A1A' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
             <div style={{ borderRadius: '16px', overflow: 'hidden', boxShadow: '0 8px 40px rgba(0,0,0,0.4)' }}>
-              <img src={fondDataLead} alt="Data Lead : Construire votre pipeline B2B" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
+              <img src={fondDataLead} alt="Data Lead : Construire votre pipeline B2B" style={{ width: '100%', height: '420px', objectFit: 'cover', display: 'block' }} />
             </div>
             <div>
               <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '1rem' }}>Data Lead</p>
@@ -219,7 +228,7 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 4 : ET ENSUITE ? */}
+        {/* SECTION 4 : ET ENSUITE ? */}
         <section style={{ padding: '10rem 2rem', backgroundColor: '#050510' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
@@ -233,9 +242,9 @@ export default function Data() {
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
                 </div>
                 <div style={{ padding: '2.5rem', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Vos équipes sont-elles prêtes ?</h3>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Vos équipes sont-elles prêtes ?</h3>
                   <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7 }}>Formez vos commerciaux et marketing managers à exploiter chaque opportunité avec les bons outils IA.</p>
-                  <Link href="/formation-ia" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Link href="/formations" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                     Voir l'offre Formation <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
                   </Link>
                 </div>
@@ -243,14 +252,14 @@ export default function Data() {
 
               <div style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden' }}>
                 <div style={{ position: 'relative', height: '200px', overflow: 'hidden' }}>
-                  <img src={fondAutomatisation} alt="Automatisation IA" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                  <img src={fondAutomatisation} alt="Campagnes de prospection multicanale" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
                 </div>
                 <div style={{ padding: '2.5rem', textAlign: 'center' }}>
-                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Automatisez le superflu.</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7 }}>Une base structurée permet d'automatiser sans créer de chaos. Zéro doublon, zéro lead perdu.</p>
-                  <Link href="/automatisation-ia" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
-                    Voir l'offre Automatisation <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Activez vos leads en campagnes.</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7 }}>Une base structurée permet de lancer des séquences de prospection multicanale sans créer de chaos. Zéro doublon, zéro lead perdu.</p>
+                  <Link href="/prospection/campagne" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Voir l'offre Prospection <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
                   </Link>
                 </div>
               </div>
@@ -259,18 +268,18 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 5 : FAQ */}
+        {/* SECTION 5 : FAQ */}
         <section id="faq" style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
             Questions fréquentes.
           </h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem' }}>
             {[
-              { q: 'Dans quel état doit être mon CRM pour démarrer ?', a: "Peu importe l'état. C'est précisément l'objet du cadrage initial : comprendre ce qu'on a, ce qui manque et ce qu'on veut obtenir. On a travaillé sur des bases de quelques centaines de contacts comme sur des bases de plusieurs milliers." },
-              { q: "Est-ce qu'on touche à notre CRM directement ?", a: "Ça dépend du périmètre défini en cadrage. Dans certains cas on travaille sur une extraction, on livre le fichier nettoyé et vous réintégrez. Dans d'autres, on intervient directement dans l'outil avec les accès que vous nous donnez." },
-              { q: "Qui est propriétaire des données après la mission ?", a: "Vous. Toujours. Squadia est prestataire, pas propriétaire. Pour les outils d'enrichissement externes, on privilégie que vous ouvriez votre propre compte : vous gardez ainsi le contrôle total de vos données et de vos crédits." },
-              { q: "Est-ce qu'un stagiaire ne pourrait pas faire ce travail ?", a: "La vraie difficulté n'est pas le nettoyage lui-même : c'est savoir quoi normaliser, comment segmenter pour que ça serve vraiment les équipes, et quelles variables créer pour que la base soit exploitable. C'est là que l'expérience terrain fait la différence." },
-              { q: "Combien de temps prend'une mission Data ?", a: "Data Clean : 1 à 2 semaines. Data Seg : 2 à 4 semaines. Data Lead : 3 à 6 semaines. Les délais sont cadrés précisément avant chaque démarrage." }
+              { q: 'Dans quel état doit être mon CRM pour démarrer ?', a: "Peu importe l'état. C'est précisément l'objet du cadrage initial : comprendre ce qu'on a, ce qui manque et ce qu'on veut obtenir. On a travaillé sur des bases de quelques centaines de contacts comme sur des bases de plusieurs milliers." },
+              { q: "Est-ce qu'on touche à notre CRM directement ?", a: "Ça dépend du périmètre défini en cadrage. Dans certains cas on travaille sur une extraction, on livre le fichier nettoyé et vous réintégrez. Dans d'autres, on intervient directement dans l'outil avec les accès que vous nous donnez." },
+              { q: "Qui est propriétaire des données après la mission ?", a: "Vous. Toujours. Squadia est prestataire, pas propriétaire. Pour les outils d'enrichissement externes, on privilégie que vous ouvriez votre propre compte : vous gardez ainsi le contrôle total de vos données et de vos crédits." },
+              { q: "Est-ce qu'un stagiaire ne pourrait pas faire ce travail ?", a: "La vraie difficulté n'est pas le nettoyage lui-même : c'est savoir quoi normaliser, comment segmenter pour que ça serve vraiment les équipes, et quelles variables créer pour que la base soit exploitable. C'est là que l'expérience terrain fait la différence." },
+              { q: "Combien de temps prend'une mission Data ?", a: "Data Clean : 1 à 2 semaines. Data Seg : 2 à 4 semaines. Data Lead : 3 à 6 semaines. Les délais sont cadrés précisément avant chaque démarrage." }
             ].map((faq, idx) => (
               <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
                 <button
@@ -278,7 +287,7 @@ export default function Data() {
                   style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontSize: '1.1rem', fontWeight: 600, textAlign: 'left' }}
                 >
                   {faq.q}
-                  {openFAQ === idx ? <ChevronUp size={20} color="#2563EB" /> : <ChevronDown size={20} color="#9CA3AF" />}
+                  {openFAQ === idx ? <ChevronUp size={20} color="#2563EB" /> : <ChevronDown size={20} color="#9CA3AF" />}
                 </button>
                 {openFAQ === idx && (
                   <div style={{ padding: '0 1.5rem 1.5rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.7 }}>
@@ -290,20 +299,27 @@ export default function Data() {
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
-        <section id="calendrier" style={{ padding: '10rem 2rem', textAlign: 'center', backgroundColor: '#0A0A1A' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', color: '#F9FAFB', maxWidth: '850px', marginInline: 'auto' }}>
-            Prêt à faire de votre base<br/>un vrai levier de croissance ?
-          </h2>
-          <div style={{ display: 'flex', gap: '1.5rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>
-              RDV avec un expert
-            </Link>
-            <Link href="/tarifs" style={{ color: '#2563EB', border: '1px solid #2563EB', padding: '1.2rem 3rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', fontSize: '1.15rem' }}>
-              Découvrir nos offres
-            </Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à faire de votre base<br/>un vrai levier de croissance ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour évaluer la qualité de votre donnée commerciale.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
           </div>
-        </section>
+        </div>
+      </section>
 
       </div>
     </>

@@ -1,9 +1,12 @@
-'use client';
-import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { buildMetadata } from '@/src/lib/metadata';
+import { redirect } from 'next/navigation';
+
+export const metadata = buildMetadata({
+  title: "Blog — Squadia",
+  description: "Articles, guides et retours d'expérience sur la prospection B2B, l'IA, le CRM et la formation commerciale.",
+  path: "/blog",
+});
 
 export default function Page() {
-  const router = useRouter();
-  useEffect(() => { router.replace('/ressources'); }, [router]);
-  return null;
+  redirect('/ressources');
 }

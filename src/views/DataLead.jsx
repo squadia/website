@@ -1,44 +1,37 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { 
-  Users, 
-  Search, 
-  Map, 
-  ChevronDown, 
-  ChevronUp, 
-  CheckCircle, 
-  Database,
-  Briefcase,
-  Layers,
+import { motion } from 'framer-motion';
+import {
+  ChevronDown,
+  ChevronUp,
+  CheckCircle,
   Check,
   Play, VolumeX, Volume2
 } from 'lucide-react';
 
 const fondDataLead = '/assets/images/datalead/datalead.jpeg';
-const criteriaImg = '/assets/images/datalead/datalead.jpeg';
-const verifyImg = '/assets/images/datalead/dataenrich-lead.jpeg';
+const criteriaImg = '/assets/images/datalead/dataenrich-lead.jpeg';
+const verifyImg = '/assets/images/datalead/baseunifiee-lead.jpeg';
 const scoringImg = '/assets/images/datalead/segmentation-lead.jpeg';
-const integrationImg = '/assets/images/datalead/baseunifiee-lead.jpeg';
+const integrationImg = '/assets/images/datalead/datalead.jpeg';
 const dataleadVideo = '/assets/video/data-lead.mp4';
-const ctaImg = '/assets/images/cta.png';
 import CardFlip from '../components/ui/flip-card';
-import { Feature1 } from '../components/ui/feature-1';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const features = (img1, img2, img3, img4) => [
   {
     id: 1,
     title: 'Critères exacts & sur-mesure',
     image: img1,
-    description: 'On ne livre pas ce qu\'on trouve : on construit ce que vous avez précisément défini en amont (secteur, techno, recrutement en cours, actualité).',
+    description: 'On ne livre pas ce qu\'on trouve : on construit ce que vous avez précisément défini en amont (secteur, techno, recrutement en cours, actualité).',
   },
   {
     id: 2,
     title: 'Vérification humaine systématique',
     image: img2,
-    description: 'Chaque contact est vérifié à la main : poste actuel, entreprise active, coordonnées valides. On garantit un taux de rebond minimal.',
+    description: 'Chaque contact est vérifié à la main : poste actuel, entreprise active, coordonnées valides. On garantit un taux de rebond minimal.',
   },
   {
     id: 3,
@@ -61,7 +54,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setActiveId(prev => prev === items.length ? 1 : prev + 1);
+      setActiveId(prev => prev === items.length ? 1 : prev + 1);
     }, 4000);
     return () => clearInterval(timer);
   }, [activeId, items.length]);
@@ -165,7 +158,7 @@ export default function DataLead() {
   const videoRef = useRef(null);
 
   useEffect(() => {
-    document.title = "Data Lead : Base de prospection B2B qualifiée : Squadia";
+    document.title = "Data Lead : Base de prospection B2B qualifiée : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Squadia construit votre base de contacts B2B ciblés. Fichier qualifié, enrichi et prêt à intégrer dans votre CRM. Pour PME et ETI en France.");
@@ -173,7 +166,7 @@ export default function DataLead() {
   }, []);
 
   const toggleFAQ = (index) => {
-    setOpenFAQ(openFAQ === index ? null : index);
+    setOpenFAQ(openFAQ === index ? null : index);
   };
 
   const smoothScroll = (e, targetId) => {
@@ -197,19 +190,11 @@ export default function DataLead() {
     });
   };
 
-  const sectionRef = useRef(null);
-  const { scrollYProgress: sectionProgress } = useScroll({
-    target: sectionRef,
-    offset: ["start start", "end end"]
-  });
-
-
-
   return (
     <>
       <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
         
-        {/* SECTION 1 : HERO */}
+        {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
           <style>{DataLeadCSS}</style>
 
@@ -245,12 +230,20 @@ export default function DataLead() {
               On vous dit qui, quand<br />
               et pourquoi appeler.
             </motion.h1>
-            <motion.p 
+            <motion.div
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.15 }}
+              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>27 %</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>du temps des commerciaux perdu à vérifier des données obsolètes <span style={{ color: 'rgba(255,255,255,0.35)' }}>(Gartner)</span></span>
+            </motion.div>
+            <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
               style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
-              Plus qu'un simple fichier de prospection, Data Lead identifie le momentum idéal. Nous enrichissons chaque contact pour que vos équipes convertissent dès la première interaction.
+              Chaque mois, nous vous livrons un flux de contacts prêts à appeler : nettoyés et enrichis par IA, puis vérifiés à la main par notre équipe. Vos commerciaux savent qui contacter, quand, et pourquoi.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
               <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none' }}>RDV avec un expert</Link>
@@ -258,7 +251,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION 2 : POURQUOI (Sticky Stacking) */}
+        {/* SECTION 2 : POURQUOI (Sticky Stacking) */}
         <section id="pourquoi" style={{ position: 'relative', paddingBottom: '10vh' }}>
           <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'start' }}>
@@ -365,7 +358,7 @@ export default function DataLead() {
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -443,7 +436,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION 3 : LIVRABLES */}
+        {/* SECTION 3 : LIVRABLES */}
         <AccordionFeatures 
           img1={criteriaImg}
           img2={verifyImg}
@@ -451,17 +444,17 @@ export default function DataLead() {
           img4={integrationImg}
         />
 
-        {/* SECTION 5 : LE DÉROULÉ */}
+        {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
             Le déroulé d'une mission Data Lead.
           </h2>
           <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
-              { step: '1', title: 'Étape 1 : Cadrage', desc: 'Définition du segment cible : secteur, géographie, taille, fonctions visées. Échange gratuit de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Cartographie', desc: 'Évaluation du volume adressable réel avant de démarrer la production.' },
-              { step: '3', title: 'Étape 3 : Construction', desc: 'Vérification unitaire de chaque contact : poste, entreprise active, email valide.' },
-              { step: '4', title: 'Étape 4 : Livraison', desc: 'Fichier injecté dans votre CRM. Documentation incluse.', extra: 'Délai : 3 à 6 semaines.' }
+              { step: '1', title: 'Étape 1 : Cadrage', desc: 'Définition du segment cible : secteur, géographie, taille, fonctions visées. Échange gratuit de 30 minutes.' },
+              { step: '2', title: 'Étape 2 : Cartographie', desc: 'Évaluation du volume adressable réel avant de démarrer la production.' },
+              { step: '3', title: 'Étape 3 : Construction', desc: 'Vérification unitaire de chaque contact : poste, entreprise active, email valide.' },
+              { step: '4', title: 'Étape 4 : Livraison', desc: 'Fichier injecté dans votre CRM. Documentation incluse.', extra: 'Délai : 3 à 6 semaines.' }
             ].map((item, idx) => (
               <motion.div 
                 key={idx}
@@ -546,7 +539,7 @@ export default function DataLead() {
                 key={idx} 
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -597,7 +590,7 @@ export default function DataLead() {
           </div>
         </section>
 
-        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
+        {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
         <ClientLogosSection />
 
         {/* FAQ */}
@@ -605,94 +598,53 @@ export default function DataLead() {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
-              { q: 'Comment définissez-vous les critères de ciblage ?', a: "On part de votre ICP : secteur, taille, fonction, zone géographique, signaux d'achat. Le périmètre est cadré ensemble avant toute extraction. On ne livre pas de volume, on livre de la pertinence." },
-              { q: 'Quelle est la qualité des contacts livrés ?', a: "Chaque contact est vérifié manuellement avant livraison : email professionnel valide, fonction confirmée, entreprise active. On rejette systématiquement les faux positifs générés par l'automatisation seule." },
-              { q: 'Sous quel délai reçoit-on les premiers leads ?', a: "Les premiers contacts arrivent sous 5 à 10 jours ouvrables après validation du périmètre et de l'ICP." },
-              { q: 'Dans quel format sont livrés les leads ?', a: "Fichier CSV ou Google Sheets par défaut. Intégration directe dans votre CRM possible selon l'outil en place." },
-              { q: 'Vos données sont-elles conformes au RGPD ?', a: "Oui. Les contacts livrés sont des professionnels dans un cadre B2B, ce qui relève du legitimate interest sous RGPD. On ne collecte ni ne traite de données personnelles grand public." },
-              { q: 'Peut-on cibler un secteur ou une géographie spécifique ?', a: "Oui. Secteur, taille d'entreprise, zone géographique, fonction et niveau de séniorité sont tous paramétrables. Plus le ciblage est précis, meilleure est la qualité du flux livré." },
-              { q: 'Quelle différence avec un outil de prospection classique ?', a: "Les outils classiques livrent du volume. Squadia livre du contexte : un signal identifié, une raison d'acheter maintenant, un angle d'approche. Vos commerciaux savent pourquoi ils appellent avant de décrocher." },
-              { q: 'Peut-on coupler la data avec une séquence de prospection ?', a: "Oui, c'est l'objet du forfait Activation Plus : les leads sont livrés avec des messages personnalisés par signal et par interlocuteur, prêts à être utilisés immédiatement." }
+              { q: 'Comment définissez-vous les critères de ciblage ?', a: "On part de votre ICP : secteur, taille, fonction, zone géographique, signaux d'achat. Le périmètre est cadré ensemble avant toute extraction. On ne livre pas de volume, on livre de la pertinence." },
+              { q: 'Quelle est la qualité des contacts livrés ?', a: "Chaque contact est vérifié manuellement avant livraison : email professionnel valide, fonction confirmée, entreprise active. On rejette systématiquement les faux positifs générés par l'automatisation seule." },
+              { q: 'Sous quel délai reçoit-on les premiers leads ?', a: "Les premiers contacts arrivent sous 5 à 10 jours ouvrables après validation du périmètre et de l'ICP." },
+              { q: 'Dans quel format sont livrés les leads ?', a: "Fichier CSV ou Google Sheets par défaut. Intégration directe dans votre CRM possible selon l'outil en place." },
+              { q: 'Vos données sont-elles conformes au RGPD ?', a: "Oui. Les contacts livrés sont des professionnels dans un cadre B2B, ce qui relève du legitimate interest sous RGPD. On ne collecte ni ne traite de données personnelles grand public." },
+              { q: 'Peut-on cibler un secteur ou une géographie spécifique ?', a: "Oui. Secteur, taille d'entreprise, zone géographique, fonction et niveau de séniorité sont tous paramétrables. Plus le ciblage est précis, meilleure est la qualité du flux livré." },
+              { q: 'Quelle différence avec un outil de prospection classique ?', a: "Les outils classiques livrent du volume. Squadia livre du contexte : un signal identifié, une raison d'acheter maintenant, un angle d'approche. Vos commerciaux savent pourquoi ils appellent avant de décrocher." },
+              { q: 'Peut-on coupler la data avec une séquence de prospection ?', a: "Oui, c'est l'objet du forfait Activation Plus : les leads sont livrés avec des messages personnalisés par signal et par interlocuteur, prêts à être utilisés immédiatement." }
             ].map((faq, idx) => (
-              <div key={idx} style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '0.75rem', overflow: 'hidden' }}>
-                <button onClick={() => toggleFAQ(idx)} style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'none', border: 'none', cursor: 'pointer', color: '#F9FAFB', fontWeight: 600, textAlign: 'left' }}>
-                  <span style={{ paddingRight: '1rem' }}>{faq.q}</span>
-                  {openFAQ === idx ? <ChevronUp size={20} color="#9CA3AF" /> : <ChevronDown size={20} color="#9CA3AF" />}
-                </button>
-                {openFAQ === idx && (
-                  <div style={{ padding: '0 1.5rem 1.5rem', color: '#9CA3AF', lineHeight: 1.6 }}>
-                    {faq.a}
-                  </div>
-                )}
+              <div
+                key={idx}
+                onClick={() => toggleFAQ(idx)}
+                style={{ backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.18)', borderRadius: '16px', padding: '1.6rem', cursor: 'pointer', transition: 'all 0.3s ease' }}
+              >
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem' }}>
+                  <span>{faq.q}</span>
+                  <ChevronDown style={{ transition: 'transform 0.3s ease', transform: openFAQ === idx ? 'rotate(180deg)' : 'rotate(0deg)', color: '#44CCFF', flexShrink: 0 }} />
+                </div>
+                <div style={{ maxHeight: openFAQ === idx ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease', opacity: openFAQ === idx ? 1 : 0 }}>
+                  <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{faq.a}</div>
+                </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* SECTION 6 : CTA FINAL */}
-        <section style={{ padding: '6rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <div style={{ 
-            display: 'flex', 
-            flexDirection: 'row', 
-            flexWrap: 'wrap', 
-            alignItems: 'center', 
-            justifyContent: 'space-between', 
-            gap: '4rem',
-            background: 'linear-gradient(145deg, rgba(37, 99, 235, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%)',
-            border: '1px solid rgba(255,255,255,0.05)',
-            borderRadius: '2rem',
-            padding: '4rem'
-          }}>
-            
-            {/* Colonne Gauche: Texte + CTA */}
-            <div style={{ flex: '1 1 400px', maxWidth: '600px' }}>
-              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.5rem', lineHeight: 1.2 }}>
-                Prêt à construire la base<br/>qui va alimenter votre pipeline ?
-              </h2>
-              <p style={{ fontSize: '1.1rem', color: '#9CA3AF', marginBottom: '2.5rem', lineHeight: 1.6 }}>
-                Fini le temps perdu sur des fichiers génériques. Passez à la prospection haute définition.
-              </p>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-                <Link 
-                  href="/contact" 
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    padding: '0.875rem 1.5rem',
-                    backgroundColor: '#2563EB',
-                    color: '#FFF',
-                    fontWeight: 600,
-                    borderRadius: '0.5rem',
-                    textDecoration: 'none',
-                    transition: 'background-color 0.2s',
-                  }}
-                  onMouseOver={(e) => e.target.style.backgroundColor = '#1D4ED8'}
-                  onMouseOut={(e) => e.target.style.backgroundColor = '#2563EB'}
-                >
-                  RDV avec un expert
-                </Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à construire la base<br/>qui va alimenter votre pipeline ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>Fini le temps perdu sur des fichiers génériques.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
               </div>
             </div>
-
-            {/* Colonne Droite: CardFlip (nouvelle version) */}
-            <div style={{ flex: '1 1 300px', display: 'flex', justifyContent: 'center' }}>
-              <CardFlip 
-                title="Data Lead"
-                subtitle="Génération de pipeline"
-                description="Identification et enrichissement des contacts stratégiques correspondant à votre ADN de vente."
-                features={[
-                  "Sources de données premium",
-                  "Nettoyage & Dé-doublonnage",
-                  "Enrichissement LinkedIn",
-                  "Livrables prêts à l'appel"
-                ]}
-                color="#2563EB"
-              />
-            </div>
-
           </div>
-        </section>
+        </div>
+      </section>
       </div>
     </>
   );

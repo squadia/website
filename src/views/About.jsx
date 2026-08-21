@@ -3,15 +3,16 @@ import React, { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Users, ShieldCheck, Zap, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const About = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "À propos de Squadia : Experts B2B en IA, CRM et Automatisation";
+    document.title = "À propos de Squadia : Experts B2B en IA, CRM et Automatisation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia est un cabinet de conseil spécialisé en transformation commerciale B2B : strategie IA, migration CRM, automatisation et formation. 20 ans d'expertise, basé à Paris.");
+      metaDescription.setAttribute('content', "Squadia est un cabinet de conseil spécialisé en transformation commerciale B2B : strategie IA, migration CRM, automatisation et formation. 20 ans d'expertise, basé à Paris.");
     }
   }, []);
 
@@ -53,7 +54,7 @@ const About = () => {
         <div className="container">
           <div className="fade-in grid-2" style={{ alignItems: 'center' }}>
             <div>
-              <h2 style={{ marginBottom: '2rem' }}>Pourquoi Squadia ?</h2>
+              <h2 style={{ marginBottom: '2rem' }}>Pourquoi Squadia ?</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '1.5rem', lineHeight: '1.8' }}>
                 La plupart des cabinets de conseil s'arrêtent au Powerpoint. La plupart des agences marketing s'arrêtent à l'outil. 
               </p>
@@ -99,11 +100,25 @@ const About = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="section-padding" style={{ background: 'var(--bg-secondary)', textAlign: 'center' }}>
-        <div className="container fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem' }}>Prêt à passer à l'exécution ?</h2>
-          <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1.2rem 3rem' }}>Planifier un échange</Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à passer<br/>à l'exécution ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour comprendre votre contexte et diagnostiquer une approche.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 

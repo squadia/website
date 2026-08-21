@@ -1,65 +1,51 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Target, Zap, BarChart3, ArrowRight, ShieldAlert, Crosshair, Users, BookOpen, ChevronDown, Rocket, CheckCircle2, Star } from 'lucide-react';
+import { Target, Zap, ArrowRight, Users, BookOpen, ChevronDown, Rocket, CheckCircle2, Star, UserPlus, Mail } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
-const c2 = '/assets/images/c2.png';
-const fonds2 = '/assets/images/fonds2.png';
+const fonds2 = '/assets/images/fonds2-CAwYIQyU.jpeg';
 import { casesData } from '../data/cases';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
+const teamworkImg = '/assets/images/salesdirecteur/teamwork.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const formationImg = '/assets/images/formationB2B.png';
 const transformerCRMImg = '/assets/images/transformerCRM.jpeg';
 const imgSalesManager = '/assets/images/ressources/new-sales-manager.jpeg';
-const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
-  const borderColor = 'rgba(255,255,255,0.08)';
-  return (
-    <div style={{ 
-      borderBottom: `1px solid ${borderColor}`, 
-      padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
-      transition: 'opacity 0.3s ease'
+const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
+  <div
+    onClick={onToggle}
+    style={{
+      backgroundColor: '#0D0D25',
+      border: '1px solid rgba(68, 204, 255, 0.18)',
+      borderRadius: '16px',
+      padding: '1.6rem',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease',
+    }}
+  >
+    <div style={{
+      width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
+      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
-      <button 
-        onClick={onToggle}
-        style={{ 
-          width: '100%', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          textAlign: 'left',
-          color: '#FFFFFF',
-          fontSize: '1rem',
-          fontWeight: 600,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0
-        }}
-      >
-        <span>{question}</span>
-        <ChevronDown 
-          style={{ 
-            transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: 'rgba(255,255,255,0.4)'
-          }} 
-        />
-      </button>
-      <div 
-        style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
-          overflow: 'hidden', 
-          transition: 'max-height 0.3s ease-in-out',
-        }}
-      >
-        <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-          {answer}
-        </p>
-      </div>
+      <span>{question}</span>
+      <ChevronDown style={{
+        transition: 'transform 0.3s ease',
+        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        color: '#44CCFF', flexShrink: 0
+      }} />
     </div>
-  );
-}
+    <div style={{
+      maxHeight: isOpen ? '400px' : '0',
+      overflow: 'hidden',
+      transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
+      opacity: isOpen ? 1 : 0
+    }}>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+    </div>
+  </div>
+);
 
 const caseImagesDG = {
   'pipeline-b2b': pipelineImg,
@@ -69,7 +55,7 @@ const caseImagesDG = {
 
 const caseLabelsDG = {
   'pipeline-b2b': 'Leads',
-  'crm-industrie': 'Stratégie',
+  'crm-industrie': 'Prospection',
   'formation-vente': 'Formation',
 };
 
@@ -79,12 +65,69 @@ const TagDG = ({ children }) => (
   </span>
 );
 
+const methodKicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' };
+const methodH2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', lineHeight: 1.2 };
+
+const timelineSteps = [
+  { week: 'Semaine 1', title: 'Atelier de cadrage', desc: 'Objectifs, cible, périmètre. On aligne la mission sur votre organisation.', image: '/atelier_cadrage.webp' },
+  { week: 'Semaine 2', title: 'Construction de la base', desc: 'Extraction sur signal, nettoyage, validation avec vous.', image: '/constructionbase.webp' },
+  { week: 'Semaine 3', title: 'Messages et outils', desc: 'Rédaction des séquences, mise en place du CRM et du tableau de bord.', image: '/copywriting.webp' },
+  { week: 'Semaine 4 et suite', title: 'Campagnes et appels', desc: 'Les séquences tournent, les appels démarrent, point hebdomadaire.', image: '/coldcall.webp' },
+];
+
+const StepText = ({ s }) => (
+  <div>
+    <p style={{ ...methodKicker, marginBottom: '0.4rem', fontSize: '0.7rem' }}>{s.week}</p>
+    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+  </div>
+);
+
+const StepImage = ({ src, label }) => (
+  <div style={{ aspectRatio: '4/3', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
+    <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+  </div>
+);
+
+const Timeline = () => (
+  <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
+    <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    {timelineSteps.map((s, i) => {
+      const imageLeft = i % 2 === 0;
+      return (
+        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : '6rem' }}>
+          <div className="timeline-dot" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          {imageLeft ? (
+            <>
+              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+                <StepImage src={s.image} label={s.title} />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+                <StepText s={s} />
+              </motion.div>
+            </>
+          ) : (
+            <>
+              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+                <StepText s={s} />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+                <StepImage src={s.image} label={s.title} />
+              </motion.div>
+            </>
+          )}
+        </div>
+      );
+    })}
+  </div>
+);
+
 const LandingSales = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
 
   useEffect(() => {
-    document.title = "Squadia pour Directeurs Commerciaux : CRM et pipeline B2B";
+    document.title = "Squadia pour Directeurs Commerciaux : CRM et pipeline B2B";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.content = "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d'achat. CRM et automatisation PME/ETI.";
@@ -92,31 +135,31 @@ const LandingSales = () => {
   }, []);
 
   const enjeux = [
-    { title: 'Un pipe peu fiable et difficile à défendre', desc: "Les opportunités s'accumulent dans le CRM mais peu avancent vraiment. La visibilité sur les prévisions de closing est floue. Chaque fin de trimestre ressemble à une course contre la montre et les chiffres annoncés au COMEX ne correspondent pas à la réalité du terrain.", icon: <BarChart3 color="#44CCFF" /> },
-    { title: 'On fait le lièvre sans savoir si on va gagner', desc: "L'équipe répond à des appels d'offres sans avoir été en amont pour influencer le cahier des charges. On investit du temps sur des opportunités déjà perdues avant même d'avoir envoyé la proposition. Personne ne sait exactement quand il faut s'impliquer.", icon: <Target color="#44CCFF" /> },
-    { title: "Les seniors n'aiment pas prospecter à froid. Les juniors n'ont pas encore l'expérience.", desc: "Les meilleurs commerciaux veulent closer, pas prospecter à froid. Les juniors décrochent le téléphone mais sans méthode ni signaux, leurs efforts produisent peu de résultats. Entre les deux, les bonnes opportunités passent.", icon: <Users color="#44CCFF" /> },
-    { title: 'Un CRM qui ne reflète pas la réalité', desc: "Si mettre à jour un compte après un rendez-vous prend 8 minutes et 15 champs, ça ne se fera pas. Les commerciaux ne voient pas la valeur, ils ne le font pas. Le management n'a pas de visibilité fiable. Les décisions se prennent sur des impressions.", icon: <ShieldAlert color="#44CCFF" /> },
-    { title: 'Pas de méthode de vente commune', desc: "Chaque commercial a sa propre approche. Un deal marqué gagné pour l'un ne veut pas dire la même chose pour l'autre. Il n'y a pas de langage commun sur ce qu'est un vrai engagement commercial, ni de visibilité sur les étapes clés pour la supply chain ou le marketing.", icon: <Crosshair color="#44CCFF" /> }
+    { title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#44CCFF" /> },
+    { title: 'Manager une équipe disparate', desc: "Les seniors excellent en closing mais évitent la prospection à froid. Les juniors appellent sans méthode ni signaux pour prioriser leurs cibles.", icon: <Users color="#44CCFF" /> },
+    { title: 'Un marketing pas toujours adapté', desc: "Salons, webinars ou marketing décentralisé qui ne tient pas compte des spécificités du marché français : ça n'aide pas toujours à apporter les leads dont vous avez besoin.", icon: <Zap color="#44CCFF" /> },
+    { title: "Faire grandir l'équipe", desc: "En France, il faut environ 3 mois pour qu'un commercial rejoigne l'équipe, puis 3 mois de plus pour être pleinement opérationnel. Les objectifs de l'année n'attendent pas.", icon: <UserPlus color="#44CCFF" /> }
   ];
 
-  const apports = [
-    { title: "Des leads avec une vraie raison d'acheter maintenant", desc: "Signaux d'achat, nouveaux C-level en poste, recrutements stratégiques, appels d'offres avant publication. Vos commerciaux arrivent sur des comptes en situation d'achat, pas sur des contacts froids sans contexte." },
-    { title: 'Un CRM qui se met à jour sans effort', desc: "Comptes-rendus automatiques après visioconférence, enrichissement des contacts, mise à jour des opportunités en temps réel. Moins de saisie manuelle, plus de temps sur le terrain. Et une visibilité réelle sur le pipeline pour le management." },
-    { title: 'Une méthode de vente commune dans le CRM', desc: "MEDDIC, plan de compte, engagement clair sur les deals. Quand'un commercial dit qu'il s'engage sur une opportunité, ça veut dire la même chose pour tout le monde, du terrain au COMEX. La supply chain peut anticiper, le marketing peut s'aligner." },
-    { title: 'Des équipes formées pour être en amont plutôt qu\'en réaction', desc: "On donne aux juniors les outils pour prospecter efficacement et aux seniors les bonnes raisons de s'y remettre quand les opportunités sont vraiment qualifiées. Les deux ressortent avec une méthode commune et des réflexes partagés." }
+
+  const piliers = [
+    { title: 'Expérience vente complexe', desc: "Mid-market ou grands comptes stratégiques : nos consultants ont géré ce type de cycle de vente pendant 25 ans avant de rejoindre Squadia.", icon: <Star color="#44CCFF" /> },
+    { title: "Signaux d'achats", desc: "Des signaux d'achat réels (recrutement, levée, changement d'organisation) qui indiquent qu'un compte est prêt à acheter maintenant, pas juste dans votre cible théorique.", icon: <Target color="#44CCFF" /> },
+    { title: 'Automatisation séquence', desc: "Le temps est la ressource la plus rare en transformation. C'est pour ça qu'on a construit nos propres outils plutôt que d'attendre ceux du marché.", icon: <Rocket color="#44CCFF" /> },
+    { title: <>Réagir plus vite<br />grâce à l'IA</>, desc: "Grâce à notre agent d'IA embarqué, on répond quasi instantanément sur vos campagnes LinkedIn, au moment où le prospect exprime son intérêt.", icon: <CheckCircle2 color="#44CCFF" /> }
   ];
 
   const faqs = [
-    { q: 'Comment améliorer la fiabilité du pipeline sans tout reconstruire ?', a: "On commence par un diagnostic des points de friction réels : pourquoi le CRM n'est pas mis à jour, pourquoi les prévisions sont floues, pourquoi certains commerciaux closent et d'autres non. Ensuite on structure ce qui manque, sans tout jeter." },
-    { q: 'Combien de temps pour avoir un pipeline fiable ?', a: "Les premiers signaux d'amélioration arrivent en 30 à 60 jours. Un CRM bien configuré et des automatisations en place changent les habitudes rapidement quand les commerciaux voient la valeur que ça leur apporte." },
-    { q: 'Peut-on travailler uniquement sur la prospection ?', a: "Oui. La brique Data peut être activée indépendamment. On identifie les comptes qui ont une vraie raison d'acheter maintenant, avec les bons interlocuteurs et le bon angle d'approche." },
-    { q: 'La formation commerciale, ça s\'adresse à quel niveau d\'expérience ?', a: "À tous les niveaux. Les juniors repartent avec une méthode structurée. Les seniors retrouvent de nouveaux réflexes et des outils qui leur font gagner du temps sur les tâches qu'ils n'aiment pas. Les deux ressortent avec un langage commun." }
+    { q: 'Comment améliorer la fiabilité du pipeline sans tout reconstruire ?', a: "On commence par un diagnostic des points de friction réels : pourquoi le CRM n'est pas mis à jour, pourquoi les prévisions sont floues, pourquoi certains commerciaux closent et d'autres non. Ensuite on structure ce qui manque, sans tout jeter." },
+    { q: 'Combien de temps pour avoir un pipeline fiable ?', a: "Les premiers signaux d'amélioration arrivent en 30 à 60 jours. Un CRM bien configuré et des automatisations en place changent les habitudes rapidement quand les commerciaux voient la valeur que ça leur apporte." },
+    { q: 'Peut-on travailler uniquement sur la prospection ?', a: "Oui. La brique Data peut être activée indépendamment. On identifie les comptes qui ont une vraie raison d'acheter maintenant, avec les bons interlocuteurs et le bon angle d'approche." },
+    { q: 'La formation commerciale, ça s\'adresse à quel niveau d\'expérience ?', a: "À tous les niveaux. Les juniors repartent avec une méthode structurée. Les seniors retrouvent de nouveaux réflexes et des outils qui leur font gagner du temps sur les tâches qu'ils n'aiment pas. Les deux ressortent avec un langage commun." }
   ];
 
   return (
     <div className="landing-sales" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
       
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{
         position: 'relative',
         minHeight: '100vh',
@@ -193,38 +236,15 @@ const LandingSales = () => {
           animation: 'fadeBgS 1s ease 0.2s forwards'
         }} />
 
-        {/* Person Image */}
+        {/* Fade bas : transition douce vers la section suivante (#050510), évite la coupe nette de l'image */}
         <div style={{
-          position: 'absolute', bottom: 0, right: '5%',
-          width: '45%',
-          maxWidth: '800px',
-          height: '92vh',
-          backgroundImage: `url(${c2})`,
-          backgroundPosition: 'bottom center',
-          backgroundRepeat: 'no-repeat',
-          backgroundSize: 'contain',
+          position: 'absolute', bottom: 0, left: 0, width: '100%', height: '260px',
+          background: 'linear-gradient(to bottom, transparent 0%, #050510 100%)',
           zIndex: 3,
-          opacity: 0,
-          animation: 'slidePersonS 3.2s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards'
-        }} />
-
-        {/* Glow Halo behind character */}
-        <div style={{
-          position: 'absolute',
-          bottom: '15%',
-          right: '20%',
-          width: '650px',
-          height: '650px',
-          background: 'radial-gradient(circle, rgba(68, 204, 255, 0.45) 0%, rgba(68, 204, 255, 0.1) 50%, transparent 80%)',
-          filter: 'blur(100px)',
-          zIndex: 2,
-          opacity: 0,
-          animation: 'fadeGlowS 2.5s ease 2s forwards',
           pointerEvents: 'none'
         }} />
 
-
-        {/* Gradient fade + label */}
+        {/* Gradient fade : transition douce vers la section suivante, sans photo ni titre en overlay */}
         <div style={{
           position: 'absolute',
           bottom: 0, right: 0,
@@ -236,20 +256,8 @@ const LandingSales = () => {
           maskImage: 'linear-gradient(to top, black 0%, black 50%, transparent 100%)',
           WebkitMaskImage: 'linear-gradient(to top, black 0%, black 50%, transparent 100%)',
           zIndex: 4,
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'flex-end',
-          paddingBottom: '5.5rem',
           pointerEvents: 'none'
-        }}>
-          <div style={{ fontSize: '1rem', fontWeight: 500, color: '#FFFFFF', marginBottom: '4px', textAlign: 'center' }}>
-            Directeur Commercial
-          </div>
-          <div style={{ fontSize: '0.78rem', color: 'rgba(68,204,255,0.85)', textAlign: 'center' }}>
-            Pipeline, deals et performance
-          </div>
-        </div>
+        }} />
 
         {/* Content */}
         <div style={{ position: 'relative', zIndex: 5, display: 'flex', flexWrap: 'wrap', width: '100%', paddingTop: '150px', paddingBottom: '7rem', paddingLeft: '8%', paddingRight: '5%' }}>
@@ -267,7 +275,7 @@ const LandingSales = () => {
               animation: 'fadeContentS 1.2s ease 0.3s forwards'
             }}>
               <span style={{ display: 'block' }}>Un pipeline fiable.</span>
-              <span style={{ display: 'block' }}>Des objectifs tenus :</span>
+              <span style={{ display: 'block' }}>Des objectifs tenus :</span>
               <span style={{ display: 'block' }}>Dès les 30 premiers jours.</span>
             </h1>
 
@@ -292,7 +300,7 @@ const LandingSales = () => {
               opacity: 0,
               animation: 'fadeContentS 1.2s ease 0.5s forwards'
             }}>
-              {/* Card 1 : Performance pipeline */}
+              {/* Card 1 : Performance pipeline */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance pipeline</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+23%</div>
@@ -314,17 +322,17 @@ const LandingSales = () => {
                     style={{ animation: 'drawSparklineS 1.6s ease 0.9s forwards' }}
                   />
                   {[[0,28],[20,24],[40,20],[60,12],[80,16],[100,2]].map(([cx,cy], i) => (
-                    <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
-                      fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
-                      stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
-                      strokeWidth={i === 5 ? 4 : 0}
+                    <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
+                      fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
+                      stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
+                      strokeWidth={i === 5 ? 4 : 0}
                       style={{ opacity: 0, animation: `fadeContentS 0.25s ease ${1.5 + i * 0.08}s forwards` }}
                     />
                   ))}
                 </svg>
               </div>
 
-              {/* Card 2 : Deals en closing */}
+              {/* Card 2 : Deals en closing */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF', position: 'relative' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Deals en closing</div>
                 <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+18</div>
@@ -343,7 +351,7 @@ const LandingSales = () => {
                 </div>
               </div>
 
-              {/* Card 3 : Signal détecté */}
+              {/* Card 3 : Signal détecté */}
               <div className="dc-kpi-card" style={{ flex: '1 1 190px', padding: '1.2rem', color: '#FFF' }}>
                 <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Signal détecté</div>
                 <div style={{ fontSize: '1.5rem', fontWeight: 700, lineHeight: 1.2, marginBottom: '0.3rem' }}>Dir. Achat</div>
@@ -359,7 +367,7 @@ const LandingSales = () => {
                     { x: 64, h: 22, accent: false },
                   ].map((b, i) => (
                     <rect key={i} x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                      fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
                       style={{ opacity: 0, animation: `fadeContentS 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                     />
                   ))}
@@ -372,12 +380,13 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
+      {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
       <section style={{ position: 'relative', overflow: 'hidden', padding: '10rem 2rem', background: '#050510' }}>
         <div style={{ position: 'absolute', right: '10%', top: '50%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
+          <p style={{ ...methodKicker, textAlign: 'center' }}>Principaux freins</p>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>Contraintes du sales manager en 2026</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
             {enjeux.map((item, i) => (
               <div key={i} style={{ padding: '2.5rem', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
                 onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
@@ -393,111 +402,116 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : CE QUE SQUADIA APPORTE ═══ */}
+      {/* ═══ SECTION 2B : NOTRE SOLUTION (bento) ═══ */}
+      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+        <style>{`
+          .dc-bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: 220px 220px auto; gap: 1.5rem; }
+          .dc-bento-hero { grid-column: 1 / 3; grid-row: 1 / 3; }
+          .dc-bento-stat-top { grid-column: 3; grid-row: 1; }
+          .dc-bento-feature { grid-column: 3; grid-row: 2; }
+          .dc-bento-bottom-1 { grid-column: 1; grid-row: 3; }
+          .dc-bento-bottom-2 { grid-column: 2; grid-row: 3; }
+          .dc-bento-bottom-3 { grid-column: 3; grid-row: 3; }
+          .dc-bento-card { border-radius: 22px; padding: 1.8rem; transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease; }
+          .dc-bento-card:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(0,0,0,0.35); filter: brightness(1.15); }
+          @media (max-width: 900px) {
+            .dc-bento { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .dc-bento-hero, .dc-bento-stat-top, .dc-bento-feature, .dc-bento-bottom-1, .dc-bento-bottom-2, .dc-bento-bottom-3 { grid-column: 1; grid-row: auto; }
+            .dc-bento-hero { min-height: 380px; }
+          }
+        `}</style>
+        <div className="container fade-in">
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <p style={methodKicker}>Notre solution</p>
+            <h2 style={methodH2Style}>Agrandir votre impact auprès de votre cible</h2>
+          </div>
+          <div className="dc-bento">
+
+            {/* Carte héro : présentation de la solution */}
+            <div className="dc-bento-card dc-bento-hero" style={{
+              position: 'relative', overflow: 'hidden',
+              border: '1px solid rgba(68,204,255,0.18)',
+              display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
+            }}>
+              <img src={teamworkImg} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', opacity: 0.32, pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(6,6,18,0.95) 15%, rgba(6,6,18,0.55) 60%, rgba(6,6,18,0.3) 100%)', pointerEvents: 'none' }} />
+              <div style={{ position: 'relative', zIndex: 1 }}>
+                <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#fff', marginBottom: '0.9rem', lineHeight: 1.2 }}>Démultiplier l'équipe en place</h3>
+                <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '1rem', lineHeight: 1.65, maxWidth: '460px', margin: 0 }}>Recruter, comprendre un nouveau territoire, tenir les objectifs de l'année : un sales manager ne peut pas tout mener de front. Squadia allège cette charge en démultipliant les actions de l'équipe déjà en place.</p>
+              </div>
+            </div>
+
+            {/* Stat : canaux activés */}
+            <div className="dc-bento-card dc-bento-stat-top" style={{
+              background: 'linear-gradient(135deg, #44CCFF 0%, #1D4ED8 100%)', color: '#fff',
+              display: 'flex', flexDirection: 'column', justifyContent: 'space-between',
+            }}>
+              <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <Mail size={20} color="#fff" />
+              </div>
+              <div>
+                <div style={{ fontSize: '2.4rem', fontWeight: 700, lineHeight: 1 }}>4</div>
+                <div style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.85)', marginTop: '0.3rem' }}>canaux activés en parallèle</div>
+                <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.65)', marginTop: '0.3rem' }}>Email · LinkedIn · Téléphone · Courrier</div>
+              </div>
+            </div>
+
+            {/* Feature : IA embarquée */}
+            <div className="dc-bento-card dc-bento-feature" style={{
+              background: 'rgba(68,204,255,0.07)', border: '1px solid rgba(68,204,255,0.3)', boxShadow: '0 0 40px -12px rgba(68,204,255,0.25)', color: '#F9FAFB',
+              display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            }}>
+              <div style={{ width: '40px', height: '40px', borderRadius: '10px', background: 'rgba(68,204,255,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                {piliers[3].icon}
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{piliers[3].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{piliers[3].desc}</p>
+            </div>
+
+            {/* Bottom 1 : Expérience vente complexe */}
+            <div className="dc-bento-card dc-bento-bottom-1" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(68,204,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {piliers[0].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{piliers[0].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{piliers[0].desc}</p>
+            </div>
+
+            {/* Bottom 2 : Signaux d'achats */}
+            <div className="dc-bento-card dc-bento-bottom-2" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(68,204,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {piliers[1].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{piliers[1].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{piliers[1].desc}</p>
+            </div>
+
+            {/* Bottom 3 : Automatisation séquence */}
+            <div className="dc-bento-card dc-bento-bottom-3" style={{ background: 'linear-gradient(135deg, #1D4ED8 0%, #0A0A1A 100%)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', flexDirection: 'column' }}>
+              <div style={{ marginBottom: '0.9rem', width: '40px', height: '40px', background: 'rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRadius: '10px' }}>
+                {piliers[2].icon}
+              </div>
+              <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{piliers[2].title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{piliers[2].desc}</p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ SECTION 3 : MÉTHODE ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les directions commerciales.</h2>
-          <div className="grid-2" style={{ gap: '2rem' }}>
-            {apports.map((item, i) => (
-              <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#F9FAFB' }}>{item.title}</h3>
-                <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>{item.desc}</p>
-              </div>
-            ))}
+          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <p style={methodKicker}>MÉTHODE</p>
+            <h2 style={methodH2Style}>Comment nous travaillons ensemble</h2>
           </div>
+          <Timeline />
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : FORMATION ET DATA ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
-        <div className="container fade-in">
-          <div style={{ maxWidth: '900px', margin: '0 auto 4rem auto', textAlign: 'center' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Mettre en place une méthode de vente commune sur les comptes stratégiques.</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.1rem', lineHeight: 1.7, textAlign: 'justify' }}>
-              <p>Sur les comptes complexes, chaque commercial qui travaille à sa façon c'est du chiffre d'affaires qui part. Une méthode commune change ça.</p>
-              <p>On travaille avec vos équipes sur la qualification des opportunités, la construction de plans de compte actionnables et l'utilisation des outils IA pour préparer chaque rendez-vous et anticiper vos concurrents.</p>
-              <p>Résultat : des commerciaux qui parlent le même langage et des comptes stratégiques vraiment travaillés.</p>
-            </div>
-          </div>
 
-          {/* Deux Blocs Type Tarifs */}
-          <div className="grid-2" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-            {/* Bloc 1: Formation */}
-            <div style={{
-              padding: '3rem 2.5rem',
-              background: '#0D0D25',
-              border: '1px solid #1A1A3A',
-              borderRadius: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '520px',
-              transition: 'transform 0.3s ease, border-color 0.3s ease'
-            }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#FFF' }}>Formation Vente B2B et IA</h3>
-              <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2rem', fontSize: '1rem', lineHeight: 1.6 }}>
-                Donnez à vos équipes les outils IA et la méthode pour prospecter plus intelligemment, qualifier plus vite et closer plus de deals stratégiques.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem', flexGrow: 1 }}>
-                {[
-                  'Méthode MEDDIC adaptée à vos cycles de vente',
-                  'Construction de plans de compte actionnables',
-                  'Préparation des RDV avec les outils IA',
-                  'Lecture des signaux d\'achat et anticipation concurrentielle',
-                  'Langage commun du terrain au COMEX',
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                    <span style={{ color: '#44CCFF', flexShrink: 0, marginTop: '2px' }}>→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/formation-ventes-et-ia" className="btn btn-primary" style={{ marginTop: 'auto', textDecoration: 'none', textAlign: 'center', padding: '1rem' }}>
-                Découvrir la formation
-              </Link>
-            </div>
-
-            {/* Bloc 2: Data Lead */}
-            <div style={{
-              padding: '3rem 2.5rem',
-              background: '#0D0D25',
-              border: '1px solid #1A1A3A',
-              borderRadius: '1rem',
-              display: 'flex',
-              flexDirection: 'column',
-              minHeight: '520px',
-              transition: 'transform 0.3s ease, border-color 0.3s ease'
-            }}
-            onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }}
-            onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <h3 style={{ fontSize: '1.8rem', marginBottom: '1rem', color: '#FFF' }}>Data Lead</h3>
-              <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2rem', fontSize: '1rem', lineHeight: 1.6 }}>
-                Construisez une base de prospection ultra-qualifiée sur votre segment cible avec des signaux d'achat réels et des contacts vérifiés.
-              </p>
-              <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2.5rem 0', display: 'flex', flexDirection: 'column', gap: '0.85rem', flexGrow: 1 }}>
-                {[
-                  'Ciblage ICP précis sur vos segments prioritaires',
-                  'Signaux d\'achat en temps réel (recrutements, levées, changements)',
-                  'Contacts décideurs vérifiés et enrichis',
-                  'Priorisation des comptes selon leur propension à acheter',
-                  'Intégration directe dans votre CRM',
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.5 }}>
-                    <span style={{ color: '#44CCFF', flexShrink: 0, marginTop: '2px' }}>→</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <Link href="/data/data-lead" className="btn btn-outline" style={{ marginTop: 'auto', textDecoration: 'none', textAlign: 'center', padding: '1rem' }}>
-                Voir l'offre Data Lead
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
+      {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#050510' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
@@ -506,7 +520,7 @@ const LandingSales = () => {
             <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1.5rem', marginBottom: '4rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
             {casesData.filter(c => ['crm-industrie', 'pipeline-b2b', 'formation-vente'].includes(c.id)).map((c) => {
               const img = caseImagesDG[c.id];
               return (
@@ -540,15 +554,15 @@ const LandingSales = () => {
                     <div style={{ marginTop: '1.2rem', marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{c.shortTitle}</div>
                     {c.id === 'crm-industrie' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
-                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+110 jours de ventes</div>
-                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>récupérés par an</div>
+                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+185 opportunités</div>
+                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>injectées en pipeline en 4 mois</div>
                       </div>
-                    ) : c.id === 'formation-vente' ? (
+                    ) : c.id === 'formation-vente' ? (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
                       </div>
-                    ) : (
+                    ) : (
                       <div style={{ marginBottom: '1.4rem' }}>
                         <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
                         <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
@@ -573,7 +587,7 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
+      {/* ═══ SECTION 5 : RESSOURCE ═══ */}
       <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
@@ -590,7 +604,7 @@ const LandingSales = () => {
             </div>
             <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Sales Manager</span>
-              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Sales Manager B2B : réussir vos 90 premiers jours</h3>
+              <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Sales Manager B2B : réussir vos 90 premiers jours</h3>
               <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>Méthodes éprouvées, plans d'action, IA, outils et conseils pratiques pour réussir votre prise de poste et atteindre vos premiers résultats.</p>
               <span style={{ alignSelf: 'flex-start', background: '#FFFFFF', color: '#060612', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                 Télécharger gratuitement →
@@ -600,19 +614,19 @@ const LandingSales = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 6 : FAQ ═══ */}
+      {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
+          <div>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
-            <div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {faqs.map((faq, idx) => (
                 <AccordionItem 
                   key={idx} 
                   question={faq.q} 
                   answer={faq.a} 
                   isOpen={openFAQ === idx}
-                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
+                  onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)}
                 />
               ))}
             </div>
@@ -631,7 +645,7 @@ const LandingSales = () => {
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #10B981', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#34D399' }}>Formation commerciale</span>
               </div>
-              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
+              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 
@@ -639,7 +653,7 @@ const LandingSales = () => {
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
               </div>
-              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
 
@@ -647,7 +661,7 @@ const LandingSales = () => {
               <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
                 <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
               </div>
-              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+              <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
               <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
             </Link>
           </div>
@@ -655,23 +669,28 @@ const LandingSales = () => {
       </section>
 
       {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
-      <ClientLogosSection />
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection contained={true} />
+        </div>
+      </section>
 
-      {/* ═══ SECTION 8 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A' }}>
-        <div className="container">
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '480px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
-            <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
-              <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '2rem', lineHeight: 1.2 }}>
-                Prêt à fiabiliser votre pipeline<br/>et sécuriser vos objectifs ?
-              </h2>
-              <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-                <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>Prendre RDV</Link>
-                <Link href="/tarifs" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  Voir nos offres <ArrowRight size={18} />
-                </Link>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à fiabiliser votre pipeline<br/>et sécuriser vos objectifs ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour identifier ce qui freine votre pipeline.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
               </div>
             </div>
           </div>

@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const formationImg = '/assets/images/formationB2B.png';
 const CasFormationVente = () => {
   useEffect(() => {
-    document.title = "Cas client : Formation Vente B2B · Squadia";
+    document.title = "Cas client : Formation Vente B2B · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -21,17 +21,17 @@ const CasFormationVente = () => {
     {
       step: '01',
       title: 'Atelier de cadrage avec le management',
-      body: 'Un atelier préalable avec le management pour adapter chaque cas pratique aux réalités terrain de l\'équipe, aux typologies de comptes B2B visés : souvent des entreprises avec de nombreuses filiales en France et à l\'étranger : et aux jeux de pouvoir internes qui compliquent les cycles de vente. Pas une formation générique, une formation calibrée.'
+      body: 'Un atelier préalable avec le management pour adapter chaque cas pratique aux réalités terrain de l\'équipe, aux typologies de comptes B2B visés : souvent des entreprises avec de nombreuses filiales en France et à l\'étranger : et aux jeux de pouvoir internes qui compliquent les cycles de vente. Pas une formation générique, une formation calibrée.'
     },
     {
       step: '02',
       title: 'Deux jours de mises en situation concrètes',
-      body: 'Jeux de rôles où les commerciaux tournaient sur différentes postures : acheteur, vendeur, manager : pour comprendre ce que l\'autre ressent et ce qu\'il cherche vraiment dans un échange. Travail sur la méthode MEDDIC pour que tout le monde parle le même langage quand\'un deal progresse. Préparation de rendez-vous avec les outils disponibles, dont des outils IA et de social selling, avec des subtilités que beaucoup connaissaient de nom mais pas en pratique.'
+      body: 'Jeux de rôles où les commerciaux tournaient sur différentes postures : acheteur, vendeur, manager : pour comprendre ce que l\'autre ressent et ce qu\'il cherche vraiment dans un échange. Travail sur la méthode MEDDIC pour que tout le monde parle le même langage quand\'un deal progresse. Préparation de rendez-vous avec les outils disponibles, dont des outils IA et de social selling, avec des subtilités que beaucoup connaissaient de nom mais pas en pratique.'
     },
     {
       step: '03',
       title: 'Session dédiée au plan de compte',
-      body: 'Comment le construire, comment l\'adapter à chaque commercial, comment le présenter simplement et comment s\'en servir pour aller chercher en interne les ressources marketing et communication nécessaires. L\'objectif : que le commercial soit à l\'initiative des événements sur ses comptes clés, pas qu\'il subisse les actions que le marketing lui impose à la dernière minute.'
+      body: 'Comment le construire, comment l\'adapter à chaque commercial, comment le présenter simplement et comment s\'en servir pour aller chercher en interne les ressources marketing et communication nécessaires. L\'objectif : que le commercial soit à l\'initiative des événements sur ses comptes clés, pas qu\'il subisse les actions que le marketing lui impose à la dernière minute.'
     },
   ];
 
@@ -51,7 +51,7 @@ const CasFormationVente = () => {
           objectFit: 'cover', objectPosition: 'center 70%',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal orange/sombre : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal orange/sombre : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.92) 0%, rgba(14,26,45,0.82) 38%, rgba(14,26,45,0.52) 58%, rgba(14,26,45,0.08) 72%, transparent 82%)',
@@ -171,7 +171,7 @@ const CasFormationVente = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>

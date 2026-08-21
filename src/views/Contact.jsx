@@ -7,7 +7,7 @@ const Contact = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Contact : Prendre rendez-vous avec Squadia";
+    document.title = "Contact : Prendre rendez-vous avec Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Prenez rendez-vous avec l'équipe Squadia pour discuter de votre projet IA, CRM ou automatisation B2B. Disponible par téléphone, email ou directement en ligne.");
@@ -71,8 +71,7 @@ const Contact = () => {
             Parlons de votre prochain<br />palier de croissance.
           </h1>
           <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '650px', marginInline: 'auto', lineHeight: 1.6 }}>
-            Choisissez le moment idéal pour un échange stratégique de 30 minutes. 
-            Nous analyserons vos bloquages et identifierons vos leviers prioritaires.
+            Choisissez le moment idéal pour un échange de 30 minutes.
           </p>
         </div>
       </section>
@@ -176,8 +175,8 @@ const Contact = () => {
             </div>
             <div>
               <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '4px' }}>Pour plus d'infos</div>
-              <a href="tel:+33782843564" style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.45)'}>
-                +33 (0) 7 82 84 35 64
+              <a href="tel:+33745804949" style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.45)'}>
+                +33 (0) 7 45 80 49 49
               </a>
             </div>
           </div>

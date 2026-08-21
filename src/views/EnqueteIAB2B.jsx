@@ -37,7 +37,7 @@ const EnqueteIAB2B = () => {
           </div>
 
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', lineHeight: '1.2', marginBottom: '1.5rem' }}>
-            Sales & Marketing Manager B2B : vos priorités face à l'IA
+            Sales & Marketing Manager B2B : vos priorités face à l'IA
           </h1>
 
           <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', lineHeight: '1.6', marginBottom: '3rem' }}>
@@ -45,7 +45,7 @@ const EnqueteIAB2B = () => {
           </p>
 
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', marginBottom: '1.5rem' }}>Ce qu'on recueille dans cette étude :</h2>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.8rem)', marginBottom: '1.5rem' }}>Ce qu'on recueille dans cette étude :</h2>
 
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>

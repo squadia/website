@@ -8,7 +8,7 @@ const ConditionsParticipation = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Conditions de participation : Jeu concours Squadia 2026";
+    document.title = "Conditions de participation : Jeu concours Squadia 2026";
   }, []);
 
   return (

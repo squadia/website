@@ -24,3 +24,7 @@ dist-ssr
 *.sln
 *.sw?
 .claude/
+TODO-WEBSITE.md
+screenshot_*.js
+/tmp/
+

@@ -19,7 +19,7 @@ export default function BlogFormationIAVAutom() {
   }, []);
 
   useEffect(() => {
-    document.title = "Formation IA ou Automatisation : quel ordre ? : Squadia";
+    document.title = "Formation IA ou Automatisation : quel ordre ? : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Faut-il former ses équipes à l'IA avant d'automatiser, ou l'inverse ? Squadia vous guide pour choisir le bon ordre et maximiser votre ROI.");
@@ -148,7 +148,7 @@ export default function BlogFormationIAVAutom() {
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
           .article-pullquote { border-left: 3px solid #2563EB; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(37,99,235,0.06); border-radius: 0 0.75rem 0.75rem 0; }
-          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
+          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
           .article-highlight-box { background: #0D0D25; border: 1px solid #1A1A3A; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
           .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #60A5FA; margin-bottom: 0.75rem; }
         `}</style>
@@ -166,13 +166,13 @@ export default function BlogFormationIAVAutom() {
           <hr />
 
           <h2>La vraie question que se posent les dirigeants</h2>
-          <p>La plupart des DG qui abordent le sujet de l'IA arrivent avec la même question implicite : <strong>par où est-ce qu'on commence ?</strong></p>
-          <p>Pas "quel outil acheter". Pas "combien ça coûte". Mais vraiment : quelle est la bonne séquence pour ne pas se planter ?</p>
+          <p>La plupart des DG qui abordent le sujet de l'IA arrivent avec la même question implicite : <strong>par où est-ce qu'on commence ?</strong></p>
+          <p>Pas "quel outil acheter". Pas "combien ça coûte". Mais vraiment : quelle est la bonne séquence pour ne pas se planter ?</p>
           <p>Ce qu'on observe sur le terrain, après avoir accompagné des PME, des ETI et des grands groupes, c'est que la séquence fait tout. L'erreur la plus fréquente n'est pas de choisir le mauvais outil. C'est de brûler les étapes.</p>
 
           <hr />
 
-          <h2>Étape 1 : la formation comme outil de découverte</h2>
+          <h2>Étape 1 : la formation comme outil de découverte</h2>
           <p>Avant de savoir ce que l'IA peut faire pour votre entreprise, vos équipes doivent comprendre ce que l'IA peut faire dans leur métier. C'est une condition réelle.</p>
           <p>Au bout de deux jours de pratique sur des cas concrets, les participants commencent à identifier où l'IA crée de la valeur dans leur contexte précis. C'est exactement l'objectif d'une bonne formation.</p>
 
@@ -183,7 +183,7 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 2 : faire le pont entre compréhension et système</h2>
+          <h2>Étape 2 : faire le pont entre compréhension et système</h2>
           <p>Une fois la compréhension acquise, le travail de mise en système peut commencer. Son rôle est de faire le pont entre les attentes métier et de les traduire en actions.</p>
           
           <div className="article-highlight-box">
@@ -198,7 +198,7 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 3 : mesurer ce qu'on a mis en place</h2>
+          <h2>Étape 3 : mesurer ce qu'on a mis en place</h2>
           <p>C'est là que le CRM joue son rôle de colonne vertébrale. Si vous avez des outils de mesure (net new meetings, taux de conversion), vous savez si votre transformation avance.</p>
           
           <div className="article-pullquote">
@@ -207,13 +207,13 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 4 : gérer les résistances</h2>
+          <h2>Étape 4 : gérer les résistances</h2>
           <p>Dans toute équipe, il y a ceux qui sont ouverts et ceux qui ont construit leurs habitudes sur des décennies. Gérer les résistances, c'est faire comprendre que l'IA n'est pas une remise en question de leur compétence, mais un moyen de faire moins de ce qui coûte du temps.</p>
           <p>La meilleure façon d'amorcer le mouvement est de commencer avec les <strong>champions</strong>, ceux qui sont déjà performants et ouverts au changement.</p>
 
           <hr />
 
-          <h2>Étape 5 : ancrer les habitudes dans la durée</h2>
+          <h2>Étape 5 : ancrer les habitudes dans la durée</h2>
           <p>Ce qui fait la différence, c'est la capacité à itérer et à construire des habitudes. Il faut rendre visible la valeur que chaque outil apporte à celui qui l'utilise, pas seulement à celui qui supervise.</p>
           
           <div className="article-highlight-box">
@@ -246,13 +246,13 @@ export default function BlogFormationIAVAutom() {
           <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
             
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous voulez structurer votre strategie IA et savoir par où commencer ?
+              Vous voulez former vos équipes à l'IA et savoir par où commencer ?
             </h2>
             <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-              Squadia accompagne les directions générales, marketing et commerciales dans la définition et la mise en exécution de leur feuille de route IA.
+              Squadia accompagne les directions générales, marketing et commerciales dans la montée en compétence IA de leurs équipes.
             </p>
             <Link
-              href="/strategie-ia"
+              href="/formations"
               style={{
                 display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
                 background: '#44CCFF', color: '#060612',
@@ -260,7 +260,7 @@ export default function BlogFormationIAVAutom() {
                 fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
               }}
             >
-              Découvrir l'offre Stratégie IA <ArrowRight size={18} />
+              Voir les formations IA <ArrowRight size={18} />
             </Link>
           </div>
         </div>

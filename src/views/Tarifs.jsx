@@ -4,91 +4,43 @@ import Link from 'next/link';
 import { Check, ChevronDown } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
-const AccordionItem = ({ question, answer, isOpen, onToggle }) => {
-  const borderColor = 'rgba(255,255,255,0.08)';
-  return (
-    <div style={{ 
-      borderBottom: `1px solid ${borderColor}`, 
-      padding: '1.5rem 0',
-      opacity: isOpen ? 1 : 0.45,
-      transition: 'opacity 0.3s ease'
+const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
+  <div
+    onClick={onToggle}
+    style={{
+      backgroundColor: '#0D0D25',
+      border: '1px solid rgba(68, 204, 255, 0.18)',
+      borderRadius: '16px',
+      padding: '1.6rem',
+      cursor: 'pointer',
+      transition: 'all 0.3s ease',
+    }}
+  >
+    <div style={{
+      width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
+      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
-      <button 
-        onClick={onToggle}
-        style={{ 
-          width: '100%', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center',
-          textAlign: 'left',
-          color: '#FFFFFF',
-          fontSize: '1.1rem',
-          fontWeight: 700,
-          background: 'none',
-          border: 'none',
-          cursor: 'pointer',
-          padding: 0
-        }}
-      >
-        <span>{question}</span>
-        <ChevronDown 
-          style={{ 
-            transition: 'transform 0.3s ease', 
-            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-            color: 'rgba(255,255,255,0.4)'
-          }} 
-        />
-      </button>
-      <div 
-        style={{ 
-          maxHeight: isOpen ? '500px' : '0', 
-          overflow: 'hidden', 
-          transition: 'max-height 0.3s ease-in-out',
-        }}
-      >
-        <p style={{ marginTop: '1rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.6 }}>
-          {answer}
-        </p>
-      </div>
+      <span>{question}</span>
+      <ChevronDown style={{
+        transition: 'transform 0.3s ease',
+        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+        color: '#44CCFF', flexShrink: 0
+      }} />
     </div>
-  );
-}
+    <div style={{
+      maxHeight: isOpen ? '400px' : '0',
+      overflow: 'hidden',
+      transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
+      opacity: isOpen ? 1 : 0
+    }}>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+    </div>
+  </div>
+);
 
 const tabsData = [
-  {
-    id: 'strategie',
-    label: 'Stratégie',
-    pageLink: '/strategie-ia',
-    cards: [
-      {
-        title: 'Stratégie Commerciale',
-        subtitle: "Pour structurer votre méthode de vente, fiabiliser votre pipeline et aligner vos équipes sur un objectif commun.",
-        items: [
-          "Sales playbook et méthode de qualification",
-          "Rituels de pilotage et indicateurs",
-          "Ateliers terrain avec les équipes commerciales",
-          "Feuille de route 30/60/90 jours"
-        ],
-        price: 'À partir de 3 490 € HT',
-        subPrice: null,
-        badge: null
-      },
-      {
-        title: 'Migration CRM',
-        subtitle: "Pour déployer un CRM que vos équipes utilisent vraiment : de l'audit à l'adoption.",
-        items: [
-          "Audit des processus réels et des données existantes",
-          "Configuration adaptée à vos cycles de vente",
-          "Migration propre sans perte de données",
-          "Formation et activation des équipes"
-        ],
-        price: 'À partir de 5 990 € HT',
-        subPrice: null,
-        badge: 'RECOMMANDÉ'
-      }
-    ]
-  },
   {
     id: 'data',
     label: 'Data',
@@ -137,47 +89,48 @@ const tabsData = [
     ]
   },
   {
-    id: 'automatisation',
-    label: 'Automatisation',
-    pageLink: '/automatisation-ia',
+    id: 'prospection',
+    label: 'Prospection',
+    pageLink: '/prospection/campagne',
     cards: [
       {
-        title: 'Starter',
-        subtitle: "Pour automatiser un besoin ciblé avec un impact rapide.",
+        title: 'Campagne multicanale',
+        subtitle: "Pour lancer des campagnes email et LinkedIn.",
         items: [
-          "1 à 2 workflows principaux",
-          "Connecteurs limités, architecture simple",
-          "Documentation d'exploitation incluse",
-          "2 semaines de support après installation"
+          "Séquences email et LinkedIn personnalisées",
+          "Personnalisation contact par contact",
+          "Traitement des réponses inclus",
+          "Reporting hebdomadaire"
         ],
         price: 'À partir de 2 490 € HT',
         subPrice: 'Périmètre ajusté avant démarrage.',
         badge: null
       },
       {
-        title: 'Scale',
-        subtitle: "Pour structurer plusieurs automatisations cohérentes et interconnectées.",
+        title: 'Appels sortants',
+        subtitle: "Pour qualifier et prendre des rendez-vous par téléphone.",
         items: [
-          "3 à 5 workflows interconnectés",
-          "Agents IA spécialisés",
-          "Documentation complète et guide de maintien",
-          "Support dédié 1 mois"
+          "Commercial B2B senior dédié",
+          "Script construit avec vous",
+          "Définition écrite du rendez-vous qualifié",
+          "Reporting hebdomadaire"
         ],
-        price: 'À partir de 5 990 € HT',
-        subPrice: 'Périmètre ajusté avant démarrage.',
-        badge: 'RECOMMANDÉ'
-      },
-      {
-        title: 'System',
-        subtitle: "Pour déployer une architecture d'automatisation transverse et durable.",
-        items: [
-          "Architecture complète multi-sources, multi-équipes",
-          "Sécurité, droits d'accès, gouvernance",
-          "Runbook d'exploitation et plan d'évolution"
-        ],
-        price: 'Sur mesure',
+        price: 'Sur devis',
         subPrice: null,
         badge: null
+      },
+      {
+        title: 'Mission hybride',
+        subtitle: "Pour combiner campagne multicanale et prospection téléphonique.",
+        items: [
+          "Data + Cold Call combinés",
+          "Customer Success Manager dédié",
+          "CRM et Dashboard dédié",
+          "Reporting hebdomadaire"
+        ],
+        price: 'Sur devis',
+        subPrice: null,
+        badge: 'RECOMMANDÉ'
       }
     ]
   },
@@ -239,10 +192,10 @@ const Tarifs = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Tarifs Squadia — Stratégie, Data, Automatisation, Formation";
+    document.title = "Tarifs Squadia : Data et Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
-      metaDescription.content = "Découvrez les tarifs Squadia : stratégie commerciale, data B2B, automatisation IA et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
+      metaDescription.content = "Découvrez les tarifs Squadia : data B2B et formation. Périmètre ajusté avant engagement. Pour PME et ETI en France.";
     }
   }, []);
 
@@ -250,7 +203,7 @@ const Tarifs = () => {
 
   return (
     <div className="tarifs-page" style={{ background: 'var(--bg-primary)' }}>
-      {/* ═══ SECTION 1 : HERO ═══ */}
+      {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '60px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
@@ -262,7 +215,7 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 2 : ONGLETS PAR BRIQUE ═══ */}
+      {/* ═══ SECTION 2 : ONGLETS PAR BRIQUE ═══ */}
       <section className="container" style={{ paddingBottom: '80px' }}>
         <div className="fade-in">
           {/* Tabs Navigation */}
@@ -276,9 +229,9 @@ const Tarifs = () => {
                   borderRadius: '9999px',
                   fontWeight: 700,
                   fontSize: '1rem',
-                  border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
-                  background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
-                  color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
+                  border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
+                  background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
+                  color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
                   transition: 'all var(--transition-fast)'
                 }}
               >
@@ -288,13 +241,14 @@ const Tarifs = () => {
           </div>
 
           {/* Cards Display */}
-          <div 
-            style={{ 
-              display: 'grid', 
-              gridTemplateColumns: activeTabData.cards.length === 2 ? 'repeat(2, 1fr)' : 'repeat(3, 1fr)', 
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
               gap: '2rem',
-              maxWidth: activeTabData.cards.length === 2 ? '900px' : '100%',
-              marginInline: 'auto'
+              maxWidth: '1200px',
+              marginInline: 'auto',
+              justifyContent: 'center'
             }}
           >
             {activeTabData.cards.map((card, idx) => (
@@ -303,8 +257,8 @@ const Tarifs = () => {
                 className="pricing-card"
                 style={{
                   background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
-                  padding: isMobile ? '24px 18px' : '3rem 2rem',
+                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
                   display: 'flex',
@@ -398,12 +352,12 @@ const Tarifs = () => {
                   style={{
                     display: 'block',
                     width: '100%',
-                    padding: isMobile ? '14px' : '1rem',
+                    padding: isMobile ? '14px' : '1rem',
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#2563EB' : 'transparent',
+                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
+                    background: card.badge ? '#2563EB' : 'transparent',
                     color: '#FFFFFF',
                     textAlign: 'center',
                     textDecoration: 'none',
@@ -425,34 +379,31 @@ const Tarifs = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3 : NOTE TARIFAIRE ═══ */}
-      <section className="container" style={{ paddingBottom: '60px' }}>
-        <div className="fade-in" style={{ background: '#111827', padding: '2rem', borderRadius: '1rem', border: '1px solid #1A1A3A', textAlign: 'center' }}>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: '1.6', maxWidth: '900px', marginInline: 'auto' }}>
-            Tous les tarifs sont indicatifs et hors taxes. Le périmètre exact, le calendrier et les livrables sont cadrés ensemble avant tout démarrage. Aucune mission ne commence sans un accord sur les objectifs et les responsabilités de chaque partie.
-          </p>
+      {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
+      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+        <div className="container fade-in">
+          <ClientLogosSection contained={true} />
         </div>
       </section>
 
-      {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
-      <ClientLogosSection />
-
-      {/* ═══ SECTION 5 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #1A1A3A' }}>
-        <div className="container fade-in" style={{ textAlign: 'center' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '1rem' }}>
-            Une question sur nos offres ?
-          </h2>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-secondary)', marginBottom: '3rem' }}>
-            On vous répond directement, sans argumentaire commercial.
-          </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn-primary pulse" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem', textDecoration: 'none' }}>
-              Prendre RDV
-            </Link>
-            <a href="mailto:contact@squadia.io" className="btn btn-outline" style={{ padding: '1rem 2.5rem', fontSize: '1.1rem' }}>
-              Nous écrire
-            </a>
+      {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
+      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+        <div className="container" style={{ position: 'relative' }}>
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+              <div>
+                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Une question<br/>sur nos offres ?</h2>
+              </div>
+              <div>
+                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>On vous répond directement, sans argumentaire commercial.</p>
+                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -461,16 +412,16 @@ const Tarifs = () => {
         @media (max-width: 768px) {
           div[style*="grid-template-columns: repeat(3, 1fr)"],
           div[style*="grid-template-columns: repeat(2, 1fr)"] {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr !important;
           }
           .tarifs-tabs-nav {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 8px !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
           }
           .tarifs-tabs-nav button {
-            padding: 8px 12px !important;
-            font-size: 13px !important;
+            padding: 8px 12px !important;
+            font-size: 13px !important;
           }
         }
       `}</style>

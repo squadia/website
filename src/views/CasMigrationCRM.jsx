@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const hubspotImg = '/assets/images/hubspotcrm.jpeg';
 const CasMigrationCRM = () => {
   useEffect(() => {
-    document.title = "Cas client : Migration CRM HubSpot · Squadia";
+    document.title = "Cas client : Migration CRM HubSpot · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -27,17 +27,17 @@ const CasMigrationCRM = () => {
     {
       step: '01',
       title: 'Nettoyage et restructuration des données',
-      body: 'Reprise de toutes les données existantes issues des fichiers Excel épars : agrégation, nettoyage, suppression des doublons et contacts invalides, recréation des liens entre les dossiers et réintégration de l\'historique des activités sur chaque compte. Un travail de fond pour que le CRM parte sur une base propre et exploitable dès le premier jour.'
+      body: 'Reprise de toutes les données existantes issues des fichiers Excel épars : agrégation, nettoyage, suppression des doublons et contacts invalides, recréation des liens entre les dossiers et réintégration de l\'historique des activités sur chaque compte. Un travail de fond pour que le CRM parte sur une base propre et exploitable dès le premier jour.'
     },
     {
       step: '02',
       title: 'Déploiement HubSpot et dashboards internationaux',
-      body: 'Configuration de HubSpot avec les bons dashboards pour suivre le développement sur les différents pays cibles. Mise en place des automatisations nécessaires à l\'intérieur et à l\'extérieur du CRM pour alerter les bonnes personnes au bon moment : deals qui progressent, seuils de valeur atteints, relances à déclencher.'
+      body: 'Configuration de HubSpot avec les bons dashboards pour suivre le développement sur les différents pays cibles. Mise en place des automatisations nécessaires à l\'intérieur et à l\'extérieur du CRM pour alerter les bonnes personnes au bon moment : deals qui progressent, seuils de valeur atteints, relances à déclencher.'
     },
     {
       step: '03',
       title: 'Formation de l\'ensemble des équipes',
-      body: 'Formation de l\'intégralité des équipes, du management aux commerciaux en passant par le marketing, pour qu\'elles s\'approprient l\'outil sans avoir besoin d\'être expertes en marketing digital. L\'objectif : une adoption immédiate, pas une migration qui s\'enlise.'
+      body: 'Formation de l\'intégralité des équipes, du management aux commerciaux en passant par le marketing, pour qu\'elles s\'approprient l\'outil sans avoir besoin d\'être expertes en marketing digital. L\'objectif : une adoption immédiate, pas une migration qui s\'enlise.'
     },
     {
       step: '04',
@@ -202,7 +202,7 @@ const CasMigrationCRM = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>
@@ -245,7 +245,7 @@ const CasMigrationCRM = () => {
             onMouseEnter={e => e.currentTarget.style.color = '#fff'}
             onMouseLeave={e => e.currentTarget.style.color = 'rgba(255,255,255,0.4)'}
           >
-            <ArrowLeft size={16} /> Transformation CRM
+            <ArrowLeft size={16} /> Pipeline sans hasard
           </Link>
           <Link href="/cas-clients/formation-vente" style={{
             display: 'inline-flex', alignItems: 'center', gap: '8px',

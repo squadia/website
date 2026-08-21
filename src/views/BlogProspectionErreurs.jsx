@@ -19,7 +19,7 @@ export default function BlogProspectionErreurs() {
   }, []);
 
   useEffect(() => {
-    document.title = "Prospection multicanale B2B : 5 erreurs à éviter : Squadia";
+    document.title = "Prospection multicanale B2B : 5 erreurs à éviter : Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {
       metaDescription.setAttribute('content', "Découvrez les 5 erreurs les plus courantes en prospection multicanale B2B et comment les corriger. Conseils pour équipes commerciales en PME et ETI.");
@@ -148,7 +148,7 @@ export default function BlogProspectionErreurs() {
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
           .article-pullquote { border-left: 3px solid #2563EB; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(37,99,235,0.06); border-radius: 0 0.75rem 0.75rem 0; }
-          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
+          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
           .article-highlight-box { background: #0D0D25; border: 1px solid #1A1A3A; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
           .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #60A5FA; margin-bottom: 0.75rem; }
         `}</style>
@@ -159,7 +159,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 1 : confier les emails à des profils sans méthode</h2>
+          <h2>Erreur 1 : confier les emails à des profils sans méthode</h2>
           <p>Écrire un bon email de prospection, ce n'est pas facile. Par email, vous n'avez qu'une seule arme&nbsp;: <strong>vos mots.</strong> Et ça ne s'improvise pas.</p>
           <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.</p>
           
@@ -169,14 +169,14 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 2 : ignorer la fenêtre de tir</h2>
+          <h2>Erreur 2 : ignorer la fenêtre de tir</h2>
           <p>Le timing, c'est ce qui fait la différence entre un email ignoré et un rendez-vous décroché.</p>
           <p>Selon Gartner, <strong>60% du budget</strong> d'un manager arrivé depuis moins de 6 mois est engagé dès sa prise de poste. C'est une fenêtre rare&nbsp;: la personne n'a pas encore ses fournisseurs habituels.</p>
           <p>Utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Si vous connaissez leur feuille de route, votre email arrive comme une réponse à un besoin actuel.</p>
 
           <hr />
 
-          <h2>Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
+          <h2>Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
           <p><em>"Je vous contacte pour vous présenter notre solution innovante..."</em>&nbsp;: si vous commencez comme ça, vous êtes déjà perdu.</p>
           <p>Un email de prospection est un premier contact humain. Votre prospect doit sentir que vous comprenez ses problématiques. L'outil ne fait pas tout&nbsp;: la compétence relationnelle reste le levier principal.</p>
 
@@ -187,7 +187,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
+          <h2>Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
           <p>Envoyer 1 000 emails peut sembler ambitieux, mais si votre équipe n'est pas calibrée, vous vous épuiserez avant même de pouvoir mesurer l'impact.</p>
           
           <div className="article-pullquote">
@@ -198,7 +198,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 5 : laisser marketing et ventes travailler en silos</h2>
+          <h2>Erreur 5 : laisser marketing et ventes travailler en silos</h2>
           <p>C'est un classique&nbsp;: le marketing lance une campagne que les commerciaux ne relaient pas. Résultat&nbsp;: double dépense et messages contradictoires.</p>
           <p>Ce qui marche, c'est <strong>l'alignement.</strong> Le marketing prépare du contenu contextualisé, et les commerciaux s'en servent comme levier. Un commercial devient deux à trois fois plus productif quand chaque canal travaille pour lui.</p>
 
@@ -225,7 +225,7 @@ export default function BlogProspectionErreurs() {
           <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
             
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
+              Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
             </h2>
             <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
               Squadia accompagne les équipes commerciales et marketing dans la structuration de leur prospection multicanale et l'optimisation de leur génération de leads.

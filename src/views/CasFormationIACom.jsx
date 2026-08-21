@@ -6,7 +6,7 @@ const bgUseCase = '/assets/images/bgusecase.png';
 const iaComImg = '/assets/images/iaetcom.png';
 const CasFormationIACom = () => {
   useEffect(() => {
-    document.title = "Cas client : Formation IA Communication · Squadia";
+    document.title = "Cas client : Formation IA Communication · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -21,17 +21,17 @@ const CasFormationIACom = () => {
     {
       step: '01',
       title: 'Cadrage sur-mesure avant la formation',
-      body: 'Avant même de concevoir le programme, un atelier de cadrage avec la responsable communication pour comprendre la séniorité des uns et des autres, les attentes spécifiques de chaque profil, les sujets prioritaires. Deux équipes très différentes : une première généraliste d\'une douzaine de chargés de communication, une deuxième plus rédactionnelle. Pas le même rapport à l\'outil, pas les mêmes blocages.'
+      body: 'Avant même de concevoir le programme, un atelier de cadrage avec la responsable communication pour comprendre la séniorité des uns et des autres, les attentes spécifiques de chaque profil, les sujets prioritaires. Deux équipes très différentes : une première généraliste d\'une douzaine de chargés de communication, une deuxième plus rédactionnelle. Pas le même rapport à l\'outil, pas les mêmes blocages.'
     },
     {
       step: '02',
       title: 'Deux jours de formation pratique par équipe',
-      body: 'Chaque session construite autour des cas concrets de leur quotidien. Comment identifier quelles tâches confier à l\'IA sans perdre en qualité sur des communications officielles. Comment adapter un même message à des publics très différents : habitants, commerçants, jeunes, seniors : sur des canaux qui n\'ont rien à voir entre eux. Comment choisir entre les outils disponibles selon les besoins métier, de la production de texte à la création d\'images et de vidéos. Comment travailler avec les agences partenaires en exprimant mieux et plus vite les attentes.'
+      body: 'Chaque session construite autour des cas concrets de leur quotidien. Comment identifier quelles tâches confier à l\'IA sans perdre en qualité sur des communications officielles. Comment adapter un même message à des publics très différents : habitants, commerçants, jeunes, seniors : sur des canaux qui n\'ont rien à voir entre eux. Comment choisir entre les outils disponibles selon les besoins métier, de la production de texte à la création d\'images et de vidéos. Comment travailler avec les agences partenaires en exprimant mieux et plus vite les attentes.'
     },
     {
       step: '03',
       title: 'Éthique, sécurité et remise en contexte de la charte',
-      body: 'Sur la partie éthique et sécurité, on a remis la charte en perspective : comprendre pourquoi certaines règles existent, comment les appliquer au quotidien, et où s\'arrête l\'autonomie des équipes avant validation IT sur les contenus sensibles.'
+      body: 'Sur la partie éthique et sécurité, on a remis la charte en perspective : comprendre pourquoi certaines règles existent, comment les appliquer au quotidien, et où s\'arrête l\'autonomie des équipes avant validation IT sur les contenus sensibles.'
     },
   ];
 
@@ -51,7 +51,7 @@ const CasFormationIACom = () => {
           objectFit: 'cover', objectPosition: 'center',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal vert/sombre : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal vert/sombre : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.92) 0%, rgba(14,26,45,0.80) 38%, rgba(14,26,45,0.50) 58%, rgba(14,26,45,0.08) 72%, transparent 82%)',
@@ -171,7 +171,7 @@ const CasFormationIACom = () => {
               <div key={i} style={{
                 display: 'grid', gridTemplateColumns: '80px 1fr',
                 gap: '2rem', padding: '2.5rem 0',
-                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
+                borderBottom: i < actions.length - 1 ? '1px solid rgba(255,255,255,0.05)' : 'none',
                 alignItems: 'start'
               }}>
                 <div style={{ fontSize: '0.75rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.08em', paddingTop: '4px' }}>
@@ -198,7 +198,7 @@ const CasFormationIACom = () => {
           }}>
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(37,99,235,0.7)', marginBottom: '1.2rem' }}>Ce qui a changé</p>
             <p style={{ fontSize: '1.2rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.75)', maxWidth: '820px' }}>
-              Quelques semaines après les sessions, certains participants ont remonté avoir <strong style={{ color: '#fff' }}>divisé par deux le temps passé à comprendre et exprimer leurs attentes</strong> auprès des agences. La qualité des productions a augmenté, la personnalisation des messages par audience aussi. La formation a aussi ouvert des perspectives sur la prochaine étape : la mise en place de chatbots intelligents et personnalisés pour favoriser l'engagement des administrés, bien loin des simples formulaires de contact existants.
+              Quelques semaines après les sessions, certains participants ont remonté avoir <strong style={{ color: '#fff' }}>divisé par deux le temps passé à comprendre et exprimer leurs attentes</strong> auprès des agences. La qualité des productions a augmenté, la personnalisation des messages par audience aussi. La formation a aussi ouvert des perspectives sur la prochaine étape : la mise en place de chatbots intelligents et personnalisés pour favoriser l'engagement des administrés, bien loin des simples formulaires de contact existants.
             </p>
           </div>
         </div>
@@ -220,7 +220,7 @@ const CasFormationIACom = () => {
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             color: '#44CCFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
           }}>
-            Cas suivant : Transformation CRM <ArrowRight size={16} />
+            Cas suivant : Pipeline sans hasard <ArrowRight size={16} />
           </Link>
         </div>
       </section>

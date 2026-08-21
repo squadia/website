@@ -6,7 +6,7 @@ const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const bgUseCase = '/assets/images/bgusecase.png';
 const CasPipelineB2B = () => {
   useEffect(() => {
-    document.title = "Cas client : Pipeline B2B from scratch · Squadia";
+    document.title = "Cas client : Pipeline B2B from scratch · Squadia";
     window.scrollTo(0, 0);
   }, []);
 
@@ -51,7 +51,7 @@ const CasPipelineB2B = () => {
           objectFit: 'cover', objectPosition: 'center top',
           pointerEvents: 'none'
         }} />
-        {/* Masque diagonal bleu : couvre ~65% depuis la gauche */}
+        {/* Masque diagonal bleu : couvre ~65% depuis la gauche */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none',
           background: 'linear-gradient(105deg, rgba(14,26,45,0.97) 0%, rgba(14,26,45,0.93) 38%, rgba(14,26,45,0.72) 58%, rgba(14,26,45,0.15) 72%, transparent 82%)',
@@ -113,7 +113,7 @@ const CasPipelineB2B = () => {
             <span style={{ fontSize: '2.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>+39</span>
             <div>
               <div style={{ fontSize: '0.95rem', fontWeight: 600, color: '#fff' }}>opportunités générées</div>
-              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>en 2 mois : objectif initial doublé</div>
+              <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>en 2 mois : objectif initial doublé</div>
             </div>
           </div>
         </div>
@@ -230,7 +230,7 @@ const CasPipelineB2B = () => {
             display: 'inline-flex', alignItems: 'center', gap: '8px',
             color: '#44CCFF', textDecoration: 'none', fontSize: '0.9rem', fontWeight: 600, transition: 'opacity 0.2s'
           }}>
-            Cas suivant : Transformation CRM <ArrowRight size={16} />
+            Cas suivant : Pipeline sans hasard <ArrowRight size={16} />
           </Link>
         </div>
       </section>
