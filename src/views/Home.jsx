@@ -377,7 +377,7 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   return (
     <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#050510' } : undefined}>
       <div className="hero-dynamic" style={!isMobile ? { position: 'sticky', top: 0, height: '100vh' } : undefined}>
-        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top', transform: 'translateY(-75px)' }} />
+        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top', transform: 'translateY(-100px) scale(1.08)' }} />
         {!isMobile && (
           <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1 }} />
         )}
@@ -533,26 +533,26 @@ const SignalAccordion = () => {
 };
 
 // ═══ 04 — COMMENT ÇA MARCHE ═══
-const ToolBadge = ({ src, label }) => (
+const ToolBadge = ({ src, label, isMobile }) => (
   src ? (
-    <img src={src} alt={label} title={label} style={{ height: '28px', width: 'auto', maxWidth: '90px', objectFit: 'contain', borderRadius: '4px', filter: 'brightness(1.25)' }} />
+    <img src={src} alt={label} title={label} style={{ height: isMobile ? '22px' : '28px', width: 'auto', maxWidth: isMobile ? '72px' : '90px', objectFit: 'contain', borderRadius: '4px', filter: 'brightness(1.25)', backgroundColor: '#0A0A14', padding: isMobile ? '3px 6px' : '0', border: isMobile ? '1px solid rgba(255,255,255,0.08)' : 'none' }} />
   ) : (
     <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(68,204,255,0.08)' }}>{label}</span>
   )
 );
 
-const BriqueCard = ({ Icon, title, desc, link, tools }) => (
+const BriqueCard = ({ Icon, title, desc, link, tools, isMobile }) => (
   <div className={link ? 'brique-card' : undefined} style={{
-    background: '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '1.5rem', transition: 'border-color 0.2s ease'
+    background: '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: isMobile ? '1.25rem' : '1.5rem', transition: 'border-color 0.2s ease'
   }}>
-    <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(68,204,255,0.08)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-      <Icon size={20} color="#44CCFF" />
+    <div style={{ width: isMobile ? '40px' : '44px', height: isMobile ? '40px' : '44px', borderRadius: '12px', background: 'rgba(68,204,255,0.08)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+      <Icon size={isMobile ? 18 : 20} color="#44CCFF" />
     </div>
     <h3 className="brique-card-title" style={{ fontSize: '1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem', transition: 'color 0.2s ease' }}>{title}</h3>
-    <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{desc}</p>
     {tools && tools.length > 0 && (
-      <div style={{ marginTop: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
-        {tools.map((t, i) => <ToolBadge key={i} {...t} />)}
+      <div className="brique-tools" style={{ marginTop: '1.1rem', display: 'flex', alignItems: 'center', gap: isMobile ? '0.5rem' : '0.6rem', flexWrap: 'wrap' }}>
+        {tools.map((t, i) => <ToolBadge key={i} {...t} isMobile={isMobile} />)}
       </div>
     )}
     {link && (
@@ -570,46 +570,55 @@ const timelineSteps = [
   { week: 'Semaine 4 et suite', title: 'Campagnes et appels', desc: 'Les séquences tournent, les appels démarrent, point hebdomadaire.', image: '/coldcall.webp' },
 ];
 
-const StepText = ({ s }) => (
+const StepText = ({ s, isMobile }) => (
   <div>
-    <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: '0.7rem' }}>{s.week}</p>
-    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
-    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+    <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: isMobile ? '0.65rem' : '0.7rem' }}>{s.week}</p>
+    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
   </div>
 );
 
-const StepImage = ({ src, label }) => (
+const StepImage = ({ src, label, isMobile }) => (
   <div style={{
-    aspectRatio: '4/3', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden',
+    aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden',
   }}>
     <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
   </div>
 );
 
-const Timeline = () => (
+const Timeline = ({ isMobile }) => (
   <div style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto' }}>
-    <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
-        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : '6rem' }}>
-          <div className="timeline-dot" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
-          {imageLeft ? (
+        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '5rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem') }}>
+          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          {isMobile ? (
+            <>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
+                <StepText s={s} isMobile={isMobile} />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
+              </motion.div>
+            </>
+          ) : imageLeft ? (
             <>
               <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-                <StepImage src={s.image} label={s.title} />
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
-                <StepText s={s} />
+                <StepText s={s} isMobile={isMobile} />
               </motion.div>
             </>
           ) : (
             <>
               <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-                <StepText s={s} />
+                <StepText s={s} isMobile={isMobile} />
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
-                <StepImage src={s.image} label={s.title} />
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>
           )}
@@ -929,17 +938,17 @@ const Home = () => {
                   style={{ position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : '38vh', marginBottom: isMobile ? '24px' : '42vh', zIndex: idx + 10, overflow: 'visible' }}
                 >
                   <div style={{
-                    position: 'absolute', top: '-43px', left: isMobile ? '16px' : `${tabOffsets[idx]}px`,
-                    width: isMobile ? 'auto' : `${tabWidths[idx]}px`, padding: '0 16px', whiteSpace: 'nowrap', height: '44px', backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.2)',
-                    borderBottom: 'none', borderRadius: '14px 14px 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 3, gap: '6px'
+                    position: 'absolute', top: isMobile ? '-40px' : '-43px', left: isMobile ? '20px' : `${tabOffsets[idx]}px`,
+                    width: isMobile ? 'auto' : `${tabWidths[idx]}px`, minWidth: isMobile ? '88px' : undefined, padding: isMobile ? '0 14px' : '0 16px', whiteSpace: 'nowrap', height: isMobile ? '40px' : '44px', backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.2)',
+                    borderBottom: 'none', borderRadius: isMobile ? '14px 14px 0 0' : '14px 14px 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 3, gap: '6px'
                   }}>
-                    <item.Icon size={14} color="#44CCFF" />
-                    <span style={{ fontSize: '0.82rem', fontWeight: 900, color: '#44CCFF', letterSpacing: '0.06em' }}>{item.tag}</span>
+                    <item.Icon size={isMobile ? 12 : 14} color="#44CCFF" />
+                    <span style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', fontWeight: 900, color: '#44CCFF', letterSpacing: '0.06em' }}>{item.tag}</span>
                     <div style={{ position: 'absolute', bottom: '-1px', left: '0', right: '0', height: '2px', backgroundColor: '#0D0D25', zIndex: 4 }} />
                   </div>
                   <div style={{
-                    display: 'flex', gap: '2.5rem', padding: isMobile ? '40px 20px 20px 20px' : '4.5rem 2.5rem 2.5rem 2.5rem', backgroundColor: '#0D0D25',
-                    borderRadius: '0 1.5rem 1.5rem 1.5rem', border: '1px solid rgba(68, 204, 255, 0.2)', backdropFilter: 'blur(20px)',
+                    display: 'flex', gap: '2.5rem', padding: isMobile ? '38px 18px 20px 18px' : '4.5rem 2.5rem 2.5rem 2.5rem', backgroundColor: '#0D0D25',
+                    borderRadius: isMobile ? '0 16px 16px 16px' : '0 1.5rem 1.5rem 1.5rem', border: '1px solid rgba(68, 204, 255, 0.2)', backdropFilter: 'blur(20px)',
                     boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8)', height: isMobile ? 'auto' : '400px', position: 'relative', zIndex: 2
                   }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
@@ -952,8 +961,8 @@ const Home = () => {
                             <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>Source en chiffre</span>
                             <div style={{ flex: 1, height: '2px', backgroundColor: 'rgba(255,255,255,0.3)' }} />
                           </div>
-                          <div style={{ display: 'flex', alignItems: 'baseline', gap: '0.75rem' }}>
-                            <span style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 800, color: '#44CCFF', lineHeight: 1, whiteSpace: 'nowrap' }}>{item.stat}</span>
+                          <div style={{ display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', gap: '0.75rem', flexDirection: isMobile ? 'column' : 'row' }}>
+                            <span style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 800, color: '#44CCFF', lineHeight: 1, whiteSpace: 'nowrap', display: 'inline-block', flexShrink: 0 }}>{item.stat}</span>
                             <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: isMobile ? '0.82rem' : '0.88rem', lineHeight: 1.5 }}>
                               {item.statLabel}{item.statSource && <> <span style={{ color: 'rgba(255,255,255,0.35)' }}>(Source : {item.statSource})</span></>}
                             </span>
@@ -988,7 +997,7 @@ const Home = () => {
                 <span style={{ ...kicker, display: 'inline-block', marginBottom: '0.4rem' }}>AVANT</span>
                 <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Data B2B</h3>
               </div>
-              <BriqueCard Icon={Database} title="Data" desc="Nous construisons la base sur signal, nous la nettoyons, nous l'enrichissons en emails, téléphones et profils LinkedIn, et vous livrons la donnée à jour dans votre CRM." link="/data"
+              <BriqueCard Icon={Database} title="Data" desc="Nous construisons la base sur signal, nous la nettoyons, nous l'enrichissons en emails, téléphones et profils LinkedIn, et vous livrons la donnée à jour dans votre CRM." link="/data" isMobile={isMobile}
                 tools={[{ src: logoHubspot, label: 'HubSpot' }, { src: logoPipedrive, label: 'Pipedrive' }, { src: logoSalesforce, label: 'Salesforce' }, { src: logoFullenrich, label: 'Full Enrich' }]} />
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.25 }}>
@@ -1037,7 +1046,7 @@ const Home = () => {
             <h2 style={{ ...h2Style, marginBottom: '1rem' }}>Structure d'accompagnement</h2>
             <p style={{ ...chapo, margin: '0 auto' }}>Voici un exemple de la méthodologie avec laquelle nous accompagnons les entreprises, que nous adaptons à chaque fois au contexte.</p>
           </div>
-          <Timeline />
+          <Timeline isMobile={isMobile} />
         </div>
       </section>
 
@@ -1166,18 +1175,18 @@ const Home = () => {
       <section ref={ctaRef} style={{ background: '#060612', padding: '60px 0 120px' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: isMobile ? '16px' : '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: isMobile ? '420px' : '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? 'center 20%' : 'center top', filter: isMobile ? 'brightness(0.55) saturate(1.1)' : 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(6,6,18,0.85) 0%, rgba(6,6,18,0.55) 35%, rgba(6,6,18,0.75) 70%, rgba(6,6,18,0.95) 100%)' : 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: isMobile ? '40px 24px 48px' : '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
               <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Parlons de votre prospection</h2>
+                <span style={{ fontSize: isMobile ? '0.7rem' : '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+                <p style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+                <h2 style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Parlons de votre prospection</h2>
               </div>
               <div>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour comprendre votre contexte<br />et diagnostiquer une approche.</p>
-                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
+                <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour comprendre votre contexte<br />et diagnostiquer une approche.</p>
+                <Link href="/contact" style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: isMobile ? '1rem 1.8rem' : '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
               </div>
             </div>
           </div>

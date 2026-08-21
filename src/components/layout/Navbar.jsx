@@ -362,13 +362,25 @@ const Navbar = () => {
           }
           /* Padding réduit pour garder logo + hamburger dans l'écran */
           .navbar-base > div {
-            padding-left: 1.25rem !important;
+            padding-left: 1rem !important;
             padding-right: 1rem !important;
-            height: 60px !important;
+            height: 56px !important;
           }
-          /* Logo navbar réduit */
+          /* Logo navbar réduit et contenu ajusté */
           .navbar-base .logo {
-            height: 22px !important;
+            height: auto !important;
+            max-height: 20px !important;
+            width: auto !important;
+            max-width: 130px !important;
+          }
+          /* Hamburger un peu plus compact */
+          .hamburger-btn {
+            width: 40px !important;
+            height: 40px !important;
+          }
+          .hb-box {
+            width: 22px !important;
+            height: 16px !important;
           }
           /* Logo menu mobile : empêcher height:auto du CSS global */
           .mob-header img {

@@ -47,44 +47,53 @@ const prospectionCards = [
   { title: 'Mission hybride', subtitle: 'Pour combiner campagne multicanale et prospection téléphonique.', items: ['Data + Cold Call combinés', 'Customer Success Manager dédié', 'CRM et Dashboard dédié', 'Reporting hebdomadaire'], price: 'Sur devis', badge: 'RECOMMANDÉ', link: '/contact' },
 ];
 
-const StepText = ({ s }) => (
+const StepText = ({ s, isMobile }) => (
   <div>
-    <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: '0.7rem' }}>{s.week}</p>
-    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
-    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+    <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: isMobile ? '0.65rem' : '0.7rem' }}>{s.week}</p>
+    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
   </div>
 );
 
-const StepImage = ({ src, label }) => (
-  <div style={{ aspectRatio: '4/3', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
+const StepImage = ({ src, label, isMobile }) => (
+  <div style={{ aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
     <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
   </div>
 );
 
-const Timeline = () => (
+const Timeline = ({ isMobile }) => (
   <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
-    <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
-        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : '6rem' }}>
-          <div className="timeline-dot" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
-          {imageLeft ? (
+        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '3rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem') }}>
+          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          {isMobile ? (
+            <>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
+                <StepText s={s} isMobile={isMobile} />
+              </motion.div>
+              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
+              </motion.div>
+            </>
+          ) : imageLeft ? (
             <>
               <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-                <StepImage src={s.image} label={s.title} />
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
-                <StepText s={s} />
+                <StepText s={s} isMobile={isMobile} />
               </motion.div>
             </>
           ) : (
             <>
               <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
-                <StepText s={s} />
+                <StepText s={s} isMobile={isMobile} />
               </motion.div>
               <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
-                <StepImage src={s.image} label={s.title} />
+                <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>
           )}
@@ -214,6 +223,13 @@ const PricingProspection = () => {
 
 export default function ProspectionCampagne() {
   useScrollReveal();
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   useEffect(() => {
     document.title = "Prospection marketing B2B — Squadia";
     const metaDescription = document.querySelector('meta[name="description"]');
@@ -226,18 +242,18 @@ export default function ProspectionCampagne() {
     <div style={{ background: '#050510', color: '#F9FAFB', minHeight: '100vh' }}>
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
-        <img src="/assets/images/campagne/campagne.png" alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(5,5,16,0.35)' }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(105deg, rgba(5,5,16,0.97) 0%, rgba(5,5,16,0.80) 35%, rgba(5,5,16,0.40) 60%, transparent 100%)' }} />
+        <img src="/assets/images/campagne/campagne.png" alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? '70% top' : 'center top', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: isMobile ? 'rgba(5,5,16,0.55)' : 'rgba(5,5,16,0.35)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: isMobile ? 'linear-gradient(160deg, rgba(5,5,16,0.98) 0%, rgba(5,5,16,0.88) 45%, rgba(5,5,16,0.55) 100%)' : 'linear-gradient(105deg, rgba(5,5,16,0.97) 0%, rgba(5,5,16,0.80) 35%, rgba(5,5,16,0.40) 60%, transparent 100%)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #050510)' }} />
 
-        <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '8%' }}>
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Campagne multicanale</p>
+        <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: isMobile ? '1.5rem' : '8%', paddingRight: isMobile ? '1.5rem' : '8%' }}>
+          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: isMobile ? '0.8rem' : '0.9rem' }}>Campagne multicanale</p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}
+            style={{ fontSize: 'clamp(1.75rem, 6vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}
           >
             La stratégie qui donne envie de vous rencontrer
           </motion.h1>
@@ -245,24 +261,24 @@ export default function ProspectionCampagne() {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.15 }}
-            style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}
+            style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}
           >
-            <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>8 à 12</span>
-            <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>points de contact en moyenne nécessaires pour obtenir un premier rendez-vous avec un décideur</span>
+            <span style={{ fontSize: isMobile ? '1.2rem' : '1.4rem', fontWeight: 800, color: '#44CCFF' }}>8 à 12</span>
+            <span style={{ fontSize: isMobile ? '0.8rem' : '0.85rem', color: 'rgba(255,255,255,0.85)', maxWidth: '280px', lineHeight: 1.3 }}>points de contact en moyenne nécessaires pour obtenir un premier rendez-vous avec un décideur</span>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}
+            style={{ fontSize: isMobile ? '1.05rem' : '1.25rem', color: 'rgba(255,255,255,0.9)', maxWidth: '600px', marginBottom: '3rem' }}
           >
             Nous construisons des séquences personnalisées à partir des signaux d'achat de vos prospects. Les réponses sont traitées pour transformer l'intérêt en rendez-vous qualifiés.
           </motion.p>
-          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexDirection: isMobile ? 'column' : 'row' }}>
+            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
               Prendre RDV
             </Link>
-            <a href="#features" style={{ background: 'transparent', color: '#44CCFF', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', border: '1px solid #44CCFF' }}>
+            <a href="#features" style={{ background: 'transparent', color: '#44CCFF', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #44CCFF' }}>
               En savoir plus
             </a>
           </div>
@@ -305,7 +321,7 @@ export default function ProspectionCampagne() {
             <p style={kicker}>MÉTHODE</p>
             <h2 style={h2Style}>Comment nous travaillons ensemble</h2>
           </div>
-          <Timeline />
+          <Timeline isMobile={isMobile} />
         </div>
       </section>
 
@@ -400,13 +416,13 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* CTA FINAL */}
-      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
+      <section style={{ background: '#060612', padding: isMobile ? '40px 0 80px' : '60px 0 120px' }}>
         <div className="container" style={{ position: 'relative' }}>
           <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
+          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: isMobile ? '16px' : '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: isMobile ? '420px' : '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
+            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? 'center 20%' : 'center top', filter: isMobile ? 'brightness(0.55) saturate(1.1)' : 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(6,6,18,0.85) 0%, rgba(6,6,18,0.55) 35%, rgba(6,6,18,0.75) 70%, rgba(6,6,18,0.95) 100%)' : 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'relative', zIndex: 2, padding: isMobile ? '40px 24px 48px' : '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
               <div>
                 <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
                 <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
