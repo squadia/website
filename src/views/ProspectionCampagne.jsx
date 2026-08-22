@@ -62,37 +62,37 @@ const StepImage = ({ src, label, isMobile }) => (
 );
 
 const Timeline = ({ isMobile }) => (
-  <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
     <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
-        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '3rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem') }}>
+        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '3rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem'), overflow: 'visible' }}>
           <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
           {isMobile ? (
             <>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
+              <motion.div key={`t-${i}-text`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`t-${i}-img`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>
           ) : imageLeft ? (
             <>
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-img`} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-text`} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
             </>
           ) : (
             <>
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-text`} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-img`} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>
@@ -442,11 +442,11 @@ export default function ProspectionCampagne() {
         .repliik-thumb:hover img { transform: scale(1.05); }
         .repliik-thumb:hover .repliik-thumb-overlay { opacity: 1 !important; }
         @media (max-width: 768px) {
-          .timeline-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; margin-bottom: 2.5rem !important; }
-          .timeline-spine, .timeline-dot { display: none !important; }
-          .repliik-two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
-          .deliverables-two-col { grid-template-columns: 1fr !important; gap: 1.75rem !important; }
-          .grid-3 { grid-template-columns: 1fr !important; }
+          .timeline-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; margin-bottom: 2.5rem !important; }
+          .timeline-spine, .timeline-dot { display: none !important; }
+          .repliik-two-col { grid-template-columns: 1fr !important; gap: 2rem !important; }
+          .deliverables-two-col { grid-template-columns: 1fr !important; gap: 1.75rem !important; }
+          .grid-3 { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </div>

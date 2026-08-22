@@ -866,7 +866,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           .card-image-wrap { flex: 0.4; }
           .card-content-wrap { flex: 0.6; }
           div[style*="grid-template-columns: repeat(3, 1fr)"] {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr !important;
           }
         }
         @media (max-width: 480px) {
@@ -902,7 +902,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         }
         @media (max-width: 991px) {
           .formations-desktop-badge { display: none; }
-          .synergy-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .synergy-grid { grid-template-columns: 1fr !important; gap: 3rem !important; }
         }
       `}</style>
 

@@ -217,10 +217,10 @@ export default function ClientLogosSection({ description, contained = false }) {
           
           @media (max-width: 900px) {
             .client-section-grid {
-              grid-template-columns: 1fr !important;
+              grid-template-columns: 1fr !important;
             }
             .client-section-grid > div:first-child {
-              padding: 3rem 2rem 1rem 2rem !important;
+              padding: 3rem 2rem 1rem 2rem !important;
             }
           }
         `}</style>

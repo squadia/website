@@ -151,10 +151,10 @@ const HomeCSS = `
 .hero-CTA:hover { background: #1D4ED8; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4); }
 
 .brique-card:hover { border-color: rgba(68,204,255,0.5) !important; }
-.brique-card:hover .brique-card-title { color: #44CCFF !important; }
+.brique-card:hover .brique-card-title { color: #44CCFF !important; }
 .formation-thumb { border: 2px solid transparent; transition: border-color 0.2s ease; }
 .formation-link:hover .formation-thumb { border-color: #44CCFF; }
-.formation-link:hover .formation-label { color: #44CCFF !important; }
+.formation-link:hover .formation-label { color: #44CCFF !important; }
 .formation-label { transition: color 0.2s ease; }
 .play-button-overlay { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 [data-playing="true"] .play-button-overlay { opacity: 0; transform: translate(-50%, -50%) scale(1.2); pointer-events: none; }
@@ -171,7 +171,7 @@ const HomeCSS = `
 @keyframes drawProgressAccordionHome { from { width: 0%; } to { width: 100%; } }
 
 .grid-3col-divider { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 2rem; }
-@media (max-width: 900px) { .grid-3col-avant { grid-template-columns: 1fr !important; } }
+@media (max-width: 900px) { .grid-3col-avant { grid-template-columns: 1fr !important; } }
 
 .notre-service-grid { position: relative; }
 .service-divider {
@@ -189,37 +189,37 @@ const HomeCSS = `
 .service-divider-2 { left: calc(2 * (100% - 4rem) / 3 + 3rem); }
 
 @media (max-width: 768px) {
-  .hero-dynamic { min-height: 100svh; height: auto !important; display: flex; flex-direction: column; }
+  .hero-dynamic { min-height: 100svh; height: auto !important; display: flex; flex-direction: column; }
   .hero-bg-mobile { display: block; }
-  .hero-bg-desktop { display: none !important; }
+  .hero-bg-desktop { display: none !important; }
   .hero-mask { background: linear-gradient(to bottom, rgba(5,5,16,0.72) 0%, rgba(5,5,16,0.38) 40%, rgba(5,5,16,0.55) 70%, rgba(5,5,16,0.85) 100%) !important; }
   .hero-left {
-    position: relative !important; width: 100% !important; flex: 1 !important; height: auto !important;
-    display: flex !important; flex-direction: column !important; justify-content: space-between !important;
-    padding: 88px 1.4rem 32px !important; z-index: 3;
+    position: relative !important; width: 100% !important; flex: 1 !important; height: auto !important;
+    display: flex !important; flex-direction: column !important; justify-content: space-between !important;
+    padding: 88px 1.4rem 32px !important; z-index: 3;
   }
-  .hero-stats-compact { position: relative !important; padding: 1.5rem 0 !important; gap: 0 !important; z-index: 5; justify-content: space-between !important; width: 100% !important; }
-  .stat-item-compact { flex: 1; align-items: center !important; text-align: center !important; }
-  .stat-num-compact { font-size: 17px !important; }
-  .stat-label-compact { font-size: 10px !important; line-height: 1.35 !important; text-align: center !important; max-width: 90px; }
-  .hero-marquee-inline { position: relative !important; bottom: auto !important; margin-top: auto !important; }
+  .hero-stats-compact { position: relative !important; padding: 1.5rem 0 !important; gap: 0 !important; z-index: 5; justify-content: space-between !important; width: 100% !important; }
+  .stat-item-compact { flex: 1; align-items: center !important; text-align: center !important; }
+  .stat-num-compact { font-size: 17px !important; }
+  .stat-label-compact { font-size: 10px !important; line-height: 1.35 !important; text-align: center !important; max-width: 90px; }
+  .hero-marquee-inline { position: relative !important; bottom: auto !important; margin-top: auto !important; }
   .hero-left h1 { font-size: clamp(1.75rem, 7vw, 2.25rem) !important; }
-  .hero-CTA { width: 100% !important; justify-content: center !important; font-size: 15px !important; padding: 14px 20px !important; }
-  .hero-cta-block { flex-direction: column !important; gap: 12px !important; width: 100% !important; }
-  .hero-marquee-logo { height: 26px !important; margin: 0 1.5rem !important; }
-  .hero-marquee-row { animation-duration: 35s !important; }
-  .section-padding { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
-  .grid-4, .grid-3, .grid-2, .grid-3col-avant { grid-template-columns: 1fr !important; }
-  .grid-3col-divider { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
+  .hero-CTA { width: 100% !important; justify-content: center !important; font-size: 15px !important; padding: 14px 20px !important; }
+  .hero-cta-block { flex-direction: column !important; gap: 12px !important; width: 100% !important; }
+  .hero-marquee-logo { height: 26px !important; margin: 0 1.5rem !important; }
+  .hero-marquee-row { animation-duration: 35s !important; }
+  .section-padding { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
+  .grid-4, .grid-3, .grid-2, .grid-3col-avant { grid-template-columns: 1fr !important; }
+  .grid-3col-divider { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
   .service-divider { display: none; }
-  .timeline-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; margin-bottom: 2.5rem !important; }
-  .timeline-spine, .timeline-dot { display: none !important; }
+  .timeline-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; margin-bottom: 2.5rem !important; }
+  .timeline-spine, .timeline-dot { display: none !important; }
 }
 
 @media (max-width: 1440px) {
-  .hero-left { padding-top: 17vh !important; }
+  .hero-left { padding-top: 17vh !important; }
   .hero-marquee-inline { padding: 0.75rem 0 !important; }
-  .hero-marquee-logo { height: 26px !important; margin: 0 2rem !important; }
+  .hero-marquee-logo { height: 26px !important; margin: 0 2rem !important; }
 }
 `;
 
@@ -591,37 +591,37 @@ const StepImage = ({ src, label, isMobile }) => (
 );
 
 const Timeline = ({ isMobile }) => (
-  <div style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto' }}>
+  <div style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
     <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
-        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '5rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem') }}>
+        <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '5rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem'), overflow: 'visible' }}>
           <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
           {isMobile ? (
             <>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
+              <motion.div key={`t-${i}-text`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`t-${i}-img`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>
           ) : imageLeft ? (
             <>
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-img`} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-text`} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
             </>
           ) : (
             <>
-              <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-text`} initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
                 <StepText s={s} isMobile={isMobile} />
               </motion.div>
-              <motion.div initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
+              <motion.div key={`d-${i}-img`} initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}>
                 <StepImage src={s.image} label={s.title} isMobile={isMobile} />
               </motion.div>
             </>

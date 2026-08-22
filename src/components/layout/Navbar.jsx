@@ -347,9 +347,9 @@ const Navbar = () => {
 
         /* ── MOBILE BREAKPOINT ── */
         @media (max-width: 768px) {
-          .desktop-nav { display: none !important; }
-          .hamburger-btn { display: flex !important; }
-          .squad-dropdown { display: none !important; }
+          .desktop-nav { display: none !important; }
+          .hamburger-btn { display: flex !important; }
+          .squad-dropdown { display: none !important; }
           .navbar-scrolled {
             top: 0 !important; width: 100% !important;
             border-radius: 0 !important;
@@ -362,37 +362,37 @@ const Navbar = () => {
           }
           /* Padding réduit pour garder logo + hamburger dans l'écran */
           .navbar-base > div {
-            padding-left: 1rem !important;
-            padding-right: 1rem !important;
-            height: 56px !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            height: 56px !important;
           }
           /* Logo navbar réduit et contenu ajusté */
           .navbar-base .logo {
-            height: auto !important;
-            max-height: 20px !important;
-            width: auto !important;
-            max-width: 130px !important;
+            height: auto !important;
+            max-height: 20px !important;
+            width: auto !important;
+            max-width: 130px !important;
           }
           /* Hamburger un peu plus compact */
           .hamburger-btn {
-            width: 40px !important;
-            height: 40px !important;
+            width: 40px !important;
+            height: 40px !important;
           }
           .hb-box {
-            width: 22px !important;
-            height: 16px !important;
+            width: 22px !important;
+            height: 16px !important;
           }
           /* Logo menu mobile : empêcher height:auto du CSS global */
           .mob-header img {
-            height: 26px !important;
-            width: auto !important;
-            max-width: none !important;
+            height: 26px !important;
+            width: auto !important;
+            max-width: none !important;
           }
         }
 
         /* ── TABS ≤360px (très petits écrans) ── */
         @media (max-width: 360px) {
-          .mob-cat-tab { font-size: 11px !important; padding: 6px 8px !important; }
+          .mob-cat-tab { font-size: 11px !important; padding: 6px 8px !important; }
         }
 
         /* ── MOBILE MENU ── */

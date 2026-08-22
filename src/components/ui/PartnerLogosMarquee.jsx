@@ -206,35 +206,35 @@ export default function PartnerLogosMarquee({ description, contained = false }) 
 
           @media (max-width: 900px) {
             .client-section-grid {
-              grid-template-columns: 1fr !important;
-              min-height: auto !important;
-              border-radius: 20px !important;
+              grid-template-columns: 1fr !important;
+              min-height: auto !important;
+              border-radius: 20px !important;
             }
             .client-section-grid > div:first-child {
-              padding: 2rem 1.5rem 0.5rem 1.5rem !important;
+              padding: 2rem 1.5rem 0.5rem 1.5rem !important;
               text-align: center;
             }
             .client-section-grid > div:first-child h2 {
-              font-size: clamp(1.6rem, 6vw, 2rem) !important;
+              font-size: clamp(1.6rem, 6vw, 2rem) !important;
             }
             .client-section-grid > div:first-child p {
-              font-size: 0.95rem !important;
-              margin-bottom: 1.5rem !important;
+              font-size: 0.95rem !important;
+              margin-bottom: 1.5rem !important;
             }
             .client-section-grid > div:nth-child(2) {
-              padding: 1rem 0 !important;
-              gap: 1.5rem !important;
+              padding: 1rem 0 !important;
+              gap: 1.5rem !important;
             }
             .marquee-logo-custom {
-              height: 28px !important;
+              height: 28px !important;
             }
             .marquee-content-custom {
-              gap: 2rem !important;
-              padding-right: 2rem !important;
+              gap: 2rem !important;
+              padding-right: 2rem !important;
             }
             .hover-btn-transparent {
-              padding: 0.75rem 1.5rem !important;
-              font-size: 0.85rem !important;
+              padding: 0.75rem 1.5rem !important;
+              font-size: 0.85rem !important;
             }
           }
         `}</style>

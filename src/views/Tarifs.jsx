@@ -412,16 +412,16 @@ const Tarifs = () => {
         @media (max-width: 768px) {
           div[style*="grid-template-columns: repeat(3, 1fr)"],
           div[style*="grid-template-columns: repeat(2, 1fr)"] {
-            grid-template-columns: 1fr !important;
+            grid-template-columns: 1fr !important;
           }
           .tarifs-tabs-nav {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr !important;
-            gap: 8px !important;
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 8px !important;
           }
           .tarifs-tabs-nav button {
-            padding: 8px 12px !important;
-            font-size: 13px !important;
+            padding: 8px 12px !important;
+            font-size: 13px !important;
           }
         }
       `}</style>

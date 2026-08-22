@@ -146,7 +146,7 @@ export default function BlogChangementCRM() {
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
           .article-pullquote { border-left: 3px solid #2563EB; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(37,99,235,0.06); border-radius: 0 0.75rem 0.75rem 0; }
-          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
+          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
           .article-highlight-box { background: #0D0D25; border: 1px solid #1A1A3A; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
           .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #60A5FA; margin-bottom: 0.75rem; }
         `}</style>

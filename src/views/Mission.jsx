@@ -80,19 +80,19 @@ const Mission = () => {
         .btn-secondary-m { font-size: 1.1rem; font-weight: 700; background: rgba(255,255,255,.05); color: #e1e2e7; border: 1px solid rgba(255,255,255,.1); padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
         .btn-secondary-m:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
         @media (max-width: 768px) {
-          .hero-grid-m { grid-template-columns: 1fr !important; }
-          .hero-right-m { display: none !important; }
-          .three-col-m { grid-template-columns: 1fr !important; }
-          .four-col-m { grid-template-columns: 1fr 1fr !important; }
-          .team-grid-m { grid-template-columns: 1fr !important; }
-          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
-          .hero-bg-mission { display: none !important; }
-          .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
-          .hero-img-mobile-m { display: block !important; }
-          .hero-overlay-m { display: none !important; }
-          .hero-gradient-lr-m { display: none !important; }
-          .hero-gradient-bottom-m { display: none !important; }
-          .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
+          .hero-grid-m { grid-template-columns: 1fr !important; }
+          .hero-right-m { display: none !important; }
+          .three-col-m { grid-template-columns: 1fr !important; }
+          .four-col-m { grid-template-columns: 1fr 1fr !important; }
+          .team-grid-m { grid-template-columns: 1fr !important; }
+          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
+          .hero-bg-mission { display: none !important; }
+          .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
+          .hero-img-mobile-m { display: block !important; }
+          .hero-overlay-m { display: none !important; }
+          .hero-gradient-lr-m { display: none !important; }
+          .hero-gradient-bottom-m { display: none !important; }
+          .hero-left-m .mfu { opacity: 1 !important; transform: none !important; }
         }
         .hero-bg-mission {
           animation: missionBgReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;

@@ -229,8 +229,8 @@ export default function DataB2B() {
             border-radius: 0 0.75rem 0.75rem 0;
           }
           .article-pullquote p {
-            font-size: 1.1rem !important;
-            color: #E5E7EB !important;
+            font-size: 1.1rem !important;
+            color: #E5E7EB !important;
             font-style: italic;
             margin-bottom: 0 !important;
           }

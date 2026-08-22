@@ -26,5 +26,6 @@ dist-ssr
 .claude/
 TODO-WEBSITE.md
 screenshot_*.js
+screenshot-*.js
 /tmp/
 
