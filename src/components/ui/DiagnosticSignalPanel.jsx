@@ -109,6 +109,14 @@ function buildNotesSummary(data) {
 const DiagnosticSignalPanel = ({ open, onClose }) => {
   const [step, setStep] = useState(0);
   const [calNotes, setCalNotes] = useState('');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth <= 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
   const [data, setData] = useState({
     sector: '',
     companySize: [],
@@ -206,7 +214,11 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             onClick={onClose}
             style={{ position: 'fixed', inset: 0, background: 'rgba(5,5,16,0.62)', zIndex: 1198 }}
           />
-          <div style={{
+          <div style={isMobile ? {
+            position: 'fixed', top: '5vh', bottom: '5vh', left: 0, right: 0,
+            zIndex: 1199, display: 'flex', alignItems: 'stretch', justifyContent: 'center',
+            padding: '0 1rem', pointerEvents: 'none',
+          } : {
             position: 'fixed', top: 'calc(64px + 1rem)', bottom: '135px', left: 0, right: 0,
             zIndex: 1199, display: 'flex', alignItems: 'center', justifyContent: 'flex-start',
             paddingLeft: 'calc(58% + 2rem)', paddingRight: '3rem', pointerEvents: 'none',
@@ -217,15 +229,15 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             transition={{ type: 'spring', stiffness: 300, damping: 32 }}
             style={{
               pointerEvents: 'auto',
-              width: 'min(440px, calc(42vw - 5rem))', maxHeight: '100%',
-              background: 'rgba(255,255,255,0.14)',
+              width: isMobile ? '100%' : 'min(440px, calc(42vw - 5rem))', maxHeight: '100%',
+              background: isMobile ? 'rgba(10,10,26,0.98)' : 'rgba(255,255,255,0.14)',
               border: '1px solid rgba(255,255,255,0.35)', borderRadius: '20px',
               boxShadow: '0 25px 60px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.35)',
               display: 'flex', flexDirection: 'column', overflow: 'hidden',
             }}
             onKeyDown={handleKeyDown}
           >
-            <div style={{ padding: '1.5rem 2rem 0', flexShrink: 0 }}>
+            <div style={{ padding: isMobile ? '1.25rem 1.25rem 0' : '1.5rem 2rem 0', flexShrink: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
                 <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.03em', textTransform: 'uppercase' }}>Vos 10 prospects sur-mesure</span>
                 <button onClick={onClose} aria-label="Fermer" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', padding: '0.4rem' }}>
@@ -240,7 +252,7 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
               </div>
             </div>
 
-            <div style={{ flex: 1, overflowY: 'auto', padding: '2rem' }}>
+            <div style={{ flex: 1, overflowY: 'auto', padding: isMobile ? '1.25rem' : '2rem' }}>
               <AnimatePresence mode="wait">
                 {step === 0 && (
                   <motion.div key="s0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
@@ -360,7 +372,7 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             </div>
 
             {step < totalSteps && (
-              <div style={{ padding: '1.5rem 2rem', display: 'flex', gap: '0.75rem', borderTop: '1px solid rgba(17,24,39,0.1)', flexShrink: 0 }}>
+              <div style={{ padding: isMobile ? '1rem 1.25rem' : '1.5rem 2rem', display: 'flex', gap: '0.75rem', borderTop: '1px solid rgba(17,24,39,0.1)', flexShrink: 0 }}>
                 {step > 0 && (
                   <button
                     onClick={handleBack}

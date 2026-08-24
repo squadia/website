@@ -163,7 +163,7 @@ const Navbar = () => {
               </div>
             </div>
             {[
-              { id: 'data', label: 'Data', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
+              { id: 'data', label: 'Data B2B', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'prospection', label: 'Prospection', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
               { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
             ].map(cat => (
@@ -426,13 +426,13 @@ const Navbar = () => {
         /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
         .mob-cat-tabs {
           display: grid;
-          grid-template-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr 1fr;
           gap: 6px;
           padding: 10px 16px;
           flex-shrink: 0;
         }
         .mob-cat-tab {
-          padding: 7px 10px; border-radius: 20px;
+          padding: 7px 6px; border-radius: 20px;
           border: 1px solid rgba(255,255,255,0.1);
           background: rgba(255,255,255,0.05);
           color: rgba(255,255,255,0.5);
@@ -478,8 +478,8 @@ const Navbar = () => {
         .mob-persona-sub { font-size: 11px; color: rgba(249,250,251,0.45); margin-bottom: 8px; }
         .mob-persona-list { display: flex; flex-direction: column; gap: 5px; }
         .mob-persona-item {
-          display: flex; align-items: center; gap: 10px;
-          padding: 8px 10px; border-radius: 8px;
+          display: flex; align-items: center; gap: 12px;
+          padding: 12px 12px; border-radius: 8px;
           border: 1px solid rgba(68,204,255,0.1);
           background: rgba(255,255,255,0.02);
           text-decoration: none;
@@ -487,33 +487,33 @@ const Navbar = () => {
         }
         .mob-persona-item:active { background: rgba(255,255,255,0.05); border-color: rgba(68,204,255,0.2); }
         .mob-persona-avatar {
-          width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
+          width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
           border: 1px solid rgba(68,204,255,0.2); overflow: hidden;
           background: linear-gradient(135deg, #1a2a4a, #0d1a30);
         }
         .mob-persona-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .mob-persona-info { flex: 1; }
-        .mob-persona-role { font-size: 13px; font-weight: 600; color: #F9FAFB; }
-        .mob-persona-desc { font-size: 11px; color: rgba(249,250,251,0.45); }
-        .mob-persona-arrow { color: #44CCFF; font-size: 16px; opacity: 0.6; }
+        .mob-persona-role { font-size: 15px; font-weight: 600; color: #F9FAFB; }
+        .mob-persona-desc { font-size: 12px; color: rgba(249,250,251,0.45); }
+        .mob-persona-arrow { color: #44CCFF; font-size: 18px; opacity: 0.6; }
         /* Secondary nav */
-        .mob-nav-secondary { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 1px; flex-shrink: 0; }
+        .mob-nav-secondary { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; }
         .mob-nav-link {
           display: flex; align-items: center; justify-content: space-between;
-          padding: 10px 12px; border-radius: 8px;
+          padding: 16px 12px; border-radius: 8px;
           text-decoration: none; color: #F9FAFB;
-          font-size: 14px; font-weight: 500;
+          font-size: 17px; font-weight: 600;
           transition: background 0.15s;
         }
         .mob-nav-link:active { background: rgba(255,255,255,0.04); }
-        .mob-nav-arrow { color: rgba(249,250,251,0.45); font-size: 16px; }
+        .mob-nav-arrow { color: rgba(249,250,251,0.45); font-size: 18px; }
         /* Accordion Nos Services */
         .mob-accordion-section { flex-shrink: 0; }
         .mob-accordion-trigger {
           display: flex; align-items: center; justify-content: space-between;
-          width: 100%; padding: 10px 28px 10px 24px;
+          width: 100%; padding: 18px 28px 18px 24px;
           background: none; border: none; cursor: pointer;
-          color: #F9FAFB; font-size: 14px; font-weight: 500;
+          color: #F9FAFB; font-size: 18px; font-weight: 600;
           text-align: left;
           transition: background 0.15s;
         }
@@ -588,7 +588,7 @@ const Navbar = () => {
                     {/* Tabs 2×2 */}
                     <div className="mob-cat-tabs">
                       {[
-                        { id: 'data', label: 'Data' },
+                        { id: 'data', label: 'Data B2B' },
                         { id: 'prospection', label: 'Prospection' },
                         { id: 'formation', label: 'Formation' },
                       ].map(tab => (

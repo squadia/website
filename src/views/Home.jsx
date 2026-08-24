@@ -200,14 +200,15 @@ const HomeCSS = `
   }
   .hero-stats-compact { position: relative !important; padding: 1.5rem 0 !important; gap: 0 !important; z-index: 5; justify-content: space-between !important; width: 100% !important; }
   .stat-item-compact { flex: 1; align-items: center !important; text-align: center !important; }
-  .stat-num-compact { font-size: 17px !important; }
-  .stat-label-compact { font-size: 10px !important; line-height: 1.35 !important; text-align: center !important; max-width: 90px; }
+  .stat-num-compact { font-size: 18px !important; }
+  .stat-label-compact { font-size: 12px !important; line-height: 1.35 !important; text-align: center !important; max-width: 96px; }
   .hero-marquee-inline { position: relative !important; bottom: auto !important; margin-top: auto !important; }
-  .hero-left h1 { font-size: clamp(1.75rem, 7vw, 2.25rem) !important; }
-  .hero-CTA { width: 100% !important; justify-content: center !important; font-size: 15px !important; padding: 14px 20px !important; }
-  .hero-cta-block { flex-direction: column !important; gap: 12px !important; width: 100% !important; }
+  .hero-left h1 { font-size: clamp(2.1rem, 9vw, 2.85rem) !important; }
+  .hero-subtitle-text { font-size: 0.9rem !important; margin-bottom: 1.5rem !important; }
+  .hero-CTA { width: auto !important; max-width: 260px !important; justify-content: center !important; text-align: center !important; white-space: normal !important; line-height: 1.3 !important; font-size: 16px !important; padding: 16px 24px !important; }
+  .hero-cta-block { flex-direction: column !important; gap: 12px !important; width: 100% !important; justify-content: center !important; align-items: center !important; }
   .hero-marquee-logo { height: 26px !important; margin: 0 1.5rem !important; }
-  .hero-marquee-row { animation-duration: 35s !important; }
+  .hero-marquee-row { animation-duration: 14s !important; }
   .section-padding { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
   .grid-4, .grid-3, .grid-2, .grid-3col-avant { grid-template-columns: 1fr !important; }
   .grid-3col-divider { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
@@ -360,7 +361,7 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
 
   const subtitleBlock = (
     <>
-      <div style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.78)', marginBottom: '2.5rem', fontWeight: 400, maxWidth: '860px', lineHeight: 1.65 }}>
+      <div className="hero-subtitle-text" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.78)', marginBottom: '2.5rem', fontWeight: 400, maxWidth: '860px', lineHeight: 1.65 }}>
         Co-construisons votre stratégie de croissance. Nous associons 20 ans d'expertise vente sur les comptes Mid-Market et Stratégiques à la puissance de la Data et de l'IA pour générer vos futurs rendez-vous. Testez la précision de notre ciblage dès maintenant.
       </div>
       <div className="hero-cta-block" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', marginTop: '1rem' }}>
@@ -689,10 +690,11 @@ const PricingTabs = () => {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', gap: isMobile ? '0.5rem' : '1rem', flexWrap: 'nowrap', marginBottom: '3rem' }}>
         {pricingTabs.map(tab => (
           <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
-            padding: '0.75rem 1.4rem', borderRadius: '9999px', fontWeight: 700, fontSize: '0.95rem',
+            padding: isMobile ? '0.6rem 0.85rem' : '0.75rem 1.4rem', borderRadius: '9999px', fontWeight: 700, fontSize: isMobile ? '0.78rem' : '0.95rem',
+            whiteSpace: 'nowrap', flex: isMobile ? '1 1 0' : 'none', textAlign: 'center',
             border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
             background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
             color: activeTab === tab.id ? '#FFFFFF' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'all 0.2s ease'
@@ -939,7 +941,7 @@ const Home = () => {
             <div style={{ position: 'relative' }}>
               {problemes.map((item, idx) => (
                 <motion.div key={idx} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: '-10% 0px -25% 0px' }} transition={{ duration: 0.8, ease: 'easeOut' }}
-                  style={{ position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : '38vh', marginBottom: isMobile ? '24px' : '42vh', zIndex: idx + 10, overflow: 'visible' }}
+                  style={{ position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : '38vh', marginBottom: isMobile ? '64px' : '42vh', zIndex: idx + 10, overflow: 'visible' }}
                 >
                   <div style={{
                     position: 'absolute', top: isMobile ? '-40px' : '-43px', left: isMobile ? '20px' : `${tabOffsets[idx]}px`,
@@ -1023,7 +1025,7 @@ const Home = () => {
               <div style={{ position: 'relative' }}>
                 <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
-                  <BriqueCard Icon={GraduationCap} title="Transmission" desc="Une fois vos premiers rendez-vous générés, nous transmettons à vos équipes nos outils et nos méthodes de vente (SPIN Selling) pour qu'elles montent en compétence." link="/formations" />
+                  <BriqueCard Icon={GraduationCap} title="Transmission" desc="Transmettre ce qui marche : SPIN Selling, outils IA, Automatisation Veille et Outbound, Production contenu. Vos équipes sont formées à la prospection, au marketing et à la communication avec l'IA." link="/formations" />
                 </div>
               </div>
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
