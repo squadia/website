@@ -198,6 +198,7 @@ const Navbar = () => {
                 <span className="squad-item-title">Appels sortants</span><span className="squad-tag">Prospection</span>
                 <p className="squad-item-desc">Rendez-vous qualifiés pris par un commercial B2B senior avec un script validé ensemble</p>
               </Link>
+              <Link href="/prospection" onClick={() => setShowDropdown(false)} className="squad-all-link">Tous nos services Prospection →</Link>
             </div>
             <div style={{ display: activeCategory === 'formation' ? 'block' : 'none' }}>
               <div className="squad-formation-grid">
@@ -629,6 +630,7 @@ const Navbar = () => {
                             <div className="mob-service-top"><span className="mob-service-title">Appels sortants</span><span className="mob-service-tag">Prospection</span></div>
                             <p className="mob-service-desc">Rendez-vous qualifiés par un commercial B2B senior</p>
                           </Link>
+                          <Link className="mob-all-link" href="/prospection" onClick={closeMenu}>Tous nos services Prospection →</Link>
                         </>
                       )}
                       {activeMobileCategory === 'formation' && (
