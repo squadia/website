@@ -23,8 +23,9 @@ Squadia est un cabinet de conseil B2B spécialisé en data, prospection multican
   - Data Clean : https://squadia.io/data/data-clean
   - Data Seg : https://squadia.io/data/data-seg
   - Data Lead : https://squadia.io/data/data-lead
-- Prospection multicanale : https://squadia.io/prospection/campagne — Campagnes email + LinkedIn.
-- Cold call B2B : https://squadia.io/prospection/cold-call — Appels sortants et prise de RDV qualifiés.
+- Prospection B2B : https://squadia.io/prospection — Campagnes multicanale et appels sortants pour générer des rendez-vous qualifiés.
+  - Campagne multicanale : https://squadia.io/prospection/campagne — Campagnes email + LinkedIn.
+  - Appels sortants : https://squadia.io/prospection/cold-call — Appels sortants et prise de RDV qualifiés.
 - Tarifs : https://squadia.io/tarifs — Grille tarifaire des missions et formations.
 
 ### Formations IA métiers
