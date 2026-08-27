@@ -131,7 +131,7 @@ const HomeCSS = `
 .hero-bg-desktop { display: block; animation: heroReveal 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 .hero-bg-video { animation: heroRevealScale 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; }
 @keyframes heroReveal { from { opacity: 0; transform: scale(1.12); } to { opacity: 1; transform: scale(1); } }
-@keyframes heroRevealScale { from { transform: scale(1.12); } to { transform: scale(1); } }
+@keyframes heroRevealScale { from { transform: translateY(-100px) scale(1.2); } to { transform: translateY(-100px) scale(1.08); } }
 .hero-left { position: absolute; top: 0; left: 0; width: 58%; height: 100%; z-index: 3; display: flex; flex-direction: column; justify-content: flex-start; padding-left: 8%; padding-top: 20vh; }
 .hero-marquee-inline {
   position: absolute; bottom: 2rem; left: 0; width: 100%; overflow: hidden; z-index: 6;
@@ -378,7 +378,7 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   return (
     <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#050510' } : undefined}>
       <div className="hero-dynamic" style={!isMobile ? { position: 'sticky', top: 0, height: '100vh' } : undefined}>
-        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top', transform: 'translateY(-100px) scale(1.08)' }} />
+        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top' }} />
         {!isMobile && (
           <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1 }} />
         )}
