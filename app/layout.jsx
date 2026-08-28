@@ -38,7 +38,7 @@ const schemaOrg = {
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Squadia",
-  "url": "https://squadia.io",
+  "url": "https://www.squadia.io",
   "description": "Squadia aide les PME et ETI françaises à structurer leur système de génération de revenus : data B2B, prospection multicanale et formation IA pour équipes commerciales.",
   "foundingDate": "2022",
   "founder": {

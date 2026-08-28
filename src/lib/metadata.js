@@ -1,7 +1,7 @@
 // Métadonnées partagées pour l'ensemble du site Squadia
 
 export const SITE_NAME = 'Squadia';
-export const SITE_URL = 'https://squadia.io';
+export const SITE_URL = 'https://www.squadia.io';
 export const DEFAULT_IMAGE = '/og-image.jpg'; // à remplacer si besoin par une image OG existante
 
 export const defaultOpenGraph = {
