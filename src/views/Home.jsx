@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronDown, ChevronRight, ArrowRight, Database, Mail, Phone, GraduationCap,
   Briefcase, UserPlus, FileSignature, RefreshCw,
-  Play, Volume2, VolumeX, Check
+  Play, Volume2, VolumeX, Check, X
 } from 'lucide-react';
 import DiagnosticSignalPanel from '../components/ui/DiagnosticSignalPanel';
 import PartnerLogosMarquee from '../components/ui/PartnerLogosMarquee';
@@ -758,9 +758,120 @@ const faqItems = [
   { q: 'Travaillez-vous uniquement avec de grandes entreprises ?', a: 'Non. Nous accompagnons des PME et ETI de 20 à 2 000 collaborateurs, en France, en présentiel ou à distance.' },
 ];
 
+const formationTeasers = [
+  {
+    label: 'Vente',
+    image: formationVente,
+    href: '/formation-ventes-et-ia',
+    title: 'Formation Ventes & IA B2B',
+    description: "Squadia forme vos équipes commerciales à la vente complexe et aux outils IA. 2 jours, cas pratiques, pour profils juniors et seniors.",
+    bullets: [
+      { title: 'Jour 1 : Avant la salle', desc: "Comprendre son compte, structurer son approche, préparer chaque rendez-vous avec un avantage." },
+      { title: 'Jour 2 : Dans la salle et après', desc: "Les réflexes qui font la différence : à l'ouverture, face aux objections, et dans la capacité à convertir après le rendez-vous." },
+    ],
+  },
+  {
+    label: 'Marketing',
+    image: formationMarketing,
+    href: '/formation-marketing-et-ia',
+    title: 'Formation Marketing & IA',
+    description: "Squadia forme vos équipes marketing à l'IA générative pour la création de contenu et les campagnes. 2 jours, outils concrets, ateliers pratiques.",
+    bullets: [
+      { title: 'Jour 1 : Fondamentaux et premiers usages', desc: "Comprendre les fondamentaux, les limites et les cadres d'usage de l'IA générative, et découvrir les outils clés." },
+      { title: 'Jour 2 : Production avancée et automatisation', desc: "Produire, structurer et automatiser des contenus multimédias : image, vidéo, podcast et veille intelligente." },
+    ],
+  },
+  {
+    label: 'Communication',
+    image: formationCommunication,
+    href: '/formation-communication-et-ia',
+    title: 'Formation Communication & IA',
+    description: "Squadia forme vos équipes communication à l'IA appliquée au message et à la production éditoriale. 2 jours, outils concrets, ateliers pratiques.",
+    bullets: [
+      { title: 'Jour 1 : Stratégie, message et prompting', desc: "Comprendre et structurer sa stratégie de contenu en exploitant les bons outils IA." },
+      { title: 'Jour 2 : Production, visuels et organisation éditoriale', desc: "Automatiser la veille, optimiser l'organisation éditoriale et générer des visuels IA impactants." },
+    ],
+  },
+];
+
+const FormationTeaserModal = ({ data, onClose }) => (
+  <AnimatePresence>
+    {data && (
+      <>
+        <motion.div
+          key="formation-backdrop"
+          initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+          onClick={onClose}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(5,5,16,0.7)', zIndex: 1198 }}
+        />
+        <div style={{ position: 'fixed', inset: 0, zIndex: 1199, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem', pointerEvents: 'none' }}>
+          <motion.div
+            key="formation-panel"
+            initial={{ opacity: 0, scale: 0.95, y: 12 }} animate={{ opacity: 1, scale: 1, y: 0 }} exit={{ opacity: 0, scale: 0.95, y: 12 }}
+            transition={{ type: 'spring', stiffness: 300, damping: 32 }}
+            style={{
+              pointerEvents: 'auto', width: '100%', maxWidth: '520px', maxHeight: '90vh', overflowY: 'auto',
+              background: '#0D0D25', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px',
+              boxShadow: '0 25px 60px -12px rgba(0,0,0,0.5)',
+            }}
+          >
+            <div style={{ position: 'relative', height: '200px', borderRadius: '20px 20px 0 0', overflow: 'hidden' }}>
+              <img src={data.image} alt={data.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(13,13,37,0.1), rgba(13,13,37,0.9))' }} />
+              <motion.button
+                onClick={onClose} aria-label="Fermer"
+                initial={{ rotate: -720, backgroundColor: '#44CCFF' }}
+                animate={{ rotate: 0, backgroundColor: 'rgba(5,5,16,0.5)' }}
+                transition={{ rotate: { duration: 1.1, ease: 'easeOut' }, backgroundColor: { duration: 0.7, delay: 0.55, ease: 'easeOut' } }}
+                style={{ position: 'absolute', top: '1rem', right: '1rem', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#fff' }}
+              >
+                <X size={18} />
+              </motion.button>
+            </div>
+            <div style={{ padding: '2rem 2.25rem 2.25rem' }}>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.45 }}
+                style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}
+              >Formation {data.label}</motion.p>
+              <motion.h3
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: 1.25 }}
+                style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.25 }}
+              >{data.title}</motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: 1.4 }}
+                style={{ fontSize: '0.98rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '1.75rem' }}
+              >{data.description}</motion.p>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', marginBottom: '2rem' }}>
+                {data.bullets.map((b, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 2.15 + i * 0.28 }}
+                    style={{ borderLeft: '3px solid #44CCFF', paddingLeft: '1.1rem' }}
+                  >
+                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.3rem' }}>{b.title}</div>
+                    <div style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{b.desc}</div>
+                  </motion.div>
+                ))}
+              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 3.5, ease: 'easeOut' }}
+              >
+                <Link href={data.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.98rem', background: '#44CCFF', color: '#060612', textDecoration: 'none', boxSizing: 'border-box' }}>
+                  Voir le programme complet <ArrowRight size={16} />
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        </div>
+      </>
+    )}
+  </AnimatePresence>
+);
+
 const Home = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
+  const [formationModalIdx, setFormationModalIdx] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
@@ -875,6 +986,7 @@ const Home = () => {
       {/* ═══ 01 — HERO ═══ */}
       <HeroDynamic onOpenDiagnostic={() => setDiagnosticOpen(true)} />
       <DiagnosticSignalPanel open={diagnosticOpen} onClose={() => setDiagnosticOpen(false)} />
+      <FormationTeaserModal data={formationModalIdx !== null ? formationTeasers[formationModalIdx] : null} onClose={() => setFormationModalIdx(null)} />
 
       {/* ═══ 02 — LE PROBLÈME (vidéo + cartes empilées au scroll) ═══ */}
       <section id="probleme" ref={problemRef} style={{ position: 'relative', backgroundColor: 'transparent' }}>
@@ -1031,11 +1143,11 @@ const Home = () => {
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
                 <p style={{ fontSize: '0.78rem', color: '#FFFFFF', fontWeight: 700, marginBottom: '0.75rem' }}>Formations avec l'IA :</p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem' }}>
-                  {[[formationVente, 'Vente', '/formation-ventes-et-ia'], [formationMarketing, 'Marketing', '/formation-marketing-et-ia'], [formationCommunication, 'Communication', '/formation-communication-et-ia']].map(([src, label, href]) => (
-                    <Link key={label} href={href} className="formation-link" style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
-                      <img src={src} alt={label} className="formation-thumb" style={{ width: '112px', height: '112px', borderRadius: '14px', objectFit: 'cover' }} />
-                      <span className="formation-label" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>{label}</span>
-                    </Link>
+                  {formationTeasers.map((f, idx) => (
+                    <button key={f.label} type="button" onClick={() => setFormationModalIdx(idx)} className="formation-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
+                      <img src={f.image} alt={f.label} className="formation-thumb" style={{ width: '112px', height: '112px', borderRadius: '14px', objectFit: 'cover' }} />
+                      <span className="formation-label" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>{f.label}</span>
+                    </button>
                   ))}
                 </div>
               </div>

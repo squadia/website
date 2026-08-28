@@ -50,6 +50,31 @@
       "source": "/strategie/commerciale/",
       "destination": "/prospection/campagne",
       "permanent": true
+    },
+    {
+      "source": "/use-cases-secteur-activite/:path*",
+      "destination": "/secteur-industrie",
+      "permanent": true
+    },
+    {
+      "source": "/use-cases-sales-et-marketing-digital/:path*",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/data-b2b-pour-mon-secteur-dactivit%C3%A9",
+      "destination": "/data",
+      "permanent": true
+    },
+    {
+      "source": "/formations-ia-pour-les-%C3%A9quipes-commerciales-marketing-et-communication",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/renforts-de-commerciaux-B2B",
+      "destination": "/prospection/cold-call",
+      "permanent": true
     }
   ]
 }
