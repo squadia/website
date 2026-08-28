@@ -3,6 +3,13 @@ import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, BookOpen, Send, Loader2 } from 'lucide-react';
 const newMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
+
+const isValidPhone = (value) => {
+  if (!value.trim()) return true;
+  const digits = value.replace(/\D/g, '');
+  return /^[+]?[0-9\s().-]{6,20}$/.test(value) && digits.length >= 6 && digits.length <= 15;
+};
+
 const GuideMarketingManager = () => {
   useScrollReveal();
 
@@ -24,16 +31,30 @@ const GuideMarketingManager = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState('');
+  const [phoneError, setPhoneError] = useState('');
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
+    if (e.target.name === 'phone') setPhoneError('');
+  };
+
+  const handlePhoneBlur = () => {
+    if (!isValidPhone(formData.phone)) {
+      setPhoneError("Numéro invalide. Utilisez uniquement des chiffres et éventuellement un indicatif pays (ex : +33 6 12 34 56 78 ou +1 555 123 4567).");
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!isValidPhone(formData.phone)) {
+      setPhoneError("Numéro invalide. Utilisez uniquement des chiffres et éventuellement un indicatif pays (ex : +33 6 12 34 56 78 ou +1 555 123 4567).");
+      return;
+    }
+
     setIsSubmitting(true);
     setError('');
 
@@ -49,6 +70,7 @@ const GuideMarketingManager = () => {
       if (response.ok) {
         setIsSuccess(true);
         setFormData({ FirstName: '', Name: '', phone: '', Email: '' });
+        setPhoneError('');
       } else {
         setError('Une erreur est survenue lors de la soumission. Veuillez réessayer.');
       }
@@ -158,15 +180,19 @@ const GuideMarketingManager = () => {
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label htmlFor="phone" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Mobile</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    name="phone" 
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
-                    placeholder="+33 6 00 00 00 00"
+                    onBlur={handlePhoneBlur}
+                    style={{ background: '#03030A', border: phoneError ? '1px solid #EF4444' : '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                    placeholder="+33 6 00 00 00 00 (ou indicatif international)"
                   />
+                  {phoneError && (
+                    <span style={{ color: '#EF4444', fontSize: '0.8rem' }}>{phoneError}</span>
+                  )}
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
