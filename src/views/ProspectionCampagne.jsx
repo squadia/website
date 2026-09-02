@@ -326,7 +326,7 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* REPLIIK */}
-      <section style={{ padding: '80px 0', background: '#0A0A1A' }}>
+      <section id="repliik" style={{ padding: '80px 0', background: '#0A0A1A' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={kicker}>OUTIL INTERNE</p>
