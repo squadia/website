@@ -8,15 +8,14 @@ const SECTIONS = [
     links: [
       { href: '/prospection/campagne',   label: 'Campagne multicanale' },
       { href: '/prospection/cold-call',  label: 'Appels sortants' },
-      { href: '/data/data-clean',        label: 'Data Clean' },
-      { href: '/data/data-seg',          label: 'Data Seg' },
-      { href: '/data/data-lead',         label: 'Data Lead' },
+      { href: '/data/data-clean',        label: 'Nettoyage et enrich. Data' },
+      { href: '/data/data-seg',          label: 'Segmentation Data B2B' },
+      { href: '/data/data-lead',         label: 'Flux Data B2B' },
     ],
   },
   {
     title: 'Formation',
     links: [
-      { href: '/formations',                      label: 'Formations' },
       { href: '/formation-ventes-et-ia',          label: 'Vente B2B et IA' },
       { href: '/formation-marketing-et-ia',       label: 'Marketing et IA' },
       { href: '/formation-communication-et-ia',   label: 'Communication et IA' },
@@ -36,8 +35,8 @@ const SECTIONS = [
       { href: '/cas-clients/pipeline-b2b',    label: 'Pipeline B2B' },
       { href: '/cas-clients/crm-industrie',   label: 'Pipeline sans hasard' },
       { href: '/cas-clients/migration-crm',   label: 'Data cleaning CRM' },
-      { href: '/cas-clients/formation-vente', label: 'Formation Vente' },
-      { href: '/cas-clients/formation-ia-com',label: 'Formation IA Com' },
+      { href: '/cas-clients/formation-vente', label: "Closing avec l'IA" },
+      { href: '/cas-clients/formation-ia-com',label: 'Prod. contenu accélérée' },
     ],
   },
   {

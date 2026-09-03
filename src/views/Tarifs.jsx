@@ -1,6 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import Link from 'next/link';
+import { useSearchParams } from 'next/navigation';
 import { Check, ChevronDown } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
@@ -179,7 +180,8 @@ const tabsData = [
   }
 ];
 
-const Tarifs = () => {
+const TarifsContent = () => {
+  const searchParams = useSearchParams();
   const [openFAQ, setOpenFAQ] = useState(0);
   useScrollReveal();
   const [activeTab, setActiveTab] = useState(tabsData[0].id);
@@ -192,11 +194,11 @@ const Tarifs = () => {
   }, []);
 
   useEffect(() => {
-    const tabParam = new URLSearchParams(window.location.search).get('tab');
+    const tabParam = searchParams.get('tab');
     if (tabParam && tabsData.some(t => t.id === tabParam)) {
       setActiveTab(tabParam);
     }
-  }, []);
+  }, [searchParams]);
 
   useEffect(() => {
     document.title = "Tarifs Squadia : Data et Formation";
@@ -435,5 +437,11 @@ const Tarifs = () => {
     </div>
   );
 };
+
+const Tarifs = () => (
+  <Suspense fallback={null}>
+    <TarifsContent />
+  </Suspense>
+);
 
 export default Tarifs;

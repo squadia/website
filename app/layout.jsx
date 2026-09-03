@@ -108,9 +108,9 @@ export default function RootLayout({ children }) {
                 <ul style={{ display: 'flex', flexDirection: 'column' }}>
                   <li><Link href="/prospection/campagne" className="footer-link">Campagne multicanale</Link></li>
                   <li><Link href="/prospection/cold-call" className="footer-link">Appels sortants</Link></li>
-                  <li><Link href="/data/data-clean" className="footer-link">Data Clean</Link></li>
-                  <li><Link href="/data/data-seg" className="footer-link">Data Seg</Link></li>
-                  <li><Link href="/data/data-lead" className="footer-link">Data Lead</Link></li>
+                  <li><Link href="/data/data-clean" className="footer-link">Nettoyage et enrich. Data</Link></li>
+                  <li><Link href="/data/data-seg" className="footer-link">Segmentation Data B2B</Link></li>
+                  <li><Link href="/data/data-lead" className="footer-link">Flux Data B2B</Link></li>
                 </ul>
               </div>
 
@@ -118,7 +118,6 @@ export default function RootLayout({ children }) {
               <div>
                 <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Formation</h4>
                 <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                  <li><Link href="/formations" className="footer-link">Formations</Link></li>
                   <li><Link href="/formation-ventes-et-ia" className="footer-link">Vente B2B et IA</Link></li>
                   <li><Link href="/formation-marketing-et-ia" className="footer-link">Marketing et IA</Link></li>
                   <li><Link href="/formation-communication-et-ia" className="footer-link">Communication et IA</Link></li>
@@ -140,10 +139,10 @@ export default function RootLayout({ children }) {
                 <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Cas clients</h4>
                 <ul style={{ display: 'flex', flexDirection: 'column' }}>
                   <li><Link href="/cas-clients/pipeline-b2b" className="footer-link">Pipeline B2B</Link></li>
-                  <li><Link href="/cas-clients/crm-industrie" className="footer-link">Prospection ciblée — Industrie</Link></li>
+                  <li><Link href="/cas-clients/crm-industrie" className="footer-link">Prospection ciblée</Link></li>
                   <li><Link href="/cas-clients/migration-crm" className="footer-link">Data cleaning CRM</Link></li>
-                  <li><Link href="/cas-clients/formation-vente" className="footer-link">Formation Vente</Link></li>
-                  <li><Link href="/cas-clients/formation-ia-com" className="footer-link">Formation IA Com</Link></li>
+                  <li><Link href="/cas-clients/formation-vente" className="footer-link">Closing avec l'IA</Link></li>
+                  <li><Link href="/cas-clients/formation-ia-com" className="footer-link">Prod. contenu accélérée</Link></li>
                 </ul>
               </div>
 
