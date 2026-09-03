@@ -624,31 +624,39 @@ const LandingDG = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '1200px', marginInline: 'auto' }}>
 
-            <Link href="/blog/strategie-ia-pme-eti" className="cta-card" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/strategie-ia-pme-eti" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogStrategieIAImg} alt="Stratégie IA en PME et ETI" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(139,92,246,0.4)', backgroundColor: 'rgba(139,92,246,0.12)', color: '#A78BFA', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Stratégie IA</span>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(139,92,246,0.4)', backgroundColor: 'rgba(139,92,246,0.12)', color: '#A78BFA', marginBottom: '1.5rem' }}>Stratégie IA</span>
+                </div>
                 <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
 
-            <Link href="/blog/formation-ia-ou-automatisation" className="cta-card" style={{ textDecoration: 'none', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
-              onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
-              onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/formation-ia-ou-automatisation" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogFormationAutomImg} alt="Formation IA ou automatisation" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(68,204,255,0.35)', backgroundColor: 'rgba(37,99,235,0.12)', color: '#44CCFF', marginBottom: '1.5rem', alignSelf: 'flex-start' }}>Transformation</span>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(68,204,255,0.35)', backgroundColor: 'rgba(37,99,235,0.12)', color: '#44CCFF', marginBottom: '1.5rem' }}>Transformation</span>
+                </div>
                 <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
 

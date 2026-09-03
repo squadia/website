@@ -644,45 +644,57 @@ const LandingSales = () => {
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
           <div className="grid-3" style={{ gap: '2rem' }}>
-            <Link href="/blog/formation-commerciale-b2b-ia" className="cta-card" style={{ background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/formation-commerciale-b2b-ia" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogFormationCommercialeImg} alt="Formation commerciale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #10B981', backgroundColor: 'rgba(16, 185, 129, 0.1)', color: '#34D399' }}>Formation commerciale</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB' }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</h3>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
 
-            <Link href="/blog/prospection-multicanale-b2b-erreurs" className="cta-card" style={{ background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogProspectionImg} alt="Prospection multicanale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
 
-            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" className="cta-card" style={{ background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogDataB2BImg} alt="Nettoyage et segmentation des données B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ padding: '2rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
           </div>

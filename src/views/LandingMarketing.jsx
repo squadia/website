@@ -15,6 +15,7 @@ const formationImg = '/assets/images/formationB2B.png';
 const transformerCRMImg = '/assets/images/transformerCRM.jpeg';
 const blogProspectionImg = '/assets/images/blog/blog4.jpeg';
 const blogDataB2BImg = '/assets/images/blog/cleaningdata.jpeg';
+const marketingAlignementImg = '/assets/images/marketing_alignement.webp';
 const caseImagesDG = {
   'pipeline-b2b': pipelineImg,
   'formation-vente': formationImg,
@@ -458,27 +459,24 @@ const LandingMarketing = () => {
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container grid-2 fade-in" style={{ gap: '4rem', alignItems: 'center' }}>
           <div>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Le marketing détecte. Les commerciaux convertissent. Encore faut-il que les deux soient alignés.</h2>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Aligner les ventes et le marketing</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              <p>La génération de leads B2B ne se résume pas à produire du volume. Ce qui fait la différence c'est le timing et le contexte. Un lead arrive avec une raison d'acheter maintenant, un signal identifié, un angle d'approche. Pas juste un nom et un email.</p>
-              <p>On travaille avec les directions marketing sur :</p>
-              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                <li>La détection de signaux d'achat en amont : recrutements stratégiques, changements de direction, projets en cours</li>
+              <p>Souvent les commerciaux, même quand vous leur apportez des leads, ont parfois de la difficulté à exécuter l'action demandée. Ça peut être rappeler les participants à un salon, comme vous partager la liste de ceux qu'il faudrait inviter. Pour vous faciliter la vie, nous vous aidons à faire un vrai travail de fond sur les comptes de chaque territoire avec l'aide de nos outils d'automatisation notamment, et avec notre expérience vécue auprès de grands groupes comme Xerox, Dell, Oracle. Nous avons modernisé cette approche en tirant parti du potentiel de l'IA.</p>
+              <p>On travaille avec les directions marketing sur :</p>
+              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', listStyleType: 'disc' }}>
+                <li>La détection de signaux d'achat en amont : recrutements stratégiques, changements de direction, projets en cours</li>
                 <li>La qualification des leads avant de les passer aux commerciaux pour éviter le débat éternel sur la qualité</li>
                 <li>L'alignement des KPIs marketing sur les objectifs pipeline et non sur des métriques de visibilité</li>
                 <li>L'automatisation des séquences de nurturing pour garder le contexte sans mobiliser l'équipe à chaque étape</li>
               </ul>
               <p>Et si vous êtes en prise de poste ou dans les 90 premiers jours d'une nouvelle responsabilité, on a préparé un guide dédié pour structurer vos priorités et obtenir vos premiers quick wins rapidement.</p>
             </div>
+            <a href="/automatisation-ia.html" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', background: '#44CCFF', color: '#060612', padding: '1rem 1.8rem', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
+              L'IA pour le marketing <ArrowRight size={16} />
+            </a>
           </div>
-          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', minHeight: '400px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div style={{ width: '100%', height: '100%', background: 'linear-gradient(45deg, #0A0A1A, #111827)', position: 'absolute' }}></div>
-            <div style={{ position: 'relative', zIndex: 1, textAlign: 'center' }}>
-              <div style={{ width: '80px', height: '80px', borderRadius: '50%', background: 'rgba(37, 99, 235, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem', border: '1px solid rgba(37, 99, 235, 0.3)' }}>
-                <Target size={40} color="#44CCFF" />
-              </div>
-              <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB' }}>Alignement Revenus</h3>
-            </div>
+          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', minHeight: '400px' }}>
+            <img src={marketingAlignementImg} alt="Aligner les ventes et le marketing" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
           </div>
         </div>
       </section>
@@ -612,31 +610,39 @@ const LandingMarketing = () => {
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
           <div className="grid-2" style={{ gap: '2rem', maxWidth: '1200px', marginInline: 'auto' }}>
-            <Link href="/blog/prospection-multicanale-b2b-erreurs" className="cta-card" style={{ background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogProspectionImg} alt="Prospection multicanale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
                 </div>
-                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
 
-            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" className="cta-card" style={{ background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
+            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column', textDecoration: 'none' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogDataB2BImg} alt="Nettoyage et segmentation des données B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
-              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+              <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                   <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
                 </div>
-                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+                <div style={{ marginTop: 'auto' }}>
+                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                    Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
+                  </span>
+                </div>
               </div>
             </Link>
           </div>
