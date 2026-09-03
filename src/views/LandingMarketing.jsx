@@ -455,28 +455,42 @@ const LandingMarketing = () => {
         </div>
       </section>
 
-      {/* ═══ SECTION 3B : GENERER DES LEADS ═══ */}
+      {/* ═══ SECTION 3B : ALIGNER VENTES ET MARKETING ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>
-        <div className="container grid-2 fade-in" style={{ gap: '4rem', alignItems: 'center' }}>
-          <div>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', lineHeight: 1.2 }}>Aligner les ventes et le marketing</h2>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7 }}>
-              <p>Souvent les commerciaux, même quand vous leur apportez des leads, ont parfois de la difficulté à exécuter l'action demandée. Ça peut être rappeler les participants à un salon, comme vous partager la liste de ceux qu'il faudrait inviter. Pour vous faciliter la vie, nous vous aidons à faire un vrai travail de fond sur les comptes de chaque territoire avec l'aide de nos outils d'automatisation notamment, et avec notre expérience vécue auprès de grands groupes comme Xerox, Dell, Oracle. Nous avons modernisé cette approche en tirant parti du potentiel de l'IA.</p>
-              <p>On travaille avec les directions marketing sur :</p>
-              <ul style={{ paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', listStyleType: 'disc' }}>
-                <li>La détection de signaux d'achat en amont : recrutements stratégiques, changements de direction, projets en cours</li>
-                <li>La qualification des leads avant de les passer aux commerciaux pour éviter le débat éternel sur la qualité</li>
-                <li>L'alignement des KPIs marketing sur les objectifs pipeline et non sur des métriques de visibilité</li>
-                <li>L'automatisation des séquences de nurturing pour garder le contexte sans mobiliser l'équipe à chaque étape</li>
-              </ul>
-              <p>Et si vous êtes en prise de poste ou dans les 90 premiers jours d'une nouvelle responsabilité, on a préparé un guide dédié pour structurer vos priorités et obtenir vos premiers quick wins rapidement.</p>
+        <div className="container fade-in">
+          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>+ Efficace ensemble</p>
+          <h2 style={{ fontSize: 'clamp(1.4rem, 2.6vw, 2.2rem)', marginBottom: '3rem', lineHeight: 1.2, whiteSpace: 'nowrap' }}>Aligner les ventes et le marketing</h2>
+
+          <div className="grid-2" style={{ gap: '4rem', alignItems: 'start', marginBottom: '3rem' }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
+              Même alimentés en leads, les commerciaux peinent souvent à exécuter le suivi, qu'il s'agisse de relancer des contacts ou d'identifier des invités. Nous structurons le travail de fond sur vos territoires grâce à nos outils d'automatisation, à l'IA et à notre expérience auprès de grands comptes (Xerox, Dell, Oracle).
+            </p>
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', height: '220px' }}>
+              <img src={marketingAlignementImg} alt="Aligner les ventes et le marketing" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
             </div>
-            <a href="/automatisation-ia.html" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', background: '#44CCFF', color: '#060612', padding: '1rem 1.8rem', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
-              L'IA pour le marketing <ArrowRight size={16} />
-            </a>
           </div>
-          <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', minHeight: '400px' }}>
-            <img src={marketingAlignementImg} alt="Aligner les ventes et le marketing" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+
+          <div className="grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
+            <div>
+              <a href="/automatisation-ia.html" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#44CCFF', color: '#060612', padding: '1rem 1.8rem', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
+                L'IA pour le marketing <ArrowRight size={16} />
+              </a>
+            </div>
+            <div>
+              <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.25rem' }}>On travaille avec les directions marketing sur :</p>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                {[
+                  'Détection de signaux d\'achats',
+                  'Qualification des leads',
+                  'Automatisation séquence',
+                  'Enrichissement des contacts',
+                ].map((label, i) => (
+                  <div key={i} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '8px', padding: '1rem', fontSize: '0.9rem', fontWeight: 600, color: '#F9FAFB' }}>
+                    {label}
+                  </div>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
