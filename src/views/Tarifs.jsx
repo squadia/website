@@ -192,6 +192,13 @@ const Tarifs = () => {
   }, []);
 
   useEffect(() => {
+    const tabParam = new URLSearchParams(window.location.search).get('tab');
+    if (tabParam && tabsData.some(t => t.id === tabParam)) {
+      setActiveTab(tabParam);
+    }
+  }, []);
+
+  useEffect(() => {
     document.title = "Tarifs Squadia : Data et Formation";
     const metaDescription = document.querySelector('meta[name="description"]');
     if (metaDescription) {

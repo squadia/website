@@ -151,9 +151,9 @@ export default function RootLayout({ children }) {
               <div>
                 <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Tarifs</h4>
                 <ul style={{ display: 'flex', flexDirection: 'column' }}>
-                  <li><Link href="/prospection/campagne" className="footer-link">Campagne multicanale</Link></li>
-                  <li><Link href="/prospection/cold-call" className="footer-link">Appels sortants</Link></li>
-                  <li><Link href="/tarifs" className="footer-link">Nos tarifs</Link></li>
+                  <li><Link href="/tarifs?tab=data" className="footer-link">Data</Link></li>
+                  <li><Link href="/tarifs?tab=prospection" className="footer-link">Prospection</Link></li>
+                  <li><Link href="/tarifs?tab=formation" className="footer-link">Formation</Link></li>
                 </ul>
               </div>
 

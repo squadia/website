@@ -43,9 +43,9 @@ const SECTIONS = [
   {
     title: 'Tarifs',
     links: [
-      { href: '/prospection/campagne',  label: 'Campagne multicanale' },
-      { href: '/prospection/cold-call', label: 'Appels sortants' },
-      { href: '/tarifs', label: 'Nos tarifs' },
+      { href: '/tarifs?tab=data',        label: 'Data' },
+      { href: '/tarifs?tab=prospection', label: 'Prospection' },
+      { href: '/tarifs?tab=formation',   label: 'Formation' },
     ],
   },
   {
