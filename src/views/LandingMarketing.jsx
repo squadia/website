@@ -465,17 +465,12 @@ const LandingMarketing = () => {
             <p style={{ color: 'var(--text-secondary)', fontSize: '1.05rem', lineHeight: 1.7, margin: 0 }}>
               Même alimentés en leads, les commerciaux peinent souvent à exécuter le suivi, qu'il s'agisse de relancer des contacts ou d'identifier des invités. Nous structurons le travail de fond sur vos territoires grâce à nos outils d'automatisation, à l'IA et à notre expérience auprès de grands comptes (Xerox, Dell, Oracle).
             </p>
-            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', height: '220px' }}>
-              <img src={marketingAlignementImg} alt="Aligner les ventes et le marketing" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+            <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0A0A1A', position: 'relative', height: '340px' }}>
+              <img src={marketingAlignementImg} alt="Aligner les ventes et le marketing" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top', position: 'absolute', inset: 0 }} />
             </div>
           </div>
 
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'center' }}>
-            <div>
-              <a href="/automatisation-ia.html" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#44CCFF', color: '#060612', padding: '1rem 1.8rem', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
-                L'IA pour le marketing <ArrowRight size={16} />
-              </a>
-            </div>
             <div>
               <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', marginBottom: '1.25rem' }}>On travaille avec les directions marketing sur :</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
@@ -490,6 +485,11 @@ const LandingMarketing = () => {
                   </div>
                 ))}
               </div>
+            </div>
+            <div>
+              <a href="/automatisation-ia.html" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', background: '#44CCFF', color: '#060612', padding: '1rem 1.8rem', borderRadius: '8px', fontWeight: 700, textDecoration: 'none', fontSize: '1rem' }}>
+                L'IA pour le marketing <ArrowRight size={16} />
+              </a>
             </div>
           </div>
         </div>

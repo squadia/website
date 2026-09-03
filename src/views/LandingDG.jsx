@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, BarChart3, ArrowRight, ShieldCheck, Rocket, ChevronDown, CheckCircle2, Star } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { casesData } from '../data/cases';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
@@ -80,10 +81,10 @@ const LandingDG = () => {
   }, []);
 
   const enjeux = [
-    { title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#44CCFF" /> },
-    { title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#44CCFF" /> },
-    { title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#44CCFF" /> },
-    { title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#44CCFF" /> }
+    { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#44CCFF" /> },
+    { short: 'Recrutement commercial', title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#44CCFF" /> },
+    { short: 'Données commerciales', title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#44CCFF" /> },
+    { short: 'Confiance du board', title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#44CCFF" /> }
   ];
 
   const apports = [
@@ -379,28 +380,41 @@ const LandingDG = () => {
           zIndex: 0
         }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
+          <Tabs defaultValue="0" style={{ maxWidth: '760px', margin: '0 auto' }}>
+            <TabsList
+              variant="line"
+              className="h-auto w-full flex-wrap justify-center"
+              style={{ marginBottom: '2.5rem', gap: '0.5rem' }}
+            >
+              {enjeux.map((item, i) => (
+                <TabsTrigger
+                  key={i}
+                  value={String(i)}
+                  style={{ padding: '0.6rem 1.1rem', fontSize: '0.9rem' }}
+                >
+                  {item.short}
+                </TabsTrigger>
+              ))}
+            </TabsList>
             {enjeux.map((item, i) => (
-              <div key={i} style={{
-                padding: '2.5rem',
-                background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
-                border: '1px solid rgba(68,204,255,0.12)',
-                borderRadius: '16px',
-                transition: 'transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease',
-                boxShadow: '0 4px 24px rgba(0,0,0,0.3)'
-              }}
-                onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.35)'; e.currentTarget.style.boxShadow = '0 8px 32px rgba(37,99,235,0.2)'; }}
-                onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.3)'; }}
-              >
-                <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  {item.icon}
+              <TabsContent key={i} value={String(i)}>
+                <div style={{
+                  padding: '2.5rem',
+                  background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
+                  border: '1px solid rgba(68,204,255,0.12)',
+                  borderRadius: '16px',
+                  boxShadow: '0 4px 24px rgba(0,0,0,0.3)'
+                }}>
+                  <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                    {item.icon}
+                  </div>
+                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.9rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
+                  <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem', margin: 0 }}>{item.desc}</p>
                 </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.9rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem' }}>{item.desc}</p>
-              </div>
+              </TabsContent>
             ))}
-          </div>
+          </Tabs>
         </div>
       </section>
 
