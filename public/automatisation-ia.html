@@ -320,6 +320,13 @@
   .hero-kpi-source{display:block;margin-top:0.3rem;font-size:0.68rem;color:rgba(255,255,255,0.35);text-decoration:none;}
   .hero-kpi-source:hover{color:var(--accent);}
 
+  /* hero fade-in-up, séquence identique à DataClean.jsx (h1 → stat → lede) */
+  @keyframes heroFadeUp{from{opacity:0;transform:translateY(30px);}to{opacity:1;transform:translateY(0);}}
+  .hero-content h1{opacity:0;animation:heroFadeUp 1.2s ease forwards;}
+  .hero-kpi{opacity:0;animation:heroFadeUp 1s ease forwards;animation-delay:0.15s;}
+  .hero-content .lede{opacity:0;animation:heroFadeUp 1.2s ease forwards;animation-delay:0.3s;}
+  .hero-cta{opacity:0;animation:heroFadeUp 1.2s ease forwards;animation-delay:0.45s;}
+
   /* footer */
   .site-footer{background:#050510;padding:5rem 0 3rem;border-top:1px solid #111;margin-top:4rem;}
   .footer-inner{max-width:1180px;margin:0 auto;padding:0 2rem;}
