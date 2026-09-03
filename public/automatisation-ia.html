@@ -271,6 +271,15 @@
   .navbar-cta{background:var(--accent);color:#060612;padding:8px 18px;font-size:13px;font-weight:700;border-radius:6px;text-decoration:none;transition:all 0.5s ease;}
   .navbar.scrolled .navbar-cta{padding:6px 14px;font-size:12px;}
   @media (max-width:860px){.navbar-links{display:none;}}
+  .navbar-dropdown{position:relative;}
+  .navbar-dropdown-menu{
+    display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);margin-top:1rem;
+    background:#060612;border:1px solid rgba(68,204,255,0.15);border-radius:12px;padding:0.6rem;
+    box-shadow:0 20px 50px rgba(0,0,0,0.5);min-width:200px;flex-direction:column;gap:0.2rem;
+  }
+  .navbar-dropdown:hover .navbar-dropdown-menu{display:flex;}
+  .navbar-dropdown-menu a{display:block;padding:0.6rem 0.9rem;border-radius:8px;font-size:0.9rem;white-space:nowrap;}
+  .navbar-dropdown-menu a:hover{background:rgba(68,204,255,0.08);}
 
   /* hero */
   .hero{position:relative;min-height:100vh;overflow:hidden;}
@@ -314,7 +323,15 @@
   <div class="navbar-inner">
     <a href="/" class="navbar-logo"><img src="./logo.png" alt="Squadia"></a>
     <div class="navbar-links">
-      <span>Nos Services ▾</span>
+      <div class="navbar-dropdown">
+        <a href="/data">Nos Services ▾</a>
+        <div class="navbar-dropdown-menu">
+          <a href="/strategie/commerciale">Stratégie Commerciale</a>
+          <a href="/data">Data</a>
+          <a href="/automatisation-ia">Automatisation</a>
+          <a href="/formations">Formation</a>
+        </div>
+      </div>
       <a href="/cas-clients">Cas clients</a>
       <a href="/ressources">Ressources</a>
       <a href="/tarifs">Tarifs</a>
