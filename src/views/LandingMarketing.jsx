@@ -13,6 +13,8 @@ const kickerStyle = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const formationImg = '/assets/images/formationB2B.png';
 const transformerCRMImg = '/assets/images/transformerCRM.jpeg';
+const blogProspectionImg = '/assets/images/blog/blog4.jpeg';
+const blogDataB2BImg = '/assets/images/blog/cleaningdata.jpeg';
 const caseImagesDG = {
   'pipeline-b2b': pipelineImg,
   'formation-vente': formationImg,
@@ -88,7 +90,7 @@ const LandingMarketing = () => {
   const apports = [
     { title: "Des leads avec du contexte, pas juste des contacts", desc: "Signaux d'achat, changements de poste, recrutements stratégiques. Les leads Squadia arrivent avec une raison d'acheter maintenant et un angle d'approche. Vos commerciaux savent exactement pourquoi ils appellent.", icon: <Target color="#44CCFF" /> },
     { title: 'Un pipeline marketing structuré et mesurable', desc: "On aligne les actions marketing sur les objectifs commerciaux réels. Chaque campagne, chaque séquence, chaque lead est connecté à un indicateur de pipeline. La contribution au chiffre devient visible et défendable.", icon: <BarChart3 color="#44CCFF" /> },
-    { title: 'Une automatisation qui libère du temps pour la strategie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment.", icon: <Zap color="#44CCFF" /> },
+    { title: 'Une automatisation qui libère du temps pour la strategie', desc: "Segmentation, nurturing, reporting, mise à jour CRM. On automatise ce qui prend du temps sans valeur ajoutée. Vos équipes se concentrent sur ce qui compte vraiment.", icon: <Zap color="#44CCFF" />, link: { href: '/automatisation-ia.html', label: 'Découvrir nos automatisations' } },
     { title: 'Une équipe formée pour exploiter les outils en place', desc: "Pas d'adoption en demi-teinte. On forme votre équipe sur les cas concrets de votre organisation pour que les outils servent vraiment, pas qu'ils restent sous-utilisés après 3 mois.", icon: <CheckCircle2 color="#44CCFF" /> }
   ];
 
@@ -441,6 +443,11 @@ const LandingMarketing = () => {
               </div>
               <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.6rem', lineHeight: 1.3, color: '#F9FAFB' }}>{apports[2].title}</h3>
               <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, fontSize: '0.88rem', margin: 0 }}>{apports[2].desc}</p>
+              {apports[2].link && (
+                <a href={apports[2].link.href} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', color: '#44CCFF', fontWeight: 600, textDecoration: 'none', fontSize: '0.85rem' }}>
+                  {apports[2].link.label} <ArrowRight size={14} />
+                </a>
+              )}
             </div>
 
           </div>
@@ -582,7 +589,7 @@ const LandingMarketing = () => {
       {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <div>
+          <div style={{ maxWidth: '1200px', marginInline: 'auto' }}>
             <p style={kickerStyle}>FAQ</p>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -604,21 +611,33 @@ const LandingMarketing = () => {
       <section className="section-padding" style={{ background: '#050510' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>À lire aussi</h2>
-          <div className="grid-2" style={{ gap: '2rem', maxWidth: '1000px', marginInline: 'auto' }}>
-            <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
+          <div className="grid-2" style={{ gap: '2rem', maxWidth: '1200px', marginInline: 'auto' }}>
+            <Link href="/blog/prospection-multicanale-b2b-erreurs" className="cta-card" style={{ backgroundColor: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <img src={blogProspectionImg} alt="Prospection multicanale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
               </div>
-              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
-              <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Prospection</span>
+                </div>
+                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</h3>
+                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+              </div>
             </Link>
 
-            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
+            <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" className="cta-card" style={{ backgroundColor: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
+                <img src={blogDataB2BImg} alt="Nettoyage et segmentation des données B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(13,13,37,0.85))' }} />
               </div>
-              <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
-              <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+              <div style={{ padding: '2.5rem', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
+                <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
+                </div>
+                <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+              </div>
             </Link>
           </div>
         </div>
