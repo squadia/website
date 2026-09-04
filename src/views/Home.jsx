@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import {
   ChevronDown, ChevronRight, ArrowRight, Database, Mail, Phone, GraduationCap,
   Briefcase, UserPlus, FileSignature, RefreshCw,
@@ -591,9 +591,17 @@ const StepImage = ({ src, label, isMobile }) => (
   </div>
 );
 
-const Timeline = ({ isMobile }) => (
-  <div style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
-    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+const Timeline = ({ isMobile }) => {
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 80%', 'end 40%'] });
+  const spineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+  <div ref={timelineRef} style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
+    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    {!isMobile && (
+      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
+    )}
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
@@ -631,7 +639,8 @@ const Timeline = ({ isMobile }) => (
       );
     })}
   </div>
-);
+  );
+};
 
 // ═══ 07 — COMBIEN ÇA COÛTE (cartes tarifaires, reprend le format de /tarifs) ═══
 const pricingTabs = [
