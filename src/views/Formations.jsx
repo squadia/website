@@ -14,6 +14,18 @@ const communicationImg = '/assets/images/formation/communication.jpeg';
 const autoProcessImg = '/assets/images/automatisation/automatisationbg.jpeg';
 const dataLeadImg = '/assets/images/datalead/datalead.jpeg';
 const stratCommercialeImg = '/assets/images/commerciale-meeting.png';
+
+const splitTitleBold = (title) => {
+  const idx = title.indexOf(':');
+  if (idx === -1) return title;
+  return (
+    <>
+      <span style={{ fontWeight: 700 }}>{title.slice(0, idx + 1)}</span>
+      <span style={{ fontWeight: 400 }}>{title.slice(idx + 1)}</span>
+    </>
+  );
+};
+
 const Formations = () => {
   useScrollReveal();
   const [isMobile, setIsMobile] = React.useState(false);
@@ -128,7 +140,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </div>
       <div className="card-content-wrap">
         <span className="card-category-new">{category}</span>
-        <h3 className="card-title-new">{title}</h3>
+        <h3 className="card-title-new">{splitTitleBold(title)}</h3>
         <div className="card-target-new">
           <Users size={16} />
           <span>{forWho}</span>
@@ -236,8 +248,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
                   Marketing & IA
                 </div>
-                <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Formation IA marketing : contenus, campagnes et analyse augmentés.
+                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                  {splitTitleBold('Formation IA marketing\u00A0: contenus, campagnes et analyse augmentés.')}
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Vos équipes produisent des contenus qui attirent les bons prospects avant même que la vente décroche son téléphone. Le marketing arrête de produire pour produire. Il commence à produire pour convertir.
@@ -254,8 +266,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
                   Ventes & IA
                 </div>
-                <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Formation IA vente B2B : prospecter, qualifier et closer autrement.
+                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                  {splitTitleBold('Formation IA vente B2B\u00A0: prospecter, qualifier et closer autrement.')}
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Méthode MEDDIC, plan de compte, préparation C-level avec l'IA, traitement des objections. Vos commerciaux repartent avec des réflexes qu'ils appliquent dès la semaine suivante sur les comptes qui comptent vraiment.
@@ -272,8 +284,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
                   Communication & IA
                 </div>
-                <div style={{ fontSize: '24px', fontWeight: 600, color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
-                  Communication et IA : produire plus, mieux, plus vite.
+                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                  {splitTitleBold('Communication et IA\u00A0: produire plus, mieux, plus vite.')}
                 </div>
                 <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Battle cards, veille automatisée, messages clés par persona. La communication structure ce dont les ventes ont besoin en RDV, renforce l'image de l'entreprise et génère de l inbound. Elle cesse d être réactive.
@@ -467,7 +479,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   "Groupes de 6 à 10 personnes pour plus d'interactivité",
                   "Suivi 1h coaching visio / pers. inclus"
                 ],
-                price: 'À partir de 4 590 € HT / groupe',
+                price: 'À partir de 4 590 € HT / gpe',
                 badge: 'RECOMMANDÉ'
               },
               {
@@ -539,9 +551,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                         suffix = '/ pers.';
                         displayPrice = displayPrice.replace(' / pers.', '');
                       }
-                      if (displayPrice.endsWith(' / groupe')) {
-                        suffix = '/ groupe';
-                        displayPrice = displayPrice.replace(' / groupe', '');
+                      if (displayPrice.endsWith(' / gpe')) {
+                        suffix = '/ gpe';
+                        displayPrice = displayPrice.replace(' / gpe', '');
                       }
 
                       return (

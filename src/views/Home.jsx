@@ -664,7 +664,7 @@ const pricingTabs = [
     id: 'formation', label: 'Formation', pageLink: '/formations',
     cards: [
       { title: 'Inter-entreprises', subtitle: 'Pour apprendre dans un cadre multi-secteurs.', items: ['Fondamentaux IA appliqués aux métiers vente, marketing, communication', 'Ateliers orientés production', 'Supports et templates réutilisables'], price: 'À partir de 1 500 € HT / pers.', link: '/formations' },
-      { title: 'Intra-entreprise', subtitle: 'Pour former votre équipe sur vos cas, vos outils.', items: ['Cas et scénarios proches du métier client', "Plan d'action équipe livré en fin de formation", 'Groupes de 6 à 10 personnes'], price: 'À partir de 4 590 € HT / groupe', badge: 'RECOMMANDÉ', link: '/formations' },
+      { title: 'Intra-entreprise', subtitle: 'Pour former votre équipe sur vos cas, vos outils.', items: ['Cas et scénarios proches du métier client', "Plan d'action équipe livré en fin de formation", 'Groupes de 6 à 10 personnes'], price: 'À partir de 4 590 € HT / gpe', badge: 'RECOMMANDÉ', link: '/formations' },
       { title: 'Sur mesure', subtitle: 'Pour construire un programme progressif avec suivi renforcé.', items: ['Modules progressifs adaptés aux enjeux', 'Coaching individuel ou collectif', "Plan d'action individualisé"], price: 'Sur devis', link: '/formations' },
     ]
   },
@@ -687,7 +687,7 @@ const PricingTabs = () => {
     let suffix = null;
     if (displayPrice.startsWith('À partir de ')) { prefix = 'À partir de'; displayPrice = displayPrice.replace('À partir de ', ''); }
     if (displayPrice.endsWith(' / pers.')) { suffix = '/ pers.'; displayPrice = displayPrice.replace(' / pers.', ''); }
-    if (displayPrice.endsWith(' / groupe')) { suffix = '/ groupe'; displayPrice = displayPrice.replace(' / groupe', ''); }
+    if (displayPrice.endsWith(' / gpe')) { suffix = '/ gpe'; displayPrice = displayPrice.replace(' / gpe', ''); }
     return (
       <>
         {prefix && <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}

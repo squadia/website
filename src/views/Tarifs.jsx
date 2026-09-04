@@ -160,7 +160,7 @@ const tabsData = [
           "Plan d'action équipe livré en fin de formation",
           "Groupes de 6 à 10 personnes pour plus d'interactivité"
         ],
-        price: 'À partir de 4 590 € HT / groupe',
+        price: 'À partir de 4 590 € HT / gpe',
         subPrice: null,
         badge: 'RECOMMANDÉ'
       },
@@ -318,9 +318,9 @@ const TarifsContent = () => {
                         suffix = '/ pers.';
                         displayPrice = displayPrice.replace(' / pers.', '');
                       }
-                      if (displayPrice.endsWith(' / groupe')) {
-                        suffix = '/ groupe';
-                        displayPrice = displayPrice.replace(' / groupe', '');
+                      if (displayPrice.endsWith(' / gpe')) {
+                        suffix = '/ gpe';
+                        displayPrice = displayPrice.replace(' / gpe', '');
                       }
 
                       return (
