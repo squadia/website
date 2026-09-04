@@ -34,6 +34,7 @@ const ChannelSalesPlan = () => {
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [isFallbackSuccess, setIsFallbackSuccess] = useState(false);
   const [error, setError] = useState('');
   const [phoneError, setPhoneError] = useState('');
 
@@ -67,6 +68,7 @@ const ChannelSalesPlan = () => {
 
       if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);
+        setIsFallbackSuccess(result.fallbackUsed);
         setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
         setPhoneError('');
       } else {
@@ -139,9 +141,9 @@ const ChannelSalesPlan = () => {
             {isSuccess ? (
               <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid #10B981', padding: '2rem', borderRadius: '8px', textAlign: 'center' }}>
                 <CheckCircle2 size={48} color="#10B981" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontSize: '1.2rem', color: '#10B981', marginBottom: '0.5rem' }}>Plan envoyé !</h4>
+                <h4 style={{ fontSize: '1.2rem', color: '#10B981', marginBottom: '0.5rem' }}>{isFallbackSuccess ? 'Demande enregistrée' : 'Plan envoyé !'}</h4>
                 <p style={{ color: '#D1D5DB', fontSize: '0.95rem' }}>
-                  Vérifiez votre boîte de réception d'ici quelques instants.
+                  {isFallbackSuccess ? "Notre équipe a bien reçu vos coordonnées et vous enverra le guide sous peu." : "Vérifiez votre boîte de réception d'ici quelques instants."}
                 </p>
               </div>
             ) : (
