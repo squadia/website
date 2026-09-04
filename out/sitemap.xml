@@ -1,273 +1,279 @@
 <?xml version="1.0" ?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://squadia.io/</loc>
+    <loc>https://www.squadia.io/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://squadia.io/a-propos</loc>
+    <loc>https://www.squadia.io/a-propos</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://squadia.io/blog</loc>
+    <loc>https://www.squadia.io/blog</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/changement-crm-organisation</loc>
+    <loc>https://www.squadia.io/blog/changement-crm-organisation</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/formation-commerciale-b2b-ia</loc>
+    <loc>https://www.squadia.io/blog/formation-commerciale-b2b-ia</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/formation-ia-automatisation-ordre</loc>
+    <loc>https://www.squadia.io/blog/formation-ia-automatisation-ordre</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/formation-ia-ou-automatisation</loc>
+    <loc>https://www.squadia.io/blog/formation-ia-ou-automatisation</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/nettoyage-segmentation-enrichissement-donnees-b2b</loc>
+    <loc>https://www.squadia.io/blog/nettoyage-segmentation-enrichissement-donnees-b2b</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/prospection-multicanale-b2b-erreurs</loc>
+    <loc>https://www.squadia.io/blog/prospection-multicanale-b2b-erreurs</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/strategie-ia-pme-eti</loc>
+    <loc>https://www.squadia.io/blog/strategie-ia-pme-eti</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/blog/strategie-ia-pme-sequence</loc>
+    <loc>https://www.squadia.io/blog/strategie-ia-pme-sequence</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients</loc>
+    <loc>https://www.squadia.io/cas-clients</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients/crm-industrie</loc>
+    <loc>https://www.squadia.io/cas-clients/crm-industrie</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients/formation-ia-com</loc>
+    <loc>https://www.squadia.io/cas-clients/formation-ia-com</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients/formation-vente</loc>
+    <loc>https://www.squadia.io/cas-clients/formation-vente</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients/migration-crm</loc>
+    <loc>https://www.squadia.io/cas-clients/migration-crm</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/cas-clients/pipeline-b2b</loc>
+    <loc>https://www.squadia.io/cas-clients/pipeline-b2b</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/contact</loc>
+    <loc>https://www.squadia.io/contact</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/data</loc>
+    <loc>https://www.squadia.io/data</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://squadia.io/data/data-clean</loc>
+    <loc>https://www.squadia.io/data/data-clean</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/data/data-lead</loc>
+    <loc>https://www.squadia.io/data/data-lead</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/data/data-seg</loc>
+    <loc>https://www.squadia.io/data/data-seg</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/directeur-commercial</loc>
+    <loc>https://www.squadia.io/directeur-commercial</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/directeur-general</loc>
+    <loc>https://www.squadia.io/directeur-general</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/directeur-marketing</loc>
+    <loc>https://www.squadia.io/directeur-marketing</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/formation-communication-et-ia</loc>
+    <loc>https://www.squadia.io/formation-communication-et-ia</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/formation-marketing-et-ia</loc>
+    <loc>https://www.squadia.io/formation-marketing-et-ia</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/formation-ventes-et-ia</loc>
+    <loc>https://www.squadia.io/formation-ventes-et-ia</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/formations</loc>
+    <loc>https://www.squadia.io/formations</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://squadia.io/mentions-legales</loc>
+    <loc>https://www.squadia.io/mentions-legales</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
   <url>
-    <loc>https://squadia.io/notre-mission</loc>
+    <loc>https://www.squadia.io/notre-mission</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/prospection/campagne</loc>
+    <loc>https://www.squadia.io/prospection</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://www.squadia.io/prospection/campagne</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/prospection/cold-call</loc>
+    <loc>https://www.squadia.io/prospection/cold-call</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/prospection/marketing</loc>
+    <loc>https://www.squadia.io/prospection/marketing</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/prospection/phoning</loc>
+    <loc>https://www.squadia.io/prospection/phoning</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources</loc>
+    <loc>https://www.squadia.io/ressources</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources/channel-sales-plan</loc>
+    <loc>https://www.squadia.io/ressources/channel-sales-plan</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources/conditions-participation</loc>
+    <loc>https://www.squadia.io/ressources/conditions-participation</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources/enquete-ia-b2b</loc>
+    <loc>https://www.squadia.io/ressources/enquete-ia-b2b</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources/guide-marketing-manager</loc>
+    <loc>https://www.squadia.io/ressources/guide-marketing-manager</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/ressources/guide-sales-manager</loc>
+    <loc>https://www.squadia.io/ressources/guide-sales-manager</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/secteur-industrie</loc>
+    <loc>https://www.squadia.io/secteur-industrie</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/secteur-it-saas</loc>
+    <loc>https://www.squadia.io/secteur-it-saas</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://squadia.io/secteur-public</loc>
+    <loc>https://www.squadia.io/secteur-public</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://squadia.io/tarifs</loc>
+    <loc>https://www.squadia.io/tarifs</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>

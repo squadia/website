@@ -2,7 +2,10 @@
 import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, BookOpen, Send, Loader2 } from 'lucide-react';
+import { submitLead } from '../lib/submitLead';
 const newSalesManager = '/assets/images/ressources/new-sales-manager.jpeg';
+
+const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/lzf3jtvebbaypmdhnakran46e0j7c8bm';
 
 const isValidPhone = (value) => {
   if (!value.trim()) return true;
@@ -25,7 +28,8 @@ const GuideSalesManager = () => {
     FirstName: '',
     Name: '',
     phone: '',
-    Email: ''
+    Email: '',
+    Company: ''
   });
   
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -59,17 +63,11 @@ const GuideSalesManager = () => {
     setError('');
 
     try {
-      const response = await fetch('https://hook.eu1.make.com/lzf3jtvebbaypmdhnakran46e0j7c8bm', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData)
-      });
+      const result = await submitLead('guide-sales-manager', MAKE_WEBHOOK_URL, formData);
 
-      if (response.ok) {
+      if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);
-        setFormData({ FirstName: '', Name: '', phone: '', Email: '' });
+        setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
         setPhoneError('');
       } else {
         setError('Une erreur est survenue lors de la soumission. Veuillez réessayer.');
@@ -196,12 +194,25 @@ const GuideSalesManager = () => {
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  <label htmlFor="Company" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Société</label>
+                  <input
+                    type="text"
+                    id="Company"
+                    name="Company"
+                    value={formData.Company}
+                    onChange={handleChange}
+                    style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                    placeholder="Squadia"
+                  />
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                   <label htmlFor="Email" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Email professionnel</label>
-                  <input 
-                    type="email" 
-                    id="Email" 
-                    name="Email" 
-                    required 
+                  <input
+                    type="email"
+                    id="Email"
+                    name="Email"
+                    required
                     value={formData.Email}
                     onChange={handleChange}
                     style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}

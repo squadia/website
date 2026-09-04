@@ -5,4 +5,4 @@ Disallow: /404.html
 Disallow: /automatisation-ia
 Disallow: /strategie/
 
-Sitemap: https://squadia.io/sitemap.xml
+Sitemap: https://www.squadia.io/sitemap.xml

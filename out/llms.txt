@@ -3,7 +3,7 @@
 ## À propos
 Squadia est un cabinet de conseil B2B spécialisé en data, prospection multicanale et IA appliquées aux équipes vente, marketing et communication. Nous aidons les PME et ETI françaises à co-construire leur système de croissance : ciblage des prospects, campagnes multicanal, formation et enablement.
 
-- Site : https://squadia.io
+- Site : https://www.squadia.io
 - Email : contact@squadia.io
 - Téléphone : +33 7 45 80 49 49
 - Adresse : 193 Av. de France, 75013 Paris
@@ -18,48 +18,49 @@ Squadia est un cabinet de conseil B2B spécialisé en data, prospection multican
 ## Arborescence du site
 
 ### Offre commerciale (active)
-- Accueil : https://squadia.io/ — Data, prospection multicanale et formation IA B2B.
-- Data B2B : https://squadia.io/data — Nettoyage, segmentation et enrichissement de bases B2B.
-  - Data Clean : https://squadia.io/data/data-clean
-  - Data Seg : https://squadia.io/data/data-seg
-  - Data Lead : https://squadia.io/data/data-lead
-- Prospection multicanale : https://squadia.io/prospection/campagne — Campagnes email + LinkedIn.
-- Cold call B2B : https://squadia.io/prospection/cold-call — Appels sortants et prise de RDV qualifiés.
-- Tarifs : https://squadia.io/tarifs — Grille tarifaire des missions et formations.
+- Accueil : https://www.squadia.io/ — Data, prospection multicanale et formation IA B2B.
+- Data B2B : https://www.squadia.io/data — Nettoyage, segmentation et enrichissement de bases B2B.
+  - Data Clean : https://www.squadia.io/data/data-clean
+  - Data Seg : https://www.squadia.io/data/data-seg
+  - Data Lead : https://www.squadia.io/data/data-lead
+- Prospection B2B : https://www.squadia.io/prospection — Campagnes multicanale et appels sortants pour générer des rendez-vous qualifiés.
+  - Campagne multicanale : https://www.squadia.io/prospection/campagne — Campagnes email + LinkedIn.
+  - Appels sortants : https://www.squadia.io/prospection/cold-call — Appels sortants et prise de RDV qualifiés.
+- Tarifs : https://www.squadia.io/tarifs — Grille tarifaire des missions et formations.
 
 ### Formations IA métiers
-- Catalogue : https://squadia.io/formations
-- Vente B2B et IA : https://squadia.io/formation-ventes-et-ia
-- Marketing et IA : https://squadia.io/formation-marketing-et-ia
-- Communication et IA : https://squadia.io/formation-communication-et-ia
+- Catalogue : https://www.squadia.io/formations
+- Vente B2B et IA : https://www.squadia.io/formation-ventes-et-ia
+- Marketing et IA : https://www.squadia.io/formation-marketing-et-ia
+- Communication et IA : https://www.squadia.io/formation-communication-et-ia
 
 ### Landing par fonction
-- Directeur Général : https://squadia.io/directeur-general
-- Directeur Commercial : https://squadia.io/directeur-commercial
-- Directeur Marketing : https://squadia.io/directeur-marketing
+- Directeur Général : https://www.squadia.io/directeur-general
+- Directeur Commercial : https://www.squadia.io/directeur-commercial
+- Directeur Marketing : https://www.squadia.io/directeur-marketing
 
 ### Cas clients
-- Vue d'ensemble : https://squadia.io/cas-clients
-- Pipeline B2B : https://squadia.io/cas-clients/pipeline-b2b
-- Prospection industrielle : https://squadia.io/cas-clients/crm-industrie
-- Migration et data cleaning CRM : https://squadia.io/cas-clients/migration-crm
-- Formation commerciale : https://squadia.io/cas-clients/formation-vente
-- Formation IA communication : https://squadia.io/cas-clients/formation-ia-com
+- Vue d'ensemble : https://www.squadia.io/cas-clients
+- Pipeline B2B : https://www.squadia.io/cas-clients/pipeline-b2b
+- Prospection industrielle : https://www.squadia.io/cas-clients/crm-industrie
+- Migration et data cleaning CRM : https://www.squadia.io/cas-clients/migration-crm
+- Formation commerciale : https://www.squadia.io/cas-clients/formation-vente
+- Formation IA communication : https://www.squadia.io/cas-clients/formation-ia-com
 
 ### Ressources et blog
-- Blog : https://squadia.io/blog
-- Ressources : https://squadia.io/ressources
-- Enquête IA B2B 2026 : https://squadia.io/ressources/enquete-ia-b2b
-- Guide Sales Manager : https://squadia.io/ressources/guide-sales-manager
-- Guide Marketing Manager : https://squadia.io/ressources/guide-marketing-manager
-- Channel Sales Plan : https://squadia.io/ressources/channel-sales-plan
+- Blog : https://www.squadia.io/blog
+- Ressources : https://www.squadia.io/ressources
+- Enquête IA B2B 2026 : https://www.squadia.io/ressources/enquete-ia-b2b
+- Guide Sales Manager : https://www.squadia.io/ressources/guide-sales-manager
+- Guide Marketing Manager : https://www.squadia.io/ressources/guide-marketing-manager
+- Channel Sales Plan : https://www.squadia.io/ressources/channel-sales-plan
 
 ### Entreprise et légal
-- Notre mission : https://squadia.io/notre-mission
-- À propos : https://squadia.io/a-propos
-- Contact : https://squadia.io/contact
-- Mentions légales : https://squadia.io/mentions-legales
-- Conditions de participation : https://squadia.io/ressources/conditions-participation
+- Notre mission : https://www.squadia.io/notre-mission
+- À propos : https://www.squadia.io/a-propos
+- Contact : https://www.squadia.io/contact
+- Mentions légales : https://www.squadia.io/mentions-legales
+- Conditions de participation : https://www.squadia.io/ressources/conditions-participation
 
 ## Sitemap
-https://squadia.io/sitemap.xml
+https://www.squadia.io/sitemap.xml

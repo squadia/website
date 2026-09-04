@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, ArrowLeft } from 'lucide-react';
+import { submitLead } from '../../lib/submitLead';
 
 const WEBHOOK_URL = 'https://hook.eu1.make.com/hvspkkwsnirdkb0bwb2fyx2myg42l28h';
 const CAL_LINK = 'https://cal.com/squadia/10leads';
@@ -175,26 +176,23 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
     }
     const summary = buildNotesSummary(data);
     setCalNotes(summary);
-    fetch(WEBHOOK_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        sector: data.sector,
-        companySize: data.companySize.includes('Autre')
-          ? [...data.companySize.filter((s) => s !== 'Autre'), data.companySizeOther].filter(Boolean)
-          : data.companySize,
-        geography: data.geography,
-        companyName: data.companyName,
-        website: data.website,
-        personas: data.personas.includes('Autre')
-          ? [...data.personas.filter((p) => p !== 'Autre'), data.personaOther].filter(Boolean)
-          : data.personas,
-        sells: data.sells,
-        context: data.context === 'Autre' ? data.contextOther : data.context,
-        extraNotes: data.extraNotes,
-        summary,
-      }),
-    }).catch(() => {});
+    const payload = {
+      sector: data.sector,
+      companySize: data.companySize.includes('Autre')
+        ? [...data.companySize.filter((s) => s !== 'Autre'), data.companySizeOther].filter(Boolean)
+        : data.companySize,
+      geography: data.geography,
+      companyName: data.companyName,
+      website: data.website,
+      personas: data.personas.includes('Autre')
+        ? [...data.personas.filter((p) => p !== 'Autre'), data.personaOther].filter(Boolean)
+        : data.personas,
+      sells: data.sells,
+      context: data.context === 'Autre' ? data.contextOther : data.context,
+      extraNotes: data.extraNotes,
+      summary,
+    };
+    submitLead('diagnostic-signal', WEBHOOK_URL, payload).catch(() => {});
     setStep(totalSteps);
   };
 
