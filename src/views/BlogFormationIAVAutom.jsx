@@ -3,7 +3,19 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const blog3 = '/assets/images/blog/blog3.jpeg';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'vraie-question', label: 'La vraie question' },
+  { id: 'etape-1', label: 'Étape 1 : formation' },
+  { id: 'etape-2', label: 'Étape 2 : mise en système' },
+  { id: 'etape-3', label: 'Étape 3 : mesurer' },
+  { id: 'etape-4', label: 'Étape 4 : résistances' },
+  { id: 'etape-5', label: 'Étape 5 : ancrer' },
+];
+
 export default function BlogFormationIAVAutom() {
   const [readingProgress, setReadingProgress] = useState(0);
   const router = useRouter();
@@ -140,10 +152,12 @@ export default function BlogFormationIAVAutom() {
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article style={{ maxWidth: '820px', margin: '0 auto', padding: '6rem 2rem 10rem' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto', padding: '6rem 2rem 10rem', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 780px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <article style={{ maxWidth: '780px', minWidth: 0 }}>
         <style>{`
           .article-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(249,250,251,0.75); margin-bottom: 1.6rem; }
-          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; }
+          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; scroll-margin-top: 100px; }
           .article-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: #2563EB; border-radius: 2px; margin-bottom: 1rem; }
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
@@ -154,7 +168,7 @@ export default function BlogFormationIAVAutom() {
         `}</style>
 
         <div className="article-body">
-          <p>Vos équipes savent utiliser ChatGPT. Votre entreprise, elle, n'a pas encore commencé sa transformation IA.</p>
+          <p id="introduction" style={{ scrollMarginTop: '100px' }}>Vos équipes savent utiliser ChatGPT. Votre entreprise, elle, n'a pas encore commencé sa transformation IA.</p>
           <p>Ce n'est pas la même chose. Et la confusion entre les deux coûte cher.</p>
           
           <div className="article-pullquote">
@@ -165,14 +179,14 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>La vraie question que se posent les dirigeants</h2>
+          <h2 id="vraie-question">La vraie question que se posent les dirigeants</h2>
           <p>La plupart des DG qui abordent le sujet de l'IA arrivent avec la même question implicite : <strong>par où est-ce qu'on commence ?</strong></p>
           <p>Pas "quel outil acheter". Pas "combien ça coûte". Mais vraiment : quelle est la bonne séquence pour ne pas se planter ?</p>
           <p>Ce qu'on observe sur le terrain, après avoir accompagné des PME, des ETI et des grands groupes, c'est que la séquence fait tout. L'erreur la plus fréquente n'est pas de choisir le mauvais outil. C'est de brûler les étapes.</p>
 
           <hr />
 
-          <h2>Étape 1 : la formation comme outil de découverte</h2>
+          <h2 id="etape-1">Étape 1 : la formation comme outil de découverte</h2>
           <p>Avant de savoir ce que l'IA peut faire pour votre entreprise, vos équipes doivent comprendre ce que l'IA peut faire dans leur métier. C'est une condition réelle.</p>
           <p>Au bout de deux jours de pratique sur des cas concrets, les participants commencent à identifier où l'IA crée de la valeur dans leur contexte précis. C'est exactement l'objectif d'une bonne formation.</p>
 
@@ -183,7 +197,7 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 2 : faire le pont entre compréhension et système</h2>
+          <h2 id="etape-2">Étape 2 : faire le pont entre compréhension et système</h2>
           <p>Une fois la compréhension acquise, le travail de mise en système peut commencer. Son rôle est de faire le pont entre les attentes métier et de les traduire en actions.</p>
           
           <div className="article-highlight-box">
@@ -198,7 +212,7 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 3 : mesurer ce qu'on a mis en place</h2>
+          <h2 id="etape-3">Étape 3 : mesurer ce qu'on a mis en place</h2>
           <p>C'est là que le CRM joue son rôle de colonne vertébrale. Si vous avez des outils de mesure (net new meetings, taux de conversion), vous savez si votre transformation avance.</p>
           
           <div className="article-pullquote">
@@ -207,13 +221,13 @@ export default function BlogFormationIAVAutom() {
 
           <hr />
 
-          <h2>Étape 4 : gérer les résistances</h2>
+          <h2 id="etape-4">Étape 4 : gérer les résistances</h2>
           <p>Dans toute équipe, il y a ceux qui sont ouverts et ceux qui ont construit leurs habitudes sur des décennies. Gérer les résistances, c'est faire comprendre que l'IA n'est pas une remise en question de leur compétence, mais un moyen de faire moins de ce qui coûte du temps.</p>
           <p>La meilleure façon d'amorcer le mouvement est de commencer avec les <strong>champions</strong>, ceux qui sont déjà performants et ouverts au changement.</p>
 
           <hr />
 
-          <h2>Étape 5 : ancrer les habitudes dans la durée</h2>
+          <h2 id="etape-5">Étape 5 : ancrer les habitudes dans la durée</h2>
           <p>Ce qui fait la différence, c'est la capacité à itérer et à construire des habitudes. Il faut rendre visible la valeur que chaque outil apporte à celui qui l'utilise, pas seulement à celui qui supervise.</p>
           
           <div className="article-highlight-box">
@@ -265,7 +279,8 @@ export default function BlogFormationIAVAutom() {
           </div>
         </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

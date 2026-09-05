@@ -2,7 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const blog2 = '/assets/images/blog/blog2.jpeg';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'declencheur', label: 'Ce qui déclenche un projet CRM' },
+  { id: 'perte-de-controle', label: 'La perte de contrôle' },
+  { id: 'erreur-classique', label: "L'erreur classique" },
+  { id: 'avant-le-crm', label: 'Avant le CRM' },
+  { id: 'contenu-crm', label: 'Que doit contenir le CRM' },
+  { id: 'bon-manager', label: 'Le bon manager CRM' },
+  { id: 'resume', label: 'En résumé' },
+];
+
 export default function BlogChangementCRM() {
   const [readingProgress, setReadingProgress] = useState(0);
 
@@ -138,10 +151,12 @@ export default function BlogChangementCRM() {
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article style={{ maxWidth: '820px', margin: '0 auto', padding: '6rem 2rem 10rem' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto', padding: '6rem 2rem 10rem', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 780px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <article style={{ maxWidth: '780px', minWidth: 0 }}>
         <style>{`
           .article-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(249,250,251,0.75); margin-bottom: 1.6rem; }
-          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; }
+          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; scroll-margin-top: 100px; }
           .article-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: #2563EB; border-radius: 2px; margin-bottom: 1rem; }
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
@@ -152,12 +167,12 @@ export default function BlogChangementCRM() {
         `}</style>
 
         <div className="article-body">
-          <p>Un dirigeant ne se réveille pas un matin en disant <em>"je vais changer de CRM"</em>.</p>
+          <p id="introduction" style={{ scrollMarginTop: '100px' }}>Un dirigeant ne se réveille pas un matin en disant <em>"je vais changer de CRM"</em>.</p>
           <p>Quelque chose s'est passé avant. Quelque chose de <strong>significatif</strong>. Et ce quelque chose, c'est rarement un problème d'outil.</p>
 
           <hr />
 
-          <h2>Ce qui déclenche vraiment un projet CRM</h2>
+          <h2 id="declencheur">Ce qui déclenche vraiment un projet CRM</h2>
           <p>Dans la plupart des cas, un projet CRM naît d'un événement interne fort : un changement d'actionnaire, une perte de chiffre d'affaires significative, une réorganisation, un départ de dirigeant clé. Un moment de rupture qui force l'entreprise à regarder en face ce qu'elle a vraiment comme assets : et ce qui ne fonctionne pas.</p>
           <p>C'est à ce moment-là que les questions émergent. Pas "quel CRM choisir". Mais : est-ce qu'on a le contrôle qu'on devrait avoir sur nos contrats ? Est-ce qu'on comprend vraiment ce qui se passe sur nos territoires ? Est-ce que nos process sont clairs, fluides, respectés par tout le monde ?</p>
           
@@ -169,7 +184,7 @@ export default function BlogChangementCRM() {
 
           <hr />
 
-          <h2>Ce que la perte de contrôle ressemble concrètement</h2>
+          <h2 id="perte-de-controle">Ce que la perte de contrôle ressemble concrètement</h2>
           <p>Voici ce que décrivent les dirigeants quand on creuse vraiment :</p>
           
           <div className="article-highlight-box">
@@ -191,7 +206,7 @@ export default function BlogChangementCRM() {
 
           <hr />
 
-          <h2>L'erreur classique : changer d'outil sans changer les process</h2>
+          <h2 id="erreur-classique">L'erreur classique : changer d'outil sans changer les process</h2>
           <p>La tentation est forte : acheter un nouveau CRM, migrer les données, former les équipes, et espérer que les problèmes disparaissent avec l'ancien logiciel.</p>
           <p>Ça ne fonctionne pas. Parce que les problèmes décrits ci-dessus ne viennent pas du CRM. Ils viennent des process : ou de leur absence.</p>
           
@@ -203,7 +218,7 @@ export default function BlogChangementCRM() {
 
           <hr />
 
-          <h2>Ce qui doit changer avant le CRM</h2>
+          <h2 id="avant-le-crm">Ce qui doit changer avant le CRM</h2>
           <p>Avant de toucher à l'outil, trois questions structurantes :</p>
           
           <div className="article-highlight-box">
@@ -223,7 +238,7 @@ export default function BlogChangementCRM() {
 
           <hr />
 
-          <h2>Ce que le CRM doit contenir : et ce qui ne sert à rien</h2>
+          <h2 id="contenu-crm">Ce que le CRM doit contenir : et ce qui ne sert à rien</h2>
           <p><strong>Ce qui doit être dans le CRM :</strong> la source et le contexte de chaque contact, le signal qui a déclenché la prise de contact commerciale, l'historique des interactions, le stade de maturité réel, et les raisons de perte précises.</p>
           <p><strong>Ce qui encombre le CRM sans valeur :</strong> les champs remplis pour "faire propre", les étapes de pipeline qui reflètent l'interne plutôt que la maturité du prospect, et les imports de masse sans qualification.</p>
 
@@ -233,13 +248,13 @@ export default function BlogChangementCRM() {
 
           <hr />
 
-          <h2>Le manager qui tire vraiment parti du CRM</h2>
+          <h2 id="bon-manager">Le manager qui tire vraiment parti du CRM</h2>
           <p>Un bon manager commercial donne à son équipe les moyens de travailler mieux : pas plus fort. Le CRM bien structuré permet une visibilité réelle sur le pipeline, d'identifier les deals à risque avant qu'ils soient perdus, et de coacher sur des faits plutôt que des impressions.</p>
           <p>En y ajoutant les outils d'analyse comportementale modernes, le CRM devient un levier de performance réel, pas un outil de reporting subi.</p>
 
           <hr />
 
-          <h2>En résumé</h2>
+          <h2 id="resume">En résumé</h2>
           <p>Les entreprises changent de CRM parce qu'elles ont perdu le contrôle de quelque chose d'important : et qu'elles cherchent à le reprendre. L'outil ne résout pas ce problème seul. Ce qui le résout, c'est la clarté sur ce qu'on veut voir, l'élimination des frictions, et la définition des process.</p>
           <p>Faire ça dans le bon ordre transforme un projet CRM en avantage opérationnel durable.</p>
         </div>
@@ -281,7 +296,8 @@ export default function BlogChangementCRM() {
           </div>
         </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

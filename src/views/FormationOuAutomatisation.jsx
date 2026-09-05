@@ -3,6 +3,17 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'vraie-question', label: 'La vraie question' },
+  { id: 'etape-1', label: 'Étape 1 : formation' },
+  { id: 'etape-2', label: 'Étape 2 : mise en système' },
+  { id: 'etape-3', label: 'Étape 3 : mesurer' },
+  { id: 'etape-4', label: 'Étape 4 : résistances' },
+  { id: 'etape-5', label: 'Étape 5 : ancrer' },
+];
 
 const FormationOuAutomatisation = () => {
   useScrollReveal();
@@ -58,9 +69,11 @@ const FormationOuAutomatisation = () => {
 
       {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
-        <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
-          
-          <p style={{ marginBottom: '1.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
+        <div style={{ maxWidth: '1120px', marginInline: 'auto', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 800px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <div className="fade-in" style={{ fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB', minWidth: 0 }}>
+
+          <p id="introduction" style={{ marginBottom: '1.5rem', fontSize: '1.25rem', color: '#F9FAFB', scrollMarginTop: '100px' }}>
             Vos équipes savent utiliser ChatGPT.
           </p>
           <p style={{ marginBottom: '1.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
@@ -73,7 +86,7 @@ const FormationOuAutomatisation = () => {
             La transformation IA d'une entreprise repose sur deux piliers : former les talents pour qu'ils comprennent ce que l'IA peut faire dans leur métier, et adapter les process pour que cette compréhension produise quelque chose de concret. L'un sans l'autre ne fonctionne pas. Et pourtant, la plupart des entreprises n'en activent qu'un seul.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="vraie-question" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             La vraie question que se posent les dirigeants
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -86,7 +99,7 @@ const FormationOuAutomatisation = () => {
             Ce qu'on observe sur le terrain, après avoir accompagné des PME, des ETI, des établissements publics et des groupes nationaux, c'est que la séquence fait tout. L'erreur la plus fréquente n'est pas de choisir le mauvais outil. C'est de brûler les étapes.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="etape-1" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Étape 1 : la formation comme outil de découverte
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -105,7 +118,7 @@ const FormationOuAutomatisation = () => {
             Ce qu'elle ne produit pas : un plan de transformation opérationnel intégré à votre strategie d'entreprise. Ce n'est pas son rôle, et il faut l'accepter avant d'aller plus loin.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="etape-2" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Étape 2 : faire le pont entre compréhension et système
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -121,7 +134,7 @@ const FormationOuAutomatisation = () => {
             <strong>Les agents IA métier ensuite :</strong> des outils personnalisés qui permettent à vos équipes commerciales, marketing, communication de se démultiplier avec intelligence. Préparer un rendez-vous en 5 minutes au lieu de 45. Générer des variantes de campagne sur un compte spécifique sans repartir de zéro. Faire une veille sectorielle structurée sans y passer une demi-journée. Ce n'est pas de la magie. C'est de la conception rigoureuse d'agents calibrés sur vos processus réels.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="etape-3" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Étape 3 : mesurer ce qu'on a mis en place
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -137,7 +150,7 @@ const FormationOuAutomatisation = () => {
             Si ce système n'est pas encore en place, c'est souvent le premier chantier à adresser avant même de parler d'automatisation ou de formation avancée. On ne peut pas piloter ce qu'on ne mesure pas.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="etape-4" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Étape 4 : gérer les résistances
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -153,7 +166,7 @@ const FormationOuAutomatisation = () => {
             La meilleure façon d'amorcer le mouvement, c'est souvent de commencer avec les champions. Ceux qui sont déjà les meilleurs dans l'équipe et qui sont ouverts à essayer. Quand ils montrent ce que ça change concrètement dans leur quotidien, les autres suivent. Pas tous, pas tout de suite. Mais le mouvement commence.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="etape-5" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Étape 5 : ancrer les habitudes dans la durée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -222,6 +235,7 @@ const FormationOuAutomatisation = () => {
             </Link>
           </div>
 
+        </div>
         </div>
       </section>
 

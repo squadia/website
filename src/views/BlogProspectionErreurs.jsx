@@ -3,7 +3,18 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const blog4 = '/assets/images/blog/blog4.jpeg';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'erreur-1', label: 'Erreur 1 : méthode' },
+  { id: 'erreur-2', label: 'Erreur 2 : fenêtre de tir' },
+  { id: 'erreur-3', label: 'Erreur 3 : ton catalogue' },
+  { id: 'erreur-4', label: 'Erreur 4 : volume/cadence' },
+  { id: 'erreur-5', label: 'Erreur 5 : silos' },
+];
+
 export default function BlogProspectionErreurs() {
   const [readingProgress, setReadingProgress] = useState(0);
   const router = useRouter();
@@ -140,10 +151,12 @@ export default function BlogProspectionErreurs() {
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article style={{ maxWidth: '820px', margin: '0 auto', padding: '6rem 2rem 10rem' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto', padding: '6rem 2rem 10rem', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 780px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <article style={{ maxWidth: '780px', minWidth: 0 }}>
         <style>{`
           .article-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(249,250,251,0.75); margin-bottom: 1.6rem; }
-          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; }
+          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; scroll-margin-top: 100px; }
           .article-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: #2563EB; border-radius: 2px; margin-bottom: 1rem; }
           .article-body strong { color: #F9FAFB; font-weight: 700; }
           .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
@@ -154,12 +167,12 @@ export default function BlogProspectionErreurs() {
         `}</style>
 
         <div className="article-body">
-          <p>La prospection multicanale, ce n'est pas une question de chance ni de volume. C'est une question de méthode, de timing, et d'alignement entre les équipes qui la portent.</p>
+          <p id="introduction" style={{ scrollMarginTop: '100px' }}>La prospection multicanale, ce n'est pas une question de chance ni de volume. C'est une question de méthode, de timing, et d'alignement entre les équipes qui la portent.</p>
           <p>Voici les cinq erreurs qu'on observe le plus souvent sur le terrain, et ce qui change quand on les corrige.</p>
 
           <hr />
 
-          <h2>Erreur 1 : confier les emails à des profils sans méthode</h2>
+          <h2 id="erreur-1">Erreur 1 : confier les emails à des profils sans méthode</h2>
           <p>Écrire un bon email de prospection, ce n'est pas facile. Par email, vous n'avez qu'une seule arme&nbsp;: <strong>vos mots.</strong> Et ça ne s'improvise pas.</p>
           <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.</p>
           
@@ -169,14 +182,14 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 2 : ignorer la fenêtre de tir</h2>
+          <h2 id="erreur-2">Erreur 2 : ignorer la fenêtre de tir</h2>
           <p>Le timing, c'est ce qui fait la différence entre un email ignoré et un rendez-vous décroché.</p>
           <p>Selon Gartner, <strong>60% du budget</strong> d'un manager arrivé depuis moins de 6 mois est engagé dès sa prise de poste. C'est une fenêtre rare&nbsp;: la personne n'a pas encore ses fournisseurs habituels.</p>
           <p>Utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Si vous connaissez leur feuille de route, votre email arrive comme une réponse à un besoin actuel.</p>
 
           <hr />
 
-          <h2>Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
+          <h2 id="erreur-3">Erreur 3 : écrire comme un catalogue, pas comme un humain</h2>
           <p><em>"Je vous contacte pour vous présenter notre solution innovante..."</em>&nbsp;: si vous commencez comme ça, vous êtes déjà perdu.</p>
           <p>Un email de prospection est un premier contact humain. Votre prospect doit sentir que vous comprenez ses problématiques. L'outil ne fait pas tout&nbsp;: la compétence relationnelle reste le levier principal.</p>
 
@@ -187,7 +200,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
+          <h2 id="erreur-4">Erreur 4 : vouloir faire du volume sans cadence adaptée</h2>
           <p>Envoyer 1 000 emails peut sembler ambitieux, mais si votre équipe n'est pas calibrée, vous vous épuiserez avant même de pouvoir mesurer l'impact.</p>
           
           <div className="article-pullquote">
@@ -198,7 +211,7 @@ export default function BlogProspectionErreurs() {
 
           <hr />
 
-          <h2>Erreur 5 : laisser marketing et ventes travailler en silos</h2>
+          <h2 id="erreur-5">Erreur 5 : laisser marketing et ventes travailler en silos</h2>
           <p>C'est un classique&nbsp;: le marketing lance une campagne que les commerciaux ne relaient pas. Résultat&nbsp;: double dépense et messages contradictoires.</p>
           <p>Ce qui marche, c'est <strong>l'alignement.</strong> Le marketing prépare du contenu contextualisé, et les commerciaux s'en servent comme levier. Un commercial devient deux à trois fois plus productif quand chaque canal travaille pour lui.</p>
 
@@ -244,7 +257,8 @@ export default function BlogProspectionErreurs() {
           </div>
         </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

@@ -2,7 +2,17 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const nettoyageData = '/assets/images/blog/cleaningdata.jpeg';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'nettoyage', label: 'Le nettoyage' },
+  { id: 'segmentation', label: 'La segmentation' },
+  { id: 'enrichissement', label: "L'enrichissement" },
+  { id: 'clay', label: 'Clay.com' },
+  { id: 'ce-que-ca-change', label: 'Ce que ça change' },
+];
 
 export default function DataB2B() {
   const [readingProgress, setReadingProgress] = useState(0);
@@ -159,7 +169,9 @@ export default function DataB2B() {
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article style={{ maxWidth: '820px', margin: '0 auto', padding: '2rem 2rem 8rem' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto', padding: '2rem 2rem 8rem', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 780px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <article style={{ maxWidth: '780px', minWidth: 0 }}>
 
         <style>{`
           .article-body p {
@@ -176,6 +188,7 @@ export default function DataB2B() {
             margin-bottom: 1.2rem;
             line-height: 1.25;
             letter-spacing: -0.01em;
+            scroll-margin-top: 100px;
           }
           .article-body h2::before {
             content: '';
@@ -254,7 +267,7 @@ export default function DataB2B() {
 
         <div className="article-body">
 
-          <p><em>Avant de lancer une campagne, avant de construire une séquence de prospection, avant même de choisir un outil : il y a un travail que personne n'a envie de faire et que tout le monde finit par regretter d'avoir sauté.</em></p>
+          <p id="introduction" style={{ scrollMarginTop: '100px' }}><em>Avant de lancer une campagne, avant de construire une séquence de prospection, avant même de choisir un outil : il y a un travail que personne n'a envie de faire et que tout le monde finit par regretter d'avoir sauté.</em></p>
 
           <div className="article-pullquote">
             <p>Nettoyer ses données. Les segmenter. Les enrichir. Ce n'est pas glamour. Mais c'est ce qui sépare une campagne qui tourne de celle qui s'essouffle après deux semaines.</p>
@@ -262,7 +275,7 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>Le nettoyage : la vaisselle de la data</h2>
+          <h2 id="nettoyage">Le nettoyage : la vaisselle de la data</h2>
 
           <p>Le nettoyage, c'est un peu comme faire la vaisselle après un bon repas. Personne n'a envie. Mais si vous ne le faites pas, le prochain dîner sera un cauchemar.</p>
 
@@ -279,7 +292,7 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>La segmentation : parler à tout le monde, c'est parler à personne</h2>
+          <h2 id="segmentation">La segmentation : parler à tout le monde, c'est parler à personne</h2>
 
           <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence.</p>
 
@@ -293,7 +306,7 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>L'enrichissement : vos données sont incomplètes, et ce n'est pas grave</h2>
+          <h2 id="enrichissement">L'enrichissement : vos données sont incomplètes, et ce n'est pas grave</h2>
 
           <p>La plupart des CRM ressemblent à un puzzle avec des pièces manquantes. C'est normal. Ce qui l'est moins, c'est de lancer une campagne sans avoir comblé les trous.</p>
 
@@ -312,7 +325,7 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>Clay.com : puissant, mais pas pour tout le monde</h2>
+          <h2 id="clay">Clay.com : puissant, mais pas pour tout le monde</h2>
 
           <p>Si vous ne connaissez pas <a href="http://Clay.com" target="_blank" rel="noopener noreferrer">Clay.com</a>, c'est un peu le Notion de la data commerciale. Vous créez des tableaux intelligents qui vont chercher de l'information automatiquement, la formatent et la rendent exploitable pour vos campagnes.</p>
 
@@ -320,7 +333,7 @@ export default function DataB2B() {
 
           <hr />
 
-          <h2>Ce que tout ça change réellement</h2>
+          <h2 id="ce-que-ca-change">Ce que tout ça change réellement</h2>
 
           <p>Le nettoyage évite de passer pour un amateur. La segmentation rend les messages plus justes et les efforts mieux alloués. L'enrichissement donne aux commerciaux les informations dont ils ont besoin pour arriver en rendez-vous préparés.</p>
 
@@ -385,7 +398,8 @@ export default function DataB2B() {
           </Link>
         </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

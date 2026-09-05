@@ -2,7 +2,20 @@
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const blog1 = '/assets/images/blog/blog1.png';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'ce-qui-etait-previsible', label: 'Ce qui était prévisible' },
+  { id: 'grands-groupes-depasses', label: 'Grands groupes dépassés' },
+  { id: 'le-chiffre-cle', label: 'Le chiffre clé' },
+  { id: 'deja-possible', label: 'Ce qui est déjà possible' },
+  { id: 'signe-revelateur', label: 'Le signe révélateur' },
+  { id: '3-questions', label: '3 questions avant de choisir' },
+  { id: 'comment-sequencer', label: 'Comment séquencer' },
+];
+
 export default function BlogStrategieIAPME() {
   const [readingProgress, setReadingProgress] = useState(0);
 
@@ -196,7 +209,9 @@ export default function BlogStrategieIAPME() {
       </section>
 
       {/* ═══ ARTICLE BODY ═══ */}
-      <article style={{ maxWidth: '820px', margin: '0 auto', padding: '2rem 2rem 8rem' }}>
+      <div style={{ maxWidth: '1180px', margin: '0 auto', padding: '2rem 2rem 8rem', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 780px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <article style={{ maxWidth: '780px', minWidth: 0 }}>
 
         {/* Article styles inline via a wrapper */}
         <style>{`
@@ -214,6 +229,7 @@ export default function BlogStrategieIAPME() {
             margin-bottom: 1.2rem;
             line-height: 1.25;
             letter-spacing: -0.01em;
+            scroll-margin-top: 100px;
           }
           .article-body h2::before {
             content: '';
@@ -307,7 +323,7 @@ export default function BlogStrategieIAPME() {
 
         <div className="article-body">
 
-          <p><em>Tout le monde parle de strategie IA.</em></p>
+          <p id="introduction" style={{ scrollMarginTop: '100px' }}><em>Tout le monde parle de strategie IA.</em></p>
           <p><em>Très peu d'entreprises en ont une qui fonctionne réellement.</em></p>
 
           <div className="article-pullquote">
@@ -316,7 +332,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce que tout le monde a vu arriver : et que peu ont vraiment suivi</h2>
+          <h2 id="ce-qui-etait-previsible">Ce que tout le monde a vu arriver : et que peu ont vraiment suivi</h2>
 
           <p>Il y a trois ans, GPT-3 était une curiosité de labo. En moins d'un an, GPT-4 était connecté à internet, capable de chercher, de lire, de répondre en temps réel. En parallèle, la génération d'images a évolué à une vitesse que personne n'avait vraiment anticipée. Tout ça en 18 mois.</p>
 
@@ -330,7 +346,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Pourquoi même les grands groupes se font dépasser</h2>
+          <h2 id="grands-groupes-depasses">Pourquoi même les grands groupes se font dépasser</h2>
 
           <p>On aurait pu penser que les grandes structures, avec leurs budgets et leurs équipes dédiées, auraient l'avantage. C'est souvent l'inverse.</p>
 
@@ -345,7 +361,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Le vrai chiffre qu'il faut avoir en tête</h2>
+          <h2 id="le-chiffre-cle">Le vrai chiffre qu'il faut avoir en tête</h2>
 
           <div className="article-stat">
             <div className="article-stat-number">80%</div>
@@ -361,7 +377,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Ce qu'il est déjà possible de faire : et que beaucoup ignorent</h2>
+          <h2 id="deja-possible">Ce qu'il est déjà possible de faire : et que beaucoup ignorent</h2>
 
           <p>Il n'est pas nécessaire de vouloir aller sur la Lune pour tirer parti de l'IA. Si l'objectif est d'aller de Paris à Limoges dans les meilleures conditions, pas besoin d'une fusée. Il y a besoin du bon train.</p>
 
@@ -386,7 +402,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Un signe révélateur que peu de dirigeants prennent au sérieux</h2>
+          <h2 id="signe-revelateur">Un signe révélateur que peu de dirigeants prennent au sérieux</h2>
 
           <p>Regardez votre site internet.</p>
 
@@ -400,7 +416,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Les 3 questions à se poser avant de choisir un outil</h2>
+          <h2 id="3-questions">Les 3 questions à se poser avant de choisir un outil</h2>
 
           <div className="article-highlight-box">
             <h3>1. Où perdons-nous le plus de temps sur des tâches à faible valeur ?</h3>
@@ -419,7 +435,7 @@ export default function BlogStrategieIAPME() {
 
           <hr />
 
-          <h2>Comment séquencer</h2>
+          <h2 id="comment-sequencer">Comment séquencer</h2>
 
           {/* Timeline */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', margin: '2rem 0' }}>
@@ -514,7 +530,8 @@ export default function BlogStrategieIAPME() {
           </div>
         </div>
 
-      </article>
+        </article>
+      </div>
     </div>
   );
 }

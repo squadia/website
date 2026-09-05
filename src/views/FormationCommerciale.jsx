@@ -3,7 +3,20 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
 const bgFormation = '/assets/images/blog/formationcommercialeB2B.jpeg';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'methode-de-vente', label: 'La méthode de vente' },
+  { id: 'sales-awareness', label: 'Le sales awareness' },
+  { id: 'ce-que-ia-change', label: "Ce que l'IA change" },
+  { id: 'junior-senior', label: 'Junior vs senior' },
+  { id: 'erreur-fonctionnalites', label: "L'erreur des fonctionnalités" },
+  { id: 'gagner-a-plusieurs', label: 'Gagner un deal à plusieurs' },
+  { id: 'ce-que-ca-change', label: 'Ce que ça change' },
+];
+
 const FormationCommerciale = () => {
   useScrollReveal();
   const [readingProgress, setReadingProgress] = useState(0);
@@ -78,16 +91,18 @@ const FormationCommerciale = () => {
 
       {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
-        <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
-          
-          <p style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
+        <div style={{ maxWidth: '1120px', marginInline: 'auto', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 800px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <div className="fade-in" style={{ fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB', minWidth: 0 }}>
+
+          <p id="introduction" style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB', scrollMarginTop: '100px' }}>
             77% des acheteurs estiment que les commerciaux ne comprennent pas leurs problématiques. C'est un chiffre Forrester qui date un peu, mais qui reste juste. Pas parce que les commerciaux manquent de bonne volonté. Parce qu'ils manquent de méthode, de préparation, et parfois des bons outils pour aller chercher ce qui ne se dit pas spontanément dans un rendez-vous.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Former des équipes commerciales B2B, c'est précisément travailler sur ces trois dimensions à la fois.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="methode-de-vente" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             La méthode de vente, socle que beaucoup d'entreprises n'ont pas encore posé
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -100,7 +115,7 @@ const FormationCommerciale = () => {
             Ce qu'on observe dans les entreprises qui n'ont pas encore de méthode installée : les commerciaux font le lièvre sur des propositions commerciales sans savoir s'ils ont vraiment coché les bonnes cases. Ils ont l'impression d'avoir bien travaillé un deal, mais ils ne peuvent pas le démontrer. Et le manager qui a la responsabilité d'un chiffre ne sait pas sur quoi s'appuyer pour défendre ses projections.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="sales-awareness" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Le sales awareness, ce que la méthode seule ne donne pas
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -113,7 +128,7 @@ const FormationCommerciale = () => {
             Le sales awareness ne s'apprend pas dans un manuel. Il se développe par l'exposition à des situations réelles, par le jeu de rôles, par le retour d'expérience structuré. C'est pour ça que nos formations commerciales intègrent des mises en situation concrètes où les participants jouent à tour de rôle l'acheteur, le commercial et le manager. Ce changement de perspective change la façon dont on prépare et conduit les rendez-vous.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="ce-que-ia-change" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Ce que l'IA change dans la préparation et la conduite des rendez-vous B2B
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -129,7 +144,7 @@ const FormationCommerciale = () => {
             Ce n'est pas une liste d'outils pour faire joli. C'est une façon concrète de récupérer du temps sur les tâches à faible valeur pour le concentrer sur ce qui crée vraiment de la valeur : la relation, la compréhension des enjeux, la construction de la confiance.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="junior-senior" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Junior et senior n'ont pas besoin de la même chose
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -139,7 +154,7 @@ const FormationCommerciale = () => {
             Les former de la même façon, c'est perdre du temps et frustrer tout le monde. Une formation efficace s'adapte au niveau, aux typologies de comptes travaillés, et aux situations réelles que chaque commercial va rencontrer.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="erreur-fonctionnalites" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Vendre par les fonctionnalités, l'erreur classique
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -149,7 +164,7 @@ const FormationCommerciale = () => {
             C'est valable pour le pitch oral, mais aussi pour la façon dont on prépare une proposition commerciale, dont on structure un plan de compte, dont on anticipe les objections. L'IA peut aider à générer plusieurs angles d'approche sur un compte spécifique en quelques minutes. Ce qui prenait une demi-heure de réflexion peut se faire en itérant rapidement avec le bon outil.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="gagner-a-plusieurs" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Un deal se gagne rarement seul
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -159,7 +174,7 @@ const FormationCommerciale = () => {
             Apprendre à orchestrer les ressources autour de soi sans autorité hiérarchique, c'est l'un des sauts de maturité les plus importants dans une carrière commerciale. Et ça change complètement la façon de gérer un territoire.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="ce-que-ca-change" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Ce que ça change dans les résultats
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -205,6 +220,7 @@ const FormationCommerciale = () => {
             </Link>
           </div>
 
+        </div>
         </div>
       </section>
 

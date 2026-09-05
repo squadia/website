@@ -3,6 +3,18 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
+import ArticleTOC from '../components/blog/ArticleTOC';
+
+const TOC_SECTIONS = [
+  { id: 'introduction', label: 'Introduction' },
+  { id: 'ce-qui-etait-previsible', label: 'Ce qui était prévisible' },
+  { id: 'grands-groupes-depasses', label: 'Grands groupes dépassés' },
+  { id: 'le-chiffre-cle', label: 'Le chiffre clé' },
+  { id: 'deja-possible', label: 'Ce qui est déjà possible' },
+  { id: 'signe-revelateur', label: 'Le signe révélateur' },
+  { id: '3-questions', label: '3 questions avant de choisir' },
+  { id: 'comment-sequencer', label: 'Comment séquencer' },
+];
 
 const StrategieIAPME = () => {
   useScrollReveal();
@@ -58,15 +70,17 @@ const StrategieIAPME = () => {
 
       {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
-        <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
+        <div style={{ maxWidth: '1120px', marginInline: 'auto', display: 'grid', gridTemplateColumns: 'minmax(180px, 220px) minmax(0, 800px)', gap: '4rem', justifyContent: 'center' }}>
+        <ArticleTOC sections={TOC_SECTIONS} />
+        <div className="fade-in" style={{ fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB', minWidth: 0 }}>
           
-          <p style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
+          <p id="introduction" style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB', scrollMarginTop: '100px' }}>
             Tout le monde parle de strategie IA.<br/><br/>
             Très peu d'entreprises en ont une qui fonctionne réellement.<br/><br/>
             La différence ne vient pas du budget. Elle vient de la séquence.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="ce-qui-etait-previsible" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Ce que tout le monde a vu arriver : et que peu ont vraiment suivi
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -85,7 +99,7 @@ const StrategieIAPME = () => {
             Ce que ça signifie concrètement : <strong>le champ du possible s'est élargi plus vite que la capacité de la plupart des organisations à le cartographier.</strong> Et c'est précisément là que le problème commence.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="grands-groupes-depasses" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Pourquoi même les grands groupes se font dépasser
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -101,7 +115,7 @@ const StrategieIAPME = () => {
             Pour une PME ou une ETI qui cherche un partenaire IA, ça a une implication directe : la taille du cabinet n'est pas un indicateur de pertinence dans un domaine qui évolue aussi vite.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="le-chiffre-cle" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Le vrai chiffre qu'il faut avoir en tête
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -114,7 +128,7 @@ const StrategieIAPME = () => {
             En France, le paradoxe est particulièrement net : 94% des dirigeants déclarent vouloir investir dans l'IA. Seulement 2% estiment avoir obtenu un retour sur investissement réel en 2024. L'écart entre intention et résultat, c'est une question de méthode, pas de budget.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="deja-possible" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Ce qu'il est déjà possible de faire : et que beaucoup ignorent
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -132,7 +146,7 @@ const StrategieIAPME = () => {
             Le coût réel d'une automatisation bien conçue sur des outils du marché tourne entre 0,05 et 0,10€ par exécution. Ce qui se mesure, c'est la valeur produite par rapport à ce qu'on dépensait avant.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="signe-revelateur" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Un signe révélateur que peu de dirigeants prennent au sérieux
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -148,7 +162,7 @@ const StrategieIAPME = () => {
             Et il y a déjà des solutions accessibles pour y remédier, rapidement, sans attendre un projet de transformation à deux ans.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="3-questions" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Les 3 questions à se poser avant de choisir un outil
           </h2>
           <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -166,7 +180,7 @@ const StrategieIAPME = () => {
             </div>
           </div>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 id="comment-sequencer" style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3, scrollMarginTop: '100px' }}>
             Comment séquencer
           </h2>
           <div style={{ marginBottom: '3rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
@@ -230,6 +244,7 @@ const StrategieIAPME = () => {
             </Link>
           </div>
 
+        </div>
         </div>
       </section>
 
