@@ -170,6 +170,8 @@ const HomeCSS = `
 
 @keyframes drawProgressAccordionHome { from { width: 0%; } to { width: 100%; } }
 
+.zoom-cta-img { width: 100% !important; height: 100% !important; }
+
 .grid-3col-divider { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 2rem; }
 @media (max-width: 900px) { .grid-3col-avant { grid-template-columns: 1fr !important; } }
 
@@ -877,6 +879,83 @@ const FormationTeaserModal = ({ data, onClose }) => (
   </AnimatePresence>
 );
 
+// ═══ 09 — CTA FINAL : l'image passe du plein écran au bloc arrondi au fil du scroll ═══
+const ZOOM_CTA_VH = 180; // distance de scroll sur laquelle se joue le "zoom" (plein écran → bloc)
+
+const ZoomRevealCTA = ({ isMobile, ctaRef }) => {
+  const wrapperRef = useRef(null);
+  const containerMeasureRef = useRef(null);
+  const dirtyRef = useRef(true);
+  const [progress, setProgress] = useState(0);
+  const [viewport, setViewport] = useState({ w: 1200, h: 800 });
+  const [containerWidth, setContainerWidth] = useState(1200);
+
+  useEffect(() => {
+    const measure = () => {
+      setViewport({ w: window.innerWidth, h: window.innerHeight });
+      if (containerMeasureRef.current) setContainerWidth(containerMeasureRef.current.getBoundingClientRect().width);
+    };
+    measure();
+    window.addEventListener('resize', measure);
+    return () => window.removeEventListener('resize', measure);
+  }, []);
+
+  useEffect(() => {
+    const onScroll = () => { dirtyRef.current = true; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    let rafId;
+    const tick = () => {
+      if (dirtyRef.current) {
+        dirtyRef.current = false;
+        const wrapper = wrapperRef.current;
+        if (wrapper) {
+          const rect = wrapper.getBoundingClientRect();
+          const total = rect.height - window.innerHeight;
+          const p = total > 0 ? Math.min(1, Math.max(0, -rect.top / total)) : 0;
+          setProgress(p);
+        }
+      }
+      rafId = requestAnimationFrame(tick);
+    };
+    rafId = requestAnimationFrame(tick);
+    return () => { window.removeEventListener('scroll', onScroll); cancelAnimationFrame(rafId); };
+  }, []);
+
+  const eased = progress * progress * (3 - 2 * progress); // smoothstep : démarre et termine en douceur
+  const endHeight = isMobile ? 420 : 600;
+  const cardWidth = viewport.w - (viewport.w - containerWidth) * eased;
+  const cardHeight = viewport.h - (viewport.h - endHeight) * eased;
+  const cardRadius = (isMobile ? 16 : 20) * eased;
+  const textOpacity = Math.max(0, Math.min(1, (progress - 0.6) / 0.35));
+
+  return (
+    <section
+      ref={(node) => { wrapperRef.current = node; if (ctaRef) ctaRef.current = node; }}
+      style={{ position: 'relative', height: `${ZOOM_CTA_VH}vh`, background: '#060612' }}
+    >
+      <div ref={containerMeasureRef} className="container" style={{ height: 0, overflow: 'hidden', visibility: 'hidden' }} aria-hidden="true" />
+      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none', opacity: 0.25 + eased * 0.75 }} />
+        <div style={{ position: 'relative', width: `${cardWidth}px`, height: `${cardHeight}px`, borderRadius: `${cardRadius}px`, overflow: 'hidden', border: '1px solid rgba(68,204,255,.1)', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', zIndex: 1 }}>
+          <img className="zoom-cta-img" src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, objectFit: 'cover', objectPosition: isMobile ? 'center 20%' : 'center top', filter: isMobile ? 'brightness(0.55) saturate(1.1)' : 'brightness(0.75) saturate(1.1)', pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(6,6,18,0.85) 0%, rgba(6,6,18,0.55) 35%, rgba(6,6,18,0.75) 70%, rgba(6,6,18,0.95) 100%)' : 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', opacity: textOpacity, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', inset: 0, zIndex: 2, textAlign: 'center', padding: isMobile ? '40px 24px 48px' : '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', opacity: textOpacity, transform: `translateY(${(1 - textOpacity) * 16}px)`, pointerEvents: textOpacity > 0.05 ? 'auto' : 'none' }}>
+            <div>
+              <span style={{ fontSize: isMobile ? '0.7rem' : '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
+              <p style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Parlons de votre prospection</h2>
+            </div>
+            <div>
+              <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour comprendre votre contexte<br />et diagnostiquer une approche.</p>
+              <Link href="/contact" style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: isMobile ? '1rem 1.8rem' : '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block' }}>Prendre Rendez-Vous</Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Home = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
@@ -1299,26 +1378,7 @@ const Home = () => {
       </section>
 
       {/* ═══ 09 — CTA FINAL ═══ */}
-      <section ref={ctaRef} style={{ background: '#060612', padding: '60px 0 120px' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: isMobile ? '16px' : '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: isMobile ? '420px' : '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? 'center 20%' : 'center top', filter: isMobile ? 'brightness(0.55) saturate(1.1)' : 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(6,6,18,0.85) 0%, rgba(6,6,18,0.55) 35%, rgba(6,6,18,0.75) 70%, rgba(6,6,18,0.95) 100%)' : 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: isMobile ? '40px 24px 48px' : '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div>
-                <span style={{ fontSize: isMobile ? '0.7rem' : '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Parlons de votre prospection</h2>
-              </div>
-              <div>
-                <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour comprendre votre contexte<br />et diagnostiquer une approche.</p>
-                <Link href="/contact" style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: isMobile ? '1rem 1.8rem' : '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ZoomRevealCTA isMobile={isMobile} ctaRef={ctaRef} />
 
     </div>
   );
