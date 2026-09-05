@@ -50,6 +50,7 @@ const SECTIONS = [
   {
     title: 'Ressources',
     links: [
+      { href: '/blog',                                label: 'Blog' },
       { href: '/automatisation-ia.html',              label: 'Automatisation IA' },
       { href: '/ressources/enquete-ia-b2b',           label: 'Enquête IA 2026' },
       { href: '/ressources/guide-sales-manager',      label: 'Guide Sales Manager' },

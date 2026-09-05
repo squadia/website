@@ -59,6 +59,7 @@ const Footer = () => (
         <div>
           <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Ressources</h4>
           <ul style={{ display: 'flex', flexDirection: 'column' }}>
+            <li><Link href="/blog" className="footer-link">Blog</Link></li>
             <li><a href="/automatisation-ia.html" className="footer-link">Automatisation IA</a></li>
             <li><Link href="/ressources/enquete-ia-b2b" className="footer-link">Enquête IA 2026</Link></li>
             <li><Link href="/ressources/guide-sales-manager" className="footer-link">Guide Sales Manager</Link></li>
