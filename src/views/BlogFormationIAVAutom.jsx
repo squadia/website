@@ -188,7 +188,7 @@ export default function BlogFormationIAVAutom() {
 
           <h2 id="etape-1">Étape 1 : la formation comme outil de découverte</h2>
           <p>Avant de savoir ce que l'IA peut faire pour votre entreprise, vos équipes doivent comprendre ce que l'IA peut faire dans leur métier. C'est une condition réelle.</p>
-          <p>Au bout de deux jours de pratique sur des cas concrets, les participants commencent à identifier où l'IA crée de la valeur dans leur contexte précis. C'est exactement l'objectif d'une bonne formation.</p>
+          <p>Quand on anime des ateliers avec des équipes commerciales, marketing ou communication, que ce soit à la Mairie de Lyon, chez Groupama, ou dans des PME industrielles, le même phénomène se produit à chaque fois : au bout de deux jours de pratique sur des cas concrets, les participants ne parlent plus d'IA en général. Ils parlent de leurs processus, de leurs irritants, de leurs tâches répétitives. C'est exactement l'objectif d'une bonne formation.</p>
 
           <div className="article-highlight-box">
             <h3>Ce qu'une formation bien faite produit :</h3>
@@ -213,7 +213,7 @@ export default function BlogFormationIAVAutom() {
           <hr />
 
           <h2 id="etape-3">Étape 3 : mesurer ce qu'on a mis en place</h2>
-          <p>C'est là que le CRM joue son rôle de colonne vertébrale. Si vous avez des outils de mesure (net new meetings, taux de conversion), vous savez si votre transformation avance.</p>
+          <p>C'est là que <Link href="/blog/changement-crm-organisation" style={{ color: '#44CCFF' }}>le CRM joue son rôle de colonne vertébrale</Link>. Si vous avez des outils de mesure (net new meetings, taux de conversion), vous savez si votre transformation avance.</p>
           
           <div className="article-pullquote">
             <p>On ne peut pas piloter ce qu'on ne mesure pas. Si ce système n'est pas en place, c'est souvent le premier chantier à adresser.</p>

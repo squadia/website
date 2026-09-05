@@ -294,7 +294,7 @@ export default function DataB2B() {
 
           <h2 id="segmentation">La segmentation : parler à tout le monde, c'est parler à personne</h2>
 
-          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence.</p>
+          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence. C'est justement le type d'erreur qui plombe une <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ color: '#2563EB' }}>campagne de prospection multicanale</Link>, même bien écrite.</p>
 
           <p>Un compte Tier 1 mérite une approche personnalisée, une recherche préalable, un message construit autour de sa situation spécifique. Un compte Tier 3 peut recevoir une séquence plus automatisée. Ce n'est pas une question de respect : c'est une question d'allocation intelligente du temps de vos équipes.</p>
 

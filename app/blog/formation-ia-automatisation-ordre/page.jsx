@@ -15,6 +15,7 @@ const article = articleSchema({
   path: "/blog/formation-ia-automatisation-ordre",
   image: "/assets/images/blog/blog3.jpeg",
   datePublished: "2026-04-01",
+  dateModified: "2026-09-05",
 });
 
 const breadcrumb = breadcrumbSchema([

@@ -240,7 +240,7 @@ export default function BlogChangementCRM() {
 
           <h2 id="contenu-crm">Ce que le CRM doit contenir : et ce qui ne sert à rien</h2>
           <p><strong>Ce qui doit être dans le CRM :</strong> la source et le contexte de chaque contact, le signal qui a déclenché la prise de contact commerciale, l'historique des interactions, le stade de maturité réel, et les raisons de perte précises.</p>
-          <p><strong>Ce qui encombre le CRM sans valeur :</strong> les champs remplis pour "faire propre", les étapes de pipeline qui reflètent l'interne plutôt que la maturité du prospect, et les imports de masse sans qualification.</p>
+          <p><strong>Ce qui encombre le CRM sans valeur :</strong> les champs remplis pour "faire propre", les étapes de pipeline qui reflètent l'interne plutôt que la maturité du prospect, et <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ color: '#44CCFF' }}>les imports de masse sans qualification</Link>.</p>
 
           <div className="article-pullquote">
             <p>La règle simple : si une donnée ne permet pas de prendre une meilleure décision commerciale, elle n'a pas sa place dans le CRM.</p>

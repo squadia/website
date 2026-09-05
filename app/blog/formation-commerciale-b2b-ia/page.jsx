@@ -15,6 +15,7 @@ const article = articleSchema({
   path: "/blog/formation-commerciale-b2b-ia",
   image: "/assets/images/blog/formationcommercialeB2B.jpeg",
   datePublished: "2026-04-01",
+  dateModified: "2026-09-05",
 });
 
 const breadcrumb = breadcrumbSchema([

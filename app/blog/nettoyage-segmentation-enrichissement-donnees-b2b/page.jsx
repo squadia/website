@@ -15,6 +15,7 @@ const article = articleSchema({
   path: "/blog/nettoyage-segmentation-enrichissement-donnees-b2b",
   image: "/assets/images/blog/cleaningdata.jpeg",
   datePublished: "2026-04-01",
+  dateModified: "2026-09-05",
 });
 
 const breadcrumb = breadcrumbSchema([

@@ -15,6 +15,7 @@ const article = articleSchema({
   path: "/blog/prospection-multicanale-b2b-erreurs",
   image: "/assets/images/blog/blog4.jpeg",
   datePublished: "2026-04-01",
+  dateModified: "2026-09-05",
 });
 
 const breadcrumb = breadcrumbSchema([

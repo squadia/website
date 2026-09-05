@@ -174,7 +174,7 @@ export default function BlogProspectionErreurs() {
 
           <h2 id="erreur-1">Erreur 1 : confier les emails à des profils sans méthode</h2>
           <p>Écrire un bon email de prospection, ce n'est pas facile. Par email, vous n'avez qu'une seule arme&nbsp;: <strong>vos mots.</strong> Et ça ne s'improvise pas.</p>
-          <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.</p>
+          <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle. Et ça, aucune méthode ne peut le rattraper si <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ color: '#44CCFF' }}>la base de contacts elle-même est mal nettoyée ou mal segmentée</Link> en amont.</p>
           
           <div className="article-pullquote">
             <p>Ce qui marche, c'est l'inverse : des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation.</p>

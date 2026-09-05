@@ -638,7 +638,7 @@ const LandingDG = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '1200px', marginInline: 'auto' }}>
 
-            <Link href="/blog/strategie-ia-pme-eti" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <Link href="/blog/strategie-ia-pme-sequence" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogStrategieIAImg} alt="Stratégie IA en PME et ETI" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
@@ -656,7 +656,7 @@ const LandingDG = () => {
               </div>
             </Link>
 
-            <Link href="/blog/formation-ia-ou-automatisation" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <Link href="/blog/formation-ia-automatisation-ordre" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogFormationAutomImg} alt="Formation IA ou automatisation" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
                 <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
