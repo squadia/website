@@ -378,7 +378,7 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   return (
     <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#050510' } : undefined}>
       <div className="hero-dynamic" style={!isMobile ? { position: 'sticky', top: 0, height: '100vh' } : undefined}>
-        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top' }} />
+        <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" poster="/assets/video/mainvideo-poster.webp" preload="auto" fetchPriority="high" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top' }} />
         {!isMobile && (
           <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1 }} />
         )}
