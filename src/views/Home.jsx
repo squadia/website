@@ -1111,7 +1111,7 @@ const Home = () => {
         <div className="container fade-in">
           <div style={{ marginBottom: '3.5rem', maxWidth: '760px' }}>
             <p style={kicker}>NOTRE SERVICE</p>
-            <h2 style={{ ...h2Style, marginBottom: '1.25rem' }}>Data, prospection, transmission</h2>
+            <h2 style={{ ...h2Style, marginBottom: '1.25rem' }}>Data, prospection, formation</h2>
             <p style={chapo}>Trois étapes d'un même travail : trouver les bonnes entreprises, les adresser et les appeler, puis transmettre à vos équipes les outils et méthodes pour qu'elles prennent le relais si elles le souhaitent.</p>
           </div>
 
@@ -1141,12 +1141,12 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}>
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <span style={{ ...kicker, display: 'inline-block', marginBottom: '0.4rem' }}>APRÈS</span>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Transmission</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Formation</h3>
               </div>
               <div style={{ position: 'relative' }}>
                 <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
-                  <BriqueCard Icon={GraduationCap} title="Transmission" desc="Transmettre ce qui marche : SPIN Selling, outils IA, Automatisation Veille et Outbound, Production contenu. Vos équipes sont formées à la prospection, au marketing et à la communication avec l'IA." link="/formations" />
+                  <BriqueCard Icon={GraduationCap} title="Formation" desc="Transmettre ce qui marche : SPIN Selling, outils IA, Automatisation Veille et Outbound, Production contenu. Vos équipes sont formées à la prospection, au marketing et à la communication avec l'IA." link="/formations" />
                 </div>
               </div>
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
