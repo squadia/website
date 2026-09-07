@@ -285,8 +285,8 @@ const FormationMarketingIA = () => {
           <div style={{ position: 'sticky', top: '100px' }}>
             <CountdownCard
               title="Formation IA marketing : contenus, campagnes et analyse augmentés."
-              dateStart={new Date('2026-09-24')}
-              dateLabel="24 & 25 Septembre 2026"
+              dateStart={new Date('2026-10-13')}
+              dateLabel="13 & 14 Octobre 2026"
               image={bgMarketing}
             />
           </div>

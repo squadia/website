@@ -290,8 +290,8 @@ const FormationVentesIA = () => {
           <div style={{ position: 'sticky', top: '100px' }}>
             <CountdownCard
               title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
-              dateStart={new Date('2026-09-21')}
-              dateLabel="21 & 22 Septembre 2026"
+              dateStart={new Date('2026-10-01')}
+              dateLabel="1er & 2 Octobre 2026"
               image={bgCommercial}
             />
           </div>
