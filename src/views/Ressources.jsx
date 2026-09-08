@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock } from 'lucide-react';
+import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Images ressources
@@ -11,6 +11,7 @@ const nettoyageData = '/assets/images/blog/cleaningdata.jpeg';
 const blog3 = '/assets/images/blog/blog3.jpeg';
 const blog4 = '/assets/images/blog/blog4.jpeg';
 const formationCommercialeImg = '/assets/images/blog/formationcommercialeB2B.jpeg';
+const simulateurRoiImg = '/assets/images/ressources/manager_reflexion_simulation_cout_externalisation_squadia.png';
 export default function Ressources() {
   useScrollReveal();
   const [isMobile, setIsMobile] = useState(false);
@@ -117,42 +118,131 @@ export default function Ressources() {
         </div>
       </section>
 
-      {/* ═══ SECTION OUTILS ═══ */}
+      {/* ═══ SECTION OUTILS + SIMULATEUR ═══ */}
       <section className="container" style={{ marginBottom: '80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-          {resources.map((res, i) => (
-            <Link
-              key={i}
-              href={res.link}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+          <div style={{ width: '4px', height: '24px', background: '#44CCFF', borderRadius: '2px' }} />
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB' }}>Outils pratiques</h2>
+        </div>
+        <div
+          className="grid-2"
+          style={{ gridTemplateColumns: 'minmax(0,1fr) minmax(300px,380px)', gap: '1.5rem', alignItems: 'stretch' }}
+        >
+          {/* LEFT: box with the 4 resource cards */}
+          <div style={{
+            background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '1.25rem',
+            padding: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem'
+          }}>
+            {resources.map((res, i) => (
+              <Link
+                key={i}
+                href={res.link}
+                style={{
+                  background: '#111135',
+                  border: '1px solid #1A1A3A',
+                  borderRadius: '1rem',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}
+                className="resource-card"
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#2563EB'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#1A1A3A'; }}
+              >
+                <div style={{
+                  width: '44px', height: '44px', background: 'rgba(37,99,235,0.1)',
+                  borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                }}>
+                  {res.icon}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F3F4F6', marginBottom: '0.2rem' }}>{res.title}</h3>
+                  <span style={{ fontSize: '0.75rem', color: '#2563EB', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                    {res.cta} <ArrowRight size={12} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* RIGHT: simulateur ROI box */}
+          <Link
+            href="/ressources/simulateur-roi"
+            className="fade-in"
+            style={{
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.25rem',
+              background: '#0D0D25',
+              border: '1px solid rgba(68,204,255,0.35)',
+              borderRadius: '1.25rem',
+              padding: '2rem',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+              overflow: 'hidden'
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#44CCFF'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(68,204,255,0.35)'; }}
+          >
+            <img
+              src={simulateurRoiImg}
+              alt=""
               style={{
-                background: '#0D0D25',
-                border: '1px solid #1A1A3A',
-                borderRadius: '1rem',
-                padding: '1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease'
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: '58% 22%',
+                opacity: 0.55,
+                filter: 'brightness(1.5)',
+                zIndex: 0
               }}
-              className="resource-card"
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#2563EB'; e.currentTarget.style.background = '#111135'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#1A1A3A'; e.currentTarget.style.background = '#0D0D25'; }}
-            >
-              <div style={{
-                width: '44px', height: '44px', background: 'rgba(37,99,235,0.1)',
-                borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+            />
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 1,
+              background: 'linear-gradient(135deg, rgba(37,99,235,0.14), rgba(13,13,37,0.35) 55%, rgba(13,13,37,0.68))'
+            }} />
+
+            <div style={{
+              position: 'relative', zIndex: 2,
+              width: '56px', height: '56px', flexShrink: 0, background: 'rgba(10,10,26,0.85)',
+              border: '1px solid rgba(255,255,255,0.15)', borderRadius: '1rem',
+              display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>
+              <Calculator size={26} color="#FFFFFF" />
+            </div>
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <span style={{
+                display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
+                letterSpacing: '0.06em', color: '#44CCFF', marginBottom: '0.4rem'
               }}>
-                {res.icon}
-              </div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F3F4F6', marginBottom: '0.2rem' }}>{res.title}</h3>
-                <span style={{ fontSize: '0.75rem', color: '#2563EB', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  {res.cta} <ArrowRight size={12} />
-                </span>
-              </div>
-            </Link>
-          ))}
+                Simulateur gratuit
+              </span>
+              <h3 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', fontWeight: 800, color: '#F9FAFB', margin: 0, lineHeight: 1.3 }}>
+                Combien vaut le temps récupéré en process pour votre équipe&nbsp;?
+              </h3>
+              <p style={{
+                margin: '0.75rem 0 0', fontSize: '0.9rem', color: '#E5E7EB',
+                background: 'rgba(10,10,26,0.7)', border: '1px solid rgba(68,204,255,0.3)',
+                borderRadius: '0.75rem', padding: '0.75rem 1rem'
+              }}>
+                Ajustez les curseurs selon votre équipe et estimez le pipeline et le revenu additionnel généré par une donnée CRM propre.
+              </p>
+            </div>
+            <span style={{
+              position: 'relative', zIndex: 2,
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+              background: '#2563EB', color: '#FFFFFF', fontWeight: 700, fontSize: '0.9rem',
+              padding: '0.85rem 1.5rem', borderRadius: '9999px', marginTop: 'auto'
+            }}>
+              Estimer mon ROI <ArrowRight size={16} />
+            </span>
+          </Link>
         </div>
       </section>
 
