@@ -1,7 +1,7 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { Linkedin, MessageSquare, Target, RefreshCw, BarChart3, Check, ArrowRight, ZoomIn, X } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import PartnerLogosMarquee from '../components/ui/PartnerLogosMarquee';
@@ -61,9 +61,17 @@ const StepImage = ({ src, label, isMobile }) => (
   </div>
 );
 
-const Timeline = ({ isMobile }) => (
-  <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
+const Timeline = ({ isMobile }) => {
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 80%', 'end 40%'] });
+  const spineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+  <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
     <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    {!isMobile && (
+      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
+    )}
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
@@ -101,7 +109,8 @@ const Timeline = ({ isMobile }) => (
       );
     })}
   </div>
-);
+  );
+};
 
 const RepliikGallery = () => {
   const [lightbox, setLightbox] = useState(null);

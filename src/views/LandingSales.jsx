@@ -1,7 +1,7 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, ArrowRight, Users, BookOpen, ChevronDown, Rocket, CheckCircle2, Star, UserPlus, Mail } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
@@ -93,9 +93,15 @@ const StepImage = ({ src, label }) => (
   </div>
 );
 
-const Timeline = () => (
-  <div style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
+const Timeline = () => {
+  const timelineRef = useRef(null);
+  const { scrollYProgress } = useScroll({ target: timelineRef, offset: ['start 80%', 'end 40%'] });
+  const spineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
+
+  return (
+  <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
     <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
@@ -124,7 +130,8 @@ const Timeline = () => (
       );
     })}
   </div>
-);
+  );
+};
 
 const LandingSales = () => {
   useScrollReveal();
