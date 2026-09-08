@@ -465,7 +465,7 @@ const LandingMarketing = () => {
                     'Automatisation séquence',
                     'Enrichissement des contacts',
                   ].map((label, i) => (
-                    <div key={i} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '8px', padding: '1rem', fontSize: '0.9rem', fontWeight: 600, color: '#F9FAFB' }}>
+                    <div key={i} style={{ background: '#12123A', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '8px', padding: '1rem', fontSize: '0.9rem', fontWeight: 600, color: '#F9FAFB' }}>
                       {label}
                     </div>
                   ))}
