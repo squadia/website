@@ -139,10 +139,10 @@ const LandingSales = () => {
   }, []);
 
   const enjeux = [
-    { short: 'Big Deals', title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#44CCFF" />, image: '/assets/images/dg/driving.webp' },
+    { short: 'Big Deals', title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#44CCFF" />, image: '/assets/images/salesdirecteur/statscall.webp' },
     { short: 'Équipe disparate', title: 'Manager une équipe disparate', desc: "Les seniors excellent en closing mais évitent la prospection à froid. Les juniors appellent sans méthode ni signaux pour prioriser leurs cibles.", icon: <Users color="#44CCFF" />, image: '/assets/images/dg/recrutement.webp' },
     { short: 'Marketing inadapté', title: 'Un marketing pas toujours adapté', desc: "Salons, webinars ou marketing décentralisé qui ne tient pas compte des spécificités du marché français : ça n'aide pas toujours à apporter les leads dont vous avez besoin.", icon: <Zap color="#44CCFF" />, image: '/assets/images/dg/pbfichier.webp' },
-    { short: "Faire grandir l'équipe", title: "Faire grandir l'équipe", desc: "En France, il faut environ 3 mois pour qu'un commercial rejoigne l'équipe, puis 3 mois de plus pour être pleinement opérationnel. Les objectifs de l'année n'attendent pas.", icon: <UserPlus color="#44CCFF" />, image: '/assets/images/dg/secretaire.webp' }
+    { short: "Faire grandir l'équipe", title: "Faire grandir l'équipe", desc: "En France, il faut environ 3 mois pour qu'un commercial rejoigne l'équipe, puis 3 mois de plus pour être pleinement opérationnel. Les objectifs de l'année n'attendent pas.", icon: <UserPlus color="#44CCFF" />, image: '/assets/images/salesdirecteur/entretien.webp' }
   ];
 
 
