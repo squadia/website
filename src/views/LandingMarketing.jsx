@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
-import { Target, Zap, BarChart3, ArrowRight, MousePointer2, Percent, ChevronDown, CheckCircle2, ShieldAlert, BookOpen } from 'lucide-react';
+import { Target, Zap, BarChart3, ArrowRight, MousePointer2, ChevronDown, CheckCircle2, ShieldAlert, BookOpen } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 const c1 = '/assets/images/c1.png';
@@ -82,11 +82,10 @@ const LandingMarketing = () => {
   }, []);
 
   const enjeux = [
-    { short: 'Leads non exploités', title: 'Les leads sont générés, mais pas exploités', desc: "Le marketing produit des contacts. Les commerciaux les jugent non qualifiés. Le débat recommence à chaque réunion de pipe review sans que rien ne change vraiment. Le problème n'est pas le volume, c'est le manque de contexte et de timing.", icon: <Target color="#44CCFF" />, image: '/assets/images/dg/driving.webp' },
-    { short: 'Outils déconnectés', title: 'Les outils ne communiquent pas entre eux', desc: "CRM mal configuré, données éparpillées, séquences marketing déconnectées du pipeline commercial. Chaque outil fonctionne dans son coin. La vision globale n'existe pas et la contribution au chiffre reste impossible à prouver.", icon: <Zap color="#44CCFF" />, image: '/assets/images/dg/recrutement.webp' },
+    { short: 'Leads non exploités', title: 'Les leads sont générés, mais pas exploités', desc: "Le marketing produit des contacts. Les commerciaux les jugent non qualifiés. Le débat recommence à chaque réunion de pipe review sans que rien ne change vraiment. Le problème n'est pas le volume, c'est le manque de contexte et de timing.", icon: <Target color="#44CCFF" />, image: '/assets/images/marketingdirector/conflit.webp' },
+    { short: 'Outils déconnectés', title: 'Les outils ne communiquent pas entre eux', desc: "CRM mal configuré, données éparpillées, séquences marketing déconnectées du pipeline commercial. Chaque outil fonctionne dans son coin. La vision globale n'existe pas et la contribution au chiffre reste impossible à prouver.", icon: <Zap color="#44CCFF" />, image: '/assets/images/marketingdirector/sideration.webp' },
     { short: 'Pression ROI', title: 'La pression sur le ROI marketing augmente', desc: "Les budgets sont questionnés. Les équipes sont jugées sur leur contribution au chiffre d'affaires, pas sur leurs impressions ou leur taux d'ouverture. Prouver la valeur du marketing avec des données fiables devient un enjeu stratégique.", icon: <BarChart3 color="#44CCFF" />, image: '/assets/images/dg/pbfichier.webp' },
-    { short: 'IA sans cadre', title: 'Les initiatives IA bloquent faute de cadre', desc: "Des idées d'automatisation ou de personnalisation attendent depuis des mois. Sans strategie validée au bon niveau, l'IT ou la direction générale freinent. Pas parce que les idées sont mauvaises, mais parce qu'elles n'ont pas de cadre.", icon: <ShieldAlert color="#44CCFF" />, image: '/assets/images/dg/secretaire.webp' },
-    { short: 'Marketing/Ventes', title: 'Le marketing ne parle pas le même langage que les ventes', desc: "Les commerciaux attendent des leads chauds. Le marketing produit du volume. Entre les deux, personne ne s'entend sur ce qu'est un bon lead, ni sur qui fait quoi dans le parcours d'achat.", icon: <Percent color="#44CCFF" />, image: '/assets/images/dg/driving.webp' }
+    { short: 'IA sans cadre', title: 'Les initiatives IA bloquent faute de cadre', desc: "Des idées d'automatisation ou de personnalisation attendent depuis des mois. Sans strategie validée au bon niveau, l'IT ou la direction générale freinent. Pas parce que les idées sont mauvaises, mais parce qu'elles n'ont pas de cadre.", icon: <ShieldAlert color="#44CCFF" />, image: '/assets/images/marketingdirector/plustard.webp' }
   ];
 
   const apports = [
