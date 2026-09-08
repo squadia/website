@@ -386,7 +386,7 @@ const Formation = () => {
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', margin: '0 0 0.5rem 0' }}>Questions fréquentes</h2>
             <p style={{ fontSize: '1.25rem', color: 'var(--accent)', margin: 0 }}>sur l'offre Formation</p>
           </div>
-          <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+          <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <AccordionItem 
               question="Faut-il avoir des outils IA déjà en place pour suivre une formation ?" 
               answer="Non. Les formations peuvent démarrer dès lors que les participants ont accès à un outil'IA basique (ChatGPT, Copilot, Gemini). On part de ce que vous avez."

@@ -594,7 +594,7 @@ export default function DataLead() {
         <ClientLogosSection />
 
         {/* FAQ */}
-        <section style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[

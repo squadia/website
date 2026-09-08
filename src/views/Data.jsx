@@ -269,7 +269,7 @@ export default function Data() {
         </section>
 
         {/* SECTION 5 : FAQ */}
-        <section id="faq" style={{ padding: '10rem 2rem', maxWidth: '800px', margin: '0 auto' }}>
+        <section id="faq" style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>
             Questions fréquentes.
           </h2>

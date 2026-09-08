@@ -484,7 +484,7 @@ const FormationMarketingIA = () => {
       {/* ═══ SECTION 6 : FAQ ═══ */}
       <section className="section-padding container">
         <div className="fade-in">
-          <div style={{ maxWidth: '800px', marginInline: 'auto' }}>
+          <div style={{ maxWidth: '1200px', marginInline: 'auto' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Questions fréquentes</h2>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               <AccordionItem 
