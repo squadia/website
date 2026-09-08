@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, ArrowRight, Users, BookOpen, ChevronDown, Rocket, CheckCircle2, Star, UserPlus, Mail } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 const fonds2 = '/assets/images/fonds2-CAwYIQyU.jpeg';
 import { casesData } from '../data/cases';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
@@ -138,10 +139,10 @@ const LandingSales = () => {
   }, []);
 
   const enjeux = [
-    { title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#44CCFF" /> },
-    { title: 'Manager une équipe disparate', desc: "Les seniors excellent en closing mais évitent la prospection à froid. Les juniors appellent sans méthode ni signaux pour prioriser leurs cibles.", icon: <Users color="#44CCFF" /> },
-    { title: 'Un marketing pas toujours adapté', desc: "Salons, webinars ou marketing décentralisé qui ne tient pas compte des spécificités du marché français : ça n'aide pas toujours à apporter les leads dont vous avez besoin.", icon: <Zap color="#44CCFF" /> },
-    { title: "Faire grandir l'équipe", desc: "En France, il faut environ 3 mois pour qu'un commercial rejoigne l'équipe, puis 3 mois de plus pour être pleinement opérationnel. Les objectifs de l'année n'attendent pas.", icon: <UserPlus color="#44CCFF" /> }
+    { short: 'Big Deals', title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#44CCFF" />, image: '/assets/images/dg/driving.webp' },
+    { short: 'Équipe disparate', title: 'Manager une équipe disparate', desc: "Les seniors excellent en closing mais évitent la prospection à froid. Les juniors appellent sans méthode ni signaux pour prioriser leurs cibles.", icon: <Users color="#44CCFF" />, image: '/assets/images/dg/recrutement.webp' },
+    { short: 'Marketing inadapté', title: 'Un marketing pas toujours adapté', desc: "Salons, webinars ou marketing décentralisé qui ne tient pas compte des spécificités du marché français : ça n'aide pas toujours à apporter les leads dont vous avez besoin.", icon: <Zap color="#44CCFF" />, image: '/assets/images/dg/pbfichier.webp' },
+    { short: "Faire grandir l'équipe", title: "Faire grandir l'équipe", desc: "En France, il faut environ 3 mois pour qu'un commercial rejoigne l'équipe, puis 3 mois de plus pour être pleinement opérationnel. Les objectifs de l'année n'attendent pas.", icon: <UserPlus color="#44CCFF" />, image: '/assets/images/dg/secretaire.webp' }
   ];
 
 
@@ -388,20 +389,8 @@ const LandingSales = () => {
         <div style={{ position: 'absolute', right: '10%', top: '50%', transform: 'translateY(-50%)', width: '550px', height: '550px', background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)', filter: 'blur(80px)', pointerEvents: 'none', zIndex: 0 }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
           <p style={{ ...methodKicker, textAlign: 'center' }}>Principaux freins</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', color: '#F9FAFB' }}>Contraintes du sales manager en 2026</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
-            {enjeux.map((item, i) => (
-              <div key={i} style={{ padding: '2.5rem', background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)', border: '1px solid rgba(68,204,255,0.12)', borderRadius: '16px', transition: 'transform 0.3s ease, border-color 0.3s ease' }}
-                onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-4px)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.4)'; }}
-                onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.12)'; }}>
-                <div style={{ marginBottom: '1.25rem', padding: '0.75rem', background: 'rgba(37,99,235,0.15)', display: 'inline-flex', borderRadius: '10px' }}>
-                  {item.icon}
-                </div>
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '0.75rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.65)', lineHeight: 1.6, fontSize: '0.95rem' }}>{item.desc}</p>
-              </div>
-            ))}
-          </div>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Contraintes du sales manager en 2026</h2>
+          <EnjeuxCarousel items={enjeux} />
         </div>
       </section>
 
