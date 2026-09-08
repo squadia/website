@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, BarChart3, ArrowRight, ShieldCheck, Rocket, ChevronDown, CheckCircle2, Star } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 import { casesData } from '../data/cases';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
@@ -16,6 +15,125 @@ const imgPlanPartenaire = '/assets/images/ressources/plan-partenaire.jpeg';
 const blogStrategieIAImg = '/assets/images/blog/blog1.png';
 const blogFormationAutomImg = '/assets/images/blog/blog3.jpeg';
 const ceoMeetingImg = '/assets/images/salesdirecteur/ceomeeting.jpeg';
+const ENJEUX_TAB_DURATION = 6000;
+
+const EnjeuxCarousel = ({ items }) => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    setProgress(0);
+    const start = Date.now();
+    const id = setInterval(() => {
+      const pct = Math.min(((Date.now() - start) / ENJEUX_TAB_DURATION) * 100, 100);
+      setProgress(pct);
+      if (pct >= 100) {
+        setActiveIndex((prev) => (prev + 1) % items.length);
+      }
+    }, 30);
+    return () => clearInterval(id);
+  }, [activeIndex, items.length]);
+
+  const active = items[activeIndex];
+
+  return (
+    <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+      <style>{`
+        .enjeux-panel { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+        @media (max-width: 768px) {
+          .enjeux-panel { grid-template-columns: 1fr; gap: 2rem; }
+          .enjeux-image { order: -1; }
+        }
+      `}</style>
+      <div
+        role="tablist"
+        style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          justifyContent: 'center',
+          gap: '0.5rem',
+          marginBottom: '2.5rem',
+          borderBottom: '1px solid rgba(255,255,255,0.08)',
+        }}
+      >
+        {items.map((item, i) => (
+          <button
+            key={i}
+            type="button"
+            role="tab"
+            aria-selected={activeIndex === i}
+            onClick={() => setActiveIndex(i)}
+            style={{
+              background: 'none',
+              border: 'none',
+              cursor: 'pointer',
+              padding: '0 1.1rem 0.9rem',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              color: activeIndex === i ? '#F9FAFB' : 'rgba(255,255,255,0.45)',
+              fontWeight: 600,
+              fontSize: '0.92rem',
+              position: 'relative',
+              transition: 'color 0.25s ease',
+            }}
+          >
+            <span style={{ width: 18, height: 18, display: 'flex', alignItems: 'center', justifyContent: 'center', opacity: activeIndex === i ? 1 : 0.6 }}>
+              {React.cloneElement(item.icon, { size: 16 })}
+            </span>
+            {item.short}
+            <span style={{
+              position: 'absolute',
+              left: 0, right: 0, bottom: -1,
+              height: '2px',
+              background: 'rgba(255,255,255,0.08)',
+              overflow: 'hidden',
+              borderRadius: '2px',
+            }}>
+              <span style={{
+                display: 'block',
+                height: '100%',
+                width: activeIndex === i ? `${progress}%` : '0%',
+                background: '#44CCFF',
+                transition: activeIndex === i ? 'width 0.05s linear' : 'none',
+              }} />
+            </span>
+          </button>
+        ))}
+      </div>
+
+      <div
+        className="enjeux-panel"
+        style={{
+          background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
+          border: '1px solid rgba(68,204,255,0.12)',
+          borderRadius: '20px',
+          padding: '3rem',
+          boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
+          minHeight: '360px',
+        }}
+      >
+        <div>
+          <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            {active.icon}
+          </div>
+          <h3 style={{ fontSize: '1.4rem', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.4, color: '#F9FAFB' }}>{active.title}</h3>
+          <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem', margin: 0 }}>{active.desc}</p>
+        </div>
+        <div className="enjeux-image" style={{
+          position: 'relative',
+          borderRadius: '14px',
+          overflow: 'hidden',
+          border: '1px solid rgba(68,204,255,0.18)',
+          boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
+          aspectRatio: '4 / 3',
+        }}>
+          <img src={active.image} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      </div>
+    </div>
+  );
+};
 const caseImagesDG = {
   'pipeline-b2b': pipelineImg,
   'formation-vente': formationImg,
@@ -81,10 +199,10 @@ const LandingDG = () => {
   }, []);
 
   const enjeux = [
-    { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#44CCFF" /> },
-    { short: 'Recrutement commercial', title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#44CCFF" /> },
-    { short: 'Données commerciales', title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#44CCFF" /> },
-    { short: 'Confiance du board', title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#44CCFF" /> }
+    { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#44CCFF" />, image: '/assets/images/dg/driving.webp' },
+    { short: 'Recrutement commercial', title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#44CCFF" />, image: '/assets/images/dg/recrutement.webp' },
+    { short: 'Données commerciales', title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#44CCFF" />, image: '/assets/images/dg/pbfichier.webp' },
+    { short: 'Confiance du board', title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#44CCFF" />, image: '/assets/images/dg/secretaire.webp' }
   ];
 
   const apports = [
@@ -381,40 +499,7 @@ const LandingDG = () => {
         }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
-          <Tabs defaultValue="0" style={{ maxWidth: '760px', margin: '0 auto' }}>
-            <TabsList
-              variant="line"
-              className="h-auto w-full flex-wrap justify-center"
-              style={{ marginBottom: '2.5rem', gap: '0.5rem' }}
-            >
-              {enjeux.map((item, i) => (
-                <TabsTrigger
-                  key={i}
-                  value={String(i)}
-                  style={{ padding: '0.6rem 1.1rem', fontSize: '0.9rem' }}
-                >
-                  {item.short}
-                </TabsTrigger>
-              ))}
-            </TabsList>
-            {enjeux.map((item, i) => (
-              <TabsContent key={i} value={String(i)}>
-                <div style={{
-                  padding: '2.5rem',
-                  background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
-                  border: '1px solid rgba(68,204,255,0.12)',
-                  borderRadius: '16px',
-                  boxShadow: '0 4px 24px rgba(0,0,0,0.3)'
-                }}>
-                  <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                    {item.icon}
-                  </div>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 600, marginBottom: '0.9rem', lineHeight: 1.4, color: '#F9FAFB' }}>{item.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem', margin: 0 }}>{item.desc}</p>
-                </div>
-              </TabsContent>
-            ))}
-          </Tabs>
+          <EnjeuxCarousel items={enjeux} />
         </div>
       </section>
 
