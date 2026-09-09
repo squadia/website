@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, BookOpen, Send, Loader2 } from 'lucide-react';
 import { submitLead } from '../lib/submitLead';
+import { buildFlipbookUrl } from '../lib/flipbookAccess';
 const newMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
 
 const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/3td32i9lyrpjxn6j2ilxcc5ugot2ahlf';
@@ -69,8 +70,11 @@ const GuideMarketingManager = () => {
       if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);
         setIsFallbackSuccess(result.fallbackUsed);
-        setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
         setPhoneError('');
+        // Accès au flipbook uniquement via ce lien signé, généré après soumission du formulaire.
+        const flipbookUrl = await buildFlipbookUrl('guide-marketing-manager', formData);
+        setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
+        window.location.href = flipbookUrl;
       } else {
         setError('Une erreur est survenue lors de la soumission. Veuillez réessayer.');
       }

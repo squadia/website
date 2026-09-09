@@ -254,6 +254,17 @@ html {
   animation: pulse 2s infinite;
 }
 
+@keyframes flipHintBlink {
+  0%, 100% { opacity: 0; }
+  10%, 30%, 50%, 70% { opacity: 1; }
+  20%, 40%, 60% { opacity: 0.15; }
+  80% { opacity: 1; }
+}
+
+.flipbook-hint {
+  animation: flipHintBlink 2.4s ease-in-out forwards;
+}
+
 /* Custom Additions */
 .pill-tag {
   background: rgba(68,204,255,0.06);

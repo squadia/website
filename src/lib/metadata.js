@@ -10,7 +10,7 @@ export const defaultOpenGraph = {
   siteName: SITE_NAME,
 };
 
-export function buildMetadata({ title, description, path, image = DEFAULT_IMAGE }) {
+export function buildMetadata({ title, description, path, image = DEFAULT_IMAGE, noindex = false }) {
   return {
     title,
     description,
@@ -31,5 +31,6 @@ export function buildMetadata({ title, description, path, image = DEFAULT_IMAGE 
     alternates: {
       canonical: path ? `${SITE_URL}${path}` : SITE_URL,
     },
+    ...(noindex ? { robots: { index: false, follow: false } } : {}),
   };
 }
