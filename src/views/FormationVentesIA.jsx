@@ -10,6 +10,7 @@ const imgCRM = '/assets/images/hubspotcrm.jpeg';
 const imgAutoVente = '/assets/images/automatisation/auto1.webp';
 const imgData = '/assets/images/data/data.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
+import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer }) => {
@@ -528,26 +529,13 @@ const FormationVentesIA = () => {
       </section>
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
-      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Prêt à donner à votre équipe commerciale<br/>un avantage réel sur le terrain ?</h2>
-              </div>
-              <div>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>2 jours pour changer les réflexes de vente en profondeur.</p>
-                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaFinalZoom
+        teamSquadia={teamSquadia}
+        eyebrow="Prochaine étape"
+        kicker="Rejoignez-nous :"
+        title={<>Prêt à donner à votre équipe commerciale<br />un avantage réel sur le terrain ?</>}
+        description="2 jours pour changer les réflexes de vente en profondeur."
+      />
 
     </div>
   );

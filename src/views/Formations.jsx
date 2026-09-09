@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, RefreshCw, Star, ArrowRight, CheckCircle2, Layout, Users, Zap, BookOpen, Award, MessageSquare, Briefcase, Megaphone, PieChart, Check } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const formationBg = '/assets/images/formationB2B.png';
 const salesImg = '/assets/images/formation/commercial.png';
@@ -159,7 +160,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
     <div className="formations-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
-      <section className="hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <section className="hero formations-hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Fond pleine page */}
         <img src={formationBg} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(10,10,26,0.60)' }} />
@@ -173,7 +174,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.75)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '4rem' }}>
             Vous pouvez avoir les meilleurs outils, les meilleures automatisations, les meilleures données si vos équipes ne savent pas quoi en faire, tout ça ne sert à rien. La formation est souvent la première étape de la transformation.
           </p>
-          
+
           <div className="grid-3" style={{ maxWidth: '900px', marginInline: 'auto', gap: '2rem' }}>
             <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(68, 204, 255, 0.1)', textAlign: 'center' }}>
               <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#44CCFF', marginBottom: '0.5rem' }}>+25%</div>
@@ -189,6 +190,21 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
             </div>
           </div>
         </div>
+        <style>{`
+          @media (max-width: 768px) {
+            .formations-hero {
+              min-height: auto !important;
+              align-items: flex-start !important;
+              padding: 110px 0 3rem !important;
+            }
+            .formations-hero .grid-3 {
+              margin-top: 1rem;
+            }
+            .formations-hero .grid-3 > div {
+              padding: 1.5rem !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
@@ -765,26 +781,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </section>
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
-      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Vous ne savez pas<br/>quelle formation correspond à votre équipe ?</h2>
-              </div>
-              <div>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>Recevez votre plan de formation idéale en 30 minutes.</p>
-                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaFinalZoom
+        teamSquadia={teamSquadia}
+        eyebrow="Prochaine étape"
+        kicker="Rejoignez-nous :"
+        title={<>Vous ne savez pas<br />quelle formation correspond à votre équipe ?</>}
+        description="Recevez votre plan de formation idéale en 30 minutes."
+      />
 
       <style>{`
         .formation-card-horizontal {
@@ -877,6 +880,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         @media (max-width: 768px) {
           .card-image-wrap { flex: 0.4; }
           .card-content-wrap { flex: 0.6; }
+          div[style*="grid-template-columns:repeat(3, 1fr)"],
           div[style*="grid-template-columns: repeat(3, 1fr)"] {
             grid-template-columns: 1fr !important;
           }
