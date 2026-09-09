@@ -340,7 +340,7 @@ const Mission = () => {
         teamSquadia={teamSquadia}
         eyebrow="Prochaine étape"
         kicker="Rejoignez-nous :"
-        title={<>Squadia est-il le bon partenaire<br />pour votre organisation ?</>}
+        title="Accélérons votre plan de croissance 2026-27"
         description="Prenons 30 minutes pour en discuter."
       />
 
