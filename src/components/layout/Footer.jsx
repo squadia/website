@@ -65,6 +65,7 @@ const Footer = () => (
             <li><Link href="/ressources/guide-sales-manager" className="footer-link">Guide Sales Manager</Link></li>
             <li><Link href="/ressources/guide-marketing-manager" className="footer-link">Guide Marketing Manager</Link></li>
             <li><Link href="/ressources/channel-sales-plan" className="footer-link">Channel Sales Plan</Link></li>
+            <li><Link href="/ressources/simulateur-roi" className="footer-link">Simulateur ROI</Link></li>
           </ul>
         </div>
       </div>
