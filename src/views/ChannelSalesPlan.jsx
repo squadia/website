@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, Handshake, Send, Loader2 } from 'lucide-react';
 import { submitLead } from '../lib/submitLead';
+import { buildFlipbookUrl } from '../lib/flipbookAccess';
 const planPartenaire = '/assets/images/ressources/plan-partenaire.jpeg';
 
 const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/p6lmievgp9ti64bnl1qjajhkyy2jt1zu';
@@ -69,8 +70,11 @@ const ChannelSalesPlan = () => {
       if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);
         setIsFallbackSuccess(result.fallbackUsed);
-        setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
         setPhoneError('');
+        // Accès au flipbook uniquement via ce lien signé, généré après soumission du formulaire.
+        const flipbookUrl = await buildFlipbookUrl('channel-sales-plan', formData);
+        setFormData({ FirstName: '', Name: '', phone: '', Email: '', Company: '' });
+        window.location.href = flipbookUrl;
       } else {
         setError('Une erreur est survenue lors de la soumission. Veuillez réessayer.');
       }
