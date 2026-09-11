@@ -888,6 +888,16 @@ const Home = () => {
   const [bgColor, setBgColor] = useState('#0F2744');
   const [diagnosticOpen, setDiagnosticOpen] = useState(false);
   const [serviceInView, setServiceInView] = useState(false);
+
+  // Lien direct pour campagnes email : /?open=diagnostic ouvre la box
+  // "10 prospects sur-mesure" immédiatement, sans scroll ni clic.
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('open') === 'diagnostic') {
+      setDiagnosticOpen(true);
+    }
+  }, []);
   const videoRef = useRef(null);
   const problemRef = useRef(null);
   const ctaRef = useRef(null);
