@@ -192,6 +192,50 @@
 [data-delay="4"].reveal-text,
 [data-delay="4"].reveal-card { transition-delay: 0.4s; }
 
+/* ─── FOOTER REVEAL ─── */
+
+.footer-anim .footer-col {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-anim.in-view .footer-col { opacity: 1; transform: translateY(0); }
+.footer-anim .footer-col:nth-child(1) { transition-delay: 0s;    }
+.footer-anim .footer-col:nth-child(2) { transition-delay: 0.2s;  }
+.footer-anim .footer-col:nth-child(3) { transition-delay: 0.4s;  }
+.footer-anim .footer-col:nth-child(4) { transition-delay: 0.6s;  }
+.footer-anim .footer-col:nth-child(5) { transition-delay: 0.8s;  }
+.footer-anim .footer-col:nth-child(6) { transition-delay: 1.0s;  }
+
+.footer-anim .footer-logo {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s,
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 1.2s;
+}
+.footer-anim.in-view .footer-logo { opacity: 1; transform: translateX(0); }
+
+.footer-anim .footer-contact {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.55s cubic-bezier(0.16, 1, 0.3, 1) 1.4s,
+              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) 1.4s;
+}
+.footer-anim.in-view .footer-contact { opacity: 1; transform: translateY(0); }
+
+.footer-anim .footer-social a {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(30px);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.footer-anim.in-view .footer-social a { opacity: 1; transform: translateX(0); }
+.footer-anim .footer-social a:nth-child(1) { transition-delay: 1.6s;  }
+.footer-anim .footer-social a:nth-child(2) { transition-delay: 1.68s; }
+.footer-anim .footer-social a:nth-child(3) { transition-delay: 1.76s; }
+
 /* Empêcher tout débordement horizontal sans casser position:sticky */
 html {
   overflow-x: clip;   /* clip ne crée pas de scroll container → sticky fonctionne */
