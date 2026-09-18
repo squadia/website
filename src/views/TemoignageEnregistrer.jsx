@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { Video, Circle, Square, Loader2, CheckCircle2, AlertTriangle } from 'lucide-react';
+import { Video, Circle, Square, Loader2, CheckCircle2, AlertTriangle, Send } from 'lucide-react';
 import { uploadTestimonial } from '@/src/lib/testimonials';
 import { NOTION_RESOURCE_URL, MAX_RECORDING_SECONDS } from '@/src/lib/testimonialsConfig';
 
@@ -24,7 +24,7 @@ const TemoignageEnregistrer = () => {
   const timerRef = useRef(null);
   const blobRef = useRef(null);
 
-  const [step, setStep] = useState('idle'); // idle | ready | recording | uploading | done | error
+  const [step, setStep] = useState('idle'); // idle | ready | recording | contact | uploading | done | error
   const [errorMessage, setErrorMessage] = useState('');
   const [seconds, setSeconds] = useState(0);
   const [unsupported, setUnsupported] = useState(false);
@@ -73,7 +73,7 @@ const TemoignageEnregistrer = () => {
     recorder.onstop = () => {
       const blob = new Blob(chunksRef.current, { type: mimeType || 'video/webm' });
       blobRef.current = blob;
-      handleUpload(blob);
+      setStep('contact');
     };
 
     recorderRef.current = recorder;
@@ -100,7 +100,9 @@ const TemoignageEnregistrer = () => {
     streamRef.current?.getTracks().forEach((track) => track.stop());
   };
 
-  const handleUpload = async (blob) => {
+  const handleUpload = async () => {
+    const blob = blobRef.current;
+    if (!blob) return;
     setStep('uploading');
     try {
       await uploadTestimonial(blob, seconds, { firstName, email, role, company });
@@ -114,7 +116,7 @@ const TemoignageEnregistrer = () => {
 
   const retryUpload = () => {
     if (blobRef.current) {
-      handleUpload(blobRef.current);
+      setStep('contact');
     } else {
       setStep('idle');
     }
@@ -123,6 +125,7 @@ const TemoignageEnregistrer = () => {
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
   const secs = String(seconds % 60).padStart(2, '0');
   const isContactComplete = [firstName, email, role, company].every((value) => value.trim());
+  const showCameraBox = !unsupported && !['contact', 'done'].includes(step);
 
   return (
     <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', padding: '120px 24px 80px' }}>
@@ -134,45 +137,12 @@ const TemoignageEnregistrer = () => {
           Quand vous êtes prêt, filmez quelques secondes pour partager votre retour sur la formation.
         </p>
 
-        {!unsupported && step !== 'done' && (
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
-            <input
-              type="text"
-              value={firstName}
-              onChange={(e) => setFirstName(e.target.value)}
-              placeholder="Prénom *"
-              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
-            />
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email *"
-              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
-            />
-            <input
-              type="text"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
-              placeholder="Rôle *"
-              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
-            />
-            <input
-              type="text"
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-              placeholder="Société *"
-              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
-            />
-          </div>
-        )}
-
         {unsupported ? (
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '3rem 2rem' }}>
             <AlertTriangle size={32} color="#F59E0B" style={{ marginBottom: '1rem' }} />
             <p>Votre navigateur ne permet pas l'enregistrement vidéo ici. Essayez avec Chrome, Edge ou Safari récent.</p>
           </div>
-        ) : (
+        ) : showCameraBox ? (
           <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0D0D25', aspectRatio: '16 / 9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)' }}>
             <video
               ref={videoRef}
@@ -211,13 +181,6 @@ const TemoignageEnregistrer = () => {
               </div>
             )}
 
-            {step === 'done' && (
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', background: 'rgba(5,5,16,0.85)' }}>
-                <CheckCircle2 size={40} color="#22C55E" />
-                <p>Merci ! Redirection en cours...</p>
-              </div>
-            )}
-
             {step === 'error' && (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', padding: '2rem', textAlign: 'center' }}>
                 <AlertTriangle size={32} color="#F59E0B" />
@@ -228,16 +191,53 @@ const TemoignageEnregistrer = () => {
               </div>
             )}
           </div>
-        )}
+        ) : null}
 
-        {step === 'ready' && (
-          <>
+        {step === 'contact' && (
+          <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '20px', padding: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)' }}>
+            <CheckCircle2 size={32} color="#22C55E" style={{ marginBottom: '0.75rem' }} />
+            <p style={{ fontWeight: 700, marginBottom: '0.25rem' }}>Vidéo enregistrée !</p>
+            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+              Encore une étape : quelques infos avant l'envoi.
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
+              <input
+                type="text"
+                value={firstName}
+                onChange={(e) => setFirstName(e.target.value)}
+                placeholder="Prénom *"
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+              />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Email *"
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+              />
+              <input
+                type="text"
+                value={role}
+                onChange={(e) => setRole(e.target.value)}
+                placeholder="Rôle *"
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+              />
+              <input
+                type="text"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                placeholder="Société *"
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+              />
+            </div>
+
             <button
-              onClick={startRecording}
+              onClick={handleUpload}
               disabled={!isContactComplete}
               className="btn btn-primary"
               style={{
-                marginTop: '2rem',
+                width: '100%',
                 padding: '1.1rem 2.6rem',
                 borderRadius: '8px',
                 fontWeight: 700,
@@ -247,17 +247,19 @@ const TemoignageEnregistrer = () => {
                 opacity: isContactComplete ? 1 : 0.5,
                 display: 'inline-flex',
                 alignItems: 'center',
+                justifyContent: 'center',
                 gap: '0.6rem',
               }}
             >
-              <Circle size={16} fill="currentColor" /> Démarrer l'enregistrement
+              <Send size={16} /> Envoyer mon témoignage
             </button>
-            {!isContactComplete && (
-              <p style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
-                Complétez les champs ci-dessus pour continuer
-              </p>
-            )}
-          </>
+          </div>
+        )}
+
+        {step === 'ready' && (
+          <button onClick={startRecording} className="btn btn-primary" style={{ marginTop: '2rem', padding: '1.1rem 2.6rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}>
+            <Circle size={16} fill="currentColor" /> Démarrer l'enregistrement
+          </button>
         )}
 
         {step === 'recording' && (
