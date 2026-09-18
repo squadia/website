@@ -160,6 +160,7 @@ const TemoignageAdmin = () => {
 
               <p style={{ fontSize: '0.75rem', color: '#6B7280', marginBottom: '0.75rem' }}>
                 {new Date(row.created_at).toLocaleString('fr-FR')}
+                {row.email && <> · <a href={`mailto:${row.email}`} style={{ color: '#44CCFF' }}>{row.email}</a></>}
               </p>
 
               <input

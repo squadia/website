@@ -29,6 +29,7 @@ const TemoignageEnregistrer = () => {
   const [seconds, setSeconds] = useState(0);
   const [unsupported, setUnsupported] = useState(false);
   const [firstName, setFirstName] = useState('');
+  const [email, setEmail] = useState('');
   const [role, setRole] = useState('');
   const [company, setCompany] = useState('');
 
@@ -102,7 +103,7 @@ const TemoignageEnregistrer = () => {
   const handleUpload = async (blob) => {
     setStep('uploading');
     try {
-      await uploadTestimonial(blob, seconds, { firstName, role, company });
+      await uploadTestimonial(blob, seconds, { firstName, email, role, company });
       setStep('done');
       window.location.href = NOTION_RESOURCE_URL;
     } catch (err) {
@@ -139,7 +140,14 @@ const TemoignageEnregistrer = () => {
               value={firstName}
               onChange={(e) => setFirstName(e.target.value)}
               placeholder="Prénom *"
-              style={{ gridColumn: '1 / -1', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
+              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
+            />
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Email (optionnel)"
+              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
             />
             <input
               type="text"

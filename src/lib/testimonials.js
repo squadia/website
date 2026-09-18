@@ -12,7 +12,7 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
   });
   if (uploadError) throw uploadError;
 
-  const { firstName, role, company } = contact;
+  const { firstName, email, role, company } = contact;
   const label = [firstName, [role, company].filter(Boolean).join(', ')]
     .filter(Boolean)
     .join(' · ') || null;
@@ -21,6 +21,7 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
     storage_path: path,
     duration_seconds: durationSeconds ?? null,
     first_name: firstName || null,
+    email: email || null,
     role: role || null,
     company: company || null,
     label,
