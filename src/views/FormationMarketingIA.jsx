@@ -5,6 +5,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, ChevronDown, Globe, Layout, Image, Video, Mic, Calendar, ArrowRight } from 'lucide-react';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import TestimonialsMarquee from '../components/ui/TestimonialsMarquee';
 const bgMarketing = '/assets/images/formation/marketing.jpeg';
 const imgDataClean = '/assets/images/dataclean/data-clean.jpeg';
 const imgDataSeg = '/assets/images/dataseg/data-seg.jpeg';
@@ -294,6 +295,8 @@ const FormationMarketingIA = () => {
           </div>
         </div>
       </section>
+
+      <TestimonialsMarquee page="marketing" />
 
       {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">

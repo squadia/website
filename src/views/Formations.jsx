@@ -5,6 +5,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, RefreshCw, Star, ArrowRight, CheckCircle2, Layout, Users, Zap, BookOpen, Award, MessageSquare, Briefcase, Megaphone, PieChart, Check } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import TestimonialsMarquee from '../components/ui/TestimonialsMarquee';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const formationBg = '/assets/images/formationB2B.png';
 const salesImg = '/assets/images/formation/commercial.png';
@@ -362,6 +363,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </div>
         </div>
       </section>
+
+      <TestimonialsMarquee page="general" />
 
       {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
       <section className="section-padding" style={{ background: '#050510' }}>

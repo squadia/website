@@ -5,6 +5,7 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, ChevronDown, Globe, MessageSquare, Layout, Activity, Search, ArrowRight } from 'lucide-react';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import TestimonialsMarquee from '../components/ui/TestimonialsMarquee';
 const bgCommunication = '/assets/images/formation/communication.jpeg';
 const imgCRM = '/assets/images/hubspotcrm.jpeg';
 const imgAutoComm = '/assets/images/automatisation/auto3.webp';
@@ -273,6 +274,8 @@ const FormationCommunicationIA = () => {
           </div>
         </div>
       </section>
+
+      <TestimonialsMarquee page="communication" />
 
       {/* ═══ SECTION 4 : MODALITÉS ═══ */}
       <section className="section-padding container">
