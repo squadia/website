@@ -22,6 +22,11 @@ const TemoignageIntro = () => {
     setIsEnded(true);
   };
 
+  const handleVideoError = () => {
+    // Vidéo absente/introuvable : on ne bloque pas le visiteur derrière un lecteur cassé.
+    setIsEnded(true);
+  };
+
   return (
     <div style={{ position: 'relative', minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
       <div style={{ position: 'absolute', top: '-150px', left: '-150px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, transparent 70%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
@@ -55,6 +60,7 @@ const TemoignageIntro = () => {
             src={VIDEO_SRC}
             playsInline
             onEnded={handleEnded}
+            onError={handleVideoError}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
 
