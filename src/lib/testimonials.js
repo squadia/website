@@ -3,7 +3,7 @@ import { supabase } from './supabaseClient';
 const BUCKET = 'testimonial-videos';
 const SIGNED_URL_TTL_SECONDS = 3600;
 
-export async function uploadTestimonial(blob, durationSeconds) {
+export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
   const extension = blob.type.includes('mp4') ? 'mp4' : 'webm';
   const path = `${crypto.randomUUID()}.${extension}`;
 
@@ -12,9 +12,19 @@ export async function uploadTestimonial(blob, durationSeconds) {
   });
   if (uploadError) throw uploadError;
 
-  const { error: insertError } = await supabase
-    .from('testimonial_videos')
-    .insert({ storage_path: path, duration_seconds: durationSeconds ?? null });
+  const { firstName, role, company } = contact;
+  const label = [firstName, [role, company].filter(Boolean).join(', ')]
+    .filter(Boolean)
+    .join(' · ') || null;
+
+  const { error: insertError } = await supabase.from('testimonial_videos').insert({
+    storage_path: path,
+    duration_seconds: durationSeconds ?? null,
+    first_name: firstName || null,
+    role: role || null,
+    company: company || null,
+    label,
+  });
   if (insertError) throw insertError;
 
   return path;

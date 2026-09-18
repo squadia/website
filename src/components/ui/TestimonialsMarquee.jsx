@@ -50,20 +50,21 @@ export default function TestimonialsMarquee({ page }) {
           <div className="testimonials-marquee-row">
             {looped.map((item, idx) =>
               item.demo ? (
-                <div key={`${item.id}-${idx}`} className="testimonials-marquee-video testimonials-marquee-demo">
-                  {item.label}
+                <div key={`${item.id}-${idx}`} className="testimonials-marquee-card">
+                  <div className="testimonials-marquee-video testimonials-marquee-demo">{item.label}</div>
                 </div>
               ) : (
-                <video
-                  key={`${item.id}-${idx}`}
-                  src={item.url}
-                  className="testimonials-marquee-video"
-                  muted
-                  loop
-                  autoPlay
-                  playsInline
-                  title={item.label || undefined}
-                />
+                <div key={`${item.id}-${idx}`} className="testimonials-marquee-card">
+                  <video
+                    src={item.url}
+                    className="testimonials-marquee-video"
+                    muted
+                    loop
+                    autoPlay
+                    playsInline
+                  />
+                  {item.label && <p className="testimonials-marquee-caption">{item.label}</p>}
+                </div>
               )
             )}
           </div>
@@ -77,6 +78,9 @@ export default function TestimonialsMarquee({ page }) {
           gap: 1.5rem;
           animation: testimonialsScroll 40s linear infinite;
         }
+        .testimonials-marquee-card {
+          flex-shrink: 0;
+        }
         .testimonials-marquee-video {
           width: 220px;
           height: 340px;
@@ -84,7 +88,13 @@ export default function TestimonialsMarquee({ page }) {
           border-radius: 16px;
           border: 1px solid #1A1A3A;
           background: #0D0D25;
-          flex-shrink: 0;
+          display: block;
+        }
+        .testimonials-marquee-caption {
+          margin-top: 0.6rem;
+          text-align: center;
+          font-size: 0.8rem;
+          color: rgba(255,255,255,0.6);
         }
         .testimonials-marquee-demo {
           display: flex;

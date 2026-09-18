@@ -28,6 +28,9 @@ const TemoignageEnregistrer = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [seconds, setSeconds] = useState(0);
   const [unsupported, setUnsupported] = useState(false);
+  const [firstName, setFirstName] = useState('');
+  const [role, setRole] = useState('');
+  const [company, setCompany] = useState('');
 
   useEffect(() => {
     if (typeof navigator === 'undefined' || !navigator.mediaDevices?.getUserMedia || pickSupportedMimeType() === null) {
@@ -99,7 +102,7 @@ const TemoignageEnregistrer = () => {
   const handleUpload = async (blob) => {
     setStep('uploading');
     try {
-      await uploadTestimonial(blob, seconds);
+      await uploadTestimonial(blob, seconds, { firstName, role, company });
       setStep('done');
       window.location.href = NOTION_RESOURCE_URL;
     } catch (err) {
@@ -128,6 +131,32 @@ const TemoignageEnregistrer = () => {
         <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '2.5rem' }}>
           Quand vous êtes prêt, filmez quelques secondes pour partager votre retour sur la formation.
         </p>
+
+        {!unsupported && step !== 'done' && (
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem', marginBottom: '1.5rem', textAlign: 'left' }}>
+            <input
+              type="text"
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              placeholder="Prénom *"
+              style={{ gridColumn: '1 / -1', padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
+            />
+            <input
+              type="text"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+              placeholder="Rôle (optionnel)"
+              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
+            />
+            <input
+              type="text"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+              placeholder="Société (optionnel)"
+              style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
+            />
+          </div>
+        )}
 
         {unsupported ? (
           <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '3rem 2rem' }}>
@@ -193,9 +222,33 @@ const TemoignageEnregistrer = () => {
         )}
 
         {step === 'ready' && (
-          <button onClick={startRecording} className="btn btn-primary" style={{ marginTop: '2rem', padding: '1.1rem 2.6rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', border: 'none', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '0.6rem' }}>
-            <Circle size={16} fill="currentColor" /> Démarrer l'enregistrement
-          </button>
+          <>
+            <button
+              onClick={startRecording}
+              disabled={!firstName.trim()}
+              className="btn btn-primary"
+              style={{
+                marginTop: '2rem',
+                padding: '1.1rem 2.6rem',
+                borderRadius: '8px',
+                fontWeight: 700,
+                fontSize: '1.05rem',
+                border: 'none',
+                cursor: firstName.trim() ? 'pointer' : 'not-allowed',
+                opacity: firstName.trim() ? 1 : 0.5,
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.6rem',
+              }}
+            >
+              <Circle size={16} fill="currentColor" /> Démarrer l'enregistrement
+            </button>
+            {!firstName.trim() && (
+              <p style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
+                Indiquez votre prénom pour continuer
+              </p>
+            )}
+          </>
         )}
 
         {step === 'recording' && (

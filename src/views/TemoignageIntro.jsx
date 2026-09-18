@@ -1,14 +1,17 @@
 'use client';
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 import { Play, ArrowRight, MessageCircleHeart } from 'lucide-react';
 
 const VIDEO_SRC = '/assets/video/temoignage-intro.mp4';
 
 const TemoignageIntro = () => {
+  const router = useRouter();
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
+  const [accepted, setAccepted] = useState(false);
 
   const handlePlay = () => {
     const video = videoRef.current;
@@ -38,10 +41,10 @@ const TemoignageIntro = () => {
         </div>
 
         <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, marginBottom: '1rem', fontWeight: 800 }}>
-          Merci pour votre formation
+          Un bonus gratuit suite à la formation
         </h1>
         <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
-          Cliquez sur la vidéo pour récupérer vos ressources
+          Cliquez sur la vidéo
         </p>
 
         <div
@@ -106,8 +109,9 @@ const TemoignageIntro = () => {
             pointerEvents: isEnded ? 'auto' : 'none',
           }}
         >
-          <Link
-            href="/temoignage/enregistrer/"
+          <button
+            onClick={() => accepted && router.push('/temoignage/enregistrer/')}
+            disabled={!accepted}
             className="btn btn-primary"
             style={{
               display: 'inline-flex',
@@ -117,11 +121,41 @@ const TemoignageIntro = () => {
               borderRadius: '8px',
               fontWeight: 700,
               fontSize: '1.05rem',
-              textDecoration: 'none',
+              border: 'none',
+              cursor: accepted ? 'pointer' : 'not-allowed',
+              opacity: accepted ? 1 : 0.5,
             }}
           >
             Cliquez ici pour témoigner <ArrowRight size={18} />
-          </Link>
+          </button>
+
+          <label
+            style={{
+              display: 'flex',
+              alignItems: 'flex-start',
+              justifyContent: 'center',
+              gap: '0.5rem',
+              marginTop: '1.25rem',
+              fontSize: '0.8rem',
+              fontStyle: 'italic',
+              color: 'rgba(255,255,255,0.5)',
+              cursor: 'pointer',
+            }}
+          >
+            <input
+              type="checkbox"
+              checked={accepted}
+              onChange={(e) => setAccepted(e.target.checked)}
+              style={{ marginTop: '2px' }}
+            />
+            <span>
+              J'accepte les conditions d'utilisation (
+              <Link href="/temoignage/conditions/" style={{ color: '#44CCFF', textDecoration: 'underline' }}>
+                voir le détail
+              </Link>
+              ).
+            </span>
+          </label>
         </div>
       </div>
     </div>
