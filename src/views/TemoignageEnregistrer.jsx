@@ -122,6 +122,7 @@ const TemoignageEnregistrer = () => {
 
   const minutes = String(Math.floor(seconds / 60)).padStart(2, '0');
   const secs = String(seconds % 60).padStart(2, '0');
+  const isContactComplete = [firstName, email, role, company].every((value) => value.trim());
 
   return (
     <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', padding: '120px 24px 80px' }}>
@@ -146,21 +147,21 @@ const TemoignageEnregistrer = () => {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Email (optionnel)"
+              placeholder="Email *"
               style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
             />
             <input
               type="text"
               value={role}
               onChange={(e) => setRole(e.target.value)}
-              placeholder="Rôle (optionnel)"
+              placeholder="Rôle *"
               style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
             />
             <input
               type="text"
               value={company}
               onChange={(e) => setCompany(e.target.value)}
-              placeholder="Société (optionnel)"
+              placeholder="Société *"
               style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#0D0D25', color: '#fff', fontSize: '0.95rem' }}
             />
           </div>
@@ -233,7 +234,7 @@ const TemoignageEnregistrer = () => {
           <>
             <button
               onClick={startRecording}
-              disabled={!firstName.trim()}
+              disabled={!isContactComplete}
               className="btn btn-primary"
               style={{
                 marginTop: '2rem',
@@ -242,8 +243,8 @@ const TemoignageEnregistrer = () => {
                 fontWeight: 700,
                 fontSize: '1.05rem',
                 border: 'none',
-                cursor: firstName.trim() ? 'pointer' : 'not-allowed',
-                opacity: firstName.trim() ? 1 : 0.5,
+                cursor: isContactComplete ? 'pointer' : 'not-allowed',
+                opacity: isContactComplete ? 1 : 0.5,
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '0.6rem',
@@ -251,9 +252,9 @@ const TemoignageEnregistrer = () => {
             >
               <Circle size={16} fill="currentColor" /> Démarrer l'enregistrement
             </button>
-            {!firstName.trim() && (
+            {!isContactComplete && (
               <p style={{ marginTop: '0.75rem', fontSize: '0.8rem', color: 'rgba(255,255,255,0.4)' }}>
-                Indiquez votre prénom pour continuer
+                Complétez les champs ci-dessus pour continuer
               </p>
             )}
           </>
