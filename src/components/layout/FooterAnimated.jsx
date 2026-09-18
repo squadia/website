@@ -1,14 +1,21 @@
 'use client';
 import { useEffect, useRef } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import FooterMobile from './FooterMobile';
 
 export default function FooterAnimated() {
   const footerRef = useRef(null);
+  const pathname = usePathname();
 
+  // Le footer vit dans le layout partagé : il ne se remonte pas lors d'une
+  // navigation client-side. On doit donc réarmer l'observer à chaque
+  // changement de page pour que l'animation se rejoue à chaque fois.
   useEffect(() => {
     const el = footerRef.current;
     if (!el) return;
+
+    el.classList.remove('in-view');
 
     const observer = new IntersectionObserver(
       entries => {
@@ -24,7 +31,7 @@ export default function FooterAnimated() {
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [pathname]);
 
   return (
     <footer ref={footerRef} className="footer-anim" style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>
