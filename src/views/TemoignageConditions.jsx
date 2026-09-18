@@ -20,7 +20,7 @@ const TemoignageConditions = () => {
             Le présent document a pour but de définir les conditions dans lesquelles Jérôme DEBRUYNE, Dirigeant de Squadia, domiciliée au 193 avenue de France (ci-après dénommé "le Formateur"), est autorisé à exploiter le témoignage vidéo fourni par le participant (ci-après dénommé "le Témoin").
           </p>
           <p style={pStyle}>
-            La fourniture de ce témoignage est une démarche strictement volontaire et facultative de la part du Témoin, proposée en contrepartie de l'accès à des ressources pédagogiques additionnelles (base documentaire Notion). Ce témoignage est indépendant de l'organisme de formation initial (CEGOS) et relève d'un accord direct entre le Témoin et le Formateur.
+            La fourniture de ce témoignage est une démarche strictement volontaire et facultative de la part du Témoin, proposée en contrepartie de l'accès à des ressources pédagogiques additionnelles (base documentaire Notion). Ce témoignage est totalement indépendant de l'organisme de formation ou de l'entité ayant commandité la session initiale. Il relève d'un accord exclusif et direct entre le Témoin et le Formateur.
           </p>
         </section>
 
