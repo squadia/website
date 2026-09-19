@@ -2,6 +2,7 @@
 
 import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { Analytics } from '@vercel/analytics/next';
 import Navbar from '../src/components/layout/Navbar';
 import FooterAnimated from '../src/components/layout/FooterAnimated';
 import CookieConsentBanner from '../src/components/CookieConsent';
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
         <FooterAnimated />
 
         <CookieConsentBanner />
+        <Analytics />
       </body>
     </html>
   );
