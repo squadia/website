@@ -73,9 +73,18 @@
   --cc-z-index: 9999;
   --cc-modal-border-radius: 12px;
   --cc-btn-border-radius: 8px;
+  --cc-modal-margin: 0.5rem;
 }
 #cc-main a {
   color: var(--accent);
+}
+#cc-main .cm {
+  max-width: 19rem;
+}
+#cc-main .cm__body,
+#cc-main .cm__texts,
+#cc-main .cm__btns {
+  padding: 0.9rem 1rem;
 }
 
 @layer base {
