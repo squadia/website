@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { showCookiePreferences } from '../components/CookieConsent';
 
 const MentionsLegales = () => {
   useScrollReveal();
@@ -56,9 +57,19 @@ const MentionsLegales = () => {
     {
       title: "Cookies",
       content: (
-        <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-          Ce site utilise des cookies à des fins d'analyse de trafic. En poursuivant votre navigation, vous acceptez leur utilisation.
-        </p>
+        <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <p>Ce site utilise des cookies de mesure d'audience, déposés uniquement après votre consentement, donné via le bandeau affiché lors de votre première visite.</p>
+          <p style={{ marginTop: '1rem' }}>
+            Vous pouvez modifier votre choix à tout moment :{' '}
+            <button
+              type="button"
+              onClick={showCookiePreferences}
+              style={{ color: 'var(--accent)', background: 'none', border: 'none', padding: 0, font: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}
+            >
+              gérer mes préférences de cookies
+            </button>.
+          </p>
+        </div>
       )
     }
   ];

@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Navbar from '../src/components/layout/Navbar';
 import FooterAnimated from '../src/components/layout/FooterAnimated';
+import CookieConsentBanner from '../src/components/CookieConsent';
 import '../src/App.css';
 import '../src/index.css';
 
@@ -98,6 +99,8 @@ export default function RootLayout({ children }) {
 
         {/* Footer */}
         <FooterAnimated />
+
+        <CookieConsentBanner />
       </body>
     </html>
   );

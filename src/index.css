@@ -46,6 +46,38 @@
   --sparkles-color: #ffffff;
 }
 
+/* Cookie consent theming (vanilla-cookieconsent), aligned to brand */
+#cc-main {
+  --cc-font-family: var(--font-main);
+  --cc-bg: #111827;
+  --cc-primary-color: var(--text-primary);
+  --cc-secondary-color: var(--text-secondary);
+  --cc-link-color: var(--accent);
+  --cc-footer-bg: transparent;
+  --cc-footer-color: var(--text-secondary);
+  --cc-footer-border-color: rgba(255, 255, 255, 0.1);
+  --cc-btn-primary-bg: var(--blue);
+  --cc-btn-primary-hover-bg: #1d4ed8;
+  --cc-btn-primary-color: #ffffff;
+  --cc-btn-secondary-bg: transparent;
+  --cc-btn-secondary-hover-bg: rgba(255, 255, 255, 0.08);
+  --cc-btn-secondary-color: var(--text-primary);
+  --cc-btn-secondary-border-color: rgba(255, 255, 255, 0.2);
+  --cc-toggle-on-bg: var(--blue);
+  --cc-toggle-off-bg: rgba(255, 255, 255, 0.15);
+  --cc-toggle-readonly-bg: rgba(68, 204, 255, 0.35);
+  --cc-separator-border-color: rgba(255, 255, 255, 0.1);
+  --cc-cookie-category-block-bg: rgba(255, 255, 255, 0.04);
+  --cc-cookie-category-block-border: rgba(255, 255, 255, 0.08);
+  --cc-overlay-bg: rgba(10, 10, 26, 0.7);
+  --cc-z-index: 9999;
+  --cc-modal-border-radius: 12px;
+  --cc-btn-border-radius: 8px;
+}
+#cc-main a {
+  color: var(--accent);
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;
@@ -391,14 +423,14 @@ html {
   }
 
   /* ── Pages Data / Automatisation : centrer le contenu hero ── */
-  [style*="padding-left: 8%"] {
+  [style*="padding-left:8%"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
     text-align: center !important;
     align-items: center !important;
   }
   /* Bouton CTA dans ces heroes */
-  [style*="padding-left: 8%"] > div[style*="display: flex"] {
+  [style*="padding-left:8%"] > div[style*="display:flex"] {
     justify-content: center !important;
     flex-wrap: wrap !important;
   }
@@ -418,21 +450,21 @@ html {
   .blog-article-h1 { font-size: clamp(1.5rem, 6.5vw, 2rem) !important; }
 
   /* ── Heroes autres pages : padding-top 160/180/200px → 88px ── */
-  .container[style*="padding-top: 160px"],
-  .container[style*="padding-top: 180px"],
-  .container[style*="padding-top: 200px"],
-  section[style*="padding-top: 160px"],
-  section[style*="padding-top: 180px"],
-  section[style*="padding-top: 200px"],
-  div[style*="padding-top: 160px"],
-  div[style*="padding-top: 180px"],
-  div[style*="padding-top: 200px"] {
+  .container[style*="padding-top:160px"],
+  .container[style*="padding-top:180px"],
+  .container[style*="padding-top:200px"],
+  section[style*="padding-top:160px"],
+  section[style*="padding-top:180px"],
+  section[style*="padding-top:200px"],
+  div[style*="padding-top:160px"],
+  div[style*="padding-top:180px"],
+  div[style*="padding-top:200px"] {
     padding-top: 88px !important;
     padding-bottom: 40px !important;
   }
 
   /* ── Supprime white-space: nowrap sur mobile ── */
-  [style*="white-space: nowrap"] { white-space: normal !important; }
+  [style*="white-space:nowrap"] { white-space: normal !important; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -462,12 +494,12 @@ html {
   .section-padding { padding-top: 3.5rem !important; padding-bottom: 3.5rem !important; }
 
   /* Hero sections : réduire le paddingTop excessif (conçu pour desktop 160px) */
-  section[style*="padding-top: 160px"],
+  section[style*="padding-top:160px"],
   section[style*="padding-top:160px"] {
     padding-top: 90px !important;
   }
-  section[style*="padding-top: 180px"],
-  section[style*="padding-top: 200px"] {
+  section[style*="padding-top:180px"],
+  section[style*="padding-top:200px"] {
     padding-top: 100px !important;
   }
 
@@ -479,65 +511,78 @@ html {
     grid-template-columns: 1fr !important;
   }
   /* Exception : 2-col grids used purely for small icon+text pairs : keep them */
-  [style*="grid-template-columns: auto"][style*="1fr"] {
+  [style*="grid-template-columns:auto"][style*="1fr"] {
     grid-template-columns: auto 1fr !important;
   }
 
   /* ── SECTION PADDING (inline-styled sections) ── */
   /* Note: "padding:" (avec espace) cible uniquement le shorthand padding:,
      pas paddingTop: ni paddingLeft: : évite d'écraser les hero padding-top */
-  section[style*="padding: "] {
+  section[style*="padding:"] {
     padding-bottom: 3rem !important;
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
   /* Sections avec un grand paddingTop explicite (hero) : juste réduire les côtés */
-  section[style*="paddingTop"] {
+  section[style*="padding-top"] {
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
   /* Divs acting as section containers with large inline padding */
-  div[style*="padding: 10rem"] {
+  div[style*="padding:10rem"] {
     padding: 3.5rem 1.25rem !important;
   }
 
-  /* ── FLEXBOX ROWS → STACK ── */
-  [style*="display: flex"][style*="flex-direction: row"],
-  [style*="display: flex"][style*="gap: '1.5rem"],
-  [style*="display: flex"][style*="gap: '2rem"],
-  [style*="display: flex"][style*="gap: '3rem"],
-  [style*="display: flex"][style*="gap: '4rem"],
-  [style*="display: flex"][style*="gap: '5rem"] {
+  /* ── FLEXBOX ROWS → STACK ──
+     Désactivé : sélectionne trop large (tout flex avec ce gap, boutons/icônes inclus).
+     À traiter au cas par cas par page plutôt qu'en règle globale.
+  [style*="display:flex"][style*="flex-direction:row"],
+  [style*="display:flex"][style*="gap:1.5rem"],
+  [style*="display:flex"][style*="gap:2rem"],
+  [style*="display:flex"][style*="gap:3rem"],
+  [style*="display:flex"][style*="gap:4rem"],
+  [style*="display:flex"][style*="gap:5rem"] {
     flex-direction: column !important;
   }
+  */
 
   /* ── HERO SECTIONS ── */
   /* (Layout / sizing handled in HeroCSS @media block : see Home.jsx) */
 
   /* Hero inline padding-left: 8% used on other pages */
-  [style*="padding-left: 8%"] { padding-left: 1.25rem !important; }
-  [style*="paddingLeft: '8%"]  { padding-left: 1.25rem !important; }
+  [style*="padding-left:8%"] { padding-left: 1.25rem !important; }
+  [style*="padding-left:8%"]  { padding-left: 1.25rem !important; }
 
-  /* Hero text blocks with fixed heights (other pages) */
-  [style*="height: '100vh"] {
-    height: auto !important;
-    padding-top: 120px !important;
-    padding-bottom: 4rem !important;
+  /* Badge chiffre-clé des heroes (ex: "8 à 12", "3,7x", "15 %") : dans un flex étroit sur
+     mobile, le texte se scinde sur chaque mot ("8" / "à" / "12" empilés) car le flex item
+     rétrécit vers son min-content. On l'empêche de rétrécir et de wrapper. */
+  [style*="font-size:1.4rem;font-weight:800;color:#44CCFF"] {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* Hero text blocks vertically centered in a 100vh flex column (Data/Prospection heroes) :
+     garder height:100vh (l'image de fond en absolute/height:100% en dépend), mais partir du
+     haut plutôt que centrer, sinon le texte déborde et son début est coupé sur mobile. */
+  [style*="height:100vh;display:flex;flex-direction:column;justify-content:center"] {
+    justify-content: flex-start !important;
+    padding-top: 110px !important;
+    padding-bottom: 3rem !important;
   }
 
   /* ── ACCORDION / STRATEGY BOX ── */
   /* De la Stratégie à l'Exécution : inner grid */
-  [style*="grid-template-columns: minmax"] {
+  [style*="grid-template-columns:minmax"] {
     grid-template-columns: 1fr !important;
     gap: 2rem !important;
   }
   /* The blue-bordered box padding */
-  [style*="padding: '4rem 4rem"] {
+  [style*="padding:4rem 4rem"] {
     padding: 2rem 1.25rem !important;
     border-radius: 18px !important;
   }
   /* Image preview inside accordion (right column) : hide on mobile */
-  [style*="minHeight: '480px"] {
+  [style*="min-height:480px"] {
     min-height: auto !important;
   }
 
@@ -549,12 +594,12 @@ html {
   }
 
   /* ── SECTIONS AVEC PADDING LATÉRAL FORT ── */
-  [style*="padding: '0 2vw"] {
+  [style*="padding:0 2vw"] {
     padding: 0 !important;
   }
 
   /* ── INLINE MARGIN AUTO ── */
-  [style*="margin: '0 auto"] {
+  [style*="margin:0 auto"] {
     margin-left: auto !important;
     margin-right: auto !important;
     width: 100% !important;
@@ -563,70 +608,70 @@ html {
   /* ── IMAGES ── */
   img { max-width: 100% !important; height: auto !important; }
   /* Tall fixed-height images in alternating sections */
-  [style*="height: '420px"] { height: 220px !important; }
-  [style*="height: '480px"] { height: 240px !important; }
-  [style*="height: '500px"] { height: 260px !important; }
-  [style*="height: '200px"] { height: 180px !important; }
+  [style*="height:420px"] { height: 220px !important; }
+  [style*="height:480px"] { height: 240px !important; }
+  [style*="height:500px"] { height: 260px !important; }
+  [style*="height:200px"] { height: 180px !important; }
 
-  /* ── BUTTONS ── */
-  .btn, [style*="borderRadius: '0.5rem"][style*="padding: '1."],
-  [style*="borderRadius: '8px"][style*="padding: '1."] {
+  /* ── BUTTONS ──
+     Sélecteurs par style inline désactivés (trop larges, attrapent des éléments non-boutons) :
+     seule .btn (classe réelle) reste ciblée. */
+  .btn {
     width: 100% !important;
     justify-content: center !important;
     text-align: center !important;
   }
-  [style*="display: flex"][style*="gap: '1.2rem"],
-  [style*="display: flex"][style*="gap: '1.5rem"] {
-    flex-direction: column !important;
-  }
 
   /* ── CARDS: max-width full ── */
-  [style*="maxWidth: '1200px"],
-  [style*="max-width: 1200px"],
-  [style*="maxWidth: '900px"],
-  [style*="maxWidth: '800px"],
-  [style*="maxWidth: '850px"] {
+  [style*="max-width:1200px"],
+  [style*="max-width:1200px"],
+  [style*="max-width:900px"],
+  [style*="max-width:800px"],
+  [style*="max-width:850px"] {
     max-width: 100% !important;
     padding-left: 1.25rem !important;
     padding-right: 1.25rem !important;
   }
-  [style*="marginInline: 'auto"],
-  [style*="margin-inline: auto"] {
+  [style*="margin-inline:auto"],
+  [style*="margin-inline:auto"] {
     margin-left: 1.25rem !important;
     margin-right: 1.25rem !important;
   }
 
   /* ── FORMATION PAGES: sticky sidebar hidden on mobile ── */
-  [style*="position: sticky"],
-  [style*="position:'sticky"] {
+  [style*="position:sticky"],
+  [style*="position:sticky"] {
     position: relative !important;
     top: auto !important;
   }
 
-  /* ── PRIX / TARIFS: grids inline ── */
-  [style*="grid-template-columns: 'repeat(auto-fit"] {
+  /* ── PRIX / TARIFS: grids inline ──
+     Doublé avec/sans espace après ":" : certains de ces divs sont re-rendus côté client
+     (état React après hydratation), ce qui normalise l'attribut style avec un espace. */
+  [style*="grid-template-columns:repeat(auto-fit"],
+  [style*="grid-template-columns: repeat(auto-fit"] {
     grid-template-columns: 1fr !important;
   }
 
   /* ── BLOG ARTICLES: reading progress bar stays full width ── */
-  [style*="position: 'fixed"][style*="height: '3px"] {
+  [style*="position:fixed"][style*="height:3px"] {
     width: 100% !important;
   }
 
   /* ── LARGE FONT SIZES (inline) ──
      Remplacé par les règles h1/h2/h3/h4/p !important ci-dessus (768px + 480px).
-     [style*="fontSize:"] conservé en commentaire pour référence.
-  [style*="fontSize: '3.5rem"]  { font-size: 1.9rem !important; }
-  [style*="fontSize: '3rem"]    { font-size: 1.75rem !important; }
-  [style*="fontSize: '2.5rem"]  { font-size: 1.5rem !important; }
-  [style*="fontSize: '2rem"]    { font-size: 1.35rem !important; }
-  [style*="fontSize: '1.8rem"]  { font-size: 1.15rem !important; }
-  [style*="fontSize: 'clamp"]   { font-size: clamp(1.6rem, 7vw, 2rem) !important; }
+     [style*="font-size:"] conservé en commentaire pour référence.
+  [style*="font-size:3.5rem"]  { font-size: 1.9rem !important; }
+  [style*="font-size:3rem"]    { font-size: 1.75rem !important; }
+  [style*="font-size:2.5rem"]  { font-size: 1.5rem !important; }
+  [style*="font-size:2rem"]    { font-size: 1.35rem !important; }
+  [style*="font-size:1.8rem"]  { font-size: 1.15rem !important; }
+  [style*="font-size:clamp"]   { font-size: clamp(1.6rem, 7vw, 2rem) !important; }
   ── */
 
   /* ── INLINE PADDINGS too large ── */
-  [style*="padding: '4rem"] { padding: 2rem 1.25rem !important; }
-  [style*="padding: '3rem"]   { padding: 1.75rem 1.25rem !important; }
+  [style*="padding:4rem"] { padding: 2rem 1.25rem !important; }
+  [style*="padding:3rem"]   { padding: 1.75rem 1.25rem !important; }
 
   /* ── FOOTER ── */
   /* footer-grid caché via .desktop-only, FooterMobile prend le relais */
@@ -656,7 +701,7 @@ html {
   .section-padding { padding-top: 5rem !important; padding-bottom: 5rem !important; }
   .grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
   [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-  [style*="padding-left: 8%"] { padding-left: 2rem !important; }
+  [style*="padding-left:8%"] { padding-left: 2rem !important; }
 }
 
 .footer-link {

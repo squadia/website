@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from 'react';
 import { Download, Loader2, ChevronLeft, ChevronRight, AlertTriangle, Play, Pause, RotateCcw } from 'lucide-react';
+import { hasAnalyticsConsent } from '../CookieConsent';
 
 /**
  * Flipbook PDF autonome (remplace Heyzine) : PDF.js pour le rendu des pages,
@@ -53,7 +54,7 @@ export default function FlipbookViewer({
   const track = useCallback((event, data = {}) => {
     const payload = { event, trackingId, title, ...data };
     console.log('[flipbook]', payload);
-    if (typeof window !== 'undefined') {
+    if (typeof window !== 'undefined' && hasAnalyticsConsent()) {
       if (typeof window.gtag === 'function') {
         window.gtag('event', event, payload);
       }

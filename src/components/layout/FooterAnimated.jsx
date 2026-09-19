@@ -3,6 +3,7 @@ import { useEffect, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import FooterMobile from './FooterMobile';
+import { showCookiePreferences } from '../CookieConsent';
 
 export default function FooterAnimated() {
   const footerRef = useRef(null);
@@ -124,6 +125,13 @@ export default function FooterAnimated() {
             <a href="https://www.linkedin.com/company/squadiagroup" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease' }}>LinkedIn</a>
             <a href="https://www.youtube.com/@squadiagroup" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease' }}>YouTube</a>
             <Link href="/mentions-legales" style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease' }}>Mentions Légales</Link>
+            <button
+              type="button"
+              onClick={showCookiePreferences}
+              style={{ color: 'var(--text-secondary)', transition: 'color 0.2s ease', background: 'none', border: 'none', padding: 0, font: 'inherit', cursor: 'pointer' }}
+            >
+              Gérer les cookies
+            </button>
           </div>
         </div>
       </div>
