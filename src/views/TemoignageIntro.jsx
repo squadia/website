@@ -132,16 +132,16 @@ const TemoignageIntro = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              gap: '0.75rem',
-              marginTop: '1rem',
+              gap: '1rem',
+              marginTop: '1.25rem',
             }}
           >
             <button
               onClick={togglePlayPause}
               aria-label={isPaused ? 'Reprendre la lecture' : 'Mettre en pause'}
               style={{
-                width: '32px',
-                height: '32px',
+                width: '48px',
+                height: '48px',
                 flexShrink: 0,
                 borderRadius: '50%',
                 background: 'rgba(255,255,255,0.1)',
@@ -153,17 +153,17 @@ const TemoignageIntro = () => {
               }}
             >
               {isPaused ? (
-                <Play size={14} color="#fff" fill="#fff" style={{ marginLeft: '2px' }} />
+                <Play size={20} color="#fff" fill="#fff" style={{ marginLeft: '3px' }} />
               ) : (
-                <Pause size={14} color="#fff" fill="#fff" />
+                <Pause size={20} color="#fff" fill="#fff" />
               )}
             </button>
 
-            <div style={{ flex: 1, height: '4px', borderRadius: '2px', background: 'rgba(255,255,255,0.15)', overflow: 'hidden' }}>
+            <div style={{ flex: 1, height: '8px', borderRadius: '4px', background: 'rgba(255,255,255,0.15)', overflow: 'hidden' }}>
               <div style={{ width: `${progress}%`, height: '100%', background: '#44CCFF', transition: 'width 0.15s linear' }} />
             </div>
 
-            <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+            <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
               -{formatTime(remaining)}
             </span>
           </div>
