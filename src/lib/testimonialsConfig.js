@@ -1,5 +1,4 @@
-// À remplacer par le lien Notion réel avant mise en ligne définitive.
-export const NOTION_RESOURCE_URL = 'https://www.notion.so/REMPLACER-PAR-LE-LIEN-NOTION';
+export const NOTION_RESOURCE_URL = 'https://app.notion.com/p/Bonus-Formation-3e0500024083807f8b4fdf1f4e077841';
 
 export const TESTIMONIALS_ADMIN_FUNCTION_URL =
   'https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/testimonials-admin';

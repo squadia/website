@@ -2,16 +2,26 @@
 import React, { useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { Play, ArrowRight, MessageCircleHeart } from 'lucide-react';
+import { Play, Pause, ArrowRight, MessageCircleHeart } from 'lucide-react';
 
 const VIDEO_SRC = '/assets/video/temoignage-intro.mp4';
+
+function formatTime(seconds) {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const m = Math.floor(seconds / 60);
+  const s = Math.floor(seconds % 60);
+  return `${m}:${String(s).padStart(2, '0')}`;
+}
 
 const TemoignageIntro = () => {
   const router = useRouter();
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isPaused, setIsPaused] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
   const [accepted, setAccepted] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
 
   const handlePlay = () => {
     const video = videoRef.current;
@@ -19,6 +29,16 @@ const TemoignageIntro = () => {
     video.muted = false;
     video.play().catch(() => {});
     setIsPlaying(true);
+  };
+
+  const togglePlayPause = () => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+    } else {
+      video.pause();
+    }
   };
 
   const handleEnded = () => {
@@ -29,6 +49,9 @@ const TemoignageIntro = () => {
     // Vidéo absente/introuvable : on ne bloque pas le visiteur derrière un lecteur cassé.
     setIsEnded(true);
   };
+
+  const remaining = Math.max(duration - currentTime, 0);
+  const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
     <div style={{ position: 'relative', minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
@@ -64,6 +87,10 @@ const TemoignageIntro = () => {
             playsInline
             onEnded={handleEnded}
             onError={handleVideoError}
+            onPlay={() => setIsPaused(false)}
+            onPause={() => setIsPaused(true)}
+            onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+            onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
 
@@ -97,6 +124,53 @@ const TemoignageIntro = () => {
                 <Play size={32} color="#050510" fill="#050510" style={{ marginLeft: '4px' }} />
               </span>
             </button>
+          )}
+
+          {isPlaying && !isEnded && (
+            <div
+              style={{
+                position: 'absolute',
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                padding: '0.75rem 1rem',
+                background: 'linear-gradient(0deg, rgba(5,5,16,0.75) 0%, transparent 100%)',
+              }}
+            >
+              <button
+                onClick={togglePlayPause}
+                aria-label={isPaused ? 'Reprendre la lecture' : 'Mettre en pause'}
+                style={{
+                  width: '32px',
+                  height: '32px',
+                  flexShrink: 0,
+                  borderRadius: '50%',
+                  background: 'rgba(255,255,255,0.15)',
+                  border: 'none',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  cursor: 'pointer',
+                }}
+              >
+                {isPaused ? (
+                  <Play size={14} color="#fff" fill="#fff" style={{ marginLeft: '2px' }} />
+                ) : (
+                  <Pause size={14} color="#fff" fill="#fff" />
+                )}
+              </button>
+
+              <div style={{ flex: 1, height: '4px', borderRadius: '2px', background: 'rgba(255,255,255,0.25)', overflow: 'hidden' }}>
+                <div style={{ width: `${progress}%`, height: '100%', background: '#44CCFF', transition: 'width 0.15s linear' }} />
+              </div>
+
+              <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.75)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+                -{formatTime(remaining)}
+              </span>
+            </div>
           )}
         </div>
 
