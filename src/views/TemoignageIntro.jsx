@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { Play, Pause, ArrowRight, MessageCircleHeart } from 'lucide-react';
 
 const VIDEO_SRC = '/assets/video/temoignage-intro.mp4';
+const TEASER_SECONDS = 20;
 
 function formatTime(seconds) {
   if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
@@ -89,12 +90,17 @@ const TemoignageIntro = () => {
             playsInline
             autoPlay
             muted
-            loop
             onEnded={handleEnded}
             onError={handleVideoError}
             onPlay={() => setIsPaused(false)}
             onPause={() => setIsPaused(true)}
-            onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+            onTimeUpdate={(e) => {
+              const video = e.currentTarget;
+              if (!isPlaying && video.currentTime >= TEASER_SECONDS) {
+                video.currentTime = 0;
+              }
+              setCurrentTime(video.currentTime);
+            }}
             onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
