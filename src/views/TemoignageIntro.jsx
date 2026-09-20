@@ -125,54 +125,49 @@ const TemoignageIntro = () => {
               </span>
             </button>
           )}
+        </div>
 
-          {isPlaying && !isEnded && (
-            <div
+        {isPlaying && !isEnded && (
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.75rem',
+              marginTop: '1rem',
+            }}
+          >
+            <button
+              onClick={togglePlayPause}
+              aria-label={isPaused ? 'Reprendre la lecture' : 'Mettre en pause'}
               style={{
-                position: 'absolute',
-                left: 0,
-                right: 0,
-                bottom: 0,
+                width: '32px',
+                height: '32px',
+                flexShrink: 0,
+                borderRadius: '50%',
+                background: 'rgba(255,255,255,0.1)',
+                border: '1px solid #1A1A3A',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.75rem',
-                padding: '0.75rem 1rem',
-                background: 'linear-gradient(0deg, rgba(5,5,16,0.75) 0%, transparent 100%)',
+                justifyContent: 'center',
+                cursor: 'pointer',
               }}
             >
-              <button
-                onClick={togglePlayPause}
-                aria-label={isPaused ? 'Reprendre la lecture' : 'Mettre en pause'}
-                style={{
-                  width: '32px',
-                  height: '32px',
-                  flexShrink: 0,
-                  borderRadius: '50%',
-                  background: 'rgba(255,255,255,0.15)',
-                  border: 'none',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  cursor: 'pointer',
-                }}
-              >
-                {isPaused ? (
-                  <Play size={14} color="#fff" fill="#fff" style={{ marginLeft: '2px' }} />
-                ) : (
-                  <Pause size={14} color="#fff" fill="#fff" />
-                )}
-              </button>
+              {isPaused ? (
+                <Play size={14} color="#fff" fill="#fff" style={{ marginLeft: '2px' }} />
+              ) : (
+                <Pause size={14} color="#fff" fill="#fff" />
+              )}
+            </button>
 
-              <div style={{ flex: 1, height: '4px', borderRadius: '2px', background: 'rgba(255,255,255,0.25)', overflow: 'hidden' }}>
-                <div style={{ width: `${progress}%`, height: '100%', background: '#44CCFF', transition: 'width 0.15s linear' }} />
-              </div>
-
-              <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.75)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
-                -{formatTime(remaining)}
-              </span>
+            <div style={{ flex: 1, height: '4px', borderRadius: '2px', background: 'rgba(255,255,255,0.15)', overflow: 'hidden' }}>
+              <div style={{ width: `${progress}%`, height: '100%', background: '#44CCFF', transition: 'width 0.15s linear' }} />
             </div>
-          )}
-        </div>
+
+            <span style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.6)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+              -{formatTime(remaining)}
+            </span>
+          </div>
+        )}
 
         <div
           style={{
