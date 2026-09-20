@@ -1,4 +1,5 @@
 import { supabase } from './supabaseClient';
+import { THANK_YOU_WEBHOOK_URL } from './testimonialsConfig';
 
 const BUCKET = 'testimonial-videos';
 const SIGNED_URL_TTL_SECONDS = 3600;
@@ -27,6 +28,14 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
     label,
   });
   if (insertError) throw insertError;
+
+  if (email) {
+    fetch(THANK_YOU_WEBHOOK_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ firstName, email }),
+    }).catch(() => {});
+  }
 
   return path;
 }

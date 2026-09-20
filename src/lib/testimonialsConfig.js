@@ -12,6 +12,9 @@ export const TESTIMONIAL_PAGES = [
 
 export const MAX_RECORDING_SECONDS = 180;
 
+// n8n : envoie l'email de remerciement une fois le temoignage recu.
+export const THANK_YOU_WEBHOOK_URL = 'https://n8n.srv762881.hstgr.cloud/webhook/temoignage-merci';
+
 // Même Client ID Google OAuth que squad.squadia.io (public par nature, pas un secret).
 // Nécessite que www.squadia.io (et localhost en dev) soit dans ses "Authorized JavaScript origins".
 export const GOOGLE_CLIENT_ID = '169502095118-tk41hlqg0e3aqca2mbbthhbiu0c7p0uo.apps.googleusercontent.com';
