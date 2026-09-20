@@ -62,7 +62,7 @@ const TemoignageIntro = () => {
 
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '760px', margin: '0 auto', padding: '120px 24px 80px', textAlign: 'center' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
-          <MessageCircleHeart size={16} /> Un dernier mot
+          <MessageCircleHeart size={16} /> Allons plus loin encore
         </div>
 
         <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, marginBottom: '1rem', fontWeight: 800 }}>
