@@ -26,7 +26,9 @@ const TemoignageIntro = () => {
   const handlePlay = () => {
     const video = videoRef.current;
     if (!video) return;
+    video.loop = false;
     video.muted = false;
+    video.currentTime = 0;
     video.play().catch(() => {});
     setIsPlaying(true);
   };
@@ -85,6 +87,9 @@ const TemoignageIntro = () => {
             ref={videoRef}
             src={VIDEO_SRC}
             playsInline
+            autoPlay
+            muted
+            loop
             onEnded={handleEnded}
             onError={handleVideoError}
             onPlay={() => setIsPaused(false)}
