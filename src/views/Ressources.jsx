@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator } from 'lucide-react';
+import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Images ressources
@@ -55,6 +55,12 @@ export default function Ressources() {
       link: "/ressources/channel-sales-plan",
       icon: <Handshake size={24} color="#2563EB" />,
       cta: "Accéder"
+    },
+    {
+      title: "Planificateur de campagne",
+      link: "/ressources/planificateur-campagne",
+      icon: <CalendarClock size={24} color="#2563EB" />,
+      cta: "Estimer"
     }
   ];
 

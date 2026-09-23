@@ -57,6 +57,7 @@ const SECTIONS = [
       { href: '/ressources/guide-marketing-manager',  label: 'Guide Marketing Manager' },
       { href: '/ressources/channel-sales-plan',       label: 'Channel Sales Plan' },
       { href: '/ressources/simulateur-roi',           label: 'Simulateur ROI' },
+      { href: '/ressources/planificateur-campagne',   label: 'Planificateur de campagne' },
     ],
   },
 ];
