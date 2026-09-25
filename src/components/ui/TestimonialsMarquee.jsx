@@ -1,8 +1,25 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { fetchApprovedTestimonials } from '@/src/lib/testimonials';
+import { useSkipCuts } from '@/src/lib/videoCuts';
 
 const DEMO_ITEMS = ['A', 'B', 'C', 'D'].map((label) => ({ id: `demo-${label}`, demo: true, label }));
+
+function MarqueeVideo({ item }) {
+  const videoRef = useRef(null);
+  useSkipCuts(videoRef, item.cuts);
+  return (
+    <video
+      ref={videoRef}
+      src={item.url}
+      className="testimonials-marquee-video"
+      muted
+      loop
+      autoPlay
+      playsInline
+    />
+  );
+}
 
 export default function TestimonialsMarquee({ page }) {
   const [testimonials, setTestimonials] = useState([]);
@@ -55,14 +72,7 @@ export default function TestimonialsMarquee({ page }) {
                 </div>
               ) : (
                 <div key={`${item.id}-${idx}`} className="testimonials-marquee-card">
-                  <video
-                    src={item.url}
-                    className="testimonials-marquee-video"
-                    muted
-                    loop
-                    autoPlay
-                    playsInline
-                  />
+                  <MarqueeVideo item={item} />
                   {item.label && <p className="testimonials-marquee-caption">{item.label}</p>}
                 </div>
               )

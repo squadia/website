@@ -1,6 +1,8 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { ShieldCheck, Trash2, Check, X, Loader2 } from 'lucide-react';
+import { ShieldCheck, Trash2, Check, X, Loader2, Scissors } from 'lucide-react';
+import TestimonialCutEditor from '@/src/components/ui/TestimonialCutEditor';
+import { useSkipCuts } from '@/src/lib/videoCuts';
 import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, GOOGLE_CLIENT_ID, ADMIN_EMAIL } from '@/src/lib/testimonialsConfig';
 
 const STATUS_TABS = [
@@ -22,6 +24,12 @@ async function callFunction(idToken, action, params = {}) {
   return data;
 }
 
+const AdminVideo = ({ row }) => {
+  const videoRef = useRef(null);
+  useSkipCuts(videoRef, row.cuts);
+  return <video ref={videoRef} src={row.signed_url} controls style={{ width: '100%', borderRadius: '10px', marginBottom: '1rem', background: '#000' }} />;
+};
+
 const TemoignageAdmin = () => {
   const buttonRef = useRef(null);
   const [idToken, setIdToken] = useState('');
@@ -30,6 +38,7 @@ const TemoignageAdmin = () => {
   const [rows, setRows] = useState([]);
   const [tab, setTab] = useState('pending');
   const [busyId, setBusyId] = useState(null);
+  const [editingRow, setEditingRow] = useState(null);
 
   const handleCredential = async (response) => {
     setLoginError('');
@@ -88,6 +97,17 @@ const TemoignageAdmin = () => {
       else alert(err.message);
     } finally {
       setBusyId(null);
+    }
+  };
+
+  const saveCuts = async (cuts) => {
+    try {
+      await callFunction(idToken, 'update', { id: editingRow.id, cuts });
+      await refresh();
+      setEditingRow(null);
+    } catch (err) {
+      if (err.message === 'unauthorized') setIdToken('');
+      else alert(err.message);
     }
   };
 
@@ -153,7 +173,16 @@ const TemoignageAdmin = () => {
           {filteredRows.map((row) => (
             <div key={row.id} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '1.2rem', opacity: busyId === row.id ? 0.5 : 1 }}>
               {row.signed_url ? (
-                <video src={row.signed_url} controls style={{ width: '100%', borderRadius: '10px', marginBottom: '1rem', background: '#000' }} />
+                <>
+                  <AdminVideo row={row} />
+                  <button
+                    onClick={() => setEditingRow(row)}
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: 'transparent', color: '#44CCFF', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '-0.4rem', marginBottom: '1rem' }}
+                  >
+                    <Scissors size={14} /> Couper des scènes
+                    {row.cuts?.length > 0 && <span style={{ color: '#9CA3AF', fontWeight: 500 }}>({row.cuts.length} coupure{row.cuts.length > 1 ? 's' : ''})</span>}
+                  </button>
+                </>
               ) : (
                 <div style={{ height: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6B7280' }}>Vidéo indisponible</div>
               )}
@@ -207,6 +236,9 @@ const TemoignageAdmin = () => {
           ))}
         </div>
       </div>
+      {editingRow && (
+        <TestimonialCutEditor row={editingRow} onClose={() => setEditingRow(null)} onSave={saveCuts} />
+      )}
       <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
     </div>
   );

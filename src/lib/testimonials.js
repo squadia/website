@@ -43,7 +43,7 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
 export async function fetchApprovedTestimonials(page) {
   const { data, error } = await supabase
     .from('testimonial_videos')
-    .select('id, storage_path, label')
+    .select('id, storage_path, label, cuts')
     .eq('status', 'approved')
     .eq('assigned_page', page);
 
