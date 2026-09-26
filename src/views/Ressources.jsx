@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock } from 'lucide-react';
+import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock, Workflow } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Images ressources
@@ -61,6 +61,12 @@ export default function Ressources() {
       link: "/ressources/planificateur-campagne",
       icon: <CalendarClock size={24} color="#1F3A33" />,
       cta: "Estimer"
+    },
+    {
+      title: "Automatisations IA",
+      link: "/automatisation-ia.html",
+      icon: <Workflow size={24} color="#1F3A33" />,
+      cta: "Explorer"
     }
   ];
 
@@ -137,7 +143,7 @@ export default function Ressources() {
           {/* LEFT: box with the 4 resource cards */}
           <div style={{
             background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '1.25rem',
-            padding: '1.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem'
+            padding: '1.5rem', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))', gap: '1rem'
           }}>
             {resources.map((res, i) => (
               <Link

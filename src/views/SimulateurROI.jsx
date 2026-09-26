@@ -220,7 +220,7 @@ export default function SimulateurROI() {
       </section>
 
       {/* SIMULATEUR */}
-      <section className="container" style={{ paddingTop: '8rem' }}>
+      <section className="container" style={{ paddingTop: '8rem', paddingBottom: '9rem' }}>
         <div className="fade-in" style={{ margin: '0 auto 3.5rem', textAlign: 'center' }}>
           <span style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#8A6D3B', marginBottom: '1rem' }}>
             Simulateur de performance
