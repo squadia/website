@@ -35,7 +35,7 @@ export default function FooterAnimated() {
   }, [pathname]);
 
   return (
-    <footer ref={footerRef} className="footer-anim" style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>
+    <footer ref={footerRef} className="footer-anim" style={{ background: '#F6F3EC', padding: '5rem 0 3rem 0', borderTop: '1px solid #D8D1C2' }}>
       <div className="container">
         <div className="footer-grid desktop-only">
 
@@ -109,7 +109,7 @@ export default function FooterAnimated() {
 
         <FooterMobile />
 
-        <div className="footer-bottom" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #1A1A3A', gap: '2rem' }}>
+        <div className="footer-bottom" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #D8D1C2', gap: '2rem' }}>
           <div>
             <Link href="/" className="footer-logo" style={{ display: 'block' }}>
               <img src="/logo.png" alt="Squadia" style={{ height: '32px', width: 'auto', marginBottom: '1.5rem' }} />

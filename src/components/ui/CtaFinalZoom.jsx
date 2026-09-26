@@ -40,26 +40,26 @@ export default function CtaFinalZoom({
   const bottomY = useTransform(scrollYProgress, [0.56, 0.8], [24, 0]);
 
   return (
-    <section ref={zoomRef} style={{ background: '#060612' }}>
+    <section ref={zoomRef} style={{ background: '#F6F3EC' }}>
       <div style={{ height: isMobile ? '160vh' : '220vh', position: 'relative' }}>
         <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.4) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
+          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'transparent', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
           <motion.div style={{
             width: finalWidth, height: finalHeight, scale, borderRadius: radius,
-            border: '1px solid rgba(68,204,255,.1)', textAlign: 'center', position: 'relative', overflow: 'hidden',
-            boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1
+            border: '1px solid rgba(176,141,87,0.1)', textAlign: 'center', position: 'relative', overflow: 'hidden',
+            boxShadow: '0 0 60px -20px rgba(176,141,87,0.15)', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1
           }}>
             <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? 'center 20%' : 'center top', filter: isMobile ? 'brightness(0.55) saturate(1.1)' : 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(6,6,18,0.85) 0%, rgba(6,6,18,0.55) 35%, rgba(6,6,18,0.75) 70%, rgba(6,6,18,0.95) 100%)' : 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
+            <div style={{ position: 'absolute', inset: 0, background: isMobile ? 'linear-gradient(to bottom, rgba(31,58,51,0.85) 0%, rgba(31,58,51,0.55) 35%, rgba(31,58,51,0.8) 70%, rgba(31,58,51,0.96) 100%)' : 'linear-gradient(to bottom, rgba(31,58,51,0.8) 0%, rgba(31,58,51,0.25) 32%, rgba(31,58,51,0.35) 55%, rgba(31,58,51,0.95) 100%)', zIndex: 1, pointerEvents: 'none' }} />
             <div style={{ position: 'relative', zIndex: 2, padding: isMobile ? '40px 24px 48px' : '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
               <motion.div style={{ opacity: topOpacity, y: topY }}>
-                <span style={{ fontSize: isMobile ? '0.7rem' : '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>{eyebrow}</span>
-                <p style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>{kicker}</p>
-                <h2 style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>{title}</h2>
+                <span style={{ fontSize: isMobile ? '0.7rem' : '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#C9A66B', display: 'block', marginBottom: '16px' }}>{eyebrow}</span>
+                <p style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#F6F3EC', margin: '0 0 8px' }}>{kicker}</p>
+                <h2 style={{ fontSize: 'clamp(1.5rem, 5.5vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#F6F3EC', margin: 0 }}>{title}</h2>
               </motion.div>
               <motion.div style={{ opacity: bottomOpacity, y: bottomY }}>
-                <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>{description}</p>
-                <Link href={ctaHref} style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: isMobile ? '1rem 1.8rem' : '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>{ctaLabel}</Link>
+                <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', lineHeight: 1.72, color: 'rgba(246,243,236,0.85)', maxWidth: '420px', margin: '0 auto 32px' }}>{description}</p>
+                <Link href={ctaHref} style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, background: '#C9A66B', color: '#1C2B27', padding: isMobile ? '1rem 1.8rem' : '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>{ctaLabel}</Link>
               </motion.div>
             </div>
           </motion.div>

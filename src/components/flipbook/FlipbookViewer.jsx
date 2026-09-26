@@ -284,10 +284,10 @@ export default function FlipbookViewer({
   return (
     <div className="w-full flex flex-col items-center gap-3">
       <div className="w-full flex flex-wrap items-center gap-x-6 gap-y-2 px-2">
-        <h2 className="text-gray-300 text-base md:text-lg font-medium m-0">{title}</h2>
+        <h2 className="text-[#4A534F] text-base md:text-lg font-medium m-0">{title}</h2>
 
         {status === 'ready' && (
-          <span className="text-sm text-gray-400">
+          <span className="text-sm text-[#6B716C]">
             Page {pageInfo.current} / {pageInfo.total}
           </span>
         )}
@@ -296,21 +296,21 @@ export default function FlipbookViewer({
           href={downloadUrl || pdfUrl}
           download
           onClick={handleDownload}
-          className="inline-flex items-center gap-2 text-sm text-gray-300 hover:text-white transition-colors no-underline"
+          className="inline-flex items-center gap-2 text-sm text-[#4A534F] hover:text-[#1C2B27] transition-colors no-underline"
         >
           <Download size={15} /> Télécharger le PDF
         </a>
       </div>
 
       {status === 'ready' && showHint && (
-        <p className="flipbook-hint w-full px-2 text-white font-bold text-sm md:text-base m-0">
+        <p className="flipbook-hint w-full px-2 text-[#1C2B27] font-bold text-sm md:text-base m-0">
           CLIQUEZ sur le document pour animer les pages
         </p>
       )}
 
       <div className="relative w-full flex items-center justify-center min-h-[420px]">
         {status === 'loading' && (
-          <div className="flex flex-col items-center gap-3 text-gray-300">
+          <div className="flex flex-col items-center gap-3 text-[#4A534F]">
             <Loader2 size={32} className="animate-spin" />
             <span className="text-sm">Chargement du document… {progress}%</span>
           </div>
@@ -318,8 +318,8 @@ export default function FlipbookViewer({
 
         {status === 'error' && (
           <div className="flex flex-col items-center gap-3 text-center max-w-md">
-            <AlertTriangle size={32} color="#EF4444" />
-            <p className="text-red-400 text-sm">
+            <AlertTriangle size={32} color="#A63D2F" />
+            <p className="text-[#A63D2F] text-sm">
               Impossible de charger le document ({errorMessage}). Réessayez ou téléchargez le PDF directement.
             </p>
           </div>
@@ -383,7 +383,7 @@ export default function FlipbookViewer({
                         onTouchStart={stopFlipGesture}
                         onTouchEnd={stopFlipGesture}
                         aria-label={videoPlaying ? 'Mettre la vidéo en pause' : 'Lancer la vidéo'}
-                        className="flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-black/85 text-white transition-colors shadow-lg"
+                        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1F3A33] hover:bg-[#16302A] text-[#F6F3EC] transition-colors shadow-lg"
                       >
                         {videoPlaying ? <Pause size={16} /> : <Play size={16} />}
                       </button>
@@ -395,7 +395,7 @@ export default function FlipbookViewer({
                         onTouchStart={stopFlipGesture}
                         onTouchEnd={stopFlipGesture}
                         aria-label="Rejouer la vidéo depuis le début"
-                        className="flex items-center justify-center w-10 h-10 rounded-full bg-black hover:bg-black/85 text-white transition-colors shadow-lg"
+                        className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1F3A33] hover:bg-[#16302A] text-[#F6F3EC] transition-colors shadow-lg"
                       >
                         <RotateCcw size={16} />
                       </button>
@@ -413,7 +413,7 @@ export default function FlipbookViewer({
               type="button"
               onClick={goPrev}
               aria-label="Page précédente"
-              className="absolute left-0 md:-left-14 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute left-0 md:-left-14 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white text-[#1C2B27] transition-colors"
             >
               <ChevronLeft size={20} />
             </button>
@@ -421,7 +421,7 @@ export default function FlipbookViewer({
               type="button"
               onClick={goNext}
               aria-label="Page suivante"
-              className="absolute right-0 md:-right-14 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+              className="absolute right-0 md:-right-14 top-1/2 -translate-y-1/2 flex items-center justify-center w-10 h-10 rounded-full bg-white hover:bg-white text-[#1C2B27] transition-colors"
             >
               <ChevronRight size={20} />
             </button>

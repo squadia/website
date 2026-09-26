@@ -6,6 +6,7 @@ import { Target, Zap, BarChart3, ArrowRight, ShieldCheck, Rocket, ChevronDown, C
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 import { casesData } from '../data/cases';
+import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
@@ -30,7 +31,7 @@ const caseLabelsDG = {
 };
 
 const TagDG = ({ children }) => (
-  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#44CCFF', color: '#060612', border: 'none' }}>
+  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px', fontSize: '12px', fontWeight: 600, backgroundColor: '#1F3A33', color: '#F6F3EC', border: 'none' }}>
     {children}
   </span>
 );
@@ -39,8 +40,8 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   <div
     onClick={onToggle}
     style={{
-      backgroundColor: '#0D0D25',
-      border: '1px solid rgba(68, 204, 255, 0.18)',
+      backgroundColor: '#F6F3EC',
+      border: '1px solid rgba(176,141,87,0.18)',
       borderRadius: '16px',
       padding: '1.6rem',
       cursor: 'pointer',
@@ -49,13 +50,13 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   >
     <div style={{
       width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
-      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+      color: '#1C2B27', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
       <span>{question}</span>
       <ChevronDown style={{
         transition: 'transform 0.3s ease',
         transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-        color: '#44CCFF', flexShrink: 0
+        color: '#8A6D3B', flexShrink: 0
       }} />
     </div>
     <div style={{
@@ -64,7 +65,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
       transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
       opacity: isOpen ? 1 : 0
     }}>
-      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
     </div>
   </div>
 );
@@ -82,10 +83,10 @@ const LandingDG = () => {
   }, []);
 
   const enjeux = [
-    { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#44CCFF" />, image: '/assets/images/dg/driving.webp' },
-    { short: 'Recrutement commercial', title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#44CCFF" />, image: '/assets/images/dg/recrutement.webp' },
-    { short: 'Données commerciales', title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#44CCFF" />, image: '/assets/images/dg/pbfichier.webp' },
-    { short: 'Confiance du board', title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#44CCFF" />, image: '/assets/images/dg/secretaire.webp' }
+    { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#8A6D3B" />, image: '/assets/images/dg/driving.webp' },
+    { short: 'Recrutement commercial', title: "Recruter un commercial senior sans garantie qu'il performe", desc: "Un bon closer met souvent plusieurs mois à devenir productif. Sans pipeline déjà structuré ni système d'onboarding, chaque recrutement commercial reste un pari coûteux.", icon: <BarChart3 color="#8A6D3B" />, image: '/assets/images/dg/recrutement.webp' },
+    { short: 'Données commerciales', title: "Des données commerciales qui ne servent à personne", desc: "CRM mal renseigné, fichiers parallèles, contacts dans la tête des commerciaux. Cette donnée a de la valeur, mais seulement si elle est propre et centralisée : pour piloter, pour recruter, pour convaincre un investisseur.", icon: <ShieldCheck color="#8A6D3B" />, image: '/assets/images/dg/pbfichier.webp' },
+    { short: 'Confiance du board', title: 'Garder la confiance du board en période tendue', desc: "Quand les résultats ralentissent, le discours ne suffit plus. Ce qui rassure un board, ce sont des indicateurs qui montrent que la machine reste sous contrôle, même dans la difficulté.", icon: <Rocket color="#8A6D3B" />, image: '/assets/images/dg/secretaire.webp' }
   ];
 
   const apports = [
@@ -104,7 +105,7 @@ const LandingDG = () => {
   ];
 
   return (
-    <div className="landing-dg" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div className="landing-dg" style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
       
       {/* ═══ MODERN B2B AI REVENUE HEADER V1 (STITCH VISUAL) ═══ */}
       <section style={{ 
@@ -113,7 +114,7 @@ const LandingDG = () => {
         display: 'flex', 
         alignItems: 'center', 
         overflow: 'hidden',
-        background: '#040710'
+        background: '#F6F3EC'
       }}>
         <style>
           {`
@@ -151,8 +152,8 @@ const LandingDG = () => {
               100% { background-position: 200% 0; }
             }
             .dg-kpi-card {
-              background: rgba(8,15,35,0.6);
-              border: 1px solid rgba(68,204,255,0.15);
+              background: rgba(246,243,236,0.6);
+              border: 1px solid rgba(176,141,87,0.15);
               border-radius: 14px;
               backdrop-filter: blur(10px);
               -webkit-backdrop-filter: blur(10px);
@@ -163,14 +164,14 @@ const LandingDG = () => {
               content: '';
               position: absolute;
               top: 0; left: 0; right: 0; height: 1px;
-              background: linear-gradient(90deg, transparent, rgba(68,204,255,0.3), transparent);
+              background: linear-gradient(90deg, transparent, rgba(176,141,87,0.3), transparent);
               border-radius: 14px 14px 0 0;
             }
             .dg-kpi-card::after {
               content: '';
               position: absolute;
               top: 50%; left: 50%; width: 150px; height: 150px;
-              background: radial-gradient(circle, rgba(68,204,255,0.05) 0%, transparent 70%);
+              background: radial-gradient(circle, rgba(176,141,87,0.05) 0%, transparent 70%);
               transform: translate(-50%, -50%);
               pointer-events: none;
             }
@@ -195,16 +196,16 @@ const LandingDG = () => {
         {/* Dark Gradient Overlay for text readability (matches left side of image) */}
         <div style={{
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
-          background: 'linear-gradient(to right, rgba(6,10,18,0.98) 0%, rgba(6,10,18,0.85) 45%, rgba(6,10,18,0) 80%)',
+          background: 'linear-gradient(to right, rgba(246,243,236,0.98) 0%, rgba(246,243,236,0.85) 45%, rgba(246,243,236,0.0) 80%)',
           zIndex: 2,
           opacity: 0,
           animation: 'fadeBg 1s ease 0.2s forwards'
         }} />
         
-        {/* Fade bas : transition douce vers la section suivante (#050510), évite la coupe nette de l'image */}
+        {/* Fade bas : transition douce vers la section suivante (#F6F3EC), évite la coupe nette de l'image */}
         <div style={{
           position: 'absolute', bottom: 0, left: 0, width: '100%', height: '260px',
-          background: 'linear-gradient(to bottom, transparent 0%, #050510 100%)',
+          background: 'linear-gradient(to bottom, transparent 0%, #F6F3EC 100%)',
           zIndex: 3,
           pointerEvents: 'none'
         }} />
@@ -218,7 +219,7 @@ const LandingDG = () => {
               lineHeight: 1.2,
               marginBottom: '1.5rem',
               letterSpacing: '-0.02em',
-              color: '#FFFFFF',
+              color: '#1C2B27',
               opacity: 0,
               animation: 'fadeContent 1.2s ease 0.3s forwards'
             }}>
@@ -229,7 +230,7 @@ const LandingDG = () => {
 
             <p style={{
               fontSize: '1.25rem',
-              color: 'rgba(255,255,255,0.78)',
+              color: 'rgba(28,43,39,0.78)',
               marginBottom: '3.5rem',
               maxWidth: '800px',
               lineHeight: 1.7,
@@ -254,23 +255,23 @@ const LandingDG = () => {
                 const glassCard = {
                   flex: '1 1 190px',
                   padding: '1.2rem',
-                  color: '#FFF',
+                  color: '#1C2B27',
                 };
                 return (
                   <>
                     {/* Card 1 : Performance globale */}
                     <div className="dg-kpi-card" style={glassCard}>
-                      <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance globale</div>
+                      <div style={{ fontSize: '0.8rem', color: 'rgba(28,43,39,0.6)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Performance globale</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>+31%</div>
-                      <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                        <span style={{ color: '#44CCFF' }}>Croissance</span> 90 jours
+                      <div style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', marginBottom: '1rem' }}>
+                        <span style={{ color: '#8A6D3B' }}>Croissance</span> 90 jours
                       </div>
                       {/* Sparkline : fill séparé sans stroke, ligne animée */}
                       <svg viewBox="0 0 100 32" width="100%" height="34" style={{ display: 'block', overflow: 'visible' }}>
                         <defs>
                           <linearGradient id="fillGrad" x1="0" y1="0" x2="0" y2="1">
-                            <stop offset="0%" stopColor="#44CCFF" stopOpacity="0.2" />
-                            <stop offset="100%" stopColor="#44CCFF" stopOpacity="0" />
+                            <stop offset="0%" stopColor="#8A6D3B" stopOpacity="0.2" />
+                            <stop offset="100%" stopColor="#8A6D3B" stopOpacity="0" />
                           </linearGradient>
                           <clipPath id="sparkClip">
                             <rect x="0" y="0" width="100" height="32" />
@@ -287,7 +288,7 @@ const LandingDG = () => {
                         <path
                           d="M0 25 L20 28 L40 22 L60 14 L80 18 L100 0"
                           fill="none"
-                          stroke="#44CCFF"
+                          stroke="#B08D57"
                           strokeWidth="2"
                           strokeLinecap="round"
                           strokeLinejoin="round"
@@ -298,8 +299,8 @@ const LandingDG = () => {
                         {/* Points séquentiels */}
                         {[[0,25],[20,28],[40,22],[60,14],[80,18],[100,0]].map(([cx,cy], i) => (
                           <circle key={i} cx={cx} cy={cy} r={i === 5 ? 3.5 : 2}
-                            fill={i === 5 ? '#44CCFF' : 'rgba(68,204,255,0.7)'}
-                            stroke={i === 5 ? 'rgba(68,204,255,0.3)' : 'none'}
+                            fill={i === 5 ? '#8A6D3B' : 'rgba(176,141,87,0.7)'}
+                            stroke={i === 5 ? 'rgba(176,141,87,0.3)' : 'none'}
                             strokeWidth={i === 5 ? 4 : 0}
                             style={{ opacity: 0, animation: `fadeContent 0.25s ease ${1.5 + i * 0.08}s forwards` }}
                           />
@@ -309,31 +310,31 @@ const LandingDG = () => {
 
                     {/* Card 2 : Alignement équipes */}
                     <div className="dg-kpi-card" style={{ ...glassCard, position: 'relative' }}>
-                      <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Alignement équipes</div>
+                      <div style={{ fontSize: '0.8rem', color: 'rgba(28,43,39,0.6)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Alignement équipes</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>9.1/10</div>
-                      <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)' }}>
-                        <span style={{ color: '#44CCFF' }}>Marketing</span> × Ventes
+                      <div style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)' }}>
+                        <span style={{ color: '#8A6D3B' }}>Marketing</span> × Ventes
                       </div>
                       {/* Arc gauge animé */}
                       <div style={{ position: 'absolute', bottom: '1.5rem', right: '1.5rem', width: '52px', height: '52px' }}>
                         <svg viewBox="0 0 52 52" width="52" height="52" style={{ transform: 'rotate(-90deg)' }}>
-                          <circle cx="26" cy="26" r="21" fill="none" stroke="rgba(255,255,255,0.07)" strokeWidth="4.5" />
-                          <circle cx="26" cy="26" r="21" fill="none" stroke="#44CCFF" strokeWidth="4.5"
+                          <circle cx="26" cy="26" r="21" fill="none" stroke="rgba(28,43,39,0.14)" strokeWidth="4.5" />
+                          <circle cx="26" cy="26" r="21" fill="none" stroke="#B08D57" strokeWidth="4.5"
                             strokeLinecap="round"
                             strokeDasharray="0 132"
                             style={{ animation: 'drawArc 1.8s cubic-bezier(0.4,0,0.2,1) 0.9s forwards' }}
                           />
                         </svg>
-                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '-0.03em' }}>9.1</div>
+                        <div style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '0.6rem', fontWeight: 700, color: '#8A6D3B', letterSpacing: '-0.03em' }}>9.1</div>
                       </div>
                     </div>
 
                     {/* Card 3 : Prochaine Initiative */}
                     <div className="dg-kpi-card" style={glassCard}>
-                      <div style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.45)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Prochaine Initiative</div>
+                      <div style={{ fontSize: '0.8rem', color: 'rgba(28,43,39,0.6)', letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>Prochaine Initiative</div>
                       <div style={{ fontSize: '2.2rem', fontWeight: 700, lineHeight: 1.1, marginBottom: '0.3rem' }}>CRM IA</div>
-                      <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.4)', marginBottom: '1rem' }}>
-                        <span style={{ color: '#44CCFF' }}>Démarrage</span> J+14 : ROI ×3
+                      <div style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', marginBottom: '1rem' }}>
+                        <span style={{ color: '#8A6D3B' }}>Démarrage</span> J+14 : ROI ×3
                       </div>
                       {/* Barres animées avec hauteurs croissantes */}
                       <svg viewBox="0 0 90 30" width="90" height="30" style={{ display: 'block' }}>
@@ -346,7 +347,7 @@ const LandingDG = () => {
                         ].map((b, i) => (
                           <rect key={i}
                             x={b.x} y={30 - b.h} width="12" height={b.h} rx="3"
-                            fill={b.accent ? '#44CCFF' : 'rgba(68,204,255,0.25)'}
+                            fill={b.accent ? '#8A6D3B' : 'rgba(176,141,87,0.25)'}
                             style={{ opacity: 0, animation: `fadeContent 0.35s ease ${0.9 + i * 0.12}s forwards` }}
                           />
                         ))}
@@ -366,7 +367,7 @@ const LandingDG = () => {
       </section>
 
       {/* ═══ SECTION 2 : VOS ENJEUX ═══ */}
-      <section className="section-padding" style={{ background: '#050510', position: 'relative', overflow: 'hidden' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC', position: 'relative', overflow: 'hidden' }}>
         {/* Halo lumineux côté droit */}
         <div style={{
           position: 'absolute',
@@ -375,13 +376,13 @@ const LandingDG = () => {
           transform: 'translateY(-50%)',
           width: '550px',
           height: '550px',
-          background: 'radial-gradient(circle, rgba(37,99,235,0.65) 0%, transparent 65%)',
+          background: 'transparent',
           filter: 'blur(80px)',
           pointerEvents: 'none',
           zIndex: 0
         }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Principaux freins</p>
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>Principaux freins</p>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Contraintes du dirigeant en 2026</h2>
           <EnjeuxCarousel items={enjeux} />
         </div>
@@ -393,9 +394,9 @@ const LandingDG = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center' }}>Comment Squadia travaille avec les dirigeants</h2>
           <div className="grid-2" style={{ gap: '2rem' }}>
             {apports.map((item, i) => (
-              <div key={i} style={{ padding: '2.5rem', background: '#0D0D25', border: '1px solid #1A1A3A', borderLeft: '4px solid #44CCFF', borderRadius: '8px' }}>
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#F9FAFB' }}>{item.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem' }}>{item.desc}</p>
+              <div key={i} style={{ padding: '2.5rem', background: '#F6F3EC', border: '1px solid #D8D1C2', borderLeft: '4px solid #B08D57', borderRadius: '8px' }}>
+                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem', color: '#1C2B27' }}>{item.title}</h3>
+                <p style={{ color: 'rgba(28,43,39,0.78)', lineHeight: 1.7, fontSize: '1rem' }}>{item.desc}</p>
               </div>
             ))}
           </div>
@@ -403,18 +404,18 @@ const LandingDG = () => {
       </section>
 
       {/* ═══ SECTION 3B : LA VISION SYSTEMIQUE ═══ */}
-      <section style={{ backgroundColor: '#050510', overflow: 'hidden' }}>
+      <section style={{ backgroundColor: '#F6F3EC', overflow: 'hidden' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '10rem 2rem 0' }}>
           {/* En-tête pleine largeur */}
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>VISION SYSTÉMIQUE</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2, maxWidth: '900px' }}>
+          <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>VISION SYSTÉMIQUE</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '3rem', lineHeight: 1.2, maxWidth: '900px' }}>
             Le système, avant l'outil
           </h2>
         </div>
         
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 2rem 10rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'start' }}>
           {/* Texte à gauche */}
-          <div style={{ color: 'rgba(255,255,255,0.55)', lineHeight: 1.8, fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div style={{ color: 'rgba(28,43,39,0.6)', lineHeight: 1.8, fontSize: '1rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
             <p>
               Un dirigeant a rarement l'IA en tête de ses priorités. Il doit surtout prouver, trimestre après trimestre, que l'entreprise avance dans la bonne direction.
             </p>
@@ -438,12 +439,12 @@ const LandingDG = () => {
                 width: '100%', 
                 height: 'auto', 
                 borderRadius: '16px', 
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                boxShadow: '0 20px 40px rgba(0,0,0,0.4)',
+                border: '1px solid rgba(28,43,39,0.16)',
+                boxShadow: '0 20px 40px rgba(28,43,39,0.14)',
                 display: 'block'
               }} 
             />
-            <p style={{ color: 'rgba(255,255,255,0.4)', lineHeight: 1.7, fontSize: '0.9rem', fontStyle: 'italic' }}>
+            <p style={{ color: 'rgba(28,43,39,0.6)', lineHeight: 1.7, fontSize: '0.9rem', fontStyle: 'italic' }}>
               Nous aidons les dirigeants à transformer leur activité commerciale en un système qu'ils peuvent présenter à leur board en toute confiance.
             </p>
           </div>
@@ -451,86 +452,13 @@ const LandingDG = () => {
       </section>
 
       {/* ═══ SECTION 4 : CAS CLIENTS ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}>CAS CLIENTS</p>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1.5rem' }}>Résultats concrets</h2>
-            <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables.</p>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
-            {casesData.filter(c => ['crm-industrie', 'pipeline-b2b', 'formation-vente'].includes(c.id)).map((c) => {
-              const img = caseImagesDG[c.id];
-              return (
-                <Link
-                  key={c.id}
-                  href={`/cas-clients/${c.id}`}
-                  style={{ background: c.bgGradient || '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '2.5rem', cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minHeight: '340px', position: 'relative', overflow: 'hidden', textDecoration: 'none', transition: 'all 0.3s ease' }}
-                  onMouseEnter={(e) => {
-                    const overlay = e.currentTarget.querySelector('.card-overlay-dg');
-                    const image = e.currentTarget.querySelector('.card-img-dg');
-                    if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(10,15,46,0.65) 20%, rgba(10,15,46,0.2) 100%)';
-                    if (image) image.style.opacity = '0.55';
-                    e.currentTarget.style.transform = 'translateY(-5px)';
-                    e.currentTarget.style.borderColor = 'rgba(68,204,255,0.35)';
-                  }}
-                  onMouseLeave={(e) => {
-                    const overlay = e.currentTarget.querySelector('.card-overlay-dg');
-                    const image = e.currentTarget.querySelector('.card-img-dg');
-                    if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(10,15,46,0.8) 30%, rgba(10,15,46,0.3) 100%)';
-                    if (image) image.style.opacity = '0.38';
-                    e.currentTarget.style.transform = 'translateY(0)';
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)';
-                  }}
-                >
-                  {img && (
-                    <img src={img} alt="" className="card-img-dg" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.38, transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />
-                  )}
-                  <div className="card-overlay-dg" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,46,0.8) 30%, rgba(10,15,46,0.3) 100%)', transition: 'background 0.4s ease', pointerEvents: 'none' }} />
-                  <div style={{ position: 'relative', zIndex: 1 }}>
-                    <TagDG>{caseLabelsDG[c.id] || c.tags[0]}</TagDG>
-                    <div style={{ marginTop: '1.2rem', marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{c.shortTitle}</div>
-                    {c.id === 'crm-industrie' ? (
-                      <div style={{ marginBottom: '1.4rem' }}>
-                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+185 opportunités</div>
-                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>injectées en pipeline en 4 mois</div>
-                      </div>
-                    ) : c.id === 'formation-vente' ? (
-                      <div style={{ marginBottom: '1.4rem' }}>
-                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
-                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
-                      </div>
-                    ) : (
-                      <div style={{ marginBottom: '1.4rem' }}>
-                        <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
-                        <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
-                      </div>
-                    )}
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', fontWeight: 500 }}>
-                      Voir l'étude complète <ArrowRight size={14} />
-                    </div>
-                  </div>
-                </Link>
-              );
-            })}
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <Link href="/cas-clients" style={{ display: 'inline-flex', alignItems: 'center', backgroundColor: 'transparent', color: '#44CCFF', fontWeight: 600, padding: '1rem 2.5rem', borderRadius: '8px', border: '1px solid #44CCFF', textDecoration: 'none', transition: 'all 0.3s ease' }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(68,204,255,0.05)'; e.currentTarget.style.transform = 'scale(1.02)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.transform = 'scale(1)'; }}>
-              Voir tous les cas <ArrowRight size={18} style={{ marginLeft: '0.75rem' }} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CasesShowcase images={caseImagesDG} />
 
       {/* ═══ SECTION GUIDES GRATUITS ═══ */}
-      <section style={{ padding: '10rem 2rem', backgroundColor: '#11111E' }}>
+      <section style={{ padding: '10rem 2rem', backgroundColor: '#FFFFFF' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
+          <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '3rem', lineHeight: 1.2 }}>Guides gratuits pour vos équipes.</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
             {[
               {
@@ -559,18 +487,18 @@ const LandingDG = () => {
                 key={idx}
                 href={ressource.link}
                 className="ressource-card-link"
-                style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(68,204,255,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#FFFFFF', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(68,204,255,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(68,204,255,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+                style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#1C2B27', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
                 <div className="ressource-img-mobile" style={{ flex: 1, minHeight: '100%', overflow: 'hidden' }}>
                   <img src={ressource.image} alt={ressource.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
                 </div>
                 <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{ressource.category}</span>
-                  <h3 style={{ color: '#FFFFFF', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>{ressource.title}</h3>
-                  <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>{ressource.description}</p>
-                  <span style={{ alignSelf: 'flex-start', background: '#FFFFFF', color: '#060612', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ color: '#8A6D3B', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{ressource.category}</span>
+                  <h3 style={{ color: '#1C2B27', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>{ressource.title}</h3>
+                  <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>{ressource.description}</p>
+                  <span style={{ alignSelf: 'flex-start', background: '#1F3A33', color: '#F6F3EC', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
                     Télécharger gratuitement →
                   </span>
                 </div>
@@ -581,7 +509,7 @@ const LandingDG = () => {
       </section>
 
       {/* ═══ SECTION 5 : FAQ ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ maxWidth: '1200px', marginInline: 'auto' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center' }}>Questions fréquentes</h2>
@@ -601,42 +529,40 @@ const LandingDG = () => {
       </section>
 
       {/* ══ SECTION ARTICLES (À lire aussi) ══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
-          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>RESSOURCES</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>À lire aussi</h2>
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>RESSOURCES</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', textAlign: 'center', color: '#1C2B27' }}>À lire aussi</h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem', maxWidth: '1200px', marginInline: 'auto' }}>
 
-            <Link href="/blog/strategie-ia-pme-sequence" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <Link href="/blog/strategie-ia-pme-sequence" style={{ textDecoration: 'none', backgroundColor: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogStrategieIAImg} alt="Stratégie IA en PME et ETI" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(139,92,246,0.4)', backgroundColor: 'rgba(139,92,246,0.12)', color: '#A78BFA', marginBottom: '1.5rem' }}>Stratégie IA</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(176,141,87,0.4)', backgroundColor: 'rgba(176,141,87,0.12)', color: '#8A6D3B', marginBottom: '1.5rem' }}>Stratégie IA</span>
                 </div>
-                <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
+                <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#1C2B27', fontWeight: 700 }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
                 <div style={{ marginTop: 'auto' }}>
-                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                     Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
                   </span>
                 </div>
               </div>
             </Link>
 
-            <Link href="/blog/formation-ia-automatisation-ordre" style={{ textDecoration: 'none', backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <Link href="/blog/formation-ia-automatisation-ordre" style={{ textDecoration: 'none', backgroundColor: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={blogFormationAutomImg} alt="Formation IA ou automatisation" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
                 <div style={{ display: 'flex', justifyContent: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(68,204,255,0.35)', backgroundColor: 'rgba(37,99,235,0.12)', color: '#44CCFF', marginBottom: '1.5rem' }}>Transformation</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.78rem', fontWeight: 600, border: '1px solid rgba(176,141,87,0.35)', backgroundColor: 'rgba(31,58,51,0.12)', color: '#8A6D3B', marginBottom: '1.5rem' }}>Transformation</span>
                 </div>
-                <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 700 }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
+                <h3 style={{ fontSize: '1.25rem', lineHeight: 1.35, marginBottom: '1.5rem', flexGrow: 1, color: '#1C2B27', fontWeight: 700 }}>Formation IA ou automatisation des process : dans quel ordre transformer son entreprise ?</h3>
                 <div style={{ marginTop: 'auto' }}>
-                  <span style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <span style={{ backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33', padding: '0.8rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
                     Lire l'article <ChevronDown size={16} style={{ transform: 'rotate(-90deg)' }} />
                   </span>
                 </div>
@@ -648,7 +574,7 @@ const LandingDG = () => {
       </section>
 
       {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div className="container fade-in">
           <ClientLogosSection contained={true} />
         </div>

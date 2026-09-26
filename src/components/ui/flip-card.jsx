@@ -13,11 +13,11 @@ export default function CardFlip({
     'MVP Optimized',
     'Zero Setup Required',
   ],
-  color = '#2563EB'
+  color = '#1F3A33'
 }) {
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const primary = color ?? '#2563eb';
+  const primary = color ?? '#1F3A33';
 
   return (
     <div
@@ -53,9 +53,9 @@ export default function CardFlip({
             WebkitBackfaceVisibility: 'hidden',
             borderRadius: '1rem',
             overflow: 'hidden',
-            background: 'linear-gradient(135deg, #18182a 0%, #14141f 60%, #111827 100%)',
-            border: `1px solid rgba(255,255,255,0.07)`,
-            boxShadow: '0 8px 32px rgba(0,0,0,0.4)',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 60%, #FFFFFF 100%)',
+            border: `1px solid rgba(28,43,39,0.16)`,
+            boxShadow: '0 8px 32px rgba(28,43,39,0.14)',
             transition: 'opacity 0.3s',
             opacity: isFlipped ? 0 : 1,
           }}
@@ -106,10 +106,10 @@ export default function CardFlip({
           <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '1.25rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '12px' }}>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#fff', margin: 0, letterSpacing: '-0.02em' }}>
+                <h3 style={{ fontSize: '1.1rem', fontWeight: 600, color: '#1C2B27', margin: 0, letterSpacing: '-0.02em' }}>
                   {title}
                 </h3>
-                <p style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.5)', margin: 0, fontWeight: 500 }}>
+                <p style={{ fontSize: '0.8rem', color: 'rgba(28,43,39,0.6)', margin: 0, fontWeight: 500 }}>
                   {subtitle}
                 </p>
               </div>
@@ -128,9 +128,9 @@ export default function CardFlip({
             transform: 'rotateY(180deg)',
             borderRadius: '1rem',
             padding: '1.25rem',
-            background: 'linear-gradient(135deg, #18182a 0%, #14141f 60%, #111827 100%)',
+            background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 60%, #FFFFFF 100%)',
             border: `1px solid ${primary}44`,
-            boxShadow: `0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px ${primary}22`,
+            boxShadow: `0 8px 32px rgba(28,43,39,0.14), 0 0 0 1px ${primary}22`,
             display: 'flex',
             flexDirection: 'column',
             transition: 'opacity 0.3s',
@@ -153,13 +153,13 @@ export default function CardFlip({
                   background: `linear-gradient(135deg, ${primary}, ${primary}aa)`,
                   display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
                 }}>
-                  <Code2 style={{ height: '16px', width: '16px', color: '#fff' }} />
+                  <Code2 style={{ height: '16px', width: '16px', color: '#1C2B27' }} />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#fff', margin: 0 }}>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#1C2B27', margin: 0 }}>
                   {title}
                 </h3>
               </div>
-              <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.45)', margin: 0, lineHeight: 1.5, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
+              <p style={{ fontSize: '0.82rem', color: 'rgba(28,43,39,0.6)', margin: 0, lineHeight: 1.5, display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
                 {description}
               </p>
             </div>
@@ -174,7 +174,7 @@ export default function CardFlip({
                     key={feature}
                     style={{
                       display: 'flex', alignItems: 'center', gap: '10px',
-                      fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)',
+                      fontSize: '0.85rem', color: 'rgba(28,43,39,0.7)',
                       fontWeight: 500,
                       transform: isFlipped ? 'translateX(0)' : 'translateX(-10px)',
                       opacity: isFlipped ? 1 : 0,
@@ -198,15 +198,15 @@ export default function CardFlip({
           </div>
 
           {/* Footer CTA */}
-          <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', borderTop: '1px solid rgba(255,255,255,0.07)', paddingTop: '1rem' }}>
+          <div style={{ position: 'relative', zIndex: 1, marginTop: 'auto', borderTop: '1px solid rgba(28,43,39,0.16)', paddingTop: '1rem' }}>
             <a
               href="#calendrier"
               style={{
                 display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                 padding: '10px 14px',
                 borderRadius: '8px',
-                background: 'rgba(255,255,255,0.05)',
-                border: '1px solid rgba(255,255,255,0.08)',
+                background: 'rgba(255,255,255,0.6)',
+                border: '1px solid rgba(28,43,39,0.16)',
                 textDecoration: 'none',
                 transition: 'all 0.3s',
               }}
@@ -215,11 +215,11 @@ export default function CardFlip({
                 e.currentTarget.style.borderColor = `${primary}66`;
               }}
               onMouseOut={e => {
-                e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
-                e.currentTarget.style.borderColor = 'rgba(255,255,255,0.08)';
+                e.currentTarget.style.background = 'rgba(255,255,255,0.6)';
+                e.currentTarget.style.borderColor = 'rgba(28,43,39,0.6)';
               }}
             >
-              <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#fff' }}>RDV avec un expert</span>
+              <span style={{ fontSize: '0.85rem', fontWeight: 600, color: '#1C2B27' }}>RDV avec un expert</span>
               <ArrowRight style={{ height: '16px', width: '16px', color: primary }} />
             </a>
           </div>

@@ -92,7 +92,7 @@ const Navbar = () => {
           transition={{ delay: 0.2, duration: 0.9, ease: 'easeOut' }}
         >
           <Link href="/" style={{ display: 'flex', alignItems: 'center' }}>
-            <img src="/logo.png" alt="Squadia" className="logo" style={{ height: scrolled ? '28px' : '32px', width: 'auto', transition: 'all 0.5s' }} />
+            <img src="/logo_squadia_bw.png" alt="Squadia" className="logo" style={{ height: scrolled ? '28px' : '32px', width: 'auto', transition: 'all 0.5s' }} />
           </Link>
         </motion.div>
 
@@ -110,13 +110,13 @@ const Navbar = () => {
           }}>
           <div data-dropdown="nos-services" onClick={() => setShowDropdown(!showDropdown)}
             style={{ display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer',
-              fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500 }}>
+              fontSize: scrolled ? '0.95rem' : '1rem', color: '#1C2B27', fontWeight: 500 }}>
             Nos Services <ChevronDown size={14} style={{ transition: 'transform 0.2s' }} />
           </div>
-          <Link href="/cas-clients"    style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
-          <Link href="/ressources"     style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
-          <Link href="/tarifs"         style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
-          <Link href="/notre-mission"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#fff', fontWeight: 500, textDecoration: 'none' }}>Notre Mission</Link>
+          <Link href="/cas-clients"    style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#1C2B27', fontWeight: 500, textDecoration: 'none' }}>Cas clients</Link>
+          <Link href="/ressources"     style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#1C2B27', fontWeight: 500, textDecoration: 'none' }}>Ressources</Link>
+          <Link href="/tarifs"         style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#1C2B27', fontWeight: 500, textDecoration: 'none' }}>Tarifs</Link>
+          <Link href="/notre-mission"  style={{ fontSize: scrolled ? '0.95rem' : '1rem', color: '#1C2B27', fontWeight: 500, textDecoration: 'none' }}>Notre Mission</Link>
         </motion.div>
 
         {/* Desktop CTA */}
@@ -163,9 +163,9 @@ const Navbar = () => {
               </div>
             </div>
             {[
-              { id: 'data', label: 'Data B2B', icon: <Database size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
-              { id: 'prospection', label: 'Prospection', icon: <Zap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
-              { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#fff' }} /> },
+              { id: 'data', label: 'Data B2B', icon: <Database size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
+              { id: 'prospection', label: 'Prospection', icon: <Zap size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
+              { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
             ].map(cat => (
               <div key={cat.id} className={`squad-cat ${activeCategory === cat.id ? 'active' : ''}`} onClick={() => setActiveCategory(cat.id)}>
                 {cat.icon}{cat.label}
@@ -220,7 +220,7 @@ const Navbar = () => {
           </div>
 
           <div className="squad-personas">
-            <h4 style={{ textAlign: 'center' }}>Votre Rôle et l'IA</h4>
+            <h4 style={{ textAlign: 'center' }}>Votre métier, nos services</h4>
             <p style={{ textAlign: 'center' }}>Activez les quick wins et renforcez vos résultats</p>
             <div className="squad-persona-list">
               {[
@@ -254,14 +254,14 @@ const Navbar = () => {
         .navbar-scrolled {
           top: 20px;
           width: min(1200px, 92vw);
-          background-color: rgba(6,6,18,0.85);
+          background-color: rgba(246,243,236,0.85);
           backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
           border-radius: 60px;
-          border: 1px solid rgba(68,204,255,0.2);
-          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+          border: 1px solid rgba(176,141,87,0.2);
+          box-shadow: 0 20px 50px rgba(28,43,39,0.175);
         }
         .btn-RDV {
-          background: #44CCFF; color: #060612;
+          background: #1F3A33; color: #F6F3EC;
           padding: 8px 18px; font-size: 13px; font-weight: 700;
           border-radius: 6px; text-decoration: none; transition: transform 0.2s;
         }
@@ -281,7 +281,7 @@ const Navbar = () => {
         }
         .hb-line {
           display: block; width: 100%; height: 2px;
-          background: #fff; border-radius: 2px;
+          background: #FFFFFF; border-radius: 2px;
           transform-origin: center;
           transition: transform 0.35s cubic-bezier(0.77,0,0.175,1),
                       opacity 0.25s ease,
@@ -296,16 +296,16 @@ const Navbar = () => {
         .squad-dropdown {
           position: absolute; left: 50%; transform: translateX(-50%);
           width: min(1200px, 94vw); max-width: 1200px;
-          background: #060612; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
-          border: 1px solid rgba(68,204,255,0.13); border-radius: 14px;
-          box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+          background: #F6F3EC; backdrop-filter: blur(28px); -webkit-backdrop-filter: blur(28px);
+          border: 1px solid rgba(176,141,87,0.13); border-radius: 14px;
+          box-shadow: 0 20px 60px rgba(28,43,39,0.193);
           margin-top: 8px; z-index: 9999; animation: squadIn 0.18s ease-out;
         }
         .squad-dropdown::before {
           content: ''; position: absolute; top: -6px; left: 38%;
-          width: 12px; height: 12px; background: #060612;
-          border-left: 1px solid rgba(68,204,255,0.13);
-          border-top: 1px solid rgba(68,204,255,0.13);
+          width: 12px; height: 12px; background: #F6F3EC;
+          border-left: 1px solid rgba(176,141,87,0.13);
+          border-top: 1px solid rgba(176,141,87,0.13);
           transform: translateX(-50%) rotate(45deg);
         }
         @keyframes squadIn {
@@ -313,33 +313,64 @@ const Navbar = () => {
           to   { opacity:1; transform:translateX(-50%) translateY(0); }
         }
         .squad-dropdown-inner { display: grid; grid-template-columns: 190px 1fr 400px; gap: 0; padding: 20px; }
-        .squad-categories { display: flex; flex-direction: column; gap: 2px; padding-right: 16px; border-right: 1px solid rgba(255,255,255,0.18); }
-        .squad-cat { padding: 14px; border-radius: 8px; cursor: pointer; font-size: 14px; color: rgba(255,255,255,0.62); transition: all 0.3s ease; position: relative; z-index: 2; height: 48px; display: flex; align-items: center; }
-        .squad-cat:hover { color: rgba(255,255,255,0.8); }
-        .squad-cat.active { color: #44CCFF; font-weight: 600; }
-        .squad-glider-track { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.05), transparent); z-index: 1; }
-        .squad-glider { position: relative; height: 48px; width: 100%; background: linear-gradient(to bottom, transparent, #44CCFF, transparent); transition: transform 0.5s cubic-bezier(0.37,1.95,0.66,0.56); }
-        .squad-glider-glow { position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 60%; width: 300px; background: #44CCFF; filter: blur(40px); opacity: 0.12; pointer-events: none; }
-        .squad-glider-trail { position: absolute; left: 0; height: 100%; width: 144px; background: linear-gradient(to right, rgba(68,204,255,0.12), transparent); pointer-events: none; }
+        .squad-categories { display: flex; flex-direction: column; gap: 2px; padding-right: 16px; border-right: 1px solid rgba(28,43,39,0.288); }
+        .squad-cat { padding: 14px; border-radius: 8px; cursor: pointer; font-size: 14px; color: rgba(28,43,39,0.62); transition: all 0.3s ease; position: relative; z-index: 2; height: 48px; display: flex; align-items: center; }
+        .squad-cat:hover { color: rgba(28,43,39,0.8); }
+        .squad-cat.active { color: #8A6D3B; font-weight: 600; }
+        .squad-glider-track { position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, transparent, rgba(255,255,255,0.6), transparent); z-index: 1; }
+        .squad-glider { position: relative; height: 48px; width: 100%; background: linear-gradient(to bottom, transparent, #1F3A33, transparent); transition: transform 0.5s cubic-bezier(0.37,1.95,0.66,0.56); }
+        .squad-glider-glow { position: absolute; top: 50%; left: 0; transform: translateY(-50%); height: 60%; width: 300px; background: #1F3A33; filter: blur(40px); opacity: 0.12; pointer-events: none; }
+        .squad-glider-trail { position: absolute; left: 0; height: 100%; width: 144px; background: linear-gradient(to right, rgba(176,141,87,0.12), transparent); pointer-events: none; }
         .squad-items-wrap { padding: 0 20px; }
         .squad-item { display: block; padding: 11px 12px; border-radius: 8px; text-decoration: none; transition: background 0.13s ease; margin-bottom: 2px; }
-        .squad-item:hover { background: rgba(255,255,255,0.04); }
-        .squad-item-title { color: #fff; font-size: 14px; font-weight: 500; display: inline; margin-right: 8px; }
-        .squad-tag { background: rgba(68,204,255,0.09); border: 1px solid rgba(68,204,255,0.22); color: #44CCFF; font-size: 10px; padding: 2px 8px; border-radius: 20px; vertical-align: middle; }
-        .squad-item-desc { color: rgba(255,255,255,0.65); font-size: 0.875rem; margin-top: 3px; line-height: 1.5; }
+        .squad-item:hover { background: rgba(255,255,255,0.6); }
+        .squad-item-title { color: #1C2B27; font-size: 14px; font-weight: 500; display: inline; margin-right: 8px; }
+        .squad-tag { background: rgba(176,141,87,0.09); border: 1px solid rgba(176,141,87,0.22); color: #8A6D3B; font-size: 10px; padding: 2px 8px; border-radius: 20px; vertical-align: middle; }
+        .squad-item-desc { color: rgba(28,43,39,0.65); font-size: 0.875rem; margin-top: 3px; line-height: 1.5; }
         .squad-formation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-        .squad-all-link { display: block; margin-top: 10px; padding: 8px 12px; color: #44CCFF; font-size: 13px; text-decoration: none; border-top: 1px solid rgba(255,255,255,0.06); }
-        .squad-personas { padding: 20px; background: rgba(68,204,255,0.06); border: 1px solid rgba(68,204,255,0.15); border-radius: 10px; margin-left: 20px; }
-        .squad-personas h4 { color: #fff; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
-        .squad-personas p { color: rgba(255,255,255,0.65); font-size: 13px; margin-bottom: 24px; line-height: 1.5; }
+        .squad-all-link { display: block; margin-top: 10px; padding: 8px 12px; color: #8A6D3B; font-size: 13px; text-decoration: none; border-top: 1px solid rgba(28,43,39,0.14); }
+        .squad-personas { padding: 20px; background: rgba(176,141,87,0.06); border: 1px solid rgba(176,141,87,0.15); border-radius: 10px; margin-left: 20px; }
+        .squad-personas h4 { color: #1C2B27; font-size: 18px; font-weight: 600; margin-bottom: 6px; }
+        .squad-personas p { color: rgba(28,43,39,0.65); font-size: 13px; margin-bottom: 24px; line-height: 1.5; }
         .squad-persona-list { display: flex; flex-direction: column; gap: 20px; }
         .squad-persona { display: flex; align-items: center; padding: 10px 14px; border-radius: 8px; text-decoration: none; transition: background 0.15s ease; }
-        .squad-persona:hover { background: rgba(68,204,255,0.08); }
+        .squad-persona:hover { background: rgba(176,141,87,0.08); }
         .squad-persona img { width: 58px; height: 58px; border-radius: 50%; margin-right: 14px; object-fit: cover; }
         .squad-persona-info { display: flex; flex-direction: column; }
-        .squad-persona-name { color: rgba(255,255,255,0.85); font-size: 15px; font-weight: 500; }
-        .squad-persona-sub { color: rgba(255,255,255,0.62); font-size: 0.875rem; margin-top: 3px; }
-        .squad-persona:hover .squad-persona-name { color: #fff; }
+        .squad-persona-name { color: rgba(28,43,39,0.85); font-size: 15px; font-weight: 500; }
+        .squad-persona-sub { color: rgba(28,43,39,0.62); font-size: 0.875rem; margin-top: 3px; }
+        .squad-persona:hover .squad-persona-name { color: #1C2B27; }
+
+        /* Opening sequence: categories, then services, then the persona panel with its own motion */
+        @keyframes squadSlideRight { from { opacity: 0; transform: translateX(-14px); } to { opacity: 1; transform: none; } }
+        @keyframes squadRise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+        @keyframes squadFade { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes squadPersonaIn { from { opacity: 0; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+        @keyframes squadPhotoIn { from { clip-path: circle(0% at 50% 50%); transform: scale(1.15); } to { clip-path: circle(50% at 50% 50%); transform: scale(1); } }
+        .squad-dropdown.open .squad-cat { animation: squadSlideRight 0.5s cubic-bezier(0.16,1,0.3,1) both; }
+        .squad-dropdown.open .squad-cat:nth-child(2) { animation-delay: 0.05s; }
+        .squad-dropdown.open .squad-cat:nth-child(3) { animation-delay: 0.12s; }
+        .squad-dropdown.open .squad-cat:nth-child(4) { animation-delay: 0.19s; }
+        .squad-dropdown.open .squad-items-wrap .squad-item,
+        .squad-dropdown.open .squad-items-wrap .squad-all-link { animation: squadRise 0.55s cubic-bezier(0.16,1,0.3,1) both; }
+        .squad-dropdown.open .squad-items-wrap > div > .squad-item:nth-of-type(1),
+        .squad-dropdown.open .squad-formation-grid .squad-item:nth-of-type(1) { animation-delay: 0.22s; }
+        .squad-dropdown.open .squad-items-wrap > div > .squad-item:nth-of-type(2),
+        .squad-dropdown.open .squad-formation-grid .squad-item:nth-of-type(2) { animation-delay: 0.29s; }
+        .squad-dropdown.open .squad-items-wrap > div > .squad-item:nth-of-type(3),
+        .squad-dropdown.open .squad-formation-grid .squad-item:nth-of-type(3) { animation-delay: 0.36s; }
+        .squad-dropdown.open .squad-items-wrap .squad-all-link { animation-delay: 0.43s; }
+        .squad-dropdown.open .squad-personas { animation: squadFade 0.6s ease-out 0.4s both; }
+        .squad-dropdown.open .squad-personas h4,
+        .squad-dropdown.open .squad-personas > p { animation: squadRise 0.6s cubic-bezier(0.16,1,0.3,1) 0.48s both; }
+        .squad-dropdown.open .squad-persona { animation: squadPersonaIn 0.7s cubic-bezier(0.16,1,0.3,1) both; }
+        .squad-dropdown.open .squad-persona img { animation: squadPhotoIn 0.8s cubic-bezier(0.16,1,0.3,1) both; }
+        .squad-dropdown.open .squad-persona:nth-child(1), .squad-dropdown.open .squad-persona:nth-child(1) img { animation-delay: 0.6s; }
+        .squad-dropdown.open .squad-persona:nth-child(2), .squad-dropdown.open .squad-persona:nth-child(2) img { animation-delay: 0.74s; }
+        .squad-dropdown.open .squad-persona:nth-child(3), .squad-dropdown.open .squad-persona:nth-child(3) img { animation-delay: 0.88s; }
+        @media (prefers-reduced-motion: reduce) {
+          .squad-dropdown.open * { animation: none !important; }
+        }
 
         @media (max-width: 860px) {
           .squad-dropdown-inner { grid-template-columns: 160px 1fr; }
@@ -356,10 +387,10 @@ const Navbar = () => {
             border-radius: 0 !important;
           }
           .navbar-base {
-            background-color: rgba(6,6,18,0.95) !important;
+            background-color: rgba(246,243,236,0.95) !important;
             backdrop-filter: blur(16px) !important;
             -webkit-backdrop-filter: blur(16px) !important;
-            border-bottom: 1px solid rgba(68,204,255,0.12) !important;
+            border-bottom: 1px solid rgba(176,141,87,0.12) !important;
           }
           /* Padding réduit pour garder logo + hamburger dans l'écran */
           .navbar-base > div {
@@ -401,7 +432,7 @@ const Navbar = () => {
           position: fixed;
           top: 0; left: 0;
           width: 100vw; height: 100dvh;
-          background: #0A0A1A;
+          background: #F6F3EC;
           z-index: 1050;
           display: flex; flex-direction: column;
           overflow: hidden;
@@ -410,7 +441,7 @@ const Navbar = () => {
           height: 56px; flex-shrink: 0;
           display: flex; align-items: center;
           padding: 0 16px;
-          border-bottom: 1px solid rgba(68,204,255,0.1);
+          border-bottom: 1px solid rgba(176,141,87,0.1);
         }
         .mob-body {
           flex: 1; display: flex; flex-direction: column;
@@ -422,7 +453,7 @@ const Navbar = () => {
           padding: 12px 16px 0;
           font-size: 10px; font-weight: 600;
           letter-spacing: 0.08em; text-transform: uppercase;
-          color: rgba(249,250,251,0.4);
+          color: rgba(28,43,39,0.6);
         }
         /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
         .mob-cat-tabs {
@@ -434,17 +465,17 @@ const Navbar = () => {
         }
         .mob-cat-tab {
           padding: 7px 6px; border-radius: 20px;
-          border: 1px solid rgba(255,255,255,0.1);
-          background: rgba(255,255,255,0.05);
-          color: rgba(255,255,255,0.5);
+          border: 1px solid rgba(28,43,39,0.16);
+          background: rgba(255,255,255,0.6);
+          color: rgba(28,43,39,0.6);
           font-size: 12px; font-weight: 500;
           cursor: pointer; text-align: center;
           transition: all 0.2s ease;
         }
         .mob-cat-tab.active {
-          background: rgba(68,204,255,0.08);
-          border-color: #44CCFF;
-          color: #44CCFF;
+          background: rgba(176,141,87,0.08);
+          border-color: #8A6D3B;
+          color: #8A6D3B;
         }
         /* Service panels */
         .mob-panels { padding: 0 16px; flex: 1; }
@@ -454,87 +485,87 @@ const Navbar = () => {
           border: 1px solid transparent;
           transition: background 0.15s, border-color 0.15s;
         }
-        .mob-service-item:active { background: rgba(255,255,255,0.04); border-color: rgba(68,204,255,0.1); }
+        .mob-service-item:active { background: rgba(255,255,255,0.6); border-color: rgba(138,109,59,0.8); }
         .mob-service-top { display: flex; align-items: center; gap: 8px; margin-bottom: 3px; flex-wrap: wrap; }
-        .mob-service-title { font-size: 13px; font-weight: 600; color: #F9FAFB; }
+        .mob-service-title { font-size: 13px; font-weight: 600; color: #1C2B27; }
         .mob-service-tag {
           font-size: 9px; font-weight: 500; padding: 2px 7px; border-radius: 20px;
-          background: rgba(68,204,255,0.08); border: 1px solid rgba(68,204,255,0.2);
-          color: #44CCFF; flex-shrink: 0;
+          background: rgba(176,141,87,0.08); border: 1px solid rgba(176,141,87,0.2);
+          color: #8A6D3B; flex-shrink: 0;
         }
-        .mob-service-desc { font-size: 12px; color: rgba(249,250,251,0.45); line-height: 1.45; }
+        .mob-service-desc { font-size: 12px; color: rgba(28,43,39,0.6); line-height: 1.45; }
         .mob-all-link {
           display: flex; align-items: center; gap: 6px;
           margin-top: 6px; padding: 3px 0;
-          font-size: 12px; color: #44CCFF; text-decoration: none;
+          font-size: 12px; color: #8A6D3B; text-decoration: none;
         }
         .mob-formation-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; margin-bottom: 4px; }
         .mob-formation-grid .mob-service-item { margin-bottom: 0; }
         .mob-formation-grid .mob-service-desc { font-size: 11px; }
         /* Divider */
-        .mob-divider { height: 1px; background: rgba(68,204,255,0.1); margin: 0 16px 12px; flex-shrink: 0; }
+        .mob-divider { height: 1px; background: rgba(176,141,87,0.1); margin: 0 16px 12px; flex-shrink: 0; }
         /* Personas */
         .mob-persona-block { padding: 0 16px 12px; flex-shrink: 0; }
-        .mob-persona-title { font-size: 13px; font-weight: 700; color: #F9FAFB; margin-bottom: 2px; }
-        .mob-persona-sub { font-size: 11px; color: rgba(249,250,251,0.45); margin-bottom: 8px; }
+        .mob-persona-title { font-size: 13px; font-weight: 700; color: #1C2B27; margin-bottom: 2px; }
+        .mob-persona-sub { font-size: 11px; color: rgba(28,43,39,0.6); margin-bottom: 8px; }
         .mob-persona-list { display: flex; flex-direction: column; gap: 5px; }
         .mob-persona-item {
           display: flex; align-items: center; gap: 12px;
           padding: 12px 12px; border-radius: 8px;
-          border: 1px solid rgba(68,204,255,0.1);
-          background: rgba(255,255,255,0.02);
+          border: 1px solid rgba(176,141,87,0.1);
+          background: rgba(255,255,255,0.6);
           text-decoration: none;
           transition: background 0.15s, border-color 0.15s;
         }
-        .mob-persona-item:active { background: rgba(255,255,255,0.05); border-color: rgba(68,204,255,0.2); }
+        .mob-persona-item:active { background: rgba(255,255,255,0.6); border-color: rgba(138,109,59,0.8); }
         .mob-persona-avatar {
           width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
-          border: 1px solid rgba(68,204,255,0.2); overflow: hidden;
-          background: linear-gradient(135deg, #1a2a4a, #0d1a30);
+          border: 1px solid rgba(176,141,87,0.2); overflow: hidden;
+          background: linear-gradient(135deg, #FFFFFF, #FFFFFF);
         }
         .mob-persona-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .mob-persona-info { flex: 1; }
-        .mob-persona-role { font-size: 15px; font-weight: 600; color: #F9FAFB; }
-        .mob-persona-desc { font-size: 12px; color: rgba(249,250,251,0.45); }
-        .mob-persona-arrow { color: #44CCFF; font-size: 18px; opacity: 0.6; }
+        .mob-persona-role { font-size: 15px; font-weight: 600; color: #1C2B27; }
+        .mob-persona-desc { font-size: 12px; color: rgba(28,43,39,0.6); }
+        .mob-persona-arrow { color: #8A6D3B; font-size: 18px; opacity: 0.6; }
         /* Secondary nav */
         .mob-nav-secondary { padding: 0 16px 4px; display: flex; flex-direction: column; gap: 3px; flex-shrink: 0; }
         .mob-nav-link {
           display: flex; align-items: center; justify-content: space-between;
           padding: 16px 12px; border-radius: 8px;
-          text-decoration: none; color: #F9FAFB;
+          text-decoration: none; color: #1C2B27;
           font-size: 17px; font-weight: 600;
           transition: background 0.15s;
         }
-        .mob-nav-link:active { background: rgba(255,255,255,0.04); }
-        .mob-nav-arrow { color: rgba(249,250,251,0.45); font-size: 18px; }
+        .mob-nav-link:active { background: rgba(255,255,255,0.6); }
+        .mob-nav-arrow { color: rgba(28,43,39,0.6); font-size: 18px; }
         /* Accordion Nos Services */
         .mob-accordion-section { flex-shrink: 0; }
         .mob-accordion-trigger {
           display: flex; align-items: center; justify-content: space-between;
           width: 100%; padding: 18px 28px 18px 24px;
           background: none; border: none; cursor: pointer;
-          color: #F9FAFB; font-size: 18px; font-weight: 600;
+          color: #1C2B27; font-size: 18px; font-weight: 600;
           text-align: left;
           transition: background 0.15s;
         }
-        .mob-accordion-trigger:active { background: rgba(255,255,255,0.04); }
+        .mob-accordion-trigger:active { background: rgba(255,255,255,0.6); }
 
         /* CTA */
         .mob-cta-block {
           flex-shrink: 0;
           padding: 16px 24px 36px;
-          background: #0A0A1A;
-          border-top: 1px solid rgba(68,204,255,0.1);
+          background: #F6F3EC;
+          border-top: 1px solid rgba(176,141,87,0.1);
         }
         .mob-cta-btn {
           display: block; width: 100%; padding: 14px;
-          background: #2563EB; color: #fff; border: none; border-radius: 12px;
+          background: #1F3A33; color: #F6F3EC; border: none; border-radius: 12px;
           font-size: 15px; font-weight: 700; text-align: center; text-decoration: none;
-          box-shadow: 0 4px 20px rgba(37,99,235,0.4);
+          box-shadow: 0 4px 20px rgba(31,58,51,0.4);
           transition: background 0.2s, transform 0.15s;
         }
-        .mob-cta-btn:active { background: #1d4ed8; transform: scale(0.98); }
+        .mob-cta-btn:active { background: #16302A; transform: scale(0.98); }
       `}</style>
     </nav>
 
@@ -553,12 +584,12 @@ const Navbar = () => {
           {/* Header */}
           <div className="mob-header">
             <Link href="/" onClick={closeMenu} style={{ flex: 1 }}>
-              <img src="/logo.png" alt="Squadia" style={{ width: 'auto' }} />
+              <img src="/logo_squadia_bw.png" alt="Squadia" style={{ width: 'auto' }} />
             </Link>
             <button
               onClick={closeMenu}
               aria-label="Fermer le menu"
-              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', flexShrink: 0 }}
+              style={{ background: 'none', border: 'none', cursor: 'pointer', color: '#1C2B27', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px', flexShrink: 0 }}
             >
               <X size={24} />
             </button>
@@ -574,7 +605,7 @@ const Navbar = () => {
                 onClick={() => setShowMobileServices(!showMobileServices)}
               >
                 <span>Nos Services</span>
-                <ChevronDown size={15} style={{ transition: 'transform 0.25s', transform: showMobileServices ? 'rotate(180deg)' : 'rotate(0deg)', color: 'rgba(249,250,251,0.5)', flexShrink: 0 }} />
+                <ChevronDown size={15} style={{ transition: 'transform 0.25s', transform: showMobileServices ? 'rotate(180deg)' : 'rotate(0deg)', color: 'rgba(28,43,39,0.6)', flexShrink: 0 }} />
               </button>
 
               <AnimatePresence initial={false}>
@@ -666,8 +697,8 @@ const Navbar = () => {
                 className="mob-accordion-trigger"
                 onClick={() => setShowMobileRoles(!showMobileRoles)}
               >
-                <span>Votre Rôle et l'IA</span>
-                <ChevronDown size={15} style={{ transition: 'transform 0.25s', transform: showMobileRoles ? 'rotate(180deg)' : 'rotate(0deg)', color: 'rgba(249,250,251,0.5)', flexShrink: 0 }} />
+                <span>Votre métier, nos services</span>
+                <ChevronDown size={15} style={{ transition: 'transform 0.25s', transform: showMobileRoles ? 'rotate(180deg)' : 'rotate(0deg)', color: 'rgba(28,43,39,0.6)', flexShrink: 0 }} />
               </button>
 
               <AnimatePresence initial={false}>

@@ -21,22 +21,22 @@ const SecteurPublic = () => {
     {
       title: "Une charte IA existe mais personne ne sait vraiment quoi en faire",
       description: "Elle a ete redigee. Elle couvre les grandes lignes. Mais entre la charte et le quotidien des agents, il y a un fosse. Les équipes ne savent pas concrètement ce qu'elles peuvent faire, ce qu'elles ne peuvent pas faire, ni pourquoi.",
-      icon: <BookOpen size={24} color="#2563EB" />
+      icon: <BookOpen size={24} color="#1F3A33" />
     },
     {
       title: "Les outils proliferent sans fil directeur",
       description: "ChatGPT, Copilot, des outils d image... Chacun teste de son cote. Il n'y a pas de méthode commune, pas de veille structuree, pas de criteres pour choisir ce qui est vraiment utile pour l organisation.",
-      icon: <Target size={24} color="#2563EB" />
+      icon: <Target size={24} color="#1F3A33" />
     },
     {
       title: "adapter les messages a des publics tres differents prend du temps",
       description: "Habitants, commercants, jeunes, seniors, partenaires institutionnels. Chaque public a ses codes, ses canaux, ses attentes. Produire du contenu adapte a chacun sans perdre en qualite, ca prend beaucoup de temps.",
-      icon: <Users size={24} color="#2563EB" />
+      icon: <Users size={24} color="#1F3A33" />
     },
     {
       title: "La conformite et la securite freinent l adoption",
       description: "RGPD, données sensibles, validation IT, risques d usurpation. Les agents ont des contraintes réelles qui ne disparaissent pas avec l'IA. Il faut un cadre clair pour avancer sans prendre de risques.",
-      icon: <Lock size={24} color="#2563EB" />
+      icon: <Lock size={24} color="#1F3A33" />
     }
   ];
 
@@ -44,22 +44,22 @@ const SecteurPublic = () => {
     {
       title: "Un programme adapte aux profils et aux enjeux metier",
       description: "Avant chaque formation, un atelier de cadrage avec le responsable de service pour comprendre la séniorité des équipes, les usages existants et les priorités. Le programme est construit sur la réalité des agents, pas sur un template générique.",
-      icon: <CheckSquare size={24} color="#2563EB" />
+      icon: <CheckSquare size={24} color="#1F3A33" />
     },
     {
       title: "Former sur les outils utiles, pas sur tous les outils",
       description: "Production de contenu, creation d images et de videos, adaptation des messages par canal et par audience, veille structuree. Des cas pratiques tires du quotidien de chaque equipe.",
-      icon: <Settings size={24} color="#2563EB" />
+      icon: <Settings size={24} color="#1F3A33" />
     },
     {
       title: "Remettre la charte en perspective",
       description: "Comprendre pourquoi les regles existent, comment les appliquer, ou s arrete l autonomie des agents avant validation. Donner un cadre clair plutot que des interdictions floues.",
-      icon: <BookOpen size={24} color="#2563EB" />
+      icon: <BookOpen size={24} color="#1F3A33" />
     },
     {
       title: "Ouvrir vers les prochaines etapes",
       description: "Apres la formation, les équipes voient ce qu'il est possible de faire avec l'IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
-      icon: <FastForward size={24} color="#2563EB" />
+      icon: <FastForward size={24} color="#1F3A33" />
     }
   ];
 
@@ -79,7 +79,7 @@ const SecteurPublic = () => {
   const clients = ["Mairie de Lyon", "CEA", "CGSS Guyane"];
 
   return (
-    <div className="secteur-public-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
+    <div className="secteur-public-page" style={{ background: '#F6F3EC', minHeight: '100vh', color: '#1C2B27' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
@@ -102,7 +102,7 @@ const SecteurPublic = () => {
       </section>
 
       {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
             Ce qu'on observe dans les collectivites et organismes publics.
@@ -113,11 +113,11 @@ const SecteurPublic = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -125,7 +125,7 @@ const SecteurPublic = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -148,11 +148,11 @@ const SecteurPublic = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -160,7 +160,7 @@ const SecteurPublic = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -172,7 +172,7 @@ const SecteurPublic = () => {
       </section>
 
       {/* ═══ SECTION 4 : REFERENCES ═══ */}
-      <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
+      <section className="section-padding" style={{ borderTop: '1px solid #D8D1C2', borderBottom: '1px solid #D8D1C2', background: '#F6F3EC' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
             Squadia a forme des équipes dans des collectivites et organismes publics en France.
@@ -184,7 +184,7 @@ const SecteurPublic = () => {
                 style={{ 
                   fontSize: '1.6rem', 
                   fontWeight: 700, 
-                  color: '#F9FAFB', 
+                  color: '#1C2B27', 
                   opacity: 0.6,
                   transition: 'opacity 0.3s ease',
                   letterSpacing: '1px'
@@ -205,7 +205,7 @@ const SecteurPublic = () => {
           {/* Note: changed standard grid to center 2 elements beautifully */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '800px', marginInline: 'auto' }}>
             {blocks.map((block, idx) => (
-              <div key={idx} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
+              <div key={idx} style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
                   {block.question}
                 </p>
@@ -215,7 +215,7 @@ const SecteurPublic = () => {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '0.5rem', 
-                    color: '#2563EB', 
+                    color: '#1F3A33', 
                     fontWeight: 600,
                     textDecoration: 'none'
                   }}

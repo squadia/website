@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
 import ArticleTOC from '../components/blog/ArticleTOC';
+import ArticleCta from '../components/blog/ArticleCta';
+import RelatedArticles from '../components/blog/RelatedArticles';
 const blog4 = '/assets/images/blog/blog4.jpeg';
 
 const TOC_SECTIONS = [
@@ -39,7 +41,7 @@ export default function BlogProspectionErreurs() {
   }, []);
 
   return (
-    <div style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
 
       {/* ═══ BARRE DE PROGRESSION DE LECTURE ═══ */}
       <div style={{
@@ -48,16 +50,16 @@ export default function BlogProspectionErreurs() {
         left: 0,
         width: '100%',
         height: '5px',
-        background: 'rgba(255,255,255,0.08)',
+        background: 'rgba(255,255,255,0.8)',
         zIndex: 9999,
         pointerEvents: 'none'
       }}>
         <div style={{
           height: '100%',
           width: `${readingProgress}%`,
-          background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)',
+          background: 'linear-gradient(90deg, #1F3A33 0%, #1F3A33 100%)',
           transition: 'width 0.1s linear',
-          boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)'
+          boxShadow: '0 0 12px rgba(31,58,51,0.8), 0 0 4px rgba(176,141,87,0.5)'
         }} />
       </div>
 
@@ -67,7 +69,7 @@ export default function BlogProspectionErreurs() {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: '#0A0A1A',
+        background: '#F6F3EC',
         overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -76,42 +78,42 @@ export default function BlogProspectionErreurs() {
             alt="Prospection B2B" 
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 1 }} 
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.2)', zIndex: 1 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(246,243,236,0.2)', zIndex: 1 }} />
           <div style={{
             position: 'absolute',
             bottom: 0,
             left: 0,
             right: 0,
             height: '30vh',
-            background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
+            background: 'linear-gradient(to bottom, transparent, #F6F3EC)',
             zIndex: 2
           }} />
         </div>
 
         <div style={{ maxWidth: '900px', margin: '0 auto', padding: '0 2rem', position: 'relative', zIndex: 10, width: '100%' }}>
           <div style={{
-            background: 'rgba(10, 10, 26, 0.3)',
+            background: 'rgba(246,243,236,0.3)',
             backdropFilter: 'blur(6px)',
             WebkitBackdropFilter: 'blur(6px)',
             padding: '3rem',
             borderRadius: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            border: '1px solid rgba(28,43,39,0.24)',
+            boxShadow: '0 10px 30px rgba(28,43,39,0.07)'
           }}>
             <Link href="/ressources" style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              color: '#9CA3AF', fontSize: '0.9rem', textDecoration: 'none',
+              color: '#4A534F', fontSize: '0.9rem', textDecoration: 'none',
               marginBottom: '2rem', transition: 'color 0.2s'
             }}
-              onMouseEnter={e => e.currentTarget.style.color = '#44CCFF'}
-              onMouseLeave={e => e.currentTarget.style.color = '#9CA3AF'}
+              onMouseEnter={e => e.currentTarget.style.color = '#8A6D3B'}
+              onMouseLeave={e => e.currentTarget.style.color = '#4A534F'}
             >
               <ArrowLeft size={16} /> Retour aux ressources
             </Link>
 
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{
-                background: '#44CCFF', color: '#060612',
+                background: '#1F3A33', color: '#F6F3EC',
                 padding: '0.35rem 1.25rem', borderRadius: '9999px',
                 fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase'
               }}>
@@ -121,32 +123,32 @@ export default function BlogProspectionErreurs() {
 
             <h1 className="blog-article-h1" style={{
               fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)', fontWeight: 900,
-              lineHeight: 1.1, color: '#FFFFFF', marginBottom: '2rem',
+              lineHeight: 1.1, color: '#1C2B27', marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
               Prospection multicanale B2B&nbsp;: 5 erreurs qui font perdre des leads et comment les éviter
             </h1>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#D1D5DB', fontSize: '0.95rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#4A534F', fontSize: '0.95rem' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar size={16} color="#2563EB" /> Avril 2026
+                  <Calendar size={16} color="#1F3A33" /> Avril 2026
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Clock size={16} color="#2563EB" /> 6 min de lecture
+                  <Clock size={16} color="#1F3A33" /> 6 min de lecture
                 </span>
               </div>
-              <div style={{ width: '80px', height: '4px', background: '#2563EB', borderRadius: '2px' }} />
+              <div style={{ width: '80px', height: '4px', background: '#1F3A33', borderRadius: '2px' }} />
             </div>
           </div>
         </div>
 
         <div style={{
           position: 'absolute', bottom: '2rem', left: '50%', transform: 'translateX(-50%)',
-          zIndex: 10, color: '#FFFFFF', animation: 'bounce 2s infinite'
+          zIndex: 10, color: '#1C2B27', animation: 'bounce 2s infinite'
         }}>
           <div style={{ opacity: 0.6, fontSize: '0.8rem', textAlign: 'center', marginBottom: '0.5rem' }}>Lire l'article</div>
-          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #2563EB, transparent)', margin: '0 auto' }} />
+          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #1F3A33, transparent)', margin: '0 auto' }} />
         </div>
       </section>
 
@@ -155,15 +157,15 @@ export default function BlogProspectionErreurs() {
         <ArticleTOC sections={TOC_SECTIONS} />
         <article style={{ maxWidth: '780px', minWidth: 0 }}>
         <style>{`
-          .article-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(249,250,251,0.75); margin-bottom: 1.6rem; }
-          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #F9FAFB; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; scroll-margin-top: 100px; }
-          .article-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: #2563EB; border-radius: 2px; margin-bottom: 1rem; }
-          .article-body strong { color: #F9FAFB; font-weight: 700; }
-          .article-body hr { border: none; border-top: 1px solid #1A1A3A; margin: 3rem 0; }
-          .article-pullquote { border-left: 3px solid #2563EB; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(37,99,235,0.06); border-radius: 0 0.75rem 0.75rem 0; }
-          .article-pullquote p { font-size: 1.1rem !important; color: #E5E7EB !important; font-style: italic; margin-bottom: 0 !important; }
-          .article-highlight-box { background: #0D0D25; border: 1px solid #1A1A3A; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
-          .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #60A5FA; margin-bottom: 0.75rem; }
+          .article-body p { font-size: 1.05rem; line-height: 1.85; color: rgba(28,43,39,0.75); margin-bottom: 1.6rem; }
+          .article-body h2 { font-size: 1.55rem; font-weight: 800; color: #1C2B27; margin-top: 3.5rem; margin-bottom: 1.2rem; line-height: 1.25; scroll-margin-top: 100px; }
+          .article-body h2::before { content: ''; display: block; width: 36px; height: 3px; background: #1F3A33; border-radius: 2px; margin-bottom: 1rem; }
+          .article-body strong { color: #1C2B27; font-weight: 700; }
+          .article-body hr { border: none; border-top: 1px solid #D8D1C2; margin: 3rem 0; }
+          .article-pullquote { border-left: 3px solid #1F3A33; padding: 1.2rem 1.8rem; margin: 2.5rem 0; background: rgba(31,58,51,0.06); border-radius: 0 0.75rem 0.75rem 0; }
+          .article-pullquote p { font-size: 1.1rem !important; color: #4A534F !important; font-style: italic; margin-bottom: 0 !important; }
+          .article-highlight-box { background: #F6F3EC; border: 1px solid #D8D1C2; border-radius: 1rem; padding: 2rem 2.5rem; margin: 2.5rem 0; }
+          .article-highlight-box h3 { font-size: 1.1rem; font-weight: 700; color: #8A6D3B; margin-bottom: 0.75rem; }
         `}</style>
 
         <div className="article-body">
@@ -174,7 +176,7 @@ export default function BlogProspectionErreurs() {
 
           <h2 id="erreur-1">Erreur 1 : confier les emails à des profils sans méthode</h2>
           <p>Écrire un bon email de prospection, ce n'est pas facile. Par email, vous n'avez qu'une seule arme&nbsp;: <strong>vos mots.</strong> Et ça ne s'improvise pas.</p>
-          <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle. Et ça, aucune méthode ne peut le rattraper si <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ color: '#44CCFF' }}>la base de contacts elle-même est mal nettoyée ou mal segmentée</Link> en amont.</p>
+          <p>Trop souvent, on confie l'emailing à des profils sans les avoir formés. Résultat&nbsp;: des emails trop longs, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle. Et ça, aucune méthode ne peut le rattraper si <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ color: '#8A6D3B' }}>la base de contacts elle-même est mal nettoyée ou mal segmentée</Link> en amont.</p>
           
           <div className="article-pullquote">
             <p>Ce qui marche, c'est l'inverse : des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation.</p>
@@ -220,42 +222,8 @@ export default function BlogProspectionErreurs() {
           <p>Eviter ces cinq erreurs, c'est transformer vos campagnes en rendez-vous concrets. Ce n'est pas une question de budget, c'est une <strong>question de méthode et de coordination.</strong></p>
         </div>
         {/* ═══ CTA BLOCK ═══ */}
-        <div style={{
-          marginTop: '5rem',
-          border: '1px solid rgba(68,204,255,.1)',
-          borderRadius: '20px',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-          boxShadow: '0 0 60px -20px rgba(68,204,255,.15)',
-          minHeight: '480px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-        }}>
-          <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-          <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
-            
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?
-            </h2>
-            <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-              Squadia accompagne les équipes commerciales et marketing dans la structuration de leur prospection multicanale et l'optimisation de leur génération de leads.
-            </p>
-            <Link
-              href="/data/data-lead"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-                background: '#44CCFF', color: '#060612',
-                padding: '1rem 2rem', borderRadius: '0.5rem',
-                fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
-              }}
-            >
-              Découvrir l'offre Data Lead <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
+        <RelatedArticles current="prospection-multicanale-b2b-erreurs" />
+        <ArticleCta kicker={`Passez à l'action`} title={`Vous voulez analyser vos séquences de prospection et identifier les points bloquants ?`} text={`Squadia accompagne les équipes commerciales et marketing dans la structuration de leur prospection multicanale et l'optimisation de leur génération de leads.`} href="/data/data-lead" label={`Découvrir l'offre Data Lead`} />
 
         </article>
       </div>

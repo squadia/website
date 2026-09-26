@@ -128,22 +128,22 @@ const TemoignageEnregistrer = () => {
   const showCameraBox = !unsupported && !['contact', 'done'].includes(step);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', padding: '120px 24px 80px' }}>
+    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', display: 'flex', alignItems: 'center', padding: '120px 24px 80px' }}>
       <div style={{ maxWidth: '640px', margin: '0 auto', width: '100%', textAlign: 'center' }}>
         <h1 style={{ fontSize: 'clamp(1.8rem, 3.4vw, 2.4rem)', fontWeight: 800, marginBottom: '0.75rem' }}>
           Votre témoignage
         </h1>
-        <p style={{ color: 'rgba(255,255,255,0.65)', marginBottom: '2.5rem' }}>
+        <p style={{ color: 'rgba(28,43,39,0.65)', marginBottom: '2.5rem' }}>
           Quand vous êtes prêt, filmez quelques secondes pour partager votre retour sur la formation.
         </p>
 
         {unsupported ? (
-          <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '3rem 2rem' }}>
-            <AlertTriangle size={32} color="#F59E0B" style={{ marginBottom: '1rem' }} />
+          <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '16px', padding: '3rem 2rem' }}>
+            <AlertTriangle size={32} color="#8A6D3B" style={{ marginBottom: '1rem' }} />
             <p>Votre navigateur ne permet pas l'enregistrement vidéo ici. Essayez avec Chrome, Edge ou Safari récent.</p>
           </div>
         ) : showCameraBox ? (
-          <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', border: '1px solid #1A1A3A', background: '#0D0D25', aspectRatio: '16 / 9', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)' }}>
+          <div style={{ position: 'relative', borderRadius: '20px', overflow: 'hidden', border: '1px solid #D8D1C2', background: '#F6F3EC', aspectRatio: '16 / 9', boxShadow: '0 25px 50px -12px rgba(28,43,39,0.21)' }}>
             <video
               ref={videoRef}
               autoPlay
@@ -160,7 +160,7 @@ const TemoignageEnregistrer = () => {
 
             {step === 'idle' && (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1.5rem' }}>
-                <Video size={40} color="#44CCFF" />
+                <Video size={40} color="#8A6D3B" />
                 <button onClick={enableCamera} className="btn btn-primary" style={{ padding: '1rem 2.2rem', borderRadius: '8px', fontWeight: 700, border: 'none', cursor: 'pointer' }}>
                   Activer ma caméra
                 </button>
@@ -168,22 +168,22 @@ const TemoignageEnregistrer = () => {
             )}
 
             {step === 'recording' && (
-              <div style={{ position: 'absolute', top: '1rem', left: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(5,5,16,0.6)', padding: '0.4rem 0.9rem', borderRadius: '30px' }}>
-                <Circle size={10} color="#EF4444" fill="#EF4444" />
+              <div style={{ position: 'absolute', top: '1rem', left: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'rgba(246,243,236,0.6)', padding: '0.4rem 0.9rem', borderRadius: '30px' }}>
+                <Circle size={10} color="#A63D2F" fill="#A63D2F" />
                 <span style={{ fontVariantNumeric: 'tabular-nums', fontSize: '0.9rem' }}>{minutes}:{secs}</span>
               </div>
             )}
 
             {step === 'uploading' && (
-              <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', background: 'rgba(5,5,16,0.7)' }}>
-                <Loader2 size={32} color="#44CCFF" className="spin" style={{ animation: 'spin 1s linear infinite' }} />
+              <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', background: 'rgba(246,243,236,0.7)' }}>
+                <Loader2 size={32} color="#8A6D3B" className="spin" style={{ animation: 'spin 1s linear infinite' }} />
                 <p>Envoi de votre témoignage...</p>
               </div>
             )}
 
             {step === 'error' && (
               <div style={{ position: 'absolute', inset: 0, display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '1rem', padding: '2rem', textAlign: 'center' }}>
-                <AlertTriangle size={32} color="#F59E0B" />
+                <AlertTriangle size={32} color="#8A6D3B" />
                 <p>{errorMessage}</p>
                 <button onClick={blobRef.current ? retryUpload : enableCamera} className="btn btn-outline" style={{ padding: '0.9rem 1.8rem', borderRadius: '8px', fontWeight: 600 }}>
                   Réessayer
@@ -194,10 +194,10 @@ const TemoignageEnregistrer = () => {
         ) : null}
 
         {step === 'contact' && (
-          <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '20px', padding: '2rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)' }}>
-            <CheckCircle2 size={32} color="#22C55E" style={{ marginBottom: '0.75rem' }} />
+          <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '20px', padding: '2rem', boxShadow: '0 25px 50px -12px rgba(28,43,39,0.21)' }}>
+            <CheckCircle2 size={32} color="#3F7A5E" style={{ marginBottom: '0.75rem' }} />
             <p style={{ fontWeight: 700, marginBottom: '0.25rem' }}>Vidéo enregistrée !</p>
-            <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
+            <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '0.9rem', marginBottom: '1.5rem' }}>
               Encore une étape : quelques infos avant l'envoi.
             </p>
 
@@ -207,28 +207,28 @@ const TemoignageEnregistrer = () => {
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 placeholder="Prénom *"
-                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.95rem' }}
               />
               <input
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="Email *"
-                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.95rem' }}
               />
               <input
                 type="text"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
                 placeholder="Rôle *"
-                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.95rem' }}
               />
               <input
                 type="text"
                 value={company}
                 onChange={(e) => setCompany(e.target.value)}
                 placeholder="Société *"
-                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.95rem' }}
+                style={{ padding: '0.8rem 1rem', borderRadius: '8px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.95rem' }}
               />
             </div>
 
@@ -269,7 +269,7 @@ const TemoignageEnregistrer = () => {
         )}
 
         {NOTION_RESOURCE_URL.includes('REMPLACER') && (
-          <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.35)' }}>
+          <p style={{ marginTop: '1.5rem', fontSize: '0.75rem', color: 'rgba(28,43,39,0.6)' }}>
             (lien Notion de redirection non configuré)
           </p>
         )}

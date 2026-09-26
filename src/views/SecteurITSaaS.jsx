@@ -21,27 +21,27 @@ const SecteurITSaaS = () => {
     {
       title: "On fait le lievre sans savoir si on va gagner",
       description: "On repond a des appels d offres sans avoir ete en amont pour influencer le cahier des charges. On investit du temps sur des opportunites deja perdues avant meme d avoir envoye la proposition.",
-      icon: <Target size={24} color="#2563EB" />
+      icon: <Target size={24} color="#1F3A33" />
     },
     {
       title: "Personne n a la meme vision du pipeline",
       description: "Les commerciaux ont chacun leur méthode. Un deal marque gagne pour l un ne veut pas dire la meme chose pour l autre. Le management ne peut pas piloter ce qu'il ne comprend pas.",
-      icon: <Search size={24} color="#2563EB" />
+      icon: <Search size={24} color="#1F3A33" />
     },
     {
       title: "La prospection repose sur quelques individus ou personne",
       description: "Les seniors connaissent leur carnet d adresses. Les juniors ne savent pas encore comment penetrer des comptes complexes avec de nombreuses filiales. Entre les deux, les bons comptes passent sans etre vraiment travailles.",
-      icon: <Users size={24} color="#2563EB" />
+      icon: <Users size={24} color="#1F3A33" />
     },
     {
       title: "L IA est testee mais pas structuree",
       description: "Quelques commerciaux utilisent ChatGPT pour rediger des emails. D autres ne touchent pas a l'IA. Il n'y a pas de méthode commune, pas de regle d usage, et personne ne sait ce qui fonctionne vraiment.",
-      icon: <Cpu size={24} color="#2563EB" />
+      icon: <Cpu size={24} color="#1F3A33" />
     },
     {
       title: "Les initiatives metier se heurtent aux contraintes IT",
       description: "Les équipes ont des idees, l'envie d avancer, parfois deja des outils en tete. Mais sans cadre valide en amont, l'IT bloque pour des raisons de securite ou de conformite. Pas parce qu'ils ont tort, mais parce que personne n a pose les bonnes questions au bon niveau avant de lancer quoi que ce soit.",
-      icon: <ShieldAlert size={24} color="#2563EB" />
+      icon: <ShieldAlert size={24} color="#1F3A33" />
     }
   ];
 
@@ -49,22 +49,22 @@ const SecteurITSaaS = () => {
     {
       title: "Structurer la méthode de vente dans le CRM",
       description: "MEDDIC, plan de compte, multi-sequence of events. On traduit la strategie commerciale en processus concret dans le CRM pour que tout le monde parle le meme langage et que le management ait une visibilite réelle.",
-      icon: <Database size={24} color="#2563EB" />
+      icon: <Database size={24} color="#1F3A33" />
     },
     {
       title: "Identifier les bons comptes au bon moment",
       description: "Detection de signaux d'achat, recrutements strategiques, changements de direction. On identifie les comptes IT et SaaS qui ont une vraie raison d avancer maintenant, avant que la concurrence ne soit en place.",
-      icon: <Search size={24} color="#2563EB" />
+      icon: <Search size={24} color="#1F3A33" />
     },
     {
       title: "Automatiser ce qui prend du temps sans valeur",
       description: "Comptes-rendus de visioconference automatiques, mise a jour CRM, sequences de nurturing, alertes sur l evolution des opportunites. Vos commerciaux passent moins de temps a saisir et plus de temps a vendre.",
-      icon: <Clock size={24} color="#2563EB" />
+      icon: <Clock size={24} color="#1F3A33" />
     },
     {
       title: "Former les équipes sur les cas concrets du metier",
-      description: <>Pas une formation générique sur l'IA. Une formation sur comment préparer un rendez-vous sur un grand compte avec <a href="http://Humantic.io" target="_blank" rel="noopener noreferrer" style={{ color: '#2563EB', textDecoration: 'underline' }}>Humantic.io</a>, comment qualifier une opportunite avec MEDDIC, comment utiliser l'IA pour construire un plan de compte solide.</>,
-      icon: <Users size={24} color="#2563EB" />
+      description: <>Pas une formation générique sur l'IA. Une formation sur comment préparer un rendez-vous sur un grand compte avec <a href="http://Humantic.io" target="_blank" rel="noopener noreferrer" style={{ color: '#1F3A33', textDecoration: 'underline' }}>Humantic.io</a>, comment qualifier une opportunite avec MEDDIC, comment utiliser l'IA pour construire un plan de compte solide.</>,
+      icon: <Users size={24} color="#1F3A33" />
     }
   ];
 
@@ -90,7 +90,7 @@ const SecteurITSaaS = () => {
   const clients = ["OVH", "Outsystems", "Xerox", "Dell Technologies", "Fujitsu"];
 
   return (
-    <div className="secteur-it-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
+    <div className="secteur-it-page" style={{ background: '#F6F3EC', minHeight: '100vh', color: '#1C2B27' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
@@ -113,7 +113,7 @@ const SecteurITSaaS = () => {
       </section>
 
       {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '800px', marginInline: 'auto' }}>
             Ce qu'on entend le plus souvent dans les équipes commerciales IT et SaaS.
@@ -124,11 +124,11 @@ const SecteurITSaaS = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -136,7 +136,7 @@ const SecteurITSaaS = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -159,11 +159,11 @@ const SecteurITSaaS = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -171,7 +171,7 @@ const SecteurITSaaS = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -183,7 +183,7 @@ const SecteurITSaaS = () => {
       </section>
 
       {/* ═══ SECTION 4 : REFERENCES ═══ */}
-      <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
+      <section className="section-padding" style={{ borderTop: '1px solid #D8D1C2', borderBottom: '1px solid #D8D1C2', background: '#F6F3EC' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
             Squadia a accompagne des équipes commerciales dans des entreprises IT et tech en France, de la structuration CRM a la formation des équipes.
@@ -195,7 +195,7 @@ const SecteurITSaaS = () => {
                 style={{ 
                   fontSize: '1.4rem', 
                   fontWeight: 700, 
-                  color: '#F9FAFB', 
+                  color: '#1C2B27', 
                   opacity: 0.6,
                   transition: 'opacity 0.3s ease',
                   letterSpacing: '1px'
@@ -215,7 +215,7 @@ const SecteurITSaaS = () => {
         <div className="fade-in">
           <div className="grid-3" style={{ gap: '2rem' }}>
             {blocks.map((block, idx) => (
-              <div key={idx} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
+              <div key={idx} style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
                   {block.question}
                 </p>
@@ -225,7 +225,7 @@ const SecteurITSaaS = () => {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '0.5rem', 
-                    color: '#2563EB', 
+                    color: '#1F3A33', 
                     fontWeight: 600,
                     textDecoration: 'none'
                   }}

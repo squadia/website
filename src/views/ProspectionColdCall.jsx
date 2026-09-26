@@ -8,9 +8,9 @@ import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
-const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' };
-const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', lineHeight: 1.2 };
-const chapo = { fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', lineHeight: 1.6 };
+const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem' };
+const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', lineHeight: 1.2 };
+const chapo = { fontSize: '1.1rem', color: 'rgba(28,43,39,0.6)', maxWidth: '640px', lineHeight: 1.6 };
 
 const features = [
   { Icon: UserCheck, title: 'Commercial senior', desc: "Vos appels sont passés par un profil avec plus de dix ans d'expérience en prospection directe B2B." },
@@ -42,13 +42,13 @@ const prospectionCards = [
 const StepText = ({ s }) => (
   <div>
     <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: '0.7rem' }}>{s.week}</p>
-    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
-    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+    <p style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1C2B27', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
   </div>
 );
 
 const StepImage = ({ src, label }) => (
-  <div style={{ aspectRatio: '4/3', borderRadius: '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
+  <div style={{ aspectRatio: '4/3', borderRadius: '14px', border: '1px solid rgba(28,43,39,0.16)', overflow: 'hidden' }}>
     <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
   </div>
 );
@@ -60,13 +60,13 @@ const Timeline = () => {
 
   return (
   <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto' }}>
-    <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
-    <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
+    <div className="timeline-spine" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(176,141,87,0.15)', transform: 'translateX(-50%)' }} />
+    <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#1F3A33', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
         <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : '6rem' }}>
-          <div className="timeline-dot" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          <div className="timeline-dot" style={{ position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#F6F3EC', border: '2px solid #B08D57', zIndex: 2 }} />
           {imageLeft ? (
             <>
               <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, margin: '-80px' }} transition={{ duration: 0.6, ease: 'easeOut' }}>
@@ -102,9 +102,9 @@ const formatPrice = (price) => {
   if (displayPrice.endsWith(' / groupe')) { suffix = '/ groupe'; displayPrice = displayPrice.replace(' / groupe', ''); }
   return (
     <>
-      {prefix && <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
+      {prefix && <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
       <span style={{ fontWeight: 400 }}>{displayPrice}</span>
-      {suffix && <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
+      {suffix && <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
     </>
   );
 };
@@ -122,32 +122,32 @@ const PricingProspection = () => {
     <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
       {prospectionCards.map((card, idx) => (
         <div key={idx} style={{
-          background: '#0D0D25', border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+          background: '#F6F3EC', border: card.badge ? '2px solid #1F3A33' : '1px solid #D8D1C2',
           padding: isMobile ? '24px 18px' : '2.25rem 1.75rem', borderRadius: '1rem', position: 'relative', display: 'flex', flexDirection: 'column'
         }}>
           {card.badge && (
-            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
+            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
               {card.badge}
             </div>
           )}
-          <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#F9FAFB' }}>{card.title}</h3>
-          <p style={{ fontSize: '0.85rem', color: '#9CA3AF', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
+          <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#1C2B27' }}>{card.title}</h3>
+          <p style={{ fontSize: '0.85rem', color: '#4A534F', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
           <div style={{ marginBottom: '1.25rem' }}>
-            <div style={{ fontSize: '1.5rem', color: '#fff' }}>{formatPrice(card.price)}</div>
-            {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#9CA3AF', marginTop: '0.35rem' }}>{card.subPrice}</div>}
+            <div style={{ fontSize: '1.5rem', color: '#1C2B27' }}>{formatPrice(card.price)}</div>
+            {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#4A534F', marginTop: '0.35rem' }}>{card.subPrice}</div>}
           </div>
           <div style={{ flexGrow: 1, marginBottom: '1.25rem' }}>
             {card.items.map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '0.65rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
-                <Check size={15} color={card.badge ? '#2563EB' : '#44CCFF'} style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: 'rgba(255,255,255,0.75)' }}>{item}</span>
+                <Check size={15} color={card.badge ? '#1F3A33' : '#8A6D3B'} style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ color: 'rgba(28,43,39,0.75)' }}>{item}</span>
               </div>
             ))}
           </div>
           <Link href={card.link || '/contact'} style={{
             display: 'block', width: '100%', padding: '0.9rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.95rem',
-            border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent',
-            color: '#FFFFFF', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
+            border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.32)', background: card.badge ? '#1F3A33' : 'transparent',
+            color: card.badge ? '#F6F3EC' : '#1C2B27', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
           }}>
             Prendre RDV
           </Link>
@@ -168,21 +168,21 @@ export default function ProspectionColdCall() {
   }, []);
 
   return (
-    <div style={{ background: '#050510', color: '#F9FAFB', minHeight: '100vh' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
         <img src="/assets/images/campagne/prospectionteam.png" alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(5,5,16,0.35)' }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(105deg, rgba(5,5,16,0.97) 0%, rgba(5,5,16,0.80) 35%, rgba(5,5,16,0.40) 60%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #050510)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(246,243,236,0.35)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.8) 35%, rgba(246,243,236,0.4) 60%, transparent 100%)' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
 
         <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '8%' }}>
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Prospection</p>
+          <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Prospection</p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}
+            style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#1C2B27', marginBottom: '1.5rem', maxWidth: '750px' }}
           >
             Des rendez-vous qualifiés<br />
             pris par téléphone
@@ -193,22 +193,22 @@ export default function ProspectionColdCall() {
             transition={{ duration: 1, delay: 0.15 }}
             style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}
           >
-            <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>78 %</span>
-            <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '260px', lineHeight: 1.3 }}>des décideurs ont déjà pris rendez-vous suite à un cold call <span style={{ color: 'rgba(255,255,255,0.35)' }}>(HubSpot)</span></span>
+            <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#8A6D3B' }}>78 %</span>
+            <span style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', maxWidth: '260px', lineHeight: 1.3 }}>des décideurs ont déjà pris rendez-vous suite à un cold call <span style={{ color: 'rgba(28,43,39,0.6)' }}>(HubSpot)</span></span>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}
+            style={{ fontSize: '1.25rem', color: 'rgba(28,43,39,0.78)', maxWidth: '600px', marginBottom: '3rem' }}
           >
             Le téléphone reste le canal le plus direct pour engager un décideur. Nos commerciaux seniors appellent vos prospects sur signal, utilisent un script validé avec vous et ne s'arrêtent qu'au rendez-vous qualifié.
           </motion.p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
-            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+            <Link href="/contact" style={{ backgroundColor: '#1F3A33', color: '#F6F3EC', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
               Prendre RDV
             </Link>
-            <a href="#approche" style={{ background: 'transparent', color: '#44CCFF', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', border: '1px solid #44CCFF' }}>
+            <a href="#approche" style={{ background: 'transparent', color: '#8A6D3B', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', border: '1px solid #B08D57' }}>
               Découvrir notre approche
             </a>
           </div>
@@ -216,7 +216,7 @@ export default function ProspectionColdCall() {
       </section>
 
       {/* FEATURES */}
-      <section id="approche" style={{ padding: '80px 0', background: '#0A0A1A' }}>
+      <section id="approche" style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={kicker}>GESTION DES APPELS SORTANTS</p>
@@ -231,13 +231,13 @@ export default function ProspectionColdCall() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                style={{ background: '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '1.75rem' }}
+                style={{ background: '#F6F3EC', border: '1px solid rgba(28,43,39,0.14)', borderRadius: '16px', padding: '1.75rem' }}
               >
-                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(68,204,255,0.08)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                  <f.Icon size={20} color="#44CCFF" />
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(176,141,87,0.08)', border: '1px solid rgba(176,141,87,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                  <f.Icon size={20} color="#8A6D3B" />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.5rem' }}>{f.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#1C2B27', marginBottom: '0.5rem' }}>{f.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -256,28 +256,28 @@ export default function ProspectionColdCall() {
       </section>
 
       {/* DELIVERABLES */}
-      <section style={{ padding: '80px 0', background: '#0A0A1A' }}>
+      <section style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
-          <div style={{ background: '#0D0D25', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '24px', padding: '3rem', overflow: 'hidden' }}>
+          <div style={{ background: '#F6F3EC', border: '1px solid rgba(176,141,87,0.2)', borderRadius: '24px', padding: '3rem', overflow: 'hidden' }}>
             <p style={{ ...kicker, textAlign: 'center' }}>LIVRABLES</p>
             <h2 style={{ ...h2Style, textAlign: 'center', marginBottom: '1.25rem' }}>Ce que vous récupérez</h2>
             <p style={{ ...chapo, textAlign: 'justify', maxWidth: '960px', margin: '0 auto 2.5rem' }}>
               Le playbook est l'espace que nous mettons à votre disposition pour récupérer l'intégralité des livrables de la mission : les résultats de nos ateliers de découverte, le script d'appel que nous vous avons partagé pour accord, et l'ensemble de notre stratégie d'approche. Ces documents vous appartiennent : vous pouvez les réutiliser pour d'autres initiatives ou les partager avec votre équipe.
             </p>
             <div className="deliverables-two-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '3rem', alignItems: 'center' }}>
-              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(28,43,39,0.14)' }}>
                 <img src="/assets/images/campagne/playbookclient.png" alt="Exemple de livrable Squadia" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               <div style={{ display: 'grid', gap: '1rem' }}>
                 {deliverables.map((d, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <Check size={20} color="#44CCFF" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)' }}>{d}</span>
+                    <Check size={20} color="#8A6D3B" style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '1rem', color: 'rgba(28,43,39,0.85)' }}>{d}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', gap: '14px', alignItems: 'center', marginTop: '0.75rem' }}>
                   <img src="/assets/images/campagne/logonotion.webp" alt="Notion" style={{ width: '48px', height: '48px', objectFit: 'contain', flexShrink: 0 }} />
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)' }}>Partagé via Notion</span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.6)' }}>Partagé via Notion</span>
                 </div>
               </div>
             </div>
@@ -286,7 +286,7 @@ export default function ProspectionColdCall() {
       </section>
 
       {/* PRICING PROSPECTION */}
-      <section style={{ padding: '80px 0', background: '#050510' }}>
+      <section style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <p style={kicker}>COMBIEN ÇA COÛTE</p>

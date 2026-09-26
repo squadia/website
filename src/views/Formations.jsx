@@ -59,23 +59,23 @@ const Formations = () => {
         t.style.background = '';
         t.style.borderLeft = '3px solid transparent';
         var icon = t.querySelector('div:first-child');
-        if (icon) icon.style.background = 'rgba(68, 204, 255, 0.07)';
+        if (icon) icon.style.background = 'rgba(176,141,87,0.07)';
         var title = t.querySelector('.sq-tab-title');
-        if (title) title.style.color = 'rgba(255, 255, 255, 0.4)';
+        if (title) title.style.color = 'rgba(28,43,39,0.6)';
         var sub = t.querySelector('.sq-tab-sub');
-        if (sub) sub.style.color = 'rgba(255, 255, 255, 0.2)';
+        if (sub) sub.style.color = 'rgba(28,43,39,0.6)';
       });
       document.querySelectorAll('[id^="sq-panel"]').forEach(function(p) { p.style.display = 'none'; });
       document.querySelectorAll('[id^="sq-pb"]').forEach(function(b) { b.style.width = '0%'; });
       
-      el.style.background = 'rgba(68, 204, 255, 0.07)';
-      el.style.borderLeft = '3px solid #44CCFF';
+      el.style.background = 'rgba(176,141,87,0.07)';
+      el.style.borderLeft = '3px solid #B08D57';
       var activeIcon = el.querySelector('div:first-child');
-      if (activeIcon) activeIcon.style.background = 'rgba(68, 204, 255, 0.14)';
+      if (activeIcon) activeIcon.style.background = 'rgba(176,141,87,0.14)';
       var activeTitle = el.querySelector('.sq-tab-title');
-      if (activeTitle) activeTitle.style.color = '#fff';
+      if (activeTitle) activeTitle.style.color = '#1C2B27';
       var activeSub = el.querySelector('.sq-tab-sub');
-      if (activeSub) activeSub.style.color = 'rgba(68, 204, 255, 0.6)';
+      if (activeSub) activeSub.style.color = 'rgba(138,109,59,0.8)';
       
       const panel = document.getElementById('sq-panel' + i);
       if (panel) panel.style.display = 'block';
@@ -158,36 +158,36 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
   return (
-    <div className="formations-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div className="formations-page" style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero formations-hero" style={{ position: 'relative', minHeight: '85vh', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
         {/* Fond pleine page */}
         <img src={formationBg} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(10,10,26,0.60)' }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'radial-gradient(circle at center, transparent 0%, rgba(10,10,26,0.85) 100%)', }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #0A0A1A)', }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(246,243,236,0.6)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'radial-gradient(circle at center, transparent 0%, rgba(246,243,236,0.85) 100%)', }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #F6F3EC)', }} />
 
         <div className="container fade-in" style={{ position: 'relative', zIndex: 4, textAlign: 'center' }}>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto', lineHeight: 1.1, marginBottom: '2rem', fontWeight: 700 }}>
             Former vos équipes, c'est la condition pour que tout le reste fonctionne.
           </h1>
-          <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.75)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '4rem' }}>
+          <p style={{ fontSize: '1.25rem', color: 'rgba(28,43,39,0.75)', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6, marginBottom: '4rem' }}>
             Vous pouvez avoir les meilleurs outils, les meilleures automatisations, les meilleures données si vos équipes ne savent pas quoi en faire, tout ça ne sert à rien. La formation est souvent la première étape de la transformation.
           </p>
 
           <div className="grid-3" style={{ maxWidth: '900px', marginInline: 'auto', gap: '2rem' }}>
-            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(68, 204, 255, 0.1)', textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#44CCFF', marginBottom: '0.5rem' }}>+25%</div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.95rem', lineHeight: 1.4 }}>d'autonomie gagnée sur les tâches de l'équipe</div>
+            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.6)', borderRadius: '16px', border: '1px solid rgba(176,141,87,0.1)', textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#8A6D3B', marginBottom: '0.5rem' }}>+25%</div>
+              <div style={{ color: '#4A534F', fontSize: '0.95rem', lineHeight: 1.4 }}>d'autonomie gagnée sur les tâches de l'équipe</div>
             </div>
-            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(68, 204, 255, 0.1)', textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#44CCFF', marginBottom: '0.5rem' }}>95%</div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.95rem', lineHeight: 1.4 }}>de satisfaction apprenants</div>
+            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.6)', borderRadius: '16px', border: '1px solid rgba(176,141,87,0.1)', textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#8A6D3B', marginBottom: '0.5rem' }}>95%</div>
+              <div style={{ color: '#4A534F', fontSize: '0.95rem', lineHeight: 1.4 }}>de satisfaction apprenants</div>
             </div>
-            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.03)', borderRadius: '16px', border: '1px solid rgba(68, 204, 255, 0.1)', textAlign: 'center' }}>
-              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#44CCFF', marginBottom: '0.5rem' }}>2 jours</div>
-              <div style={{ color: '#9CA3AF', fontSize: '0.95rem', lineHeight: 1.4 }}>pour changer vraiment les habitudes</div>
+            <div style={{ padding: '2.5rem', background: 'rgba(255,255,255,0.6)', borderRadius: '16px', border: '1px solid rgba(176,141,87,0.1)', textAlign: 'center' }}>
+              <div style={{ fontSize: '2.5rem', fontWeight: 700, color: '#8A6D3B', marginBottom: '0.5rem' }}>2 jours</div>
+              <div style={{ color: '#4A534F', fontSize: '0.95rem', lineHeight: 1.4 }}>pour changer vraiment les habitudes</div>
             </div>
           </div>
         </div>
@@ -209,107 +209,107 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       </section>
 
       {/* ═══ SECTION 2 : SYNERGIE MÉTIERS (DYNAMIC COMPONENT) ═══ */}
-      <section className="section-padding" style={{ background: '#060612', padding: '48px 32px' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC', padding: '48px 32px' }}>
         <div className="container">
           <div style={{ textAlign: 'center', marginBottom: '80px' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#44CCFF', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#8A6D3B', marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
               Générer plus de traction
             </h2>
-            <div style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.6)', maxWidth: '850px', marginInline: 'auto', fontWeight: 400, lineHeight: 1.5 }}>
+            <div style={{ fontSize: '1.25rem', color: 'rgba(28,43,39,0.6)', maxWidth: '850px', marginInline: 'auto', fontWeight: 400, lineHeight: 1.5 }}>
               En alignant vos équipes Vente, Marketing et Communication sur les bons outils IA
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', maxWidth: '1200px', margin: '0 auto', background: 'rgba(10,10,25,0.4)', border: '1px solid rgba(255,255,255,0.06)', borderRadius: '18px', overflow: 'hidden', backdropFilter: 'blur(10px)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', maxWidth: '1200px', margin: '0 auto', background: 'rgba(246,243,236,0.4)', border: '1px solid rgba(28,43,39,0.14)', borderRadius: '18px', overflow: 'hidden', backdropFilter: 'blur(10px)' }}>
             {/* Sidebar Tabs */}
-            <div id="sq-tabs" style={{ display: 'flex', flexDirection: 'column', borderRight: '1px solid rgba(255,255,255,0.06)', background: 'rgba(255,255,255,0.01)' }}>
+            <div id="sq-tabs" style={{ display: 'flex', flexDirection: 'column', borderRight: '1px solid rgba(28,43,39,0.14)', background: 'rgba(255,255,255,0.6)' }}>
               
-              <div className="sq-tab" onClick={(e) => window.sqSet(0, e.currentTarget)} style={{ padding: '24px 20px', cursor: 'pointer', transition: 'all 0.3s', borderLeft: '3px solid #44CCFF', background: 'rgba(68,204,255,0.07)' }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(68,204,255,0.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2.5 13.5H13.5V12.5H2.5V13.5ZM2.5 11.5H13.5V10.5H2.5V11.5ZM2.5 9.5H13.5V8.5H2.5V9.5ZM2.5 7.5H13.5V6.5H2.5V7.5Z" fill="#44CCFF"/></svg>
+              <div className="sq-tab" onClick={(e) => window.sqSet(0, e.currentTarget)} style={{ padding: '24px 20px', cursor: 'pointer', transition: 'all 0.3s', borderLeft: '3px solid #B08D57', background: 'rgba(176,141,87,0.07)' }}>
+                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(176,141,87,0.14)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M2.5 13.5H13.5V12.5H2.5V13.5ZM2.5 11.5H13.5V10.5H2.5V11.5ZM2.5 9.5H13.5V8.5H2.5V9.5ZM2.5 7.5H13.5V6.5H2.5V7.5Z" fill="#1F3A33"/></svg>
                 </div>
-                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: '#fff', marginBottom: '3px' }}>Marketing</div>
-                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(68,204,255,0.6)', lineHeight: 1.4 }}>Pipeline entrant & conversion</div>
-                <div style={{ height: '2px', background: 'rgba(255,255,255,0.05)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
-                  <div id="sq-pb0" style={{ height: '100%', background: '#44CCFF', width: '0%', transition: 'width 0.1s linear' }}></div>
+                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: '#1C2B27', marginBottom: '3px' }}>Marketing</div>
+                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(138,109,59,0.8)', lineHeight: 1.4 }}>Pipeline entrant & conversion</div>
+                <div style={{ height: '2px', background: 'rgba(255,255,255,0.6)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
+                  <div id="sq-pb0" style={{ height: '100%', background: '#1F3A33', width: '0%', transition: 'width 0.1s linear' }}></div>
                 </div>
               </div>
 
               <div className="sq-tab" onClick={(e) => window.sqSet(1, e.currentTarget)} style={{ padding: '24px 20px', cursor: 'pointer', transition: 'all 0.3s', borderLeft: '3px solid transparent' }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(68,204,255,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#44CCFF" stroke-width="1.5"/></svg>
+                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(176,141,87,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#B08D57" stroke-width="1.5"/></svg>
                 </div>
-                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: 'rgba(255,255,255,0.4)' }}>Ventes</div>
-                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.2)', lineHeight: 1.4 }}>Approche comptes stratégiques</div>
-                <div style={{ height: '2px', background: 'rgba(255,255,255,0.05)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
-                  <div id="sq-pb1" style={{ height: '100%', background: '#44CCFF', width: '0%', transition: 'width 0.1s linear' }}></div>
+                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: 'rgba(28,43,39,0.6)' }}>Ventes</div>
+                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.4 }}>Approche comptes stratégiques</div>
+                <div style={{ height: '2px', background: 'rgba(255,255,255,0.6)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
+                  <div id="sq-pb1" style={{ height: '100%', background: '#1F3A33', width: '0%', transition: 'width 0.1s linear' }}></div>
                 </div>
               </div>
 
               <div className="sq-tab" onClick={(e) => window.sqSet(2, e.currentTarget)} style={{ padding: '24px 20px', cursor: 'pointer', transition: 'all 0.3s', borderLeft: '3px solid transparent' }}>
-                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(68,204,255,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
-                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2.75" y="2.75" width="10.5" height="10.5" rx="1.5" stroke="#44CCFF" stroke-width="1.5"/></svg>
+                <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(176,141,87,0.07)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '12px' }}>
+                  <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2.75" y="2.75" width="10.5" height="10.5" rx="1.5" stroke="#B08D57" stroke-width="1.5"/></svg>
                 </div>
-                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: 'rgba(255,255,255,0.4)' }}>Communication</div>
-                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(255,255,255,0.2)', lineHeight: 1.4 }}>Autorité de marque</div>
-                <div style={{ height: '2px', background: 'rgba(255,255,255,0.05)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
-                  <div id="sq-pb2" style={{ height: '100%', background: '#44CCFF', width: '0%', transition: 'width 0.1s linear' }}></div>
+                <div className="sq-tab-title" style={{ fontSize: '15px', fontWeight: 500, color: 'rgba(28,43,39,0.6)' }}>Communication</div>
+                <div className="sq-tab-sub" style={{ fontSize: '12px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.4 }}>Autorité de marque</div>
+                <div style={{ height: '2px', background: 'rgba(255,255,255,0.6)', marginTop: '10px', borderRadius: '2px', overflow: 'hidden' }}>
+                  <div id="sq-pb2" style={{ height: '100%', background: '#1F3A33', width: '0%', transition: 'width 0.1s linear' }}></div>
                 </div>
               </div>
 
             </div>
 
             {/* Content Panels */}
-            <div style={{ padding: '60px', background: 'rgba(255,255,255,0.01)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+            <div style={{ padding: '60px', background: 'rgba(255,255,255,0.6)', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
               <div id="sq-panel0">
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(176,141,87,0.09)', border: '1px solid rgba(176,141,87,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#8A6D3B', marginBottom: '24px' }}>
                   Marketing & IA
                 </div>
-                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                <div style={{ fontSize: '24px', color: '#1C2B27', marginBottom: '20px', lineHeight: 1.3 }}>
                   {splitTitleBold('Formation IA marketing\u00A0: contenus, campagnes et analyse augmentés.')}
                 </div>
-                <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
+                <div style={{ fontSize: '15px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Vos équipes produisent des contenus qui attirent les bons prospects avant même que la vente décroche son téléphone. Le marketing arrête de produire pour produire. Il commence à produire pour convertir.
                 </div>
-                <div style={{ background: 'rgba(68,204,255,0.04)', border: '1px solid rgba(68,204,255,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
-                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(68,204,255,0.6)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
-                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
+                <div style={{ background: 'rgba(176,141,87,0.04)', border: '1px solid rgba(176,141,87,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
+                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(138,109,59,0.8)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
+                  <div style={{ fontSize: '14px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
                     Le marketing devient mesurable sur le chiffre. Les commerciaux reçoivent des prospects déjà contextualisés.
                   </div>
                 </div>
               </div>
 
               <div id="sq-panel1" style={{ display: 'none' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(176,141,87,0.09)', border: '1px solid rgba(176,141,87,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#8A6D3B', marginBottom: '24px' }}>
                   Ventes & IA
                 </div>
-                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                <div style={{ fontSize: '24px', color: '#1C2B27', marginBottom: '20px', lineHeight: 1.3 }}>
                   {splitTitleBold('Formation IA vente B2B\u00A0: prospecter, qualifier et closer autrement.')}
                 </div>
-                <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
+                <div style={{ fontSize: '15px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Méthode MEDDIC, plan de compte, préparation C-level avec l'IA, traitement des objections. Vos commerciaux repartent avec des réflexes qu'ils appliquent dès la semaine suivante sur les comptes qui comptent vraiment.
                 </div>
-                <div style={{ background: 'rgba(68,204,255,0.04)', border: '1px solid rgba(68,204,255,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
-                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(68,204,255,0.6)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
-                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
+                <div style={{ background: 'rgba(176,141,87,0.04)', border: '1px solid rgba(176,141,87,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
+                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(138,109,59,0.8)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
+                  <div style={{ fontSize: '14px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
                     L'énergie commerciale se concentre là où la fenêtre est ouverte. Moins de deals perdus.
                   </div>
                 </div>
               </div>
 
               <div id="sq-panel2" style={{ display: 'none' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(68,204,255,0.09)', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#44CCFF', marginBottom: '24px' }}>
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', background: 'rgba(176,141,87,0.09)', border: '1px solid rgba(176,141,87,0.18)', borderRadius: '20px', padding: '6px 16px', fontSize: '11px', color: '#8A6D3B', marginBottom: '24px' }}>
                   Communication & IA
                 </div>
-                <div style={{ fontSize: '24px', color: '#fff', marginBottom: '20px', lineHeight: 1.3 }}>
+                <div style={{ fontSize: '24px', color: '#1C2B27', marginBottom: '20px', lineHeight: 1.3 }}>
                   {splitTitleBold('Communication et IA\u00A0: produire plus, mieux, plus vite.')}
                 </div>
-                <div style={{ fontSize: '15px', color: 'rgba(255,255,255,0.5)', lineHeight: 1.8, marginBottom: '32px' }}>
+                <div style={{ fontSize: '15px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.8, marginBottom: '32px' }}>
                   Battle cards, veille automatisée, messages clés par persona. La communication structure ce dont les ventes ont besoin en RDV, renforce l'image de l'entreprise et génère de l inbound. Elle cesse d être réactive.
                 </div>
-                <div style={{ background: 'rgba(68,204,255,0.04)', border: '1px solid rgba(68,204,255,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
-                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(68,204,255,0.6)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
-                  <div style={{ fontSize: '14px', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
+                <div style={{ background: 'rgba(176,141,87,0.04)', border: '1px solid rgba(176,141,87,0.1)', borderRadius: '12px', padding: '16px 20px', marginTop: '12px' }}>
+                  <div style={{ fontSize: '11px', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'rgba(138,109,59,0.8)', marginBottom: '8px', fontWeight: 700 }}>Résultat observé</div>
+                  <div style={{ fontSize: '14px', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, fontStyle: 'italic' }}>
                     Les commerciaux entrent mieux armés. L'entreprise est reconnue avant le premier contact.
                   </div>
                 </div>
@@ -317,16 +317,16 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
             </div>
           </div>
 
-          <div style={{ textAlign: 'center', fontSize: '12px', color: 'rgba(255,255,255,0.22)', marginTop: '48px', fontStyle: 'italic', maxWidth: '540px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <div style={{ textAlign: 'center', fontSize: '12px', color: 'rgba(28,43,39,0.6)', marginTop: '48px', fontStyle: 'italic', maxWidth: '540px', marginLeft: 'auto', marginRight: 'auto' }}>
             Ces trois formations peuvent être suivies séparément ou dans l'ordre. Elles partagent une vision commune : l'IA comme levier de performance humaine, pas comme remplacement.
           </div>
         </div>
       </section>
 
       {/* ═══ SECTION 3 : NOS FORMATIONS MÉTIERS (HORIZONTAL CARDS) ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#FFFFFF', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#1C2B27', fontWeight: 700 }}>Une formation pour chaque métier.</h2>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             
@@ -367,82 +367,82 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       <TestimonialsMarquee page="general" />
 
       {/* ═══ SECTION 4 : TABLEAU COMPARATIF ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem' }}>Choisissez votre programme</h2>
-            <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>Même durée, même exigence, même suivi. Ce qui change c'est votre métier.</p>
+            <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '14px' }}>Même durée, même exigence, même suivi. Ce qui change c'est votre métier.</p>
           </div>
           
           <div style={{ overflowX: 'auto' }}>
-            <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: '0', background: '#0A0A1A', border: '1px solid rgba(68, 204, 255, 0.15)', borderRadius: '12px', overflow: 'hidden' }}>
+            <table style={{ width: '100%', borderCollapse: 'separate', borderSpacing: '0', background: '#F6F3EC', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '12px', overflow: 'hidden' }}>
               <thead>
-                <tr style={{ background: 'rgba(68, 204, 255, 0.06)' }}>
-                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(68, 204, 255, 0.2)', width: '25%' }}></th>
-                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(68, 204, 255, 0.2)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FFF', fontWeight: 700 }}>
+                <tr style={{ background: 'rgba(176,141,87,0.06)' }}>
+                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(176,141,87,0.2)', width: '25%' }}></th>
+                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(176,141,87,0.2)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1C2B27', fontWeight: 700 }}>
                       Vente 
-                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #44CCFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#44CCFF', fontSize: '14px' }}>+</div>
-                      <span style={{ color: '#44CCFF' }}>IA</span>
+                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #B08D57', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8A6D3B', fontSize: '14px' }}>+</div>
+                      <span style={{ color: '#8A6D3B' }}>IA</span>
                     </div>
                   </th>
-                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(68, 204, 255, 0.2)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FFF', fontWeight: 700 }}>
+                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(176,141,87,0.2)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1C2B27', fontWeight: 700 }}>
                       Marketing 
-                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #44CCFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#44CCFF', fontSize: '14px' }}>+</div>
-                      <span style={{ color: '#44CCFF' }}>IA</span>
+                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #B08D57', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8A6D3B', fontSize: '14px' }}>+</div>
+                      <span style={{ color: '#8A6D3B' }}>IA</span>
                     </div>
                   </th>
-                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(68, 204, 255, 0.2)' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#FFF', fontWeight: 700 }}>
+                  <th style={{ padding: '2rem', textAlign: 'left', borderBottom: '2px solid rgba(176,141,87,0.2)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#1C2B27', fontWeight: 700 }}>
                       Communication 
-                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #44CCFF', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#44CCFF', fontSize: '14px' }}>+</div>
-                      <span style={{ color: '#44CCFF' }}>IA</span>
+                      <div style={{ width: '22px', height: '22px', borderRadius: '50%', border: '1.5px solid #B08D57', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#8A6D3B', fontSize: '14px' }}>+</div>
+                      <span style={{ color: '#8A6D3B' }}>IA</span>
                     </div>
                   </th>
                 </tr>
               </thead>
               <tbody>
-                <tr style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(255,255,255,0.45)', fontSize: '13px' }}>Cible principale</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Sales Managers</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Responsables marketing, créateurs</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Managers et équipes communication</td>
+                <tr style={{ background: 'rgba(255,255,255,0.6)' }}>
+                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(28,43,39,0.6)', fontSize: '13px' }}>Cible principale</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Sales Managers</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Responsables marketing, créateurs</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Managers et équipes communication</td>
                 </tr>
-                <tr style={{ background: 'rgba(255,255,255,0.00)' }}>
-                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(255,255,255,0.45)', fontSize: '13px' }}>Ce qu'on règle</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Réflexes terrain, méthode commune</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Production de contenu, veille</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Stratégie éditoriale, ligné de message</td>
+                <tr style={{ background: 'rgba(255,255,255,0.6)' }}>
+                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(28,43,39,0.6)', fontSize: '13px' }}>Ce qu'on règle</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Réflexes terrain, méthode commune</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Production de contenu, veille</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Stratégie éditoriale, ligné de message</td>
                 </tr>
-                <tr style={{ background: 'rgba(255,255,255,0.02)' }}>
-                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(255,255,255,0.45)', fontSize: '13px' }}>Méthode clé</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>MEDDIC + plan de compte</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Prompting multiformat</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.8)', fontSize: '13px' }}>Organisation production de contenu</td>
+                <tr style={{ background: 'rgba(255,255,255,0.6)' }}>
+                  <td style={{ padding: '1.5rem 2rem', fontWeight: 500, color: 'rgba(28,43,39,0.6)', fontSize: '13px' }}>Méthode clé</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>MEDDIC + plan de compte</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Prompting multiformat</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.8)', fontSize: '13px' }}>Organisation production de contenu</td>
                 </tr>
-                <tr style={{ background: 'rgba(68,204,255,0.05)' }}>
-                  <td style={{ padding: '1.5rem 2rem', fontWeight: 700, color: '#44CCFF', fontSize: '13px', verticalAlign: 'top' }}>ROI observé</td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>
+                <tr style={{ background: 'rgba(176,141,87,0.05)' }}>
+                  <td style={{ padding: '1.5rem 2rem', fontWeight: 700, color: '#8A6D3B', fontSize: '13px', verticalAlign: 'top' }}>ROI observé</td>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.7)', fontSize: '13px' }}>
                     <ul style={{ paddingLeft: '1.2rem', margin: 0, listStyleType: 'disc', lineHeight: 1.8 }}>
-                      <li><span style={{ color: '#44CCFF', fontWeight: 600 }}>+34%</span> de taux de closing après formation</li>
-                      <li>Préparation RDV divisée par <span style={{ color: '#44CCFF', fontWeight: 600 }}>3</span> avec l'IA</li>
+                      <li><span style={{ color: '#8A6D3B', fontWeight: 600 }}>+34%</span> de taux de closing après formation</li>
+                      <li>Préparation RDV divisée par <span style={{ color: '#8A6D3B', fontWeight: 600 }}>3</span> avec l'IA</li>
                       <li>Plan de compte opérationnel dès J+1</li>
                       <li>Objections traitées avec une méthode commune</li>
                     </ul>
                   </td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.7)', fontSize: '13px' }}>
                     <ul style={{ paddingLeft: '1.2rem', margin: 0, listStyleType: 'disc', lineHeight: 1.8 }}>
-                      <li><span style={{ color: '#44CCFF', fontWeight: 600 }}>+40%</span> de production de contenu sans ressource supplémentaire</li>
+                      <li><span style={{ color: '#8A6D3B', fontWeight: 600 }}>+40%</span> de production de contenu sans ressource supplémentaire</li>
                       <li>Veille concurrentielle automatisée en moins d'une heure</li>
                       <li>Routine de production IA tenue 3 mois</li>
                       <li>Temps de brief réduit de moitié par campagne</li>
                     </ul>
                   </td>
-                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(255,255,255,0.7)', fontSize: '13px' }}>
+                  <td style={{ padding: '1.5rem 2rem', color: 'rgba(28,43,39,0.7)', fontSize: '13px' }}>
                     <ul style={{ paddingLeft: '1.2rem', margin: 0, listStyleType: 'disc', lineHeight: 1.8 }}>
                       <li>Plan éditorial structuré et tenu sur 3 mois</li>
-                      <li><span style={{ color: '#44CCFF', fontWeight: 600 }}>3h économisées</span> par semaine sur les contenus</li>
+                      <li><span style={{ color: '#8A6D3B', fontWeight: 600 }}>3h économisées</span> par semaine sur les contenus</li>
                       <li>Ligne éditoriale applicable par toute l'équipe</li>
                       <li>Veille sectorielle automatisée sans outil ajouté</li>
                     </ul>
@@ -450,9 +450,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 </tr>
                 <tr>
                   <td style={{ padding: '2rem' }}></td>
-                  <td style={{ padding: '2rem' }}><Link href="/formation-ventes-et-ia" style={{ color: '#44CCFF', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
-                  <td style={{ padding: '2rem' }}><Link href="/formation-marketing-et-ia" style={{ color: '#44CCFF', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
-                  <td style={{ padding: '2rem' }}><Link href="/formation-communication-et-ia" style={{ color: '#44CCFF', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
+                  <td style={{ padding: '2rem' }}><Link href="/formation-ventes-et-ia" style={{ color: '#8A6D3B', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
+                  <td style={{ padding: '2rem' }}><Link href="/formation-marketing-et-ia" style={{ color: '#8A6D3B', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
+                  <td style={{ padding: '2rem' }}><Link href="/formation-communication-et-ia" style={{ color: '#8A6D3B', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '8px' }}>Voir le programme <ArrowRight size={16} /></Link></td>
                 </tr>
               </tbody>
             </table>
@@ -463,7 +463,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
       {/* ═══ SECTION 6 : MODALITÉS ET TARIFS ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '5rem', textAlign: 'center', fontWeight: 700 }}>Formats et tarifs</h2>
           
@@ -517,8 +517,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
               <div
                 key={idx}
                 style={{
-                  background: '#0D0D25',
-                  border: card.badge ? '2px solid #44CCFF' : '1px solid #1A1A3A',
+                  background: '#F6F3EC',
+                  border: card.badge ? '2px solid #B08D57' : '1px solid #D8D1C2',
                   padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -532,8 +532,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                     top: '-12px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: '#44CCFF',
-                    color: '#060612',
+                    background: '#1F3A33',
+                    color: '#F6F3EC',
                     padding: '4px 12px',
                     borderRadius: '20px',
                     fontSize: '0.7rem',
@@ -544,19 +544,19 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 )}
                 {card.badge && (
                   <div className="mobile-only" style={{ marginBottom: '8px' }}>
-                    <span style={{ display: 'inline-block', background: '#44CCFF', color: '#060612', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
+                    <span style={{ display: 'inline-block', background: '#1F3A33', color: '#F6F3EC', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
                       {card.badge}
                     </span>
                   </div>
                 )}
 
                 <h3 style={{ fontSize: isMobile ? '1.3rem' : '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
+                <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
                   {card.subtitle}
                 </p>
 
                 <div style={{ marginBottom: '1.5rem', marginTop: isMobile ? '4px' : 0 }}>
-                  <div style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#fff' }}>
+                  <div style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#1C2B27' }}>
                     {(() => {
                       let displayPrice = card.price;
                       let prefix = null;
@@ -578,13 +578,13 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                       return (
                         <>
                           {prefix && (
-                            <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>
+                            <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>
                               {prefix}
                             </span>
                           )}
                           {displayPrice}
                           {suffix && (
-                            <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>
+                            <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>
                               {suffix}
                             </span>
                           )}
@@ -596,8 +596,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 
                 <div style={{ flexGrow: 1, marginBottom: '1.5rem' }}>
                   {card.items.map((item, iIdx) => (
-                    <div key={iIdx} style={{ display: 'flex', gap: '10px', marginBottom: isMobile ? '8px' : '0.75rem', fontSize: isMobile ? '14px' : '0.85rem', lineHeight: isMobile ? 1.7 : 1.4, color: 'rgba(255,255,255,0.7)' }}>
-                      <Check size={16} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <div key={iIdx} style={{ display: 'flex', gap: '10px', marginBottom: isMobile ? '8px' : '0.75rem', fontSize: isMobile ? '14px' : '0.85rem', lineHeight: isMobile ? 1.7 : 1.4, color: 'rgba(28,43,39,0.7)' }}>
+                      <Check size={16} color="#8A6D3B" style={{ flexShrink: 0, marginTop: '2px' }} />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -612,9 +612,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#44CCFF' : 'transparent',
-                    color: card.badge ? '#060612' : '#FFFFFF',
+                    border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.32)',
+                    background: card.badge ? '#1F3A33' : 'transparent',
+                    color: card.badge ? '#F6F3EC' : '#1C2B27',
                     textAlign: 'center',
                     textDecoration: 'none',
                     transition: 'all 0.3s',
@@ -628,10 +628,10 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </div>
 
           <div style={{ textAlign: 'center', marginTop: '5rem', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-            <p style={{ color: '#6B7280', fontSize: '0.95rem', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6 }}>
+            <p style={{ color: '#6B716C', fontSize: '0.95rem', maxWidth: '800px', marginInline: 'auto', lineHeight: 1.6 }}>
               Tous les prix sont donnés à titre indicatif hors taxes et peuvent faire l'objet de modification selon le volume, la complexité et les contraintes spécifiques.
             </p>
-            <p style={{ color: '#44CCFF', fontSize: '0.95rem', fontWeight: 600, maxWidth: '800px', marginInline: 'auto' }}>
+            <p style={{ color: '#8A6D3B', fontSize: '0.95rem', fontWeight: 600, maxWidth: '800px', marginInline: 'auto' }}>
               Financement OPCO possible selon votre organisme paritaire. Nous contacter pour vérifier votre éligibilité.
             </p>
           </div>
@@ -640,7 +640,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
       {/* SECTION NOUVELLE : ILS NOUS FONT CONFIANCE */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div className="container fade-in">
           <ClientLogosSection contained={true} />
         </div>
@@ -651,37 +651,37 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '6rem', textAlign: 'center', fontWeight: 700 }}>Ce que nous apportons de différent</h2>
           <div className="grid-3" style={{ gap: '4rem' }}>
-            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
-              <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
-                <Target color="#44CCFF" size={36} />
+            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.6)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(28,43,39,0.14)' }}>
+              <div style={{ width: '72px', height: '72px', background: 'rgba(176,141,87,0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(176,141,87,0.1)' }}>
+                <Target color="#8A6D3B" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Formation personnalisable</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique : on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
+              <p style={{ color: '#4A534F', lineHeight: 1.7, fontSize: '1.05rem' }}>Le programme s'adapte à votre secteur, vos outils et le niveau de votre équipe. Pas de contenu générique : on part de vos cas réels, vos prospects, vos contenus, votre quotidien.</p>
             </div>
-            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
-              <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
-                <RefreshCw color="#44CCFF" size={36} />
+            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.6)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(28,43,39,0.14)' }}>
+              <div style={{ width: '72px', height: '72px', background: 'rgba(176,141,87,0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(176,141,87,0.1)' }}>
+                <RefreshCw color="#8A6D3B" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Coaching post-formation</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>1 heure en visio après la formation pour faire le point sur ce qui a changé, débloquer ce qui coince, ajuster ce qui peut être amélioré. On ne disparaît pas le soir du Jour 2.</p>
+              <p style={{ color: '#4A534F', lineHeight: 1.7, fontSize: '1.05rem' }}>1 heure en visio après la formation pour faire le point sur ce qui a changé, débloquer ce qui coince, ajuster ce qui peut être amélioré. On ne disparaît pas le soir du Jour 2.</p>
             </div>
-            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.02)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(255,255,255,0.03)' }}>
-              <div style={{ width: '72px', height: '72px', background: 'rgba(68, 204, 255, 0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(68, 204, 255, 0.1)' }}>
-                <Star color="#44CCFF" size={36} />
+            <div style={{ textAlign: 'center', background: 'rgba(255,255,255,0.6)', padding: '3rem 2rem', borderRadius: '24px', border: '1px solid rgba(28,43,39,0.14)' }}>
+              <div style={{ width: '72px', height: '72px', background: 'rgba(176,141,87,0.1)', borderRadius: '20px', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 2.5rem', boxShadow: '0 10px 20px rgba(176,141,87,0.1)' }}>
+                <Star color="#8A6D3B" size={36} />
               </div>
               <h3 style={{ fontSize: '1.4rem', marginBottom: '1.5rem', fontWeight: 700 }}>Supports opérationnels</h3>
-              <p style={{ color: '#9CA3AF', lineHeight: 1.7, fontSize: '1.05rem' }}>Chaque participant repart avec des templates, des prompts prêts à l'emploi.</p>
+              <p style={{ color: '#4A534F', lineHeight: 1.7, fontSize: '1.05rem' }}>Chaque participant repart avec des templates, des prompts prêts à l'emploi.</p>
             </div>
           </div>
         </div>
       </section>
 
       {/* ═══ SECTION 8 : INTERNAL LINKING (CARDS) ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem', color: '#fff' }}>La formation n'est que le début</h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.5)', maxWidth: '800px', marginInline: 'auto' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem', color: '#1C2B27' }}>La formation n'est que le début</h2>
+            <p style={{ fontSize: '1.1rem', color: 'rgba(28,43,39,0.6)', maxWidth: '800px', marginInline: 'auto' }}>
               Squadia intervient aussi sur les systèmes qui font travailler vos équipes au quotidien.
             </p>
           </div>
@@ -693,9 +693,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 className="hover-card-alt"
                 style={{
                   textAlign: 'left',
-                  background: 'rgba(255,255,255,0.02)',
+                  background: 'rgba(255,255,255,0.6)',
                   borderRadius: '24px',
-                  border: '1px solid rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(28,43,39,0.14)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -707,11 +707,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   <img src={autoProcessImg} alt="Campagnes de prospection multicanale B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Lancer des campagnes de prospection</h3>
-                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#1C2B27' }}>Lancer des campagnes de prospection</h3>
+                  <p style={{ color: '#4A534F', lineHeight: 1.6, fontSize: '0.95rem' }}>
                     Des séquences email, LinkedIn et téléphone pilotées par la data pour générer des rendez-vous qualifiés.
                   </p>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#8A6D3B', fontWeight: 600, fontSize: '0.85rem' }}>
                     Découvrir la prospection <ArrowRight size={14} />
                   </div>
                 </div>
@@ -724,9 +724,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 className="hover-card-alt"
                 style={{
                   textAlign: 'left',
-                  background: 'rgba(255,255,255,0.02)',
+                  background: 'rgba(255,255,255,0.6)',
                   borderRadius: '24px',
-                  border: '1px solid rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(28,43,39,0.14)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -738,11 +738,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   <img src={dataLeadImg} alt="Détection de leads qualifiés grâce à la data B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Détecter vos leads qualifiés</h3>
-                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#1C2B27' }}>Détecter vos leads qualifiés</h3>
+                  <p style={{ color: '#4A534F', lineHeight: 1.6, fontSize: '0.95rem' }}>
                     Utilisez la data et l'IA pour identifier les comptes à fort potentiel avant la concurrence.
                   </p>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#8A6D3B', fontWeight: 600, fontSize: '0.85rem' }}>
                     Voir nos solutions data <ArrowRight size={14} />
                   </div>
                 </div>
@@ -755,9 +755,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                 className="hover-card-alt"
                 style={{
                   textAlign: 'left',
-                  background: 'rgba(255,255,255,0.02)',
+                  background: 'rgba(255,255,255,0.6)',
                   borderRadius: '24px',
-                  border: '1px solid rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(28,43,39,0.14)',
                   overflow: 'hidden',
                   height: '100%',
                   display: 'flex',
@@ -769,11 +769,11 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
                   <img src={stratCommercialeImg} alt="Formations IA pour équipes commerciales B2B" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '2rem' }}>
-                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#fff' }}>Former vos équipes</h3>
-                  <p style={{ color: '#9CA3AF', lineHeight: 1.6, fontSize: '0.95rem' }}>
+                  <h3 style={{ fontSize: '1.3rem', marginBottom: '0.75rem', fontWeight: 700, color: '#1C2B27' }}>Former vos équipes</h3>
+                  <p style={{ color: '#4A534F', lineHeight: 1.6, fontSize: '0.95rem' }}>
                     Des formations IA sur mesure pour rendre vos commerciaux, marketeurs et communicants autonomes.
                   </p>
-                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#44CCFF', fontWeight: 600, fontSize: '0.85rem' }}>
+                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '8px', color: '#8A6D3B', fontWeight: 600, fontSize: '0.85rem' }}>
                     Voir les formations <ArrowRight size={14} />
                   </div>
                 </div>
@@ -795,14 +795,14 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
       <style>{`
         .formation-card-horizontal {
           display: flex;
-          background: rgba(255, 255, 255, 0.03);
-          border: 1px solid rgba(68, 204, 255, 0.15);
+          background: rgba(255,255,255,0.6);
+          border: 1px solid rgba(176,141,87,0.15);
           border-radius: 16px;
           overflow: hidden;
           opacity: 0;
           transform: translateY(20px);
           transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-          color: #FFFFFF;
+          color: #1C2B27;
         }
         .formation-card-horizontal.is-visible {
           opacity: 1;
@@ -825,14 +825,14 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           justify-content: center;
         }
         .card-category-new {
-          color: #44CCFF;
+          color: #8A6D3B;
           font-size: 13px;
           font-weight: 600;
           margin-bottom: 12px;
           display: block;
         }
         .card-title-new {
-          color: #FFFFFF;
+          color: #1C2B27;
           font-size: 28px;
           font-weight: 700;
           margin-bottom: 8px;
@@ -842,7 +842,7 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           display: flex;
           align-items: center;
           gap: 12px;
-          color: rgba(255, 255, 255, 0.4);
+          color: rgba(28,43,39,0.6);
           font-size: 13px;
           margin: 16px 0;
         }
@@ -852,15 +852,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           text-overflow: ellipsis;
         }
         .card-description-new {
-          color: rgba(255, 255, 255, 0.7);
+          color: rgba(28,43,39,0.7);
           font-size: 15px;
           line-height: 1.7;
           margin-bottom: 24px;
         }
         .btn-discover-new {
           align-self: flex-start;
-          background: #FFFFFF;
-          color: #060612;
+          background: #1F3A33;
+          color: #F6F3EC;
           text-decoration: none;
           padding: 12px 24px;
           border-radius: 8px;
@@ -871,8 +871,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           transition: all 0.2s ease;
         }
         .btn-discover-new:hover {
-          background: #44CCFF;
-          color: #060612;
+          background: #1F3A33;
+          color: #F6F3EC;
           transform: translateY(-2px);
         }
 
@@ -897,8 +897,8 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
 
 
         .pill-link {
-          border: 1px solid rgba(68, 204, 255, 0.2);
-          color: rgba(255, 255, 255, 0.6);
+          border: 1px solid rgba(176,141,87,0.2);
+          color: rgba(28,43,39,0.6);
           padding: 10px 20px;
           border-radius: 20px;
           font-size: 13px;
@@ -906,15 +906,15 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           transition: all 0.15s ease;
         }
         .pill-link:hover {
-          border-color: #44CCFF;
-          color: #44CCFF;
+          border-color: #8A6D3B;
+          color: #8A6D3B;
           transform: translateY(-2px);
         }
         .hover-card-alt:hover {
           transform: translateY(-8px);
-          border-color: rgba(68, 204, 255, 0.3) !important;
-          background: rgba(255, 255, 255, 0.04) !important;
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+          border-color: rgba(138,109,59,0.8) !important;
+          background: rgba(255,255,255,0.6) !important;
+          box-shadow: 0 20px 40px rgba(28,43,39,0.105);
         }
         .formations-desktop-badge {
           display: block;

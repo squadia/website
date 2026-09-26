@@ -83,7 +83,7 @@ export default function FooterMobile() {
                 aria-hidden="true"
                 style={{ transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s ease', flexShrink: 0 }}
               >
-                <path d="M4 6l4 4 4-4" stroke="rgba(249,250,251,0.45)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M4 6l4 4 4-4" stroke="rgba(28,43,39,0.35)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
             <div className={`footer-acc-panel${isOpen ? ' open' : ''}`} aria-hidden={!isOpen}>

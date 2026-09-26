@@ -86,16 +86,16 @@ const GuideSalesManager = () => {
   };
 
   return (
-    <div className="guide-sales-page" style={{ position: 'relative', minHeight: '100vh', color: '#F9FAFB', overflow: 'hidden' }}>
+    <div className="guide-sales-page" style={{ position: 'relative', minHeight: '100vh', color: '#1C2B27', overflow: 'hidden' }}>
       <img src={newSalesManager} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', zIndex: 0 }} />
-      <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.82)', zIndex: 1 }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'rgba(246,243,236,0.82)', zIndex: 1 }} />
       
       <div className="container grid-2 align-center" style={{ position: 'relative', zIndex: 2, paddingTop: '160px', paddingBottom: '80px', gap: '4rem' }}>
         
         {/* ═══ COLONNE GAUCHE : HERO ET CONTENU ═══ */}
         <div className="fade-in">
           
-          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
+          <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(31,58,51,0.1)', border: '1px solid #B08D57', padding: '0.4rem 1rem', borderRadius: '30px', color: '#8A6D3B', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
             <BookOpen size={16} /> Mini-guide gratuit
           </div>
 
@@ -107,25 +107,25 @@ const GuideSalesManager = () => {
             méthodes éprouvées, plans d action, IA, outils et conseils pratiques pour réussir votre prise de poste et atteindre vos premiers résultats.
           </p>
 
-          <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2.5rem' }}>
+          <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '12px', padding: '2.5rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '1.5rem' }}>Ce que vous allez trouver :</h2>
             
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.2rem', listStyle: 'none', padding: 0, margin: 0 }}>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+                <CheckCircle2 size={22} color="#8A6D3B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ fontSize: '1.05rem', color: '#4A534F', lineHeight: 1.5 }}>
                   Identifier les meilleurs outils pour soutenir la performance commerciale
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+                <CheckCircle2 size={22} color="#8A6D3B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ fontSize: '1.05rem', color: '#4A534F', lineHeight: 1.5 }}>
                   Utiliser notre plan et conseils pour développer le channel
                 </span>
               </li>
               <li style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start' }}>
-                <CheckCircle2 size={22} color="#44CCFF" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ fontSize: '1.05rem', color: '#E5E7EB', lineHeight: 1.5 }}>
+                <CheckCircle2 size={22} color="#8A6D3B" style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ fontSize: '1.05rem', color: '#4A534F', lineHeight: 1.5 }}>
                   Mesurer l impact avec des KPIs pensés pour les équipes commerciales et le COMEX
                 </span>
               </li>
@@ -136,17 +136,17 @@ const GuideSalesManager = () => {
 
         {/* ═══ COLONNE DROITE : FORMULAIRE ═══ */}
         <div className="fade-in" style={{ transitionDelay: '0.2s' }}>
-          <div style={{ background: 'rgba(17,24,39,0.25)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', padding: '3rem 2.5rem', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.4)' }}>
+          <div style={{ background: 'rgba(246,243,236,0.25)', backdropFilter: 'blur(16px)', WebkitBackdropFilter: 'blur(16px)', border: '1px solid rgba(28,43,39,0.16)', borderRadius: '16px', padding: '3rem 2.5rem', boxShadow: '0 25px 50px -12px rgba(28,43,39,0.14)' }}>
             
             <h3 style={{ fontSize: '1.5rem', marginBottom: '2rem', textAlign: 'center' }}>
               Recevez-le par email immédiatement
             </h3>
 
             {isSuccess ? (
-              <div style={{ background: 'rgba(16, 185, 129, 0.1)', border: '1px solid #10B981', padding: '2rem', borderRadius: '8px', textAlign: 'center' }}>
-                <CheckCircle2 size={48} color="#10B981" style={{ margin: '0 auto 1rem auto' }} />
-                <h4 style={{ fontSize: '1.2rem', color: '#10B981', marginBottom: '0.5rem' }}>{isFallbackSuccess ? 'Demande enregistrée' : 'Guide envoyé !'}</h4>
-                <p style={{ color: '#D1D5DB', fontSize: '0.95rem' }}>
+              <div style={{ background: 'rgba(63,122,94,0.1)', border: '1px solid #3F7A5E', padding: '2rem', borderRadius: '8px', textAlign: 'center' }}>
+                <CheckCircle2 size={48} color="#3F7A5E" style={{ margin: '0 auto 1rem auto' }} />
+                <h4 style={{ fontSize: '1.2rem', color: '#3F7A5E', marginBottom: '0.5rem' }}>{isFallbackSuccess ? 'Demande enregistrée' : 'Guide envoyé !'}</h4>
+                <p style={{ color: '#4A534F', fontSize: '0.95rem' }}>
                   {isFallbackSuccess ? "Notre équipe a bien reçu vos coordonnées et vous enverra le guide sous peu." : "Vérifiez votre boîte de réception d'ici quelques instants."}
                 </p>
               </div>
@@ -155,7 +155,7 @@ const GuideSalesManager = () => {
                 
                 <div className="grid-2" style={{ gap: '1.2rem' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label htmlFor="FirstName" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Prénom</label>
+                    <label htmlFor="FirstName" style={{ fontSize: '0.9rem', color: '#4A534F' }}>Prénom</label>
                     <input 
                       type="text" 
                       id="FirstName" 
@@ -163,12 +163,12 @@ const GuideSalesManager = () => {
                       required 
                       value={formData.FirstName}
                       onChange={handleChange}
-                      style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                      style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
                       placeholder="Jane"
                     />
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                    <label htmlFor="Name" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Nom</label>
+                    <label htmlFor="Name" style={{ fontSize: '0.9rem', color: '#4A534F' }}>Nom</label>
                     <input 
                       type="text" 
                       id="Name" 
@@ -176,14 +176,14 @@ const GuideSalesManager = () => {
                       required 
                       value={formData.Name}
                       onChange={handleChange}
-                      style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                      style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
                       placeholder="Doe"
                     />
                   </div>
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label htmlFor="phone" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Mobile</label>
+                  <label htmlFor="phone" style={{ fontSize: '0.9rem', color: '#4A534F' }}>Mobile</label>
                   <input
                     type="tel"
                     id="phone"
@@ -191,29 +191,29 @@ const GuideSalesManager = () => {
                     value={formData.phone}
                     onChange={handleChange}
                     onBlur={handlePhoneBlur}
-                    style={{ background: '#03030A', border: phoneError ? '1px solid #EF4444' : '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                    style={{ background: '#F6F3EC', border: phoneError ? '1px solid #A63D2F' : '1px solid #D8D1C2', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
                     placeholder="+33 6 00 00 00 00 (ou indicatif international)"
                   />
                   {phoneError && (
-                    <span style={{ color: '#EF4444', fontSize: '0.8rem' }}>{phoneError}</span>
+                    <span style={{ color: '#A63D2F', fontSize: '0.8rem' }}>{phoneError}</span>
                   )}
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label htmlFor="Company" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Société</label>
+                  <label htmlFor="Company" style={{ fontSize: '0.9rem', color: '#4A534F' }}>Société</label>
                   <input
                     type="text"
                     id="Company"
                     name="Company"
                     value={formData.Company}
                     onChange={handleChange}
-                    style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                    style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
                     placeholder="Squadia"
                   />
                 </div>
 
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <label htmlFor="Email" style={{ fontSize: '0.9rem', color: '#9CA3AF' }}>Email professionnel</label>
+                  <label htmlFor="Email" style={{ fontSize: '0.9rem', color: '#4A534F' }}>Email professionnel</label>
                   <input
                     type="email"
                     id="Email"
@@ -221,13 +221,13 @@ const GuideSalesManager = () => {
                     required
                     value={formData.Email}
                     onChange={handleChange}
-                    style={{ background: '#03030A', border: '1px solid #374151', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
+                    style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '0.8rem 1rem', borderRadius: '6px', color: 'white', fontSize: '1rem' }}
                     placeholder="jane.doe@entreprise.com"
                   />
                 </div>
 
                 {error && (
-                  <div style={{ color: '#EF4444', fontSize: '0.9rem', marginTop: '0.5rem' }}>
+                  <div style={{ color: '#A63D2F', fontSize: '0.9rem', marginTop: '0.5rem' }}>
                     {error}
                   </div>
                 )}
@@ -241,7 +241,7 @@ const GuideSalesManager = () => {
                   {isSubmitting ? <Loader2 size={20} className="spin" /> : <><Send size={18} /> Recevoir le mini-guide</>}
                 </button>
 
-                <p style={{ fontSize: '0.75rem', color: '#6B7280', fontStyle: 'italic', textAlign: 'center', marginTop: '1rem', lineHeight: 1.5 }}>
+                <p style={{ fontSize: '0.75rem', color: '#6B716C', fontStyle: 'italic', textAlign: 'center', marginTop: '1rem', lineHeight: 1.5 }}>
                   En Téléchargeant ce guide, j'accepte de recevoir par email des contenus et communications de la part de Squadia. Il sera possible de se désinscrire à tout moment.
                 </p>
 

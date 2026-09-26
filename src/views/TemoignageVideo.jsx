@@ -20,12 +20,12 @@ const TemoignageVideo = () => {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', padding: '110px 16px 80px' }}>
+    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', padding: '110px 16px 80px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
         <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.1rem)', fontWeight: 800, marginBottom: '0.6rem' }}>
           Un petit message pour toi
         </h1>
-        <p style={{ color: '#9CA3AF', marginBottom: '2rem' }}>Merci encore pour ton témoignage&nbsp;!</p>
+        <p style={{ color: '#4A534F', marginBottom: '2rem' }}>Merci encore pour ton témoignage&nbsp;!</p>
 
         {videoId && !failed ? (
           <video
@@ -35,16 +35,16 @@ const TemoignageVideo = () => {
             autoPlay
             playsInline
             onError={() => setFailed(true)}
-            style={{ width: '100%', borderRadius: '16px', border: '1px solid #1A1A3A', background: '#000', display: 'block' }}
+            style={{ width: '100%', borderRadius: '16px', border: '1px solid #D8D1C2', background: '#F6F3EC', display: 'block' }}
           />
         ) : (
-          <p style={{ color: '#9CA3AF', padding: '3rem 0' }}>Cette vidéo n'est pas disponible.</p>
+          <p style={{ color: '#4A534F', padding: '3rem 0' }}>Cette vidéo n'est pas disponible.</p>
         )}
 
         <a
           href={cta.href}
           {...(cta.external && { target: '_blank', rel: 'noopener noreferrer' })}
-          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', padding: '0.9rem 1.6rem', borderRadius: '30px', background: '#44CCFF', color: '#050510', fontWeight: 700, textDecoration: 'none' }}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', padding: '0.9rem 1.6rem', borderRadius: '30px', background: '#1F3A33', color: '#F6F3EC', fontWeight: 700, textDecoration: 'none' }}
         >
           {cta.label} <ArrowRight size={18} />
         </a>

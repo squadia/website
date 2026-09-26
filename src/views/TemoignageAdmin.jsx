@@ -25,10 +25,10 @@ async function callFunction(idToken, action, params = {}) {
 }
 
 const AVATAR_BADGES = {
-  queued: { label: 'Vidéo avatar : en file', color: '#FACC15' },
-  generating: { label: 'Vidéo avatar : génération HeyGen...', color: '#FACC15' },
-  sent: { label: 'Vidéo avatar envoyée', color: '#4ADE80' },
-  error: { label: 'Vidéo avatar : erreur', color: '#F87171' },
+  queued: { label: 'Vidéo avatar : en file', color: '#8A6D3B' },
+  generating: { label: 'Vidéo avatar : génération HeyGen...', color: '#8A6D3B' },
+  sent: { label: 'Vidéo avatar envoyée', color: '#3F7A5E' },
+  error: { label: 'Vidéo avatar : erreur', color: '#A63D2F' },
 };
 
 const avatarLocked = (row) => ['sent', 'queued', 'generating'].includes(row.avatar_status);
@@ -36,7 +36,7 @@ const avatarLocked = (row) => ['sent', 'queued', 'generating'].includes(row.avat
 const AdminVideo = ({ row }) => {
   const videoRef = useRef(null);
   useSkipCuts(videoRef, row.cuts);
-  return <video ref={videoRef} src={row.signed_url} controls style={{ width: '100%', borderRadius: '10px', marginBottom: '1rem', background: '#000' }} />;
+  return <video ref={videoRef} src={row.signed_url} controls style={{ width: '100%', borderRadius: '10px', marginBottom: '1rem', background: '#F6F3EC' }} />;
 };
 
 const TemoignageAdmin = () => {
@@ -163,14 +163,14 @@ const TemoignageAdmin = () => {
 
   if (!idToken) {
     return (
-      <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
-        <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '3rem', width: '100%', maxWidth: '380px', textAlign: 'center' }}>
-          <ShieldCheck size={28} color="#44CCFF" style={{ marginBottom: '1rem' }} />
+      <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+        <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '16px', padding: '3rem', width: '100%', maxWidth: '380px', textAlign: 'center' }}>
+          <ShieldCheck size={28} color="#8A6D3B" style={{ marginBottom: '1rem' }} />
           <h1 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.5rem' }}>Espace admin</h1>
-          <p style={{ color: '#9CA3AF', fontSize: '0.85rem', marginBottom: '1.5rem' }}>Réservé à {ADMIN_EMAIL}</p>
+          <p style={{ color: '#4A534F', fontSize: '0.85rem', marginBottom: '1.5rem' }}>Réservé à {ADMIN_EMAIL}</p>
           <div ref={buttonRef} style={{ display: 'flex', justifyContent: 'center', minHeight: '44px' }} />
-          {!gsiReady && <p style={{ color: '#6B7280', fontSize: '0.8rem', marginTop: '1rem' }}>Chargement...</p>}
-          {loginError && <p style={{ color: '#F87171', fontSize: '0.85rem', marginTop: '1rem' }}>{loginError}</p>}
+          {!gsiReady && <p style={{ color: '#6B716C', fontSize: '0.8rem', marginTop: '1rem' }}>Chargement...</p>}
+          {loginError && <p style={{ color: '#A63D2F', fontSize: '0.85rem', marginTop: '1rem' }}>{loginError}</p>}
         </div>
       </div>
     );
@@ -179,7 +179,7 @@ const TemoignageAdmin = () => {
   const filteredRows = rows.filter((r) => r.status === tab);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', padding: '100px 24px 80px' }}>
+    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', padding: '100px 24px 80px' }}>
       <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
         <h1 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '2rem' }}>Témoignages</h1>
 
@@ -191,9 +191,9 @@ const TemoignageAdmin = () => {
               style={{
                 padding: '0.6rem 1.2rem',
                 borderRadius: '30px',
-                border: tab === t.value ? '1px solid #44CCFF' : '1px solid #1A1A3A',
-                background: tab === t.value ? 'rgba(68,204,255,0.1)' : 'transparent',
-                color: tab === t.value ? '#44CCFF' : '#9CA3AF',
+                border: tab === t.value ? '1px solid #B08D57' : '1px solid #D8D1C2',
+                background: tab === t.value ? 'rgba(176,141,87,0.1)' : 'transparent',
+                color: tab === t.value ? '#8A6D3B' : '#4A534F',
                 cursor: 'pointer',
                 fontWeight: 600,
               }}
@@ -203,29 +203,29 @@ const TemoignageAdmin = () => {
           ))}
         </div>
 
-        {filteredRows.length === 0 && <p style={{ color: '#9CA3AF' }}>Aucun témoignage ici.</p>}
+        {filteredRows.length === 0 && <p style={{ color: '#4A534F' }}>Aucun témoignage ici.</p>}
 
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '1.5rem' }}>
           {filteredRows.map((row) => (
-            <div key={row.id} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '1.2rem', opacity: busyId === row.id ? 0.5 : 1 }}>
+            <div key={row.id} style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '16px', padding: '1.2rem', opacity: busyId === row.id ? 0.5 : 1 }}>
               {row.signed_url ? (
                 <>
                   <AdminVideo row={row} />
                   <button
                     onClick={() => setEditingRow(row)}
-                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: 'transparent', color: '#44CCFF', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '-0.4rem', marginBottom: '1rem' }}
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: 'transparent', color: '#8A6D3B', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '-0.4rem', marginBottom: '1rem' }}
                   >
                     <Scissors size={14} /> Couper des scènes
-                    {row.cuts?.length > 0 && <span style={{ color: '#9CA3AF', fontWeight: 500 }}>({row.cuts.length} coupure{row.cuts.length > 1 ? 's' : ''})</span>}
+                    {row.cuts?.length > 0 && <span style={{ color: '#4A534F', fontWeight: 500 }}>({row.cuts.length} coupure{row.cuts.length > 1 ? 's' : ''})</span>}
                   </button>
                 </>
               ) : (
-                <div style={{ height: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6B7280' }}>Vidéo indisponible</div>
+                <div style={{ height: '160px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#6B716C' }}>Vidéo indisponible</div>
               )}
 
-              <p style={{ fontSize: '0.75rem', color: '#6B7280', marginBottom: '0.75rem' }}>
+              <p style={{ fontSize: '0.75rem', color: '#6B716C', marginBottom: '0.75rem' }}>
                 {new Date(row.created_at).toLocaleString('fr-FR')}
-                {row.email && <> · <a href={`mailto:${row.email}`} style={{ color: '#44CCFF' }}>{row.email}</a></>}
+                {row.email && <> · <a href={`mailto:${row.email}`} style={{ color: '#8A6D3B' }}>{row.email}</a></>}
               </p>
 
               <input
@@ -233,13 +233,13 @@ const TemoignageAdmin = () => {
                 defaultValue={row.label || ''}
                 placeholder="Nom / titre à afficher"
                 onBlur={(e) => e.target.value !== (row.label || '') && updateRow(row.id, { label: e.target.value })}
-                style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', marginBottom: '0.75rem', fontSize: '0.9rem' }}
+                style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', marginBottom: '0.75rem', fontSize: '0.9rem' }}
               />
 
               <select
                 value={row.assigned_page || ''}
                 onChange={(e) => updateRow(row.id, { assigned_page: e.target.value || null })}
-                style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', marginBottom: '1rem', fontSize: '0.9rem' }}
+                style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', marginBottom: '1rem', fontSize: '0.9rem' }}
               >
                 <option value="">Aucune page assignée</option>
                 {TESTIMONIAL_PAGES.map((p) => (
@@ -247,8 +247,8 @@ const TemoignageAdmin = () => {
                 ))}
               </select>
 
-              <div style={{ border: '1px solid #1A1A3A', borderRadius: '10px', padding: '0.75rem', marginBottom: '1rem' }}>
-                <label style={{ display: 'block', fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.4rem' }}>
+              <div style={{ border: '1px solid #D8D1C2', borderRadius: '10px', padding: '0.75rem', marginBottom: '1rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', color: '#4A534F', marginBottom: '0.4rem' }}>
                   Mot perso pour l'avatar HeyGen (lu dans la vidéo de remerciement)
                 </label>
                 <textarea
@@ -258,16 +258,16 @@ const TemoignageAdmin = () => {
                   disabled={avatarLocked(row)}
                   onChange={(e) => setNoteDrafts((d) => ({ ...d, [row.id]: e.target.value }))}
                   onBlur={(e) => e.target.value.trim() !== (row.avatar_note || '') && updateRow(row.id, { avatar_note: e.target.value })}
-                  style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem', resize: 'vertical', fontFamily: 'inherit' }}
+                  style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.85rem', resize: 'vertical', fontFamily: 'inherit' }}
                 />
-                <label style={{ display: 'block', fontSize: '0.75rem', color: '#9CA3AF', margin: '0.75rem 0 0.4rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', color: '#4A534F', margin: '0.75rem 0 0.4rem' }}>
                   Bouton de la page vidéo : page vers laquelle renvoyer
                 </label>
                 <select
                   value={row.cta_page || DEFAULT_AVATAR_CTA}
                   disabled={avatarLocked(row)}
                   onChange={(e) => updateRow(row.id, { cta_page: e.target.value })}
-                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem' }}
+                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.85rem' }}
                 >
                   {AVATAR_CTA_PAGES.map((p) => (
                     <option key={p.value} value={p.value}>{p.label}</option>
@@ -281,33 +281,33 @@ const TemoignageAdmin = () => {
                   disabled={avatarLocked(row)}
                   placeholder={`Texte du bouton (par défaut : ${(AVATAR_CTA_PAGES.find((p) => p.value === (row.cta_page || DEFAULT_AVATAR_CTA)) || AVATAR_CTA_PAGES[0]).defaultLabel})`}
                   onBlur={(e) => e.target.value.trim() !== (row.cta_label || '') && updateRow(row.id, { cta_label: e.target.value })}
-                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem', marginTop: '0.5rem' }}
+                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: '#F6F3EC', color: '#1C2B27', fontSize: '0.85rem', marginTop: '0.5rem' }}
                 />
                 {row.avatar_status && (
                   <p style={{ fontSize: '0.78rem', fontWeight: 600, color: AVATAR_BADGES[row.avatar_status]?.color, marginTop: '0.5rem' }}>
                     {AVATAR_BADGES[row.avatar_status]?.label}
                     {row.avatar_status === 'sent' && row.avatar_sent_at && (
-                      <span style={{ color: '#6B7280', fontWeight: 400 }}> le {new Date(row.avatar_sent_at).toLocaleString('fr-FR')}</span>
+                      <span style={{ color: '#6B716C', fontWeight: 400 }}> le {new Date(row.avatar_sent_at).toLocaleString('fr-FR')}</span>
                     )}
                     {row.avatar_status === 'error' && row.avatar_error && (
-                      <span style={{ display: 'block', color: '#9CA3AF', fontWeight: 400 }}>{row.avatar_error}</span>
+                      <span style={{ display: 'block', color: '#4A534F', fontWeight: 400 }}>{row.avatar_error}</span>
                     )}
                   </p>
                 )}
                 {row.avatar_video_url && (
-                  <video src={row.avatar_video_url} controls preload="metadata" style={{ width: '100%', borderRadius: '8px', marginTop: '0.5rem', background: '#000' }} />
+                  <video src={row.avatar_video_url} controls preload="metadata" style={{ width: '100%', borderRadius: '8px', marginTop: '0.5rem', background: '#F6F3EC' }} />
                 )}
                 {row.status === 'approved' && row.avatar_note && (!row.avatar_status || row.avatar_status === 'error') && (
                   <button
                     onClick={() => sendAvatar(row)}
-                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #44CCFF', background: 'rgba(68,204,255,0.1)', color: '#44CCFF', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '0.6rem' }}
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #B08D57', background: 'rgba(176,141,87,0.1)', color: '#8A6D3B', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '0.6rem' }}
                   >
                     {row.avatar_status === 'error' ? <RefreshCw size={14} /> : <Send size={14} />}
                     {row.avatar_status === 'error' ? 'Relancer la vidéo avatar' : 'Envoyer la vidéo avatar'}
                   </button>
                 )}
                 {row.status !== 'approved' && row.avatar_note && !row.avatar_status && (
-                  <p style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.5rem' }}>
+                  <p style={{ fontSize: '0.75rem', color: '#6B716C', marginTop: '0.5rem' }}>
                     Envoyée automatiquement à {row.email || 'la personne'} lors de la publication.
                   </p>
                 )}
@@ -321,16 +321,16 @@ const TemoignageAdmin = () => {
                       const willSendAvatar = note && !row.avatar_status && row.email;
                       if (willSendAvatar && !confirm(`Publier et envoyer la vidéo avatar à ${row.email} ?`)) return;
                       updateRow(row.id, { status: 'approved', ...(note !== (row.avatar_note || '') && { avatar_note: note }) });
-                    }} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#166534', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                    }} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#3F7A5E', color: '#F6F3EC', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                     <Check size={14} /> Publier
                   </button>
                 )}
                 {row.status !== 'rejected' && (
-                  <button onClick={() => updateRow(row.id, { status: 'rejected' })} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#7C2D12', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                  <button onClick={() => updateRow(row.id, { status: 'rejected' })} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#FFFFFF', color: '#1C2B27', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                     <X size={14} /> Rejeter
                   </button>
                 )}
-                <button onClick={() => deleteRow(row.id)} style={{ padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: 'transparent', color: '#F87171', cursor: 'pointer' }}>
+                <button onClick={() => deleteRow(row.id)} style={{ padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #D8D1C2', background: 'transparent', color: '#A63D2F', cursor: 'pointer' }}>
                   <Trash2 size={14} />
                 </button>
               </div>

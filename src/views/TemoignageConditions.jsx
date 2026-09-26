@@ -2,13 +2,13 @@
 import React from 'react';
 
 const sectionStyle = { marginTop: '2.5rem' };
-const h2Style = { fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.75rem', color: '#44CCFF' };
-const pStyle = { color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, marginBottom: '0.75rem' };
-const listStyle = { color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, paddingLeft: '1.25rem', marginBottom: '0.75rem' };
+const h2Style = { fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.75rem', color: '#8A6D3B' };
+const pStyle = { color: 'rgba(28,43,39,0.75)', lineHeight: 1.7, marginBottom: '0.75rem' };
+const listStyle = { color: 'rgba(28,43,39,0.75)', lineHeight: 1.7, paddingLeft: '1.25rem', marginBottom: '0.75rem' };
 
 const TemoignageConditions = () => {
   return (
-    <div style={{ minHeight: '100vh', background: '#050510', color: '#F9FAFB', padding: '160px 24px 80px' }}>
+    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', padding: '160px 24px 80px' }}>
       <div style={{ maxWidth: '760px', margin: '0 auto', width: '100%' }}>
         <h1 style={{ fontSize: 'clamp(1.6rem, 3vw, 2.2rem)', fontWeight: 800, marginBottom: '0.5rem' }}>
           Conditions générales d'utilisation des témoignages et autorisation de droit à l'image

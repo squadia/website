@@ -19,7 +19,7 @@ const CHANNELS = {
 const CHANNEL_KEYS = Object.keys(CHANNELS);
 
 // Couleur attribuée à chaque campagne, dans l'ordre de création
-const CAMPAIGN_COLORS = ['#2563EB', '#44CCFF', '#10B981', '#F59E0B', '#A78BFA', '#F472B6', '#F87171', '#34D399'];
+const CAMPAIGN_COLORS = ['#1F3A33', '#8A6D3B', '#3F7A5E', '#8A6D3B', '#8A6D3B', '#A0526B', '#A63D2F', '#3F7A5E'];
 
 // Jours affichés du lundi au dimanche, idx = Date.getDay()
 const WEEK_DAYS = [
@@ -180,37 +180,37 @@ const withDefaults = (c) => ({
 });
 
 const cardStyle = {
-  background: '#0D0D25',
-  border: '1px solid rgba(255,255,255,0.14)',
+  background: '#F6F3EC',
+  border: '1px solid rgba(28,43,39,0.224)',
   borderRadius: '14px',
   padding: '1.75rem',
-  boxShadow: '0 4px 24px rgba(0,0,0,0.25)'
+  boxShadow: '0 4px 24px rgba(28,43,39,0.087)'
 };
 
 const inputStyle = {
-  border: '1px solid #1A1A3A',
+  border: '1px solid #D8D1C2',
   borderRadius: '9px',
-  background: '#03030A',
+  background: '#F6F3EC',
   padding: '10px 12px',
   fontFamily: 'monospace',
   fontSize: '15px',
   fontWeight: 700,
-  color: '#F9FAFB',
+  color: '#1C2B27',
   width: '100%',
   outline: 'none',
   colorScheme: 'dark'
 };
 
-const labelStyle = { fontSize: '0.85rem', fontWeight: 600, color: '#6B7280', display: 'block', marginBottom: '8px' };
+const labelStyle = { fontSize: '0.85rem', fontWeight: 600, color: '#6B716C', display: 'block', marginBottom: '8px' };
 
 const iconBtn = {
-  background: 'none', border: '1px solid #1A1A3A', borderRadius: '8px', width: '34px', height: '34px',
-  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#9CA3AF', flexShrink: 0
+  background: 'none', border: '1px solid #D8D1C2', borderRadius: '8px', width: '34px', height: '34px',
+  display: 'inline-flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#4A534F', flexShrink: 0
 };
 
 const primaryBtn = {
   display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
-  background: '#2563EB', color: '#FFFFFF', fontWeight: 700, fontSize: '0.9rem',
+  background: '#1F3A33', color: '#F6F3EC', fontWeight: 700, fontSize: '0.9rem',
   padding: '0.8rem 1.4rem', borderRadius: '9999px', border: 'none', cursor: 'pointer'
 };
 
@@ -231,7 +231,7 @@ function InfoTip({ text, width = 220 }) {
         onClick={() => setOpen(!open)}
         aria-label="Plus d'informations"
         aria-expanded={open}
-        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: open ? '#44CCFF' : '#6B7280', display: 'inline-flex' }}
+        style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', color: open ? '#8A6D3B' : '#6B716C', display: 'inline-flex' }}
       >
         <Info size={14} />
       </button>
@@ -240,8 +240,8 @@ function InfoTip({ text, width = 220 }) {
           role="tooltip"
           style={{
             position: 'absolute', bottom: 'calc(100% + 8px)', left: '50%', transform: 'translateX(-50%)', zIndex: 5,
-            width: `${width}px`, padding: '10px 12px', textTransform: 'none', letterSpacing: 'normal', borderRadius: '9px', background: '#111135', border: '1px solid rgba(68,204,255,0.35)',
-            boxShadow: '0 8px 24px rgba(0,0,0,0.4)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.5, color: '#E5E7EB'
+            width: `${width}px`, padding: '10px 12px', textTransform: 'none', letterSpacing: 'normal', borderRadius: '9px', background: '#FFFFFF', border: '1px solid rgba(176,141,87,0.35)',
+            boxShadow: '0 8px 24px rgba(28,43,39,0.14)', fontSize: '0.78rem', fontWeight: 500, lineHeight: 1.5, color: '#4A534F'
           }}
         >
           {text}
@@ -255,7 +255,7 @@ function NumberField({ label, value, onChange, min = 0, step = 1, suffix, info }
   return (
     <div>
       <label style={labelStyle}>{label}{info && <InfoTip text={info} />}</label>
-      <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #1A1A3A', borderRadius: '9px', background: '#03030A', overflow: 'hidden' }}>
+      <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D8D1C2', borderRadius: '9px', background: '#F6F3EC', overflow: 'hidden' }}>
         <input
           type="number"
           min={min}
@@ -265,7 +265,7 @@ function NumberField({ label, value, onChange, min = 0, step = 1, suffix, info }
           style={{ ...inputStyle, border: 'none', borderRadius: 0 }}
         />
         {suffix && (
-          <span style={{ padding: '10px 12px', fontFamily: 'monospace', fontSize: '13px', color: '#6B7280', borderLeft: '1px solid #1A1A3A', whiteSpace: 'nowrap' }}>
+          <span style={{ padding: '10px 12px', fontFamily: 'monospace', fontSize: '13px', color: '#6B716C', borderLeft: '1px solid #D8D1C2', whiteSpace: 'nowrap' }}>
             {suffix}
           </span>
         )}
@@ -276,8 +276,8 @@ function NumberField({ label, value, onChange, min = 0, step = 1, suffix, info }
 
 function SectionLabel({ n, children }) {
   return (
-    <h3 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#FFFFFF', margin: '0 0 1rem' }}>
-      <span style={{ color: '#44CCFF', marginRight: '0.4rem' }}>{n}.</span>{children}
+    <h3 style={{ fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#1C2B27', margin: '0 0 1rem' }}>
+      <span style={{ color: '#8A6D3B', marginRight: '0.4rem' }}>{n}.</span>{children}
     </h3>
   );
 }
@@ -339,7 +339,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
     <div
       onMouseDown={(e) => { if (e.target === e.currentTarget) onClose(); }}
       style={{
-        position: 'fixed', inset: 0, zIndex: 2000, background: 'rgba(3,3,10,0.75)', backdropFilter: 'blur(4px)',
+        position: 'fixed', inset: 0, zIndex: 2000, background: 'rgba(246,243,236,0.75)', backdropFilter: 'blur(4px)',
         display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px'
       }}
     >
@@ -353,8 +353,8 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
           display: 'flex', flexDirection: 'column', padding: 0, overflow: 'hidden'
         }}
       >
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem', borderBottom: '1px solid #1A1A3A' }}>
-          <h2 style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, color: '#FFFFFF' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.25rem 1.5rem', borderBottom: '1px solid #D8D1C2' }}>
+          <h2 style={{ fontSize: '1.1rem', fontWeight: 800, margin: 0, color: '#1C2B27' }}>
             {isEdit ? 'Modifier la campagne' : 'Nouvelle campagne'}
           </h2>
           <button type="button" onClick={onClose} aria-label="Fermer" style={{ ...iconBtn, border: 'none' }}><X size={18} /></button>
@@ -393,9 +393,9 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                       aria-pressed={on}
                       style={{
                         width: '40px', height: '40px', borderRadius: '10px', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem',
-                        border: `1px solid ${on ? '#44CCFF' : '#1A1A3A'}`,
-                        background: on ? 'rgba(68,204,255,0.12)' : '#03030A',
-                        color: on ? '#44CCFF' : '#6B7280'
+                        border: `1px solid ${on ? '#8A6D3B' : '#FFFFFF'}`,
+                        background: on ? 'rgba(176,141,87,0.12)' : '#F6F3EC',
+                        color: on ? '#8A6D3B' : '#6B716C'
                       }}
                     >
                       {short}
@@ -408,16 +408,16 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
 
           <div>
             <SectionLabel n={2}>Séquence</SectionLabel>
-            <p style={{ fontSize: '0.8rem', color: '#6B7280', margin: '-0.5rem 0 1rem' }}>
+            <p style={{ fontSize: '0.8rem', color: '#6B716C', margin: '-0.5rem 0 1rem' }}>
               Pour chaque étape, choisissez le canal et le délai d'attente depuis l'étape précédente.
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
               {c.steps.map((s, i) => {
                 const Icon = CHANNELS[s.channel].icon;
                 return (
-                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', padding: '8px 10px', border: '1px solid #1A1A3A', borderRadius: '10px', background: '#111135' }}>
-                    <span style={{ fontFamily: 'monospace', fontWeight: 700, color: '#6B7280', width: '18px' }}>{i + 1}</span>
-                    <Icon size={16} color="#44CCFF" />
+                  <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap', padding: '8px 10px', border: '1px solid #D8D1C2', borderRadius: '10px', background: '#FFFFFF' }}>
+                    <span style={{ fontFamily: 'monospace', fontWeight: 700, color: '#6B716C', width: '18px' }}>{i + 1}</span>
+                    <Icon size={16} color="#8A6D3B" />
                     <select
                       value={s.channel}
                       onChange={(e) => updateStep(i, { channel: e.target.value })}
@@ -426,10 +426,10 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                       {CHANNEL_KEYS.map((k) => <option key={k} value={k}>{CHANNELS[k].label}</option>)}
                     </select>
                     {i === 0 ? (
-                      <span style={{ fontSize: '0.8rem', color: '#6B7280', flex: '1 1 150px' }}>Jour du lancement</span>
+                      <span style={{ fontSize: '0.8rem', color: '#6B716C', flex: '1 1 150px' }}>Jour du lancement</span>
                     ) : (
                       <div style={{ display: 'flex', alignItems: 'center', gap: '6px', flex: '1 1 150px' }}>
-                        <span style={{ fontSize: '0.8rem', color: '#6B7280' }}>+</span>
+                        <span style={{ fontSize: '0.8rem', color: '#6B716C' }}>+</span>
                         <input
                           type="number"
                           min={1}
@@ -438,7 +438,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                           aria-label={`Délai de l'étape ${i + 1} en jours`}
                           style={{ ...inputStyle, width: '64px', padding: '7px 8px', fontSize: '14px' }}
                         />
-                        <span style={{ fontSize: '0.8rem', color: '#6B7280', whiteSpace: 'nowrap' }}>jours après</span>
+                        <span style={{ fontSize: '0.8rem', color: '#6B716C', whiteSpace: 'nowrap' }}>jours après</span>
                       </div>
                     )}
                     <button
@@ -460,7 +460,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                 onClick={() => set({ steps: [...c.steps, { channel: 'email', delay: '3' }] })}
                 style={{
                   marginTop: '10px', display: 'inline-flex', alignItems: 'center', gap: '6px',
-                  background: 'rgba(37,99,235,0.12)', color: '#44CCFF', border: '1px solid rgba(68,204,255,0.35)',
+                  background: 'rgba(31,58,51,0.12)', color: '#8A6D3B', border: '1px solid rgba(176,141,87,0.35)',
                   borderRadius: '9999px', padding: '7px 14px', fontWeight: 600, fontSize: '0.8rem', cursor: 'pointer'
                 }}
               >
@@ -471,7 +471,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
           </div>
 
           {/* Trait vertical entre les deux colonnes, retiré quand elles s'empilent */}
-          <style>{`.plan-modal-right { border-left: 1px solid rgba(255,255,255,0.12); padding-left: 1.5rem; } @media (max-width: 820px) { .plan-modal-right { border-left: none; padding-left: 0; } }`}</style>
+          <style>{`.plan-modal-right { border-left: 1px solid rgba(28,43,39,0.192); padding-left: 1.5rem; } @media (max-width: 820px) { .plan-modal-right { border-left: none; padding-left: 0; } }`}</style>
           <div className="plan-modal-right" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', minWidth: 0 }}>
           <div>
             <SectionLabel n={3}>Capacité d'envoi par jour</SectionLabel>
@@ -488,7 +488,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                 />
               ))}
             </div>
-            <p style={{ margin: '0.75rem 0 0', fontSize: '0.8rem', color: '#6B7280', lineHeight: 1.6 }}>
+            <p style={{ margin: '0.75rem 0 0', fontSize: '0.8rem', color: '#6B716C', lineHeight: 1.6 }}>
               Volumes par commercial. Soit pour l'équipe&nbsp;: {usedChannels
                 .map((k) => `${fmtInt(toInt(c.capacities[k], 1) * toInt(c.reps, 1))} ${CHANNELS[k].plural}`)
                 .join(', ')} par jour.
@@ -517,15 +517,15 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
               />
             </div>
 
-            <button type="button" onClick={runSimulation} style={{ ...primaryBtn, width: '100%', marginTop: '1.25rem', background: 'transparent', border: '1px solid #44CCFF', color: '#44CCFF' }}>
+            <button type="button" onClick={runSimulation} style={{ ...primaryBtn, width: '100%', marginTop: '1.25rem', background: 'transparent', border: '1px solid #B08D57', color: '#8A6D3B' }}>
               <Play size={15} /> Simuler
             </button>
 
             {sim && (
-              <div style={{ marginTop: '1rem', padding: '1rem 1.1rem', borderRadius: '12px', background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.35)', opacity: stale ? 0.55 : 1 }}>
+              <div style={{ marginTop: '1rem', padding: '1rem 1.1rem', borderRadius: '12px', background: 'rgba(63,122,94,0.08)', border: '1px solid rgba(63,122,94,0.35)', opacity: stale ? 0.55 : 1 }}>
                 <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1.5fr) minmax(0, 1fr) minmax(0, 1fr)', gap: '0.75rem' }}>
                   {[
-                    ['ROI de la campagne', fmtEuro(sim.result.roi), sim.result.roi >= 0 ? '#10B981' : '#F87171', (() => {
+                    ['ROI de la campagne', fmtEuro(sim.result.roi), sim.result.roi >= 0 ? '#3F7A5E' : '#A63D2F', (() => {
                       const r = sim.result;
                       const deals = r.deals.toLocaleString('fr-FR', { maximumFractionDigits: 1 });
                       return (
@@ -536,15 +536,15 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                           <span style={{ display: 'block' }}>{fmtInt(r.rdv)} RDV × {r.winRate.toLocaleString('fr-FR')}&nbsp;% de signature = {deals} deals</span>
                           <span style={{ display: 'block' }}>{deals} deals × {fmtK(r.dealValue)} deal moyen = {fmtK(r.revenue)}</span>
                           <span style={{ display: 'block' }}>{fmtK(r.revenue)} − {fmtK(r.cost)} de coût de campagne</span>
-                          <span style={{ display: 'block', fontWeight: 700, color: r.roi >= 0 ? '#10B981' : '#F87171' }}>= {fmtK(r.roi)} de ROI</span>
+                          <span style={{ display: 'block', fontWeight: 700, color: r.roi >= 0 ? '#3F7A5E' : '#A63D2F' }}>= {fmtK(r.roi)} de ROI</span>
                         </>
                       );
                     })()],
-                    ['Durée', `${fmtInt(sim.result.calendarDays)} jours`, '#F9FAFB'],
-                    ['Date de fin', fmtNumDate(sim.result.endDate), '#F9FAFB'],
+                    ['Durée', `${fmtInt(sim.result.calendarDays)} jours`, '#1C2B27'],
+                    ['Date de fin', fmtNumDate(sim.result.endDate), '#1C2B27'],
                   ].map(([label, value, color, info]) => (
                     <div key={label} style={{ minWidth: 0 }}>
-                      <div style={{ fontSize: '0.7rem', color: '#6B7280', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700, marginBottom: '4px' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#6B716C', textTransform: 'uppercase', letterSpacing: '0.04em', fontWeight: 700, marginBottom: '4px' }}>
                         {label}{info && <InfoTip text={info} width={310} />}
                       </div>
                       <div style={{ fontFamily: 'monospace', fontWeight: 800, fontSize: '1.05rem', color }}>{value}</div>
@@ -552,7 +552,7 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
                   ))}
                 </div>
                 {(stale || !sim.result.complete) && (
-                  <p style={{ margin: '0.75rem 0 0', fontSize: '0.78rem', color: '#6B7280', lineHeight: 1.5 }}>
+                  <p style={{ margin: '0.75rem 0 0', fontSize: '0.78rem', color: '#6B716C', lineHeight: 1.5 }}>
                     {stale
                       ? 'Paramètres modifiés depuis la dernière simulation, cliquez à nouveau sur Simuler.'
                       : 'Attention\u00A0: la campagne dépasse 3\u00A0ans avec ces capacités.'}
@@ -564,9 +564,9 @@ function CampaignModal({ initial, isEdit, onClose, onSave }) {
           </div>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1rem', flexWrap: 'wrap', padding: '1rem 1.5rem', borderTop: '1px solid #1A1A3A' }}>
-          {error && <span style={{ fontSize: '0.8rem', color: '#F87171', marginRight: 'auto' }}>{error}</span>}
-          <button type="button" onClick={onClose} style={{ ...primaryBtn, background: 'transparent', border: '1px solid #1A1A3A', color: '#D1D5DB' }}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: '1rem', flexWrap: 'wrap', padding: '1rem 1.5rem', borderTop: '1px solid #D8D1C2' }}>
+          {error && <span style={{ fontSize: '0.8rem', color: '#A63D2F', marginRight: 'auto' }}>{error}</span>}
+          <button type="button" onClick={onClose} style={{ ...primaryBtn, background: 'transparent', border: '1px solid #D8D1C2', color: '#4A534F' }}>
             Annuler
           </button>
           <button type="submit" style={primaryBtn}>
@@ -630,7 +630,7 @@ function CalendarTab({ analyzed }) {
             Aujourd'hui
           </button>
         </div>
-        <div style={{ display: 'flex', border: '1px solid #1A1A3A', borderRadius: '9px', overflow: 'hidden' }}>
+        <div style={{ display: 'flex', border: '1px solid #D8D1C2', borderRadius: '9px', overflow: 'hidden' }}>
           {[['week', 'Semaine'], ['month', 'Mois']].map(([m, label]) => (
             <button
               key={m}
@@ -638,7 +638,7 @@ function CalendarTab({ analyzed }) {
               onClick={() => setMode(m)}
               style={{
                 padding: '7px 14px', fontSize: '0.8rem', fontWeight: 600, border: 'none', cursor: 'pointer',
-                background: mode === m ? 'rgba(68,204,255,0.12)' : 'transparent', color: mode === m ? '#44CCFF' : '#9CA3AF'
+                background: mode === m ? 'rgba(176,141,87,0.12)' : 'transparent', color: mode === m ? '#8A6D3B' : '#4A534F'
               }}
             >
               {label}
@@ -651,7 +651,7 @@ function CalendarTab({ analyzed }) {
         <div style={{ minWidth: '640px' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, minmax(0,1fr))', gap: '6px', marginBottom: '6px' }}>
             {WEEK_DAYS.map((d) => (
-              <div key={d.idx} style={{ fontSize: '0.72rem', color: '#6B7280', textAlign: 'center', textTransform: 'uppercase', fontWeight: 700 }}>{d.long}</div>
+              <div key={d.idx} style={{ fontSize: '0.72rem', color: '#6B716C', textAlign: 'center', textTransform: 'uppercase', fontWeight: 700 }}>{d.long}</div>
             ))}
           </div>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, minmax(0,1fr))', gap: '6px' }}>
@@ -665,12 +665,12 @@ function CalendarTab({ analyzed }) {
                   key={key}
                   style={{
                     minHeight: mode === 'week' ? '220px' : '104px', padding: '6px', borderRadius: '9px',
-                    background: outside ? 'transparent' : '#03030A',
-                    border: `1px solid ${isToday ? '#44CCFF' : '#1A1A3A'}`,
+                    background: outside ? 'transparent' : '#F6F3EC',
+                    border: `1px solid ${isToday ? '#8A6D3B' : '#FFFFFF'}`,
                     opacity: outside ? 0.45 : 1, display: 'flex', flexDirection: 'column', gap: '4px'
                   }}
                 >
-                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: isToday ? '#44CCFF' : '#D1D5DB', paddingLeft: '2px' }}>{day.getDate()}</span>
+                  <span style={{ fontSize: '0.8rem', fontWeight: 700, color: isToday ? '#8A6D3B' : '#4A534F', paddingLeft: '2px' }}>{day.getDate()}</span>
                   {list.slice(0, maxChips).map((ev, i) => {
                     const Icon = CHANNELS[ev.channel].icon;
                     return (
@@ -682,17 +682,17 @@ function CalendarTab({ analyzed }) {
                           borderRadius: '5px', padding: '3px 5px', minWidth: 0
                         }}
                       >
-                        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#F3F4F6', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <div style={{ fontSize: '0.7rem', fontWeight: 700, color: '#1C2B27', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {ev.campaign.name}
                         </div>
-                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.65rem', color: '#9CA3AF', whiteSpace: 'nowrap' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: '0.65rem', color: '#4A534F', whiteSpace: 'nowrap' }}>
                           <Icon size={10} /> É{ev.step + 1} · {fmtInt(ev.count)}
                         </div>
                       </div>
                     );
                   })}
                   {list.length > maxChips && (
-                    <span style={{ fontSize: '0.68rem', color: '#6B7280', paddingLeft: '2px' }}>+{list.length - maxChips} autres</span>
+                    <span style={{ fontSize: '0.68rem', color: '#6B716C', paddingLeft: '2px' }}>+{list.length - maxChips} autres</span>
                   )}
                 </div>
               );
@@ -718,7 +718,7 @@ function TimelineTab({ analyzed }) {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', flexWrap: 'wrap' }}>
             <span style={{ width: '10px', height: '10px', borderRadius: '50%', background: a.campaign.color }} />
             <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>{a.campaign.name}</span>
-            <span style={{ fontSize: '0.75rem', color: '#6B7280', fontFamily: 'monospace' }}>
+            <span style={{ fontSize: '0.75rem', color: '#6B716C', fontFamily: 'monospace' }}>
               {fmtShort(a.start)} au {fmtDate(a.endDate)} · {fmtInt(a.calendarDays)} j
             </span>
           </div>
@@ -730,10 +730,10 @@ function TimelineTab({ analyzed }) {
               const Icon = CHANNELS[s.channel].icon;
               return (
                 <div key={k} style={{ display: 'grid', gridTemplateColumns: '120px minmax(0,1fr)', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.75rem', color: '#9CA3AF', whiteSpace: 'nowrap' }}>
+                  <span style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: '0.75rem', color: '#4A534F', whiteSpace: 'nowrap' }}>
                     <Icon size={12} /> {k + 1}. {CHANNELS[s.channel].short}
                   </span>
-                  <div style={{ position: 'relative', height: '16px', background: '#03030A', borderRadius: '5px' }}>
+                  <div style={{ position: 'relative', height: '16px', background: '#F6F3EC', borderRadius: '5px' }}>
                     <div
                       title={`${fmtDate(from)} au ${fmtDate(to)}`}
                       style={{
@@ -751,7 +751,7 @@ function TimelineTab({ analyzed }) {
       ))}
       <div style={{ display: 'grid', gridTemplateColumns: '120px minmax(0,1fr)', gap: '10px' }}>
         <span />
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#6B7280', fontFamily: 'monospace' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#6B716C', fontFamily: 'monospace' }}>
           <span>{fmtDate(min)}</span>
           <span>{fmtDate(max)}</span>
         </div>
@@ -764,18 +764,18 @@ function TimelineTab({ analyzed }) {
 function CampaignCard({ a, onToggle, onEdit, onDelete }) {
   const c = a.campaign;
   return (
-    <div style={{ background: '#111135', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '1.1rem', opacity: c.visible ? 1 : 0.75, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+    <div style={{ background: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '12px', padding: '1.1rem', opacity: c.visible ? 1 : 0.75, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
       <div style={{ display: 'flex', alignItems: 'flex-start', gap: '10px' }}>
         <span style={{ width: '12px', height: '12px', borderRadius: '50%', background: c.color, marginTop: '5px', flexShrink: 0 }} />
         <div style={{ flex: 1, minWidth: 0 }}>
-          <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#F9FAFB', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
-          <div style={{ fontSize: '0.78rem', color: '#9CA3AF', marginTop: '2px' }}>
+          <div style={{ fontWeight: 700, fontSize: '0.95rem', color: '#1C2B27', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{c.name}</div>
+          <div style={{ fontSize: '0.78rem', color: '#4A534F', marginTop: '2px' }}>
             {fmtShort(a.start)} → {fmtDate(a.endDate)}
           </div>
         </div>
         <div style={{ display: 'flex', gap: '4px' }}>
           <button type="button" onClick={onEdit} aria-label="Modifier" title="Modifier" style={iconBtn}><Pencil size={15} /></button>
-          <button type="button" onClick={onDelete} aria-label="Supprimer" title="Supprimer" style={{ ...iconBtn, color: '#F87171' }}><Trash2 size={15} /></button>
+          <button type="button" onClick={onDelete} aria-label="Supprimer" title="Supprimer" style={{ ...iconBtn, color: '#A63D2F' }}><Trash2 size={15} /></button>
         </div>
       </div>
 
@@ -787,9 +787,9 @@ function CampaignCard({ a, onToggle, onEdit, onDelete }) {
         style={{
           alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '6px', cursor: 'pointer',
           fontSize: '0.75rem', fontWeight: 600, borderRadius: '9999px', padding: '4px 10px',
-          border: `1px solid ${c.visible ? 'rgba(68,204,255,0.4)' : '#1A1A3A'}`,
-          background: c.visible ? 'rgba(68,204,255,0.08)' : '#03030A',
-          color: c.visible ? '#44CCFF' : '#9CA3AF'
+          border: `1px solid ${c.visible ? 'rgba(176,141,87,0.4)' : '#FFFFFF'}`,
+          background: c.visible ? 'rgba(176,141,87,0.08)' : '#F6F3EC',
+          color: c.visible ? '#8A6D3B' : '#4A534F'
         }}
       >
         {c.visible ? <><Eye size={13} /> Affichée dans le calendrier</> : <><EyeOff size={13} /> Masquée · cliquer pour afficher</>}
@@ -799,35 +799,35 @@ function CampaignCard({ a, onToggle, onEdit, onDelete }) {
         {a.steps.map((s, k) => {
           const Icon = CHANNELS[s.channel].icon;
           return (
-            <span key={k} title={k === 0 ? 'Lancement' : `+${s.delay} j`} style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '0.7rem', color: '#D1D5DB', background: '#03030A', border: '1px solid #1A1A3A', borderRadius: '6px', padding: '2px 6px' }}>
-              <Icon size={11} />{k > 0 && <span style={{ color: '#6B7280' }}>+{s.delay}j</span>}
+            <span key={k} title={k === 0 ? 'Lancement' : `+${s.delay} j`} style={{ display: 'inline-flex', alignItems: 'center', gap: '3px', fontSize: '0.7rem', color: '#4A534F', background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '6px', padding: '2px 6px' }}>
+              <Icon size={11} />{k > 0 && <span style={{ color: '#6B716C' }}>+{s.delay}j</span>}
             </span>
           );
         })}
       </div>
 
-      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.78rem', color: '#9CA3AF', fontFamily: 'monospace' }}>
-        <span><strong style={{ color: '#F3F4F6' }}>{fmtInt(a.calendarDays)}</strong> jours</span>
-        <span><strong style={{ color: '#F3F4F6' }}>{fmtInt(a.totalTouches)}</strong> envois</span>
-        <span>ROI <strong style={{ color: a.roi >= 0 ? '#10B981' : '#F87171' }}>{fmtEuro(a.roi)}</strong></span>
+      <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', fontSize: '0.78rem', color: '#4A534F', fontFamily: 'monospace' }}>
+        <span><strong style={{ color: '#1C2B27' }}>{fmtInt(a.calendarDays)}</strong> jours</span>
+        <span><strong style={{ color: '#1C2B27' }}>{fmtInt(a.totalTouches)}</strong> envois</span>
+        <span>ROI <strong style={{ color: a.roi >= 0 ? '#3F7A5E' : '#A63D2F' }}>{fmtEuro(a.roi)}</strong></span>
       </div>
 
       {a.bottleneck && (
-        <div style={{ fontSize: '0.75rem', color: '#6B7280' }}>
-          Canal limitant&nbsp;: <span style={{ color: '#44CCFF', fontWeight: 600 }}>{CHANNELS[a.bottleneck.ch].label}</span> ({fmtInt(a.caps[a.bottleneck.ch])}/j), plancher sans limite {fmtInt(a.minDays)} j
+        <div style={{ fontSize: '0.75rem', color: '#6B716C' }}>
+          Canal limitant&nbsp;: <span style={{ color: '#8A6D3B', fontWeight: 600 }}>{CHANNELS[a.bottleneck.ch].label}</span> ({fmtInt(a.caps[a.bottleneck.ch])}/j), plancher sans limite {fmtInt(a.minDays)} j
         </div>
       )}
       {!a.complete && (
-        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '0.75rem', color: '#FCD34D' }}>
+        <div style={{ display: 'flex', gap: '6px', alignItems: 'center', fontSize: '0.75rem', color: '#8A6D3B' }}>
           <AlertTriangle size={13} /> Dépasse 3&nbsp;ans, augmentez la capacité.
         </div>
       )}
 
       <div>
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#6B7280', marginBottom: '4px' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.72rem', color: '#6B716C', marginBottom: '4px' }}>
           <span>Progression</span><span>{a.progress.toLocaleString('fr-FR', { maximumFractionDigits: 0 })}&nbsp;%</span>
         </div>
-        <div style={{ height: '6px', borderRadius: '3px', background: '#03030A', overflow: 'hidden' }}>
+        <div style={{ height: '6px', borderRadius: '3px', background: '#F6F3EC', overflow: 'hidden' }}>
           <div style={{ height: '100%', width: `${Math.min(100, a.progress)}%`, background: c.color }} />
         </div>
       </div>
@@ -885,7 +885,7 @@ export default function PlanificateurCampagne() {
   ];
 
   return (
-    <div style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB', paddingBottom: '100px' }}>
+    <div style={{ background: '#F6F3EC', minHeight: '100vh', color: '#1C2B27', paddingBottom: '100px' }}>
 
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '56vh', overflow: 'hidden' }}>
@@ -893,14 +893,14 @@ export default function PlanificateurCampagne() {
           position: 'absolute', top: 0, left: 0, width: '100%', height: '100%',
           objectFit: 'cover', objectPosition: '68% 20%', pointerEvents: 'none', zIndex: 0
         }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(10,10,26,0.40)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(246,243,236,0.4)' }} />
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
-          background: 'linear-gradient(105deg, rgba(10,10,26,0.97) 0%, rgba(10,10,26,0.80) 35%, rgba(10,10,26,0.45) 60%, transparent 100%)'
+          background: 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.8) 35%, rgba(246,243,236,0.45) 60%, transparent 100%)'
         }} />
         <div style={{
           position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2,
-          background: 'linear-gradient(to bottom, transparent, #0A0A1A)'
+          background: 'linear-gradient(to bottom, transparent, #F6F3EC)'
         }} />
 
         <div style={{ position: 'relative', zIndex: 4, minHeight: '56vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', padding: '160px 8% 40px' }}>
@@ -908,8 +908,8 @@ export default function PlanificateurCampagne() {
             className="fade-in"
             style={{
               display: 'inline-flex', alignItems: 'center', gap: '8px', alignSelf: 'flex-start',
-              background: 'rgba(37,99,235,0.1)', border: '1px solid #44CCFF',
-              padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF',
+              background: 'rgba(31,58,51,0.1)', border: '1px solid #B08D57',
+              padding: '0.4rem 1rem', borderRadius: '30px', color: '#8A6D3B',
               fontSize: '0.85rem', fontWeight: 600, marginBottom: '1.5rem'
             }}
           >
@@ -918,7 +918,7 @@ export default function PlanificateurCampagne() {
           <h1 className="fade-in" style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 900, marginBottom: '1.25rem', letterSpacing: '-0.02em', maxWidth: '720px', lineHeight: 1.15 }}>
             Planificateur de campagne&nbsp;: simuler le temps et le ROI d'une campagne
           </h1>
-          <p className="fade-in" style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '1.1rem' }}>
+          <p className="fade-in" style={{ fontSize: '1.1rem', color: 'rgba(28,43,39,0.78)', maxWidth: '600px', lineHeight: '1.6', marginBottom: '1.1rem' }}>
             Savoir estimer le temps nécessaire pour qu'une campagne multicanale atteigne votre cible, c'est essentiel pour garder le contrôle des coûts et de la rentabilité attendue.
           </p>
         </div>
@@ -929,7 +929,7 @@ export default function PlanificateurCampagne() {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
           <div>
             <h2 style={{ fontSize: 'clamp(1.4rem, 2.4vw, 1.9rem)', fontWeight: 800, margin: 0 }}>Vos campagnes planifiées</h2>
-            <p style={{ fontSize: '0.9rem', color: '#9CA3AF', margin: '0.35rem 0 0' }}>
+            <p style={{ fontSize: '0.9rem', color: '#4A534F', margin: '0.35rem 0 0' }}>
               Chaque contact passe à l'étape suivante après le délai choisi, dans la limite de votre capacité d'envoi quotidienne.
             </p>
           </div>
@@ -940,7 +940,7 @@ export default function PlanificateurCampagne() {
 
         {/* Vues */}
         <div style={cardStyle}>
-          <div role="tablist" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px', background: '#03030A', border: '1px solid #1A1A3A', borderRadius: '10px', padding: '4px', marginBottom: '1.5rem' }}>
+          <div role="tablist" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4px', background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '10px', padding: '4px', marginBottom: '1.5rem' }}>
             {TABS.map(([id, label, Icon]) => (
               <button
                 key={id}
@@ -951,7 +951,7 @@ export default function PlanificateurCampagne() {
                 style={{
                   display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '6px', padding: '9px 8px',
                   borderRadius: '7px', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.85rem',
-                  background: tab === id ? '#111135' : 'transparent', color: tab === id ? '#FFFFFF' : '#6B7280'
+                  background: tab === id ? '#FFFFFF' : 'transparent', color: tab === id ? '#1C2B27' : '#6B716C'
                 }}
               >
                 <Icon size={15} /> {label}
@@ -960,7 +960,7 @@ export default function PlanificateurCampagne() {
           </div>
 
           {!loaded ? null : visible.length === 0 ? (
-            <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#9CA3AF' }}>
+            <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#4A534F' }}>
               <p style={{ margin: '0 0 1.25rem' }}>
                 {campaigns.length ? 'Toutes vos campagnes sont masquées.' : 'Aucune campagne pour le moment.'}
               </p>
@@ -984,14 +984,14 @@ export default function PlanificateurCampagne() {
         <div style={{ ...cardStyle, marginTop: '1.5rem' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '1rem', marginBottom: '1.25rem' }}>
             <h2 style={{ fontSize: '1rem', fontWeight: 800, margin: 0 }}>
-              Mes campagnes <span style={{ color: '#6B7280', fontWeight: 600 }}>({campaigns.length})</span>
+              Mes campagnes <span style={{ color: '#6B716C', fontWeight: 600 }}>({campaigns.length})</span>
             </h2>
-            <button type="button" onClick={openNew} style={{ ...iconBtn, width: 'auto', padding: '0 12px', gap: '6px', color: '#44CCFF', fontSize: '0.8rem', fontWeight: 600 }}>
+            <button type="button" onClick={openNew} style={{ ...iconBtn, width: 'auto', padding: '0 12px', gap: '6px', color: '#8A6D3B', fontSize: '0.8rem', fontWeight: 600 }}>
               <Plus size={14} /> Ajouter
             </button>
           </div>
           {campaigns.length === 0 ? (
-            <p style={{ color: '#6B7280', fontSize: '0.9rem', margin: 0 }}>Les campagnes créées apparaîtront ici.</p>
+            <p style={{ color: '#6B716C', fontSize: '0.9rem', margin: 0 }}>Les campagnes créées apparaîtront ici.</p>
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1rem' }}>
               {analyzed.map((a) => (
@@ -1009,7 +1009,7 @@ export default function PlanificateurCampagne() {
               ))}
             </div>
           )}
-          <p style={{ margin: '1.25rem 0 0', fontSize: '0.75rem', color: '#6B7280' }}>
+          <p style={{ margin: '1.25rem 0 0', fontSize: '0.75rem', color: '#6B716C' }}>
             Vos campagnes sont enregistrées uniquement dans ce navigateur.
           </p>
         </div>

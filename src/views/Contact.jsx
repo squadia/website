@@ -47,14 +47,15 @@ const Contact = () => {
 
     window.Cal.ns["meeting-decouverte"]("inline", {
       elementOrSelector:"#my-cal-inline-meeting-decouverte",
-      config: {"layout":"month_view"},
+      config: {"layout":"month_view","theme":"light"},
       calLink: "squadia/meeting-decouverte",
     });
 
     window.Cal.ns["meeting-decouverte"]("ui", {
+      "theme":"light",
       "cssVarsPerTheme":{
-        "light":{"cal-brand":"#2563EB"}, 
-        "dark":{"cal-brand":"#2563EB"}
+        "light":{"cal-brand":"#1F3A33","cal-bg":"#FFFFFF","cal-bg-muted":"#F6F3EC","cal-border":"#D8D1C2","cal-border-subtle":"#E4DED2"}, 
+        "dark":{"cal-brand":"#1F3A33"}
       },
       "hideEventTypeDetails":false,
       "layout":"month_view"
@@ -62,7 +63,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div className="contact-page" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
+    <div className="contact-page" style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       
       {/* ═══ HEADER / HERO ═══ */}
       <section className="container" style={{ paddingTop: '160px', paddingBottom: '60px', textAlign: 'center' }}>
@@ -70,7 +71,7 @@ const Contact = () => {
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, marginBottom: '1.5rem', lineHeight: 1.1, letterSpacing: '-0.02em' }}>
             Parlons de votre prochain<br />palier de croissance.
           </h1>
-          <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '650px', marginInline: 'auto', lineHeight: 1.6 }}>
+          <p style={{ fontSize: '1.2rem', color: 'rgba(28,43,39,0.6)', maxWidth: '650px', marginInline: 'auto', lineHeight: 1.6 }}>
             Choisissez le moment idéal pour un échange de 30 minutes.
           </p>
         </div>
@@ -81,12 +82,12 @@ const Contact = () => {
         <div style={{ 
           maxWidth: '1080px', 
           margin: '0 auto', 
-          background: '#0D0D25', 
+          background: '#F6F3EC', 
           borderRadius: '32px', 
-          border: '1px solid rgba(255,255,255,0.08)', 
+          border: '1px solid rgba(28,43,39,0.14)', 
           overflow: 'hidden',
           minHeight: '750px',
-          boxShadow: '0 40px 100px -20px rgba(0, 0, 0, 0.7)',
+          boxShadow: '0 40px 100px -20px rgba(28,43,39,0.245)',
           position: 'relative'
         }}>
           {/* Subtle Glow behind widget */}
@@ -97,7 +98,7 @@ const Contact = () => {
             transform: 'translate(-50%, -50%)',
             width: '80%',
             height: '80%',
-            background: 'radial-gradient(circle, rgba(37, 99, 235, 0.05) 0%, transparent 70%)',
+            background: 'transparent',
             pointerEvents: 'none',
             zIndex: 0
           }} />
@@ -120,18 +121,18 @@ const Contact = () => {
               width: '56px', 
               height: '56px', 
               borderRadius: '50%', 
-              background: 'rgba(255,255,255,0.03)', 
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.6)', 
+              border: '1px solid rgba(28,43,39,0.14)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0
             }}>
-              <MapPin size={24} color="#2563EB" />
+              <MapPin size={24} color="#1F3A33" />
             </div>
             <div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '4px' }}>Adresse</div>
-              <div style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.45)' }}>198 Avenue de France, 75013 Paris</div>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1C2B27', marginBottom: '4px' }}>Adresse</div>
+              <div style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.6)' }}>198 Avenue de France, 75013 Paris</div>
             </div>
           </div>
 
@@ -141,18 +142,18 @@ const Contact = () => {
               width: '56px', 
               height: '56px', 
               borderRadius: '50%', 
-              background: 'rgba(255,255,255,0.03)', 
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.6)', 
+              border: '1px solid rgba(28,43,39,0.14)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0
             }}>
-              <Mail size={24} color="#2563EB" />
+              <Mail size={24} color="#1F3A33" />
             </div>
             <div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '4px' }}>Envoyez nous un mail</div>
-              <a href="mailto:contact@squadia.io" style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.45)'}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1C2B27', marginBottom: '4px' }}>Envoyez nous un mail</div>
+              <a href="mailto:contact@squadia.io" style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.6)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#1C2B27'} onMouseLeave={(e) => e.target.style.color = 'rgba(28,43,39,0.6)'}>
                 contact@squadia.io
               </a>
             </div>
@@ -164,18 +165,18 @@ const Contact = () => {
               width: '56px', 
               height: '56px', 
               borderRadius: '50%', 
-              background: 'rgba(255,255,255,0.03)', 
-              border: '1px solid rgba(255,255,255,0.08)',
+              background: 'rgba(255,255,255,0.6)', 
+              border: '1px solid rgba(28,43,39,0.14)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               flexShrink: 0
             }}>
-              <Phone size={24} color="#2563EB" />
+              <Phone size={24} color="#1F3A33" />
             </div>
             <div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#fff', marginBottom: '4px' }}>Pour plus d'infos</div>
-              <a href="tel:+33745804949" style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#fff'} onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.45)'}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 700, color: '#1C2B27', marginBottom: '4px' }}>Pour plus d'infos</div>
+              <a href="tel:+33745804949" style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.6)', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#1C2B27'} onMouseLeave={(e) => e.target.style.color = 'rgba(28,43,39,0.6)'}>
                 +33 (0) 7 45 80 49 49
               </a>
             </div>

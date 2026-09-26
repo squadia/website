@@ -92,8 +92,8 @@ const MentionsLegales = () => {
           <div className="grid-2 fade-in" style={{ gap: '4rem', alignItems: 'start' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(0, 3).map((section, index) => (
-                <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                <div key={index} style={{ borderLeft: '1px solid rgba(28,43,39,0.16)', paddingLeft: '2rem' }}>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>
@@ -102,8 +102,8 @@ const MentionsLegales = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(3).map((section, index) => (
-                <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                <div key={index} style={{ borderLeft: '1px solid rgba(28,43,39,0.16)', paddingLeft: '2rem' }}>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>

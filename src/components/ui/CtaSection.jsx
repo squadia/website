@@ -19,7 +19,7 @@ export default function CtaSection({
   cardSubtitle,
   cardDescription,
   cardFeatures = [],
-  cardColor = '#2563EB',
+  cardColor = '#1F3A33',
   contained = false,
 }) {
   const inner = (
@@ -30,8 +30,8 @@ export default function CtaSection({
         alignItems: 'center',
         justifyContent: 'space-between',
         gap: '4rem',
-        background: 'linear-gradient(145deg, rgba(37, 99, 235, 0.05) 0%, rgba(6, 182, 212, 0.05) 100%)',
-        border: '1px solid rgba(255,255,255,0.05)',
+        background: 'linear-gradient(145deg, rgba(31,58,51,0.05) 0%, rgba(176,141,87,0.05) 100%)',
+        border: '1px solid rgba(28,43,39,0.16)',
         borderRadius: '2rem',
         padding: '4rem',
       }}>
@@ -41,7 +41,7 @@ export default function CtaSection({
           <h2 style={{
             fontSize: 'clamp(1.8rem, 3vw, 2.5rem)',
             fontWeight: 700,
-            color: '#F9FAFB',
+            color: '#1C2B27',
             marginBottom: '1.5rem',
             lineHeight: 1.25,
           }}>
@@ -49,7 +49,7 @@ export default function CtaSection({
           </h2>
           <p style={{
             fontSize: '1.1rem',
-            color: '#9CA3AF',
+            color: '#4A534F',
             marginBottom: '2.5rem',
             lineHeight: 1.6,
           }}>
@@ -63,16 +63,16 @@ export default function CtaSection({
                 alignItems: 'center',
                 justifyContent: 'center',
                 padding: '0.875rem 1.5rem',
-                backgroundColor: '#2563EB',
-                color: '#FFF',
+                backgroundColor: '#1F3A33',
+                color: '#F6F3EC',
                 fontWeight: 600,
                 borderRadius: '0.5rem',
                 textDecoration: 'none',
                 transition: 'background-color 0.2s',
                 fontSize: '1rem',
               }}
-              onMouseOver={e => e.currentTarget.style.backgroundColor = '#1D4ED8'}
-              onMouseOut={e => e.currentTarget.style.backgroundColor = '#2563EB'}
+              onMouseOver={e => e.currentTarget.style.backgroundColor = '#16302A'}
+              onMouseOut={e => e.currentTarget.style.backgroundColor = '#1F3A33'}
             >
               RDV avec un expert
             </a>

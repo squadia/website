@@ -33,18 +33,18 @@ const CONTEXTS = [
 ];
 
 const inputStyle = {
-  background: 'rgba(255,255,255,0.9)',
-  border: '1px solid rgba(17,24,39,0.12)',
+  background: 'rgba(255,255,255,1.0)',
+  border: '1px solid rgba(246,243,236,0.12)',
   padding: '0.9rem 1rem',
   borderRadius: '10px',
-  color: '#111827',
+  color: '#FFFFFF',
   fontSize: '1rem',
   width: '100%',
 };
 
 const textareaStyle = { ...inputStyle, minHeight: '110px', resize: 'vertical', fontFamily: 'inherit' };
 
-const labelStyle = { fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem', display: 'block' };
+const labelStyle = { fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', marginBottom: '0.5rem', display: 'block' };
 
 function OptionList({ options, value, onChange, multi = false }) {
   const isSelected = (opt) => (multi ? value.includes(opt) : value === opt);
@@ -59,9 +59,9 @@ function OptionList({ options, value, onChange, multi = false }) {
             textAlign: 'left',
             padding: '1rem 1.25rem',
             borderRadius: '10px',
-            border: isSelected(opt) ? '2px solid #2563EB' : '1px solid rgba(17,24,39,0.12)',
-            background: isSelected(opt) ? 'rgba(6,6,18,0.92)' : 'rgba(255,255,255,0.55)',
-            color: isSelected(opt) ? '#60A5FA' : '#374151',
+            border: isSelected(opt) ? '2px solid #1F3A33' : '1px solid rgba(28,43,39,0.15)',
+            background: isSelected(opt) ? 'rgba(246,243,236,0.92)' : 'rgba(255,255,255,1.0)',
+            color: isSelected(opt) ? '#8A6D3B' : '#4A534F',
             fontSize: '0.98rem',
             fontWeight: isSelected(opt) ? 600 : 400,
             cursor: 'pointer',
@@ -75,8 +75,8 @@ function OptionList({ options, value, onChange, multi = false }) {
           {multi && (
             <span style={{
               width: '18px', height: '18px', borderRadius: '4px', flexShrink: 0, marginLeft: '0.75rem',
-              border: isSelected(opt) ? '1px solid #2563EB' : '1px solid #D1D5DB',
-              background: isSelected(opt) ? '#2563EB' : 'transparent',
+              border: isSelected(opt) ? '1px solid #1F3A33' : '1px solid #D8D1C2',
+              background: isSelected(opt) ? '#1F3A33' : 'transparent',
             }} />
           )}
         </button>
@@ -210,7 +210,7 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             key="backdrop"
             initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
             onClick={onClose}
-            style={{ position: 'fixed', inset: 0, background: 'rgba(5,5,16,0.62)', zIndex: 1198 }}
+            style={{ position: 'fixed', inset: 0, background: 'rgba(246,243,236,0.62)', zIndex: 1198 }}
           />
           <div style={isMobile ? {
             position: 'fixed', top: '5vh', bottom: '5vh', left: 0, right: 0,
@@ -228,24 +228,24 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             style={{
               pointerEvents: 'auto',
               width: isMobile ? '100%' : 'min(440px, calc(42vw - 5rem))', maxHeight: '100%',
-              background: isMobile ? 'rgba(10,10,26,0.98)' : 'rgba(255,255,255,0.14)',
-              border: '1px solid rgba(255,255,255,0.35)', borderRadius: '20px',
-              boxShadow: '0 25px 60px -12px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.35)',
+              background: isMobile ? 'rgba(246,243,236,0.98)' : 'rgba(255,255,255,1.0)',
+              border: '1px solid rgba(28,43,39,0.16)', borderRadius: '20px',
+              boxShadow: '0 25px 60px -12px rgba(28,43,39,0.175), inset 0 1px 0 rgba(28,43,39,0.6)',
               display: 'flex', flexDirection: 'column', overflow: 'hidden',
             }}
             onKeyDown={handleKeyDown}
           >
             <div style={{ padding: isMobile ? '1.25rem 1.25rem 0' : '1.5rem 2rem 0', flexShrink: 0 }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem' }}>
-                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#44CCFF', letterSpacing: '0.03em', textTransform: 'uppercase' }}>Vos 10 prospects sur-mesure</span>
-                <button onClick={onClose} aria-label="Fermer" style={{ background: 'none', border: 'none', color: 'rgba(255,255,255,0.7)', cursor: 'pointer', padding: '0.4rem' }}>
+                <span style={{ fontSize: '0.85rem', fontWeight: 700, color: '#8A6D3B', letterSpacing: '0.03em', textTransform: 'uppercase' }}>Vos 10 prospects sur-mesure</span>
+                <button onClick={onClose} aria-label="Fermer" style={{ background: 'none', border: 'none', color: 'rgba(28,43,39,0.7)', cursor: 'pointer', padding: '0.4rem' }}>
                   <X size={20} />
                 </button>
               </div>
-              <div style={{ height: '4px', background: 'rgba(255,255,255,0.15)', borderRadius: '999px', overflow: 'hidden' }}>
+              <div style={{ height: '4px', background: 'rgba(255,255,255,0.6)', borderRadius: '999px', overflow: 'hidden' }}>
                 <motion.div
                   animate={{ width: `${progress}%` }} transition={{ duration: 0.4, ease: 'easeOut' }}
-                  style={{ height: '100%', background: 'linear-gradient(90deg, #2563EB, #44CCFF)', borderRadius: '999px' }}
+                  style={{ height: '100%', background: 'linear-gradient(90deg, #1F3A33, #8A6D3B)', borderRadius: '999px' }}
                 />
               </div>
             </div>
@@ -254,16 +254,16 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
               <AnimatePresence mode="wait">
                 {step === 0 && (
                   <motion.div key="s0" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quel secteur d'activité ciblez-vous ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Le secteur ou marché de vos prospects.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quel secteur d'activité ciblez-vous ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Le secteur ou marché de vos prospects.</p>
                     <label style={labelStyle} htmlFor="sector">Secteur / marché</label>
                     <input id="sector" autoFocus type="text" value={data.sector} onChange={set('sector')} style={inputStyle} placeholder="Ex : SaaS RH, industrie, cabinet de conseil..." />
                   </motion.div>
                 )}
                 {step === 1 && (
                   <motion.div key="s1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quelle taille d'entreprise ciblez-vous ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Votre ICP en nombre de salariés. Plusieurs choix possibles.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quelle taille d'entreprise ciblez-vous ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Votre ICP en nombre de salariés. Plusieurs choix possibles.</p>
                     <OptionList options={COMPANY_SIZES} value={data.companySize} onChange={toggleCompanySize} multi />
                     {data.companySize.includes('Autre') && (
                       <div style={{ marginTop: '1rem' }}>
@@ -275,16 +275,16 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
                 )}
                 {step === 2 && (
                   <motion.div key="s2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quelle zone géographique ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>France entière, une région, un pays.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quelle zone géographique ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>France entière, une région, un pays.</p>
                     <label style={labelStyle} htmlFor="geography">Zone géographique</label>
                     <input id="geography" autoFocus type="text" value={data.geography} onChange={set('geography')} style={inputStyle} placeholder="Ex : France entière, Île-de-France..." />
                   </motion.div>
                 )}
                 {step === 3 && (
                   <motion.div key="s3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Parlez-nous de votre entreprise</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Pour qu'on sache qui vous êtes avant votre RDV.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Parlez-nous de votre entreprise</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Pour qu'on sache qui vous êtes avant votre RDV.</p>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem' }}>
                       <div>
                         <label style={labelStyle} htmlFor="companyName">Nom de l'entreprise</label>
@@ -299,8 +299,8 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
                 )}
                 {step === 4 && (
                   <motion.div key="s4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quels personas souhaitez-vous atteindre ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Chez vos prospects, qui contacter en priorité. Plusieurs choix possibles.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quels personas souhaitez-vous atteindre ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Chez vos prospects, qui contacter en priorité. Plusieurs choix possibles.</p>
                     <OptionList options={PERSONAS} value={data.personas} onChange={togglePersona} multi />
                     {data.personas.includes('Autre') && (
                       <div style={{ marginTop: '1rem' }}>
@@ -312,16 +312,16 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
                 )}
                 {step === 5 && (
                   <motion.div key="s5" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Que vendez-vous ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Votre produit ou solution, en une phrase.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Que vendez-vous ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Votre produit ou solution, en une phrase.</p>
                     <label style={labelStyle} htmlFor="sells">Produit / solution</label>
                     <input id="sells" autoFocus type="text" value={data.sells} onChange={set('sells')} style={inputStyle} placeholder="Ex : logiciel de paie pour PME" />
                   </motion.div>
                 )}
                 {step === 6 && (
                   <motion.div key="s6" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quel est le contexte de votre demande ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Ce qui motive cette recherche de leads.</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quel est le contexte de votre demande ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Ce qui motive cette recherche de leads.</p>
                     <OptionList options={CONTEXTS} value={data.context} onChange={(v) => set('context')(v)} />
                     {data.context === 'Autre' && (
                       <div style={{ marginTop: '1rem' }}>
@@ -333,30 +333,30 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
                 )}
                 {step === 7 && (
                   <motion.div key="s7" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} transition={{ duration: 0.25 }}>
-                    <h3 style={{ fontSize: '1.4rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Autre chose à nous dire ?</h3>
-                    <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.75)', marginBottom: '1.5rem' }}>Facultatif. Contexte, contraintes, urgence...</p>
+                    <h3 style={{ fontSize: '1.4rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Autre chose à nous dire ?</h3>
+                    <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.75)', marginBottom: '1.5rem' }}>Facultatif. Contexte, contraintes, urgence...</p>
                     <label style={labelStyle} htmlFor="extraNotes">Ce que nous devrions savoir de plus</label>
                     <textarea id="extraNotes" autoFocus value={data.extraNotes} onChange={set('extraNotes')} style={textareaStyle} placeholder="Facultatif" />
                   </motion.div>
                 )}
                 {step === totalSteps && (
                   <motion.div key="done" initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3 }}>
-                    <h3 style={{ fontSize: '1.3rem', color: '#fff', fontWeight: 700, marginBottom: '0.35rem' }}>Demande bien reçue !</h3>
-                    <h3 style={{ fontSize: '1.3rem', color: '#fff', fontWeight: 700, marginBottom: '0.75rem' }}>Quand préférez-vous en parler ?</h3>
-                    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.6, marginBottom: '1rem' }}>
+                    <h3 style={{ fontSize: '1.3rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.35rem' }}>Demande bien reçue !</h3>
+                    <h3 style={{ fontSize: '1.3rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Quand préférez-vous en parler ?</h3>
+                    <p style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.78)', lineHeight: 1.6, marginBottom: '1rem' }}>
                       Notre équipe analyse vos réponses pour extraire vos 10 contacts sur-mesure. Choisissez un créneau ci-dessous pour notre échange de découverte.
                     </p>
-                    <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
+                    <p style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.78)', lineHeight: 1.6, marginBottom: '0.5rem' }}>
                       Au programme de cet appel :
                     </p>
-                    <ul style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.6, marginBottom: '1rem', paddingLeft: '1.25rem', listStyleType: 'disc', listStylePosition: 'outside' }}>
+                    <ul style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.78)', lineHeight: 1.6, marginBottom: '1rem', paddingLeft: '1.25rem', listStyleType: 'disc', listStylePosition: 'outside' }}>
                       <li style={{ display: 'list-item' }}>Analyse de vos enjeux d'acquisition actuels.</li>
                       <li style={{ display: 'list-item' }}>Présentation en direct de vos 10 leads cibles et de leurs signaux d'achat.</li>
                     </ul>
-                    <p style={{ fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                    <p style={{ fontSize: '0.8rem', fontStyle: 'italic', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                       vérifiez votre mail pour la confirmation de notre échange
                     </p>
-                    <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(17,24,39,0.12)', background: 'rgba(255,255,255,0.5)', minHeight: '500px' }}>
+                    <div style={{ borderRadius: '12px', overflow: 'hidden', border: '1px solid rgba(246,243,236,0.12)', background: 'rgba(255,255,255,0.6)', minHeight: '500px' }}>
                       <iframe
                         title="Prendre rendez-vous"
                         src={calSrc}
@@ -370,11 +370,11 @@ const DiagnosticSignalPanel = ({ open, onClose }) => {
             </div>
 
             {step < totalSteps && (
-              <div style={{ padding: isMobile ? '1rem 1.25rem' : '1.5rem 2rem', display: 'flex', gap: '0.75rem', borderTop: '1px solid rgba(17,24,39,0.1)', flexShrink: 0 }}>
+              <div style={{ padding: isMobile ? '1rem 1.25rem' : '1.5rem 2rem', display: 'flex', gap: '0.75rem', borderTop: '1px solid rgba(246,243,236,0.1)', flexShrink: 0 }}>
                 {step > 0 && (
                   <button
                     onClick={handleBack}
-                    style={{ padding: '0.9rem 1.25rem', borderRadius: '10px', border: '1px solid rgba(17,24,39,0.15)', background: 'rgba(255,255,255,0.5)', color: '#374151', display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer', fontSize: '0.95rem' }}
+                    style={{ padding: '0.9rem 1.25rem', borderRadius: '10px', border: '1px solid rgba(246,243,236,0.15)', background: 'rgba(255,255,255,0.6)', color: '#4A534F', display: 'flex', alignItems: 'center', gap: '0.4rem', cursor: 'pointer', fontSize: '0.95rem' }}
                   >
                     <ArrowLeft size={16} /> Retour
                   </button>

@@ -16,16 +16,16 @@ const ProspectionErreurs = () => {
   }, []);
 
   return (
-    <div className="blog-article" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh' }}>
+    <div className="blog-article" style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto' }}>
-          <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B7280', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#F9FAFB'} onMouseLeave={(e) => e.target.style.color = '#6B7280'}>
+          <Link href="/ressources" style={{ display: 'inline-flex', alignItems: 'center', color: '#6B716C', fontSize: '0.95rem', marginBottom: '2rem', textDecoration: 'none', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = '#1C2B27'} onMouseLeave={(e) => e.target.style.color = '#6B716C'}>
             <ArrowLeft size={16} style={{ marginRight: '8px' }} /> Retour aux ressources
           </Link>
           <div style={{ marginBottom: '2rem' }}>
-            <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #2563EB', backgroundColor: 'rgba(37, 99, 235, 0.1)', color: '#2563EB' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #1F3A33', backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33' }}>
               Prospection
             </span>
           </div>
@@ -42,16 +42,16 @@ const ProspectionErreurs = () => {
 
       {/* ═══ SECTION 2 : CONTENU ARTICLE ═══ */}
       <section className="section-padding container" style={{ paddingTop: '0' }}>
-        <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#D1D5DB' }}>
+        <div className="fade-in" style={{ maxWidth: '800px', marginInline: 'auto', fontSize: '1.15rem', lineHeight: 1.8, color: '#4A534F' }}>
           
-          <p style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#F9FAFB' }}>
+          <p style={{ marginBottom: '2.5rem', fontSize: '1.25rem', color: '#1C2B27' }}>
             La prospection multicanale, ce n'est pas une question de chance ni de volume. C'est une question de méthode, de timing, et d'alignement entre les équipes qui la portent.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Voici les cinq erreurs qu'on observe le plus souvent sur le terrain, et ce qui change quand on les corrige.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Erreur 1 : confier les emails à des profils sans méthode
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -60,11 +60,11 @@ const ProspectionErreurs = () => {
           <p style={{ marginBottom: '1.5rem' }}>
             Trop souvent, on confie l'emailing à des stagiaires ou à des profils juniors sans les avoir formés sur ce que ça demande. Résultat : des emails trop longs où l'on balance toutes les fonctionnalités du produit, des séquences qui s'arrêtent après deux relances sans valeur ajoutée, zéro personnalisation réelle.
           </p>
-          <p style={{ marginBottom: '3rem', padding: '1.5rem', background: '#0D0D25', borderLeft: '4px solid #44CCFF', borderRadius: '4px' }}>
+          <p style={{ marginBottom: '3rem', padding: '1.5rem', background: '#F6F3EC', borderLeft: '4px solid #B08D57', borderRadius: '4px' }}>
             <strong>Ce qui marche, c'est l'inverse.</strong> Des messages courts qui parlent de la douleur de l'interlocuteur, appuyés par un exemple client, et qui ouvrent une conversation. Le premier email n'a pas besoin de tout dire. Il a besoin de donner envie de répondre.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Erreur 2 : ignorer la fenêtre de tir
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -77,7 +77,7 @@ const ProspectionErreurs = () => {
             Sur le terrain, ça se traduit concrètement : utilisez LinkedIn et votre CRM pour identifier ces nouveaux entrants. Croisez avec leurs publications, leurs chantiers annoncés. Si vous connaissez leur feuille de route, votre email n'arrive plus dans le vide. Il arrive comme une réponse à un besoin actuel.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Erreur 3 : écrire comme un catalogue, pas comme un humain
           </h2>
           <p style={{ marginBottom: '1.5rem', fontStyle: 'italic' }}>
@@ -90,20 +90,20 @@ const ProspectionErreurs = () => {
             C'est ce que travaillent des méthodes comme SPIN Selling, MEDDIC ou Challenger Selling. L'outil ne fait pas tout. La compétence relationnelle du commercial reste le levier principal. C'est pour ça qu'on forme les équipes chez Squadia à développer cette intelligence de situation, pas seulement à remplir des séquences.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Erreur 4 : vouloir faire du volume sans cadence adaptée
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
             Envoyer 1 000 emails peut sembler ambitieux. Mais si votre équipe en envoie 50 par jour, il vous faudra trois semaines pour adresser votre cible. 10 000 contacts ? Comptez soixante semaines.
           </p>
-          <p style={{ marginBottom: '1.5rem', fontWeight: 600, color: '#F9FAFB' }}>
+          <p style={{ marginBottom: '1.5rem', fontWeight: 600, color: '#1C2B27' }}>
             La prospection, ce n'est pas envoyer plus. C'est cadencer intelligemment.
           </p>
           <p style={{ marginBottom: '3rem' }}>
             Sur un petit territoire, privilégiez la personnalisation poussée, quitte à envoyer moins. En phase de chasse large, automatisez une partie des séquences mais gardez du temps et de l'énergie pour vos comptes Tier 1. Sinon, vous vous épuisez avant même de pouvoir mesurer l'impact.
           </p>
 
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#F9FAFB', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginTop: '3rem', marginBottom: '1.5rem', lineHeight: 1.3 }}>
             Erreur 5 : laisser marketing et ventes travailler en silos
           </h2>
           <p style={{ marginBottom: '1.5rem' }}>
@@ -116,9 +116,9 @@ const ProspectionErreurs = () => {
             Quand cette synergie existe, l'impact est démultiplié. Un commercial devient deux à trois fois plus productif parce que chaque canal travaille pour lui au lieu de travailler à côté de lui.
           </p>
 
-          <hr style={{ border: 'none', borderTop: '1px solid #1A1A3A', margin: '3rem 0' }} />
+          <hr style={{ border: 'none', borderTop: '1px solid #D8D1C2', margin: '3rem 0' }} />
 
-          <p style={{ marginBottom: '3rem', fontSize: '1.25rem', color: '#F9FAFB', fontWeight: 500 }}>
+          <p style={{ marginBottom: '3rem', fontSize: '1.25rem', color: '#1C2B27', fontWeight: 500 }}>
             Eviter ces cinq erreurs, c'est déjà transformer vos campagnes en rendez-vous concrets. Ce n'est pas une question de budget ni de stack technologique. C'est une question de méthode et de coordination.
           </p>
 
@@ -126,26 +126,26 @@ const ProspectionErreurs = () => {
           <div>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '2rem', textAlign: 'center' }}>À lire aussi</h2>
             <div className="grid-2" style={{ gap: '2rem', marginBottom: '3rem' }}>
-              <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <Link href="/blog/nettoyage-segmentation-enrichissement-donnees-b2b" style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#B08D57'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#D8D1C2'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #F97316', backgroundColor: 'rgba(249, 115, 22, 0.1)', color: '#F97316' }}>Data B2B</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #B5652A', backgroundColor: 'rgba(181,101,42,0.1)', color: '#B5652A' }}>Data B2B</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#1C2B27' }}>Nettoyage, segmentation et enrichissement des données B2B : comment préparer une campagne qui convertit</h3>
+                <div style={{ display: 'flex', alignItems: 'center', color: '#8A6D3B', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
-              <Link href="/blog/strategie-ia-pme-eti" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
+              <Link href="/blog/strategie-ia-pme-eti" style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#B08D57'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#D8D1C2'; }}>
                 <div style={{ marginBottom: '1.5rem', display: 'flex', alignItems: 'center' }}>
-                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8B5CF6', backgroundColor: 'rgba(139, 92, 246, 0.1)', color: '#A78BFA' }}>Transformation</span>
+                  <span style={{ display: 'inline-flex', alignItems: 'center', padding: '0.4rem 0.8rem', borderRadius: '20px', fontSize: '0.85rem', fontWeight: '600', border: '1px solid #8A6D3B', backgroundColor: 'rgba(176,141,87,0.1)', color: '#8A6D3B' }}>Transformation</span>
                 </div>
-                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#F9FAFB' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
-                <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
+                <h3 style={{ fontSize: '1.2rem', lineHeight: 1.3, marginBottom: '2rem', flexGrow: 1, color: '#1C2B27' }}>Comment mettre en place une strategie IA en PME et ETI : séquence, outils et premiers résultats</h3>
+                <div style={{ display: 'flex', alignItems: 'center', color: '#8A6D3B', fontWeight: 600, fontSize: '0.95rem', marginTop: 'auto' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.5rem' }} /></div>
               </Link>
             </div>
           </div>
 
           {/* ═══ CTA ARTICLE ═══ */}
-          <div style={{ background: 'linear-gradient(145deg, #0A0A1A, #0D0D25)', border: '1px solid #44CCFF', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
-            <h3 style={{ fontSize: '1.5rem', color: '#F9FAFB', marginBottom: '1.5rem' }}>
+          <div style={{ background: 'linear-gradient(145deg, #F6F3EC, #F6F3EC)', border: '1px solid #B08D57', borderRadius: '12px', padding: '3rem', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.5rem', color: '#1C2B27', marginBottom: '1.5rem' }}>
               Vous voulez analyser vos séquences de prospection<br/>et identifier les points bloquants ?
             </h3>
             <p style={{ color: 'var(--text-secondary)', marginBottom: '2rem' }}>

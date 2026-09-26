@@ -57,19 +57,19 @@ const TemoignageIntro = () => {
   const progress = duration > 0 ? (currentTime / duration) * 100 : 0;
 
   return (
-    <div style={{ position: 'relative', minHeight: '100vh', background: '#050510', color: '#F9FAFB', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
-      <div style={{ position: 'absolute', top: '-150px', left: '-150px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.35) 0%, transparent 70%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'absolute', bottom: '-150px', right: '-150px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(68, 204, 255, 0.25) 0%, transparent 70%)', filter: 'blur(100px)', pointerEvents: 'none' }} />
+    <div style={{ position: 'relative', minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', top: '-150px', left: '-150px', width: '500px', height: '500px', background: 'transparent', filter: 'blur(100px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'absolute', bottom: '-150px', right: '-150px', width: '500px', height: '500px', background: 'transparent', filter: 'blur(100px)', pointerEvents: 'none' }} />
 
       <div className="container" style={{ position: 'relative', zIndex: 1, maxWidth: '760px', margin: '0 auto', padding: '120px 24px 80px', textAlign: 'center' }}>
-        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(37, 99, 235, 0.1)', border: '1px solid #44CCFF', padding: '0.4rem 1rem', borderRadius: '30px', color: '#44CCFF', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
+        <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(31,58,51,0.1)', border: '1px solid #B08D57', padding: '0.4rem 1rem', borderRadius: '30px', color: '#8A6D3B', fontSize: '0.9rem', fontWeight: 600, marginBottom: '2rem' }}>
           <MessageCircleHeart size={16} /> Allons plus loin encore
         </div>
 
         <h1 style={{ fontSize: 'clamp(2rem, 4vw, 2.8rem)', lineHeight: 1.2, marginBottom: '1rem', fontWeight: 800 }}>
           Un bonus gratuit suite à la formation
         </h1>
-        <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.65)', marginBottom: '3rem' }}>
+        <p style={{ fontSize: '1.1rem', color: 'rgba(28,43,39,0.65)', marginBottom: '3rem' }}>
           Cliquez sur la vidéo
         </p>
 
@@ -78,9 +78,9 @@ const TemoignageIntro = () => {
             position: 'relative',
             borderRadius: '20px',
             overflow: 'hidden',
-            border: '1px solid #1A1A3A',
-            boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.6)',
-            background: '#0D0D25',
+            border: '1px solid #D8D1C2',
+            boxShadow: '0 25px 50px -12px rgba(28,43,39,0.21)',
+            background: '#F6F3EC',
             aspectRatio: '16 / 9',
           }}
         >
@@ -115,7 +115,7 @@ const TemoignageIntro = () => {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                background: 'rgba(5, 5, 16, 0.35)',
+                background: 'rgba(246,243,236,0.35)',
                 border: 'none',
                 cursor: 'pointer',
               }}
@@ -125,14 +125,14 @@ const TemoignageIntro = () => {
                   width: '84px',
                   height: '84px',
                   borderRadius: '50%',
-                  background: '#44CCFF',
+                  background: '#1F3A33',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  boxShadow: '0 0 40px rgba(68, 204, 255, 0.6)',
+                  boxShadow: '0 0 40px rgba(176,141,87,0.6)',
                 }}
               >
-                <Play size={32} color="#050510" fill="#050510" style={{ marginLeft: '4px' }} />
+                <Play size={32} color="#F6F3EC" fill="#F6F3EC" style={{ marginLeft: '4px' }} />
               </span>
             </button>
           )}
@@ -155,9 +155,9 @@ const TemoignageIntro = () => {
                 height: '48px',
                 flexShrink: 0,
                 borderRadius: '50%',
-                background: 'rgba(68,204,255,0.15)',
-                border: '2px solid #44CCFF',
-                boxShadow: '0 0 12px rgba(68,204,255,0.4)',
+                background: 'rgba(176,141,87,0.15)',
+                border: '2px solid #B08D57',
+                boxShadow: '0 0 12px rgba(176,141,87,0.4)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
@@ -165,17 +165,17 @@ const TemoignageIntro = () => {
               }}
             >
               {isPaused ? (
-                <Play size={20} color="#fff" fill="#fff" style={{ marginLeft: '3px' }} />
+                <Play size={20} color="#1C2B27" fill="#FFFFFF" style={{ marginLeft: '3px' }} />
               ) : (
-                <Pause size={20} color="#fff" fill="#fff" />
+                <Pause size={20} color="#1C2B27" fill="#FFFFFF" />
               )}
             </button>
 
-            <div style={{ flex: 1, height: '8px', borderRadius: '4px', background: 'rgba(255,255,255,0.15)', overflow: 'hidden' }}>
-              <div style={{ width: `${progress}%`, height: '100%', background: '#44CCFF', transition: 'width 0.15s linear' }} />
+            <div style={{ flex: 1, height: '8px', borderRadius: '4px', background: 'rgba(255,255,255,1.0)', overflow: 'hidden' }}>
+              <div style={{ width: `${progress}%`, height: '100%', background: '#1F3A33', transition: 'width 0.15s linear' }} />
             </div>
 
-            <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(255,255,255,0.85)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+            <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(28,43,39,0.85)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
               -{formatTime(remaining)}
             </span>
           </div>
@@ -219,7 +219,7 @@ const TemoignageIntro = () => {
               marginTop: '1.25rem',
               fontSize: '0.8rem',
               fontStyle: 'italic',
-              color: 'rgba(255,255,255,0.5)',
+              color: 'rgba(28,43,39,0.6)',
               cursor: 'pointer',
             }}
           >
@@ -231,7 +231,7 @@ const TemoignageIntro = () => {
             />
             <span>
               J'accepte les conditions d'utilisation (
-              <Link href="/temoignage/conditions/" style={{ color: '#44CCFF', textDecoration: 'underline' }}>
+              <Link href="/temoignage/conditions/" style={{ color: '#8A6D3B', textDecoration: 'underline' }}>
                 voir le détail
               </Link>
               ).

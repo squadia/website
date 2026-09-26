@@ -11,6 +11,8 @@ import {
 import DiagnosticSignalPanel from '../components/ui/DiagnosticSignalPanel';
 import PartnerLogosMarquee from '../components/ui/PartnerLogosMarquee';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import { RevealHeader, EASE_PREMIUM } from '../components/ui/RevealHeader';
+import CasesShowcase from '../components/ui/CasesShowcase';
 import { casesData } from '../data/cases';
 const introVideo = '/assets/video/intro_home.mp4';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
@@ -70,7 +72,7 @@ const CTA_HREF = '/contact';
 const Tag = ({ children }) => (
   <span style={{
     display: 'inline-flex', alignItems: 'center', padding: '4px 12px', borderRadius: '999px',
-    fontSize: '12px', fontWeight: 600, backgroundColor: '#2563EB', color: '#FFFFFF', border: 'none',
+    fontSize: '12px', fontWeight: 600, backgroundColor: '#1F3A33', color: '#F6F3EC', border: 'none',
   }}>
     {children}
   </span>
@@ -82,8 +84,8 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   <div
     onClick={onToggle}
     style={{
-      backgroundColor: '#0D0D25',
-      border: '1px solid rgba(68, 204, 255, 0.18)',
+      backgroundColor: '#FFFFFF',
+      border: '1px solid #D8D1C2',
       borderRadius: '16px',
       padding: isOpen ? '1.6rem' : '1.6rem',
       cursor: 'pointer',
@@ -92,13 +94,13 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   >
     <div style={{
       width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
-      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+      color: '#1C2B27', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
       <span>{question}</span>
       <ChevronDown style={{
         transition: 'transform 0.3s ease',
         transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-        color: '#44CCFF', flexShrink: 0
+        color: '#8A6D3B', flexShrink: 0
       }} />
     </div>
     <div style={{
@@ -107,24 +109,25 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
       transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
       opacity: isOpen ? 1 : 0
     }}>
-      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
     </div>
   </div>
 );
 
-const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' };
-const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', lineHeight: 1.2 };
-const chapo = { fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', lineHeight: 1.6 };
+const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem' };
+const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', lineHeight: 1.2 };
+const chapo = { fontSize: '1.1rem', color: 'rgba(28,43,39,0.6)', maxWidth: '640px', lineHeight: 1.6 };
+
 
 const HomeCSS = `
-.hero-dynamic { position: relative; overflow: hidden; width: 100%; min-height: 100vh; background: #050510; }
+.hero-dynamic { position: relative; overflow: hidden; width: 100%; min-height: 100vh; background: #F6F3EC; }
 .hero-mask {
   position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none;
-  background: linear-gradient(to right, rgba(5,5,16,0.88) 0%, rgba(5,5,16,0.70) 35%, rgba(5,5,16,0.30) 60%, rgba(5,5,16,0.10) 80%, transparent 100%);
+  background: linear-gradient(to right, rgba(246,243,236,0.85) 0%, rgba(246,243,236,0.65) 34%, rgba(246,243,236,0.2) 55%, transparent 70%);
 }
 .hero-stats-compact { display: flex; gap: 3rem; z-index: 7; margin-top: 2.5rem; }
 .stat-item-compact { display: flex; flex-direction: column; }
-.stat-num-compact { font-size: 22px; font-weight: 700; color: #44CCFF; }
+.stat-num-compact { font-size: 22px; font-weight: 700; color: #8A6D3B; }
 .stat-label-compact { font-size: 14px; color: var(--text-secondary); }
 .hero-dynamic * { box-sizing: border-box; }
 .hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; z-index: 1; }
@@ -136,42 +139,40 @@ const HomeCSS = `
 .hero-left { position: absolute; top: 0; left: 0; width: 58%; height: 100%; z-index: 3; display: flex; flex-direction: column; justify-content: flex-start; padding-left: 8%; padding-top: 20vh; }
 .hero-marquee-inline {
   position: absolute; bottom: 2rem; left: 0; width: 100%; overflow: hidden; z-index: 6;
-  background: rgba(5, 5, 16, 0.15); padding: 1.5rem 0; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-  border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
-  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 15%, black 85%, transparent 100%);
+  background: #E4E2DB; padding: 1.5rem 0;
+  border-top: 1px solid #D8D1C2; border-bottom: 1px solid #D8D1C2;
 }
 .hero-marquee-row { display: flex; width: max-content; animation: heroScrollRight 45s linear infinite; }
 .hero-marquee-logo { height: 38px; width: auto; margin: 0 2.5rem; opacity: 0.7; transition: opacity 0.3s; filter: grayscale(1) brightness(1.8); object-fit: contain; }
-.hero-marquee-logo:hover { opacity: 1; filter: grayscale(0) brightness(1.3) drop-shadow(0 0 15px rgba(68, 204, 255, 0.5)); transform: scale(1.1); }
+.hero-marquee-logo:hover { opacity: 1; filter: grayscale(0) brightness(1.3) drop-shadow(0 0 15px rgba(176,141,87,0.5)); transform: scale(1.1); }
 @keyframes heroScrollRight { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .hero-CTA {
-  background: #2563EB; color: #fff; border: none; padding: 1rem 2.2rem; border-radius: 8px; font-size: 1.05rem; font-weight: 600;
-  text-decoration: none; display: inline-flex; box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3); transition: all 0.3s ease;
+  background: #1F3A33; color: #F6F3EC; border: none; padding: 1rem 2.2rem; border-radius: 8px; font-size: 1.05rem; font-weight: 600;
+  text-decoration: none; display: inline-flex; box-shadow: 0 10px 20px rgba(31,58,51,0.3); transition: all 0.3s ease;
 }
-.hero-CTA:hover { background: #1D4ED8; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(37, 99, 235, 0.4); }
+.hero-CTA:hover { background: #16302A; transform: translateY(-2px); box-shadow: 0 15px 30px rgba(31,58,51,0.4); }
 
-.brique-card:hover { border-color: rgba(68,204,255,0.5) !important; }
-.brique-card:hover .brique-card-title { color: #44CCFF !important; }
-.formation-thumb { border: 2px solid transparent; transition: border-color 0.2s ease; }
-.formation-link:hover .formation-thumb { border-color: #44CCFF; }
-.formation-link:hover .formation-label { color: #44CCFF !important; }
+.brique-card:hover { border-color: rgba(138,109,59,0.8) !important; }
+.brique-card:hover .brique-card-title { color: #8A6D3B !important; }
+.formation-thumb { border: 4px solid #FFFFFF; box-shadow: 0 0 0 1px #E4DED2, 0 10px 24px -12px rgba(28,43,39,0.3); transition: box-shadow 0.2s ease; }
+.formation-link:hover .formation-thumb { box-shadow: 0 0 0 1px #B08D57, 0 10px 24px -12px rgba(28,43,39,0.3); }
+.formation-link:hover .formation-label { color: #8A6D3B !important; }
 .formation-label { transition: color 0.2s ease; }
 .play-button-overlay { transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
 [data-playing="true"] .play-button-overlay { opacity: 0; transform: translate(-50%, -50%) scale(1.2); pointer-events: none; }
-.play-button-overlay:hover { background-color: rgba(68, 204, 255, 0.35); transform: translate(-50%, -50%) scale(1.1); }
+.play-button-overlay:hover { background-color: rgba(138,109,59,0.8); transform: translate(-50%, -50%) scale(1.1); }
 
 .partner-logo-band { overflow: hidden; position: relative; }
 .partner-logo-track { display: flex; width: max-content; gap: 3rem; align-items: center; }
 .partner-logo-track.scroll-left { animation: partnerScrollLeft 30s linear infinite; }
 @keyframes partnerScrollLeft { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 .partner-logo-item { height: 44px; width: auto; object-fit: contain; filter: brightness(1.4) grayscale(0.2); opacity: 0.9; transition: all 0.3s ease; }
-.partner-logo-item:hover { opacity: 1; filter: brightness(1.6) grayscale(0) drop-shadow(0 0 14px rgba(68,204,255,0.45)); transform: scale(1.08); }
-.partner-logo-label { font-size: 1rem; font-weight: 700; color: #fff; letter-spacing: -0.01em; }
+.partner-logo-item:hover { opacity: 1; filter: brightness(1.6) grayscale(0) drop-shadow(0 0 14px rgba(176,141,87,0.45)); transform: scale(1.08); }
+.partner-logo-label { font-size: 1rem; font-weight: 700; color: #1C2B27; letter-spacing: -0.01em; }
 
 @keyframes drawProgressAccordionHome { from { width: 0%; } to { width: 100%; } }
 
-.grid-3col-divider { border-left: 1px solid rgba(255,255,255,0.1); padding-left: 2rem; }
+.grid-3col-divider { border-left: 1px solid rgba(28,43,39,0.16); padding-left: 2rem; }
 @media (max-width: 900px) { .grid-3col-avant { grid-template-columns: 1fr !important; } }
 
 .notre-service-grid { position: relative; }
@@ -180,12 +181,14 @@ const HomeCSS = `
   top: 0;
   width: 1px;
   height: 0;
-  background: #44CCFF;
+  background: #B08D57;
   z-index: 1;
   transition: height 1.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .notre-service-section.is-in-view .service-divider-1 { height: 100%; transition-delay: 0.3s; }
 .notre-service-section.is-in-view .service-divider-2 { height: 100%; transition-delay: 1.1s; }
+.case-card:hover { border-color: #B08D57 !important; transform: translateY(-4px); }
+.case-card:hover .case-card-img { transform: scale(1.04); }
 .service-divider-1 { left: calc((100% - 4rem) / 3 + 1rem); }
 .service-divider-2 { left: calc(2 * (100% - 4rem) / 3 + 3rem); }
 
@@ -193,7 +196,7 @@ const HomeCSS = `
   .hero-dynamic { min-height: 100svh; height: auto !important; display: flex; flex-direction: column; }
   .hero-bg-mobile { display: block; }
   .hero-bg-desktop { display: none !important; }
-  .hero-mask { background: linear-gradient(to bottom, rgba(5,5,16,0.72) 0%, rgba(5,5,16,0.38) 40%, rgba(5,5,16,0.55) 70%, rgba(5,5,16,0.85) 100%) !important; }
+  .hero-mask { background: linear-gradient(to bottom, rgba(246,243,236,0.72) 0%, rgba(246,243,236,0.38) 40%, rgba(246,243,236,0.55) 70%, rgba(246,243,236,0.85) 100%) !important; }
   .hero-left {
     position: relative !important; width: 100% !important; flex: 1 !important; height: auto !important;
     display: flex !important; flex-direction: column !important; justify-content: space-between !important;
@@ -212,7 +215,7 @@ const HomeCSS = `
   .hero-marquee-row { animation-duration: 14s !important; }
   .section-padding { padding-top: 2.5rem !important; padding-bottom: 2.5rem !important; }
   .grid-4, .grid-3, .grid-2, .grid-3col-avant { grid-template-columns: 1fr !important; }
-  .grid-3col-divider { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1.5rem; margin-top: 0.5rem; }
+  .grid-3col-divider { border-left: none !important; padding-left: 0 !important; border-top: 1px solid rgba(28,43,39,0.14); padding-top: 1.5rem; margin-top: 0.5rem; }
   .service-divider { display: none; }
   .timeline-row { grid-template-columns: 1fr !important; gap: 1.25rem !important; margin-bottom: 2.5rem !important; }
   .timeline-spine, .timeline-dot { display: none !important; }
@@ -238,14 +241,18 @@ const DWELL_START = 0.85;   // au-delà, on tient l'état final (CTA visible, im
 const heroTextBeats = [
   { text: 'Comprenez plus vite le potentiel de leur territoire', from: 0.03, to: 0.16 },
   { text: 'Offrez-leur des outils modernes pour démultiplier leurs actions', from: 0.19, to: 0.32 },
-  { text: 'Accélérez leurs résultats, donnez-leur des rendez-vous', from: 0.35, to: 0.48 },
+  { text: <>Accélérez leurs résultats, donnez-leur des <span style={{ whiteSpace: 'nowrap' }}>rendez-vous</span></>, from: 0.35, to: 0.48 },
   {
     text: "Offrez-leur une équipe qui s'occupe de ça", from: 0.51, to: 0.80,
     sub: { text: "Boostée à l'IA avec Squadia", from: 0.62, to: 0.80 },
   },
 ];
-const FINAL_REVEAL_FROM = 0.83; // le sous-titre original + CTA + stats reviennent
-const FINAL_REVEAL_TO = 0.95;   // pleinement visible, puis maintenu jusqu'à la fin du dwell
+const FINAL_REVEAL_FROM = 0.81; // le sous-titre original + CTA + stats reviennent
+const FINAL_REVEAL_TO = 0.82;   // pleinement visible, puis maintenu jusqu'à la fin du dwell
+
+// Final paragraph is revealed sentence by sentence, then CTA, then stats
+const ramp = (p, from, to) => Math.max(0, Math.min(1, (p - from) / (to - from)));
+const FINAL_STEPS = { s1: [0.82, 0.86], s2: [0.86, 0.90], s3: [0.90, 0.93], cta: [0.93, 0.96], stats: [0.95, 0.98] };
 
 const beatOpacity = (p, from, to, fade = 0.025) => {
   if (p < from || p > to) return 0;
@@ -360,15 +367,19 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   const finalOpacity = isMobile ? 1 : Math.max(0, Math.min(1, (contentProgress - FINAL_REVEAL_FROM) / (FINAL_REVEAL_TO - FINAL_REVEAL_FROM)));
   const h1Shift = isMobile ? 0 : 44 * (1 - Math.min(1, contentProgress / 0.05));
 
+  const st = (key) => (isMobile ? 1 : ramp(contentProgress, ...FINAL_STEPS[key]));
+  const rise = (key) => ({ opacity: st(key), transform: `translateY(${(1 - st(key)) * 16}px)` });
   const subtitleBlock = (
     <>
-      <div className="hero-subtitle-text" style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.78)', marginBottom: '2.5rem', fontWeight: 400, maxWidth: '860px', lineHeight: 1.65 }}>
-        Co-construisons votre stratégie de croissance. Nous associons 20 ans d'expertise vente sur les comptes Mid-Market et Stratégiques à la puissance de la Data et de l'IA pour générer vos futurs rendez-vous. Testez la précision de notre ciblage dès maintenant.
+      <div className="hero-subtitle-text" style={{ fontSize: '1.15rem', color: 'rgba(28,43,39,0.78)', marginBottom: '2.5rem', fontWeight: 400, maxWidth: '860px', lineHeight: 1.65 }}>
+        <span style={{ opacity: st('s1') }}>Co-construisons votre stratégie de croissance.</span>{' '}
+        <span style={{ opacity: st('s2') }}>Nous associons 20 ans d'expertise vente sur les comptes Mid-Market et Stratégiques à la puissance de la Data et de l'IA pour générer vos futurs rendez-vous.</span>{' '}
+        <span style={{ opacity: st('s3') }}>Testez la précision de notre ciblage dès maintenant.</span>
       </div>
-      <div className="hero-cta-block" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', marginTop: '1rem' }}>
+      <div className="hero-cta-block" style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'center', marginTop: '1rem', ...rise('cta'), pointerEvents: st('cta') < 0.5 ? 'none' : 'auto' }}>
         <button type="button" onClick={onOpenDiagnostic} className="hero-CTA" style={{ cursor: 'pointer' }}>{CTA_LABEL}</button>
       </div>
-      <div className="hero-stats-compact" style={{ marginTop: '2rem' }}>
+      <div className="hero-stats-compact" style={{ marginTop: '2rem', ...rise('stats') }}>
         <div className="stat-item-compact"><div className="stat-num-compact">+20 ans</div><div className="stat-label-compact">de vente B2B terrain</div></div>
         <div className="stat-item-compact"><div className="stat-num-compact">+120</div><div className="stat-label-compact">entreprises accompagnées</div></div>
         <div className="stat-item-compact"><div className="stat-num-compact">+450</div><div className="stat-label-compact">professionnels formés</div></div>
@@ -377,21 +388,21 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
   );
 
   return (
-    <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#050510' } : undefined}>
+    <section ref={wrapperRef} style={!isMobile ? { position: 'relative', height: `${HERO_SCROLL_VH}vh`, minHeight: `${HERO_SCROLL_VH}vh`, background: '#F6F3EC' } : undefined}>
       <div className="hero-dynamic" style={!isMobile ? { position: 'sticky', top: 0, height: '100vh' } : undefined}>
         <video ref={heroVideoRef} className="hero-bg hero-bg-video" src="/assets/video/mainvideo.mp4?v=2" poster="/assets/video/mainvideo-poster.webp" preload="auto" fetchPriority="high" autoPlay loop muted playsInline style={{ opacity: videoOpacity, objectPosition: 'center top' }} />
         {!isMobile && (
           <canvas ref={canvasRef} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', display: 'block', opacity: canvasOpacity, zIndex: 1 }} />
         )}
         <div className="hero-mask" />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 5, background: 'linear-gradient(to bottom, transparent, #050510)' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 5, background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
         <div className="hero-left">
           <div style={{ transform: `translateY(${h1Shift}px)` }}>
             <motion.h1
               initial={{ opacity: 0, y: -30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.7, ease: 'easeOut' }}
-              style={{ color: '#F9FAFB', fontSize: 'clamp(2rem, 3.1vw, 2.9rem)', fontWeight: 700, lineHeight: 1.15, marginBottom: 0, maxWidth: '860px' }}
+              style={{ color: '#1F3A33', fontSize: 'clamp(2.2rem, 3.4vw, 3.2rem)', fontWeight: 500, lineHeight: 1.1, marginBottom: 0, maxWidth: '860px' }}
             >
-              Ne laissez plus vos commerciaux<br />seuls face à la prospection
+              Ne laissez plus vos commerciaux<br /><em style={{ fontStyle: 'italic', color: '#8A6D3B' }}>seuls face à la prospection</em>
             </motion.h1>
           </div>
 
@@ -404,9 +415,9 @@ const HeroDynamic = React.memo(({ onOpenDiagnostic }) => {
                 const subOp = beat.sub ? beatOpacity(contentProgress, beat.sub.from, beat.sub.to) : 0;
                 return (
                   <div key={i} style={{ position: 'absolute', top: 0, left: 0, right: 0, opacity: op, pointerEvents: 'none' }}>
-                    <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.78)', fontWeight: 400, lineHeight: 1.65, maxWidth: '860px', margin: 0 }}>{beat.text}</p>
+                    <p style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(1.1rem, 1.45vw, 1.5rem)', color: '#1F3A33', fontWeight: 400, lineHeight: 1.3, whiteSpace: 'nowrap', margin: 0, transform: `translateY(${(1 - op) * 12}px)` }}>{beat.text}</p>
                     {beat.sub && (
-                      <p style={{ fontSize: '1.15rem', color: 'rgba(255,255,255,0.78)', fontWeight: 400, lineHeight: 1.65, maxWidth: '860px', marginTop: '0.85rem', opacity: subOp }}>
+                      <p style={{ fontFamily: 'var(--font-display)', fontStyle: 'italic', fontSize: 'clamp(1rem, 1.25vw, 1.3rem)', color: '#8A6D3B', fontWeight: 400, lineHeight: 1.3, whiteSpace: 'nowrap', marginTop: '0.85rem', opacity: subOp }}>
                         {beat.sub.text}
                       </p>
                     )}
@@ -449,10 +460,10 @@ const tabOffsets = tabWidths.reduce((acc, w, i) => { acc.push(i === 0 ? 0 : acc[
 
 // ═══ 03 — CE QUE NOUS DÉTECTONS (accordion dynamique) ═══
 const signaux = [
-  { id: 1, tint: '#44CCFF', Icon: Briefcase, title: 'Recrutement (persona)', subtitle: "Le signe qu'il se passe quelque chose", description: "Une entreprise qui recrute le persona que vous ciblez est souvent le signe qu'il se passe quelque chose sur le sujet de votre produit ou de votre solution." },
-  { id: 2, tint: '#2563EB', Icon: UserPlus, title: 'Nouveau C-level', subtitle: 'Budget engagé sous 3 mois, 6 fois sur 10', description: "Un C-level qui vient d'être nommé engage un budget dans les trois premiers mois de sa prise de poste dans 60 % des cas : c'est aussi un moment pour vous." },
-  { id: 3, tint: '#8350e8', Icon: FileSignature, title: "Projet d'investissement", subtitle: 'Signal issu du BODACC', description: "Le BODACC, source publique de l'État français, répertorie les changements de structure, de siège ou de commissaire aux comptes des entreprises : souvent le signe d'une levée de fonds ou d'un investissement à venir." },
-  { id: 4, tint: '#fb923c', Icon: RefreshCw, title: 'Reprise de gestion', subtitle: 'Nouvelle direction', description: 'Le dirigeant reprend la gestion : un signal du BODACC, souvent le signe d\'une nouvelle direction et de méthodes commerciales réexaminées.' },
+  { id: 1, tint: '#8A6D3B', Icon: Briefcase, title: 'Recrutement (persona)', subtitle: "Le signe qu'il se passe quelque chose", description: "Une entreprise qui recrute le persona que vous ciblez est souvent le signe qu'il se passe quelque chose sur le sujet de votre produit ou de votre solution." },
+  { id: 2, tint: '#1F3A33', Icon: UserPlus, title: 'Nouveau C-level', subtitle: 'Budget engagé sous 3 mois, 6 fois sur 10', description: "Un C-level qui vient d'être nommé engage un budget dans les trois premiers mois de sa prise de poste dans 60 % des cas : c'est aussi un moment pour vous." },
+  { id: 3, tint: '#B08D57', Icon: FileSignature, title: "Projet d'investissement", subtitle: 'Signal issu du BODACC', description: "Le BODACC, source publique de l'État français, répertorie les changements de structure, de siège ou de commissaire aux comptes des entreprises : souvent le signe d'une levée de fonds ou d'un investissement à venir." },
+  { id: 4, tint: '#B5652A', Icon: RefreshCw, title: 'Reprise de gestion', subtitle: 'Nouvelle direction', description: 'Le dirigeant reprend la gestion : un signal du BODACC, souvent le signe d\'une nouvelle direction et de méthodes commerciales réexaminées.' },
 ];
 
 const SignalAccordion = () => {
@@ -481,9 +492,9 @@ const SignalAccordion = () => {
       }} />
       <div style={{
         position: 'relative', width: '100%', padding: isMobile ? '24px 16px' : '3rem 3.5rem',
-        backgroundColor: '#0D0D25', borderRadius: isMobile ? '18px' : '32px',
-        border: isMobile ? '1px solid #44CCFF' : '2px solid #44CCFF', color: '#FFFFFF',
-        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(0, 0, 0, 0.5)', zIndex: 1, overflow: 'hidden'
+        backgroundColor: '#F6F3EC', borderRadius: isMobile ? '18px' : '32px',
+        border: isMobile ? '1px solid #8A6D3B' : '2px solid #B08D57', color: '#1C2B27',
+        boxShadow: isMobile ? 'none' : '0 25px 50px -12px rgba(28,43,39,0.175)', zIndex: 1, overflow: 'hidden'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
           <div style={{ display: isMobile ? 'flex' : 'grid', flexDirection: isMobile ? 'column' : undefined, gridTemplateColumns: isMobile ? undefined : 'minmax(0, 1.15fr) minmax(0, 1fr)', gap: isMobile ? '24px' : '5rem', alignItems: 'center', minHeight: isMobile ? 'auto' : '400px' }}>
@@ -497,8 +508,8 @@ const SignalAccordion = () => {
                     </div>
                     <button onClick={() => setActiveId(item.id)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0.5rem 0 1.2rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}>
                       <div style={{ flex: 1 }}>
-                        <h3 style={{ fontSize: isMobile ? '16px' : '1.15rem', fontWeight: isOpen ? 700 : 400, color: isOpen ? '#F9FAFB' : 'rgba(255,255,255,0.65)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                          <span style={{ color: isOpen ? item.tint : 'rgba(255,255,255,0.4)' }}><item.Icon size={18} /></span>
+                        <h3 style={{ fontSize: isMobile ? '16px' : '1.15rem', fontWeight: isOpen ? 700 : 400, color: isOpen ? '#1C2B27' : 'rgba(28,43,39,0.65)', margin: 0, display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+                          <span style={{ color: isOpen ? item.tint : 'rgba(28,43,39,0.6)' }}><item.Icon size={18} /></span>
                           {item.title}
                         </h3>
                         <AnimatePresence>
@@ -510,10 +521,10 @@ const SignalAccordion = () => {
                           )}
                         </AnimatePresence>
                       </div>
-                      {isOpen ? <ChevronDown size={20} color={item.tint} style={{ marginTop: '0.4rem' }} /> : <ChevronRight size={20} color="rgba(255,255,255,0.3)" style={{ marginTop: '0.4rem' }} />}
+                      {isOpen ? <ChevronDown size={20} color={item.tint} style={{ marginTop: '0.4rem' }} /> : <ChevronRight size={20} color="rgba(28,43,39,0.6)" style={{ marginTop: '0.4rem' }} />}
                     </button>
                     <div style={{ maxHeight: isOpen ? '150px' : '0', overflow: 'hidden', transition: 'all 0.25s ease', opacity: isOpen ? 1 : 0 }}>
-                      <p style={{ color: 'rgba(255,255,255,0.75)', lineHeight: 1.6, fontSize: isMobile ? '14px' : '0.95rem', marginTop: '8px', paddingBottom: '1.5rem', maxWidth: '95%' }}>{item.description}</p>
+                      <p style={{ color: 'rgba(28,43,39,0.75)', lineHeight: 1.6, fontSize: isMobile ? '14px' : '0.95rem', marginTop: '8px', paddingBottom: '1.5rem', maxWidth: '95%' }}>{item.description}</p>
                     </div>
                   </div>
                 );
@@ -538,31 +549,31 @@ const SignalAccordion = () => {
 const ToolBadge = ({ src, label, isMobile }) => (
   src ? (
     isMobile ? (
-      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(68,204,255,0.08)', whiteSpace: 'nowrap' }}>{label}</span>
+      <span style={{ fontSize: '0.7rem', fontWeight: 700, color: '#1C2B27', border: '1px solid rgba(176,141,87,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(176,141,87,0.08)', whiteSpace: 'nowrap' }}>{label}</span>
     ) : (
       <img src={src} alt={label} title={label} style={{ height: '28px', width: 'auto', maxWidth: '90px', objectFit: 'contain', borderRadius: '4px', filter: 'brightness(1.25)' }} />
     )
   ) : (
-    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#fff', border: '1px solid rgba(68,204,255,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(68,204,255,0.08)' }}>{label}</span>
+    <span style={{ fontSize: '0.75rem', fontWeight: 700, color: '#1C2B27', border: '1px solid rgba(176,141,87,0.35)', borderRadius: '6px', padding: '4px 10px', background: 'rgba(176,141,87,0.08)' }}>{label}</span>
   )
 );
 
 const BriqueCard = ({ Icon, title, desc, link, tools, isMobile }) => (
   <div className={link ? 'brique-card' : undefined} style={{
-    background: '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: isMobile ? '1.25rem' : '1.5rem', transition: 'border-color 0.2s ease'
+    background: '#F6F3EC', border: '1px solid rgba(28,43,39,0.16)', borderRadius: '16px', padding: isMobile ? '1.25rem' : '1.5rem', transition: 'border-color 0.2s ease'
   }}>
-    <div style={{ width: isMobile ? '40px' : '44px', height: isMobile ? '40px' : '44px', borderRadius: '12px', background: 'rgba(68,204,255,0.08)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-      <Icon size={isMobile ? 18 : 20} color="#44CCFF" />
+    <div style={{ width: isMobile ? '40px' : '44px', height: isMobile ? '40px' : '44px', borderRadius: '12px', background: 'rgba(176,141,87,0.08)', border: '1px solid rgba(176,141,87,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+      <Icon size={isMobile ? 18 : 20} color="#8A6D3B" />
     </div>
-    <h3 className="brique-card-title" style={{ fontSize: '1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem', transition: 'color 0.2s ease' }}>{title}</h3>
-    <p style={{ fontSize: isMobile ? '0.85rem' : '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{desc}</p>
+    <h3 className="brique-card-title" style={{ fontSize: '1rem', fontWeight: 700, color: '#1C2B27', margin: '0 0 0.5rem', transition: 'color 0.2s ease' }}>{title}</h3>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.88rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{desc}</p>
     {tools && tools.length > 0 && (
       <div className="brique-tools" style={{ marginTop: '1.1rem', display: 'flex', alignItems: 'center', gap: isMobile ? '0.5rem' : '0.6rem', flexWrap: 'wrap' }}>
         {tools.map((t, i) => <ToolBadge key={i} {...t} isMobile={isMobile} />)}
       </div>
     )}
     {link && (
-      <Link href={link} style={{ marginTop: '1rem', display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#44CCFF', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}>
+      <Link href={link} style={{ marginTop: '1rem', display: 'inline-flex', alignItems: 'center', gap: '6px', color: '#8A6D3B', fontSize: '0.85rem', fontWeight: 600, textDecoration: 'none' }}>
         Découvrir <ArrowRight size={14} />
       </Link>
     )}
@@ -579,14 +590,15 @@ const timelineSteps = [
 const StepText = ({ s, isMobile }) => (
   <div>
     <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: isMobile ? '0.65rem' : '0.7rem' }}>{s.week}</p>
-    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
-    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#1C2B27', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
   </div>
 );
 
 const StepImage = ({ src, label, isMobile }) => (
   <div style={{
-    aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden',
+    aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '16px', border: isMobile ? '4px solid #FFFFFF' : '6px solid #FFFFFF', overflow: 'hidden',
+    boxShadow: '0 0 0 1px #E4DED2, 0 24px 48px -20px rgba(28,43,39,0.25)',
   }}>
     <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
   </div>
@@ -599,15 +611,15 @@ const Timeline = ({ isMobile }) => {
 
   return (
   <div ref={timelineRef} style={{ position: 'relative', maxWidth: '1000px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
-    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: 'rgba(176,141,87,0.15)', transform: 'translateX(-50%)' }} />
     {!isMobile && (
-      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
+      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '1px', background: '#8A6D3B', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
     )}
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
         <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '5rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem'), overflow: 'visible' }}>
-          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#F6F3EC', border: '2px solid #8A6D3B', zIndex: 2 }} />
           {isMobile ? (
             <>
               <motion.div key={`t-${i}-text`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
@@ -691,9 +703,9 @@ const PricingTabs = () => {
     if (displayPrice.endsWith(' / gpe')) { suffix = '/ gpe'; displayPrice = displayPrice.replace(' / gpe', ''); }
     return (
       <>
-        {prefix && <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
+        {prefix && <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
         <span style={{ fontWeight: 400 }}>{displayPrice}</span>
-        {suffix && <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
+        {suffix && <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
       </>
     );
   };
@@ -705,9 +717,9 @@ const PricingTabs = () => {
           <button key={tab.id} onClick={() => setActiveTab(tab.id)} style={{
             padding: isMobile ? '0.6rem 0.85rem' : '0.75rem 1.4rem', borderRadius: '9999px', fontWeight: 700, fontSize: isMobile ? '0.78rem' : '0.95rem',
             whiteSpace: 'nowrap', flex: isMobile ? '1 1 0' : 'none', textAlign: 'center',
-            border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
-            background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
-            color: activeTab === tab.id ? '#FFFFFF' : 'rgba(255,255,255,0.5)', cursor: 'pointer', transition: 'all 0.2s ease'
+            border: activeTab === tab.id ? '1px solid #1F3A33' : '1px solid #D8D1C2',
+            background: activeTab === tab.id ? '#1F3A33' : '#FFFFFF',
+            color: activeTab === tab.id ? '#F6F3EC' : '#4A534F', cursor: 'pointer', transition: 'all 0.2s ease'
           }}>
             {tab.label}
           </button>
@@ -717,32 +729,32 @@ const PricingTabs = () => {
       <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
         {activeTabData.cards.map((card, idx) => (
           <div key={idx} style={{
-            background: '#0D0D25', border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+            background: '#FFFFFF', border: card.badge ? '2px solid #1F3A33' : '1px solid #D8D1C2',
             padding: isMobile ? '24px 18px' : '2.25rem 1.75rem', borderRadius: '1rem', position: 'relative', display: 'flex', flexDirection: 'column'
           }}>
             {card.badge && (
-              <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
+              <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
                 {card.badge}
               </div>
             )}
-            <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#F9FAFB' }}>{card.title}</h3>
-            <p style={{ fontSize: '0.85rem', color: '#9CA3AF', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
+            <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#1C2B27' }}>{card.title}</h3>
+            <p style={{ fontSize: '0.85rem', color: '#4A534F', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
             <div style={{ marginBottom: '1.25rem' }}>
-              <div style={{ fontSize: '1.5rem', color: '#fff' }}>{formatPrice(card.price)}</div>
-              {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#9CA3AF', marginTop: '0.35rem' }}>{card.subPrice}</div>}
+              <div style={{ fontSize: '1.5rem', color: '#1C2B27' }}>{formatPrice(card.price)}</div>
+              {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#4A534F', marginTop: '0.35rem' }}>{card.subPrice}</div>}
             </div>
             <div style={{ flexGrow: 1, marginBottom: '1.25rem' }}>
               {card.items.map((item, i) => (
                 <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '0.65rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
-                  <Check size={15} color={card.badge ? '#2563EB' : '#44CCFF'} style={{ flexShrink: 0, marginTop: '2px' }} />
-                  <span style={{ color: 'rgba(255,255,255,0.75)' }}>{item}</span>
+                  <Check size={15} color={card.badge ? '#1F3A33' : '#8A6D3B'} style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <span style={{ color: 'rgba(28,43,39,0.75)' }}>{item}</span>
                 </div>
               ))}
             </div>
             <Link href={card.link || '/contact'} style={{
               display: 'block', width: '100%', padding: '0.9rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.95rem',
-              border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent',
-              color: '#FFFFFF', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
+              border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.16)', background: card.badge ? '#1F3A33' : 'transparent',
+              color: card.badge ? '#F6F3EC' : '#1C2B27', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
             }}>
               Prendre RDV
             </Link>
@@ -751,7 +763,7 @@ const PricingTabs = () => {
       </div>
 
       <div style={{ textAlign: 'center', marginTop: '2.5rem' }}>
-        <Link href={activeTabData.pageLink} style={{ color: '#44CCFF', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
+        <Link href={activeTabData.pageLink} style={{ color: '#8A6D3B', fontWeight: 700, fontSize: '0.9rem', display: 'inline-flex', alignItems: 'center', gap: '8px', textDecoration: 'none' }}>
           En savoir plus sur l'offre {activeTabData.label} <ArrowRight size={14} />
         </Link>
       </div>
@@ -812,7 +824,7 @@ const FormationTeaserModal = ({ data, onClose }) => (
           key="formation-backdrop"
           initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
           onClick={onClose}
-          style={{ position: 'fixed', inset: 0, background: 'rgba(5,5,16,0.7)', zIndex: 1198 }}
+          style={{ position: 'fixed', inset: 0, background: 'rgba(246,243,236,0.7)', zIndex: 1198 }}
         />
         <div style={{ position: 'fixed', inset: 0, zIndex: 1199, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '1.5rem', pointerEvents: 'none' }}>
           <motion.div
@@ -821,19 +833,19 @@ const FormationTeaserModal = ({ data, onClose }) => (
             transition={{ type: 'spring', stiffness: 300, damping: 32 }}
             style={{
               pointerEvents: 'auto', width: '100%', maxWidth: '520px', maxHeight: '90vh', overflowY: 'auto',
-              background: '#0D0D25', border: '1px solid rgba(68,204,255,0.18)', borderRadius: '20px',
-              boxShadow: '0 25px 60px -12px rgba(0,0,0,0.5)',
+              background: '#F6F3EC', border: '1px solid rgba(176,141,87,0.18)', borderRadius: '20px',
+              boxShadow: '0 25px 60px -12px rgba(28,43,39,0.175)',
             }}
           >
             <div style={{ position: 'relative', height: '200px', borderRadius: '20px 20px 0 0', overflow: 'hidden' }}>
               <img src={data.image} alt={data.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(13,13,37,0.1), rgba(13,13,37,0.9))' }} />
+              <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(246,243,236,0.1), rgba(246,243,236,0.9))' }} />
               <motion.button
                 onClick={onClose} aria-label="Fermer"
-                initial={{ rotate: -720, backgroundColor: '#44CCFF' }}
-                animate={{ rotate: 0, backgroundColor: 'rgba(5,5,16,0.5)' }}
+                initial={{ rotate: -720, backgroundColor: '#8A6D3B' }}
+                animate={{ rotate: 0, backgroundColor: 'rgba(246,243,236,0.5)' }}
                 transition={{ rotate: { duration: 1.1, ease: 'easeOut' }, backgroundColor: { duration: 0.7, delay: 0.55, ease: 'easeOut' } }}
-                style={{ position: 'absolute', top: '1rem', right: '1rem', backdropFilter: 'blur(8px)', border: '1px solid rgba(255,255,255,0.15)', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#fff' }}
+                style={{ position: 'absolute', top: '1rem', right: '1rem', backdropFilter: 'blur(8px)', border: '1px solid rgba(28,43,39,0.16)', borderRadius: '50%', width: '36px', height: '36px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#1C2B27' }}
               >
                 <X size={18} />
               </motion.button>
@@ -841,32 +853,32 @@ const FormationTeaserModal = ({ data, onClose }) => (
             <div style={{ padding: '2rem 2.25rem 2.25rem' }}>
               <motion.p
                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.3, delay: 0.45 }}
-                style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' }}
+                style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem' }}
               >Formation {data.label}</motion.p>
               <motion.h3
                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: 1.25 }}
-                style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.25 }}
+                style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1C2B27', marginBottom: '1rem', lineHeight: 1.25 }}
               >{data.title}</motion.h3>
               <motion.p
                 initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: 1.4 }}
-                style={{ fontSize: '0.98rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '1.75rem' }}
+                style={{ fontSize: '0.98rem', color: 'rgba(28,43,39,0.65)', lineHeight: 1.7, marginBottom: '1.75rem' }}
               >{data.description}</motion.p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', marginBottom: '2rem' }}>
                 {data.bullets.map((b, i) => (
                   <motion.div
                     key={i}
                     initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 2.15 + i * 0.28 }}
-                    style={{ borderLeft: '3px solid #44CCFF', paddingLeft: '1.1rem' }}
+                    style={{ borderLeft: '3px solid #B08D57', paddingLeft: '1.1rem' }}
                   >
-                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.3rem' }}>{b.title}</div>
-                    <div style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>{b.desc}</div>
+                    <div style={{ fontSize: '0.9rem', fontWeight: 700, color: '#1C2B27', marginBottom: '0.3rem' }}>{b.title}</div>
+                    <div style={{ fontSize: '0.88rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6 }}>{b.desc}</div>
                   </motion.div>
                 ))}
               </div>
               <motion.div
                 initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.9, delay: 3.5, ease: 'easeOut' }}
               >
-                <Link href={data.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.98rem', background: '#44CCFF', color: '#060612', textDecoration: 'none', boxSizing: 'border-box' }}>
+                <Link href={data.href} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.98rem', background: '#1F3A33', color: '#F6F3EC', textDecoration: 'none', boxSizing: 'border-box' }}>
                   Voir le programme complet <ArrowRight size={16} />
                 </Link>
               </motion.div>
@@ -885,7 +897,7 @@ const Home = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [videoStarted, setVideoStarted] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
-  const [bgColor, setBgColor] = useState('#0F2744');
+  const [bgColor, setBgColor] = useState('#F6F3EC');
   const [diagnosticOpen, setDiagnosticOpen] = useState(false);
   const [serviceInView, setServiceInView] = useState(false);
 
@@ -900,6 +912,28 @@ const Home = () => {
   }, []);
   const videoRef = useRef(null);
   const problemRef = useRef(null);
+  const problemLeftRef = useRef(null);
+  const problemVideoRef = useRef(null);
+  const problemLastCardRef = useRef(null);
+  // Stacked cards stick level with the video, and the last one releases together with the left column
+  const [pipeAlign, setPipeAlign] = useState({ top: null, pad: null });
+  useEffect(() => {
+    const measure = () => {
+      const left = problemLeftRef.current, video = problemVideoRef.current, last = problemLastCardRef.current;
+      if (!left || !video || !last || window.innerWidth <= 768) return;
+      const stickyTop = window.innerHeight * 0.14;
+      const videoOffset = video.getBoundingClientRect().top - left.getBoundingClientRect().top;
+      const top = stickyTop + videoOffset;
+      // every card keeps a 42vh margin; pad the left column so it unsticks when the last card does
+      const leftContent = left.offsetHeight - (parseFloat(getComputedStyle(left).paddingBottom) || 0);
+      const pad = Math.max(0, top + last.offsetHeight + window.innerHeight * 0.42 - stickyTop - leftContent);
+      setPipeAlign({ top, pad });
+    };
+    measure();
+    const t = setTimeout(measure, 800);
+    window.addEventListener('resize', measure);
+    return () => { clearTimeout(t); window.removeEventListener('resize', measure); };
+  }, []);
   const ctaRef = useRef(null);
   const serviceSectionRef = useRef(null);
 
@@ -941,14 +975,14 @@ const Home = () => {
         const t2End = offCta;
         if (scrollY < t1End) {
           const factor = Math.max(0, Math.min(1, scrollY / Math.max(t1End, 1)));
-          setBgColor(interpolateColor('#0F2744', '#060612', factor));
+          setBgColor(interpolateColor('#F6F3EC', '#F6F3EC', factor));
         } else if (scrollY < t2Start) {
-          setBgColor('#060612');
+          setBgColor('#F6F3EC');
         } else if (scrollY < t2End) {
           const factor = Math.max(0, Math.min(1, (scrollY - t2Start) / (t2End - t2Start)));
-          setBgColor(interpolateColor('#060612', '#050510', factor));
+          setBgColor(interpolateColor('#F6F3EC', '#F6F3EC', factor));
         } else {
-          setBgColor('#050510');
+          setBgColor('#F6F3EC');
         }
       }
       rafId = requestAnimationFrame(tick);
@@ -1000,7 +1034,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="home-page" style={{ backgroundColor: bgColor, color: '#F9FAFB', transition: 'background-color 0.4s ease-out' }}>
+    <div className="home-page" style={{ backgroundColor: bgColor, color: '#1C2B27', transition: 'background-color 0.4s ease-out' }}>
       <style>{HomeCSS}</style>
 
       {/* ═══ 01 — HERO ═══ */}
@@ -1010,31 +1044,32 @@ const Home = () => {
 
       {/* ═══ 02 — LE PROBLÈME (vidéo + cartes empilées au scroll) ═══ */}
       <section id="probleme" ref={problemRef} style={{ position: 'relative', backgroundColor: 'transparent' }}>
-        <div className="container" style={{ padding: '8rem 2rem' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 1.15fr', gap: '4rem', alignItems: 'start' }}>
+        <div className="container" style={{ padding: isMobile ? '8rem 2rem' : '8rem 2rem 0' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) 1.15fr', gap: '4rem', alignItems: 'start', marginBottom: isMobile ? 0 : '-20vh' }}>
             <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
               onViewportEnter={() => { if (videoRef.current) videoRef.current.play(); }}
-              style={{ position: 'sticky', top: '14vh' }}
+              ref={problemLeftRef}
+              style={{ position: 'sticky', top: '14vh', paddingBottom: isMobile || pipeAlign.pad == null ? 0 : `${pipeAlign.pad}px` }}
             >
               <div style={{ marginBottom: '2.5rem' }}>
                 <p style={kicker}>LE PROBLÈME DU PIPELINE</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1.5rem', lineHeight: 1.2 }}>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '1.5rem', lineHeight: 1.2 }}>
                   Les 4 freins qui bloquent votre acquisition B2B
                 </h2>
-                <div style={{ width: '50px', height: '4px', backgroundColor: '#44CCFF', borderRadius: '2px' }} />
+                <div style={{ width: '50px', height: '4px', backgroundColor: '#8A6D3B', borderRadius: '2px' }} />
               </div>
 
               <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
-                <div onClick={() => {
+                <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'transparent', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
+                <div ref={problemVideoRef} onClick={() => {
                   if (videoRef.current) {
                     if (isMuted || videoRef.current.paused) {
                       videoRef.current.currentTime = 0; setIsMuted(false); videoRef.current.play();
                     } else { videoRef.current.pause(); }
                   }
                 }} style={{
-                  maxWidth: '380px', margin: '0', aspectRatio: '3/4', backgroundColor: '#0D0D25', borderRadius: '20px',
-                  border: '5px solid #1A1A3A', overflow: 'hidden', position: 'relative', boxShadow: '0 30px 60px rgba(0,0,0,0.4)', cursor: 'pointer', zIndex: 1
+                  maxWidth: '380px', margin: '0', aspectRatio: '3/4', backgroundColor: '#F6F3EC', borderRadius: '20px',
+                  border: '6px solid #FFFFFF', overflow: 'hidden', position: 'relative', boxShadow: '0 0 0 1px #E4DED2, 0 24px 48px -20px rgba(28,43,39,0.25)', cursor: 'pointer', zIndex: 1
                 }}>
                   <video ref={videoRef} src={introVideo} muted={isMuted} autoPlay playsInline controls={videoStarted}
                     controlsList="nodownload nofullscreen noremoteplayback" disablePictureInPicture
@@ -1047,24 +1082,24 @@ const Home = () => {
                     if (isMuted) { if (videoRef.current) videoRef.current.currentTime = 0; setIsMuted(false); if (videoRef.current) videoRef.current.play(); }
                     else { setIsMuted(true); }
                   }} style={{
-                    position: 'absolute', top: '1.5rem', right: '1.5rem', zIndex: 10, background: 'rgba(5, 5, 16, 0.5)',
-                    backdropFilter: 'blur(8px)', border: '1px solid rgba(68, 204, 255, 0.3)', borderRadius: '50%', width: '44px', height: '44px',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#fff'
+                    position: 'absolute', top: '1.5rem', right: '1.5rem', zIndex: 10, background: 'rgba(246,243,236,0.5)',
+                    backdropFilter: 'blur(8px)', border: '1px solid rgba(176,141,87,0.3)', borderRadius: '50%', width: '44px', height: '44px',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#1C2B27'
                   }}>
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#8A6D3B" />}
                   </button>
                   <div className="play-button-overlay" style={{
                     position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', width: '80px', height: '80px',
-                    backgroundColor: 'rgba(68, 204, 255, 0.2)', backdropFilter: 'blur(8px)', borderRadius: '50%',
-                    display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(68, 204, 255, 0.4)', zIndex: 3
+                    backgroundColor: 'rgba(176,141,87,0.2)', backdropFilter: 'blur(8px)', borderRadius: '50%',
+                    display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid rgba(176,141,87,0.4)', zIndex: 3
                   }}>
-                    <Play size={32} fill="#44CCFF" color="#44CCFF" style={{ marginLeft: '4px' }} />
+                    <Play size={32} fill="#1F3A33" color="#8A6D3B" style={{ marginLeft: '4px' }} />
                   </div>
                   <div style={{
                     position: 'absolute', bottom: 0, left: 0, right: 0, height: '100px', backdropFilter: 'blur(15px) brightness(0.6)',
                     WebkitBackdropFilter: 'blur(15px) brightness(0.6)',
-                    maskImage: 'linear-gradient(to top, black 0%, rgba(0,0,0,0.5) 50%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to top, black 0%, rgba(0,0,0,0.5) 50%, transparent 100%)', pointerEvents: 'none', zIndex: 1
+                    maskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)', pointerEvents: 'none', zIndex: 1
                   }} />
                 </div>
               </div>
@@ -1072,37 +1107,37 @@ const Home = () => {
 
             <div style={{ position: 'relative' }}>
               {problemes.map((item, idx) => (
-                <motion.div key={idx} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: '-10% 0px -25% 0px' }} transition={{ duration: 0.8, ease: 'easeOut' }}
-                  style={{ position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : '38vh', marginBottom: isMobile ? '64px' : '42vh', zIndex: idx + 10, overflow: 'visible' }}
+                <motion.div key={idx} ref={idx === problemes.length - 1 ? problemLastCardRef : undefined} initial={{ opacity: 0, y: 50 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: '-10% 0px -25% 0px' }} transition={{ duration: 0.8, ease: 'easeOut' }}
+                  style={{ position: isMobile ? 'relative' : 'sticky', top: isMobile ? 'auto' : (pipeAlign.top != null ? `${pipeAlign.top}px` : '38vh'), marginBottom: isMobile ? '64px' : '42vh', zIndex: idx + 10, overflow: 'visible' }}
                 >
                   <div style={{
                     position: 'absolute', top: isMobile ? '-40px' : '-43px', left: isMobile ? '20px' : `${tabOffsets[idx]}px`,
-                    width: isMobile ? 'auto' : `${tabWidths[idx]}px`, minWidth: isMobile ? '88px' : undefined, padding: isMobile ? '0 14px' : '0 16px', whiteSpace: 'nowrap', height: isMobile ? '40px' : '44px', backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.2)',
+                    width: isMobile ? 'auto' : `${tabWidths[idx]}px`, minWidth: isMobile ? '88px' : undefined, padding: isMobile ? '0 14px' : '0 16px', whiteSpace: 'nowrap', height: isMobile ? '40px' : '44px', backgroundColor: '#F6F3EC', border: '1px solid rgba(176,141,87,0.2)',
                     borderBottom: 'none', borderRadius: isMobile ? '14px 14px 0 0' : '14px 14px 0 0', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 3, gap: '6px'
                   }}>
-                    <item.Icon size={isMobile ? 12 : 14} color="#44CCFF" />
-                    <span style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', fontWeight: 900, color: '#44CCFF', letterSpacing: '0.06em' }}>{item.tag}</span>
-                    <div style={{ position: 'absolute', bottom: '-1px', left: '0', right: '0', height: '2px', backgroundColor: '#0D0D25', zIndex: 4 }} />
+                    <item.Icon size={isMobile ? 12 : 14} color="#8A6D3B" />
+                    <span style={{ fontSize: isMobile ? '0.75rem' : '0.82rem', fontWeight: 900, color: '#8A6D3B', letterSpacing: '0.06em' }}>{item.tag}</span>
+                    <div style={{ position: 'absolute', bottom: '-1px', left: '0', right: '0', height: '2px', backgroundColor: '#F6F3EC', zIndex: 4 }} />
                   </div>
                   <div style={{
-                    display: 'flex', gap: '2.5rem', padding: isMobile ? '38px 18px 20px 18px' : '4.5rem 2.5rem 2.5rem 2.5rem', backgroundColor: '#0D0D25',
-                    borderRadius: isMobile ? '0 16px 16px 16px' : '0 1.5rem 1.5rem 1.5rem', border: '1px solid rgba(68, 204, 255, 0.2)', backdropFilter: 'blur(20px)',
-                    boxShadow: '0 30px 60px -12px rgba(0, 0, 0, 0.8)', height: isMobile ? 'auto' : '400px', position: 'relative', zIndex: 2
+                    display: 'flex', gap: '2.5rem', padding: isMobile ? '38px 18px 20px 18px' : '4.5rem 2.5rem 2.5rem 2.5rem', backgroundColor: '#F6F3EC',
+                    borderRadius: isMobile ? '0 16px 16px 16px' : '0 1.5rem 1.5rem 1.5rem', border: '1px solid rgba(176,141,87,0.2)', backdropFilter: 'blur(20px)',
+                    boxShadow: '0 30px 60px -12px rgba(28,43,39,0.28)', height: isMobile ? 'auto' : '400px', position: 'relative', zIndex: 2
                   }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
-                      <p style={{ fontStyle: 'italic', color: '#F9FAFB', marginBottom: '1rem', fontSize: isMobile ? '16px' : '1.1rem', lineHeight: 1.4, fontWeight: 500, marginTop: 0 }}>{item.title}</p>
-                      <p style={{ color: 'rgba(255,255,255,0.5)', lineHeight: 1.7, fontSize: isMobile ? '14px' : '1rem', margin: 0 }}>{item.desc}</p>
+                      <p style={{ fontStyle: 'italic', color: '#1C2B27', marginBottom: '1rem', fontSize: isMobile ? '16px' : '1.1rem', lineHeight: 1.4, fontWeight: 500, marginTop: 0 }}>{item.title}</p>
+                      <p style={{ color: 'rgba(28,43,39,0.6)', lineHeight: 1.7, fontSize: isMobile ? '14px' : '1rem', margin: 0 }}>{item.desc}</p>
                       {item.stat && (
                         <div style={{ marginTop: '2.25rem' }}>
                           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem' }}>
-                            <div style={{ flex: 1, height: '2px', backgroundColor: 'rgba(255,255,255,0.3)' }} />
-                            <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', whiteSpace: 'nowrap' }}>Source en chiffre</span>
-                            <div style={{ flex: 1, height: '2px', backgroundColor: 'rgba(255,255,255,0.3)' }} />
+                            <div style={{ flex: 1, height: '2px', backgroundColor: '#D8D1C2' }} />
+                            <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(28,43,39,0.6)', whiteSpace: 'nowrap' }}>Source en chiffre</span>
+                            <div style={{ flex: 1, height: '2px', backgroundColor: '#D8D1C2' }} />
                           </div>
                           <div style={{ display: 'flex', alignItems: isMobile ? 'flex-start' : 'baseline', gap: '0.75rem', flexDirection: isMobile ? 'column' : 'row' }}>
-                            <span style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 800, color: '#44CCFF', lineHeight: 1, whiteSpace: 'nowrap', display: 'inline-block', flexShrink: 0 }}>{item.stat}</span>
-                            <span style={{ color: 'rgba(255,255,255,0.55)', fontSize: isMobile ? '0.82rem' : '0.88rem', lineHeight: 1.5 }}>
-                              {item.statLabel}{item.statSource && <> <span style={{ color: 'rgba(255,255,255,0.35)' }}>(Source : {item.statSource})</span></>}
+                            <span style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 800, color: '#8A6D3B', lineHeight: 1, whiteSpace: 'nowrap', display: 'inline-block', flexShrink: 0 }}>{item.stat}</span>
+                            <span style={{ color: 'rgba(28,43,39,0.6)', fontSize: isMobile ? '0.82rem' : '0.88rem', lineHeight: 1.5 }}>
+                              {item.statLabel}{item.statSource && <> <span style={{ color: 'rgba(28,43,39,0.6)' }}>(Source : {item.statSource})</span></>}
                             </span>
                           </div>
                         </div>
@@ -1111,7 +1146,7 @@ const Home = () => {
                   </div>
                 </motion.div>
               ))}
-              <div style={{ height: isMobile ? '2rem' : '40vh' }} />
+              <div style={{ height: isMobile ? '2rem' : (pipeAlign.pad != null ? 0 : '40vh') }} />
             </div>
           </div>
         </div>
@@ -1120,11 +1155,8 @@ const Home = () => {
       {/* ═══ 03 — NOTRE SERVICE (ex "comment ça marche") ═══ */}
       <section ref={serviceSectionRef} className={`section-padding notre-service-section ${serviceInView ? 'is-in-view' : ''}`} style={{ backgroundColor: 'transparent' }}>
         <div className="container fade-in">
-          <div style={{ marginBottom: '3.5rem', maxWidth: '760px' }}>
-            <p style={kicker}>NOTRE SERVICE</p>
-            <h2 style={{ ...h2Style, marginBottom: '1.25rem' }}>Data, prospection, formation</h2>
-            <p style={chapo}>Trois étapes d'un même travail : trouver les bonnes entreprises, les adresser et les appeler, puis transmettre à vos équipes les outils et méthodes pour qu'elles prennent le relais si elles le souhaitent.</p>
-          </div>
+          <RevealHeader wrapStyle={{ marginBottom: '3.5rem', maxWidth: '760px' }} kickerText="NOTRE SERVICE" title="Data, prospection, formation" titleStyle={{ marginBottom: '1.25rem' }}
+            text={"Trois étapes d'un même travail : trouver les bonnes entreprises, les adresser et les appeler, puis transmettre à vos équipes les outils et méthodes pour qu'elles prennent le relais si elles le souhaitent."} />
 
           <div className="notre-service-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '2rem', position: 'relative' }}>
             <div className="service-divider service-divider-1" />
@@ -1133,7 +1165,7 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7, ease: 'easeOut' }}>
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <span style={{ ...kicker, display: 'inline-block', marginBottom: '0.4rem' }}>AVANT</span>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Data B2B</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1C2B27', margin: 0 }}>Data B2B</h3>
               </div>
               <BriqueCard Icon={Database} title="Data" desc="Nous construisons la base sur signal, nous la nettoyons, nous l'enrichissons en emails, téléphones et profils LinkedIn, et vous livrons la donnée à jour dans votre CRM." link="/data" isMobile={isMobile}
                 tools={[{ src: logoHubspot, label: 'HubSpot' }, { src: logoPipedrive, label: 'Pipedrive' }, { src: logoSalesforce, label: 'Salesforce' }, { src: logoFullenrich, label: 'Full Enrich' }]} />
@@ -1141,32 +1173,32 @@ const Home = () => {
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.25 }}>
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <span style={{ ...kicker, display: 'inline-block', marginBottom: '0.4rem' }}>PENDANT</span>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Prospection</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1C2B27', margin: 0 }}>Prospection</h3>
               </div>
               <div style={{ display: 'grid', gap: '1rem' }}>
                 <BriqueCard Icon={Mail} title="Campagnes" link="/prospection/campagne" tools={[{ label: 'Repliik' }]}
-                  desc={<>Nous avons développé <a href="https://repliik.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF' }}>Repliik.com</a>, notre solution d'enrichissement de contacts et d'envoi de messages multicanal, emails et LinkedIn inclus. Chaque message est personnalisé pour chaque contact.</>} />
+                  desc={<>Nous avons développé <a href="https://repliik.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B' }}>Repliik.com</a>, notre solution d'enrichissement de contacts et d'envoi de messages multicanal, emails et LinkedIn inclus. Chaque message est personnalisé pour chaque contact.</>} />
                 <BriqueCard Icon={Phone} title="Téléphone" desc="Les appels sont passés par un commercial B2B avec plus de dix ans d'expérience en prospection directe." link="/prospection/cold-call" />
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-100px' }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.5 }}>
               <div style={{ textAlign: 'center', marginBottom: '1rem' }}>
                 <span style={{ ...kicker, display: 'inline-block', marginBottom: '0.4rem' }}>APRÈS</span>
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#F9FAFB', margin: 0 }}>Formation</h3>
+                <h3 style={{ fontSize: '1.5rem', fontWeight: 700, color: '#1C2B27', margin: 0 }}>Formation</h3>
               </div>
               <div style={{ position: 'relative' }}>
-                <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
+                <div style={{ position: 'absolute', bottom: '-250px', left: '-250px', width: '600px', height: '600px', background: 'transparent', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
                 <div style={{ position: 'relative', zIndex: 1 }}>
                   <BriqueCard Icon={GraduationCap} title="Formation" desc="Transmettre ce qui marche : SPIN Selling, outils IA, Automatisation Veille et Outbound, Production contenu. Vos équipes sont formées à la prospection, au marketing et à la communication avec l'IA." link="/formations" />
                 </div>
               </div>
               <div style={{ marginTop: '1.5rem', textAlign: 'center' }}>
-                <p style={{ fontSize: '0.78rem', color: '#FFFFFF', fontWeight: 700, marginBottom: '0.75rem' }}>Formations avec l'IA :</p>
+                <p style={{ fontSize: '0.78rem', color: '#1C2B27', fontWeight: 700, marginBottom: '0.75rem' }}>Formations avec l'IA :</p>
                 <div style={{ display: 'flex', justifyContent: 'center', gap: '1.25rem' }}>
                   {formationTeasers.map((f, idx) => (
                     <button key={f.label} type="button" onClick={() => setFormationModalIdx(idx)} className="formation-link" style={{ background: 'none', border: 'none', cursor: 'pointer', padding: 0, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.5rem' }}>
                       <img src={f.image} alt={f.label} className="formation-thumb" style={{ width: '112px', height: '112px', borderRadius: '14px', objectFit: 'cover' }} />
-                      <span className="formation-label" style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.5)' }}>{f.label}</span>
+                      <span className="formation-label" style={{ fontSize: '0.78rem', color: 'rgba(28,43,39,0.6)' }}>{f.label}</span>
                     </button>
                   ))}
                 </div>
@@ -1179,131 +1211,41 @@ const Home = () => {
       {/* ═══ 04B — EXEMPLE DE STRUCTURE D'ACCOMPAGNEMENT ═══ */}
       <section className="section-padding" style={{ backgroundColor: 'transparent' }}>
         <div className="container fade-in">
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <p style={kicker}>MÉTHODE</p>
-            <h2 style={{ ...h2Style, marginBottom: '1rem' }}>Structure d'accompagnement</h2>
-            <p style={{ ...chapo, margin: '0 auto' }}>Voici un exemple de la méthodologie avec laquelle nous accompagnons les entreprises, que nous adaptons à chaque fois au contexte.</p>
-          </div>
+          <RevealHeader center wrapStyle={{ marginBottom: '3.5rem' }} kickerText="MÉTHODE" title="Structure d'accompagnement" titleStyle={{ marginBottom: '1rem' }}
+            text={"Voici un exemple de la méthodologie avec laquelle nous accompagnons les entreprises, que nous adaptons à chaque fois au contexte."} />
           <Timeline isMobile={isMobile} />
         </div>
       </section>
 
       {/* ═══ 05 — CAS CLIENTS ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem' }}>
-        <div className="container fade-in">
-          <div style={{ textAlign: 'center', marginBottom: '5rem' }}>
-            <p style={kicker}>CAS CLIENTS</p>
-            <h2 style={{ ...h2Style, marginBottom: '1.5rem' }}>Résultats concrets</h2>
-            <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.5)', maxWidth: '700px', margin: '0 auto' }}>Actions réelles, impacts mesurables</p>
-          </div>
-
-          <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem', marginBottom: '4rem' }}>
-            {casesData.filter(c => ['crm-industrie', 'pipeline-b2b', 'formation-vente'].includes(c.id)).map((c, idx) => {
-              const img = caseImages[c.id];
-              return (
-                <motion.div
-                  key={c.id}
-                  initial={{ opacity: 0, y: 40 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-80px' }}
-                  transition={{ duration: 0.6, ease: 'easeOut', delay: idx * 0.18 }}
-                >
-                  <Link href={`/cas-clients/${c.id}`} style={{
-                    background: c.bgGradient || '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '2.5rem',
-                    cursor: 'pointer', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', minHeight: '340px',
-                    position: 'relative', overflow: 'hidden', textDecoration: 'none', transition: 'all 0.3s ease'
-                  }}
-                    onMouseEnter={(e) => {
-                      const overlay = e.currentTarget.querySelector('.card-overlay');
-                      const image = e.currentTarget.querySelector('.card-img');
-                      if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(10,15,46,0.65) 20%, rgba(10,15,46,0.2) 100%)';
-                      if (image) image.style.opacity = '0.55';
-                      e.currentTarget.style.transform = 'translateY(-5px)';
-                      e.currentTarget.style.borderColor = 'rgba(68,204,255,0.35)';
-                    }}
-                    onMouseLeave={(e) => {
-                      const overlay = e.currentTarget.querySelector('.card-overlay');
-                      const image = e.currentTarget.querySelector('.card-img');
-                      if (overlay) overlay.style.background = 'linear-gradient(to top, rgba(10,15,46,0.8) 30%, rgba(10,15,46,0.3) 100%)';
-                      if (image) image.style.opacity = '0.38';
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.07)';
-                    }}
-                  >
-                    {img && (<img src={img} alt="" className="card-img" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: 0.38, transition: 'opacity 0.4s ease', pointerEvents: 'none' }} />)}
-                    <div className="card-overlay" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,46,0.8) 30%, rgba(10,15,46,0.3) 100%)', transition: 'background 0.4s ease', pointerEvents: 'none' }} />
-                    <div style={{ position: 'relative', zIndex: 1 }}>
-                      <Tag>{caseLabels[c.id] || c.tags[0]}</Tag>
-                      <div style={{ marginTop: '1.2rem', marginBottom: '0.5rem', fontSize: '1rem', fontWeight: 500, color: 'rgba(255,255,255,0.75)' }}>{c.shortTitle}</div>
-                      {c.id === 'crm-industrie' ? (
-                        <div style={{ marginBottom: '1.4rem' }}>
-                          <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em' }}>+32 rendez-vous qualifiés</div>
-                          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>avec des directeurs d'exploitation en 5 mois</div>
-                        </div>
-                      ) : c.id === 'formation-vente' ? (
-                        <div style={{ marginBottom: '1.4rem' }}>
-                          <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>x3 ROI</div>
-                          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>via méthode vente B2B + outils IA</div>
-                        </div>
-                      ) : (
-                        <div style={{ marginBottom: '1.4rem' }}>
-                          <div style={{ fontSize: '1.6rem', fontWeight: 700, lineHeight: 1.2, color: '#44CCFF', letterSpacing: '-0.01em', whiteSpace: 'nowrap' }}>+39 opportunités</div>
-                          <div style={{ fontSize: '13px', color: 'rgba(255,255,255,0.5)', marginTop: '4px' }}>en 2 mois</div>
-                        </div>
-                      )}
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '6px', color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem', fontWeight: 500 }}>
-                        Voir l'étude complète <ArrowRight size={14} />
-                      </div>
-                    </div>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-
-          <div style={{ textAlign: 'center' }}>
-            <Link href="/cas-clients" style={{
-              display: 'inline-flex', alignItems: 'center', backgroundColor: 'transparent', color: '#44CCFF', fontWeight: 600,
-              padding: '1rem 2.5rem', borderRadius: '8px', border: '1px solid #44CCFF', textDecoration: 'none', transition: 'all 0.3s ease'
-            }}
-              onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = 'rgba(68, 204, 255, 0.05)'; e.currentTarget.style.transform = 'scale(1.02)'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = 'transparent'; e.currentTarget.style.transform = 'scale(1)'; }}>
-              Voir tous les cas <ArrowRight size={18} style={{ marginLeft: '0.75rem' }} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <CasesShowcase images={caseImages} labels={caseLabels} />
 
       {/* ═══ 06 — COMBIEN ÇA COÛTE ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingBottom: '3rem', position: 'relative' }}>
-        <div style={{ position: 'absolute', bottom: '-180px', right: '-120px', width: '650px', height: '650px', background: 'radial-gradient(circle, rgba(37, 99, 235, 0.55) 0%, transparent 70%)', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingBottom: '3rem', position: 'relative' }}>
+        <div style={{ position: 'absolute', bottom: '-180px', right: '-120px', width: '650px', height: '650px', background: 'transparent', filter: 'blur(110px)', zIndex: 0, pointerEvents: 'none' }} />
         <div className="container fade-in" style={{ position: 'relative', zIndex: 1 }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <p style={kicker}>COMBIEN ÇA COÛTE</p>
-            <h2 style={h2Style}>Nos services adaptés à vos besoins</h2>
-          </div>
+          <RevealHeader center wrapStyle={{ marginBottom: '3rem' }} kickerText="COMBIEN ÇA COÛTE" title="Nos services adaptés à vos besoins" />
 
           <PricingTabs />
         </div>
       </section>
 
       {/* ═══ 07 — FAQ ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '8rem', paddingBottom: '8rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '8rem', paddingBottom: '8rem' }}>
         <div className="container fade-in">
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <p style={kicker}>F.A.Q.</p>
-            <h2 style={{ ...h2Style, textAlign: 'center' }}>Questions fréquentes</h2>
-          </div>
+          <RevealHeader center wrapStyle={{ marginBottom: '4rem' }} kickerText="F.A.Q." title="Questions fréquentes" />
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {faqItems.map((faq, idx) => (
-              <AccordionItem key={idx} question={faq.q} answer={faq.a} isOpen={openFAQ === idx} onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)} />
+              <motion.div key={idx} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-40px' }} transition={{ duration: 0.6, ease: EASE_PREMIUM, delay: idx * 0.09 }}>
+                <AccordionItem question={faq.q} answer={faq.a} isOpen={openFAQ === idx} onToggle={() => setOpenFAQ(openFAQ === idx ? null : idx)} />
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* ═══ 08 — ILS NOUS FONT CONFIANCE (logos) ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '9rem' }}>
         <div className="container fade-in">
           <PartnerLogosMarquee description="Nous avons aidé ces entreprises à générer des rendez-vous qualifiés et à structurer durablement leur prospection sortante." contained={true} />
         </div>

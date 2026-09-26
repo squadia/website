@@ -1,4 +1,6 @@
 'use client';
+import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
+import { Database as IcoDatabase, Search as IcoSearch, Target as IcoTarget, FileText as IcoFile } from 'lucide-react';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -76,7 +78,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
           right: '-100px',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)',
+          background: 'transparent',
           filter: 'blur(110px)',
           zIndex: 0,
           pointerEvents: 'none'
@@ -88,17 +90,17 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
         padding: '4rem 4rem', 
         maxWidth: '1200px', 
         margin: '0 auto',
-        backgroundColor: '#0D0D25',
+        backgroundColor: '#F6F3EC',
         borderRadius: '32px',
-        border: '2px solid #44CCFF',
-        color: '#FFFFFF',
+        border: '2px solid #B08D57',
+        color: '#1C2B27',
         overflow: 'hidden',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+        boxShadow: '0 25px 50px -12px rgba(28,43,39,0.175)'
       }}>
         <div style={{ position: 'relative', zIndex: 1 }}>
-          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem', textAlign: 'center' }}>Livrables</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#FFFFFF', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
-            Une donnée <span style={{ textDecoration: 'underline', color: '#FFFFFF' }}>intelligente</span> pour vos équipes.
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>Livrables</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, textAlign: 'center', color: '#1C2B27', marginBottom: '2.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+            Une donnée <span style={{ textDecoration: 'underline', color: '#1C2B27' }}>intelligente</span> pour vos équipes.
           </h2>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 1.4fr)', gap: '3rem', alignItems: 'start' }}>
@@ -106,27 +108,27 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
               {items.map((item) => {
                 const isOpen = activeId === item.id;
                 return (
-                  <div key={item.id} style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}>
+                  <div key={item.id} style={{ borderBottom: '1px solid rgba(28,43,39,0.16)' }}>
                     <button
                       onClick={() => setActiveId(item.id)}
                       style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.2rem 0', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' }}
                     >
                       <div style={{ width: '100%', paddingRight: '1rem' }}>
-                        <span style={{ fontSize: '1.1rem', fontWeight: 700, color: isOpen ? '#FFFFFF' : 'rgba(255,255,255,0.65)', transition: 'color 0.2s', display: 'block' }}>
+                        <span style={{ fontSize: '1.1rem', fontWeight: 700, color: isOpen ? '#1C2B27' : 'rgba(28,43,39,0.65)', transition: 'color 0.2s', display: 'block' }}>
                           {item.title}
                         </span>
                         {isOpen && (
-                          <div style={{ marginTop: '0.6rem', height: '3px', background: 'rgba(255,255,255,0.1)', width: '100%', borderRadius: '2px', overflow: 'hidden' }}>
-                            <div key={`progress-${activeId}`} style={{ height: '100%', background: '#2563EB', animation: 'drawProgressAccordionSeg 4s linear forwards' }} />
+                          <div style={{ marginTop: '0.6rem', height: '3px', background: 'rgba(255,255,255,1.0)', width: '100%', borderRadius: '2px', overflow: 'hidden' }}>
+                            <div key={`progress-${activeId}`} style={{ height: '100%', background: '#1F3A33', animation: 'drawProgressAccordionSeg 4s linear forwards' }} />
                           </div>
                         )}
                       </div>
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isOpen ? '#FFFFFF' : 'rgba(255,255,255,0.3)'} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)', flexShrink: 0 }} >
+                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke={isOpen ? '#1C2B27' : 'rgba(28,43,39,0.6)'} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" style={{ transform: isOpen ? 'rotate(90deg)' : 'rotate(0deg)', transition: 'transform 0.35s cubic-bezier(0.4,0,0.2,1)', flexShrink: 0 }} >
                         <polyline points="9 18 15 12 9 6" />
                       </svg>
                     </button>
                     <div style={{ height: isOpen ? '110px' : '0', overflow: 'hidden', transition: 'height 0.35s cubic-bezier(0.4,0,0.2,1)' }}>
-                      <p style={{ color: 'rgba(255,255,255,0.88)', lineHeight: 1.6, fontSize: '1rem', fontWeight: 500, paddingBottom: '1.2rem', maxWidth: '440px' }}>
+                      <p style={{ color: 'rgba(28,43,39,0.88)', lineHeight: 1.6, fontSize: '1rem', fontWeight: 500, paddingBottom: '1.2rem', maxWidth: '440px' }}>
                         {item.description}
                       </p>
                     </div>
@@ -135,7 +137,7 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
               })}
             </div>
 
-            <div style={{ position: 'sticky', top: '20vh', borderRadius: '20px', overflow: 'hidden', border: '5px solid rgba(255,255,255,0.08)', aspectRatio: '16/9', background: '#0A0A1A', boxShadow: '0 20px 40px -10px rgba(0,0,0,0.5)' }}>
+            <div style={{ position: 'sticky', top: '20vh', borderRadius: '20px', overflow: 'hidden', border: '5px solid rgba(28,43,39,0.14)', aspectRatio: '16/9', background: '#F6F3EC', boxShadow: '0 20px 40px -10px rgba(28,43,39,0.175)' }}>
               <img key={activeId} src={activeItem.image} alt={activeItem.title} style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', animation: 'fadeInFeatureSeg 0.4s ease' }} />
             </div>
           </div>
@@ -151,9 +153,9 @@ const AccordionFeatures = ({ img1, img2, img3, img4 }) => {
 
 const DataSegCSS = `
 @keyframes pulseDotSeg {
-  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(68,204,255,0.7); }
-  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(68,204,255,0); }
-  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(68,204,255,0); }
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(176,141,87,0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(176,141,87,0.0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(176,141,87,0.0); }
 }
 `;
 
@@ -196,7 +198,7 @@ export default function DataSeg() {
 
   return (
     <>
-      <div style={{ backgroundColor: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', paddingBottom: '4rem', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+      <div style={{ backgroundColor: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', paddingBottom: '4rem', fontFamily: 'var(--font-main)' }}>
         
         {/* SECTION 1 : HERO */}
         <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
@@ -209,26 +211,26 @@ export default function DataSeg() {
           }} />
           <div style={{
             position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1,
-            background: 'rgba(10,10,26,0.40)'
+            background: 'rgba(246,243,236,0.4)'
           }} />
           <div style={{
             position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
-            background: 'linear-gradient(105deg, rgba(10,10,26,0.97) 0%, rgba(10,10,26,0.75) 35%, rgba(10,10,26,0.40) 60%, transparent 100%)',
+            background: 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.75) 35%, rgba(246,243,236,0.4) 60%, transparent 100%)',
           }} />
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2,
-            background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
+            background: 'linear-gradient(to bottom, transparent, #F6F3EC)',
           }} />
 
 
 
           <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: '8%' }}>
-            <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Data Seg</p>
+            <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Data Seg</p>
             <motion.h1 
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2 }}
-              style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}>
+              style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#1C2B27', marginBottom: '1.5rem', maxWidth: '750px' }}>
               Ne parlez plus à tout le monde.<br />
               Parlez aux bons prospects.
             </motion.h1>
@@ -237,18 +239,18 @@ export default function DataSeg() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.15 }}
               style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem' }}>
-              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>68 %</span>
-              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>de taux de gain en plus pour les entreprises avec un ICP clairement défini <span style={{ color: 'rgba(255,255,255,0.35)' }}>(TOPO Research, Gartner)</span></span>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#8A6D3B' }}>68 %</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', maxWidth: '280px', lineHeight: 1.3 }}>de taux de gain en plus pour les entreprises avec un ICP clairement défini <span style={{ color: 'rgba(28,43,39,0.6)' }}>(TOPO Research, Gartner)</span></span>
             </motion.div>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.2, delay: 0.3 }}
-              style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
+              style={{ fontSize: '1.25rem', color: 'rgba(28,43,39,0.78)', maxWidth: '600px', marginBottom: '3rem' }}>
               Data Seg transforme votre base de données en un moteur de ciblage. Nous identifions votre ICP pour que vos équipes se concentrent sur les opportunités à fort potentiel.
             </motion.p>
             <div style={{ display: 'flex', gap: '1rem' }}>
-              <Link href="/contact" style={{ backgroundColor: '#44CCFF', color: '#060612', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none' }}>RDV avec un expert</Link>
+              <Link href="/contact" style={{ backgroundColor: '#1F3A33', color: '#F6F3EC', padding: '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none' }}>RDV avec un expert</Link>
             </div>
           </div>
         </section>
@@ -258,9 +260,9 @@ export default function DataSeg() {
           <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8rem', alignItems: 'center' }}>
               <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-                <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' }}>Segmentation</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '2rem' }}>La fin du "spray and pray".</h2>
-                <div style={{ width: '80px', height: '4px', backgroundColor: '#2563EB', borderRadius: '2px', marginBottom: '2rem' }} />
+                <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem' }}>Segmentation</p>
+                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '2rem' }}>La fin du "spray and pray".</h2>
+                <div style={{ width: '80px', height: '4px', backgroundColor: '#1F3A33', borderRadius: '2px', marginBottom: '2rem' }} />
                 
                 <div style={{ position: 'relative' }}>
                   {/* Intense Video Halo - Bottom Left */}
@@ -270,7 +272,7 @@ export default function DataSeg() {
                       left: '-250px',
                       width: '600px',
                       height: '600px',
-                      background: 'radial-gradient(circle, rgba(37, 99, 235, 0.6) 0%, transparent 70%)',
+                      background: 'transparent',
                       filter: 'blur(110px)',
                       zIndex: 0,
                       pointerEvents: 'none'
@@ -292,12 +294,12 @@ export default function DataSeg() {
                       maxWidth: '380px',
                       margin: '0',
                       aspectRatio: '3/4', 
-                      backgroundColor: '#0D0D25', 
+                      backgroundColor: '#F6F3EC', 
                       borderRadius: '20px', 
-                      border: '5px solid #1A1A3A', 
+                      border: '5px solid #D8D1C2', 
                       overflow: 'hidden',
                       position: 'relative',
-                      boxShadow: '0 30px 60px rgba(0,0,0,0.4)',
+                      boxShadow: '0 30px 60px rgba(28,43,39,0.14)',
                       cursor: 'pointer',
                       zIndex: 1
                     }}
@@ -336,9 +338,9 @@ export default function DataSeg() {
                       top: '1.5rem',
                       right: '1.5rem',
                       zIndex: 10,
-                      background: 'rgba(5, 5, 16, 0.5)',
+                      background: 'rgba(246,243,236,0.5)',
                       backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(68, 204, 255, 0.3)',
+                      border: '1px solid rgba(176,141,87,0.3)',
                       borderRadius: '50%',
                       width: '44px',
                       height: '44px',
@@ -346,13 +348,13 @@ export default function DataSeg() {
                       alignItems: 'center',
                       justifyContent: 'center',
                       cursor: 'pointer',
-                      color: '#fff',
+                      color: '#1C2B27',
                       transition: 'all 0.3s ease'
                     }}
                     onMouseEnter={(e) => e.target.style.transform = 'scale(1.1)'}
                     onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
                   >
-                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#44CCFF" />}
+                    {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#8A6D3B" />}
                   </button>
 
                   {/* CENTRAL PLAY BUTTON */}
@@ -363,17 +365,17 @@ export default function DataSeg() {
                     transform: 'translate(-50%, -50%)',
                     width: '80px',
                     height: '80px',
-                    backgroundColor: 'rgba(68, 204, 255, 0.2)',
+                    backgroundColor: 'rgba(176,141,87,0.2)',
                     backdropFilter: 'blur(8px)',
                     borderRadius: '50%',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    border: '1px solid rgba(68, 204, 255, 0.4)',
+                    border: '1px solid rgba(176,141,87,0.4)',
                     transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
                     zIndex: 3
                   }}>
-                    <Play size={32} fill="#44CCFF" color="#44CCFF" style={{ marginLeft: '4px' }} />
+                    <Play size={32} fill="#1F3A33" color="#8A6D3B" style={{ marginLeft: '4px' }} />
                   </div>
 
                   <style>{`
@@ -383,7 +385,7 @@ export default function DataSeg() {
                       pointer-events: none;
                     }
                     .play-button-overlay:hover {
-                      background-color: rgba(68, 204, 255, 0.35);
+                      background-color: rgba(138,109,59,0.8);
                       transform: translate(-50%, -50%) scale(1.1);
                     }
                   `}</style>
@@ -397,8 +399,8 @@ export default function DataSeg() {
                     height: '100px', 
                     backdropFilter: 'blur(15px) brightness(0.6)',
                     WebkitBackdropFilter: 'blur(15px) brightness(0.6)',
-                    maskImage: 'linear-gradient(to top, black 0%, rgba(0,0,0,0.5) 50%, transparent 100%)',
-                    WebkitMaskImage: 'linear-gradient(to top, black 0%, rgba(0,0,0,0.5) 50%, transparent 100%)',
+                    maskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)',
                     pointerEvents: 'none',
                     zIndex: 1
                   }} />
@@ -415,10 +417,10 @@ export default function DataSeg() {
                 ].map((item, idx) => (
                   <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                     <div style={{ display: 'flex', gap: '1.5rem' }}>
-                      <CheckCircle size={32} color="#2563EB" style={{ flexShrink: 0 }} />
+                      <CheckCircle size={32} color="#1F3A33" style={{ flexShrink: 0 }} />
                       <div>
-                        <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: '#F9FAFB', marginBottom: '0.5rem' }}>{item.title}</h3>
-                        <p style={{ color: 'rgba(255,255,255,0.45)', lineHeight: 1.6 }}>{item.desc}</p>
+                        <h3 style={{ fontSize: '1.3rem', fontWeight: 600, color: '#1C2B27', marginBottom: '0.5rem' }}>{item.title}</h3>
+                        <p style={{ color: 'rgba(28,43,39,0.6)', lineHeight: 1.6 }}>{item.desc}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -429,19 +431,28 @@ export default function DataSeg() {
         </section>
 
         {/* SECTION 3 : LIVRABLES */}
-        <AccordionFeatures 
-          img1={icpImg} 
-          img2={segmentationImg} 
-          img3={scoringImg} 
-          img4={architectureImg} 
-        />
+        <section style={{ padding: '6rem 2rem' }}>
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>Livrables</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', color: '#1C2B27', marginBottom: '3rem', textAlign: 'center' }}>
+            Une donnée <span style={{ textDecoration: 'underline', color: '#1C2B27' }}>intelligente</span> pour vos équipes.
+          </h2>
+          <EnjeuxCarousel
+            items={features(icpImg, segmentationImg, scoringImg, architectureImg).map((f, i) => ({
+              short: ['Audit ICP', 'Segmentation', 'Scoring', 'Architecture'][i],
+              title: f.title,
+              desc: f.description,
+              image: f.image,
+              icon: [<IcoDatabase key="i0" color="#1F3A33" />, <IcoSearch key="i1" color="#1F3A33" />, <IcoTarget key="i2" color="#1F3A33" />, <IcoFile key="i3" color="#1F3A33" />][i],
+            }))}
+          />
+        </section>
 
         {/* SECTION 5 : LE DÉROULÉ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#1C2B27' }}>
             Le déroulé de Data Seg.
           </h2>
-          <div style={{ position: 'relative', borderLeft: '2px solid #44CCFF', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+          <div style={{ position: 'relative', borderLeft: '2px solid #B08D57', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
             {[
               { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
               { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
@@ -454,19 +465,19 @@ export default function DataSeg() {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-10% 0px" }}
                 variants={{
-                  hidden: { opacity: 0, y: 50, backgroundColor: 'rgba(37, 99, 235, 0)', borderColor: 'rgba(255,255,255,0.05)' },
-                  visible: { opacity: 1, y: 0, backgroundColor: 'rgba(37, 99, 235, 0.04)', borderColor: 'rgba(37, 99, 235, 0.4)' }
+                  hidden: { opacity: 0, y: 50, backgroundColor: 'rgba(31,58,51,0.0)', borderColor: 'rgba(28,43,39,0.14)' },
+                  visible: { opacity: 1, y: 0, backgroundColor: 'rgba(31,58,51,0.04)', borderColor: 'rgba(31,58,51,0.4)' }
                 }}
                 transition={{ duration: 1.2, ease: "easeOut" }}
                 style={{ position: 'relative', padding: '2rem', borderRadius: '1rem', border: '1px solid' }}
               >
                 <motion.div 
-                  variants={{ hidden: { backgroundColor: '#11111E', borderColor: '#1A1A2E', color: 'rgba(255,255,255,0.2)' }, visible: { backgroundColor: '#2563EB', borderColor: '#2563EB', color: '#FFFFFF' } }}
+                  variants={{ hidden: { backgroundColor: '#FFFFFF', borderColor: '#D8D1C2', color: 'rgba(28,43,39,0.6)' }, visible: { backgroundColor: '#1F3A33', borderColor: '#1F3A33', color: '#F6F3EC' } }}
                   transition={{ duration: 0.8 }}
                   style={{ position: 'absolute', left: '-3.65rem', top: '2rem', width: '2.2rem', height: '2.2rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', border: '2px solid', zIndex: 10 }}
                 >{item.step}</motion.div>
-                <motion.h3 variants={{ hidden: { color: 'rgba(255,255,255,0.1)' }, visible: { color: '#E5E7EB' } }} style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</motion.h3>
-                <motion.p variants={{ hidden: { color: 'rgba(156,163,175,0.1)' }, visible: { color: '#6B7280' } }} style={{ lineHeight: 1.6 }}>{item.desc}</motion.p>
+                <motion.h3 variants={{ hidden: { color: 'rgba(28,43,39,0.6)' }, visible: { color: '#4A534F' } }} style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</motion.h3>
+                <motion.p variants={{ hidden: { color: 'rgba(74,83,79,0.1)' }, visible: { color: '#6B716C' } }} style={{ lineHeight: 1.6 }}>{item.desc}</motion.p>
               </motion.div>
             ))}
           </div>
@@ -475,10 +486,10 @@ export default function DataSeg() {
         {/* PRICING SECTION : STYLE TARIFS */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '1rem' }}>
               Une approche modulable par briques.
             </h2>
-            <p style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.45)', maxWidth: '700px', marginInline: 'auto' }}>
+            <p style={{ fontSize: '1.2rem', color: 'rgba(28,43,39,0.6)', maxWidth: '700px', marginInline: 'auto' }}>
               Le périmètre exact est cadré ensemble pour garantir l'impact business immédiat.
             </p>
           </div>
@@ -529,8 +540,8 @@ export default function DataSeg() {
               <div 
                 key={idx} 
                 style={{
-                  background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  background: '#F6F3EC',
+                  border: card.badge ? '2px solid #1F3A33' : '1px solid #D8D1C2',
                   padding: '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -539,41 +550,41 @@ export default function DataSeg() {
                 }}
               >
                 {card.badge && (
-                  <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 700 }}>
+                  <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.7rem', fontWeight: 700 }}>
                     {card.badge}
                   </div>
                 )}
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem' }}>{card.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2.5rem', minHeight: '3rem', lineHeight: 1.6 }}>{card.subtitle}</p>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: 700, color: '#1C2B27', marginBottom: '1rem' }}>{card.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '2.5rem', minHeight: '3rem', lineHeight: 1.6 }}>{card.subtitle}</p>
                 
                 <div style={{ marginBottom: '2.5rem' }}>
-                  <div style={{ fontSize: '2.2rem', fontWeight: 700, color: '#F9FAFB', whiteSpace: 'nowrap' }}>
+                  <div style={{ fontSize: '2.2rem', fontWeight: 700, color: '#1C2B27', whiteSpace: 'nowrap' }}>
                     {(() => {
                       let displayPrice = card.price;
                       let prefix = card.prefix;
                       return (
                         <>
                           {prefix && (
-                            <span style={{ fontSize: '1.1rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>
+                            <span style={{ fontSize: '1.1rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>
                           )}
                           {displayPrice}
                         </>
                       );
                     })()}
                   </div>
-                  <p style={{ fontSize: '0.8rem', color: '#9CA3AF', marginTop: '0.5rem' }}>Périmètre ajusté au cadrage.</p>
+                  <p style={{ fontSize: '0.8rem', color: '#4A534F', marginTop: '0.5rem' }}>Périmètre ajusté au cadrage.</p>
                 </div>
 
                 <div style={{ flexGrow: 1, marginBottom: '2.5rem' }}>
                   {card.items.map((li, i) => (
                     <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '1rem', alignItems: 'flex-start' }}>
-                      <Check size={18} color={card.badge ? "#2563EB" : "#44CCFF"} style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.4 }}>{li}</span>
+                      <Check size={18} color={card.badge ? "#1F3A33" : "#8A6D3B"} style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <span style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.4 }}>{li}</span>
                     </div>
                   ))}
                 </div>
 
-                <Link href="/contact" style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#44CCFF' : 'transparent', color: '#FFFFFF', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none', textAlign: 'center', display: 'block', boxSizing: 'border-box' }}>
+                <Link href="/contact" style={{ width: '100%', padding: '1rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '1rem', border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.32)', background: card.badge ? '#1F3A33' : 'transparent', color: card.badge ? '#F6F3EC' : '#1C2B27', cursor: 'pointer', transition: 'all 0.3s', textDecoration: 'none', textAlign: 'center', display: 'block', boxSizing: 'border-box' }}>
                   RDV avec un expert
                 </Link>
               </div>
@@ -586,7 +597,7 @@ export default function DataSeg() {
 
         {/* FAQ */}
         <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#F9FAFB' }}>Questions fréquentes</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#1C2B27' }}>Questions fréquentes</h2>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             {[
               { q: "À quoi sert Data Seg ?", a: "À structurer votre base pour cibler les bons prospects avec les bons messages." },
@@ -601,14 +612,14 @@ export default function DataSeg() {
               <div
                 key={idx}
                 onClick={() => toggleFAQ(idx)}
-                style={{ backgroundColor: '#0D0D25', border: '1px solid rgba(68, 204, 255, 0.18)', borderRadius: '16px', padding: '1.6rem', cursor: 'pointer', transition: 'all 0.3s ease' }}
+                style={{ backgroundColor: '#F6F3EC', border: '1px solid rgba(176,141,87,0.18)', borderRadius: '16px', padding: '1.6rem', cursor: 'pointer', transition: 'all 0.3s ease' }}
               >
-                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem' }}>
+                <div style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left', color: '#1C2B27', fontSize: '1.05rem', fontWeight: 600, gap: '1rem' }}>
                   <span>{faq.q}</span>
-                  <ChevronDown style={{ transition: 'transform 0.3s ease', transform: openFAQ === idx ? 'rotate(180deg)' : 'rotate(0deg)', color: '#44CCFF', flexShrink: 0 }} />
+                  <ChevronDown style={{ transition: 'transform 0.3s ease', transform: openFAQ === idx ? 'rotate(180deg)' : 'rotate(0deg)', color: '#8A6D3B', flexShrink: 0 }} />
                 </div>
                 <div style={{ maxHeight: openFAQ === idx ? '400px' : '0', overflow: 'hidden', transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease', opacity: openFAQ === idx ? 1 : 0 }}>
-                  <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{faq.a}</div>
+                  <div style={{ marginTop: '1.1rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{faq.a}</div>
                 </div>
               </div>
             ))}

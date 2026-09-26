@@ -46,13 +46,13 @@ export default function TestimonialsMarquee({ page }) {
   const looped = [...items, ...items];
 
   return (
-    <section className="section-padding" style={{ background: '#050510' }}>
+    <section className="section-padding" style={{ background: '#F6F3EC' }}>
       <div className="container">
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '0.75rem' }}>
             Ce qu'ils en disent
           </h2>
-          <p style={{ color: 'rgba(255,255,255,0.5)', fontSize: '14px' }}>
+          <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '14px' }}>
             Des retours vidéo de personnes formées par Squadia
           </p>
         </div>
@@ -96,15 +96,15 @@ export default function TestimonialsMarquee({ page }) {
           height: 340px;
           object-fit: cover;
           border-radius: 16px;
-          border: 1px solid #1A1A3A;
-          background: #0D0D25;
+          border: 1px solid #D8D1C2;
+          background: #F6F3EC;
           display: block;
         }
         .testimonials-marquee-caption {
           margin-top: 0.6rem;
           text-align: center;
           font-size: 0.8rem;
-          color: rgba(255,255,255,0.6);
+          color: rgba(28,43,39,0.6);
         }
         .testimonials-marquee-demo {
           display: flex;
@@ -112,8 +112,8 @@ export default function TestimonialsMarquee({ page }) {
           justify-content: center;
           font-size: 4rem;
           font-weight: 800;
-          color: #44CCFF;
-          background: linear-gradient(160deg, #0D0D25 0%, #14143a 100%);
+          color: #8A6D3B;
+          background: linear-gradient(160deg, #F6F3EC 0%, #FFFFFF 100%);
         }
         @keyframes testimonialsScroll {
           0% { transform: translateX(0); }

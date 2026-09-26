@@ -39,7 +39,7 @@ const EnjeuxCarousel = ({ items }) => {
           justifyContent: 'center',
           gap: '0.5rem',
           marginBottom: '2.5rem',
-          borderBottom: '1px solid rgba(255,255,255,0.08)',
+          borderBottom: '1px solid #D8D1C2',
         }}
       >
         {items.map((item, i) => (
@@ -57,7 +57,7 @@ const EnjeuxCarousel = ({ items }) => {
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              color: activeIndex === i ? '#F9FAFB' : 'rgba(255,255,255,0.45)',
+              color: activeIndex === i ? '#1C2B27' : 'rgba(28,43,39,0.6)',
               fontWeight: 600,
               fontSize: '0.92rem',
               position: 'relative',
@@ -72,7 +72,7 @@ const EnjeuxCarousel = ({ items }) => {
               position: 'absolute',
               left: 0, right: 0, bottom: -1,
               height: '2px',
-              background: 'rgba(255,255,255,0.08)',
+              background: 'transparent',
               overflow: 'hidden',
               borderRadius: '2px',
             }}>
@@ -80,7 +80,7 @@ const EnjeuxCarousel = ({ items }) => {
                 display: 'block',
                 height: '100%',
                 width: activeIndex === i ? `${progress}%` : '0%',
-                background: '#44CCFF',
+                background: '#8A6D3B',
                 transition: activeIndex === i ? 'width 0.05s linear' : 'none',
               }} />
             </span>
@@ -91,27 +91,27 @@ const EnjeuxCarousel = ({ items }) => {
       <div
         className="enjeux-panel"
         style={{
-          background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
-          border: '1px solid rgba(68,204,255,0.12)',
+          background: '#FFFFFF',
+          border: '1px solid #D8D1C2',
           borderRadius: '20px',
           padding: '3rem',
-          boxShadow: '0 4px 24px rgba(0,0,0,0.3)',
+          boxShadow: '0 4px 24px rgba(28,43,39,0.105)',
           minHeight: '360px',
         }}
       >
         <div>
-          <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: 'rgba(37,99,235,0.15)', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ marginBottom: '1.5rem', width: '44px', height: '44px', background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '10px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             {active.icon}
           </div>
-          <h3 style={{ fontSize: '1.4rem', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.4, color: '#F9FAFB' }}>{active.title}</h3>
-          <p style={{ color: 'rgba(255,255,255,0.78)', lineHeight: 1.7, fontSize: '1rem', margin: 0 }}>{active.desc}</p>
+          <h3 style={{ fontSize: '1.4rem', fontWeight: 600, marginBottom: '1rem', lineHeight: 1.4, color: '#1C2B27' }}>{active.title}</h3>
+          <p style={{ color: 'rgba(28,43,39,0.78)', lineHeight: 1.7, fontSize: '1rem', margin: 0 }}>{active.desc}</p>
         </div>
         <div className="enjeux-image" style={{
           position: 'relative',
           borderRadius: '14px',
           overflow: 'hidden',
-          border: '1px solid rgba(68,204,255,0.18)',
-          boxShadow: '0 12px 40px rgba(0,0,0,0.4)',
+          border: '1px solid rgba(176,141,87,0.18)',
+          boxShadow: '0 12px 40px rgba(28,43,39,0.14)',
           aspectRatio: '4 / 3',
         }}>
           <img src={active.image} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }} />

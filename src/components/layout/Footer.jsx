@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 
 const Footer = () => (
-  <footer style={{ background: '#050510', padding: '5rem 0 3rem 0', borderTop: '1px solid #111' }}>
+  <footer style={{ background: '#F6F3EC', padding: '5rem 0 3rem 0', borderTop: '1px solid #D8D1C2' }}>
     <div className="container">
       <div className="footer-grid">
         {/* COLONNE 1 */}
@@ -70,7 +70,7 @@ const Footer = () => (
           </ul>
         </div>
       </div>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #1A1A3A', gap: '2rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-start', paddingTop: '3rem', borderTop: '1px solid #D8D1C2', gap: '2rem' }}>
         <div>
           <Link href="/">
             <img src="/logo.png" alt="Squadia" style={{ height: '32px', width: 'auto', marginBottom: '1.5rem' }} />

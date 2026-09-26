@@ -49,10 +49,10 @@ export default function ClientLogosSection({ description, contained = false }) {
         gridTemplateColumns: 'minmax(0, 1.2fr) minmax(0, 1.6fr)',
         gap: '4rem',
         alignItems: 'center',
-        backgroundColor: '#0D0D25',
+        backgroundColor: '#F6F3EC',
         borderRadius: '32px',
-        border: '2px solid #1A1A3A',
-        boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)',
+        border: '2px solid #FFFFFF',
+        boxShadow: '0 25px 50px -12px rgba(28,43,39,0.175)',
         overflow: 'hidden',
         position: 'relative',
         minHeight: '480px'
@@ -64,7 +64,7 @@ export default function ClientLogosSection({ description, contained = false }) {
             fontWeight: 800, 
             letterSpacing: '0.12em', 
             textTransform: 'uppercase', 
-            color: '#44CCFF', 
+            color: '#8A6D3B', 
             marginBottom: '1rem' 
           }}>
             entreprises clientes
@@ -72,17 +72,17 @@ export default function ClientLogosSection({ description, contained = false }) {
           <h2 style={{ 
             fontSize: 'clamp(2rem, 3.5vw, 2.8rem)', 
             fontWeight: 800, 
-            color: '#FFFFFF', 
+            color: '#1C2B27', 
             marginBottom: '1.5rem', 
             letterSpacing: '-0.02em', 
             lineHeight: 1.1 
           }}>
             Ils nous font <br />
-            <span style={{ color: '#44CCFF' }}>confiance</span>
+            <span style={{ color: '#8A6D3B' }}>confiance</span>
           </h2>
           <p style={{ 
             fontSize: '1.05rem', 
-            color: 'rgba(255,255,255,0.7)', 
+            color: 'rgba(28,43,39,0.7)', 
             lineHeight: 1.6, 
             marginBottom: '3rem' 
           }}>
@@ -93,11 +93,11 @@ export default function ClientLogosSection({ description, contained = false }) {
             display: 'inline-flex',
             alignItems: 'center',
             backgroundColor: 'transparent',
-            color: '#44CCFF',
+            color: '#8A6D3B',
             fontWeight: 600,
             padding: '1rem 2.5rem',
             borderRadius: '8px',
-            border: '1px solid #44CCFF',
+            border: '1px solid #8A6D3B',
             textDecoration: 'none',
             transition: 'all 0.3s ease'
           }}>
@@ -155,7 +155,7 @@ export default function ClientLogosSection({ description, contained = false }) {
           left: '-150px',
           width: '500px',
           height: '500px',
-          background: 'radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, transparent 70%)',
+          background: 'transparent',
           filter: 'blur(100px)',
           zIndex: 0,
           pointerEvents: 'none'
@@ -166,7 +166,7 @@ export default function ClientLogosSection({ description, contained = false }) {
           right: '-100px',
           width: '450px',
           height: '450px',
-          background: 'radial-gradient(circle, rgba(68, 204, 255, 0.25) 0%, transparent 70%)',
+          background: 'transparent',
           filter: 'blur(90px)',
           zIndex: 0,
           pointerEvents: 'none'
@@ -188,7 +188,7 @@ export default function ClientLogosSection({ description, contained = false }) {
             width: auto;
             object-fit: contain;
             opacity: 1;
-            filter: grayscale(0) brightness(1.2) drop-shadow(0 0 12px rgba(68, 204, 255, 0.5));
+            filter: grayscale(0) brightness(1.2) drop-shadow(0 0 12px rgba(176,141,87,0.5));
             transform: scale(1.05);
             transition: all 0.3s ease;
           }
@@ -211,7 +211,7 @@ export default function ClientLogosSection({ description, contained = false }) {
           }
           
           .hover-btn-transparent:hover {
-            background-color: rgba(68, 204, 255, 0.05) !important;
+            background-color: rgba(138,109,59,0.8) !important;
             transform: scale(1.02);
           }
           

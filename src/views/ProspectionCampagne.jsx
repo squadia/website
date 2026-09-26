@@ -9,9 +9,9 @@ import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
-const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#44CCFF', marginBottom: '0.75rem' };
-const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', lineHeight: 1.2 };
-const chapo = { fontSize: '1.1rem', color: 'rgba(255,255,255,0.6)', maxWidth: '640px', lineHeight: 1.6 };
+const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem' };
+const h2Style = { fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', lineHeight: 1.2 };
+const chapo = { fontSize: '1.1rem', color: 'rgba(28,43,39,0.6)', maxWidth: '640px', lineHeight: 1.6 };
 
 const features = [
   { Icon: Target, title: 'Ciblage structuré', desc: "Nous commençons par un atelier de cadrage pour définir votre ICP, vos personas, leurs pain points et vos critères de priorité. Nous identifions ensuite les contacts qui ont une actualité récente, pour aborder le bon sujet au bon moment." },
@@ -51,13 +51,13 @@ const prospectionCards = [
 const StepText = ({ s, isMobile }) => (
   <div>
     <p style={{ ...kicker, marginBottom: '0.4rem', fontSize: isMobile ? '0.65rem' : '0.7rem' }}>{s.week}</p>
-    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#F9FAFB', margin: '0 0 0.5rem' }}>{s.title}</p>
-    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
+    <p style={{ fontSize: isMobile ? '1rem' : '1.1rem', fontWeight: 700, color: '#1C2B27', margin: '0 0 0.5rem' }}>{s.title}</p>
+    <p style={{ fontSize: isMobile ? '0.85rem' : '0.95rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{s.desc}</p>
   </div>
 );
 
 const StepImage = ({ src, label, isMobile }) => (
-  <div style={{ aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '14px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden' }}>
+  <div style={{ aspectRatio: isMobile ? '16/10' : '4/3', borderRadius: isMobile ? '12px' : '14px', border: '1px solid rgba(28,43,39,0.16)', overflow: 'hidden' }}>
     <img src={src} alt={label} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
   </div>
 );
@@ -69,15 +69,15 @@ const Timeline = ({ isMobile }) => {
 
   return (
   <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
-    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(68,204,255,0.15)', transform: 'translateX(-50%)' }} />
+    <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(176,141,87,0.15)', transform: 'translateX(-50%)' }} />
     {!isMobile && (
-      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#44CCFF', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
+      <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#1F3A33', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />
     )}
     {timelineSteps.map((s, i) => {
       const imageLeft = i % 2 === 0;
       return (
         <div key={i} className="timeline-row" style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: isMobile ? '1rem' : '3rem', alignItems: isMobile ? 'stretch' : 'center', position: 'relative', marginBottom: i === timelineSteps.length - 1 ? 0 : (isMobile ? '2.5rem' : '6rem'), overflow: 'visible' }}>
-          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#050510', border: '2px solid #44CCFF', zIndex: 2 }} />
+          <div className="timeline-dot" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', width: '14px', height: '14px', borderRadius: '50%', background: '#F6F3EC', border: '2px solid #B08D57', zIndex: 2 }} />
           {isMobile ? (
             <>
               <motion.div key={`t-${i}-text`} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.5, ease: 'easeOut' }}>
@@ -138,13 +138,13 @@ const RepliikGallery = () => {
             style={{ textAlign: 'center', cursor: 'pointer' }}
             onClick={() => open(shot.src)}
           >
-            <div className="repliik-thumb" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden', marginBottom: '0.75rem', background: '#0D0D25' }}>
+            <div className="repliik-thumb" style={{ position: 'relative', aspectRatio: '4/3', borderRadius: '12px', border: '1px solid rgba(28,43,39,0.16)', overflow: 'hidden', marginBottom: '0.75rem', background: '#F6F3EC' }}>
               <img src={shot.src} alt={shot.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'transform 0.3s ease' }} />
-              <div className="repliik-thumb-overlay" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(5,5,16,0.45)', opacity: 0, transition: 'opacity 0.25s ease' }}>
-                <ZoomIn size={28} color="#44CCFF" />
+              <div className="repliik-thumb-overlay" style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(246,243,236,0.45)', opacity: 0, transition: 'opacity 0.25s ease' }}>
+                <ZoomIn size={28} color="#8A6D3B" />
               </div>
             </div>
-            <p style={{ fontSize: '0.9rem', fontWeight: 500, color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.35 }}>{shot.title}</p>
+            <p style={{ fontSize: '0.9rem', fontWeight: 500, color: 'rgba(28,43,39,0.85)', margin: 0, lineHeight: 1.35 }}>{shot.title}</p>
           </motion.div>
         ))}
       </div>
@@ -152,15 +152,15 @@ const RepliikGallery = () => {
       {lightbox && (
         <div
           onClick={close}
-          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(5,5,16,0.92)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', cursor: 'zoom-out' }}
+          style={{ position: 'fixed', inset: 0, zIndex: 9999, background: 'rgba(246,243,236,0.92)', backdropFilter: 'blur(12px)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2rem', cursor: 'zoom-out' }}
         >
           <button
             onClick={(e) => { e.stopPropagation(); close(); }}
-            style={{ position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', color: '#fff', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px' }}
+            style={{ position: 'absolute', top: '24px', right: '24px', background: 'none', border: 'none', color: '#1C2B27', cursor: 'pointer', display: 'flex', alignItems: 'center', justifyContent: 'center', width: '44px', height: '44px' }}
           >
             <X size={28} />
           </button>
-          <img src={lightbox} alt="" style={{ maxWidth: '90vw', maxHeight: '85vh', borderRadius: '12px', border: '1px solid rgba(68,204,255,0.25)', boxShadow: '0 20px 60px rgba(0,0,0,0.6)', objectFit: 'contain' }} />
+          <img src={lightbox} alt="" style={{ maxWidth: '90vw', maxHeight: '85vh', borderRadius: '12px', border: '1px solid rgba(176,141,87,0.25)', boxShadow: '0 20px 60px rgba(28,43,39,0.21)', objectFit: 'contain' }} />
         </div>
       )}
     </>
@@ -176,9 +176,9 @@ const formatPrice = (price) => {
   if (displayPrice.endsWith(' / groupe')) { suffix = '/ groupe'; displayPrice = displayPrice.replace(' / groupe', ''); }
   return (
     <>
-      {prefix && <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
+      {prefix && <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>{prefix}</span>}
       <span style={{ fontWeight: 400 }}>{displayPrice}</span>
-      {suffix && <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
+      {suffix && <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>{suffix}</span>}
     </>
   );
 };
@@ -196,32 +196,32 @@ const PricingProspection = () => {
     <div className="grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1.5rem' }}>
       {prospectionCards.map((card, idx) => (
         <div key={idx} style={{
-          background: '#0D0D25', border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+          background: '#F6F3EC', border: card.badge ? '2px solid #1F3A33' : '1px solid #D8D1C2',
           padding: isMobile ? '24px 18px' : '2.25rem 1.75rem', borderRadius: '1rem', position: 'relative', display: 'flex', flexDirection: 'column'
         }}>
           {card.badge && (
-            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#2563EB', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
+            <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: 'white', padding: '4px 12px', borderRadius: '20px', fontSize: '0.68rem', fontWeight: 700 }}>
               {card.badge}
             </div>
           )}
-          <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#F9FAFB' }}>{card.title}</h3>
-          <p style={{ fontSize: '0.85rem', color: '#9CA3AF', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
+          <h3 style={{ fontSize: '1.3rem', margin: '0.5rem 0 0.75rem', color: '#1C2B27' }}>{card.title}</h3>
+          <p style={{ fontSize: '0.85rem', color: '#4A534F', marginBottom: '1.25rem', minHeight: isMobile ? 'auto' : '2.6rem' }}>{card.subtitle}</p>
           <div style={{ marginBottom: '1.25rem' }}>
-            <div style={{ fontSize: '1.5rem', color: '#fff' }}>{formatPrice(card.price)}</div>
-            {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#9CA3AF', marginTop: '0.35rem' }}>{card.subPrice}</div>}
+            <div style={{ fontSize: '1.5rem', color: '#1C2B27' }}>{formatPrice(card.price)}</div>
+            {card.subPrice && <div style={{ fontSize: '0.78rem', color: '#4A534F', marginTop: '0.35rem' }}>{card.subPrice}</div>}
           </div>
           <div style={{ flexGrow: 1, marginBottom: '1.25rem' }}>
             {card.items.map((item, i) => (
               <div key={i} style={{ display: 'flex', gap: '10px', marginBottom: '0.65rem', fontSize: '0.85rem', lineHeight: 1.4 }}>
-                <Check size={15} color={card.badge ? '#2563EB' : '#44CCFF'} style={{ flexShrink: 0, marginTop: '2px' }} />
-                <span style={{ color: 'rgba(255,255,255,0.75)' }}>{item}</span>
+                <Check size={15} color={card.badge ? '#1F3A33' : '#8A6D3B'} style={{ flexShrink: 0, marginTop: '2px' }} />
+                <span style={{ color: 'rgba(28,43,39,0.75)' }}>{item}</span>
               </div>
             ))}
           </div>
           <Link href={card.link || '/contact'} style={{
             display: 'block', width: '100%', padding: '0.9rem', borderRadius: '0.5rem', fontWeight: 700, fontSize: '0.95rem',
-            border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)', background: card.badge ? '#2563EB' : 'transparent',
-            color: '#FFFFFF', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
+            border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.32)', background: card.badge ? '#1F3A33' : 'transparent',
+            color: card.badge ? '#F6F3EC' : '#1C2B27', textAlign: 'center', textDecoration: 'none', boxSizing: 'border-box'
           }}>
             Prendre RDV
           </Link>
@@ -249,21 +249,21 @@ export default function ProspectionCampagne() {
   }, []);
 
   return (
-    <div style={{ background: '#050510', color: '#F9FAFB', minHeight: '100vh' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden' }}>
         <img src="/assets/images/campagne/campagne.png" alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: isMobile ? '70% top' : 'center top', pointerEvents: 'none', zIndex: 0 }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: isMobile ? 'rgba(5,5,16,0.55)' : 'rgba(5,5,16,0.35)' }} />
-        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: isMobile ? 'linear-gradient(160deg, rgba(5,5,16,0.98) 0%, rgba(5,5,16,0.88) 45%, rgba(5,5,16,0.55) 100%)' : 'linear-gradient(105deg, rgba(5,5,16,0.97) 0%, rgba(5,5,16,0.80) 35%, rgba(5,5,16,0.40) 60%, transparent 100%)' }} />
-        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #050510)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: isMobile ? 'rgba(246,243,236,0.55)' : 'rgba(246,243,236,0.35)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: isMobile ? 'linear-gradient(160deg, rgba(246,243,236,0.98) 0%, rgba(246,243,236,0.88) 45%, rgba(246,243,236,0.55) 100%)' : 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.8) 35%, rgba(246,243,236,0.4) 60%, transparent 100%)' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
 
         <div style={{ position: 'relative', zIndex: 4, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingLeft: isMobile ? '1.5rem' : '8%', paddingRight: isMobile ? '1.5rem' : '8%' }}>
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: isMobile ? '0.8rem' : '0.9rem' }}>Campagne multicanale</p>
+          <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: isMobile ? '0.8rem' : '0.9rem' }}>Campagne multicanale</p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            style={{ fontSize: 'clamp(1.75rem, 6vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#F9FAFB', marginBottom: '1.5rem', maxWidth: '750px' }}
+            style={{ fontSize: 'clamp(1.75rem, 6vw, 2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#1C2B27', marginBottom: '1.5rem', maxWidth: '750px' }}
           >
             La stratégie qui donne envie de vous rencontrer
           </motion.h1>
@@ -273,22 +273,22 @@ export default function ProspectionCampagne() {
             transition={{ duration: 1, delay: 0.15 }}
             style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1.5rem', flexWrap: 'wrap' }}
           >
-            <span style={{ fontSize: isMobile ? '1.2rem' : '1.4rem', fontWeight: 800, color: '#44CCFF' }}>8 à 12</span>
-            <span style={{ fontSize: isMobile ? '0.8rem' : '0.85rem', color: 'rgba(255,255,255,0.85)', maxWidth: '280px', lineHeight: 1.3 }}>points de contact en moyenne nécessaires pour obtenir un premier rendez-vous avec un décideur</span>
+            <span style={{ fontSize: isMobile ? '1.2rem' : '1.4rem', fontWeight: 800, color: '#8A6D3B' }}>8 à 12</span>
+            <span style={{ fontSize: isMobile ? '0.8rem' : '0.85rem', color: 'rgba(28,43,39,0.85)', maxWidth: '280px', lineHeight: 1.3 }}>points de contact en moyenne nécessaires pour obtenir un premier rendez-vous avec un décideur</span>
           </motion.div>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.3 }}
-            style={{ fontSize: isMobile ? '1.05rem' : '1.25rem', color: 'rgba(255,255,255,0.9)', maxWidth: '600px', marginBottom: '3rem' }}
+            style={{ fontSize: isMobile ? '1.05rem' : '1.25rem', color: 'rgba(28,43,39,0.9)', maxWidth: '600px', marginBottom: '3rem' }}
           >
             Nous construisons des séquences personnalisées à partir des signaux d'achat de vos prospects. Les réponses sont traitées pour transformer l'intérêt en rendez-vous qualifiés.
           </motion.p>
           <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexDirection: isMobile ? 'column' : 'row' }}>
-            <Link href="/contact" style={{ backgroundColor: '#2563EB', color: '#fff', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
+            <Link href="/contact" style={{ backgroundColor: '#1F3A33', color: '#F6F3EC', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, border: 'none', cursor: 'pointer', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '8px' }}>
               Prendre RDV
             </Link>
-            <a href="#features" style={{ background: 'transparent', color: '#44CCFF', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #44CCFF' }}>
+            <a href="#features" style={{ background: 'transparent', color: '#8A6D3B', padding: isMobile ? '1rem 1.5rem' : '1.3rem 2.5rem', borderRadius: '0.5rem', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', border: '1px solid #B08D57' }}>
               En savoir plus
             </a>
           </div>
@@ -296,7 +296,7 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* FEATURES */}
-      <section id="features" style={{ padding: '80px 0', background: '#0A0A1A' }}>
+      <section id="features" style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={kicker}>CE QUE NOUS FAISONS</p>
@@ -311,13 +311,13 @@ export default function ProspectionCampagne() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-80px' }}
                 transition={{ duration: 0.5, delay: idx * 0.1 }}
-                style={{ background: '#0D0D25', border: '1px solid rgba(255,255,255,0.07)', borderRadius: '16px', padding: '1.75rem' }}
+                style={{ background: '#F6F3EC', border: '1px solid rgba(28,43,39,0.14)', borderRadius: '16px', padding: '1.75rem' }}
               >
-                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(68,204,255,0.08)', border: '1px solid rgba(68,204,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
-                  <f.Icon size={20} color="#44CCFF" />
+                <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: 'rgba(176,141,87,0.08)', border: '1px solid rgba(176,141,87,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
+                  <f.Icon size={20} color="#8A6D3B" />
                 </div>
-                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.5rem' }}>{f.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 700, color: '#1C2B27', marginBottom: '0.5rem' }}>{f.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.6, margin: 0 }}>{f.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -336,7 +336,7 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* REPLIIK */}
-      <section style={{ padding: '80px 0', background: '#0A0A1A' }}>
+      <section style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={kicker}>OUTIL INTERNE</p>
@@ -346,12 +346,12 @@ export default function ProspectionCampagne() {
           <div className="repliik-two-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4rem', alignItems: 'start', marginBottom: '3rem' }}>
             <div>
               <p style={{ ...chapo, marginBottom: '1.5rem' }}>
-                Après avoir accompagné de nombreux clients sur l'automatisation de leurs campagnes, nous utilisions un empilement d'outils : <a href="https://www.clay.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF', textDecoration: 'none' }}>Clay</a> ou <a href="https://www.fullenrich.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF', textDecoration: 'none' }}>FullEnrich</a> pour l'enrichissement, <a href="https://www.lemlist.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF', textDecoration: 'none' }}>Lemlist</a> ou <a href="https://www.waalaxy.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF', textDecoration: 'none' }}>Waalaxy</a> pour l'envoi, d'autres pour le suivi. Repliik rassemble ce qui fonctionne dans un seul flux.
+                Après avoir accompagné de nombreux clients sur l'automatisation de leurs campagnes, nous utilisions un empilement d'outils : <a href="https://www.clay.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B', textDecoration: 'none' }}>Clay</a> ou <a href="https://www.fullenrich.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B', textDecoration: 'none' }}>FullEnrich</a> pour l'enrichissement, <a href="https://www.lemlist.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B', textDecoration: 'none' }}>Lemlist</a> ou <a href="https://www.waalaxy.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B', textDecoration: 'none' }}>Waalaxy</a> pour l'envoi, d'autres pour le suivi. Repliik rassemble ce qui fonctionne dans un seul flux.
               </p>
               <p style={{ ...chapo, marginBottom: '1.5rem' }}>
-                <span style={{ color: '#F9FAFB', fontWeight: 700 }}>Résultat :</span> 45% de réduction du temps de préparation des campagnes, avec plus de personnalisation et davantage de rendez-vous générés. À la fin de la mission, nous pouvons si vous le souhaitez vous former à l'utilisation de l'outil en toute autonomie.
+                <span style={{ color: '#1C2B27', fontWeight: 700 }}>Résultat :</span> 45% de réduction du temps de préparation des campagnes, avec plus de personnalisation et davantage de rendez-vous générés. À la fin de la mission, nous pouvons si vous le souhaitez vous former à l'utilisation de l'outil en toute autonomie.
               </p>
-              <a href="https://repliik.com" target="_blank" rel="noopener noreferrer" style={{ color: '#44CCFF', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
+              <a href="https://repliik.com" target="_blank" rel="noopener noreferrer" style={{ color: '#8A6D3B', fontWeight: 600, textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '6px' }}>
                 Visiter repliik.com ↗
               </a>
             </div>
@@ -366,8 +366,8 @@ export default function ProspectionCampagne() {
                 'Et bien plus',
               ].map((item, idx) => (
                 <div key={idx} style={{ display: 'flex', gap: '14px', alignItems: 'flex-start' }}>
-                  <Check size={20} color="#44CCFF" style={{ flexShrink: 0, marginTop: '3px' }} />
-                  <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)' }}>{item}</span>
+                  <Check size={20} color="#8A6D3B" style={{ flexShrink: 0, marginTop: '3px' }} />
+                  <span style={{ fontSize: '1rem', color: 'rgba(28,43,39,0.85)' }}>{item}</span>
                 </div>
               ))}
             </div>
@@ -380,26 +380,26 @@ export default function ProspectionCampagne() {
       {/* DELIVERABLES */}
       <section style={{ padding: '80px 0' }}>
         <div className="container fade-in">
-          <div style={{ background: '#0D0D25', border: '1px solid rgba(68,204,255,0.2)', borderRadius: '24px', padding: '3rem', overflow: 'hidden' }}>
+          <div style={{ background: '#F6F3EC', border: '1px solid rgba(176,141,87,0.2)', borderRadius: '24px', padding: '3rem', overflow: 'hidden' }}>
             <p style={{ ...kicker, textAlign: 'center' }}>LIVRABLES</p>
             <h2 style={{ ...h2Style, textAlign: 'center', marginBottom: '1.25rem' }}>Ce que vous récupérez</h2>
             <p style={{ ...chapo, textAlign: 'justify', maxWidth: '960px', margin: '0 auto 2.5rem' }}>
               Le playbook est l'espace que nous mettons à votre disposition pour récupérer l'intégralité des livrables de la mission : les résultats de nos ateliers de découverte, le copywriting que nous vous avons partagé pour accord, et l'ensemble de notre stratégie d'approche, scripts d'appel dynamiques inclus. Ces documents vous appartiennent : vous pouvez les réutiliser pour d'autres initiatives ou les partager avec votre équipe.
             </p>
             <div className="deliverables-two-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '3rem', alignItems: 'center' }}>
-              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.08)' }}>
+              <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(28,43,39,0.14)' }}>
                 <img src="/assets/images/campagne/playbookclient.png" alt="Exemple de livrable Squadia" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
               </div>
               <div style={{ display: 'grid', gap: '1rem' }}>
                 {deliverables.map((d, idx) => (
                   <div key={idx} style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
-                    <Check size={20} color="#44CCFF" style={{ flexShrink: 0 }} />
-                    <span style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.85)' }}>{d}</span>
+                    <Check size={20} color="#8A6D3B" style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '1rem', color: 'rgba(28,43,39,0.85)' }}>{d}</span>
                   </div>
                 ))}
                 <div style={{ display: 'flex', gap: '14px', alignItems: 'center', marginTop: '0.75rem' }}>
                   <img src="/assets/images/campagne/logonotion.webp" alt="Notion" style={{ width: '48px', height: '48px', objectFit: 'contain', flexShrink: 0 }} />
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.55)' }}>Partagé via Notion</span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(28,43,39,0.6)' }}>Partagé via Notion</span>
                 </div>
               </div>
             </div>
@@ -408,14 +408,14 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* LOGOS CLIENTS */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div className="container fade-in">
           <PartnerLogosMarquee description="Nous avons aidé ces entreprises à générer des rendez-vous qualifiés et à structurer durablement leur prospection sortante." contained={true} />
         </div>
       </section>
 
       {/* PRICING PROSPECTION */}
-      <section style={{ padding: '80px 0', background: '#050510' }}>
+      <section style={{ padding: '80px 0', background: '#F6F3EC' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
             <p style={kicker}>COMBIEN ÇA COÛTE</p>
@@ -435,7 +435,7 @@ export default function ProspectionCampagne() {
       />
 
       <style>{`
-        .repliik-thumb:hover { border-color: rgba(68,204,255,0.5) !important; box-shadow: 0 0 20px rgba(68,204,255,0.15); }
+        .repliik-thumb:hover { border-color: rgba(138,109,59,0.8) !important; box-shadow: 0 0 20px rgba(176,141,87,0.15); }
         .repliik-thumb:hover img { transform: scale(1.05); }
         .repliik-thumb:hover .repliik-thumb-overlay { opacity: 1 !important; }
         @media (max-width: 768px) {

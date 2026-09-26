@@ -6,6 +6,7 @@ import { Analytics } from '@vercel/analytics/next';
 import Navbar from '../src/components/layout/Navbar';
 import FooterAnimated from '../src/components/layout/FooterAnimated';
 import CookieConsentBanner from '../src/components/CookieConsent';
+import SiteEnhancer from '../src/components/SiteEnhancer';
 import '../src/App.css';
 import '../src/index.css';
 
@@ -84,7 +85,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/squadia.svg" type="image/svg+xml" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&family=Allison&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Hanken+Grotesk:wght@300;400;500;600;700&family=Allison&display=swap" rel="stylesheet" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaOrg) }}
@@ -97,6 +98,7 @@ export default function RootLayout({ children }) {
         <main style={{ minHeight: '100vh' }}>
           {children}
         </main>
+        <SiteEnhancer />
 
         {/* Footer */}
         <FooterAnimated />

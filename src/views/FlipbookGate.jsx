@@ -10,11 +10,11 @@ import { verifyFlipbookToken } from '@/src/lib/flipbookAccess';
 function DeniedPanel({ formPath }) {
   return (
     <div style={{ maxWidth: 480, margin: '0 auto', textAlign: 'center' }}>
-      <Lock size={40} color="#EF4444" style={{ margin: '0 auto 1.2rem auto' }} />
-      <h1 style={{ fontSize: '1.6rem', marginBottom: '1rem', color: '#F9FAFB' }}>
+      <Lock size={40} color="#A63D2F" style={{ margin: '0 auto 1.2rem auto' }} />
+      <h1 style={{ fontSize: '1.6rem', marginBottom: '1rem', color: '#1C2B27' }}>
         Accès non autorisé
       </h1>
-      <p style={{ color: '#9CA3AF', marginBottom: '2rem', lineHeight: 1.6 }}>
+      <p style={{ color: '#4A534F', marginBottom: '2rem', lineHeight: 1.6 }}>
         Ce lien est invalide, expiré, ou n'a pas été obtenu via le formulaire.
         Complétez le formulaire pour recevoir votre accès au document.
       </p>
@@ -52,7 +52,7 @@ function FlipbookGateInner({ slug }) {
       style={{
         position: 'relative',
         minHeight: '100vh',
-        background: 'radial-gradient(ellipse 80% 60% at 50% 35%, #1B1B3D 0%, #0D0D25 45%, #03030A 100%)',
+        background: 'radial-gradient(ellipse 80% 60% at 50% 35%, #FFFFFF 0%, #F6F3EC 45%, #F6F3EC 100%)',
         paddingTop: '140px',
         paddingBottom: '80px',
       }}
@@ -60,7 +60,7 @@ function FlipbookGateInner({ slug }) {
       <div className="container" style={{ position: 'relative', zIndex: 2 }}>
         {!config && <DeniedPanel formPath={null} />}
         {config && access === 'checking' && (
-          <div style={{ textAlign: 'center', color: '#9CA3AF' }}>Vérification de l'accès…</div>
+          <div style={{ textAlign: 'center', color: '#4A534F' }}>Vérification de l'accès…</div>
         )}
         {config && access === 'denied' && <DeniedPanel formPath={config.formPath} />}
         {config && access === 'granted' && (
@@ -80,7 +80,7 @@ function FlipbookGateInner({ slug }) {
 
 export default function FlipbookGate({ slug }) {
   return (
-    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#03030A' }} />}>
+    <Suspense fallback={<div style={{ minHeight: '100vh', background: '#F6F3EC' }} />}>
       <FlipbookGateInner slug={slug} />
     </Suspense>
   );

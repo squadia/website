@@ -32,10 +32,10 @@ export default function ArticleTOC({ sections }) {
     <nav className="article-toc" aria-label="Sommaire de l'article">
       <style>{`
         .article-toc { position: sticky; top: 120px; align-self: start; }
-        .article-toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; border-left: 1px solid #1A1A3A; }
-        .article-toc a { display: block; padding: 0.1rem 0 0.1rem 1.1rem; margin-left: -1px; border-left: 2px solid transparent; color: #9CA3AF; font-size: 0.85rem; line-height: 1.4; text-decoration: none; transition: color 0.2s, border-color 0.2s; }
-        .article-toc a:hover { color: #E5E7EB; }
-        .article-toc a.active { color: #44CCFF; border-left-color: #44CCFF; font-weight: 600; }
+        .article-toc ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.85rem; border-left: 1px solid #D8D1C2; }
+        .article-toc a { display: block; padding: 0.1rem 0 0.1rem 1.1rem; margin-left: -1px; border-left: 2px solid transparent; color: #4A534F; font-size: 0.85rem; line-height: 1.4; text-decoration: none; transition: color 0.2s, border-color 0.2s; }
+        .article-toc a:hover { color: #4A534F; }
+        .article-toc a.active { color: #8A6D3B; border-left-color: #8A6D3B; font-weight: 600; }
         @media (max-width: 1024px) { .article-toc { display: none; } }
       `}</style>
       <ul>

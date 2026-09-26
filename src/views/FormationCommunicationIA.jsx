@@ -17,15 +17,15 @@ const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const DayBlock = ({ title, objective, children }) => {
   const [open, setOpen] = useState(false);
   return (
-    <div style={{ background: '#0A0A1A', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(68, 204, 255, 0.1)' }}>
-      <div style={{ background: 'rgba(68, 204, 255, 0.05)', padding: '2rem 3rem', borderBottom: open ? '1px solid rgba(68, 204, 255, 0.15)' : 'none' }}>
-        <h3 style={{ fontSize: '1.8rem', color: '#44CCFF', marginBottom: '0.5rem' }}>{title}</h3>
-        <p style={{ color: '#9CA3AF', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
+    <div style={{ background: '#F6F3EC', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(176,141,87,0.1)' }}>
+      <div style={{ background: 'rgba(176,141,87,0.05)', padding: '2rem 3rem', borderBottom: open ? '1px solid rgba(176,141,87,0.15)' : 'none' }}>
+        <h3 style={{ fontSize: '1.8rem', color: '#8A6D3B', marginBottom: '0.5rem' }}>{title}</h3>
+        <p style={{ color: '#4A534F', fontSize: '1.1rem', marginBottom: open ? '0' : '1.5rem' }}><strong>Objectif :</strong> {objective}</p>
         {!open && (
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '1.5rem' }}>
-            <button onClick={() => setOpen(true)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(68,204,255,0.35)', color: '#44CCFF', fontSize: '0.875rem', fontWeight: 600, padding: '10px 24px', borderRadius: '9px', cursor: 'pointer', letterSpacing: '0.04em', transition: 'background 0.15s, border-color 0.15s' }}
-              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(68,204,255,0.08)'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.6)'; }}
-              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(68,204,255,0.35)'; }}
+            <button onClick={() => setOpen(true)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(176,141,87,0.35)', color: '#8A6D3B', fontSize: '0.875rem', fontWeight: 600, padding: '10px 24px', borderRadius: '9px', cursor: 'pointer', letterSpacing: '0.04em', transition: 'background 0.15s, border-color 0.15s' }}
+              onMouseEnter={e => { e.currentTarget.style.background = 'rgba(176,141,87,0.08)'; e.currentTarget.style.borderColor = 'rgba(176,141,87,0.6)'; }}
+              onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.borderColor = 'rgba(176,141,87,0.35)'; }}
             >
               Voir le programme <ChevronDown size={16} />
             </button>
@@ -36,9 +36,9 @@ const DayBlock = ({ title, objective, children }) => {
         <div style={{ padding: '3rem' }}>
           {children}
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '2rem' }}>
-            <button onClick={() => setOpen(false)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(255,255,255,0.1)', color: '#9CA3AF', fontSize: '0.8rem', fontWeight: 600, padding: '8px 20px', borderRadius: '9px', cursor: 'pointer', transition: 'border-color 0.15s, color 0.15s' }}
-              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.25)'; e.currentTarget.style.color = '#fff'; }}
-              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; e.currentTarget.style.color = '#9CA3AF'; }}
+            <button onClick={() => setOpen(false)} style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'transparent', border: '1px solid rgba(28,43,39,0.16)', color: '#4A534F', fontSize: '0.8rem', fontWeight: 600, padding: '8px 20px', borderRadius: '9px', cursor: 'pointer', transition: 'border-color 0.15s, color 0.15s' }}
+              onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(28,43,39,0.35)'; e.currentTarget.style.color = '#1C2B27'; }}
+              onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(28,43,39,0.16)'; e.currentTarget.style.color = '#4A534F'; }}
             >
               <ChevronDown size={14} style={{ transform: 'rotate(180deg)' }} /> Réduire
             </button>
@@ -55,8 +55,8 @@ const AccordionItem = ({ question, answer }) => {
     <div
       onClick={() => setIsOpen(!isOpen)}
       style={{
-        backgroundColor: '#0D0D25',
-        border: '1px solid rgba(68, 204, 255, 0.18)',
+        backgroundColor: '#F6F3EC',
+        border: '1px solid rgba(176,141,87,0.18)',
         borderRadius: '16px',
         padding: '1.6rem',
         cursor: 'pointer',
@@ -65,13 +65,13 @@ const AccordionItem = ({ question, answer }) => {
     >
       <div style={{
         width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
-        color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+        color: '#1C2B27', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
       }}>
         <span>{question}</span>
         <ChevronDown style={{
           transition: 'transform 0.3s ease',
           transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-          color: '#44CCFF', flexShrink: 0
+          color: '#8A6D3B', flexShrink: 0
         }} />
       </div>
       <div style={{
@@ -80,7 +80,7 @@ const AccordionItem = ({ question, answer }) => {
         transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
         opacity: isOpen ? 1 : 0
       }}>
-        <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+        <div style={{ marginTop: '1.1rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
       </div>
     </div>
   );
@@ -101,7 +101,7 @@ const FormationCommunicationIA = () => {
   const pipedriveLink = "/contact"; 
 
   return (
-    <div className="formation-communication-ia" style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div className="formation-communication-ia" style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'center', overflow: 'hidden' }}>
@@ -113,40 +113,40 @@ const FormationCommunicationIA = () => {
         {/* Overlays pour lisibilité */}
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1,
-          background: 'rgba(10,10,26,0.50)'
+          background: 'rgba(246,243,236,0.5)'
         }} />
         <div style={{
           position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2,
-          background: 'linear-gradient(to right, rgba(10,10,26,0.9) 0%, rgba(10,10,26,0.6) 50%, transparent 100%)',
+          background: 'linear-gradient(to right, rgba(246,243,236,0.9) 0%, rgba(246,243,236,0.6) 50%, transparent 100%)',
         }} />
         <div style={{
           position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', pointerEvents: 'none', zIndex: 2,
-          background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
+          background: 'linear-gradient(to bottom, transparent, #F6F3EC)',
         }} />
 
         <div style={{ position: 'relative', zIndex: 3, paddingLeft: '8%', paddingRight: '5%', width: '100%' }}>
           <div className="fade-in" style={{ maxWidth: '750px' }}>
-            <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
-            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '-0.02em' }}>
+            <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
+            <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 3rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '-0.02em' }}>
               Communication et IA : produire plus, mieux, plus vite
             </h1>
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.6rem', marginBottom: '2rem' }}>
-              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#44CCFF' }}>67 %</span>
-              <span style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.6)', maxWidth: '320px', lineHeight: 1.3 }}>des équipes qui utilisent l'IA gagnent 10 heures ou plus par semaine <span style={{ color: 'rgba(255,255,255,0.35)' }}>(HubSpot)</span></span>
+              <span style={{ fontSize: '1.4rem', fontWeight: 800, color: '#8A6D3B' }}>67 %</span>
+              <span style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.6)', maxWidth: '320px', lineHeight: 1.3 }}>des équipes qui utilisent l'IA gagnent 10 heures ou plus par semaine <span style={{ color: 'rgba(28,43,39,0.6)' }}>(HubSpot)</span></span>
             </div>
-            <p style={{ fontSize: '1.25rem', color: 'rgba(255,255,255,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
+            <p style={{ fontSize: '1.25rem', color: 'rgba(28,43,39,0.8)', maxWidth: '800px', lineHeight: 1.6, marginBottom: '2.5rem' }}>
               Les équipes communication font face à une demande croissante de contenus, sur plus de canaux, avec moins de temps. Ce programme de 2 jours leur donne les outils IA et les méthodes pour structurer leur strategie éditoriale, produire plus efficacement et automatiser ce qui peut l'être : sans perdre la qualité ni la voix de la marque.
             </p>
             
             <div style={{ display: 'flex', alignItems: 'center', gap: '2rem', marginBottom: '3rem', flexWrap: 'wrap' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'rgba(255,255,255,0.7)', fontSize: '1rem', fontWeight: 500 }}>
-                <Globe size={18} color="#44CCFF" />
-                <span>Langues disponibles : <strong style={{ color: '#FFFFFF' }}>FR : EN : ES</strong></span>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: 'rgba(28,43,39,0.7)', fontSize: '1rem', fontWeight: 500 }}>
+                <Globe size={18} color="#8A6D3B" />
+                <span>Langues disponibles : <strong style={{ color: '#1C2B27' }}>FR : EN : ES</strong></span>
               </div>
             </div>
 
             <div style={{ display: 'flex', gap: '1.2rem', flexWrap: 'wrap' }}>
-              <a href="/contact" className="btn" style={{ background: '#2563EB', padding: '1.2rem 2.8rem', color: '#fff', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', boxShadow: '0 10px 20px rgba(68,204,255,0.2)' }}>Prendre RDV</a>
+              <a href="/contact" className="btn" style={{ background: '#1F3A33', padding: '1.2rem 2.8rem', color: '#F6F3EC', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', boxShadow: '0 10px 20px rgba(176,141,87,0.2)' }}>Prendre RDV</a>
               <a href="#programme" className="btn btn-outline" style={{ padding: '1.2rem 2.8rem', borderRadius: '8px', fontWeight: 700, fontSize: '1.05rem', backdropFilter: 'blur(8px)' }}>Voir le programme</a>
             </div>
           </div>
@@ -159,12 +159,12 @@ const FormationCommunicationIA = () => {
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700 }}>À qui s'adresse cette formation ?</h2>
           <div className="grid-2" style={{ gap: '4rem', alignItems: 'flex-start' }}>
             <div>
-              <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#9CA3AF', marginBottom: '2rem' }}>
+              <p style={{ fontSize: '1.2rem', lineHeight: 1.7, color: '#4A534F', marginBottom: '2rem' }}>
                 Managers et communicants cherchant à créer des messages clairs et engageants dans un environnement saturé. adaptée aux équipes communication internes, aux chargés de communication et aux directions souhaitant structurer leur production éditoriale avec les outils IA.
               </p>
             </div>
-            <div style={{ padding: '2.5rem', background: '#0D1A2E', borderLeft: '4px solid #2563EB', borderRadius: '4px' }}>
-              <p style={{ fontSize: '1.2rem', lineHeight: 1.6, color: '#F9FAFB' }}>
+            <div style={{ padding: '2.5rem', background: '#FFFFFF', borderLeft: '4px solid #1F3A33', borderRadius: '4px' }}>
+              <p style={{ fontSize: '1.2rem', lineHeight: 1.6, color: '#1C2B27' }}>
                 <strong>Ce que vos équipes repartent avec :</strong> une strategie de contenu structurée, un plan éditorial opérationnel et les outils pour produire plus vite sans sacrifier la qualité.
               </p>
             </div>
@@ -173,10 +173,10 @@ const FormationCommunicationIA = () => {
       </section>
 
       {/* ═══ SECTION 3 : PROGRAMME ═══ */}
-      <section id="programme" className="section-padding" style={{ background: '#050510' }}>
+      <section id="programme" className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '0.75rem', textAlign: 'center', fontWeight: 700 }}>Programme sur 2 jours</h2>
-          <p style={{ fontSize: '1.1rem', color: '#9CA3AF', textAlign: 'center', marginBottom: '4rem' }}>mise en pratique, outils, méthodes</p>
+          <p style={{ fontSize: '1.1rem', color: '#4A534F', textAlign: 'center', marginBottom: '4rem' }}>mise en pratique, outils, méthodes</p>
           
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 320px', gap: '3rem', alignItems: 'start' }}>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
@@ -185,37 +185,37 @@ const FormationCommunicationIA = () => {
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Les fondamentaux :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>quelle IA (LLM) pour quel besoin, compréhension des limites, vocabulaire et concepts pour mieux s'y retrouver</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Les fondamentaux :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>quelle IA (LLM) pour quel besoin, compréhension des limites, vocabulaire et concepts pour mieux s'y retrouver</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Paramétrer son IA :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>connecter les outils (Notion, mail, agenda, etc.), contrôle des infos transmises et confidentialité</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Paramétrer son IA :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>connecter les outils (Notion, mail, agenda, etc.), contrôle des infos transmises et confidentialité</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Prompting efficace :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>structure d'un prompt qui donne le résultat attendu, méthode pour articuler une demande complexe</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Prompting efficace :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>structure d'un prompt qui donne le résultat attendu, méthode pour articuler une demande complexe</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Adapter le message par canal et par audience :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>ne pas produire un seul format pour tout le monde</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Adapter le message par canal et par audience :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>ne pas produire un seul format pour tout le monde</p>
                     </div>
                   </li>
                 </ul>
-                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
-                  <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Atelier pratique :</strong> Création et lancement d'une mini campagne : définition des personas, rédaction des messages, adaptation par canal.
+                <div style={{ background: 'rgba(31,58,51,0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(31,58,51,0.2)' }}>
+                  <p style={{ color: '#1C2B27', lineHeight: 1.6 }}>
+                    <strong style={{ color: '#8A6D3B' }}>Atelier pratique :</strong> Création et lancement d'une mini campagne : définition des personas, rédaction des messages, adaptation par canal.
                   </p>
                 </div>
               </div>
@@ -226,37 +226,37 @@ const FormationCommunicationIA = () => {
               <div>
                 <ul style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Automatiser sa veille :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>veille technologique automatisée multicanale (exercices concrets) pour veille concurrentielle, tendances, etc.</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Automatiser sa veille :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>veille technologique automatisée multicanale (exercices concrets) pour veille concurrentielle, tendances, etc.</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Organisation de la production image / vidéo :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>outils pour production image (angle caméras, remplissage génératif, affiner image), production vidéo (animation des images réalisées, mini ads vidéo, votre double en avatar IA et outils onboarding vidéo avec IA)</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Organisation de la production image / vidéo :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>outils pour production image (angle caméras, remplissage génératif, affiner image), production vidéo (animation des images réalisées, mini ads vidéo, votre double en avatar IA et outils onboarding vidéo avec IA)</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Production de contenus additionnels :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>production podcast contrôlé par prompt (débat, évangélisation de sujets, etc.), production audio par prompt</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Production de contenus additionnels :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>production podcast contrôlé par prompt (débat, évangélisation de sujets, etc.), production audio par prompt</p>
                     </div>
                   </li>
                   <li style={{ display: 'flex', gap: '1.5rem' }}>
-                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#2563EB" /></div>
+                    <div style={{ marginTop: '0.25rem' }}><CheckCircle2 size={22} color="#1F3A33" /></div>
                     <div>
-                      <strong style={{ color: '#F9FAFB', fontSize: '1.1rem' }}>Optimisation SEO :</strong>
-                      <p style={{ color: '#9CA3AF', marginTop: '0.5rem' }}>intégrer les outils d'analyse pour créer du contenu visible</p>
+                      <strong style={{ color: '#1C2B27', fontSize: '1.1rem' }}>Optimisation SEO :</strong>
+                      <p style={{ color: '#4A534F', marginTop: '0.5rem' }}>intégrer les outils d'analyse pour créer du contenu visible</p>
                     </div>
                   </li>
                 </ul>
-                <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(37, 99, 235, 0.2)' }}>
-                  <p style={{ color: '#F9FAFB', lineHeight: 1.6 }}>
-                    <strong style={{ color: '#44CCFF' }}>Cas pratique :</strong> Production d'un plan éditorial personnalisé : calendrier, formats, canaux, ressources.
+                <div style={{ background: 'rgba(31,58,51,0.05)', padding: '2rem', borderRadius: '8px', border: '1px solid rgba(31,58,51,0.2)' }}>
+                  <p style={{ color: '#1C2B27', lineHeight: 1.6 }}>
+                    <strong style={{ color: '#8A6D3B' }}>Cas pratique :</strong> Production d'un plan éditorial personnalisé : calendrier, formats, canaux, ressources.
                   </p>
                 </div>
               </div>
@@ -282,9 +282,9 @@ const FormationCommunicationIA = () => {
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '4rem', textAlign: 'center', fontWeight: 700 }}>Formation et suivi</h2>
           <div style={{ 
-            background: '#0D1A2E', 
+            background: '#FFFFFF', 
             borderRadius: '24px', 
-            border: '1px solid rgba(37, 99, 235, 0.1)', 
+            border: '1px solid rgba(31,58,51,0.1)', 
             position: 'relative', 
             maxWidth: '1200px', 
             marginInline: 'auto',
@@ -297,7 +297,7 @@ const FormationCommunicationIA = () => {
               <div style={{ 
                 position: 'relative', 
                 minHeight: '320px', 
-                background: 'rgba(0,0,0,0.15)',
+                background: 'rgba(28,43,39,0.052)',
                 borderTopLeftRadius: '24px',
                 borderBottomLeftRadius: '24px',
               }}>
@@ -309,7 +309,7 @@ const FormationCommunicationIA = () => {
                     transform: 'translate(-50%, -50%)',
                     width: '350px',
                     height: '350px',
-                    background: 'radial-gradient(circle, rgba(37, 99, 235, 0.3) 0%, transparent 70%)',
+                    background: 'transparent',
                     filter: 'blur(60px)',
                     zIndex: 0,
                     pointerEvents: 'none'
@@ -336,7 +336,7 @@ const FormationCommunicationIA = () => {
               {/* Droite : Contenu */}
               <div style={{ 
                 padding: '2rem 3rem',
-                background: 'rgba(0,0,0,0.15)',
+                background: 'rgba(28,43,39,0.052)',
                 borderTopRightRadius: '24px',
                 borderBottomRightRadius: '24px',
                 display: 'flex',
@@ -345,51 +345,51 @@ const FormationCommunicationIA = () => {
               }}>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.3fr', gap: '3rem', marginBottom: '2rem', alignItems: 'stretch' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem', justifyContent: 'center' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Durée</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(28,43,39,0.14)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#4A534F', fontSize: '0.9rem' }}>Durée</span>
                       <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>2 jours</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Référence</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(28,43,39,0.14)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#4A534F', fontSize: '0.9rem' }}>Référence</span>
                       <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>T-COM01</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Suivi post-training</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(28,43,39,0.14)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#4A534F', fontSize: '0.9rem' }}>Suivi post-training</span>
                       <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>1 heure en visio</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Langues</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(28,43,39,0.14)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#4A534F', fontSize: '0.9rem' }}>Langues</span>
                       <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>FR : EN : ES</span>
                     </div>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(255,255,255,0.05)', paddingBottom: '0.6rem' }}>
-                      <span style={{ color: '#9CA3AF', fontSize: '0.9rem' }}>Groupe</span>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid rgba(28,43,39,0.14)', paddingBottom: '0.6rem' }}>
+                      <span style={{ color: '#4A534F', fontSize: '0.9rem' }}>Groupe</span>
                       <span style={{ fontWeight: 700, fontSize: '0.9rem' }}>6 à 12 participants</span>
                     </div>
                   </div>
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
-                    <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid rgba(255,255,255,0.05)', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Inter</div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#F9FAFB' }}>1 200 € HT</div>
-                      <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par personne</div>
+                    <div style={{ background: 'rgba(255,255,255,0.6)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid rgba(28,43,39,0.14)', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ color: '#4A534F', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Inter</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#1C2B27' }}>1 200 € HT</div>
+                      <div style={{ fontSize: '0.75rem', color: '#6B716C', marginTop: '0.2rem' }}>par personne</div>
                     </div>
-                    <div style={{ background: 'rgba(37, 99, 235, 0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #2563EB', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#44CCFF', color: '#060612', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
-                      <div style={{ color: '#9CA3AF', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#60A5FA' }}>4 390 € HT</div>
-                      <div style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.2rem' }}>par groupe</div>
+                    <div style={{ background: 'rgba(31,58,51,0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #1F3A33', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: '#F6F3EC', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
+                      <div style={{ color: '#4A534F', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#8A6D3B' }}>4 390 € HT</div>
+                      <div style={{ fontSize: '0.75rem', color: '#6B716C', marginTop: '0.2rem' }}>par groupe</div>
                     </div>
                   </div>
                 </div>
-                <div style={{ textAlign: 'center', borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '1.2rem', marginBottom: '1.5rem' }}>
-                  <p style={{ color: '#9CA3AF', fontSize: '0.85rem', marginBottom: '0.3rem' }}>
+                <div style={{ textAlign: 'center', borderTop: '1px solid rgba(28,43,39,0.14)', paddingTop: '1.2rem', marginBottom: '1.5rem' }}>
+                  <p style={{ color: '#4A534F', fontSize: '0.85rem', marginBottom: '0.3rem' }}>
                     Note : Tarifs HT, périmètre et objectifs cadrés ensemble avant tout démarrage.
                   </p>
-                  <p style={{ color: '#6B7280', fontSize: '0.75rem', fontStyle: 'italic' }}>
+                  <p style={{ color: '#6B716C', fontSize: '0.75rem', fontStyle: 'italic' }}>
                     * groupe jusqu'à 12 personnes
                   </p>
                 </div>
                 <div style={{ textAlign: 'center' }}>
-                  <a href={pipedriveLink} className="btn btn-primary" style={{ background: '#2563EB', padding: '0.8rem 2.5rem', borderRadius: '8px', fontWeight: 700 }}>Nous contacter</a>
+                  <a href={pipedriveLink} className="btn btn-primary" style={{ background: '#1F3A33', padding: '0.8rem 2.5rem', borderRadius: '8px', fontWeight: 700 }}>Nous contacter</a>
                 </div>
               </div>
             </div>
@@ -398,24 +398,23 @@ const FormationCommunicationIA = () => {
       </section>
 
       {/* ═══ SECTION 5 : BLOC DE RENVOI ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', marginBottom: '3rem', fontWeight: 700, textAlign: 'center' }}>Vous formez vos équipes. Et ensuite ?</h2>
-          <p style={{ fontSize: '1.2rem', color: '#9CA3AF', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
+          <p style={{ fontSize: '1.2rem', color: '#4A534F', maxWidth: '800px', marginInline: 'auto', marginBottom: '4rem', textAlign: 'center' }}>
             Une équipe formée sur la strategie de contenu et les outils IA, c'est le point de départ. Pour aller plus loin : automatiser vos flux éditoriaux, centraliser votre organisation ou structurer vos données : Squadia intervient aussi sur les systèmes.
           </p>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2.5rem' }}>
 
             {/* Carte 1 : Data / CRM */}
-            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgCRM} alt="Data et CRM B2B" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Centralisez le partage d'information</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base de données et un CRM bien structurés permettent de partager l'information stratégique entre équipes et de piloter l'activité sans reporting manuel.</p>
-                <Link href="/data" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#1C2B27' }}>Centralisez le partage d'information</h3>
+                <p style={{ color: 'rgba(28,43,39,0.6)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base de données et un CRM bien structurés permettent de partager l'information stratégique entre équipes et de piloter l'activité sans reporting manuel.</p>
+                <Link href="/data" className="cta-button-shine" style={{ backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
                     Data <ArrowRight size={16} />
@@ -425,15 +424,14 @@ const FormationCommunicationIA = () => {
             </div>
 
             {/* Carte 2 : Prospection / campagnes */}
-            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgAutoComm} alt="Campagnes de prospection multicanale" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Lancer des campagnes de prospection</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Diffusez vos contenus à grande échelle sans perdre en cohérence : emails, posts LinkedIn et séquences personnalisées pilotées par la data.</p>
-                <Link href="/prospection/campagne" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#1C2B27' }}>Lancer des campagnes de prospection</h3>
+                <p style={{ color: 'rgba(28,43,39,0.6)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Diffusez vos contenus à grande échelle sans perdre en cohérence : emails, posts LinkedIn et séquences personnalisées pilotées par la data.</p>
+                <Link href="/prospection/campagne" className="cta-button-shine" style={{ backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
                     Prospection <ArrowRight size={16} />
@@ -443,15 +441,14 @@ const FormationCommunicationIA = () => {
             </div>
 
             {/* Carte 3 : Data */}
-            <div className="cta-card" style={{ backgroundColor: '#11111E', border: '1px solid #1A1A2E', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+            <div className="cta-card" style={{ backgroundColor: '#FFFFFF', border: '1px solid #D8D1C2', borderRadius: '1rem', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
               <div style={{ position: 'relative', height: '200px', overflow: 'hidden', flexShrink: 0 }}>
                 <img src={imgData} alt="Data" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} />
-                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(10,10,26,0.2), rgba(17,17,30,0.85))' }} />
               </div>
               <div style={{ padding: '2.5rem', textAlign: 'center', display: 'flex', flexDirection: 'column', flexGrow: 1 }}>
-                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#F9FAFB' }}>Structurez vos données</h3>
-                <p style={{ color: 'rgba(255,255,255,0.45)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base de données propre et segmentée, c'est le carburant de tous vos contenus et actions marketing. Zéro doublon, zéro opportunité manquée.</p>
-                <Link href="/data" className="cta-button-shine" style={{ backgroundColor: 'rgba(37,99,235,0.1)', color: '#3B82F6', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '1.2rem', color: '#1C2B27' }}>Structurez vos données</h3>
+                <p style={{ color: 'rgba(28,43,39,0.6)', marginBottom: '2.5rem', lineHeight: 1.7, flexGrow: 1 }}>Une base de données propre et segmentée, c'est le carburant de tous vos contenus et actions marketing. Zéro doublon, zéro opportunité manquée.</p>
+                <Link href="/data" className="cta-button-shine" style={{ backgroundColor: 'rgba(31,58,51,0.1)', color: '#1F3A33', padding: '1rem 1.5rem', borderRadius: '0.5rem', fontWeight: 700, textDecoration: 'none', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '0.3rem' }}>
                   <span style={{ fontSize: '0.75rem', opacity: 0.7, fontWeight: 500, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Voir l'offre</span>
                   <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '1.05rem' }}>
                     Data <ArrowRight size={16} />
@@ -465,7 +462,7 @@ const FormationCommunicationIA = () => {
       </section>
 
       {/* ═══ SECTION : ENTREPRISES CLIENTES ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div className="container fade-in">
           <ClientLogosSection
             description="Pour aider leurs équipes de communication à produire du contenu de valeur basé sur de la veille et des actions automatisée dans une stratégie éditoriale controlée."

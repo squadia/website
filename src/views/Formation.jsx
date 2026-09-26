@@ -9,7 +9,7 @@ const imgCommunication = '/assets/images/formation/communication.jpeg';
 const AccordionItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div style={{ borderBottom: '1px solid #1A1A3A', padding: '1.5rem 0' }}>
+    <div style={{ borderBottom: '1px solid #D8D1C2', padding: '1.5rem 0' }}>
       <button 
         onClick={() => setIsOpen(!isOpen)}
         style={{ 
@@ -68,13 +68,13 @@ const renderPrice = (priceString) => {
   return (
     <>
       {prefix && (
-        <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>
+        <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>
           {prefix}
         </span>
       )}
       {displayPrice}
       {suffix && (
-        <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>
+        <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>
           {suffix}
         </span>
       )}
@@ -140,7 +140,7 @@ const Formation = () => {
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
         <div className="fade-in" style={{ textAlign: 'center' }}>
-          <p style={{ color: '#44CCFF', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
+          <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Formation</p>
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '900px', marginInline: 'auto', lineHeight: '1.1', marginBottom: '2rem' }}>
             Former vos équipes, c'est la condition pour que tout le reste fonctionne.
           </h1>
@@ -169,24 +169,24 @@ const Formation = () => {
 
           <div className="grid-3">
             
-            <div style={{ background: '#0A0A1A', padding: '2.5rem', borderRadius: '8px', border: '1px solid #1A1A3A', borderLeft: '4px solid #2563EB' }}>
-              <div style={{ fontSize: '3rem', fontWeight: 700, color: '#2563EB', marginBottom: '1rem', lineHeight: 1 }}>32%</div>
+            <div style={{ background: '#F6F3EC', padding: '2.5rem', borderRadius: '8px', border: '1px solid #D8D1C2', borderLeft: '4px solid #1F3A33' }}>
+              <div style={{ fontSize: '3rem', fontWeight: 700, color: '#1F3A33', marginBottom: '1rem', lineHeight: 1 }}>32%</div>
               <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Des outils adoptés par quelques-uns, ignorés par le reste</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 32% des PME et ETI utilisent l'IA au quotidien. Dans les autres, l'outil est installé, deux ou trois personnes s'en servent, les autres attendent de voir. Sans formation, le taux d'adoption plafonne vite.
               </p>
             </div>
 
-            <div style={{ background: '#0A0A1A', padding: '2.5rem', borderRadius: '8px', border: '1px solid #1A1A3A', borderLeft: '4px solid #2563EB' }}>
-              <AlertTriangle size={40} color="#2563EB" style={{ marginBottom: '1rem' }} />
+            <div style={{ background: '#F6F3EC', padding: '2.5rem', borderRadius: '8px', border: '1px solid #D8D1C2', borderLeft: '4px solid #1F3A33' }}>
+              <AlertTriangle size={40} color="#1F3A33" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Des usages fragmentés, pas des pratiques communes</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 Chacun utilise l'IA dans son coin, différemment, sans méthode partagée. Le gain individuel est réel. Le gain collectif, lui, n'arrive jamais.
               </p>
             </div>
 
-            <div style={{ background: '#0A0A1A', padding: '2.5rem', borderRadius: '8px', border: '1px solid #1A1A3A', borderLeft: '4px solid #2563EB' }}>
-              <UserX size={40} color="#2563EB" style={{ marginBottom: '1rem' }} />
+            <div style={{ background: '#F6F3EC', padding: '2.5rem', borderRadius: '8px', border: '1px solid #D8D1C2', borderLeft: '4px solid #1F3A33' }}>
+              <UserX size={40} color="#1F3A33" style={{ marginBottom: '1rem' }} />
               <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Une équipe qui subit les décisions plutôt que de les porter</h3>
               <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6 }}>
                 Sans compréhension des outils, chaque choix d'outillage est vécu comme une contrainte imposée. Avec une équipe formée, les décisions passent mieux et s'appliquent vraiment.
@@ -198,9 +198,9 @@ const Formation = () => {
       </section>
 
       {/* ═══ SECTION 3 : CE QU'ON FORME (NEW DESIGN) ═══ */}
-      <section className="section-padding" style={{ background: '#0A0A1A' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container">
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#F9FAFB' }}>Une formation pour chaque métier.</h2>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4.5rem', color: '#1C2B27' }}>Une formation pour chaque métier.</h2>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
 
@@ -251,9 +251,9 @@ const Formation = () => {
           }}>
             
             {/* Forfait 1 */}
-            <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>Inter-entreprises</h3>
-              <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
                 Pour apprendre dans un cadre multi-secteurs, avec d'autres équipes.
               </p>
               
@@ -283,17 +283,17 @@ const Formation = () => {
             </div>
 
             {/* Forfait 2 (Recommandé) */}
-            <div style={{ background: '#0D0D25', border: '1px solid #2563EB', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
+            <div style={{ background: '#F6F3EC', border: '1px solid #1F3A33', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column', position: 'relative' }}>
               <div style={{
                 position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)',
-                background: '#2563EB', color: 'white', padding: '4px 12px', borderRadius: '20px',
+                background: '#1F3A33', color: 'white', padding: '4px 12px', borderRadius: '20px',
                 fontSize: '0.7rem', fontWeight: 700
               }}>
                 RECOMMANDÉ
               </div>
               
               <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>Intra-entreprise</h3>
-              <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
                 Pour former votre équipe sur vos cas, <span style={{ whiteSpace: 'nowrap' }}>vos outils, votre contexte.</span>
               </p>
               
@@ -323,9 +323,9 @@ const Formation = () => {
             </div>
 
             {/* Forfait 3 */}
-            <div style={{ background: '#0D0D25', border: '1px solid #1A1A3A', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
+            <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '3rem 2rem', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
               <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0' }}>Parcours sur mesure</h3>
-              <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
+              <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '2rem', minHeight: '3rem', fontStyle: 'italic' }}>
                 Pour construire un programme progressif avec suivi renforcé.
               </p>
               
@@ -367,7 +367,7 @@ const Formation = () => {
         <div className="fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem' }}>Et ensuite ?</h2>
           
-          <div style={{ background: '#0D0D25', padding: '3.5rem', borderRadius: '12px', border: '1px solid #1A1A3A', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', marginInline: 'auto' }}>
+          <div style={{ background: '#F6F3EC', padding: '3.5rem', borderRadius: '12px', border: '1px solid #D8D1C2', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: '800px', marginInline: 'auto' }}>
             <h3 style={{ fontSize: '1.5rem', marginBottom: '1.5rem' }}>Vos équipes sont formées.<br/>L'étape suivante, c'est structurer les bons outils<br/>et les bons process pour aller plus loin.</h3>
             <p style={{ color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '2rem', fontSize: '1.1rem' }}>
               Une feuille de route IA adaptée à votre organisation, avec les cas d'usage qui font vraiment sens pour vous.
@@ -380,7 +380,7 @@ const Formation = () => {
       </section>
 
       {/* ═══ SECTION 6 : FAQ ═══ */}
-      <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #111' }}>
+      <section className="section-padding" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid #D8D1C2' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', margin: '0 0 0.5rem 0' }}>Questions fréquentes</h2>
@@ -412,7 +412,7 @@ const Formation = () => {
       </section>
 
       {/* ═══ SECTION 7 : CTA FINAL ═══ */}
-      <section className="section-padding" style={{ background: '#050510', borderTop: '1px solid #1A1A3A' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC', borderTop: '1px solid #D8D1C2' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', maxWidth: '800px', marginInline: 'auto', marginBottom: '3rem' }}>
             Prêt à rendre vos équipes vraiment autonomes sur l'IA ?
@@ -432,7 +432,7 @@ const Formation = () => {
         .formation-card-horizontal {
           display: flex;
           background: #FFFFFF;
-          border: 1px solid rgba(0,0,0,0.08);
+          border: 1px solid rgba(28,43,39,0.028);
           border-radius: 16px;
           overflow: hidden;
           opacity: 0;
@@ -460,34 +460,34 @@ const Formation = () => {
           justify-content: center;
         }
         .card-category-new {
-          color: #2563EB;
+          color: #1F3A33;
           font-size: 13px;
           font-weight: 600;
           margin-bottom: 12px;
           display: block;
         }
         .card-title-new {
-          color: #060612;
+          color: #F6F3EC;
           font-size: 28px;
           font-weight: 700;
           margin-bottom: 8px;
           line-height: 1.25;
         }
         .card-for-who-new {
-          color: rgba(0,0,0,0.4);
+          color: rgba(28,43,39,0.14);
           font-size: 13px;
           margin-bottom: 16px;
         }
         .card-description-new {
-          color: rgba(0,0,0,0.6);
+          color: rgba(28,43,39,0.21);
           font-size: 15px;
           line-height: 1.7;
           margin-bottom: 24px;
         }
         .btn-discover-new {
           align-self: flex-start;
-          background: #060612;
-          color: #FFFFFF;
+          background: #F6F3EC;
+          color: #1C2B27;
           text-decoration: none;
           padding: 12px 24px;
           border-radius: 8px;
@@ -498,8 +498,8 @@ const Formation = () => {
           transition: all 0.2s ease;
         }
         .btn-discover-new:hover {
-          background: #2563EB;
-          color: #FFFFFF;
+          background: #1F3A33;
+          color: #F6F3EC;
           transform: translateY(-2px);
         }
 

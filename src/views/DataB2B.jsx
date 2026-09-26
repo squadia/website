@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, ArrowRight, Clock, Calendar } from 'lucide-react';
 import ArticleTOC from '../components/blog/ArticleTOC';
+import ArticleCta from '../components/blog/ArticleCta';
+import RelatedArticles from '../components/blog/RelatedArticles';
 const nettoyageData = '/assets/images/blog/cleaningdata.jpeg';
 
 const TOC_SECTIONS = [
@@ -37,23 +39,23 @@ export default function DataB2B() {
   }, []);
 
   return (
-    <div style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
 
       {/* ═══ BARRE DE PROGRESSION DE LECTURE ═══ */}
       <div style={{
         position: 'fixed',
         top: 0, left: 0,
         width: '100%', height: '5px',
-        background: 'rgba(255,255,255,0.08)',
+        background: 'rgba(255,255,255,0.8)',
         zIndex: 9999,
         pointerEvents: 'none'
       }}>
         <div style={{
           height: '100%',
           width: `${readingProgress}%`,
-          background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)',
+          background: 'linear-gradient(90deg, #1F3A33 0%, #1F3A33 100%)',
           transition: 'width 0.1s linear',
-          boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)'
+          boxShadow: '0 0 12px rgba(31,58,51,0.8), 0 0 4px rgba(176,141,87,0.5)'
         }} />
       </div>
 
@@ -63,7 +65,7 @@ export default function DataB2B() {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: '#0A0A1A',
+        background: '#F6F3EC',
         overflow: 'hidden'
       }}>
         <div style={{ position: 'absolute', inset: 0, zIndex: 0 }}>
@@ -72,11 +74,11 @@ export default function DataB2B() {
             alt=""
             style={{ width: '100%', height: '100%', objectFit: 'cover', opacity: 1 }}
           />
-          <div style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.2)', zIndex: 1 }} />
+          <div style={{ position: 'absolute', inset: 0, background: 'rgba(246,243,236,0.2)', zIndex: 1 }} />
           <div style={{
             position: 'absolute', bottom: 0, left: 0, right: 0,
             height: '30vh',
-            background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
+            background: 'linear-gradient(to bottom, transparent, #F6F3EC)',
             zIndex: 2
           }} />
         </div>
@@ -90,30 +92,30 @@ export default function DataB2B() {
           width: '100%'
         }}>
           <div style={{
-            background: 'rgba(10, 10, 26, 0.3)',
+            background: 'rgba(246,243,236,0.3)',
             backdropFilter: 'blur(6px)',
             WebkitBackdropFilter: 'blur(6px)',
             padding: '3rem',
             borderRadius: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            border: '1px solid rgba(28,43,39,0.24)',
+            boxShadow: '0 10px 30px rgba(28,43,39,0.07)'
           }}>
             <Link href="/ressources" style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              color: '#9CA3AF', fontSize: '0.9rem',
+              color: '#4A534F', fontSize: '0.9rem',
               textDecoration: 'none', marginBottom: '2rem',
               transition: 'color 0.2s'
             }}
-              onMouseEnter={e => e.currentTarget.style.color = '#44CCFF'}
-              onMouseLeave={e => e.currentTarget.style.color = '#9CA3AF'}
+              onMouseEnter={e => e.currentTarget.style.color = '#8A6D3B'}
+              onMouseLeave={e => e.currentTarget.style.color = '#4A534F'}
             >
               <ArrowLeft size={16} /> Retour aux ressources
             </Link>
 
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{
-                background: '#2563EB',
-                color: '#FFFFFF',
+                background: '#1F3A33',
+                color: '#F6F3EC',
                 padding: '0.35rem 1.25rem',
                 borderRadius: '9999px',
                 fontSize: '0.75rem',
@@ -129,7 +131,7 @@ export default function DataB2B() {
               fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)',
               fontWeight: 900,
               lineHeight: 1.1,
-              color: '#FFFFFF',
+              color: '#1C2B27',
               marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
@@ -137,15 +139,15 @@ export default function DataB2B() {
             </h1>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#D1D5DB', fontSize: '0.95rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#4A534F', fontSize: '0.95rem' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar size={16} color="#2563EB" /> Avril 2026
+                  <Calendar size={16} color="#1F3A33" /> Avril 2026
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Clock size={16} color="#2563EB" /> 5 min de lecture
+                  <Clock size={16} color="#1F3A33" /> 5 min de lecture
                 </span>
               </div>
-              <div style={{ width: '80px', height: '4px', background: '#2563EB', borderRadius: '2px' }} />
+              <div style={{ width: '80px', height: '4px', background: '#1F3A33', borderRadius: '2px' }} />
             </div>
           </div>
         </div>
@@ -154,7 +156,7 @@ export default function DataB2B() {
         <div style={{
           position: 'absolute', bottom: '2rem', left: '50%',
           transform: 'translateX(-50%)', zIndex: 10,
-          color: '#FFFFFF', animation: 'bounce 2s infinite'
+          color: '#1C2B27', animation: 'bounce 2s infinite'
         }}>
           <style>{`
             @keyframes bounce {
@@ -164,7 +166,7 @@ export default function DataB2B() {
             }
           `}</style>
           <div style={{ opacity: 0.6, fontSize: '0.8rem', textAlign: 'center', marginBottom: '0.5rem' }}>Lire l'article</div>
-          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #2563EB, transparent)', margin: '0 auto' }} />
+          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #1F3A33, transparent)', margin: '0 auto' }} />
         </div>
       </section>
 
@@ -177,13 +179,13 @@ export default function DataB2B() {
           .article-body p {
             font-size: 1.05rem;
             line-height: 1.85;
-            color: rgba(249,250,251,0.75);
+            color: rgba(28,43,39,0.75);
             margin-bottom: 1.6rem;
           }
           .article-body h2 {
             font-size: 1.55rem;
             font-weight: 800;
-            color: #F9FAFB;
+            color: #1C2B27;
             margin-top: 3.5rem;
             margin-bottom: 1.2rem;
             line-height: 1.25;
@@ -195,24 +197,24 @@ export default function DataB2B() {
             display: block;
             width: 36px;
             height: 3px;
-            background: #2563EB;
+            background: #1F3A33;
             border-radius: 2px;
             margin-bottom: 1rem;
           }
           .article-body strong {
-            color: #F9FAFB;
+            color: #1C2B27;
             font-weight: 700;
           }
           .article-body em {
-            color: rgba(249,250,251,0.85);
+            color: rgba(28,43,39,0.85);
           }
           .article-body a {
-            color: #2563EB;
+            color: #1F3A33;
             text-decoration: underline;
           }
           .article-body hr {
             border: none;
-            border-top: 1px solid #1A1A3A;
+            border-top: 1px solid #D8D1C2;
             margin: 3rem 0;
           }
           .article-body ul {
@@ -222,7 +224,7 @@ export default function DataB2B() {
           .article-body ul li {
             font-size: 1.05rem;
             line-height: 1.85;
-            color: rgba(249,250,251,0.75);
+            color: rgba(28,43,39,0.75);
             padding-left: 1.4rem;
             position: relative;
             margin-bottom: 0.5rem;
@@ -231,25 +233,25 @@ export default function DataB2B() {
             content: '→';
             position: absolute;
             left: 0;
-            color: #2563EB;
+            color: #1F3A33;
             font-weight: 700;
           }
           .article-pullquote {
-            border-left: 3px solid #2563EB;
+            border-left: 3px solid #1F3A33;
             padding: 1.2rem 1.8rem;
             margin: 2.5rem 0;
-            background: rgba(37,99,235,0.06);
+            background: rgba(31,58,51,0.06);
             border-radius: 0 0.75rem 0.75rem 0;
           }
           .article-pullquote p {
             font-size: 1.1rem !important;
-            color: #E5E7EB !important;
+            color: #4A534F !important;
             font-style: italic;
             margin-bottom: 0 !important;
           }
           .article-highlight-box {
-            background: #0D0D25;
-            border: 1px solid #1A1A3A;
+            background: #F6F3EC;
+            border: 1px solid #D8D1C2;
             border-radius: 1rem;
             padding: 2rem 2.5rem;
             margin: 2.5rem 0;
@@ -257,7 +259,7 @@ export default function DataB2B() {
           .article-highlight-box h3 {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #60A5FA;
+            color: #8A6D3B;
             margin-bottom: 0.75rem;
           }
           .article-highlight-box p {
@@ -294,7 +296,7 @@ export default function DataB2B() {
 
           <h2 id="segmentation">La segmentation : parler à tout le monde, c'est parler à personne</h2>
 
-          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence. C'est justement le type d'erreur qui plombe une <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ color: '#2563EB' }}>campagne de prospection multicanale</Link>, même bien écrite.</p>
+          <p>Un email générique n'émeut personne. La vraie efficacité vient du tiering : classer vos comptes selon leur importance et adapter vos efforts en conséquence. C'est justement le type d'erreur qui plombe une <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ color: '#1F3A33' }}>campagne de prospection multicanale</Link>, même bien écrite.</p>
 
           <p>Un compte Tier 1 mérite une approche personnalisée, une recherche préalable, un message construit autour de sa situation spécifique. Un compte Tier 3 peut recevoir une séquence plus automatisée. Ce n'est pas une question de respect : c'est une question d'allocation intelligente du temps de vos équipes.</p>
 
@@ -345,58 +347,12 @@ export default function DataB2B() {
 
           <hr />
 
-          {/* ══ À LIRE AUSSI ══ */}
-          <h2 style={{ textAlign: 'center' }}>À lire aussi</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
-            <Link href="/blog/prospection-multicanale-b2b-erreurs" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <div style={{ marginBottom: '1rem' }}>
-                <span style={{ background: '#44CCFF', color: '#060612', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Prospection</span>
-              </div>
-              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Prospection multicanale B2B : 5 erreurs qui font perdre des leads et comment les éviter</p>
-              <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.9rem' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.4rem' }} /></div>
-            </Link>
-            <Link href="/blog/formation-commerciale-b2b-ia" style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '12px', padding: '2rem', display: 'flex', flexDirection: 'column', transition: 'transform 0.3s ease, border-color 0.3s ease', textDecoration: 'none' }} onMouseEnter={(e) => { e.currentTarget.style.transform = 'translateY(-5px)'; e.currentTarget.style.borderColor = '#44CCFF'; }} onMouseLeave={(e) => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.borderColor = '#1A1A3A'; }}>
-              <div style={{ marginBottom: '1rem' }}>
-                <span style={{ background: '#10B981', color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>Formation</span>
-              </div>
-              <p style={{ fontSize: '1rem', lineHeight: 1.4, marginBottom: '1.5rem', flexGrow: 1, color: '#F9FAFB', fontWeight: 600 }}>Formation commerciale B2B : comment rendre vos équipes autonomes et performantes avec l'IA</p>
-              <div style={{ display: 'flex', alignItems: 'center', color: '#44CCFF', fontWeight: 600, fontSize: '0.9rem' }}>Lire l'article <ArrowRight size={16} style={{ marginLeft: '0.4rem' }} /></div>
-            </Link>
-          </div>
 
         </div>
 
         {/* ═══ CTA BLOCK ═══ */}
-        <div style={{
-          marginTop: '5rem',
-          background: 'linear-gradient(135deg, rgba(37,99,235,0.1) 0%, rgba(124,58,237,0.08) 100%)',
-          border: '1px solid rgba(37,99,235,0.25)',
-          borderRadius: '1.25rem',
-          padding: '3rem',
-          textAlign: 'center'
-        }}>
-          <p style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#60A5FA', marginBottom: '1rem' }}>Passez à l'action</p>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB', marginBottom: '1rem', lineHeight: 1.2 }}>
-            Vous voulez savoir si vos données sont prêtes<br/>pour votre prochaine campagne ?
-          </h2>
-          <p style={{ color: '#9CA3AF', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-            Squadia accompagne les équipes marketing et commerciales dans la structuration de leur data, de la segmentation à l'activation.
-          </p>
-          <Link
-            href="/data"
-            style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-              background: '#44CCFF', color: '#060612',
-              padding: '1rem 2rem', borderRadius: '0.5rem',
-              fontWeight: 700, fontSize: '1rem',
-              textDecoration: 'none', transition: 'background 0.2s'
-            }}
-            onMouseEnter={e => e.currentTarget.style.background = '#1D4ED8'}
-            onMouseLeave={e => e.currentTarget.style.background = '#2563EB'}
-          >
-            Parler à un expert Data <ArrowRight size={18} />
-          </Link>
-        </div>
+        <RelatedArticles current="nettoyage-segmentation-enrichissement-donnees-b2b" />
+        <ArticleCta kicker={`Passez à l'action`} title={`Vous voulez savoir si vos données sont prêtes pour votre prochaine campagne ?`} text={`Squadia accompagne les équipes marketing et commerciales dans la structuration de leur data, de la segmentation à l'activation.`} href="/data" label={`Parler à un expert Data`} />
 
         </article>
       </div>

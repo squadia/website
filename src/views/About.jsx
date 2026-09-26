@@ -65,15 +65,15 @@ const About = () => {
               <div style={{ marginTop: '2rem', display: 'flex', gap: '2rem' }}>
                 <div>
                   <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)' }}>20+</div>
-                  <p style={{ fontSize: '0.8rem', color: '#6B7280' }}>Ans d'expertise Sales</p>
+                  <p style={{ fontSize: '0.8rem', color: '#6B716C' }}>Ans d'expertise Sales</p>
                 </div>
                 <div>
                   <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--accent)' }}>120+</div>
-                  <p style={{ fontSize: '0.8rem', color: '#6B7280' }}>Clients accompagnés</p>
+                  <p style={{ fontSize: '0.8rem', color: '#6B716C' }}>Clients accompagnés</p>
                 </div>
               </div>
             </div>
-            <div style={{ background: '#0D0D25', padding: '4rem', borderRadius: '8px', border: '1px solid #1A1A3A', position: 'relative' }}>
+            <div style={{ background: '#F6F3EC', padding: '4rem', borderRadius: '8px', border: '1px solid #D8D1C2', position: 'relative' }}>
                <ShieldCheck size={80} color="var(--accent)" style={{ opacity: 0.1, position: 'absolute', top: '2rem', right: '2rem' }} />
                <h3 style={{ fontSize: '1.8rem', marginBottom: '1.5rem' }}>Notre promesse</h3>
                <p style={{ color: 'var(--text-secondary)', lineHeight: '1.6' }}>
@@ -114,8 +114,8 @@ const About = () => {
         .blue-icon { color: var(--accent); }
         .value-card {
           padding: 3rem;
-          background: #0D0D25;
-          border: 1px solid #1A1A3A;
+          background: #F6F3EC;
+          border: 1px solid #D8D1C2;
           border-radius: 8px;
         }
       `}</style>

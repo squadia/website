@@ -12,9 +12,9 @@ const btn = {
   gap: '0.4rem',
   padding: '0.55rem 0.9rem',
   borderRadius: '6px',
-  border: '1px solid #1A1A3A',
+  border: '1px solid #D8D1C2',
   background: 'transparent',
-  color: '#F9FAFB',
+  color: '#1C2B27',
   cursor: 'pointer',
   fontSize: '0.85rem',
   fontWeight: 600,
@@ -151,16 +151,16 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
   return (
     <div
       onClick={onClose}
-      style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(0,0,0,0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}
+      style={{ position: 'fixed', inset: 0, zIndex: 1000, background: 'rgba(28,43,39,0.262)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '16px' }}
     >
       <div
         onClick={(e) => e.stopPropagation()}
-        style={{ background: '#0D0D25', border: '1px solid #1A1A3A', borderRadius: '16px', padding: '1.5rem', width: '100%', maxWidth: '860px', maxHeight: '95vh', overflowY: 'auto', color: '#F9FAFB' }}
+        style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '16px', padding: '1.5rem', width: '100%', maxWidth: '860px', maxHeight: '95vh', overflowY: 'auto', color: '#1C2B27' }}
       >
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem' }}>
           <h2 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <Scissors size={18} color="#44CCFF" /> Couper des scènes
-            {row.label && <span style={{ color: '#9CA3AF', fontWeight: 500, fontSize: '0.9rem' }}>· {row.label}</span>}
+            <Scissors size={18} color="#8A6D3B" /> Couper des scènes
+            {row.label && <span style={{ color: '#4A534F', fontWeight: 500, fontSize: '0.9rem' }}>· {row.label}</span>}
           </h2>
           <button onClick={onClose} style={{ ...btn, border: 'none', padding: '0.4rem' }} aria-label="Fermer">
             <X size={18} />
@@ -173,17 +173,17 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
           playsInline
           preload="auto"
           onClick={togglePlay}
-          style={{ width: '100%', maxHeight: '48vh', borderRadius: '10px', background: '#000', display: 'block', cursor: 'pointer' }}
+          style={{ width: '100%', maxHeight: '48vh', borderRadius: '10px', background: '#F6F3EC', display: 'block', cursor: 'pointer' }}
         />
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', margin: '0.9rem 0 0.6rem' }}>
           <button onClick={togglePlay} style={btn}>
             {playing ? <Pause size={14} /> : <Play size={14} />}
           </button>
-          <span style={{ fontVariantNumeric: 'tabular-nums', fontSize: '0.85rem', color: '#9CA3AF' }}>
+          <span style={{ fontVariantNumeric: 'tabular-nums', fontSize: '0.85rem', color: '#4A534F' }}>
             {formatTime(currentTime)} / {formatTime(duration)}
           </span>
-          <label style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', color: preview ? '#44CCFF' : '#9CA3AF', cursor: 'pointer' }}>
+          <label style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.85rem', color: preview ? '#8A6D3B' : '#4A534F', cursor: 'pointer' }}>
             <input type="checkbox" checked={preview} onChange={(e) => setPreview(e.target.checked)} />
             <Eye size={14} /> Aperçu du montage
           </label>
@@ -193,7 +193,7 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
         <div
           ref={trackRef}
           onPointerDown={onTrackPointerDown}
-          style={{ position: 'relative', height: '56px', borderRadius: '8px', background: '#050510', border: '1px solid #1A1A3A', cursor: duration ? 'pointer' : 'wait', touchAction: 'none', userSelect: 'none' }}
+          style={{ position: 'relative', height: '56px', borderRadius: '8px', background: '#F6F3EC', border: '1px solid #D8D1C2', cursor: duration ? 'pointer' : 'wait', touchAction: 'none', userSelect: 'none' }}
         >
           {cuts.map((c, i) => (
             <div
@@ -205,9 +205,9 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
                 bottom: 0,
                 left: pct(c.start),
                 width: `calc(${pct(c.end)} - ${pct(c.start)})`,
-                background: 'repeating-linear-gradient(45deg, rgba(248,113,113,0.45) 0 6px, rgba(248,113,113,0.2) 6px 12px)',
-                borderLeft: '1px solid #F87171',
-                borderRight: '1px solid #F87171',
+                background: 'repeating-linear-gradient(45deg, rgba(166,61,47,0.45) 0 6px, rgba(166,61,47,0.2) 6px 12px)',
+                borderLeft: '1px solid #A63D2F',
+                borderRight: '1px solid #A63D2F',
               }}
             />
           ))}
@@ -220,9 +220,9 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
                 bottom: 0,
                 left: pct(selection.start),
                 width: `calc(${pct(selection.end)} - ${pct(selection.start)})`,
-                background: 'rgba(68,204,255,0.18)',
-                borderTop: '2px solid #44CCFF',
-                borderBottom: '2px solid #44CCFF',
+                background: 'rgba(176,141,87,0.18)',
+                borderTop: '2px solid #8A6D3B',
+                borderBottom: '2px solid #8A6D3B',
               }}
             >
               {['start', 'end'].map((which) => (
@@ -237,7 +237,7 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
                     bottom: '-2px',
                     [which === 'start' ? 'left' : 'right']: '-7px',
                     width: '14px',
-                    background: '#44CCFF',
+                    background: '#8A6D3B',
                     borderRadius: '4px',
                     cursor: 'ew-resize',
                     display: 'flex',
@@ -245,13 +245,13 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
                     justifyContent: 'center',
                   }}
                 >
-                  <div style={{ width: '2px', height: '18px', background: '#050510', borderRadius: '1px' }} />
+                  <div style={{ width: '2px', height: '18px', background: '#F6F3EC', borderRadius: '1px' }} />
                 </div>
               ))}
             </div>
           )}
 
-          <div style={{ position: 'absolute', top: '-4px', bottom: '-4px', left: pct(currentTime), width: '2px', background: '#FACC15', pointerEvents: 'none', transform: 'translateX(-1px)' }} />
+          <div style={{ position: 'absolute', top: '-4px', bottom: '-4px', left: pct(currentTime), width: '2px', background: '#8A6D3B', pointerEvents: 'none', transform: 'translateX(-1px)' }} />
         </div>
 
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.9rem' }}>
@@ -264,41 +264,41 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
           <button
             onClick={addCut}
             disabled={!selection}
-            style={{ ...btn, background: selection ? '#7C2D12' : 'transparent', border: selection ? 'none' : btn.border, opacity: selection ? 1 : 0.5, cursor: selection ? 'pointer' : 'not-allowed' }}
+            style={{ ...btn, background: selection ? '#FFFFFF' : 'transparent', border: selection ? 'none' : btn.border, opacity: selection ? 1 : 0.5, cursor: selection ? 'pointer' : 'not-allowed' }}
           >
             <Scissors size={14} /> Supprimer ce bloc
             {selection && <span style={{ fontWeight: 400, opacity: 0.8 }}>({formatTime(selection.start)} → {formatTime(selection.end)})</span>}
           </button>
           {selection && (
-            <button onClick={() => setSelection(null)} style={{ ...btn, color: '#9CA3AF' }}>
+            <button onClick={() => setSelection(null)} style={{ ...btn, color: '#4A534F' }}>
               Annuler la sélection
             </button>
           )}
         </div>
 
-        <p style={{ color: '#6B7280', fontSize: '0.78rem', marginTop: '0.6rem' }}>
+        <p style={{ color: '#6B716C', fontSize: '0.78rem', marginTop: '0.6rem' }}>
           Lancez la vidéo, placez le début (I) puis la fin (O) de la scène à retirer, ajustez les poignées bleues, puis « Supprimer ce bloc » (Entrée). La vidéo d'origine n'est pas modifiée&nbsp;: les passages coupés sont simplement sautés à la lecture.
         </p>
 
         <div style={{ marginTop: '1rem' }}>
           <h3 style={{ fontSize: '0.9rem', fontWeight: 700, marginBottom: '0.5rem' }}>
             Coupures ({cuts.length})
-            <span style={{ color: '#9CA3AF', fontWeight: 500, marginLeft: '0.5rem' }}>
+            <span style={{ color: '#4A534F', fontWeight: 500, marginLeft: '0.5rem' }}>
               Durée finale&nbsp;: {formatTime(finalDuration)}
             </span>
           </h3>
-          {cuts.length === 0 && <p style={{ color: '#6B7280', fontSize: '0.85rem' }}>Aucune coupure pour l'instant.</p>}
+          {cuts.length === 0 && <p style={{ color: '#6B716C', fontSize: '0.85rem' }}>Aucune coupure pour l'instant.</p>}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {cuts.map((c, i) => (
-              <div key={`row-${i}`} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.45rem 0.7rem', border: '1px solid #1A1A3A', borderRadius: '6px', fontSize: '0.85rem' }}>
-                <button onClick={() => seek(c.start)} style={{ ...btn, border: 'none', padding: 0, color: '#F87171', fontVariantNumeric: 'tabular-nums' }}>
+              <div key={`row-${i}`} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.45rem 0.7rem', border: '1px solid #D8D1C2', borderRadius: '6px', fontSize: '0.85rem' }}>
+                <button onClick={() => seek(c.start)} style={{ ...btn, border: 'none', padding: 0, color: '#A63D2F', fontVariantNumeric: 'tabular-nums' }}>
                   {formatTime(c.start)} → {formatTime(c.end)}
                 </button>
-                <span style={{ color: '#6B7280' }}>−{formatTime(c.end - c.start)}</span>
-                <button onClick={() => { setSelection(c); removeCut(i); }} style={{ ...btn, border: 'none', padding: '0.2rem 0.4rem', marginLeft: 'auto', color: '#9CA3AF', fontSize: '0.8rem' }}>
+                <span style={{ color: '#6B716C' }}>−{formatTime(c.end - c.start)}</span>
+                <button onClick={() => { setSelection(c); removeCut(i); }} style={{ ...btn, border: 'none', padding: '0.2rem 0.4rem', marginLeft: 'auto', color: '#4A534F', fontSize: '0.8rem' }}>
                   Modifier
                 </button>
-                <button onClick={() => removeCut(i)} style={{ ...btn, border: 'none', padding: '0.2rem 0.4rem', color: '#F87171' }} aria-label="Retirer la coupure">
+                <button onClick={() => removeCut(i)} style={{ ...btn, border: 'none', padding: '0.2rem 0.4rem', color: '#A63D2F' }} aria-label="Retirer la coupure">
                   <Trash2 size={14} />
                 </button>
               </div>
@@ -307,11 +307,11 @@ export default function TestimonialCutEditor({ row, onClose, onSave }) {
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.5rem', marginTop: '1.5rem' }}>
-          <button onClick={onClose} style={{ ...btn, color: '#9CA3AF' }}>Fermer</button>
+          <button onClick={onClose} style={{ ...btn, color: '#4A534F' }}>Fermer</button>
           <button
             onClick={handleSave}
             disabled={!dirty || saving}
-            style={{ ...btn, border: 'none', background: dirty ? '#166534' : '#1A1A3A', opacity: dirty ? 1 : 0.6, cursor: dirty ? 'pointer' : 'not-allowed' }}
+            style={{ ...btn, border: 'none', background: dirty ? '#3F7A5E' : '#FFFFFF', opacity: dirty ? 1 : 0.6, cursor: dirty ? 'pointer' : 'not-allowed' }}
           >
             {saving && <Loader2 size={14} style={{ animation: 'spin 1s linear infinite' }} />} Enregistrer le montage
           </button>

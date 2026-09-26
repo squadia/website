@@ -17,7 +17,7 @@ const enquêteIA2026 = () => {
       {/* Hero */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '100px', textAlign: 'center' }}>
         <div className="fade-in">
-          <span className="tag-hero" style={{ background: 'rgba(37, 99, 235, 0.1)', color: 'var(--accent)' }}>RAPPORT EXCLUSIF</span>
+          <span className="tag-hero" style={{ background: 'rgba(31,58,51,0.1)', color: 'var(--accent)' }}>RAPPORT EXCLUSIF</span>
           <h1 style={{ marginTop: '1.5rem', fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', maxWidth: '1000px', marginInline: 'auto' }}>
             L'État de l'IA dans les PME & ETI Françaises
           </h1>
@@ -69,22 +69,22 @@ const enquêteIA2026 = () => {
               width: '100%', 
               maxWidth: '450px', 
               aspectRatio: '3/4', 
-              background: 'linear-gradient(135deg, #0D0D25 0%, #050510 100%)', 
-              border: '1px solid #1A1A3A',
+              background: 'linear-gradient(135deg, #F6F3EC 0%, #F6F3EC 100%)', 
+              border: '1px solid #D8D1C2',
               borderRadius: '8px',
               padding: '4rem',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              boxShadow: '0 50px 100px -20px rgba(0,0,0,0.5)',
+              boxShadow: '0 50px 100px -20px rgba(28,43,39,0.175)',
               transform: 'rotate(-2deg)'
             }}>
                <div>
                  <BarChart3 size={60} color="var(--accent)" style={{ marginBottom: '2rem' }} />
                  <h3 style={{ fontSize: '2rem' }}>ENQUÊTE IA 2026</h3>
-                 <p style={{ color: '#6B7280', marginTop: '1rem' }}>Rapport Annuel Squadia</p>
+                 <p style={{ color: '#6B716C', marginTop: '1rem' }}>Rapport Annuel Squadia</p>
                </div>
-               <div style={{ borderTop: '1px solid #1A1A3A', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between' }}>
+               <div style={{ borderTop: '1px solid #D8D1C2', paddingTop: '2rem', display: 'flex', justifyContent: 'space-between' }}>
                   <span style={{ fontWeight: 700 }}>PREMIUM ACCESS</span>
                   <span style={{ color: 'var(--accent)' }}>PDF FREE</span>
                </div>
@@ -127,7 +127,7 @@ const enquêteIA2026 = () => {
             <button className="btn btn-primary" style={{ marginTop: '1rem', padding: '1.2rem' }}>
               Télécharger maintenant <Download size={18} style={{ marginLeft: '10px' }} />
             </button>
-            <p style={{ fontSize: '0.75rem', color: '#6B7280', textAlign: 'center', marginTop: '1rem' }}>
+            <p style={{ fontSize: '0.75rem', color: '#6B716C', textAlign: 'center', marginTop: '1rem' }}>
               Vos données sont protégées. Aucune revente à des tiers.
             </p>
           </form>
@@ -144,8 +144,8 @@ const enquêteIA2026 = () => {
 const inputStyle = {
   width: '100%',
   padding: '1rem',
-  background: '#0D0D25',
-  border: '1px solid #1A1A3A',
+  background: '#F6F3EC',
+  border: '1px solid #D8D1C2',
   borderRadius: '4px',
   color: 'white',
   outline: 'none',

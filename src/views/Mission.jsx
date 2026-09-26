@@ -22,19 +22,19 @@ const Mission = () => {
 
   const IconTrend = () => (
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-      <path stroke="#fb923c" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M3 17l5-5 4 4 9-9"/>
+      <path stroke="#B5652A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" d="M3 17l5-5 4 4 9-9"/>
     </svg>
   );
   const IconDoc = () => (
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-      <rect x="3" y="3" width="18" height="18" rx="2" stroke="#fb923c" strokeWidth="2"/>
-      <path stroke="#fb923c" strokeWidth="2" strokeLinecap="round" d="M8 12h8M8 8h5"/>
+      <rect x="3" y="3" width="18" height="18" rx="2" stroke="#B5652A" strokeWidth="2"/>
+      <path stroke="#B5652A" strokeWidth="2" strokeLinecap="round" d="M8 12h8M8 8h5"/>
     </svg>
   );
   const IconClock = () => (
     <svg width="16" height="16" fill="none" viewBox="0 0 24 24">
-      <circle cx="12" cy="12" r="9" stroke="#fb923c" strokeWidth="2"/>
-      <path stroke="#fb923c" strokeWidth="2" strokeLinecap="round" d="M12 8v4l3 3"/>
+      <circle cx="12" cy="12" r="9" stroke="#B5652A" strokeWidth="2"/>
+      <path stroke="#B5652A" strokeWidth="2" strokeLinecap="round" d="M12 8v4l3 3"/>
     </svg>
   );
   const IconLinkedin = () => (
@@ -52,42 +52,42 @@ const Mission = () => {
   const fi = undefined;
 
   return (
-    <div style={{ background: '#0c0e12', color: '#e1e2e7' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27' }}>
 
       <style>{`
         .mfu { opacity: 0; transform: translateY(14px); transition: opacity .5s ease, transform .5s ease; }
         .mfu.mfv { opacity: 1; transform: translateY(0); }
-        .glass-card-m { background: rgba(29,32,35,.7); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; transition: border-color .2s; }
-        .glass-card-m:hover { border-color: rgba(255,255,255,.1); }
-        .glass-card-orange { border-left: 3px solid #f87171; box-shadow: 0 0 40px -15px rgba(248,113,113,.1); }
-        .glass-card-blue-border { border-left: 3px solid #44CCFF; }
-        .conv-block { background: #111417; padding: 28px 22px; transition: background .2s; }
-        .conv-block:hover { background: #161a1e; }
-        .team-card-m { background: rgba(17,20,23,.95); border: 1px solid rgba(255,255,255,.06); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
-        .team-card-m:hover { border-color: rgba(255,255,255,.12); }
-        .team-card-m.founder-m { border-color: rgba(68,204,255,.18); background: linear-gradient(160deg, rgba(68,204,255,.05) 0%, rgba(17,20,23,.95) 50%); box-shadow: 0 0 40px -15px rgba(68,204,255,.18); }
-        .team-photo-m { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; background: rgba(17,20,23,1); flex-shrink: 0; }
+        .glass-card-m { background: rgba(246,243,236,0.7); border: 1px solid rgba(28,43,39,0.14); border-radius: 14px; transition: border-color .2s; }
+        .glass-card-m:hover { border-color: rgba(28,43,39,0.6); }
+        .glass-card-orange { border-left: 3px solid #A63D2F; box-shadow: 0 0 40px -15px rgba(166,61,47,.1); }
+        .glass-card-blue-border { border-left: 3px solid #B08D57; }
+        .conv-block { background: #FFFFFF; padding: 28px 22px; transition: background .2s; }
+        .conv-block:hover { background: #FFFFFF; }
+        .team-card-m { background: rgba(246,243,236,0.95); border: 1px solid rgba(28,43,39,0.14); border-radius: 14px; overflow: hidden; display: flex; flex-direction: column; transition: border-color .2s; }
+        .team-card-m:hover { border-color: rgba(28,43,39,0.6); }
+        .team-card-m.founder-m { border-color: rgba(138,109,59,0.8); background: linear-gradient(160deg, rgba(176,141,87,0.05) 0%, rgba(246,243,236,0.95) 50%); box-shadow: 0 0 40px -15px rgba(176,141,87,0.18); }
+        .team-photo-m { position: relative; width: 100%; aspect-ratio: 3/4; overflow: hidden; background: rgba(246,243,236,1.0); flex-shrink: 0; }
         .team-photo-m img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; transition: transform .4s ease; display: block; }
         
         .photo-bw-m { filter: grayscale(1) contrast(1.08) brightness(0.88); }
         .photo-jerome-m { filter: contrast(1.02) brightness(0.9); }
-        .team-photo-overlay { position: absolute; bottom: -2px; left: 0; right: 0; height: 55%; background: linear-gradient(to top, rgba(17,20,23,1) 0%, rgba(17,20,23,1) 20%, transparent 100%); z-index: 2; }
-        .link-ext { font-size: .75rem; color: #44CCFF; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; opacity: .8; transition: opacity .15s; }
-        .link-ext:hover { opacity: 1; color: #fff; }
-        .tag-m { font-size: .625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); color: #bcc8d1; display: inline-block; }
-        .tag-blue-m { background: rgba(68,204,255,.08); border-color: rgba(68,204,255,.2); color: #44CCFF; }
-        .tag-orange-m { background: rgba(234,88,12,.1); border-color: rgba(234,88,12,.2); color: #fb923c; }
-        .btn-primary-m { font-size: 1.1rem; font-weight: 700; background: #44CCFF; color: #060612; padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
-        .btn-primary-m:hover { background: #7ad0ff; transform: translateY(-1px); }
-        .btn-secondary-m { font-size: 1.1rem; font-weight: 700; background: rgba(255,255,255,.05); color: #e1e2e7; border: 1px solid rgba(255,255,255,.1); padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
-        .btn-secondary-m:hover { background: rgba(255,255,255,.1); transform: translateY(-1px); }
+        .team-photo-overlay { position: absolute; bottom: -2px; left: 0; right: 0; height: 55%; background: linear-gradient(to top, rgba(246,243,236,1.0) 0%, rgba(246,243,236,1.0) 20%, transparent 100%); z-index: 2; }
+        .link-ext { font-size: .75rem; color: #8A6D3B; text-decoration: none; display: inline-flex; align-items: center; gap: 5px; opacity: .8; transition: opacity .15s; }
+        .link-ext:hover { opacity: 1; color: #1C2B27; }
+        .tag-m { font-size: .625rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; padding: 2px 8px; border-radius: 999px; background: rgba(255,255,255,0.6); border: 1px solid rgba(28,43,39,0.14); color: #4A534F; display: inline-block; }
+        .tag-blue-m { background: rgba(176,141,87,0.08); border-color: rgba(138,109,59,0.8); color: #8A6D3B; }
+        .tag-orange-m { background: rgba(181,101,42,.1); border-color: #B5652A; color: #B5652A; }
+        .btn-primary-m { font-size: 1.1rem; font-weight: 700; background: #1F3A33; color: #F6F3EC; padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
+        .btn-primary-m:hover { background: #1F3A33; transform: translateY(-1px); }
+        .btn-secondary-m { font-size: 1.1rem; font-weight: 700; background: rgba(255,255,255,0.6); color: #1C2B27; border: 1px solid rgba(28,43,39,0.16); padding: 1.1rem 2.2rem; border-radius: 0.5rem; text-decoration: none; display: inline-block; transition: all .15s; }
+        .btn-secondary-m:hover { background: rgba(255,255,255,1.0); transform: translateY(-1px); }
         @media (max-width: 768px) {
           .hero-grid-m { grid-template-columns: 1fr !important; }
           .hero-right-m { display: none !important; }
           .three-col-m { grid-template-columns: 1fr !important; }
           .four-col-m { grid-template-columns: 1fr 1fr !important; }
           .team-grid-m { grid-template-columns: 1fr !important; }
-          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #060612; }
+          .hero-left-m { padding: 40px 24px !important; width: 100% !important; position: relative !important; background: #F6F3EC; }
           .hero-bg-mission { display: none !important; }
           .hero-grid-m { flex-direction: column !important; min-height: auto !important; max-height: none !important; padding-top: 80px !important; }
           .hero-img-mobile-m { display: block !important; }
@@ -109,31 +109,31 @@ const Mission = () => {
       <div className="hero-grid-m" style={{
         minHeight: '100vh', maxHeight: '920px',
         display: 'flex', alignItems: 'center',
-        position: 'relative', overflow: 'hidden', paddingTop: '64px', background: '#060612',
+        position: 'relative', overflow: 'hidden', paddingTop: '64px', background: '#F6F3EC',
       }}>
         {/* Image de fond — zoom out via backgroundSize pour voir le perso entier */}
         <img src="/assets/images/notremission/notremission_background.png" alt="" className="hero-bg-mission" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center center', filter: 'blur(2px)', transform: 'scale(1.02)', zIndex: 0 }} />
         {/* Overlay global */}
-        <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(10,10,26,0.25)', zIndex: 1, pointerEvents: 'none' }} />
+        <div className="hero-overlay-m" style={{ position: 'absolute', inset: 0, background: 'rgba(246,243,236,0.25)', zIndex: 1, pointerEvents: 'none' }} />
         {/* Gradient gauche → droite : assombrit zone texte */}
-        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(6,6,18,0.95) 0%, rgba(6,6,18,0.85) 35%, rgba(6,6,18,0.55) 55%, rgba(6,6,18,0.10) 72%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-lr-m" style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to right, rgba(246,243,236,0.95) 0%, rgba(246,243,236,0.85) 35%, rgba(246,243,236,0.55) 55%, rgba(246,243,236,0.1) 72%, transparent 100%)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Gradient bas : transition douce vers section suivante */}
-        <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #060612)', zIndex: 2, pointerEvents: 'none' }} />
+        <div className="hero-gradient-bottom-m" style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '160px', background: 'linear-gradient(to bottom, transparent, #F6F3EC)', zIndex: 2, pointerEvents: 'none' }} />
         {/* Image mobile : visible uniquement sur mobile */}
         <div className="hero-img-mobile-m" style={{ display: 'none', width: '100%', height: '280px', overflow: 'hidden', flexShrink: 0 }}>
           <img src="/assets/images/notremission/notremission_background.png" alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%', filter: 'blur(2px)', transform: 'scale(1.02)' }} />
-          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, transparent, #060612)' }} />
+          <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '80px', background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
         </div>
 
         <div className="hero-left-m" style={{
           display: 'flex', flexDirection: 'column', justifyContent: 'center',
           paddingTop: '56px', paddingBottom: '56px', paddingLeft: '8%', paddingRight: '5%', position: 'relative', zIndex: 3, width: '65%',
         }}>
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre mission</span>
-          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', marginBottom: '20px', transitionDelay: '.06s' }}>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#8A6D3B', display: 'block', marginBottom: '16px' }}>Notre mission</span>
+          <h1 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(2rem,3.2vw,2.8rem)', fontWeight: 700, lineHeight: 1.1, color: '#1C2B27', marginBottom: '20px', transitionDelay: '.06s' }}>
             Ce que nous avons appris,<br />C'est ce que nous partageons.
           </h1>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#bcc8d1', marginBottom: '12px', maxWidth: '70ch', transitionDelay: '.12s' }}>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.25rem', lineHeight: 1.65, color: '#4A534F', marginBottom: '12px', maxWidth: '70ch', transitionDelay: '.12s' }}>
             Nous avons forgé notre expérience B2B pendant plus de 25 ans,<br />Pour le Mid-Market comme pour les Grands Comptes,<br />Pour le Direct et l'Indirect,<br />Pour le Public comme le Privé,<br />Tous secteurs confondus (Banque/Assurance, Médias, Santé, etc).
           </p>
           <div className="mfu" style={{ display: 'flex', gap: '12px', marginTop: '28px', transitionDelay: '.22s' }}>
@@ -145,11 +145,11 @@ const Mission = () => {
       </div>
 
       {/* ── CE QU'ON OBSERVE ── */}
-      <section id="croyance" style={{ background: '#060612', padding: '120px 0' }}>
+      <section id="croyance" style={{ background: '#F6F3EC', padding: '120px 0' }}>
         <div className="container">
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre constat</span>
-          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur.<br />3 causes que nous retrouvons dans presque chaque mission.</p>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#8A6D3B', display: 'block', marginBottom: '16px' }}>Notre constat</span>
+          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#1C2B27', marginBottom: '1.5rem', maxWidth: '620px' }}>Quand une entreprise rencontre des difficultés, ça vient rarement de l'extérieur.</h2>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#4A534F', maxWidth: '660px', marginBottom: '3rem' }}>Mais bien de l'intérieur.<br />3 causes que nous retrouvons dans presque chaque mission.</p>
           <div className="three-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '16px', alignItems: 'stretch' }}>
             {[
               { icon: <IconTrend />, title: "Un marketing qui ne produit pas assez de leads", body: "Pas assez de contenu, pas assez de ciblage, pas assez de volume. Le pipeline commercial dépend trop de l'effort individuel.", tag: "Marketing insuffisant", delay: '0s' },
@@ -158,14 +158,14 @@ const Mission = () => {
             ].map((c, i) => (
               <div key={i} style={{ position: 'relative', display: 'flex' }}>
                 {i === 2 && (
-                  <div style={{ position: 'absolute', top: '-200px', right: '-200px', width: '500px', height: '500px', background: 'radial-gradient(circle, rgba(37,99,235,0.48) 0%, transparent 68%)', filter: 'blur(95px)', pointerEvents: 'none', zIndex: 0 }} />
+                  <div style={{ position: 'absolute', top: '-200px', right: '-200px', width: '500px', height: '500px', background: 'transparent', filter: 'blur(95px)', pointerEvents: 'none', zIndex: 0 }} />
                 )}
                 <div className="glass-card-m glass-card-orange mfu" style={{ padding: '36px 28px', transitionDelay: c.delay, position: 'relative', zIndex: 1, flex: 1, display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '20px' }}>
-                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#f87171', background: 'rgba(248,113,113,.08)', border: '1px solid rgba(248,113,113,.3)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
+                    <span style={{ fontFamily: fj, fontSize: '0.8rem', fontWeight: 700, letterSpacing: '.1em', textTransform: 'uppercase', color: '#A63D2F', background: 'rgba(166,61,47,.08)', border: '1px solid rgba(166,61,47,.3)', borderRadius: '6px', padding: '6px 12px' }}>{c.tag}</span>
                   </div>
-                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 300, lineHeight: 1.3, letterSpacing: '-.01em', color: '#f87171', marginBottom: '10px' }}>{c.title}</h3>
-                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', marginTop: '8px', flex: 1 }}>{c.body}</p>
+                  <h3 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 300, lineHeight: 1.3, letterSpacing: '-.01em', color: '#A63D2F', marginBottom: '10px' }}>{c.title}</h3>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#4A534F', marginTop: '8px', flex: 1 }}>{c.body}</p>
                 </div>
               </div>
             ))}
@@ -174,13 +174,13 @@ const Mission = () => {
       </section>
 
       {/* ── CE EN QUOI ON CROIT ── */}
-      <section style={{ background: '#060612', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, right: '-200px', width: '500px', height: '100%', background: 'radial-gradient(ellipse,rgba(68,204,255,.04) 0%,transparent 70%)', pointerEvents: 'none' }} />
+      <section style={{ background: '#F6F3EC', padding: '120px 0', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: 0, right: '-200px', width: '500px', height: '100%', background: 'transparent', pointerEvents: 'none' }} />
         <div className="container" style={{ position: 'relative', zIndex: 1 }}>
-          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Notre apport</span>
-          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem', maxWidth: '600px' }}>Pour résoudre ça, il faut être équipé.</h2>
-          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '660px', marginBottom: '3rem' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser.<br />C'est ce que nous construisons pour les PME et ETI B2B.</p>
-          <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,.05)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(255,255,255,.05)' }}>
+          <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#8A6D3B', display: 'block', marginBottom: '16px' }}>Notre apport</span>
+          <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#1C2B27', marginBottom: '1.5rem', maxWidth: '600px' }}>Pour résoudre ça, il faut être équipé.</h2>
+          <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#4A534F', maxWidth: '660px', marginBottom: '3rem' }}>Les bonnes méthodes, les bons outils, et aujourd'hui l'IA pour systématiser.<br />C'est ce que nous construisons pour les PME et ETI B2B.</p>
+          <div className="four-col-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,0.6)', borderRadius: '14px', overflow: 'hidden', border: '1px solid rgba(28,43,39,0.14)' }}>
             {[
               { num: '01', title: 'La décision avant l\'outillage.', body: 'On évalue ce qui est le plus pertinent pour atteindre vos objectifs, puis on définit la strategie, les outils et les process.' },
               { num: '02', title: 'Un système cohérent vaut plus que tout.', body: 'Un système cohérent est la clé de la réussite. Stratégie, Data, Automatisation, Formation, alignés et solidaires.' },
@@ -188,9 +188,9 @@ const Mission = () => {
               { num: '04', title: 'Après la strategie, l\'exécution.', body: 'Périmètre, livrables, calendrier, responsabilités. Définis ensemble avant le démarrage, dans l\'ordre des priorités.' },
             ].map((c, i) => (
               <div key={i} className="conv-block mfu" style={{ transitionDelay: `${i * 0.08}s` }}>
-                <span style={{ fontFamily: fj, fontSize: '1.875rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#44CCFF', lineHeight: 1, display: 'block', marginBottom: '18px' }}>{c.num}</span>
-                <h4 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.25, color: '#fff', marginBottom: '10px' }}>{c.title}</h4>
-                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1' }}>{c.body}</p>
+                <span style={{ fontFamily: fj, fontSize: '1.875rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#8A6D3B', lineHeight: 1, display: 'block', marginBottom: '18px' }}>{c.num}</span>
+                <h4 style={{ fontFamily: fj, fontSize: '1.1rem', fontWeight: 700, lineHeight: 1.25, color: '#1C2B27', marginBottom: '10px' }}>{c.title}</h4>
+                <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#4A534F' }}>{c.body}</p>
               </div>
             ))}
           </div>
@@ -198,42 +198,42 @@ const Mission = () => {
       </section>
 
       {/* ── NOTRE CROYANCE (citation) ── */}
-      <section style={{ background: '#080a0d', padding: '120px 0', borderTop: '1px solid rgba(255,255,255,.05)' }}>
+      <section style={{ background: '#F6F3EC', padding: '120px 0', borderTop: '1px solid rgba(28,43,39,0.14)' }}>
         <div className="container">
           <div className="mfu" style={{
             position: 'relative',
-            border: '1px solid rgba(68,204,255,.35)',
+            border: '1px solid rgba(176,141,87,0.35)',
             borderRadius: '6px',
             padding: '56px 48px',
             overflow: 'hidden',
-            background: '#0a0d14',
+            background: '#F6F3EC',
           }}>
             {/* Motif de points en fond */}
             <svg aria-hidden="true" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
               <defs>
                 <pattern id="mission-croyance-dots" width="18" height="18" patternUnits="userSpaceOnUse">
-                  <circle cx="1.5" cy="1.5" r="1.2" fill="rgba(255,255,255,0.09)" />
+                  <circle cx="1.5" cy="1.5" r="1.2" fill="rgba(255,255,255,0.9)" />
                 </pattern>
               </defs>
               <rect width="100%" height="100%" fill="url(#mission-croyance-dots)" />
             </svg>
 
             {/* Repères d'angle */}
-            <div style={{ position: 'absolute', top: '-6px', left: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
-            <div style={{ position: 'absolute', top: '-6px', right: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
-            <div style={{ position: 'absolute', bottom: '-6px', left: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
-            <div style={{ position: 'absolute', bottom: '-6px', right: '-6px', width: '12px', height: '12px', background: '#44CCFF' }} />
+            <div style={{ position: 'absolute', top: '-6px', left: '-6px', width: '12px', height: '12px', background: '#1F3A33' }} />
+            <div style={{ position: 'absolute', top: '-6px', right: '-6px', width: '12px', height: '12px', background: '#1F3A33' }} />
+            <div style={{ position: 'absolute', bottom: '-6px', left: '-6px', width: '12px', height: '12px', background: '#1F3A33' }} />
+            <div style={{ position: 'absolute', bottom: '-6px', right: '-6px', width: '12px', height: '12px', background: '#1F3A33' }} />
 
             <div style={{ position: 'relative', zIndex: 1 }}>
-              <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '20px' }}>Notre croyance</span>
-              <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.9rem, 3.6vw, 3.1rem)', fontWeight: 700, lineHeight: 1.25, color: '#fff', maxWidth: '780px', marginBottom: '1.5rem' }}>
+              <span style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#8A6D3B', display: 'block', marginBottom: '20px' }}>Notre croyance</span>
+              <h2 style={{ fontFamily: fj, fontSize: 'clamp(1.9rem, 3.6vw, 3.1rem)', fontWeight: 700, lineHeight: 1.25, color: '#1C2B27', maxWidth: '780px', marginBottom: '1.5rem' }}>
                 &laquo;&nbsp;La chance est le moment où le travail rencontre l'opportunité.&nbsp;&raquo;
               </h2>
-              <p style={{ fontFamily: fi, fontSize: '1.05rem', lineHeight: 1.6, color: '#bcc8d1', maxWidth: '620px', marginBottom: '2rem' }}>
+              <p style={{ fontFamily: fi, fontSize: '1.05rem', lineHeight: 1.6, color: '#4A534F', maxWidth: '620px', marginBottom: '2rem' }}>
                 Nous mettons toujours toutes les chances de notre côté pour réussir nos missions. C'est cette philosophie en laquelle nous croyons.
               </p>
               <div style={{ textAlign: 'right' }}>
-                <span style={{ fontFamily: fi, fontStyle: 'italic', fontSize: '1.05rem', fontWeight: 600, color: '#44CCFF', whiteSpace: 'nowrap' }}>Sénèque</span>
+                <span style={{ fontFamily: fi, fontStyle: 'italic', fontSize: '1.05rem', fontWeight: 600, color: '#8A6D3B', whiteSpace: 'nowrap' }}>Sénèque</span>
               </div>
             </div>
           </div>
@@ -241,12 +241,12 @@ const Mission = () => {
       </section>
 
       {/* ── ÉQUIPE ── */}
-      <section id="equipe" style={{ background: '#060612', padding: '120px 0' }}>
+      <section id="equipe" style={{ background: '#F6F3EC', padding: '120px 0' }}>
         <div className="container">
           <div style={{ marginBottom: '48px' }}>
-            <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Votre équipe</span>
-            <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#fff', marginBottom: '1.5rem' }}>Votre équipe dédiée.</h2>
-            <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#bcc8d1', maxWidth: '480px', marginTop: '8px' }}>Experts indépendants associés, chacun avec son domaine, sa structure et une complémentarité réelle sur le terrain.</p>
+            <span className="mfu" style={{ fontFamily: fj, fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#8A6D3B', display: 'block', marginBottom: '16px' }}>Votre équipe</span>
+            <h2 className="mfu" style={{ fontFamily: fj, fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.15, color: '#1C2B27', marginBottom: '1.5rem' }}>Votre équipe dédiée.</h2>
+            <p className="mfu" style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.65, color: '#4A534F', maxWidth: '480px', marginTop: '8px' }}>Experts indépendants associés, chacun avec son domaine, sa structure et une complémentarité réelle sur le terrain.</p>
           </div>
 
           <div className="team-grid-m" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '20px', alignItems: 'stretch' }}>
@@ -263,12 +263,12 @@ const Mission = () => {
                     <span className="tag-m">Experte associée</span>
                     <span className="tag-m">Transformation</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Kavida Angapin</div>
-                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Excellence opérationnelle, transformation</div>
-                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Fondatrice, Neuroskills</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#1C2B27', marginBottom: '3px', marginTop: '10px' }}>Kavida Angapin</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#1F3A33', marginBottom: '2px', lineHeight: 1.4 }}>Excellence opérationnelle, transformation</div>
+                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(107,113,108,0.8)', lineHeight: 1.4 }}>Fondatrice, Neuroskills</div>
                 </div>
-                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Directrice Excellence Opérationnelle Cegedim, spécialisée en change management et neurosciences appliquées aux équipes managers et terrain. Expérience internationale.</p>
+                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(28,43,39,0.14)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#6B716C', flex: 1 }}>Ex-Directrice Excellence Opérationnelle Cegedim, spécialisée en change management et neurosciences appliquées aux équipes managers et terrain. Expérience internationale.</p>
                   <a className="link-ext" href="https://www.linkedin.com/in/kavida-angapin" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
                     <IconLinkedin /> LinkedIn
                   </a>
@@ -288,12 +288,12 @@ const Mission = () => {
                     <span className="tag-m tag-blue-m">Stratégie B2B</span>
                     <span className="tag-m tag-blue-m">Expert IA</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Jérôme DEBRUYNE</div>
-                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#44CCFF', marginBottom: '2px', lineHeight: 1.4 }}>Fondateur & CEO</div>
-                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Squadia</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#1C2B27', marginBottom: '3px', marginTop: '10px' }}>Jérôme DEBRUYNE</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#8A6D3B', marginBottom: '2px', lineHeight: 1.4 }}>Fondateur & CEO</div>
+                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(107,113,108,0.8)', lineHeight: 1.4 }}>Squadia</div>
                 </div>
-                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Xerox, Dell, Oracle. De commercial sédentaire à manager, responsable du go-to-market France. Formateur Cegos et Comundi, IA appliquée aux métiers de la vente, du marketing et de la communication.</p>
+                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(28,43,39,0.14)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#6B716C', flex: 1 }}>Ex-Xerox, Dell, Oracle. De commercial sédentaire à manager, responsable du go-to-market France. Formateur Cegos et Comundi, IA appliquée aux métiers de la vente, du marketing et de la communication.</p>
                   <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap', marginTop: '10px' }}>
                     <a className="link-ext" href="https://www.comundi.fr/formateurs/8307-debruyne-jerome.html" target="_blank" rel="noopener noreferrer">
                       <IconExternal /> Comundi
@@ -318,12 +318,12 @@ const Mission = () => {
                     <span className="tag-m">Expert associé</span>
                     <span className="tag-m">Revenue</span>
                   </div>
-                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#fff', marginBottom: '3px', marginTop: '10px' }}>Julien Le Maguer</div>
-                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#7ad0ff', marginBottom: '2px', lineHeight: 1.4 }}>Développement commercial, revenue ops</div>
-                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(188,200,209,.45)', lineHeight: 1.4 }}>Fondateur, JLM Consulting</div>
+                  <div style={{ fontFamily: fj, fontSize: '1.15rem', fontWeight: 700, letterSpacing: '-.01em', color: '#1C2B27', marginBottom: '3px', marginTop: '10px' }}>Julien Le Maguer</div>
+                  <div style={{ fontFamily: fi, fontSize: '0.875rem', fontWeight: 500, color: '#1F3A33', marginBottom: '2px', lineHeight: 1.4 }}>Développement commercial, revenue ops</div>
+                  <div style={{ fontFamily: fi, fontSize: '.6875rem', color: 'rgba(107,113,108,0.8)', lineHeight: 1.4 }}>Fondateur, JLM Consulting</div>
                 </div>
-                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(255,255,255,.05)', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#9aabb5', flex: 1 }}>Ex-Inside Sales Manager SaaS. CRM et Customer Experience Trainer, formation sur le cycle de vente complet, BPO et accompagnement commercial terrain.</p>
+                <div style={{ marginTop: '14px', paddingTop: '14px', borderTop: '1px solid rgba(28,43,39,0.14)', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                  <p style={{ fontFamily: fi, fontSize: '1.1rem', lineHeight: 1.6, color: '#6B716C', flex: 1 }}>Ex-Inside Sales Manager SaaS. CRM et Customer Experience Trainer, formation sur le cycle de vente complet, BPO et accompagnement commercial terrain.</p>
                   <a className="link-ext" href="https://www.linkedin.com/in/julien-lemaguer/" target="_blank" rel="noopener noreferrer" style={{ marginTop: '10px' }}>
                     <IconLinkedin /> LinkedIn
                   </a>
