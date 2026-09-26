@@ -853,11 +853,11 @@ export default function PlanificateurCampagne() {
   const [modal, setModal] = useState(null); // { draft, editId }
   const [tab, setTab] = useState('calendar');
 
-  // Chargement côté client : campagnes sauvegardées, sinon un exemple pour démarrer
+  // Chargement côté client des campagnes sauvegardées dans ce navigateur
   useEffect(() => {
     let saved = null;
     try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); } catch { /* stockage indisponible */ }
-    setCampaigns(Array.isArray(saved) ? saved.map(withDefaults) : [{ ...newDraft(0), id: 'exemple', name: 'Exemple : sales managers' }]);
+    setCampaigns(Array.isArray(saved) ? saved.map(withDefaults) : []);
     setLoaded(true);
   }, []);
 
