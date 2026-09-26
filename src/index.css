@@ -890,3 +890,13 @@ footer.footer-anim .footer-acc-trigger { color: #F6F3EC !important; }
 footer.footer-anim .footer-acc-trigger path { stroke: rgba(246, 243, 236, 0.6); }
 footer.footer-anim .footer-acc-link { color: rgba(246, 243, 236, 0.72) !important; }
 footer.footer-anim .footer-acc-link:active { color: #C9A66B !important; }
+
+/* Theme cabinet: one typographic scale for every page (desktop; mobile has its own scale above) */
+@media (min-width: 769px) {
+  main h1 { font-size: clamp(2.2rem, 3.2vw, 2.8rem) !important; line-height: 1.12 !important; letter-spacing: -0.01em !important; }
+  main h1 + p,
+  main h1 + div + p,
+  main h1 + div > p:first-child { font-size: 1.15rem !important; line-height: 1.65 !important; letter-spacing: normal !important; color: #4A534F; }
+  main h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important; line-height: 1.2 !important; letter-spacing: -0.01em !important; }
+  main h2 + p { font-size: 1.1rem !important; line-height: 1.6 !important; }
+}

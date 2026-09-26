@@ -299,7 +299,7 @@ const TarifsContent = () => {
                   </div>
                 )}
 
-                <h3 style={{ fontSize: isMobile ? '1.3rem' : '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
+                <h3 style={{ fontSize: '1.3rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
                 <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
                   {card.subtitle}
                 </p>
