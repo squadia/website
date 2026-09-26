@@ -68,7 +68,7 @@ const Timeline = ({ isMobile }) => {
   const spineScale = useTransform(scrollYProgress, [0, 1], [0, 1]);
 
   return (
-  <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: isMobile ? '0 8px' : '0' }}>
+  <div ref={timelineRef} style={{ position: 'relative', maxWidth: '900px', margin: '0 auto', overflow: 'visible', padding: 0 }}>
     <div className="timeline-spine" style={{ display: isMobile ? 'none' : 'block', position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: 'rgba(176,141,87,0.15)', transform: 'translateX(-50%)' }} />
     {!isMobile && (
       <motion.div className="timeline-spine-progress" style={{ position: 'absolute', left: '50%', top: 0, bottom: 0, width: '2px', background: '#1F3A33', x: '-50%', scaleY: spineScale, transformOrigin: 'top', zIndex: 1 }} />

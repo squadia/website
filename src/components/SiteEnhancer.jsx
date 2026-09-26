@@ -56,6 +56,31 @@ function fixPunctuation(root) {
   nodes.forEach((n) => { n.nodeValue = n.nodeValue.replace(PUNCT_BEFORE, '\u00a0$1').replace(PUNCT_AFTER, '«\u00a0'); });
 }
 
+// Mobile: sections and their inner wrapper both add a side gutter (20 + 20px). Keep only the inner one.
+const isPlain = (el) => {
+  const c = getComputedStyle(el);
+  return (c.backgroundColor === 'rgba(0, 0, 0, 0)' || c.backgroundColor === 'transparent') && parseFloat(c.borderLeftWidth) === 0 && c.backgroundImage === 'none' && c.boxShadow === 'none';
+};
+function fixMobileGutters(root) {
+  if (window.innerWidth > 768) return;
+  // any full-width block (section, container, page wrapper) whose plain inner wrapper already pads
+  Array.from(root.querySelectorAll('section, div')).filter((el) => el.getBoundingClientRect().width >= window.innerWidth - 4).forEach((sec) => {
+    if (sec.dataset.gutter) return;
+    const cs = getComputedStyle(sec);
+    if (parseFloat(cs.paddingLeft) < 8) return;
+    const inner = Array.from(sec.querySelectorAll(':scope > *, :scope > * > *')).find((el) => {
+      const c = getComputedStyle(el);
+      // a layout wrapper, not a card (and not inside a card): no background, no border, on the whole chain
+      if (el.parentElement !== sec && !isPlain(el.parentElement)) return false;
+      return isPlain(el) && parseFloat(c.paddingLeft) >= 16 && el.getBoundingClientRect().width >= sec.clientWidth - parseFloat(cs.paddingLeft) * 2 - 4;
+    });
+    if (!inner) return;
+    sec.dataset.gutter = '1';
+    sec.style.setProperty('padding-left', '0px', 'important');
+    sec.style.setProperty('padding-right', '0px', 'important');
+  });
+}
+
 function prepare(el, delay) {
   if (el.dataset.rv) return;
   el.dataset.rv = '1';
@@ -111,6 +136,10 @@ function enhance(root, observer) {
       if (Math.abs(pr.width - r.width) < 6 && Math.abs(pr.height - r.height) < 6 && pcs.overflow === 'hidden') target = parent;
     }
     if (getComputedStyle(target).position === 'absolute') return;
+    // already framed by its own wrapper (e.g. a 4px white border): a second frame inside it looks clipped
+    for (let a = img.parentElement, i = 0; a && i < 3; a = a.parentElement, i++) {
+      if (parseFloat(getComputedStyle(a).borderTopWidth) >= 3) { img.dataset.framed = '1'; return; }
+    }
     if (hasWhiteBackground(target)) return;
     const tcs = getComputedStyle(target);
     if (parseFloat(tcs.borderTopWidth) >= 4) { img.dataset.framed = '1'; return; }
@@ -136,6 +165,7 @@ export default function SiteEnhancer() {
     const run = () => {
       enhance(main, observer);
       fixPunctuation(document.body);
+      fixMobileGutters(main);
       if (reduced) main.querySelectorAll('.rv-init').forEach((el) => el.classList.add('rv-in'));
     };
     // throttle, not debounce: pages with live widgets (countdowns, carousels) mutate constantly

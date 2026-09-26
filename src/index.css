@@ -627,14 +627,8 @@ html {
   [style*="max-width:800px"],
   [style*="max-width:850px"] {
     max-width: 100% !important;
-    padding-left: 1.25rem !important;
-    padding-right: 1.25rem !important;
   }
-  [style*="margin-inline:auto"],
-  [style*="margin-inline:auto"] {
-    margin-left: 1.25rem !important;
-    margin-right: 1.25rem !important;
-  }
+  /* no extra gutters here: the section / .container already gives the single 20px mobile gutter */
 
   /* ── FORMATION PAGES: sticky sidebar hidden on mobile ── */
   [style*="position:sticky"],
@@ -899,4 +893,16 @@ footer.footer-anim .footer-acc-link:active { color: #C9A66B !important; }
   main h1 + div > p:first-child { font-size: 1.15rem !important; line-height: 1.65 !important; letter-spacing: normal !important; color: #4A534F; }
   main h2 { font-size: clamp(1.6rem, 2.6vw, 2.2rem) !important; line-height: 1.2 !important; letter-spacing: -0.01em !important; }
   main h2 + p { font-size: 1.1rem !important; line-height: 1.6 !important; }
+}
+
+/* Mobile: one 20px gutter for every block (sections that wrap a .container must not add their own) */
+@media (max-width: 768px) {
+  .section-padding:has(> .container) { padding-left: 0 !important; padding-right: 0 !important; }
+}
+@media (max-width: 768px) {
+  main div[style*="padding:0 2rem"], main div[style*="padding:0 1.5rem"], main div[style*="padding:0 3rem"],
+  main div[style*="padding:0px 2rem"], main div[style*="padding:0 32px"], main div[style*="padding:0 24px"],
+  main div[style*="padding:2rem 2rem"] {
+    padding-left: 20px !important; padding-right: 20px !important;
+  }
 }
