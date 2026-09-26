@@ -1,5 +1,5 @@
 {
-  "name": "Squadia - Vidéo avatar Témoignage",
+  "name": "Squadia - Vidéo avatar Témoignage (API v3)",
   "nodes": [
     {
       "parameters": {
@@ -36,12 +36,72 @@
     },
     {
       "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "texte",
+              "name": "texte",
+              "value": "=Salut {{ $json.firstName }} ! Merci… vraiment, merci pour ton témoignage vidéo. {{ $json.note }}",
+              "type": "string"
+            },
+            {
+              "id": "avatar_id",
+              "name": "avatar_id",
+              "value": "78970c160bde4b38b7e493c41691c1a8",
+              "type": "string"
+            },
+            {
+              "id": "voice_id",
+              "name": "voice_id",
+              "value": "c08723c5f7ba4c24a0ca086848f1073d",
+              "type": "string"
+            },
+            {
+              "id": "vitesse",
+              "name": "vitesse",
+              "value": 1,
+              "type": "number"
+            },
+            {
+              "id": "modele_voix",
+              "name": "modele_voix",
+              "value": "eleven_multilingual_v2",
+              "type": "string"
+            },
+            {
+              "id": "firstName",
+              "name": "firstName",
+              "value": "={{ $json.firstName }}",
+              "type": "string"
+            },
+            {
+              "id": "email",
+              "name": "email",
+              "value": "={{ $json.email }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "name": "Réglages vidéo",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        440,
+        300
+      ],
+      "notes": "Modifiez ici le texte lu par l'avatar, l'avatar, la voix et la vitesse (0.5 à 1.5).",
+      "notesInFlow": true
+    },
+    {
+      "parameters": {
         "method": "POST",
-        "url": "https://api.heygen.com/v2/video/generate",
+        "url": "https://api.heygen.com/v3/videos",
         "options": {},
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ title: 'Merci ' + ($json.firstName || ''), video_inputs: [{ character: { type: 'avatar', avatar_id: '0b29e7f7e15c44b3a4dbdb30821e5f3d', avatar_style: 'normal' }, voice: { type: 'text', voice_id: 'c08723c5f7ba4c24a0ca086848f1073d', input_text: `Salut ${$json.firstName} ! Merci… vraiment, merci pour ton témoignage vidéo. ${$json.note}` } }], dimension: { width: 1280, height: 720 } }) }}",
+        "jsonBody": "={{ JSON.stringify({ type: 'avatar', title: 'Merci ' + ($json.firstName || ''), avatar_id: $json.avatar_id, voice_id: $json.voice_id, script: $json.texte, resolution: '720p', aspect_ratio: '16:9', voice_settings: { speed: $json.vitesse, engine_settings: { engine_type: 'elevenlabs', model: $json.modele_voix } } }) }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth"
       },
@@ -49,7 +109,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        440,
+        660,
         300
       ],
       "credentials": {
@@ -61,8 +121,21 @@
     },
     {
       "parameters": {
+        "amount": 60
+      },
+      "name": "Attendre 60 s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        880,
+        300
+      ],
+      "webhookId": "temoignage-avatar-wait"
+    },
+    {
+      "parameters": {
         "method": "GET",
-        "url": "=https://api.heygen.com/v1/video_status.get?video_id={{ $('HeyGen : générer').item.json.data.video_id }}",
+        "url": "=https://api.heygen.com/v3/videos/{{ $('HeyGen : générer').item.json.data.video_id }}",
         "options": {},
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth"
@@ -71,7 +144,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        880,
+        1100,
         300
       ],
       "credentials": {
@@ -97,7 +170,7 @@
                 "combinator": "and",
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.data.status }}",
+                    "leftValue": "={{ $json.data?.status }}",
                     "rightValue": "completed",
                     "operator": {
                       "type": "string",
@@ -118,7 +191,7 @@
                 "combinator": "or",
                 "conditions": [
                   {
-                    "leftValue": "={{ $json.data.status }}",
+                    "leftValue": "={{ $json.data?.status }}",
                     "rightValue": "failed",
                     "operator": {
                       "type": "string",
@@ -149,7 +222,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        1100,
+        1320,
         300
       ]
     },
@@ -166,7 +239,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1340,
+        1560,
         160
       ]
     },
@@ -185,7 +258,7 @@
       "type": "n8n-nodes-base.gmail",
       "typeVersion": 2.1,
       "position": [
-        1560,
+        1780,
         160
       ],
       "credentials": {
@@ -202,28 +275,15 @@
         "options": {},
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ action: 'avatar_failed', id: $('Webhook').item.json.body.id, token: $('Webhook').item.json.body.token, error: 'HeyGen : ' + JSON.stringify($json.data?.error || $json.error || $json.message || 'échec ou délai dépassé') }) }}"
+        "jsonBody": "={{ JSON.stringify({ action: 'avatar_failed', id: $('Webhook').item.json.body.id, token: $('Webhook').item.json.body.token, error: 'HeyGen : ' + ($json.data?.failure_message || $json.error?.message || $json.message || (typeof $json.error === 'string' ? $json.error : '') || 'échec ou délai dépassé') }) }}"
       },
       "name": "Signaler l'échec",
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        1340,
-        440
+        1560,
+        460
       ]
-    },
-    {
-      "parameters": {
-        "amount": 60
-      },
-      "name": "Attendre 60 s",
-      "type": "n8n-nodes-base.wait",
-      "typeVersion": 1.1,
-      "position": [
-        660,
-        300
-      ],
-      "webhookId": "temoignage-avatar-wait"
     }
   ],
   "connections": {
@@ -239,6 +299,17 @@
       ]
     },
     "Récupérer le job": {
+      "main": [
+        [
+          {
+            "node": "Réglages vidéo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Réglages vidéo": {
       "main": [
         [
           {
@@ -261,6 +332,17 @@
         [
           {
             "node": "Signaler l'échec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attendre 60 s": {
+      "main": [
+        [
+          {
+            "node": "HeyGen : statut",
             "type": "main",
             "index": 0
           }
@@ -315,17 +397,6 @@
         [
           {
             "node": "Envoyer l'email",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Attendre 60 s": {
-      "main": [
-        [
-          {
-            "node": "HeyGen : statut",
             "type": "main",
             "index": 0
           }
