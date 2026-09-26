@@ -47,7 +47,7 @@
             {
               "id": "scene1_look",
               "name": "scene1_look",
-              "value": "COLLER_ID_LOOK_FACE",
+              "value": "af8c31d6ef0840758c7e79e96aaf6a68",
               "type": "string"
             },
             {
@@ -59,7 +59,7 @@
             {
               "id": "scene2_look",
               "name": "scene2_look",
-              "value": "COLLER_ID_LOOK_PROFIL_1",
+              "value": "518289f6a6a14dda93cb7e0bd7f88487",
               "type": "string"
             },
             {
@@ -71,7 +71,7 @@
             {
               "id": "scene3_look",
               "name": "scene3_look",
-              "value": "COLLER_ID_LOOK_PROFIL_2",
+              "value": "af8c31d6ef0840758c7e79e96aaf6a68",
               "type": "string"
             },
             {
