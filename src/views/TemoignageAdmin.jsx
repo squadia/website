@@ -1,6 +1,6 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { ShieldCheck, Trash2, Check, X, Loader2, Scissors } from 'lucide-react';
+import { ShieldCheck, Trash2, Check, X, Loader2, Scissors, Send, RefreshCw } from 'lucide-react';
 import TestimonialCutEditor from '@/src/components/ui/TestimonialCutEditor';
 import { useSkipCuts } from '@/src/lib/videoCuts';
 import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, GOOGLE_CLIENT_ID, ADMIN_EMAIL } from '@/src/lib/testimonialsConfig';
@@ -24,6 +24,13 @@ async function callFunction(idToken, action, params = {}) {
   return data;
 }
 
+const AVATAR_BADGES = {
+  queued: { label: 'Vidéo avatar : en file', color: '#FACC15' },
+  generating: { label: 'Vidéo avatar : génération HeyGen...', color: '#FACC15' },
+  sent: { label: 'Vidéo avatar envoyée', color: '#4ADE80' },
+  error: { label: 'Vidéo avatar : erreur', color: '#F87171' },
+};
+
 const AdminVideo = ({ row }) => {
   const videoRef = useRef(null);
   useSkipCuts(videoRef, row.cuts);
@@ -39,6 +46,8 @@ const TemoignageAdmin = () => {
   const [tab, setTab] = useState('pending');
   const [busyId, setBusyId] = useState(null);
   const [editingRow, setEditingRow] = useState(null);
+  // Mot perso en cours de saisie : envoyé avec « Publier » pour ne pas dépendre de l'ordre blur/clic.
+  const [noteDrafts, setNoteDrafts] = useState({});
 
   const handleCredential = async (response) => {
     setLoginError('');
@@ -90,7 +99,8 @@ const TemoignageAdmin = () => {
   const updateRow = async (id, patch) => {
     setBusyId(id);
     try {
-      await callFunction(idToken, 'update', { id, ...patch });
+      const result = await callFunction(idToken, 'update', { id, ...patch });
+      if (result.avatar && !result.avatar.ok) alert(`Vidéo avatar non lancée : ${result.avatar.error}`);
       await refresh();
     } catch (err) {
       if (err.message === 'unauthorized') setIdToken('');
@@ -110,6 +120,30 @@ const TemoignageAdmin = () => {
       else alert(err.message);
     }
   };
+
+  const sendAvatar = async (row) => {
+    if (!confirm(`Générer la vidéo avatar et l'envoyer par email à ${row.email} ?`)) return;
+    setBusyId(row.id);
+    try {
+      await callFunction(idToken, 'avatar_send', { id: row.id });
+      await refresh();
+    } catch (err) {
+      if (err.message === 'unauthorized') setIdToken('');
+      else alert(err.message);
+    } finally {
+      setBusyId(null);
+    }
+  };
+
+  // Rafraîchit tant qu'une vidéo avatar est en cours de génération.
+  const avatarInProgress = rows.some((r) => r.avatar_status === 'queued' || r.avatar_status === 'generating');
+  useEffect(() => {
+    if (!idToken || !avatarInProgress) return;
+    const timer = setInterval(() => {
+      callFunction(idToken, 'list').then((data) => setRows(data.rows || [])).catch(() => {});
+    }, 20000);
+    return () => clearInterval(timer);
+  }, [idToken, avatarInProgress]);
 
   const deleteRow = async (id) => {
     if (!confirm('Supprimer définitivement ce témoignage ?')) return;
@@ -211,9 +245,58 @@ const TemoignageAdmin = () => {
                 ))}
               </select>
 
+              <div style={{ border: '1px solid #1A1A3A', borderRadius: '10px', padding: '0.75rem', marginBottom: '1rem' }}>
+                <label style={{ display: 'block', fontSize: '0.75rem', color: '#9CA3AF', marginBottom: '0.4rem' }}>
+                  Mot perso pour l'avatar HeyGen (lu dans la vidéo de remerciement)
+                </label>
+                <textarea
+                  defaultValue={row.avatar_note || ''}
+                  placeholder="Ex. : Ton passage sur la prospection LinkedIn m'a vraiment marqué."
+                  rows={3}
+                  disabled={row.avatar_status === 'sent' || row.avatar_status === 'queued' || row.avatar_status === 'generating'}
+                  onChange={(e) => setNoteDrafts((d) => ({ ...d, [row.id]: e.target.value }))}
+                  onBlur={(e) => e.target.value.trim() !== (row.avatar_note || '') && updateRow(row.id, { avatar_note: e.target.value })}
+                  style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem', resize: 'vertical', fontFamily: 'inherit' }}
+                />
+                {row.avatar_status && (
+                  <p style={{ fontSize: '0.78rem', fontWeight: 600, color: AVATAR_BADGES[row.avatar_status]?.color, marginTop: '0.5rem' }}>
+                    {AVATAR_BADGES[row.avatar_status]?.label}
+                    {row.avatar_status === 'sent' && row.avatar_sent_at && (
+                      <span style={{ color: '#6B7280', fontWeight: 400 }}> le {new Date(row.avatar_sent_at).toLocaleString('fr-FR')}</span>
+                    )}
+                    {row.avatar_status === 'error' && row.avatar_error && (
+                      <span style={{ display: 'block', color: '#9CA3AF', fontWeight: 400 }}>{row.avatar_error}</span>
+                    )}
+                  </p>
+                )}
+                {row.avatar_video_url && (
+                  <video src={row.avatar_video_url} controls preload="metadata" style={{ width: '100%', borderRadius: '8px', marginTop: '0.5rem', background: '#000' }} />
+                )}
+                {row.status === 'approved' && row.avatar_note && (!row.avatar_status || row.avatar_status === 'error') && (
+                  <button
+                    onClick={() => sendAvatar(row)}
+                    style={{ width: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.55rem', borderRadius: '6px', border: '1px solid #44CCFF', background: 'rgba(68,204,255,0.1)', color: '#44CCFF', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600, marginTop: '0.6rem' }}
+                  >
+                    {row.avatar_status === 'error' ? <RefreshCw size={14} /> : <Send size={14} />}
+                    {row.avatar_status === 'error' ? 'Relancer la vidéo avatar' : 'Envoyer la vidéo avatar'}
+                  </button>
+                )}
+                {row.status !== 'approved' && row.avatar_note && !row.avatar_status && (
+                  <p style={{ fontSize: '0.75rem', color: '#6B7280', marginTop: '0.5rem' }}>
+                    Envoyée automatiquement à {row.email || 'la personne'} lors de la publication.
+                  </p>
+                )}
+              </div>
+
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 {row.status !== 'approved' && (
-                  <button onClick={() => updateRow(row.id, { status: 'approved' })} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#166534', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
+                  <button
+                    onClick={() => {
+                      const note = (noteDrafts[row.id] ?? row.avatar_note ?? '').trim();
+                      const willSendAvatar = note && !row.avatar_status && row.email;
+                      if (willSendAvatar && !confirm(`Publier et envoyer la vidéo avatar à ${row.email} ?`)) return;
+                      updateRow(row.id, { status: 'approved', ...(note !== (row.avatar_note || '') && { avatar_note: note }) });
+                    }} style={{ flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.4rem', padding: '0.6rem', borderRadius: '6px', border: 'none', background: '#166534', color: '#fff', cursor: 'pointer', fontSize: '0.85rem', fontWeight: 600 }}>
                     <Check size={14} /> Publier
                   </button>
                 )}

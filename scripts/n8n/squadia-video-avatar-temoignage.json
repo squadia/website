@@ -1,0 +1,339 @@
+{
+  "name": "Squadia - Vidéo avatar Témoignage",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "temoignage-avatar",
+        "responseMode": "onReceived",
+        "options": {}
+      },
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [
+        0,
+        300
+      ],
+      "webhookId": "temoignage-avatar"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/testimonials-admin",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ action: 'avatar_job', id: $('Webhook').item.json.body.id, token: $('Webhook').item.json.body.token }) }}"
+      },
+      "name": "Récupérer le job",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        220,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.heygen.com/v2/video/generate",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ title: 'Merci ' + ($json.firstName || ''), video_inputs: [{ character: { type: 'avatar', avatar_id: '0b29e7f7e15c44b3a4dbdb30821e5f3d', avatar_style: 'normal' }, voice: { type: 'text', voice_id: 'c08723c5f7ba4c24a0ca086848f1073d', input_text: $json.script } }], dimension: { width: 1280, height: 720 } }) }}",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "HeyGen : générer",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        440,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "HeyGen API"
+        }
+      },
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=https://api.heygen.com/v1/video_status.get?video_id={{ $('HeyGen : générer').item.json.data.video_id }}",
+        "options": {},
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth"
+      },
+      "name": "HeyGen : statut",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        880,
+        300
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "name": "HeyGen API"
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "onError": "continueErrorOutput"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "typeValidation": "loose"
+                },
+                "combinator": "and",
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data.status }}",
+                    "rightValue": "completed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Terminée"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "typeValidation": "loose"
+                },
+                "combinator": "or",
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.data.status }}",
+                    "rightValue": "failed",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  },
+                  {
+                    "leftValue": "={{ $runIndex }}",
+                    "rightValue": 45,
+                    "operator": {
+                      "type": "number",
+                      "operation": "gte"
+                    }
+                  }
+                ]
+              },
+              "renameOutput": true,
+              "outputKey": "Échec"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "En cours"
+        }
+      },
+      "name": "Statut ?",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        1100,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/testimonials-admin",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ action: 'avatar_done', id: $('Webhook').item.json.body.id, token: $('Webhook').item.json.body.token, video_url: $json.data.video_url, thumbnail_url: $json.data.thumbnail_url }) }}"
+      },
+      "name": "Stocker la vidéo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        160
+      ]
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json.email }}",
+        "subject": "={{ $json.firstName }}, un petit message vidéo pour toi",
+        "emailType": "html",
+        "message": "=<div style=\"font-family:Arial,sans-serif;font-size:15px;line-height:1.6;color:#111;max-width:560px\">\n<p>Salut {{ $json.firstName }},</p>\n<p>J'ai enregistré un petit message vidéo rien que pour toi, suite à ton témoignage.</p>\n{{ $json.thumbnailUrl ? '<p><a href=\"' + $json.watchUrl + '\"><img src=\"' + $json.thumbnailUrl + '\" alt=\"Regarder la vidéo\" width=\"520\" style=\"width:100%;max-width:520px;border-radius:12px;display:block\"></a></p>' : '' }}\n<p><a href=\"{{ $json.watchUrl }}\" style=\"display:inline-block;background:#44CCFF;color:#050510;font-weight:bold;text-decoration:none;padding:12px 22px;border-radius:30px\">▶ Regarder la vidéo</a></p>\n<p>À très vite,<br>Jérôme</p>\n</div>",
+        "options": {
+          "appendAttribution": false,
+          "senderName": "Jérôme de Squadia"
+        }
+      },
+      "name": "Envoyer l'email",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        1560,
+        160
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "CNF4MVqIz8zVRNZ1",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/testimonials-admin",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ action: 'avatar_failed', id: $('Webhook').item.json.body.id, token: $('Webhook').item.json.body.token, error: 'HeyGen : ' + JSON.stringify($json.data?.error || $json.error || $json.message || 'échec ou délai dépassé') }) }}"
+      },
+      "name": "Signaler l'échec",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1340,
+        440
+      ]
+    },
+    {
+      "parameters": {
+        "amount": 60
+      },
+      "name": "Attendre 60 s",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        660,
+        300
+      ],
+      "webhookId": "temoignage-avatar-wait"
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Récupérer le job",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Récupérer le job": {
+      "main": [
+        [
+          {
+            "node": "HeyGen : générer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HeyGen : générer": {
+      "main": [
+        [
+          {
+            "node": "Attendre 60 s",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Signaler l'échec",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HeyGen : statut": {
+      "main": [
+        [
+          {
+            "node": "Statut ?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Statut ?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Statut ?": {
+      "main": [
+        [
+          {
+            "node": "Stocker la vidéo",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Signaler l'échec",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Attendre 60 s",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Stocker la vidéo": {
+      "main": [
+        [
+          {
+            "node": "Envoyer l'email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Attendre 60 s": {
+      "main": [
+        [
+          {
+            "node": "HeyGen : statut",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

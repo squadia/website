@@ -19,3 +19,7 @@ export const THANK_YOU_WEBHOOK_URL = 'https://n8n.srv762881.hstgr.cloud/webhook/
 // Nécessite que www.squadia.io (et localhost en dev) soit dans ses "Authorized JavaScript origins".
 export const GOOGLE_CLIENT_ID = '169502095118-tk41hlqg0e3aqca2mbbthhbiu0c7p0uo.apps.googleusercontent.com';
 export const ADMIN_EMAIL = 'jerome@squadia.io';
+
+// Vidéos de remerciement HeyGen (bucket public, noms en UUID), lues par /temoignage/video.
+export const AVATAR_VIDEO_BASE_URL =
+  'https://veofbxujodjoqeynzsbj.supabase.co/storage/v1/object/public/testimonial-thanks/';
