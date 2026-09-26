@@ -73,6 +73,14 @@ function buildScript(firstName: string | null, note: string | null): string {
   ].filter(Boolean).join(" ").replace(/\s+/g, " ");
 }
 
+// Le bouton de la page video : cle de page (liste blanche cote site) + texte libre.
+function buildWatchUrl(fileId: string, ctaPage: string | null, ctaLabel: string | null): string {
+  const params = new URLSearchParams({ v: fileId });
+  if (ctaPage) params.set("cta", ctaPage);
+  if (ctaLabel?.trim()) params.set("label", ctaLabel.trim().slice(0, 60));
+  return `${WATCH_PAGE_URL}?${params.toString()}`;
+}
+
 type Supa = ReturnType<typeof createClient>;
 
 async function triggerAvatar(supabase: Supa, id: string): Promise<{ ok: boolean; error?: string }> {
@@ -116,7 +124,7 @@ async function rowForToken(supabase: Supa, id: unknown, token: unknown) {
   if (typeof id !== "string" || typeof token !== "string" || token.length < 32) return null;
   const { data } = await supabase
     .from("testimonial_videos")
-    .select("id, first_name, email, avatar_note, avatar_token, avatar_status")
+    .select("id, first_name, email, avatar_note, avatar_token, avatar_status, cta_page, cta_label")
     .eq("id", id)
     .single();
   if (!data || !data.avatar_token || data.avatar_token !== token) return null;
@@ -180,7 +188,7 @@ async function handleAvatarCallback(supabase: Supa, action: string, body: Record
       return json({
         firstName: row.first_name,
         email: row.email,
-        watchUrl: `${WATCH_PAGE_URL}?v=${fileId}`,
+        watchUrl: buildWatchUrl(fileId, row.cta_page, row.cta_label),
         thumbnailUrl,
       });
     } catch (err) {
@@ -261,13 +269,15 @@ Deno.serve(async (req: Request) => {
   }
 
   if (action === "update") {
-    const { id, status, assigned_page, label, cuts, avatar_note } = body as {
+    const { id, status, assigned_page, label, cuts, avatar_note, cta_page, cta_label } = body as {
       id?: string;
       status?: string;
       assigned_page?: string | null;
       label?: string | null;
       cuts?: unknown;
       avatar_note?: string | null;
+      cta_page?: string | null;
+      cta_label?: string | null;
     };
     if (!id) return json({ error: "missing id" }, 400);
 
@@ -276,6 +286,8 @@ Deno.serve(async (req: Request) => {
     if (assigned_page !== undefined) patch.assigned_page = assigned_page;
     if (label !== undefined) patch.label = label;
     if (avatar_note !== undefined) patch.avatar_note = avatar_note?.trim() || null;
+    if (cta_page !== undefined) patch.cta_page = cta_page?.trim().slice(0, 60) || null;
+    if (cta_label !== undefined) patch.cta_label = cta_label?.trim().slice(0, 60) || null;
     if (cuts !== undefined) {
       const clean = sanitizeCuts(cuts);
       if (!clean) return json({ error: "invalid cuts" }, 400);

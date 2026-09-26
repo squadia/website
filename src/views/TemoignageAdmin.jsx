@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { ShieldCheck, Trash2, Check, X, Loader2, Scissors, Send, RefreshCw } from 'lucide-react';
 import TestimonialCutEditor from '@/src/components/ui/TestimonialCutEditor';
 import { useSkipCuts } from '@/src/lib/videoCuts';
-import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, GOOGLE_CLIENT_ID, ADMIN_EMAIL } from '@/src/lib/testimonialsConfig';
+import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, GOOGLE_CLIENT_ID, ADMIN_EMAIL, AVATAR_CTA_PAGES, DEFAULT_AVATAR_CTA } from '@/src/lib/testimonialsConfig';
 
 const STATUS_TABS = [
   { value: 'pending', label: 'En attente' },
@@ -30,6 +30,8 @@ const AVATAR_BADGES = {
   sent: { label: 'Vidéo avatar envoyée', color: '#4ADE80' },
   error: { label: 'Vidéo avatar : erreur', color: '#F87171' },
 };
+
+const avatarLocked = (row) => ['sent', 'queued', 'generating'].includes(row.avatar_status);
 
 const AdminVideo = ({ row }) => {
   const videoRef = useRef(null);
@@ -253,10 +255,33 @@ const TemoignageAdmin = () => {
                   defaultValue={row.avatar_note || ''}
                   placeholder="Ex. : Ton passage sur la prospection LinkedIn m'a vraiment marqué."
                   rows={3}
-                  disabled={row.avatar_status === 'sent' || row.avatar_status === 'queued' || row.avatar_status === 'generating'}
+                  disabled={avatarLocked(row)}
                   onChange={(e) => setNoteDrafts((d) => ({ ...d, [row.id]: e.target.value }))}
                   onBlur={(e) => e.target.value.trim() !== (row.avatar_note || '') && updateRow(row.id, { avatar_note: e.target.value })}
                   style={{ width: '100%', padding: '0.6rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem', resize: 'vertical', fontFamily: 'inherit' }}
+                />
+                <label style={{ display: 'block', fontSize: '0.75rem', color: '#9CA3AF', margin: '0.75rem 0 0.4rem' }}>
+                  Bouton de la page vidéo : page vers laquelle renvoyer
+                </label>
+                <select
+                  value={row.cta_page || DEFAULT_AVATAR_CTA}
+                  disabled={avatarLocked(row)}
+                  onChange={(e) => updateRow(row.id, { cta_page: e.target.value })}
+                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem' }}
+                >
+                  {AVATAR_CTA_PAGES.map((p) => (
+                    <option key={p.value} value={p.value}>{p.label}</option>
+                  ))}
+                </select>
+                <input
+                  type="text"
+                  key={`cta-label-${row.id}-${row.cta_page || DEFAULT_AVATAR_CTA}`}
+                  defaultValue={row.cta_label || ''}
+                  maxLength={60}
+                  disabled={avatarLocked(row)}
+                  placeholder={`Texte du bouton (par défaut : ${(AVATAR_CTA_PAGES.find((p) => p.value === (row.cta_page || DEFAULT_AVATAR_CTA)) || AVATAR_CTA_PAGES[0]).defaultLabel})`}
+                  onBlur={(e) => e.target.value.trim() !== (row.cta_label || '') && updateRow(row.id, { cta_label: e.target.value })}
+                  style={{ width: '100%', padding: '0.55rem 0.8rem', borderRadius: '6px', border: '1px solid #1A1A3A', background: '#050510', color: '#fff', fontSize: '0.85rem', marginTop: '0.5rem' }}
                 />
                 {row.avatar_status && (
                   <p style={{ fontSize: '0.78rem', fontWeight: 600, color: AVATAR_BADGES[row.avatar_status]?.color, marginTop: '0.5rem' }}>

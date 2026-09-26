@@ -1,7 +1,7 @@
 'use client';
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
-import { NOTION_RESOURCE_URL, AVATAR_VIDEO_BASE_URL } from '@/src/lib/testimonialsConfig';
+import { AVATAR_VIDEO_BASE_URL, AVATAR_CTA_PAGES, DEFAULT_AVATAR_CTA } from '@/src/lib/testimonialsConfig';
 
 const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
@@ -9,6 +9,13 @@ const TemoignageVideo = () => {
   const [videoId] = useState(() => {
     const v = new URLSearchParams(window.location.search).get('v') || '';
     return UUID_PATTERN.test(v) ? v : null;
+  });
+  const [cta] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const page = AVATAR_CTA_PAGES.find((p) => p.value === params.get('cta'))
+      || AVATAR_CTA_PAGES.find((p) => p.value === DEFAULT_AVATAR_CTA);
+    const label = (params.get('label') || '').trim().slice(0, 60);
+    return { href: page.href, label: label || page.defaultLabel, external: page.href.startsWith('http') };
   });
   const [failed, setFailed] = useState(false);
 
@@ -35,12 +42,11 @@ const TemoignageVideo = () => {
         )}
 
         <a
-          href={NOTION_RESOURCE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
+          href={cta.href}
+          {...(cta.external && { target: '_blank', rel: 'noopener noreferrer' })}
           style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', padding: '0.9rem 1.6rem', borderRadius: '30px', background: '#44CCFF', color: '#050510', fontWeight: 700, textDecoration: 'none' }}
         >
-          Accéder à ton bonus <ArrowRight size={18} />
+          {cta.label} <ArrowRight size={18} />
         </a>
       </div>
     </div>
