@@ -144,6 +144,8 @@ async function handleAvatarCallback(supabase: Supa, action: string, body: Record
     return json({
       firstName: row.first_name,
       email: row.email,
+      note: withFinalPunctuation(row.avatar_note || ""),
+      // Texte par defaut ; n8n peut l'ignorer et composer le sien avec firstName + note.
       script: buildScript(row.first_name, row.avatar_note),
     });
   }

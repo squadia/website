@@ -41,7 +41,7 @@
         "options": {},
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ title: 'Merci ' + ($json.firstName || ''), video_inputs: [{ character: { type: 'avatar', avatar_id: '0b29e7f7e15c44b3a4dbdb30821e5f3d', avatar_style: 'normal' }, voice: { type: 'text', voice_id: 'c08723c5f7ba4c24a0ca086848f1073d', input_text: $json.script } }], dimension: { width: 1280, height: 720 } }) }}",
+        "jsonBody": "={{ JSON.stringify({ title: 'Merci ' + ($json.firstName || ''), video_inputs: [{ character: { type: 'avatar', avatar_id: '0b29e7f7e15c44b3a4dbdb30821e5f3d', avatar_style: 'normal' }, voice: { type: 'text', voice_id: 'c08723c5f7ba4c24a0ca086848f1073d', input_text: `Salut ${$json.firstName} ! Merci… vraiment, merci pour ton témoignage vidéo. ${$json.note}` } }], dimension: { width: 1280, height: 720 } }) }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth"
       },
