@@ -196,7 +196,7 @@ const HomeCSS = `
   .hero-dynamic { min-height: 100svh; height: auto !important; display: flex; flex-direction: column; }
   .hero-bg-mobile { display: block; }
   .hero-bg-desktop { display: none !important; }
-  .hero-mask { background: linear-gradient(to bottom, rgba(246,243,236,0.72) 0%, rgba(246,243,236,0.38) 40%, rgba(246,243,236,0.55) 70%, rgba(246,243,236,0.85) 100%) !important; }
+  .hero-mask { background: linear-gradient(to bottom, rgba(246,243,236,0.9) 0%, rgba(246,243,236,0.8) 45%, rgba(246,243,236,0.86) 75%, rgba(246,243,236,0.96) 100%) !important; }
   .hero-left {
     position: relative !important; width: 100% !important; flex: 1 !important; height: auto !important;
     display: flex !important; flex-direction: column !important; justify-content: space-between !important;

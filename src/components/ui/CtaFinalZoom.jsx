@@ -39,6 +39,24 @@ export default function CtaFinalZoom({
   const bottomOpacity = useTransform(scrollYProgress, [0.56, 0.8], [0, 1]);
   const bottomY = useTransform(scrollYProgress, [0.56, 0.8], [24, 0]);
 
+  // Mobile: no scroll zoom, the finished card (photo, then text and button on deep green)
+  if (isMobile) {
+    return (
+      <section data-no-frame style={{ background: '#F6F3EC', padding: '3rem 20px 4rem' }}>
+        <div style={{ borderRadius: '16px', overflow: 'hidden', border: '1px solid #D8D1C2', background: '#1F3A33' }}>
+          <img src={teamSquadia} alt="" style={{ width: '100%', height: '240px', objectFit: 'cover', objectPosition: 'center 20%', display: 'block' }} />
+          <div style={{ padding: '32px 24px 36px', textAlign: 'center' }}>
+            <span style={{ fontSize: '0.7rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#C9A66B', display: 'block', marginBottom: '14px' }}>{eyebrow}</span>
+            <p style={{ fontSize: '1.5rem', fontStyle: 'italic', lineHeight: 1.15, color: '#F6F3EC', margin: '0 0 6px', fontFamily: 'var(--font-display)' }}>{kicker}</p>
+            <h2 style={{ fontSize: '1.5rem', lineHeight: 1.15, color: '#F6F3EC', margin: '0 0 18px' }}>{title}</h2>
+            <p style={{ fontSize: '1rem', lineHeight: 1.65, color: 'rgba(246,243,236,0.85)', margin: '0 auto 26px' }}>{description}</p>
+            <Link href={ctaHref} style={{ fontSize: '1rem', fontWeight: 700, background: '#C9A66B', color: '#1C2B27', padding: '1rem 1.8rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block' }}>{ctaLabel}</Link>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
   return (
     <section ref={zoomRef} style={{ background: '#F6F3EC' }}>
       <div style={{ height: isMobile ? '160vh' : '220vh', position: 'relative' }}>

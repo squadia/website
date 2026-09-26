@@ -138,8 +138,9 @@ export default function SiteEnhancer() {
       fixPunctuation(document.body);
       if (reduced) main.querySelectorAll('.rv-init').forEach((el) => el.classList.add('rv-in'));
     };
+    // throttle, not debounce: pages with live widgets (countdowns, carousels) mutate constantly
     let t = null;
-    const schedule = () => { clearTimeout(t); t = setTimeout(run, 120); };
+    const schedule = () => { if (t) return; t = setTimeout(() => { t = null; run(); }, 150); };
     schedule();
     const mo = new MutationObserver(schedule);
     mo.observe(main, { childList: true, subtree: true });

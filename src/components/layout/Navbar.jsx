@@ -281,7 +281,7 @@ const Navbar = () => {
         }
         .hb-line {
           display: block; width: 100%; height: 2px;
-          background: #FFFFFF; border-radius: 2px;
+          background: #1C2B27; border-radius: 2px;
           transform-origin: center;
           transition: transform 0.35s cubic-bezier(0.77,0,0.175,1),
                       opacity 0.25s ease,
