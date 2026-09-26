@@ -1,5 +1,5 @@
 {
-  "name": "Squadia - Vidéo avatar Témoignage (API v3)",
+  "name": "Squadia - Vidéo avatar Témoignage (API v3, 3 vues)",
   "nodes": [
     {
       "parameters": {
@@ -39,33 +39,45 @@
         "assignments": {
           "assignments": [
             {
-              "id": "texte",
-              "name": "texte",
-              "value": "=Salut {{ $json.firstName }} ! Merci… vraiment, merci pour ton témoignage vidéo. {{ $json.note }}",
+              "id": "scene1_texte",
+              "name": "scene1_texte",
+              "value": "=Salut {{ $json.firstName }} !",
               "type": "string"
             },
             {
-              "id": "avatar_id",
-              "name": "avatar_id",
-              "value": "78970c160bde4b38b7e493c41691c1a8",
+              "id": "scene1_look",
+              "name": "scene1_look",
+              "value": "COLLER_ID_LOOK_FACE",
+              "type": "string"
+            },
+            {
+              "id": "scene2_texte",
+              "name": "scene2_texte",
+              "value": "Merci… vraiment, merci pour ton témoignage vidéo.",
+              "type": "string"
+            },
+            {
+              "id": "scene2_look",
+              "name": "scene2_look",
+              "value": "COLLER_ID_LOOK_PROFIL_1",
+              "type": "string"
+            },
+            {
+              "id": "scene3_texte",
+              "name": "scene3_texte",
+              "value": "={{ $json.note }}",
+              "type": "string"
+            },
+            {
+              "id": "scene3_look",
+              "name": "scene3_look",
+              "value": "COLLER_ID_LOOK_PROFIL_2",
               "type": "string"
             },
             {
               "id": "voice_id",
               "name": "voice_id",
               "value": "c08723c5f7ba4c24a0ca086848f1073d",
-              "type": "string"
-            },
-            {
-              "id": "vitesse",
-              "name": "vitesse",
-              "value": 1,
-              "type": "number"
-            },
-            {
-              "id": "modele_voix",
-              "name": "modele_voix",
-              "value": "eleven_multilingual_v2",
               "type": "string"
             },
             {
@@ -91,7 +103,7 @@
         440,
         300
       ],
-      "notes": "Modifiez ici le texte lu par l'avatar, l'avatar, la voix et la vitesse (0.5 à 1.5).",
+      "notes": "3 scènes = 3 vues. Pour chaque scène : le texte lu et l'ID du look HeyGen (photo). Pour revenir à la vue de face en scène 3, remettez le même ID qu'en scène 1.",
       "notesInFlow": true
     },
     {
@@ -101,7 +113,7 @@
         "options": {},
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ type: 'avatar', title: 'Merci ' + ($json.firstName || ''), avatar_id: $json.avatar_id, voice_id: $json.voice_id, script: $json.texte, resolution: '720p', aspect_ratio: '16:9', voice_settings: { speed: $json.vitesse, engine_settings: { engine_type: 'elevenlabs', model: $json.modele_voix } } }) }}",
+        "jsonBody": "={{ JSON.stringify({ type: 'studio', title: 'Merci ' + ($json.firstName || ''), resolution: '720p', aspect_ratio: '16:9', scenes: [{ type: 'avatar_video', input: { avatar_id: $json.scene1_look, script: $json.scene1_texte, voice_id: $json.voice_id } }, { type: 'avatar_video', input: { avatar_id: $json.scene2_look, script: $json.scene2_texte, voice_id: $json.voice_id } }, { type: 'avatar_video', input: { avatar_id: $json.scene3_look, script: $json.scene3_texte, voice_id: $json.voice_id } }] }) }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth"
       },
