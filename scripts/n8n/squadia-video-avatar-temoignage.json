@@ -81,6 +81,42 @@
               "type": "string"
             },
             {
+              "id": "voix_modele",
+              "name": "voix_modele",
+              "value": "eleven_multilingual_v2",
+              "type": "string"
+            },
+            {
+              "id": "voix_stabilite",
+              "name": "voix_stabilite",
+              "value": 0.6,
+              "type": "number"
+            },
+            {
+              "id": "voix_similarite",
+              "name": "voix_similarite",
+              "value": 0.8,
+              "type": "number"
+            },
+            {
+              "id": "voix_style",
+              "name": "voix_style",
+              "value": 0.1,
+              "type": "number"
+            },
+            {
+              "id": "voix_vitesse",
+              "name": "voix_vitesse",
+              "value": 0.95,
+              "type": "number"
+            },
+            {
+              "id": "expressivite",
+              "name": "expressivite",
+              "value": "medium",
+              "type": "string"
+            },
+            {
               "id": "firstName",
               "name": "firstName",
               "value": "={{ $json.firstName }}",
@@ -103,7 +139,7 @@
         440,
         300
       ],
-      "notes": "3 scènes = 3 vues. Pour chaque scène : le texte lu et l'ID du look HeyGen (photo). Pour revenir à la vue de face en scène 3, remettez le même ID qu'en scène 1.",
+      "notes": "3 scènes = 3 vues (texte + ID du look). Voix trop expressive : montez voix_stabilite (0 à 1) et baissez voix_style (0 à 1). voix_vitesse : 0.5 à 1.5. expressivite (visage) : low / medium / high.",
       "notesInFlow": true
     },
     {
@@ -113,7 +149,7 @@
         "options": {},
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ JSON.stringify({ type: 'studio', title: 'Merci ' + ($json.firstName || ''), resolution: '720p', aspect_ratio: '16:9', scenes: [{ type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene1_look, script: $json.scene1_texte, voice_id: $json.voice_id } }, { type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene2_look, script: $json.scene2_texte, voice_id: $json.voice_id } }, { type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene3_look, script: $json.scene3_texte, voice_id: $json.voice_id } }] }) }}",
+        "jsonBody": "={{ JSON.stringify({ type: 'studio', title: 'Merci ' + ($json.firstName || ''), resolution: '720p', aspect_ratio: '16:9', scenes: [{ type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene1_look, script: $json.scene1_texte, voice_id: $json.voice_id, expressiveness: $json.expressivite, voice_settings: { speed: $json.voix_vitesse, engine_settings: { engine_type: 'elevenlabs', model: $json.voix_modele, stability: $json.voix_stabilite, similarity_boost: $json.voix_similarite, style: $json.voix_style } } } }, { type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene2_look, script: $json.scene2_texte, voice_id: $json.voice_id, expressiveness: $json.expressivite, voice_settings: { speed: $json.voix_vitesse, engine_settings: { engine_type: 'elevenlabs', model: $json.voix_modele, stability: $json.voix_stabilite, similarity_boost: $json.voix_similarite, style: $json.voix_style } } } }, { type: 'avatar_video', input: { type: 'avatar', avatar_id: $json.scene3_look, script: $json.scene3_texte, voice_id: $json.voice_id, expressiveness: $json.expressivite, voice_settings: { speed: $json.voix_vitesse, engine_settings: { engine_type: 'elevenlabs', model: $json.voix_modele, stability: $json.voix_stabilite, similarity_boost: $json.voix_similarite, style: $json.voix_style } } } }] }) }}",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth"
       },
