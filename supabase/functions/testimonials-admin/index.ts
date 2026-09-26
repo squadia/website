@@ -67,9 +67,9 @@ function withFinalPunctuation(text: string): string {
 function buildScript(firstName: string | null, note: string | null): string {
   const name = (firstName || "").trim();
   return [
-    `Merci ${name}, je tenais à te remercier pour ton témoignage vidéo !`,
+    name ? `Salut ${name} !` : "Salut !",
+    "Merci… vraiment, merci pour ton témoignage vidéo.",
     withFinalPunctuation(note || ""),
-    "J'espère que ce que je te partage ici t'apportera des choses en plus de la formation passée ensemble.",
   ].filter(Boolean).join(" ").replace(/\s+/g, " ");
 }
 
