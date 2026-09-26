@@ -336,11 +336,14 @@ export default function ProspectionCampagne() {
       </section>
 
       {/* REPLIIK */}
-      <section style={{ padding: '80px 0', background: '#F6F3EC' }}>
+      <section style={{ padding: '7rem 0', margin: '3rem 0', background: '#EFEAE0', borderTop: '1px solid #D8D1C2', borderBottom: '1px solid #D8D1C2' }}>
         <div className="container fade-in">
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <p style={kicker}>OUTIL INTERNE</p>
-            <h2 style={h2Style}>Repliik : notre arme secrète</h2>
+            <h2 style={h2Style}>
+              <img src="/assets/images/repliik/repliik-logo.png" alt="Repliik" style={{ height: '1.05em', width: 'auto', verticalAlign: '-0.2em', display: 'inline-block' }} />
+              {'\u202F: notre arme secrète'}
+            </h2>
           </div>
 
           <div className="repliik-two-col" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '4rem', alignItems: 'start', marginBottom: '3rem' }}>
