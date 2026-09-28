@@ -242,6 +242,12 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://www.squadia.io/ressources/planificateur-campagne</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://www.squadia.io/secteur-industrie</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>monthly</changefreq>

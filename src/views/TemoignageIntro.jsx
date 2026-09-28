@@ -17,9 +17,11 @@ function formatTime(seconds) {
 const TemoignageIntro = () => {
   const router = useRouter();
   const videoRef = useRef(null);
+  const seekBarRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isPaused, setIsPaused] = useState(false);
   const [isEnded, setIsEnded] = useState(false);
+  const [isSeeking, setIsSeeking] = useState(false);
   const [accepted, setAccepted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
@@ -51,6 +53,39 @@ const TemoignageIntro = () => {
   const handleVideoError = () => {
     // Vidéo absente/introuvable : on ne bloque pas le visiteur derrière un lecteur cassé.
     setIsEnded(true);
+  };
+
+  // Permet d'avancer jusqu'à la fin en glissant le curseur, sans attendre
+  // la lecture complète : le bouton doit apparaître dès qu'on atteint la fin.
+  const seekToClientX = (clientX) => {
+    const video = videoRef.current;
+    const bar = seekBarRef.current;
+    if (!video || !bar || !duration) return;
+    const rect = bar.getBoundingClientRect();
+    const ratio = Math.min(1, Math.max(0, (clientX - rect.left) / rect.width));
+    const time = ratio * duration;
+    video.currentTime = time;
+    setCurrentTime(time);
+    if (duration - time <= 0.25) {
+      video.pause();
+      setIsEnded(true);
+    }
+  };
+
+  const handleSeekPointerDown = (e) => {
+    e.currentTarget.setPointerCapture(e.pointerId);
+    setIsSeeking(true);
+    seekToClientX(e.clientX);
+  };
+
+  const handleSeekPointerMove = (e) => {
+    if (!isSeeking) return;
+    seekToClientX(e.clientX);
+  };
+
+  const handleSeekPointerUp = (e) => {
+    e.currentTarget.releasePointerCapture(e.pointerId);
+    setIsSeeking(false);
   };
 
   const remaining = Math.max(duration - currentTime, 0);
@@ -171,8 +206,24 @@ const TemoignageIntro = () => {
               )}
             </button>
 
-            <div style={{ flex: 1, height: '8px', borderRadius: '4px', background: 'rgba(255,255,255,1.0)', overflow: 'hidden' }}>
-              <div style={{ width: `${progress}%`, height: '100%', background: '#1F3A33', transition: 'width 0.15s linear' }} />
+            <div
+              ref={seekBarRef}
+              onPointerDown={handleSeekPointerDown}
+              onPointerMove={handleSeekPointerMove}
+              onPointerUp={handleSeekPointerUp}
+              style={{
+                flex: 1, height: '8px', borderRadius: '4px', background: 'rgba(255,255,255,1.0)',
+                position: 'relative', cursor: 'pointer', touchAction: 'none',
+              }}
+            >
+              <div style={{ width: `${progress}%`, height: '100%', borderRadius: '4px', background: '#1F3A33', transition: isSeeking ? 'none' : 'width 0.15s linear' }} />
+              <div
+                style={{
+                  position: 'absolute', top: '50%', left: `${progress}%`, width: '16px', height: '16px', borderRadius: '50%',
+                  background: '#1F3A33', border: '2px solid #F6F3EC', boxShadow: '0 0 0 1px rgba(176,141,87,0.5)',
+                  transform: `translate(-50%, -50%) scale(${isSeeking ? 1.15 : 1})`, transition: isSeeking ? 'none' : 'transform 0.15s ease',
+                }}
+              />
             </div>
 
             <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'rgba(28,43,39,0.85)', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
