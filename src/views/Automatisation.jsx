@@ -62,7 +62,7 @@ const Automatisation = () => {
           <h2 style={{ textAlign: 'center', marginBottom: '4rem' }}>Les outils que nous maîtrisons pour vous</h2>
           <div className="grid-4" style={{ textAlign: 'center', opacity: 0.7 }}>
             {[ 'Make.com', 'n8n', 'Clay', 'Zapier', 'OpenAI', 'Perplexity', 'Llama 3', 'Anthropic' ].map((tool) => (
-              <div key={tool} style={{ padding: '2rem', border: '1px solid #111', borderRadius: '4px' }}>
+              <div key={tool} style={{ padding: '2rem', border: '1px solid #D8D1C2', borderRadius: '4px' }}>
                 <span style={{ fontWeight: 700 }}>{tool}</span>
               </div>
             ))}
@@ -71,7 +71,7 @@ const Automatisation = () => {
       </section>
 
       {/* FAQ Small */}
-      <section className="section-padding container" style={{ borderTop: '1px solid #111' }}>
+      <section className="section-padding container" style={{ borderTop: '1px solid #D8D1C2' }}>
         <div className="fade-in grid-2" style={{ alignItems: 'center' }}>
           <h2>"Est-ce que ça va déshumaniser ma relation client ?"</h2>
           <p style={{ color: 'var(--text-secondary)' }}>
@@ -92,7 +92,7 @@ const Automatisation = () => {
 
       <style>{`
         .tag-hero {
-          background: rgba(37, 99, 235, 0.1);
+          background: rgba(31,58,51,0.1);
           color: var(--accent);
           padding: 0.5rem 1rem;
           border-radius: 4px;
@@ -101,10 +101,10 @@ const Automatisation = () => {
           letter-spacing: 0.1em;
         }
         .use-case-card {
-          background: #0A0A1A;
+          background: #F6F3EC;
           padding: 2.5rem;
           border-radius: 8px;
-          border: 1px solid #1A1A3A;
+          border: 1px solid #D8D1C2;
           transition: var(--transition-fast);
         }
         .use-case-card:hover {
@@ -115,7 +115,7 @@ const Automatisation = () => {
           flex-shrink: 0;
           width: 50px;
           height: 50px;
-          background: rgba(37, 99, 235, 0.05);
+          background: rgba(31,58,51,0.05);
           border-radius: 50%;
           display: flex;
           align-items: center;

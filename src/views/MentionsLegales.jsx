@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { showCookiePreferences } from '../components/CookieConsent';
 
 const MentionsLegales = () => {
   useScrollReveal();
@@ -56,9 +57,19 @@ const MentionsLegales = () => {
     {
       title: "Cookies",
       content: (
-        <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-          Ce site utilise des cookies à des fins d'analyse de trafic. En poursuivant votre navigation, vous acceptez leur utilisation.
-        </p>
+        <div style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <p>Ce site utilise des cookies de mesure d'audience, déposés uniquement après votre consentement, donné via le bandeau affiché lors de votre première visite.</p>
+          <p style={{ marginTop: '1rem' }}>
+            Vous pouvez modifier votre choix à tout moment :{' '}
+            <button
+              type="button"
+              onClick={showCookiePreferences}
+              style={{ color: 'var(--accent)', background: 'none', border: 'none', padding: 0, font: 'inherit', textDecoration: 'underline', cursor: 'pointer' }}
+            >
+              gérer mes préférences de cookies
+            </button>.
+          </p>
+        </div>
       )
     }
   ];
@@ -81,8 +92,8 @@ const MentionsLegales = () => {
           <div className="grid-2 fade-in" style={{ gap: '4rem', alignItems: 'start' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(0, 3).map((section, index) => (
-                <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                <div key={index} style={{ borderLeft: '1px solid rgba(28,43,39,0.16)', paddingLeft: '2rem' }}>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>
@@ -91,8 +102,8 @@ const MentionsLegales = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
               {sections.slice(3).map((section, index) => (
-                <div key={index} style={{ borderLeft: '1px solid rgba(255,255,255,0.1)', paddingLeft: '2rem' }}>
-                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#FFFFFF', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
+                <div key={index} style={{ borderLeft: '1px solid rgba(28,43,39,0.16)', paddingLeft: '2rem' }}>
+                  <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '0.05em', textTransform: 'uppercase' }}>{section.title}</h2>
                   <div style={{ fontWeight: 300, opacity: 0.8 }}>
                     {section.content}
                   </div>

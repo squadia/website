@@ -70,18 +70,18 @@ const PricingSwitch = ({ onSwitch }) => {
 
   return (
     <div className="flex justify-center">
-      <div className="relative z-10 mx-auto flex w-fit rounded-full bg-neutral-900 border border-gray-700 p-1">
+      <div className="relative z-10 mx-auto flex w-fit rounded-full bg-white border border-[#D8D1C2] p-1">
         <button
           onClick={() => handleSwitch("0")}
           className={cn(
             "relative z-10 w-fit h-10 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
-            selected === "0" ? "text-white" : "text-gray-200"
+            selected === "0" ? "text-[#1C2B27]" : "text-[#4A534F]"
           )}
         >
           {selected === "0" && (
             <motion.span
               layoutId={"switch"}
-              className="absolute top-0 left-0 h-10 w-full rounded-full border-4 shadow-sm shadow-blue-600 border-blue-600 bg-gradient-to-t from-blue-500 to-blue-600"
+              className="absolute top-0 left-0 h-10 w-full rounded-full border-4 shadow-sm shadow-blue-600 border-[#1F3A33] bg-gradient-to-t from-[#1F3A33] to-[#1F3A33]"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
@@ -92,13 +92,13 @@ const PricingSwitch = ({ onSwitch }) => {
           onClick={() => handleSwitch("1")}
           className={cn(
             "relative z-10 w-fit h-10 flex-shrink-0 rounded-full sm:px-6 px-3 sm:py-2 py-1 font-medium transition-colors",
-            selected === "1" ? "text-white" : "text-gray-200"
+            selected === "1" ? "text-[#1C2B27]" : "text-[#4A534F]"
           )}
         >
           {selected === "1" && (
             <motion.span
               layoutId={"switch"}
-              className="absolute top-0 left-0 h-10 w-full rounded-full border-4 shadow-sm shadow-blue-600 border-blue-600 bg-gradient-to-t from-blue-500 to-blue-600"
+              className="absolute top-0 left-0 h-10 w-full rounded-full border-4 shadow-sm shadow-blue-600 border-[#1F3A33] bg-gradient-to-t from-[#1F3A33] to-[#1F3A33]"
               transition={{ type: "spring", stiffness: 500, damping: 30 }}
             />
           )}
@@ -150,13 +150,13 @@ export default function PricingSection6() {
           density={800}
           direction="bottom"
           speed={1}
-          color="#44CCFF"
+          color="#8A6D3B"
           className="absolute inset-x-0 bottom-0 h-full w-full [mask-image:radial-gradient(50%_50%,white,transparent_85%)]"
         /> */}
       </TimelineContent>
 
       <article className="text-center mb-12 pt-12 max-w-3xl mx-auto space-y-4 relative z-50">
-        <h2 className="text-5xl font-bold text-white mb-6">
+        <h2 className="text-5xl font-bold text-[#1C2B27] mb-6">
           Investissez dans votre exécution.
           {/* <VerticalCutReveal
             splitBy="words"
@@ -180,7 +180,7 @@ export default function PricingSection6() {
           animationNum={0}
           timelineRef={pricingRef}
           customVariants={revealVariants}
-          className="text-gray-400 text-lg"
+          className="text-[#6B716C] text-lg"
         >
           Des tarifs clairs indexés sur la valeur et l'impact business.
           Pas de frais cachés, pas de théorie inutile.
@@ -199,7 +199,7 @@ export default function PricingSection6() {
       <div
         className="absolute top-0 left-[10%] right-[10%] w-[80%] h-full z-0"
         style={{
-          backgroundImage: `radial-gradient(circle at center, rgba(37, 99, 235, 0.15) 0%, transparent 70%)`,
+          backgroundImage: `transparent`,
           opacity: 0.6,
         }}
       />
@@ -215,14 +215,14 @@ export default function PricingSection6() {
           >
             <Card
               className={cn(
-                "relative text-white border-neutral-800 bg-neutral-950/50 backdrop-blur-xl h-full flex flex-col transition-all duration-300 hover:border-blue-500/50",
-                plan.popular && "border-blue-500/50 shadow-[0px_-13px_100px_0px_rgba(37,99,235,0.1)] scale-105 z-20"
+                "relative text-[#1C2B27] border-[#D8D1C2] bg-white h-full flex flex-col transition-all duration-300 hover:border-[#1F3A33]/50",
+                plan.popular && "border-[#1F3A33]/50 shadow-[0px_-13px_100px_0px_rgba(31,58,51,0.1)] scale-105 z-20"
               )}
             >
               <CardHeader className="text-left p-6">
                 <h3 style={{ fontSize: '1.8rem', margin: '0 0 1rem 0', fontWeight: 'bold' }}>{plan.name}</h3>
                 
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '2rem', minHeight: '3rem' }}>
+                <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '2rem', minHeight: '3rem' }}>
                   {plan.description}
                 </p>
                 
@@ -230,14 +230,14 @@ export default function PricingSection6() {
                   {plan.isQuote ? (
                     <>
                       <div className="price" style={{ fontSize: '2.2rem', fontWeight: 700 }}>Sur mesure</div>
-                      <div style={{ fontSize: '0.8rem', color: '#9CA3AF', marginTop: '0.5rem' }}>Périmètre ajusté avant démarrage.</div>
+                      <div style={{ fontSize: '0.8rem', color: '#4A534F', marginTop: '0.5rem' }}>Périmètre ajusté avant démarrage.</div>
                     </>
                   ) : (
                     <>
                       <div className="price" style={{ fontSize: '2.2rem', fontWeight: 700 }}>
                         {isYearly ? plan.yearlyPrice : plan.price} € {plan.isPerPerson ? '/ pers' : 'HT'}
                       </div>
-                      <div style={{ fontSize: '0.8rem', color: '#9CA3AF', marginTop: '0.5rem' }}>Périmètre ajusté avant démarrage.</div>
+                      <div style={{ fontSize: '0.8rem', color: '#4A534F', marginTop: '0.5rem' }}>Périmètre ajusté avant démarrage.</div>
                     </>
                   )}
                 </div>
@@ -248,15 +248,15 @@ export default function PricingSection6() {
                   className={cn(
                     "w-full mb-8 p-4 text-sm font-bold rounded-lg transition-all active:scale-95",
                     plan.popular
-                      ? "bg-blue-600 hover:bg-blue-700 shadow-lg shadow-blue-900/40 text-white"
-                      : "bg-white/5 hover:bg-white/10 border border-white/10 text-white"
+                      ? "bg-[#1F3A33] hover:bg-[#16302A] shadow-lg shadow-blue-900/40 text-[#1C2B27]"
+                      : "bg-white hover:bg-white border border-[rgba(28,43,39,0.15)] text-[#1C2B27]"
                   )}
                 >
                   {plan.buttonText}
                 </button>
 
-                <div className="space-y-4 pt-6 border-t border-neutral-800 flex-grow">
-                  <h4 className="font-bold text-xs uppercase tracking-wider text-blue-500">
+                <div className="space-y-4 pt-6 border-t border-[#D8D1C2] flex-grow">
+                  <h4 className="font-bold text-xs uppercase tracking-wider text-[#1F3A33]">
                     {plan.includes[0]}
                   </h4>
                   <ul className="space-y-3">
@@ -265,8 +265,8 @@ export default function PricingSection6() {
                         key={featureIndex}
                         className="flex items-start gap-3"
                       >
-                        <div className="h-1.5 w-1.5 bg-blue-500 rounded-full mt-1.5 ring-4 ring-blue-500/20" />
-                        <span className="text-sm text-gray-300 font-medium">{feature}</span>
+                        <div className="h-1.5 w-1.5 bg-[#1F3A33] rounded-full mt-1.5 ring-4 ring-[#1F3A33]/15" />
+                        <span className="text-sm text-[#4A534F] font-medium">{feature}</span>
                       </li>
                     ))}
                   </ul>

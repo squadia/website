@@ -9,9 +9,9 @@ const VideoPlaceholder = ({ text = "Vidéo à venir", marginBottom = "2rem" }) =
     <div style={{ 
       width: '100%', 
       aspectRatio: '16/9', 
-      backgroundColor: '#0D0D25', 
+      backgroundColor: '#F6F3EC', 
       borderRadius: '12px', 
-      border: '1px solid rgba(68,204,255,0.2)', 
+      border: '1px solid rgba(176,141,87,0.2)', 
       display: 'flex', 
       flexDirection: 'column',
       alignItems: 'center', 
@@ -19,7 +19,7 @@ const VideoPlaceholder = ({ text = "Vidéo à venir", marginBottom = "2rem" }) =
       marginBottom: marginBottom,
       overflow: 'hidden',
       position: 'relative',
-      boxShadow: '0 10px 30px rgba(0,0,0,0.3)',
+      boxShadow: '0 10px 30px rgba(28,43,39,0.105)',
       group: 'true'
     }}>
       {/* Play Button Icon Placeholder */}
@@ -27,8 +27,8 @@ const VideoPlaceholder = ({ text = "Vidéo à venir", marginBottom = "2rem" }) =
         width: '60px',
         height: '60px',
         borderRadius: '50%',
-        backgroundColor: 'rgba(68,204,255,0.1)',
-        border: '1px solid rgba(68,204,255,0.3)',
+        backgroundColor: 'rgba(176,141,87,0.1)',
+        border: '1px solid rgba(176,141,87,0.3)',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -40,13 +40,13 @@ const VideoPlaceholder = ({ text = "Vidéo à venir", marginBottom = "2rem" }) =
           height: '0',
           borderTop: '10px solid transparent',
           borderBottom: '10px solid transparent',
-          borderLeft: '15px solid #44CCFF',
+          borderLeft: '15px solid #8A6D3B',
           marginLeft: '4px'
         }} />
       </div>
       
       <span style={{ 
-        color: 'rgba(255,255,255,0.4)', 
+        color: 'rgba(28,43,39,0.6)', 
         fontSize: '0.85rem', 
         fontWeight: 600,
         textTransform: 'uppercase',
@@ -56,10 +56,10 @@ const VideoPlaceholder = ({ text = "Vidéo à venir", marginBottom = "2rem" }) =
       </span>
 
       {/* Decorative corners */}
-      <div style={{ position: 'absolute', top: '10px', left: '10px', width: '15px', height: '15px', borderTop: '2px solid rgba(68,204,255,0.3)', borderLeft: '2px solid rgba(68,204,255,0.3)' }} />
-      <div style={{ position: 'absolute', top: '10px', right: '10px', width: '15px', height: '15px', borderTop: '2px solid rgba(68,204,255,0.3)', borderRight: '2px solid rgba(68,204,255,0.3)' }} />
-      <div style={{ position: 'absolute', bottom: '10px', left: '10px', width: '15px', height: '15px', borderBottom: '2px solid rgba(68,204,255,0.3)', borderLeft: '2px solid rgba(68,204,255,0.3)' }} />
-      <div style={{ position: 'absolute', bottom: '10px', right: '10px', width: '15px', height: '15px', borderBottom: '2px solid rgba(68,204,255,0.3)', borderRight: '2px solid rgba(68,204,255,0.3)' }} />
+      <div style={{ position: 'absolute', top: '10px', left: '10px', width: '15px', height: '15px', borderTop: '2px solid rgba(176,141,87,0.3)', borderLeft: '2px solid rgba(176,141,87,0.3)' }} />
+      <div style={{ position: 'absolute', top: '10px', right: '10px', width: '15px', height: '15px', borderTop: '2px solid rgba(176,141,87,0.3)', borderRight: '2px solid rgba(176,141,87,0.3)' }} />
+      <div style={{ position: 'absolute', bottom: '10px', left: '10px', width: '15px', height: '15px', borderBottom: '2px solid rgba(176,141,87,0.3)', borderLeft: '2px solid rgba(176,141,87,0.3)' }} />
+      <div style={{ position: 'absolute', bottom: '10px', right: '10px', width: '15px', height: '15px', borderBottom: '2px solid rgba(176,141,87,0.3)', borderRight: '2px solid rgba(176,141,87,0.3)' }} />
     </div>
   );
 };

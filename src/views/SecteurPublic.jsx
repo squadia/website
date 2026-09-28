@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { BookOpen, Users, Lock, FastForward, CheckSquare, Target, Settings, Brain, ArrowRight } from 'lucide-react';
+import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const SecteurPublic = () => {
@@ -20,22 +21,22 @@ const SecteurPublic = () => {
     {
       title: "Une charte IA existe mais personne ne sait vraiment quoi en faire",
       description: "Elle a ete redigee. Elle couvre les grandes lignes. Mais entre la charte et le quotidien des agents, il y a un fosse. Les équipes ne savent pas concrètement ce qu'elles peuvent faire, ce qu'elles ne peuvent pas faire, ni pourquoi.",
-      icon: <BookOpen size={24} color="#2563EB" />
+      icon: <BookOpen size={24} color="#1F3A33" />
     },
     {
       title: "Les outils proliferent sans fil directeur",
       description: "ChatGPT, Copilot, des outils d image... Chacun teste de son cote. Il n'y a pas de méthode commune, pas de veille structuree, pas de criteres pour choisir ce qui est vraiment utile pour l organisation.",
-      icon: <Target size={24} color="#2563EB" />
+      icon: <Target size={24} color="#1F3A33" />
     },
     {
       title: "adapter les messages a des publics tres differents prend du temps",
       description: "Habitants, commercants, jeunes, seniors, partenaires institutionnels. Chaque public a ses codes, ses canaux, ses attentes. Produire du contenu adapte a chacun sans perdre en qualite, ca prend beaucoup de temps.",
-      icon: <Users size={24} color="#2563EB" />
+      icon: <Users size={24} color="#1F3A33" />
     },
     {
       title: "La conformite et la securite freinent l adoption",
       description: "RGPD, données sensibles, validation IT, risques d usurpation. Les agents ont des contraintes réelles qui ne disparaissent pas avec l'IA. Il faut un cadre clair pour avancer sans prendre de risques.",
-      icon: <Lock size={24} color="#2563EB" />
+      icon: <Lock size={24} color="#1F3A33" />
     }
   ];
 
@@ -43,22 +44,22 @@ const SecteurPublic = () => {
     {
       title: "Un programme adapte aux profils et aux enjeux metier",
       description: "Avant chaque formation, un atelier de cadrage avec le responsable de service pour comprendre la séniorité des équipes, les usages existants et les priorités. Le programme est construit sur la réalité des agents, pas sur un template générique.",
-      icon: <CheckSquare size={24} color="#2563EB" />
+      icon: <CheckSquare size={24} color="#1F3A33" />
     },
     {
       title: "Former sur les outils utiles, pas sur tous les outils",
       description: "Production de contenu, creation d images et de videos, adaptation des messages par canal et par audience, veille structuree. Des cas pratiques tires du quotidien de chaque equipe.",
-      icon: <Settings size={24} color="#2563EB" />
+      icon: <Settings size={24} color="#1F3A33" />
     },
     {
       title: "Remettre la charte en perspective",
       description: "Comprendre pourquoi les regles existent, comment les appliquer, ou s arrete l autonomie des agents avant validation. Donner un cadre clair plutot que des interdictions floues.",
-      icon: <BookOpen size={24} color="#2563EB" />
+      icon: <BookOpen size={24} color="#1F3A33" />
     },
     {
       title: "Ouvrir vers les prochaines etapes",
       description: "Apres la formation, les équipes voient ce qu'il est possible de faire avec l'IA : chatbots intelligents pour les services aux usagers, automatisation des communications recurrentes, personnalisation des echanges avec les partenaires.",
-      icon: <FastForward size={24} color="#2563EB" />
+      icon: <FastForward size={24} color="#1F3A33" />
     }
   ];
 
@@ -78,7 +79,7 @@ const SecteurPublic = () => {
   const clients = ["Mairie de Lyon", "CEA", "CGSS Guyane"];
 
   return (
-    <div className="secteur-public-page" style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB' }}>
+    <div className="secteur-public-page" style={{ background: '#F6F3EC', minHeight: '100vh', color: '#1C2B27' }}>
       
       {/* ═══ SECTION 1 : HERO ═══ */}
       <section className="hero container" style={{ paddingTop: '160px', paddingBottom: '80px' }}>
@@ -101,7 +102,7 @@ const SecteurPublic = () => {
       </section>
 
       {/* ═══ SECTION 2 : CE QUE VIVENT VOS EQUIPES ═══ */}
-      <section className="section-padding" style={{ background: '#050510' }}>
+      <section className="section-padding" style={{ background: '#F6F3EC' }}>
         <div className="container fade-in">
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', textAlign: 'center', marginBottom: '4rem', maxWidth: '900px', marginInline: 'auto' }}>
             Ce qu'on observe dans les collectivites et organismes publics.
@@ -112,11 +113,11 @@ const SecteurPublic = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -124,7 +125,7 @@ const SecteurPublic = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -147,11 +148,11 @@ const SecteurPublic = () => {
               <div 
                 key={idx} 
                 style={{ 
-                  background: '#0D0D25', 
-                  borderLeft: '4px solid #2563EB', 
-                  borderTop: '1px solid #1A1A3A',
-                  borderRight: '1px solid #1A1A3A',
-                  borderBottom: '1px solid #1A1A3A',
+                  background: '#F6F3EC', 
+                  borderLeft: '4px solid #1F3A33', 
+                  borderTop: '1px solid #D8D1C2',
+                  borderRight: '1px solid #D8D1C2',
+                  borderBottom: '1px solid #D8D1C2',
                   padding: '2.5rem', 
                   borderRadius: '0 8px 8px 0',
                   display: 'flex',
@@ -159,7 +160,7 @@ const SecteurPublic = () => {
                   gap: '1rem'
                 }}
               >
-                <div style={{ background: 'rgba(37, 99, 235, 0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
+                <div style={{ background: 'rgba(31,58,51,0.1)', width: '48px', height: '48px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.5rem' }}>
                   {item.icon}
                 </div>
                 <h3 style={{ fontSize: '1.4rem', lineHeight: 1.3 }}>{item.title}</h3>
@@ -171,7 +172,7 @@ const SecteurPublic = () => {
       </section>
 
       {/* ═══ SECTION 4 : REFERENCES ═══ */}
-      <section className="section-padding" style={{ borderTop: '1px solid #1A1A3A', borderBottom: '1px solid #1A1A3A', background: '#050510' }}>
+      <section className="section-padding" style={{ borderTop: '1px solid #D8D1C2', borderBottom: '1px solid #D8D1C2', background: '#F6F3EC' }}>
         <div className="container fade-in" style={{ textAlign: 'center' }}>
           <p style={{ color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '600px', marginInline: 'auto' }}>
             Squadia a forme des équipes dans des collectivites et organismes publics en France.
@@ -183,7 +184,7 @@ const SecteurPublic = () => {
                 style={{ 
                   fontSize: '1.6rem', 
                   fontWeight: 700, 
-                  color: '#F9FAFB', 
+                  color: '#1C2B27', 
                   opacity: 0.6,
                   transition: 'opacity 0.3s ease',
                   letterSpacing: '1px'
@@ -204,7 +205,7 @@ const SecteurPublic = () => {
           {/* Note: changed standard grid to center 2 elements beautifully */}
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '2rem', maxWidth: '800px', marginInline: 'auto' }}>
             {blocks.map((block, idx) => (
-              <div key={idx} style={{ background: '#0D0D25', border: '1px solid #1A1A3A', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
+              <div key={idx} style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', padding: '2.5rem', borderRadius: '12px', display: 'flex', flexDirection: 'column' }}>
                 <p style={{ fontSize: '1.1rem', lineHeight: 1.5, marginBottom: '2rem', flexGrow: 1 }}>
                   {block.question}
                 </p>
@@ -214,7 +215,7 @@ const SecteurPublic = () => {
                     display: 'inline-flex', 
                     alignItems: 'center', 
                     gap: '0.5rem', 
-                    color: '#2563EB', 
+                    color: '#1F3A33', 
                     fontWeight: 600,
                     textDecoration: 'none'
                   }}
@@ -228,26 +229,13 @@ const SecteurPublic = () => {
       </section>
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
-      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>On peut regarder ensemble<br/>comment former vos équipes sans perturber leur organisation.</h2>
-              </div>
-              <div>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>30 minutes pour construire un plan de formation adapté.</p>
-                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaFinalZoom
+        teamSquadia={teamSquadia}
+        eyebrow="Prochaine étape"
+        kicker="Rejoignez-nous :"
+        title={<>On peut regarder ensemble<br />comment former vos équipes sans perturber leur organisation.</>}
+        description="30 minutes pour construire un plan de formation adapté."
+      />
 
     </div>
   );

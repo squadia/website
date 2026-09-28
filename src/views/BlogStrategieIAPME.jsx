@@ -3,6 +3,8 @@ import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { ArrowLeft, Clock, Calendar, ArrowRight } from 'lucide-react';
 import ArticleTOC from '../components/blog/ArticleTOC';
+import ArticleCta from '../components/blog/ArticleCta';
+import RelatedArticles from '../components/blog/RelatedArticles';
 const blog1 = '/assets/images/blog/blog1.png';
 
 const TOC_SECTIONS = [
@@ -38,7 +40,7 @@ export default function BlogStrategieIAPME() {
   }, []);
 
   return (
-    <div style={{ background: '#0A0A1A', color: '#F9FAFB', minHeight: '100vh', fontFamily: '"Open Sans", Arial, sans-serif' }}>
+    <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh', fontFamily: 'var(--font-main)' }}>
 
       {/* ═══ BARRE DE PROGRESSION DE LECTURE ═══ */}
       <div style={{
@@ -47,16 +49,16 @@ export default function BlogStrategieIAPME() {
         left: 0,
         width: '100%',
         height: '5px',
-        background: 'rgba(255,255,255,0.08)',
+        background: 'rgba(255,255,255,0.8)',
         zIndex: 9999,
         pointerEvents: 'none'
       }}>
         <div style={{
           height: '100%',
           width: `${readingProgress}%`,
-          background: 'linear-gradient(90deg, #2563EB 0%, #44CCFF 100%)',
+          background: 'linear-gradient(90deg, #1F3A33 0%, #1F3A33 100%)',
           transition: 'width 0.1s linear',
-          boxShadow: '0 0 12px rgba(37,99,235,0.8), 0 0 4px rgba(68,204,255,0.5)'
+          boxShadow: '0 0 12px rgba(31,58,51,0.8), 0 0 4px rgba(176,141,87,0.5)'
         }} />
       </div>
 
@@ -66,7 +68,7 @@ export default function BlogStrategieIAPME() {
         height: '100vh',
         display: 'flex',
         alignItems: 'center',
-        background: '#0A0A1A',
+        background: '#F6F3EC',
         overflow: 'hidden'
       }}>
         {/* L'image de fond - Plus lumineuse */}
@@ -89,7 +91,7 @@ export default function BlogStrategieIAPME() {
           <div style={{
             position: 'absolute',
             inset: 0,
-            background: 'rgba(10,10,26,0.2)', // Très subtil
+            background: 'rgba(246,243,236,0.2)', // Très subtil
             zIndex: 1
           }} />
           {/* Gradient de bas de page pour transition vers l'article */}
@@ -99,7 +101,7 @@ export default function BlogStrategieIAPME() {
             left: 0,
             right: 0,
             height: '30vh',
-            background: 'linear-gradient(to bottom, transparent, #0A0A1A)',
+            background: 'linear-gradient(to bottom, transparent, #F6F3EC)',
             zIndex: 2
           }} />
         </div>
@@ -114,27 +116,27 @@ export default function BlogStrategieIAPME() {
         }}>
           {/* Bloc de texte avec effet Glassmorphism - Allégé */}
           <div style={{
-            background: 'rgba(10, 10, 26, 0.3)',
+            background: 'rgba(246,243,236,0.3)',
             backdropFilter: 'blur(6px)',
             WebkitBackdropFilter: 'blur(6px)',
             padding: '3rem',
             borderRadius: '2rem',
-            border: '1px solid rgba(255, 255, 255, 0.15)',
-            boxShadow: '0 10px 30px rgba(0,0,0,0.2)'
+            border: '1px solid rgba(28,43,39,0.24)',
+            boxShadow: '0 10px 30px rgba(28,43,39,0.07)'
           }}>
             {/* Back link */}
             <Link href="/ressources" style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '0.5rem',
-              color: '#9CA3AF',
+              color: '#4A534F',
               fontSize: '0.9rem',
               textDecoration: 'none',
               marginBottom: '2rem',
               transition: 'color 0.2s'
             }}
-              onMouseEnter={e => e.currentTarget.style.color = '#44CCFF'}
-              onMouseLeave={e => e.currentTarget.style.color = '#9CA3AF'}
+              onMouseEnter={e => e.currentTarget.style.color = '#8A6D3B'}
+              onMouseLeave={e => e.currentTarget.style.color = '#4A534F'}
             >
               <ArrowLeft size={16} /> Retour aux ressources
             </Link>
@@ -142,8 +144,8 @@ export default function BlogStrategieIAPME() {
             {/* Tag */}
             <div style={{ marginBottom: '1.5rem' }}>
               <span style={{
-                background: '#2563EB',
-                color: '#FFFFFF',
+                background: '#1F3A33',
+                color: '#F6F3EC',
                 padding: '0.35rem 1.25rem',
                 borderRadius: '9999px',
                 fontSize: '0.75rem',
@@ -160,7 +162,7 @@ export default function BlogStrategieIAPME() {
               fontSize: 'clamp(1.9rem, 3.2vw, 2.8rem)',
               fontWeight: 900,
               lineHeight: 1.1,
-              color: '#FFFFFF',
+              color: '#1C2B27',
               marginBottom: '2rem',
               letterSpacing: '-0.03em'
             }}>
@@ -173,15 +175,15 @@ export default function BlogStrategieIAPME() {
               flexDirection: 'column',
               gap: '1.5rem'
             }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#D1D5DB', fontSize: '0.95rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem', color: '#4A534F', fontSize: '0.95rem' }}>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Calendar size={16} color="#2563EB" /> Avril 2026
+                  <Calendar size={16} color="#1F3A33" /> Avril 2026
                 </span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <Clock size={16} color="#2563EB" /> 8 min de lecture
+                  <Clock size={16} color="#1F3A33" /> 8 min de lecture
                 </span>
               </div>
-              <div style={{ width: '80px', height: '4px', background: '#2563EB', borderRadius: '2px' }} />
+              <div style={{ width: '80px', height: '4px', background: '#1F3A33', borderRadius: '2px' }} />
             </div>
           </div>
         </div>
@@ -193,7 +195,7 @@ export default function BlogStrategieIAPME() {
           left: '50%',
           transform: 'translateX(-50%)',
           zIndex: 10,
-          color: '#FFFFFF',
+          color: '#1C2B27',
           animation: 'bounce 2s infinite'
         }}>
           <style>{`
@@ -204,7 +206,7 @@ export default function BlogStrategieIAPME() {
             }
           `}</style>
           <div style={{ opacity: 0.6, fontSize: '0.8rem', textAlign: 'center', marginBottom: '0.5rem' }}>Lire l'article</div>
-          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #2563EB, transparent)', margin: '0 auto' }} />
+          <div style={{ width: '2px', height: '40px', background: 'linear-gradient(to bottom, #1F3A33, transparent)', margin: '0 auto' }} />
         </div>
       </section>
 
@@ -218,13 +220,13 @@ export default function BlogStrategieIAPME() {
           .article-body p {
             font-size: 1.05rem;
             line-height: 1.85;
-            color: rgba(249,250,251,0.75);
+            color: rgba(28,43,39,0.75);
             margin-bottom: 1.6rem;
           }
           .article-body h2 {
             font-size: 1.55rem;
             font-weight: 800;
-            color: #F9FAFB;
+            color: #1C2B27;
             margin-top: 3.5rem;
             margin-bottom: 1.2rem;
             line-height: 1.25;
@@ -236,17 +238,17 @@ export default function BlogStrategieIAPME() {
             display: block;
             width: 36px;
             height: 3px;
-            background: #2563EB;
+            background: #1F3A33;
             border-radius: 2px;
             margin-bottom: 1rem;
           }
           .article-body strong {
-            color: #F9FAFB;
+            color: #1C2B27;
             font-weight: 700;
           }
           .article-body hr {
             border: none;
-            border-top: 1px solid #1A1A3A;
+            border-top: 1px solid #D8D1C2;
             margin: 3rem 0;
           }
           .article-body ul {
@@ -256,7 +258,7 @@ export default function BlogStrategieIAPME() {
           .article-body ul li {
             font-size: 1.05rem;
             line-height: 1.85;
-            color: rgba(249,250,251,0.75);
+            color: rgba(28,43,39,0.75);
             padding-left: 1.4rem;
             position: relative;
             margin-bottom: 0.5rem;
@@ -265,25 +267,25 @@ export default function BlogStrategieIAPME() {
             content: '→';
             position: absolute;
             left: 0;
-            color: #2563EB;
+            color: #1F3A33;
             font-weight: 700;
           }
           .article-pullquote {
-            border-left: 3px solid #2563EB;
+            border-left: 3px solid #1F3A33;
             padding: 1.2rem 1.8rem;
             margin: 2.5rem 0;
-            background: rgba(37,99,235,0.06);
+            background: rgba(31,58,51,0.06);
             border-radius: 0 0.75rem 0.75rem 0;
           }
           .article-pullquote p {
             font-size: 1.1rem !important;
-            color: #E5E7EB !important;
+            color: #4A534F !important;
             font-style: italic;
             margin-bottom: 0 !important;
           }
           .article-highlight-box {
-            background: #0D0D25;
-            border: 1px solid #1A1A3A;
+            background: #F6F3EC;
+            border: 1px solid #D8D1C2;
             border-radius: 1rem;
             padding: 2rem 2.5rem;
             margin: 2.5rem 0;
@@ -291,7 +293,7 @@ export default function BlogStrategieIAPME() {
           .article-highlight-box h3 {
             font-size: 1.1rem;
             font-weight: 700;
-            color: #60A5FA;
+            color: #8A6D3B;
             margin-bottom: 0.75rem;
           }
           .article-highlight-box p {
@@ -300,8 +302,8 @@ export default function BlogStrategieIAPME() {
           .article-stat {
             display: flex;
             gap: 1.5rem;
-            background: rgba(37,99,235,0.06);
-            border: 1px solid rgba(37,99,235,0.2);
+            background: rgba(31,58,51,0.06);
+            border: 1px solid rgba(31,58,51,0.2);
             border-radius: 1rem;
             padding: 1.5rem 2rem;
             margin: 2rem 0;
@@ -310,13 +312,13 @@ export default function BlogStrategieIAPME() {
           .article-stat-number {
             font-size: 2.5rem;
             font-weight: 800;
-            color: #60A5FA;
+            color: #8A6D3B;
             line-height: 1;
             flex-shrink: 0;
           }
           .article-stat-label {
             font-size: 0.95rem;
-            color: rgba(249,250,251,0.65);
+            color: rgba(28,43,39,0.65);
             line-height: 1.5;
           }
         `}</style>
@@ -442,26 +444,26 @@ export default function BlogStrategieIAPME() {
             {[
               {
                 period: '0 – 90 jours',
-                color: '#2563EB',
+                color: '#1F3A33',
                 label: 'Court terme',
                 content: 'Deux ou trois cas d\'usage à fort impact et faible complexité : automatisation de la prise de note et mise à jour CRM après les appels commerciaux, génération assistée de contenus marketing sur des formats répétitifs, veille sectorielle automatisée. Ces premiers résultats font gagner du temps immédiatement, et légitiment la démarche auprès des équipes sceptiques.'
               },
               {
                 period: '3 – 12 mois',
-                color: '#7C3AED',
+                color: '#8A6D3B',
                 label: 'Moyen terme',
                 content: 'Alignement des données marketing et commerciales, mise en place d\'agents IA métier, intégration de l\'IA dans les processus de décision. C\'est à ce stade que la strategie IA cesse d\'être une série d\'outils et devient un système cohérent.'
               },
               {
                 period: '12 mois et au-delà',
-                color: '#44CCFF',
+                color: '#8A6D3B',
                 label: 'Long terme',
                 content: 'Les entreprises exposées à l\'IA ont enregistré en 2024 une croissance du chiffre d\'affaires par employé trois fois supérieure à celles qui le sont moins. Ce n\'est pas une projection. C\'est un résultat observé. Les entreprises qui structurent maintenant construisent un avantage que leurs concurrents mettront des années à rattraper.'
               }
             ].map((step, i) => (
               <div key={i} style={{
                 display: 'flex', gap: '1.5rem',
-                background: '#0D0D25', border: '1px solid #1A1A3A',
+                background: '#F6F3EC', border: '1px solid #D8D1C2',
                 borderRadius: '1rem', padding: '1.75rem 2rem'
               }}>
                 <div style={{ flexShrink: 0 }}>
@@ -474,8 +476,8 @@ export default function BlogStrategieIAPME() {
                 </div>
                 <div>
                   <div style={{ fontSize: '0.75rem', fontWeight: 700, color: step.color, textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.25rem' }}>{step.period}</div>
-                  <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#F9FAFB', marginBottom: '0.75rem' }}>{step.label}</div>
-                  <p style={{ fontSize: '0.95rem', color: 'rgba(249,250,251,0.65)', lineHeight: 1.7, margin: 0 }}>{step.content}</p>
+                  <div style={{ fontSize: '1.05rem', fontWeight: 700, color: '#1C2B27', marginBottom: '0.75rem' }}>{step.label}</div>
+                  <p style={{ fontSize: '0.95rem', color: 'rgba(28,43,39,0.65)', lineHeight: 1.7, margin: 0 }}>{step.content}</p>
                 </div>
               </div>
             ))}
@@ -493,42 +495,8 @@ export default function BlogStrategieIAPME() {
 
         </div>
         {/* ═══ CTA BLOCK ═══ */}
-        <div style={{
-          marginTop: '5rem',
-          border: '1px solid rgba(68,204,255,.1)',
-          borderRadius: '20px',
-          textAlign: 'center',
-          position: 'relative',
-          overflow: 'hidden',
-          boxShadow: '0 0 60px -20px rgba(68,204,255,.15)',
-          minHeight: '480px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-        }}>
-          <img src="/assets/images/notremission/team-squadia.png" alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'grayscale(1) brightness(0.28)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, transparent 40%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-          <div style={{ position: 'relative', zIndex: 2, padding: '0 56px 56px' }}>
-            <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Passez à l'action</span>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#fff', marginBottom: '1rem', lineHeight: 1.2 }}>
-              Vous voulez former vos équipes à l'IA avec un regard extérieur structurant ?
-            </h2>
-            <p style={{ color: '#bcc8d1', fontSize: '1rem', lineHeight: 1.6, maxWidth: '560px', marginInline: 'auto', marginBottom: '2rem' }}>
-              Squadia accompagne les PME et ETI françaises dans la formation de leurs équipes à l'IA.
-            </p>
-            <Link
-              href="/formations"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.6rem',
-                background: '#44CCFF', color: '#060612',
-                padding: '1rem 2rem', borderRadius: '0.5rem',
-                fontWeight: 700, fontSize: '1rem', textDecoration: 'none'
-              }}
-            >
-              Voir les formations IA <ArrowRight size={18} />
-            </Link>
-          </div>
-        </div>
+        <RelatedArticles current="strategie-ia-pme-sequence" />
+        <ArticleCta kicker={`Passez à l'action`} title={`Vous voulez former vos équipes à l'IA avec un regard extérieur structurant ?`} text={`Squadia accompagne les PME et ETI françaises dans la formation de leurs équipes à l'IA.`} href="/formations" label={`Voir les formations IA`} />
 
         </article>
       </div>

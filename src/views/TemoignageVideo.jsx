@@ -1,0 +1,56 @@
+'use client';
+import React, { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
+import { AVATAR_VIDEO_BASE_URL, AVATAR_CTA_PAGES, DEFAULT_AVATAR_CTA } from '@/src/lib/testimonialsConfig';
+
+const UUID_PATTERN = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+
+const TemoignageVideo = () => {
+  const [videoId] = useState(() => {
+    const v = new URLSearchParams(window.location.search).get('v') || '';
+    return UUID_PATTERN.test(v) ? v : null;
+  });
+  const [cta] = useState(() => {
+    const params = new URLSearchParams(window.location.search);
+    const page = AVATAR_CTA_PAGES.find((p) => p.value === params.get('cta'))
+      || AVATAR_CTA_PAGES.find((p) => p.value === DEFAULT_AVATAR_CTA);
+    const label = (params.get('label') || '').trim().slice(0, 60);
+    return { href: page.href, label: label || page.defaultLabel, external: page.href.startsWith('http') };
+  });
+  const [failed, setFailed] = useState(false);
+
+  return (
+    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', padding: '110px 16px 80px' }}>
+      <div style={{ maxWidth: '760px', margin: '0 auto', textAlign: 'center' }}>
+        <h1 style={{ fontSize: 'clamp(1.5rem, 3vw, 2.1rem)', fontWeight: 800, marginBottom: '0.6rem' }}>
+          Un petit message pour toi
+        </h1>
+        <p style={{ color: '#4A534F', marginBottom: '2rem' }}>Merci encore pour ton témoignage&nbsp;!</p>
+
+        {videoId && !failed ? (
+          <video
+            src={`${AVATAR_VIDEO_BASE_URL}${videoId}.mp4`}
+            poster={`${AVATAR_VIDEO_BASE_URL}${videoId}.jpg`}
+            controls
+            autoPlay
+            playsInline
+            onError={() => setFailed(true)}
+            style={{ width: '100%', borderRadius: '16px', border: '1px solid #D8D1C2', background: '#F6F3EC', display: 'block' }}
+          />
+        ) : (
+          <p style={{ color: '#4A534F', padding: '3rem 0' }}>Cette vidéo n'est pas disponible.</p>
+        )}
+
+        <a
+          href={cta.href}
+          {...(cta.external && { target: '_blank', rel: 'noopener noreferrer' })}
+          style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', marginTop: '2rem', padding: '0.9rem 1.6rem', borderRadius: '30px', background: '#1F3A33', color: '#F6F3EC', fontWeight: 700, textDecoration: 'none' }}
+        >
+          {cta.label} <ArrowRight size={18} />
+        </a>
+      </div>
+    </div>
+  );
+};
+
+export default TemoignageVideo;

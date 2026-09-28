@@ -162,17 +162,17 @@ function SegmentLabel({ stage, showValues, showLabels, formatValue, index, stagg
     >
       <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '0.25rem' }}>
         {showValues && (
-          <span style={{ whiteSpace: 'nowrap', fontWeight: 700, color: '#FFFFFF', fontSize: 'clamp(1.2rem, 2.2vw, 1.7rem)' }}>
+          <span style={{ whiteSpace: 'nowrap', fontWeight: 700, color: '#1C2B27', fontSize: 'clamp(1.2rem, 2.2vw, 1.7rem)' }}>
             {display}
           </span>
         )}
         {showLabels && (
-          <span style={{ whiteSpace: 'nowrap', fontSize: '0.75rem', fontWeight: 500, color: 'rgba(255,255,255,0.55)' }}>
+          <span style={{ whiteSpace: 'nowrap', fontSize: '0.75rem', fontWeight: 500, color: 'rgba(28,43,39,0.6)' }}>
             {stage.label}
           </span>
         )}
         {stage.sub && (
-          <span style={{ whiteSpace: 'nowrap', fontSize: '0.75rem', fontStyle: 'italic', color: 'rgba(255,255,255,0.35)' }}>
+          <span style={{ whiteSpace: 'nowrap', fontSize: '0.75rem', fontStyle: 'italic', color: 'rgba(28,43,39,0.6)' }}>
             {stage.sub}
           </span>
         )}
@@ -185,7 +185,7 @@ function SegmentLabel({ stage, showValues, showLabels, formatValue, index, stagg
 
 export function FunnelChart({
   data,
-  color = '#44CCFF',
+  color = '#8A6D3B',
   layers = 3,
   style,
   showValues = true,
@@ -315,9 +315,9 @@ export function FunnelChart({
             const totalW = boundaryX(n);
             return (
               <div style={{ position: 'absolute', left: 0, top: H + 22, width: totalW, height: 32 }}>
-                <div style={{ position: 'absolute', left: 0, top: 0, width: totalW, height: 1, background: 'rgba(255,255,255,0.18)' }} />
+                <div style={{ position: 'absolute', left: 0, top: 0, width: totalW, height: 1, background: 'rgba(255,255,255,0.6)' }} />
                 {marks.map((m, i) => (
-                  <div key={i} style={{ position: 'absolute', left: boundaryX(m), top: -4, width: 1, height: 9, background: 'rgba(255,255,255,0.35)', transform: 'translateX(-0.5px)' }} />
+                  <div key={i} style={{ position: 'absolute', left: boundaryX(m), top: -4, width: 1, height: 9, background: 'rgba(255,255,255,0.6)', transform: 'translateX(-0.5px)' }} />
                 ))}
                 {timeline.map((t, i) => {
                   const x0 = boundaryX(marks[i]);
@@ -328,7 +328,7 @@ export function FunnelChart({
                       key={i}
                       style={{
                         position: 'absolute', left: midX, top: 10, transform: 'translateX(-50%)',
-                        fontSize: '0.72rem', fontWeight: 600, color: 'rgba(255,255,255,0.45)', whiteSpace: 'nowrap',
+                        fontSize: '0.72rem', fontWeight: 600, color: 'rgba(28,43,39,0.6)', whiteSpace: 'nowrap',
                       }}
                     >
                       {t.label}

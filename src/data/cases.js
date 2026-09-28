@@ -4,7 +4,7 @@ export const casesData = [
     shortTitle: "Pipeline B2B",
     kpi: "+39 opportunités",
     kpiLabel: "en 2 mois",
-    bgGradient: "linear-gradient(135deg, #0A0F2E 0%, #0D1F3C 100%)",
+    bgGradient: "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)",
     client: "Grand groupe francais de services",
     subtitle: "Pipeline B2B from scratch sur un marche que personne n'avait encore cartographie",
     tags: ["Prospection", "Data Lead"],
@@ -23,14 +23,14 @@ export const casesData = [
       "Pour l'activation, on a concu une strategie LinkedIn qui positionnait l'initiative comme une co-construction avec les futurs clients, pas une vente frontale. Les entreprises ciblees se sont senties impliquees dans quelque chose qui les concernait directement, avec la force de frappe d'un groupe a 35 milliards derriere. Le site de presentation de l'offre a aussi ete produit dans le cadre de la mission."
     ],
     result: "En deux mois, la direction avait un pipeline structure, une base de donnees qualifiee et les premieres preuves que le marche repondait favorablement a l'offre. Les 10 engagements de commandes obtenus en six semaines ont largement depasse l'objectif initial de 5 commandes pilotes sur 3 mois.",
-    resultBorderColor: "#2563EB"
+    resultBorderColor: "#1F3A33"
   },
   {
     id: "formation-ia-com",
     shortTitle: "L'IA au service de la communication",
     kpi: "92% adoption",
     kpiLabel: "des la 1ere semaine",
-    bgGradient: "linear-gradient(135deg, #0A1A10 0%, #0D2818 100%)",
+    bgGradient: "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)",
     client: "Grande collectivite urbaine, top 3 des villes francaises",
     subtitle: "Former des equipes communication a l'IA quand une charte existe mais que personne ne sait vraiment quoi en faire",
     tags: ["Formation"],
@@ -49,14 +49,14 @@ export const casesData = [
       "Sur la partie ethique et securite, on a remis la charte en perspective : comprendre pourquoi certaines regles existent, comment les appliquer au quotidien, et ou s'arrete l'autonomie des equipes avant validation IT sur les contenus sensibles."
     ],
     result: "Quelques semaines apres les sessions, certains participants ont remonte avoir divise par deux le temps passe a comprendre et exprimer leurs attentes aupres des agences. La qualite des productions a augmente, la personalisation des messages par audience aussi. La formation a aussi ouvert des perspectives sur la prochaine etape : la mise en place de chatbots intelligents et personnalises pour favoriser l'engagement des administres, bien loin des simples formulaires de contact existants.",
-    resultBorderColor: "#2563EB"
+    resultBorderColor: "#1F3A33"
   },
   {
     id: "crm-industrie",
     shortTitle: "Prospection ciblee, industrie",
     kpi: "+32 rendez-vous qualifies",
     kpiLabel: "avec des directeurs d'exploitation en 5 mois",
-    bgGradient: "linear-gradient(135deg, #0F0A2E 0%, #1A0D3C 100%)",
+    bgGradient: "linear-gradient(135deg, #F6F3EC 0%, #FFFFFF 100%)",
     client: "Distributeur industriel B2B, reseau commercial terrain en France",
     subtitle: "De la data brute aux rendez-vous avec les directeurs d'exploitation",
     tags: ["Prospection", "Data"],
@@ -77,14 +77,14 @@ export const casesData = [
       "Les appels ont ete prepares avec un script adapte aux objections de l'industrie, une cadence d'appels sur plusieurs semaines, et un suivi dans le CRM. Le reseau commercial terrain pouvait ainsi reprendre les comptes chauds en toute continuite."
     ],
     result: "En cinq mois, 32 rendez-vous qualifies ont ete obtenus avec des directeurs d'exploitation et des directeurs d'usine correspondant au profil cible. Le reseau commercial dispose desormais d'une base priorisee, d'une methode de prospection reproductible, et d'un support metier qui ouvre la porte du decideur. La prospection ne depend plus du hasard : elle repose sur un ciblage precis, un message adapte, et un relais operationnel avec les commerciaux de terrain.",
-    resultBorderColor: "#2563EB"
+    resultBorderColor: "#1F3A33"
   },
   {
     id: "migration-crm",
     shortTitle: "Data cleaning CRM",
     kpi: "-15% doublons",
     kpiLabel: "2 500 comptes nettoyes",
-    bgGradient: "linear-gradient(135deg, #0A1A1A 0%, #0D2A2A 100%)",
+    bgGradient: "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)",
     client: "Startup deeptech basee a Grenoble, secteur des nouvelles energies",
     subtitle: "Nettoyer 2 500 comptes et deployer HubSpot en 3 semaines",
     tags: ["Data Clean", "Automatisation", "Formation"],
@@ -103,14 +103,14 @@ export const casesData = [
       "On a ensuite configure HubSpot avec les bons dashboards pour suivre le developpement sur les differents pays cibles, mis en place les automatisations necessaires a l'interieur et a l'exterieur du CRM pour alerter les bonnes personnes au bon moment. Et on a forme l'integralite des equipes, du management aux commerciaux en passant par le marketing, pour qu'elles s'approprient l'outil sans avoir besoin d'etre expertes en marketing digital."
     ],
     result: "En quelques jours apres le deploiement, l'equipe travaillait deja sur un CRM propre, avec une visibilite reelle sur son activite. Les commerciaux ont trouve dans l'outil ce qu'ils cherchaient jusque-la dans des tableaux Excel epars. Aujourd'hui, la mission se poursuit avec des agents IA qui permettent a chaque commercial de se demultiplier sur un marche qui n'attend pas.",
-    resultBorderColor: "#2563EB"
+    resultBorderColor: "#1F3A33"
   },
   {
     id: "formation-vente",
     shortTitle: "Formation Grand Compte",
     kpi: "x3 ROI",
     kpiLabel: "via methode vente B2B + outils IA",
-    bgGradient: "linear-gradient(135deg, #1A100A 0%, #2A180D 100%)",
+    bgGradient: "linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 100%)",
     client: "Filiale francaise d'un groupe technologique international",
     subtitle: "Aligner juniors et seniors sur une methode de vente commune",
     tags: ["Formation"],
@@ -130,6 +130,6 @@ export const casesData = [
       "Un atelier de cadrage prealable avec le management a permis d'adapter chaque cas pratique aux realites terrain de l'equipe, aux typologies de comptes B2B vises, souvent des entreprises avec de nombreuses filiales en France et a l'etranger, et aux jeux de pouvoir internes qui compliquent les cycles de vente."
     ],
     result: "Un mois apres la formation, les managers ont observe une dynamique nouvelle dans l'equipe. Les commerciaux participaient plus, echangeaient plus entre eux et avec les equipes marketing et communication. Ils avaient compris qu'il y avait d'autres leviers a activer que leurs seuls efforts individuels. Plusieurs ont commence a prendre des initiatives sur leurs comptes cles plutot que d'attendre des instructions.",
-    resultBorderColor: "#2563EB"
+    resultBorderColor: "#1F3A33"
   }
 ];

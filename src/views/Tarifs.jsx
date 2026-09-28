@@ -5,14 +5,15 @@ import { useSearchParams } from 'next/navigation';
 import { Check, ChevronDown } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
+import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   <div
     onClick={onToggle}
     style={{
-      backgroundColor: '#0D0D25',
-      border: '1px solid rgba(68, 204, 255, 0.18)',
+      backgroundColor: '#F6F3EC',
+      border: '1px solid rgba(176,141,87,0.18)',
       borderRadius: '16px',
       padding: '1.6rem',
       cursor: 'pointer',
@@ -21,13 +22,13 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
   >
     <div style={{
       width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', textAlign: 'left',
-      color: '#F9FAFB', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
+      color: '#1C2B27', fontSize: '1.05rem', fontWeight: 600, gap: '1rem'
     }}>
       <span>{question}</span>
       <ChevronDown style={{
         transition: 'transform 0.3s ease',
         transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-        color: '#44CCFF', flexShrink: 0
+        color: '#8A6D3B', flexShrink: 0
       }} />
     </div>
     <div style={{
@@ -36,7 +37,7 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
       transition: 'max-height 0.35s ease-in-out, opacity 0.3s ease',
       opacity: isOpen ? 1 : 0
     }}>
-      <div style={{ marginTop: '1.1rem', color: 'rgba(255,255,255,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
+      <div style={{ marginTop: '1.1rem', color: 'rgba(28,43,39,0.6)', lineHeight: 1.65, fontSize: '0.98rem' }}>{answer}</div>
     </div>
   </div>
 );
@@ -238,9 +239,9 @@ const TarifsContent = () => {
                   borderRadius: '9999px',
                   fontWeight: 700,
                   fontSize: '1rem',
-                  border: activeTab === tab.id ? '1px solid #2563EB' : '1px solid #1A1A3A',
-                  background: activeTab === tab.id ? 'rgba(37, 99, 235, 0.1)' : '#0D0D25',
-                  color: activeTab === tab.id ? '#FFFFFF' : 'var(--text-secondary)',
+                  border: activeTab === tab.id ? '1px solid #1F3A33' : '1px solid #FFFFFF',
+                  background: activeTab === tab.id ? 'rgba(31,58,51,0.1)' : '#F6F3EC',
+                  color: activeTab === tab.id ? '#1C2B27' : 'var(--text-secondary)',
                   transition: 'all var(--transition-fast)'
                 }}
               >
@@ -265,8 +266,8 @@ const TarifsContent = () => {
                 key={idx}
                 className="pricing-card"
                 style={{
-                  background: '#0D0D25',
-                  border: card.badge ? '2px solid #2563EB' : '1px solid #1A1A3A',
+                  background: '#F6F3EC',
+                  border: card.badge ? '2px solid #1F3A33' : '1px solid #D8D1C2',
                   padding: isMobile ? '24px 18px' : '3rem 2rem',
                   borderRadius: '1rem',
                   position: 'relative',
@@ -280,7 +281,7 @@ const TarifsContent = () => {
                     top: '-12px',
                     left: '50%',
                     transform: 'translateX(-50%)',
-                    background: '#2563EB',
+                    background: '#1F3A33',
                     color: 'white',
                     padding: '4px 12px',
                     borderRadius: '20px',
@@ -292,19 +293,19 @@ const TarifsContent = () => {
                 )}
                 {card.badge && (
                   <div className="mobile-only" style={{ marginBottom: '8px' }}>
-                    <span style={{ display: 'inline-block', background: '#2563EB', color: 'white', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
+                    <span style={{ display: 'inline-block', background: '#1F3A33', color: 'white', padding: '3px 8px', borderRadius: '20px', fontSize: '10px', fontWeight: 700, lineHeight: 1.4 }}>
                       {card.badge}
                     </span>
                   </div>
                 )}
 
-                <h3 style={{ fontSize: isMobile ? '1.3rem' : '1.8rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
-                <p style={{ fontSize: '0.9rem', color: '#9CA3AF', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
+                <h3 style={{ fontSize: '1.3rem', margin: '0 0 1rem 0' }}>{card.title}</h3>
+                <p style={{ fontSize: '0.9rem', color: '#4A534F', marginBottom: '1.5rem', minHeight: isMobile ? 'auto' : '3rem' }}>
                   {card.subtitle}
                 </p>
 
                 <div style={{ marginBottom: '1.5rem', marginTop: isMobile ? '4px' : 0 }}>
-                  <div className="pricing-price-hero" style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#fff' }}>
+                  <div className="pricing-price-hero" style={{ fontSize: isMobile ? '24px' : '2.2rem', fontWeight: 700, whiteSpace: 'nowrap', color: '#1C2B27' }}>
                     {(() => {
                       let displayPrice = card.price;
                       let prefix = null;
@@ -326,13 +327,13 @@ const TarifsContent = () => {
                       return (
                         <>
                           {prefix && (
-                            <span style={{ fontSize: '1.2rem', color: '#9CA3AF', fontWeight: 400, marginRight: '0.4rem' }}>
+                            <span style={{ fontSize: '1.2rem', color: '#4A534F', fontWeight: 400, marginRight: '0.4rem' }}>
                               {prefix}
                             </span>
                           )}
                           {displayPrice}
                           {suffix && (
-                            <span style={{ fontSize: '0.85rem', color: '#9CA3AF', fontWeight: 400, marginLeft: '0.2rem' }}>
+                            <span style={{ fontSize: '0.85rem', color: '#4A534F', fontWeight: 400, marginLeft: '0.2rem' }}>
                               {suffix}
                             </span>
                           )}
@@ -341,7 +342,7 @@ const TarifsContent = () => {
                     })()}
                   </div>
                   {card.subPrice && (
-                    <div style={{ fontSize: '0.8rem', color: '#9CA3AF', marginTop: '0.5rem' }}>
+                    <div style={{ fontSize: '0.8rem', color: '#4A534F', marginTop: '0.5rem' }}>
                       {card.subPrice}
                     </div>
                   )}
@@ -350,7 +351,7 @@ const TarifsContent = () => {
                 <div style={{ flexGrow: 1, marginBottom: '1.5rem' }}>
                   {card.items.map((item, iIdx) => (
                     <div key={iIdx} style={{ display: 'flex', gap: '10px', marginBottom: isMobile ? '8px' : '0.75rem', fontSize: isMobile ? '14px' : '0.85rem', lineHeight: isMobile ? 1.7 : 1.4 }}>
-                      <Check size={16} color={card.badge ? "#2563EB" : "var(--accent)"} style={{ flexShrink: 0, marginTop: '2px' }} />
+                      <Check size={16} color={card.badge ? "#1F3A33" : "var(--accent)"} style={{ flexShrink: 0, marginTop: '2px' }} />
                       <span>{item}</span>
                     </div>
                   ))}
@@ -365,9 +366,9 @@ const TarifsContent = () => {
                     borderRadius: '0.5rem',
                     fontWeight: 700,
                     fontSize: '1rem',
-                    border: card.badge ? 'none' : '1px solid rgba(255,255,255,0.2)',
-                    background: card.badge ? '#2563EB' : 'transparent',
-                    color: '#FFFFFF',
+                    border: card.badge ? 'none' : '1px solid rgba(28,43,39,0.32)',
+                    background: card.badge ? '#1F3A33' : 'transparent',
+                    color: card.badge ? '#F6F3EC' : '#1C2B27',
                     textAlign: 'center',
                     textDecoration: 'none',
                     transition: 'all 0.3s',
@@ -389,36 +390,25 @@ const TarifsContent = () => {
       </section>
 
       {/* ═══ SECTION 4 : RÉFÉRENCES CLIENTS ═══ */}
-      <section className="section-padding" style={{ backgroundColor: '#050510', paddingTop: '3rem', paddingBottom: '4rem' }}>
+      <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '3rem', paddingBottom: '4rem' }}>
         <div className="container fade-in">
           <ClientLogosSection contained={true} />
         </div>
       </section>
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
-      <section style={{ background: '#060612', padding: '60px 0 120px' }}>
-        <div className="container" style={{ position: 'relative' }}>
-          <div style={{ position: 'absolute', left: '-160px', bottom: '-160px', width: '840px', height: '840px', background: 'radial-gradient(circle, rgba(68,204,255,0.55) 0%, rgba(68,204,255,0) 70%)', filter: 'blur(30px)', zIndex: 0, pointerEvents: 'none' }} />
-          <div style={{ border: '1px solid rgba(68,204,255,.1)', borderRadius: '20px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 0 60px -20px rgba(68,204,255,.15)', minHeight: '600px', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end', zIndex: 1 }}>
-            <img src={teamSquadia} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', filter: 'brightness(0.75) saturate(1.1)', zIndex: 0, pointerEvents: 'none' }} />
-            <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to bottom, rgba(6,6,18,0.75) 0%, transparent 32%, transparent 55%, rgba(6,6,18,0.92) 100%)', zIndex: 1, pointerEvents: 'none' }} />
-            <div style={{ position: 'relative', zIndex: 2, padding: '56px 56px 64px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', flex: 1 }}>
-              <div>
-                <span style={{ fontSize: '0.75rem', fontWeight: 700, letterSpacing: '.18em', textTransform: 'uppercase', color: '#44CCFF', display: 'block', marginBottom: '16px' }}>Prochaine étape</span>
-                <p style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 200, fontStyle: 'italic', lineHeight: 1.1, color: '#fff', margin: '0 0 8px' }}>Rejoignez-nous :</p>
-                <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, lineHeight: 1.1, color: '#fff', margin: 0 }}>Une question<br/>sur nos offres ?</h2>
-              </div>
-              <div>
-                <p style={{ fontSize: '1.1rem', lineHeight: 1.72, color: '#bcc8d1', maxWidth: '420px', margin: '0 auto 32px' }}>On vous répond directement, sans argumentaire commercial.</p>
-                <Link href="/contact" style={{ fontSize: '1.1rem', fontWeight: 700, background: '#44CCFF', color: '#060612', padding: '1.1rem 2.2rem', borderRadius: '0.5rem', textDecoration: 'none', display: 'inline-block', margin: '0 auto' }}>Prendre Rendez-Vous</Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <CtaFinalZoom
+        teamSquadia={teamSquadia}
+        eyebrow="Prochaine étape"
+        kicker="Rejoignez-nous :"
+        title={<>Une question<br />sur nos offres ?</>}
+        description="On vous répond directement, sans argumentaire commercial."
+      />
 
       <style>{`
         @media (max-width: 768px) {
+          div[style*="grid-template-columns:repeat(3, 1fr)"],
+          div[style*="grid-template-columns:repeat(2, 1fr)"],
           div[style*="grid-template-columns: repeat(3, 1fr)"],
           div[style*="grid-template-columns: repeat(2, 1fr)"] {
             grid-template-columns: 1fr !important;

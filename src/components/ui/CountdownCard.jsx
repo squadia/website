@@ -32,16 +32,16 @@ export default function CountdownCard({ title, dateStart, dateLabel, attendees =
 
   return (
     <div style={{
-      background: 'linear-gradient(135deg, #0d1b35 0%, #111f3a 60%, #0a1628 100%)',
-      border: '1px solid rgba(37,99,235,0.3)',
+      background: 'linear-gradient(135deg, #FFFFFF 0%, #FFFFFF 60%, #FFFFFF 100%)',
+      border: '1px solid rgba(31,58,51,0.3)',
       borderRadius: '16px',
       overflow: 'hidden',
-      boxShadow: '0 8px 40px rgba(0,0,0,0.4)',
+      boxShadow: '0 8px 40px rgba(28,43,39,0.14)',
     }}>
 
       {/* ── HEADER ── */}
-      <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <h3 style={{ color: '#F9FAFB', fontSize: '1rem', fontWeight: 700, lineHeight: 1.45, marginBottom: '1rem' }}>
+      <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(28,43,39,0.16)' }}>
+        <h3 style={{ color: '#1C2B27', fontSize: '1rem', fontWeight: 700, lineHeight: 1.45, marginBottom: '1rem' }}>
           {title}
         </h3>
         {image && (
@@ -60,40 +60,40 @@ export default function CountdownCard({ title, dateStart, dateLabel, attendees =
           </div>
         )}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem' }}>
-            <Calendar size={13} color="#44CCFF" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(28,43,39,0.6)', fontSize: '0.85rem' }}>
+            <Calendar size={13} color="#8A6D3B" />
             <span>{dateLabel}</span>
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.85rem' }}>
-            <MapPin size={13} color="#44CCFF" />
-            <span style={{ color: '#44CCFF', fontWeight: 500 }}>Paris</span>
+            <MapPin size={13} color="#8A6D3B" />
+            <span style={{ color: '#8A6D3B', fontWeight: 500 }}>Paris</span>
           </div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.55)', fontSize: '0.85rem' }}>
-            <Users size={13} color="#44CCFF" />
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(28,43,39,0.6)', fontSize: '0.85rem' }}>
+            <Users size={13} color="#8A6D3B" />
             <span>{attendees} places disponibles</span>
           </div>
         </div>
       </div>
 
       {/* ── COUNTDOWN ── */}
-      <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(255,255,255,0.06)' }}>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.75rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
-          <Clock size={12} color="#44CCFF" />
+      <div style={{ padding: '1.5rem', borderBottom: '1px solid rgba(28,43,39,0.16)' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'rgba(28,43,39,0.6)', fontSize: '0.75rem', marginBottom: '1rem', textTransform: 'uppercase', letterSpacing: '0.06em' }}>
+          <Clock size={12} color="#8A6D3B" />
           <span>La prochaine session commence dans</span>
         </div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '0.5rem' }}>
           {units.map((unit) => (
             <div key={unit.label} style={{
-              background: 'rgba(37,99,235,0.1)',
-              border: '1px solid rgba(68,204,255,0.12)',
+              background: 'rgba(31,58,51,0.1)',
+              border: '1px solid rgba(176,141,87,0.12)',
               borderRadius: '10px',
               padding: '0.75rem 0.25rem',
               textAlign: 'center',
             }}>
-              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#F9FAFB', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
+              <div style={{ fontSize: '1.4rem', fontWeight: 700, color: '#1C2B27', lineHeight: 1, fontVariantNumeric: 'tabular-nums' }}>
                 {pad(unit.value)}
               </div>
-              <div style={{ fontSize: '0.6rem', color: 'rgba(255,255,255,0.4)', marginTop: '0.3rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              <div style={{ fontSize: '0.6rem', color: 'rgba(28,43,39,0.6)', marginTop: '0.3rem', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                 {unit.label}
               </div>
             </div>
@@ -107,24 +107,24 @@ export default function CountdownCard({ title, dateStart, dateLabel, attendees =
           href="/contact"
           style={{
             display: 'block',
-            background: 'linear-gradient(135deg, #2563EB, #1d4ed8)',
-            color: '#fff',
+            background: 'linear-gradient(135deg, #1F3A33, #16302A)',
+            color: '#F6F3EC',
             textAlign: 'center',
             padding: '0.9rem',
             borderRadius: '10px',
             fontWeight: 700,
             fontSize: '0.95rem',
             textDecoration: 'none',
-            boxShadow: '0 4px 16px rgba(37,99,235,0.35)',
+            boxShadow: '0 4px 16px rgba(31,58,51,0.35)',
             transition: 'transform 0.2s ease, box-shadow 0.2s ease',
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 8px 24px rgba(37,99,235,0.5)';
+            e.currentTarget.style.boxShadow = '0 8px 24px rgba(31,58,51,0.5)';
           }}
           onMouseLeave={(e) => {
             e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 4px 16px rgba(37,99,235,0.35)';
+            e.currentTarget.style.boxShadow = '0 4px 16px rgba(31,58,51,0.35)';
           }}
         >
           Réserver votre place

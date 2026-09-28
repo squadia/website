@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock } from 'lucide-react';
+import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock, Workflow } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Images ressources
@@ -11,6 +11,7 @@ const nettoyageData = '/assets/images/blog/cleaningdata.jpeg';
 const blog3 = '/assets/images/blog/blog3.jpeg';
 const blog4 = '/assets/images/blog/blog4.jpeg';
 const formationCommercialeImg = '/assets/images/blog/formationcommercialeB2B.jpeg';
+const simulateurRoiImg = '/assets/images/ressources/manager_reflexion_simulation_cout_externalisation_squadia.png';
 export default function Ressources() {
   useScrollReveal();
   const [isMobile, setIsMobile] = useState(false);
@@ -34,26 +35,38 @@ export default function Ressources() {
     {
       title: "Enquête IA B2B",
       link: "/ressources/enquete-ia-b2b",
-      icon: <BarChart size={24} color="#2563EB" />,
+      icon: <BarChart size={24} color="#1F3A33" />,
       cta: "Répondre"
     },
     {
       title: "Guide Sales Manager",
       link: "/ressources/guide-sales-manager",
-      icon: <BookOpen size={24} color="#2563EB" />,
+      icon: <BookOpen size={24} color="#1F3A33" />,
       cta: "Télécharger"
     },
     {
       title: "Guide Marketing",
       link: "/ressources/guide-marketing-manager",
-      icon: <FileText size={24} color="#2563EB" />,
+      icon: <FileText size={24} color="#1F3A33" />,
       cta: "Télécharger"
     },
     {
       title: "Channel Sales Plan",
       link: "/ressources/channel-sales-plan",
-      icon: <Handshake size={24} color="#2563EB" />,
+      icon: <Handshake size={24} color="#1F3A33" />,
       cta: "Accéder"
+    },
+    {
+      title: "Planificateur de campagne",
+      link: "/ressources/planificateur-campagne",
+      icon: <CalendarClock size={24} color="#1F3A33" />,
+      cta: "Estimer"
+    },
+    {
+      title: "Automatisations IA",
+      link: "/automatisation-ia.html",
+      icon: <Workflow size={24} color="#1F3A33" />,
+      cta: "Explorer"
     }
   ];
 
@@ -103,7 +116,7 @@ export default function Ressources() {
   ];
 
   return (
-    <div style={{ background: '#0A0A1A', minHeight: '100vh', color: '#F9FAFB', paddingBottom: '100px' }}>
+    <div style={{ background: '#F6F3EC', minHeight: '100vh', color: '#1C2B27', paddingBottom: '100px' }}>
 
       {/* ═══ HERO ═══ */}
       <section style={{ paddingTop: '160px', paddingBottom: '60px', textAlign: 'center' }}>
@@ -111,56 +124,144 @@ export default function Ressources() {
           <h1 style={{ fontSize: 'clamp(2rem, 3.2vw, 2.8rem)', fontWeight: 900, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
             Ressources.
           </h1>
-          <p style={{ fontSize: '1.1rem', color: '#9CA3AF', maxWidth: '600px', marginInline: 'auto', lineHeight: '1.6' }}>
+          <p style={{ fontSize: '1.1rem', color: '#4A534F', maxWidth: '600px', marginInline: 'auto', lineHeight: '1.6' }}>
             Outils pratiques, guides et analyses pour accélérer votre transformation commerciale et marketing.
           </p>
         </div>
       </section>
 
-      {/* ═══ SECTION OUTILS ═══ */}
+      {/* ═══ SECTION OUTILS + SIMULATEUR ═══ */}
       <section className="container" style={{ marginBottom: '80px' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1rem' }}>
-          {resources.map((res, i) => (
-            <Link
-              key={i}
-              href={res.link}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
+          <div style={{ width: '4px', height: '24px', background: '#1F3A33', borderRadius: '2px' }} />
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27' }}>Outils pratiques</h2>
+        </div>
+        <div
+          className="grid-2"
+          style={{ gridTemplateColumns: 'minmax(0,1fr) minmax(300px,380px)', gap: '1.5rem', alignItems: 'stretch' }}
+        >
+          {/* LEFT: box with the 4 resource cards */}
+          <div style={{
+            background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '1.25rem',
+            padding: '1.5rem', display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(3, minmax(0, 1fr))', gap: '1rem'
+          }}>
+            {resources.map((res, i) => (
+              <Link
+                key={i}
+                href={res.link}
+                style={{
+                  background: '#FFFFFF',
+                  border: '1px solid #D8D1C2',
+                  borderRadius: '1rem',
+                  padding: '1.25rem',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  textDecoration: 'none',
+                  transition: 'all 0.3s ease'
+                }}
+                className="resource-card"
+                onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#1F3A33'; }}
+                onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#D8D1C2'; }}
+              >
+                <div style={{
+                  width: '44px', height: '44px', background: 'rgba(31,58,51,0.1)',
+                  borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+                }}>
+                  {res.icon}
+                </div>
+                <div style={{ flex: 1 }}>
+                  <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#1C2B27', marginBottom: '0.2rem' }}>{res.title}</h3>
+                  <span style={{ fontSize: '0.75rem', color: '#1F3A33', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
+                    {res.cta} <ArrowRight size={12} />
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          {/* RIGHT: simulateur ROI box */}
+          <Link
+            href="/ressources/simulateur-roi"
+            className="fade-in"
+            style={{
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1.25rem',
+              background: '#F6F3EC',
+              border: '1px solid rgba(176,141,87,0.35)',
+              borderRadius: '1.25rem',
+              padding: '2rem',
+              textDecoration: 'none',
+              transition: 'all 0.3s ease',
+              overflow: 'hidden'
+            }}
+            onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#B08D57'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.35)'; }}
+          >
+            <img
+              src={simulateurRoiImg}
+              alt=""
               style={{
-                background: '#0D0D25',
-                border: '1px solid #1A1A3A',
-                borderRadius: '1rem',
-                padding: '1.5rem',
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                textDecoration: 'none',
-                transition: 'all 0.3s ease'
+                position: 'absolute',
+                inset: 0,
+                width: '100%',
+                height: '100%',
+                objectFit: 'cover',
+                objectPosition: '58% 22%',
+                opacity: 0.9,
+                zIndex: 0
               }}
-              className="resource-card"
-              onMouseEnter={(e) => { e.currentTarget.style.borderColor = '#2563EB'; e.currentTarget.style.background = '#111135'; }}
-              onMouseLeave={(e) => { e.currentTarget.style.borderColor = '#1A1A3A'; e.currentTarget.style.background = '#0D0D25'; }}
-            >
-              <div style={{
-                width: '44px', height: '44px', background: 'rgba(37,99,235,0.1)',
-                borderRadius: '0.75rem', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0
+            />
+            <div style={{
+              position: 'absolute', inset: 0, zIndex: 1,
+              background: 'linear-gradient(90deg, rgba(246,243,236,0.94) 0%, rgba(246,243,236,0.82) 45%, rgba(246,243,236,0.25) 100%)'
+            }} />
+
+            <div style={{
+              position: 'relative', zIndex: 2,
+              width: '56px', height: '56px', flexShrink: 0, background: 'rgba(246,243,236,0.85)',
+              border: '1px solid rgba(28,43,39,0.24)', borderRadius: '1rem',
+              display: 'flex', alignItems: 'center', justifyContent: 'center'
+            }}>
+              <Calculator size={26} color="#1C2B27" />
+            </div>
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <span style={{
+                display: 'inline-block', fontSize: '0.7rem', fontWeight: 700, textTransform: 'uppercase',
+                letterSpacing: '0.08em', color: '#F6F3EC', background: '#1F3A33', padding: '4px 10px', borderRadius: '999px', marginBottom: '0.6rem'
               }}>
-                {res.icon}
-              </div>
-              <div style={{ flex: 1 }}>
-                <h3 style={{ fontSize: '0.95rem', fontWeight: 700, color: '#F3F4F6', marginBottom: '0.2rem' }}>{res.title}</h3>
-                <span style={{ fontSize: '0.75rem', color: '#2563EB', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  {res.cta} <ArrowRight size={12} />
-                </span>
-              </div>
-            </Link>
-          ))}
+                Simulateur gratuit
+              </span>
+              <h3 style={{ fontSize: 'clamp(1.1rem, 2vw, 1.4rem)', fontWeight: 800, color: '#1C2B27', margin: 0, lineHeight: 1.3 }}>
+                Combien vaut le temps récupéré en process pour votre équipe&nbsp;?
+              </h3>
+              <p style={{
+                margin: '0.75rem 0 0', fontSize: '0.9rem', color: '#4A534F',
+                background: 'rgba(246,243,236,0.7)', border: '1px solid rgba(176,141,87,0.3)',
+                borderRadius: '0.75rem', padding: '0.75rem 1rem'
+              }}>
+                Ajustez les curseurs selon votre équipe et estimez le pipeline et le revenu additionnel généré par une donnée CRM propre.
+              </p>
+            </div>
+            <span style={{
+              position: 'relative', zIndex: 2,
+              display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+              background: '#1F3A33', color: '#F6F3EC', fontWeight: 700, fontSize: '0.9rem',
+              padding: '0.85rem 1.5rem', borderRadius: '9999px', marginTop: 'auto'
+            }}>
+              Estimer mon ROI <ArrowRight size={16} />
+            </span>
+          </Link>
         </div>
       </section>
 
       {/* ═══ SECTION ARTICLES ═══ */}
       <section className="container">
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2rem' }}>
-          <div style={{ width: '4px', height: '24px', background: '#44CCFF', borderRadius: '2px' }} />
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#F9FAFB' }}>Articles</h2>
+          <div style={{ width: '4px', height: '24px', background: '#1F3A33', borderRadius: '2px' }} />
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27' }}>Articles</h2>
         </div>
 
         <div style={{
@@ -174,8 +275,8 @@ export default function Ressources() {
                 key={i}
                 href={article.link}
                 style={{
-                  background: '#0D0D25',
-                  border: '1px solid rgba(255,255,255,0.08)',
+                  background: '#F6F3EC',
+                  border: '1px solid rgba(28,43,39,0.14)',
                   borderRadius: '14px',
                   overflow: 'hidden',
                   textDecoration: 'none',
@@ -193,8 +294,8 @@ export default function Ressources() {
                 <div style={{ padding: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
                   <span style={{
                     display: 'inline-block',
-                    background: 'rgba(37,99,235,0.15)',
-                    color: '#2563EB',
+                    background: 'rgba(31,58,51,0.15)',
+                    color: '#1F3A33',
                     padding: '3px 8px',
                     borderRadius: '9999px',
                     fontSize: '11px',
@@ -204,14 +305,14 @@ export default function Ressources() {
                   }}>
                     {article.tag}
                   </span>
-                  <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#F9FAFB', lineHeight: 1.4, margin: 0 }}>
+                  <h3 style={{ fontSize: '15px', fontWeight: 700, color: '#1C2B27', lineHeight: 1.4, margin: 0 }}>
                     {article.title}
                   </h3>
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: '4px' }}>
-                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(255,255,255,0.4)', fontSize: '12px' }}>
+                    <span style={{ display: 'flex', alignItems: 'center', gap: '4px', color: 'rgba(28,43,39,0.6)', fontSize: '12px' }}>
                       <Clock size={12} /> {article.readTime}
                     </span>
-                    <span style={{ color: '#44CCFF', fontSize: '13px', fontWeight: 600 }}>Lire →</span>
+                    <span style={{ color: '#8A6D3B', fontSize: '13px', fontWeight: 600 }}>Lire →</span>
                   </div>
                 </div>
               </Link>
@@ -224,7 +325,7 @@ export default function Ressources() {
                   height: '400px',
                   borderRadius: '1.5rem',
                   overflow: 'hidden',
-                  border: '1px solid rgba(255,255,255,0.05)',
+                  border: '1px solid rgba(28,43,39,0.14)',
                   transition: 'transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)',
                   textDecoration: 'none',
                   display: 'block'
@@ -240,14 +341,14 @@ export default function Ressources() {
                 <div style={{
                   position: 'absolute',
                   inset: 0,
-                  background: 'linear-gradient(to bottom, transparent 30%, rgba(10,10,26,0.5) 60%, rgba(10,10,26,0.95) 100%)',
+                  background: 'linear-gradient(to bottom, transparent 30%, rgba(246,243,236,0.5) 60%, rgba(246,243,236,0.95) 100%)',
                   zIndex: 1
                 }} />
                 <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '2rem', zIndex: 2 }}>
                   <span style={{
-                    background: 'rgba(37,99,235,0.8)',
+                    background: 'rgba(31,58,51,0.8)',
                     backdropFilter: 'blur(4px)',
-                    color: '#FFFFFF',
+                    color: '#F6F3EC',
                     padding: '0.25rem 0.75rem',
                     borderRadius: '9999px',
                     fontSize: '0.7rem',
@@ -258,14 +359,14 @@ export default function Ressources() {
                   }}>
                     {article.tag}
                   </span>
-                  <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#FFFFFF', lineHeight: 1.3, marginBottom: '1rem', textShadow: '0 2px 10px rgba(0,0,0,0.5)' }}>
+                  <h3 style={{ fontSize: '1.3rem', fontWeight: 700, color: '#1C2B27', lineHeight: 1.3, marginBottom: '1rem', textShadow: '0 2px 10px rgba(28,43,39,0.175)' }}>
                     {article.title}
                   </h3>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(255,255,255,0.6)', fontSize: '0.8rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.8rem', color: 'rgba(28,43,39,0.6)', fontSize: '0.8rem' }}>
                     <span style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                       <Clock size={14} /> {article.readTime}
                     </span>
-                    <div style={{ width: '4px', height: '4px', background: 'rgba(255,255,255,0.3)', borderRadius: '50%' }} />
+                    <div style={{ width: '4px', height: '4px', background: 'rgba(255,255,255,1.0)', borderRadius: '50%' }} />
                     <span>Lire l'article</span>
                   </div>
                 </div>
