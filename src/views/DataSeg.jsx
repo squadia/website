@@ -24,11 +24,55 @@ const icpImg = '/assets/images/dataseg/icpdefinition.jpeg';
 const segmentationImg = '/assets/images/dataseg/comptesseg.jpeg';
 const scoringImg = '/assets/images/dataseg/segmentation-logic.jpeg';
 const architectureImg = '/assets/images/dataseg/regles.jpeg';
+const icpCutout = '/assets/images/dataseg/icpdefinition.png';
+const scoringCutout = '/assets/images/dataseg/segmentation.png';
+const segmentationCutout = '/assets/images/dataseg/comptesseg.png';
+const architectureCutout = '/assets/images/dataseg/regles.png';
 const datasegVideo = '/assets/video/data-seg.mp4';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import StackedStepCards from '../components/ui/StackedStepCards';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
+
+const dataSegSteps = [
+  {
+    kicker: 'Comprendre qui signe',
+    title: 'Audit ICP',
+    image: icpCutout,
+    cutout: true,
+    desc: 'On analyse vos deals gagnés et perdus pour isoler ce qui distingue vraiment vos meilleurs clients. Un atelier avec vos équipes sales et marketing confronte les chiffres au terrain.',
+    actions: ['Analyse de l\'historique CRM et des deals signés', 'Atelier de cadrage sales et marketing', 'Profil client idéal formalisé et partagé'],
+    goal: 'Savoir précisément qui cibler, et pourquoi.',
+  },
+  {
+    kicker: 'Structurer la donnée',
+    title: 'Architecture',
+    image: scoringCutout,
+    cutout: true,
+    desc: 'On traduit votre ICP en variables concrètes\u00A0: secteur, taille, stack technique, signaux d\'achat. Chaque variable reçoit une règle de scoring claire, pensée pour votre CRM.',
+    actions: ['Choix des variables de segmentation', 'Grille de scoring ICP et intention', 'Plan des champs et propriétés CRM'],
+    goal: 'Une segmentation lisible par tous, pas une usine à gaz.',
+  },
+  {
+    kicker: 'Passer à l\'action',
+    title: 'Implémentation',
+    image: segmentationCutout,
+    cutout: true,
+    desc: 'On crée les champs, les filtres et les automatisations directement dans votre CRM. Votre base existante est segmentée et scorée, puis chaque nouveau contact l\'est automatiquement.',
+    actions: ['Création des champs et listes dynamiques', 'Scoring appliqué à toute la base', 'Automatisations de mise à jour'],
+    goal: 'Des segments vivants, à jour sans effort.',
+  },
+  {
+    kicker: 'Ancrer dans les usages',
+    title: 'Mise en route',
+    image: architectureCutout,
+    cutout: true,
+    desc: 'On forme vos équipes à lire et exploiter les segments au quotidien. Toute la logique est documentée pour que le système tienne dans le temps, avec ou sans nous.',
+    actions: ['Prise en main par les équipes sales et marketing', 'Documentation des variables et des règles', 'Recommandations d\'usage par segment'],
+    goal: 'Des commerciaux qui appellent d\'abord les comptes à fort potentiel.',
+  },
+];
 
 const features = (img1, img2, img3, img4) => [
   {
@@ -448,39 +492,15 @@ export default function DataSeg() {
         </section>
 
         {/* SECTION 5 : LE DÉROULÉ */}
-        <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#1C2B27' }}>
+        <section style={{ padding: '10rem 2rem 8rem' }}>
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>Méthode</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '1rem', textAlign: 'center', color: '#1C2B27' }}>
             Le déroulé de Data Seg.
           </h2>
-          <div style={{ position: 'relative', borderLeft: '2px solid #B08D57', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            {[
-              { step: '1', title: 'Étape 1 : Audit ICP', desc: 'Analyse des données historiques et définition de votre profil client idéal. RDV de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Architecture', desc: 'On définit ensemble les variables de ciblage et les rituels de scoring dans le CRM.' },
-              { step: '3', title: 'Étape 3 : Implémentation', desc: 'Mise en place des champs, des filtres et des automatisations de segmentation.' },
-              { step: '4', title: 'Étape 4 : Mise en route', desc: 'Lignes directrices pour les équipes sales/marketing et documentation des variables.' }
-            ].map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-10% 0px" }}
-                variants={{
-                  hidden: { opacity: 0, y: 50, backgroundColor: 'rgba(31,58,51,0.0)', borderColor: 'rgba(28,43,39,0.14)' },
-                  visible: { opacity: 1, y: 0, backgroundColor: 'rgba(31,58,51,0.04)', borderColor: 'rgba(31,58,51,0.4)' }
-                }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                style={{ position: 'relative', padding: '2rem', borderRadius: '1rem', border: '1px solid' }}
-              >
-                <motion.div 
-                  variants={{ hidden: { backgroundColor: '#FFFFFF', borderColor: '#D8D1C2', color: 'rgba(28,43,39,0.6)' }, visible: { backgroundColor: '#1F3A33', borderColor: '#1F3A33', color: '#F6F3EC' } }}
-                  transition={{ duration: 0.8 }}
-                  style={{ position: 'absolute', left: '-3.65rem', top: '2rem', width: '2.2rem', height: '2.2rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', border: '2px solid', zIndex: 10 }}
-                >{item.step}</motion.div>
-                <motion.h3 variants={{ hidden: { color: 'rgba(28,43,39,0.6)' }, visible: { color: '#4A534F' } }} style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</motion.h3>
-                <motion.p variants={{ hidden: { color: 'rgba(74,83,79,0.1)' }, visible: { color: '#6B716C' } }} style={{ lineHeight: 1.6 }}>{item.desc}</motion.p>
-              </motion.div>
-            ))}
-          </div>
+          <p style={{ fontSize: '1.1rem', color: 'rgba(28,43,39,0.65)', maxWidth: '620px', margin: '0 auto 4rem', textAlign: 'center', lineHeight: 1.6 }}>
+            Quatre étapes pour passer d'une base de contacts à un vrai outil de ciblage.
+          </p>
+          <StackedStepCards steps={dataSegSteps} />
         </section>
 
         {/* PRICING SECTION : STYLE TARIFS */}

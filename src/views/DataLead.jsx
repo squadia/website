@@ -21,7 +21,43 @@ const dataleadVideo = '/assets/video/data-lead.mp4';
 import CardFlip from '../components/ui/flip-card';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import StackedStepCards from '../components/ui/StackedStepCards';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
+
+const dataLeadSteps = [
+  {
+    kicker: 'Définir la cible',
+    title: 'Cadrage',
+    image: criteriaImg,
+    desc: 'Lors d\'un échange gratuit de 30 minutes, on définit précisément votre segment cible\u00A0: secteur, géographie, taille d\'entreprise, fonctions visées, signaux d\'achat.',
+    actions: ['Choix du secteur, de la zone et de la taille', 'Fonctions et niveaux de décision visés', 'Critères spécifiques (techno, recrutement, actualité)'],
+    goal: 'Un fichier construit sur vos critères, pas sur ce qu\'on trouve.',
+  },
+  {
+    kicker: 'Mesurer le marché',
+    title: 'Cartographie',
+    image: scoringImg,
+    desc: 'Avant de lancer la production, on évalue le volume adressable réel sur votre segment. Si la cible est trop étroite ou trop large, on ajuste les critères avec vous.',
+    actions: ['Estimation du nombre de comptes et de contacts', 'Ajustement des critères si besoin', 'Validation du périmètre avant production'],
+    goal: 'Connaître le vrai potentiel avant d\'investir.',
+  },
+  {
+    kicker: 'Vérifier chaque contact',
+    title: 'Construction',
+    image: verifyImg,
+    desc: 'Chaque contact est vérifié à la main\u00A0: poste actuel, entreprise active, email valide. La base est ensuite scorée pour distinguer les leads chauds des leads tièdes.',
+    actions: ['Vérification unitaire du poste et de l\'entreprise', 'Validation des coordonnées', 'Scoring hot leads / warm leads'],
+    goal: 'Des contacts fiables, un taux de rebond minimal.',
+  },
+  {
+    kicker: 'Passer à la prospection',
+    title: 'Livraison',
+    image: integrationImg,
+    desc: 'Le fichier est injecté dans votre CRM avec tous les champs normalisés, documentation incluse. Comptez 3 à 6 semaines entre le cadrage et la livraison.',
+    actions: ['Intégration HubSpot, Pipedrive ou Salesforce', 'Champs normalisés et prêts à l\'emploi', 'Documentation du fichier livré'],
+    goal: 'Des commerciaux qui prospectent dès la réception.',
+  },
+];
 
 const features = (img1, img2, img3, img4) => [
   {
@@ -457,40 +493,15 @@ export default function DataLead() {
         </section>
 
         {/* SECTION 5 : LE DÉROULÉ */}
-        <section style={{ padding: '10rem 2rem', maxWidth: '1200px', margin: '0 auto' }}>
-          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '3rem', textAlign: 'center', color: '#1C2B27' }}>
+        <section style={{ padding: '10rem 2rem 8rem' }}>
+          <p style={{ fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' }}>Méthode</p>
+          <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, marginBottom: '1rem', textAlign: 'center', color: '#1C2B27' }}>
             Le déroulé d'une mission Data Lead.
           </h2>
-          <div style={{ position: 'relative', borderLeft: '2px solid #B08D57', marginLeft: '1rem', paddingLeft: '2.5rem', display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            {[
-              { step: '1', title: 'Étape 1 : Cadrage', desc: 'Définition du segment cible : secteur, géographie, taille, fonctions visées. Échange gratuit de 30 minutes.' },
-              { step: '2', title: 'Étape 2 : Cartographie', desc: 'Évaluation du volume adressable réel avant de démarrer la production.' },
-              { step: '3', title: 'Étape 3 : Construction', desc: 'Vérification unitaire de chaque contact : poste, entreprise active, email valide.' },
-              { step: '4', title: 'Étape 4 : Livraison', desc: 'Fichier injecté dans votre CRM. Documentation incluse.', extra: 'Délai : 3 à 6 semaines.' }
-            ].map((item, idx) => (
-              <motion.div 
-                key={idx}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: "-10% 0px" }}
-                variants={{
-                  hidden: { opacity: 0, y: 50, backgroundColor: 'rgba(31,58,51,0.0)', borderColor: 'rgba(28,43,39,0.14)' },
-                  visible: { opacity: 1, y: 0, backgroundColor: 'rgba(31,58,51,0.04)', borderColor: 'rgba(31,58,51,0.4)' }
-                }}
-                transition={{ duration: 1.2, ease: "easeOut" }}
-                style={{ position: 'relative', padding: '2rem', borderRadius: '1rem', border: '1px solid' }}
-              >
-                <motion.div 
-                  variants={{ hidden: { backgroundColor: '#FFFFFF', borderColor: '#D8D1C2', color: 'rgba(28,43,39,0.6)' }, visible: { backgroundColor: '#1F3A33', borderColor: '#1F3A33', color: '#F6F3EC' } }}
-                  transition={{ duration: 0.8 }}
-                  style={{ position: 'absolute', left: '-3.65rem', top: '2rem', width: '2.2rem', height: '2.2rem', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', border: '2px solid', zIndex: 10 }}
-                >{item.step}</motion.div>
-                <motion.h3 variants={{ hidden: { color: 'rgba(28,43,39,0.6)' }, visible: { color: '#4A534F' } }} style={{ fontSize: '1.25rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</motion.h3>
-                <motion.p variants={{ hidden: { color: 'rgba(74,83,79,0.1)' }, visible: { color: '#6B716C' } }} style={{ lineHeight: 1.6 }}>{item.desc}</motion.p>
-                {item.extra && <div style={{ marginTop: '1rem', fontStyle: 'italic', color: '#4A534F', fontSize: '0.875rem' }}>{item.extra}</div>}
-              </motion.div>
-            ))}
-          </div>
+          <p style={{ fontSize: '1.1rem', color: 'rgba(28,43,39,0.65)', maxWidth: '620px', margin: '0 auto 4rem', textAlign: 'center', lineHeight: 1.6 }}>
+            Quatre étapes pour passer d'un marché cible à une base de prospection prête à l'emploi.
+          </p>
+          <StackedStepCards steps={dataLeadSteps} />
         </section>
 
         {/* PRICING SECTION : STYLE TARIFS */}
