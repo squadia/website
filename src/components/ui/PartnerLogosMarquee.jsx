@@ -17,6 +17,8 @@ const oracle = '/assets/images/icon/oracle.png';
 const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
+const veolia = '/assets/images/icon/veolia.png';
+const clarins = '/assets/images/icon/clarins.png';
 
 const allLogos = [
   dell, xerox, ovh, laPoste, groupama, lyon,
@@ -28,7 +30,7 @@ export default function PartnerLogosMarquee({ description, contained = false }) 
   const defaultDescription = "Nous avons aidé ces entreprises à générer des rendez-vous qualifiés et à structurer durablement leur prospection sortante.";
   const row1Logos = allLogos.slice(0, 7);
   const row2Logos = allLogos.slice(7, 14);
-  const row3Logos = [...allLogos].reverse().slice(0, 7);
+  const row3Logos = [franceHydrogene, veolia, cofaq, fujitsu, clarins, meotec, inocel];
 
   const inner = (
     <div className="client-section-grid" style={{
@@ -188,7 +190,7 @@ export default function PartnerLogosMarquee({ description, contained = false }) 
             animation: scrollRightCustom 25s linear infinite;
           }
           .scroll-left-slower {
-            animation: scrollLeftCustom 45s linear infinite;
+            animation: scrollLeftCustom 30s linear infinite;
           }
           @keyframes scrollLeftCustom {
             0% { transform: translateX(0); }
