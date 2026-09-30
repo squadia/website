@@ -49,17 +49,21 @@ const oracle = '/assets/images/icon/oracle.png';
 const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
+const veolia = '/assets/images/icon/veolia.png';
+const clarins = '/assets/images/icon/clarins.png';
 const clientLogos = [
   { src: dell, alt: 'Dell Technologies' },
   { src: xerox, alt: 'Xerox' },
   { src: ovh, alt: 'OVHcloud' },
   { src: laPoste, alt: 'Groupe La Poste' },
+  { src: veolia, alt: 'Veolia' },
   { src: groupama, alt: 'Groupama' },
   { src: lyon, alt: 'Ville de Lyon' },
   { src: ceaAlsace, alt: 'CEA Alsace' },
   { src: ceaAtomique, alt: 'CEA' },
   { src: inocel, alt: 'Inocel' },
   { src: meotec, alt: 'Meotec' },
+  { src: clarins, alt: 'Clarins' },
   { src: oracle, alt: 'Oracle' },
   { src: fujitsu, alt: 'Fujitsu' },
   { src: cofaq, alt: 'Cofaq' },
