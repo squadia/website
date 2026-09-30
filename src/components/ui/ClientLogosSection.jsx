@@ -18,6 +18,8 @@ const oracle = '/assets/images/icon/oracle.png';
 const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
+const veolia = '/assets/images/icon/veolia.png';
+const clarins = '/assets/images/icon/clarins.png';
 const allLogos = [
   { src: dell, alt: 'Dell Technologies' },
   { src: xerox, alt: 'Xerox' },
@@ -39,7 +41,15 @@ export default function ClientLogosSection({ description, contained = false }) {
   const defaultDescription = "Pour tout ou partie de leur strategie de ventes, nous avons accompagnés ces entreprises à x3 leur Chiffres d'affaires, à réduire le Churn de 30% ou encore à rendre plus confiant et autonome leur forces de vente.";
   const row1Logos = allLogos.slice(0, 7);
   const row2Logos = allLogos.slice(7, 14);
-  const row3Logos = [...allLogos].reverse().slice(0, 7);
+  const row3Logos = [
+    { src: franceHydrogene, alt: 'France Hydrogène' },
+    { src: veolia, alt: 'Veolia' },
+    { src: cofaq, alt: 'Cofaq' },
+    { src: fujitsu, alt: 'Fujitsu' },
+    { src: clarins, alt: 'Clarins' },
+    { src: meotec, alt: 'Meotec' },
+    { src: inocel, alt: 'Inocel' },
+  ];
 
   const inner = (
     <div className="client-section-grid" style={{
@@ -199,7 +209,7 @@ export default function ClientLogosSection({ description, contained = false }) {
             animation: scrollRightCustom 25s linear infinite;
           }
           .scroll-left-slower {
-            animation: scrollLeftCustom 45s linear infinite;
+            animation: scrollLeftCustom 30s linear infinite;
           }
           @keyframes scrollLeftCustom {
             0% { transform: translateX(0); }
