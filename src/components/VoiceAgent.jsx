@@ -122,16 +122,15 @@ function pageContext() {
   };
 }
 
-// Campagne du lien d'arrivée (utm_campaign, sinon utm_source), gardée pour toute la visite
+// Campagne du lien d'arrivée (utm_campaign, sinon utm_source), lue une fois à l'arrivée et
+// gardée en mémoire pour la visite : rien n'est écrit dans le navigateur (pas de traceur au sens CNIL)
+let visitCampaign = null;
 function landingCampaign() {
-  try {
+  if (visitCampaign === null) {
     const params = new URLSearchParams(window.location.search);
-    const campaign = params.get('utm_campaign') || params.get('utm_source');
-    if (campaign) sessionStorage.setItem('squadia_campagne', campaign.slice(0, 100));
-    return sessionStorage.getItem('squadia_campagne') || 'aucune';
-  } catch {
-    return 'aucune';
+    visitCampaign = (params.get('utm_campaign') || params.get('utm_source') || 'aucune').slice(0, 100);
   }
+  return visitCampaign;
 }
 
 // Variables lues par le prompt au début de l'appel ({{salutation}}, {{page_actuelle}}, {{page_titre}}, {{campagne}})
@@ -218,6 +217,7 @@ export default function VoiceAgent() {
   useEffect(() => { routerRef.current = router; }, [router]);
 
   useEffect(() => {
+    landingCampaign(); // avant toute navigation interne, tant que l'URL d'arrivée est intacte
     if (window.innerWidth <= 768) return;
 
     if (!document.querySelector('script[src*="elevenlabs/convai-widget-embed"]')) {
