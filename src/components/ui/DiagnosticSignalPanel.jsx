@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { X, ArrowRight, ArrowLeft } from 'lucide-react';
 import { submitLead } from '../../lib/submitLead';
 
-const WEBHOOK_URL = 'https://hook.eu1.make.com/hvspkkwsnirdkb0bwb2fyx2myg42l28h';
+const WEBHOOK_URL = 'https://n8n.srv762881.hstgr.cloud/webhook/diagnostic-signal';
 const CAL_LINK = 'https://cal.com/squadia/10leads';
 
 const COMPANY_SIZES = [

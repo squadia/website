@@ -2,7 +2,7 @@
  * Soumission robuste des leads (lead magnets / diagnostic / …).
  *
  * Logique :
- *   1. Envoi au webhook principal (Make).
+ *   1. Envoi au webhook principal (n8n, VPS Hostinger).
  *   2. Si le webhook principal échoue (réseau, 4xx/5xx, timeout),
  *      on envoie immédiatement une copie au webhook de secours n8n
  *      (qui envoie un email d’alerte à l’équipe).
@@ -123,7 +123,7 @@ export async function submitLead(source, webhookUrl, data) {
       return { ok: true, fallbackUsed: false };
     }
 
-    throw new Error(`Make responded ${response.status}`);
+    throw new Error(`Webhook responded ${response.status}`);
   } catch (err) {
     const fallbackPayload = {
       ...payload,

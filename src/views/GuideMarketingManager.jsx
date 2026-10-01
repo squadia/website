@@ -6,7 +6,7 @@ import { submitLead } from '../lib/submitLead';
 import { buildFlipbookUrl } from '../lib/flipbookAccess';
 const newMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
 
-const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/3td32i9lyrpjxn6j2ilxcc5ugot2ahlf';
+const WEBHOOK_URL = 'https://n8n.srv762881.hstgr.cloud/webhook/ebook-marketing-manager';
 
 const isValidPhone = (value) => {
   if (!value.trim()) return true;
@@ -65,7 +65,7 @@ const GuideMarketingManager = () => {
     setError('');
 
     try {
-      const result = await submitLead('guide-marketing-manager', MAKE_WEBHOOK_URL, formData);
+      const result = await submitLead('guide-marketing-manager', WEBHOOK_URL, formData);
 
       if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);

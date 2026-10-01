@@ -6,7 +6,7 @@ import { submitLead } from '../lib/submitLead';
 import { buildFlipbookUrl } from '../lib/flipbookAccess';
 const planPartenaire = '/assets/images/ressources/plan-partenaire.jpeg';
 
-const MAKE_WEBHOOK_URL = 'https://hook.eu1.make.com/p6lmievgp9ti64bnl1qjajhkyy2jt1zu';
+const WEBHOOK_URL = 'https://n8n.srv762881.hstgr.cloud/webhook/ebook-partner-plan';
 
 const isValidPhone = (value) => {
   if (!value.trim()) return true;
@@ -65,7 +65,7 @@ const ChannelSalesPlan = () => {
     setError('');
 
     try {
-      const result = await submitLead('channel-sales-plan', MAKE_WEBHOOK_URL, formData);
+      const result = await submitLead('channel-sales-plan', WEBHOOK_URL, formData);
 
       if (result.ok || result.fallbackUsed) {
         setIsSuccess(true);
