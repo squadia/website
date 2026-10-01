@@ -13,6 +13,8 @@ import PartnerLogosMarquee from '../components/ui/PartnerLogosMarquee';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 import { RevealHeader, EASE_PREMIUM } from '../components/ui/RevealHeader';
 import CasesShowcase from '../components/ui/CasesShowcase';
+import AgentVocalBanner from '../components/ui/AgentVocalBanner';
+import AgentVocalTeaser from '../components/ui/AgentVocalTeaser';
 import { casesData } from '../data/cases';
 const introVideo = '/assets/video/intro_home.mp4';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
@@ -1009,6 +1011,7 @@ const Home = () => {
 
       {/* ═══ 01 — HERO ═══ */}
       <HeroDynamic onOpenDiagnostic={() => setDiagnosticOpen(true)} />
+      <AgentVocalBanner />
       <DiagnosticSignalPanel open={diagnosticOpen} onClose={() => setDiagnosticOpen(false)} />
       <FormationTeaserModal data={formationModalIdx !== null ? formationTeasers[formationModalIdx] : null} onClose={() => setFormationModalIdx(null)} />
 
@@ -1199,6 +1202,9 @@ const Home = () => {
           <PricingTabs />
         </div>
       </section>
+
+      {/* ═══ 06B — AGENT VOCAL IA (Elisa comme démonstration) ═══ */}
+      <AgentVocalTeaser />
 
       {/* ═══ 07 — FAQ ═══ */}
       <section className="section-padding" style={{ backgroundColor: '#F6F3EC', paddingTop: '8rem', paddingBottom: '8rem' }}>
