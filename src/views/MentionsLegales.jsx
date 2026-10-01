@@ -10,6 +10,41 @@ const MentionsLegales = () => {
     document.title = "Mentions Légales : Squadia";
   }, []);
 
+  // Lien direct /mentions-legales/#elisa (message affiché avant un appel avec Elisa) :
+  // on descend après le retour en haut de page fait par le layout au changement de page
+  useEffect(() => {
+    if (window.location.hash !== '#elisa') return;
+    const timer = setTimeout(() => {
+      document.getElementById('elisa')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 400);
+    return () => clearTimeout(timer);
+  }, []);
+
+  const textStyle = { color: 'var(--text-secondary)', lineHeight: '1.8' };
+  const linkStyle = { color: 'var(--accent)', textDecoration: 'none' };
+  const elisaBlocks = [
+    {
+      title: "Qui est Elisa",
+      body: "Elisa est l'assistante vocale de Squadia. C'est une intelligence artificielle : vous ne parlez pas à un humain. Elle répond à vos questions sur nos offres, peut afficher les pages du site qui vous intéressent et organiser un rendez-vous avec un consultant.",
+    },
+    {
+      title: "Données traitées",
+      body: "Votre voix et la transcription de la conversation ; les informations que vous choisissez de donner (nom, entreprise, poste, email, téléphone) ; la page depuis laquelle vous lancez l'appel et, le cas échéant, le nom de la campagne du lien qui vous a amené, sans vous identifier. Lorsque vous donnez le nom de votre entreprise, Elisa consulte les actualités publiques la concernant.",
+    },
+    {
+      title: "Finalités et base légale",
+      body: "Répondre à vos questions et vous faire visiter le site, organiser le rendez-vous que vous demandez, assurer le suivi commercial et améliorer la qualité des réponses d'Elisa. Ces traitements reposent sur notre intérêt légitime à répondre aux visiteurs et, pour la prise de rendez-vous, sur les mesures précontractuelles prises à votre demande.",
+    },
+    {
+      title: "Enregistrement et durée de conservation",
+      body: "En lançant un appel et en autorisant votre micro, vous acceptez que la conversation soit enregistrée. L'enregistrement audio et la transcription sont supprimés automatiquement au bout de 90 jours. Les coordonnées et informations de rendez-vous sont conservées 3 ans à compter de notre dernier échange.",
+    },
+    {
+      title: "Prestataires",
+      body: "ElevenLabs (voix et intelligence artificielle conversationnelle, y compris le modèle de langage utilisé), Cal.com (agenda et prise de rendez-vous), Serper (recherche d'actualités publiques sur le nom de l'entreprise), Supabase (hébergement des données de suivi) et Vercel (hébergement du site). Certains sont situés hors de l'Union européenne, notamment aux États-Unis ; ces transferts sont encadrés par les garanties prévues par le RGPD.",
+    },
+  ];
+
   const sections = [
     {
       title: "Éditeur du site",
@@ -109,6 +144,29 @@ const MentionsLegales = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+
+          {/* Assistante vocale : cible du lien affiché avant chaque premier appel */}
+          <div id="elisa" className="fade-in" style={{ marginTop: '6rem', borderLeft: '1px solid rgba(28,43,39,0.16)', paddingLeft: '2rem', scrollMarginTop: '120px' }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 400, marginBottom: '1.5rem', color: '#1C2B27', letterSpacing: '0.05em', textTransform: 'uppercase' }}>Assistante vocale Elisa</h2>
+            <div className="grid-2" style={{ gap: '2.5rem 4rem', alignItems: 'start', fontWeight: 300, opacity: 0.8 }}>
+              {elisaBlocks.map((block) => (
+                <div key={block.title} style={textStyle}>
+                  <p style={{ fontWeight: 500, color: '#1C2B27', marginBottom: '0.5rem' }}>{block.title}</p>
+                  <p>{block.body}</p>
+                </div>
+              ))}
+              <div style={textStyle}>
+                <p style={{ fontWeight: 500, color: '#1C2B27', marginBottom: '0.5rem' }}>Vos droits</p>
+                <p>
+                  Vous pouvez accéder à vos données, les faire rectifier ou supprimer, vous opposer à leur traitement ou en demander la limitation en écrivant à{' '}
+                  <a href="mailto:contact@squadia.io" style={linkStyle}>contact@squadia.io</a>.
+                  Vous pouvez aussi adresser une réclamation à la{' '}
+                  <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={linkStyle}>CNIL</a>.
+                  Si vous préférez ne pas parler à Elisa, notre <a href="/contact/" style={linkStyle}>page contact</a> reste à votre disposition.
+                </p>
+              </div>
             </div>
           </div>
         </div>
