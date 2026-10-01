@@ -149,10 +149,11 @@ async function book(calKey: string, body: Record<string, string>) {
         language: "fr",
         ...(e164(phone) ? { phoneNumber: e164(phone) } : {}),
       },
-      // Pas de récap dans les notes : le prospect les voit dans sa confirmation
+      // Notes visibles aussi par le prospect : la source, jamais le récap interne
       bookingFieldsResponses: {
         Attente: subjects.length ? subjects : [CAL_SUBJECTS.prospection],
         title: `Meeting découverte ${company ?? ""}`.trim(),
+        notes: "RDV pris avec Elisa, l'assistante vocale du site squadia.io",
       },
       metadata: {
         source: "elisa",
