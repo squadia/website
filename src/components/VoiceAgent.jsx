@@ -145,6 +145,31 @@ function setDynamicVariables(widget, pathname) {
   }));
 }
 
+// Encadré en haut de page : Elisa y affiche ce qu'elle a compris (ex : un email dicté)
+// pour que le visiteur vérifie l'orthographe. Disparaît au clic, à l'affichage suivant ou après 30 s.
+let confirmTimer = null;
+function showConfirmation(label, value) {
+  document.querySelector('.voice-agent-confirm')?.remove();
+  clearTimeout(confirmTimer);
+  const box = document.createElement('div');
+  box.className = 'voice-agent-confirm';
+  box.setAttribute('role', 'status');
+  const title = document.createElement('div');
+  title.className = 'voice-agent-confirm-label';
+  title.textContent = label || 'Est-ce bien ça ?';
+  const text = document.createElement('div');
+  text.className = 'voice-agent-confirm-value';
+  text.textContent = value;
+  const close = document.createElement('button');
+  close.type = 'button';
+  close.setAttribute('aria-label', 'Fermer');
+  close.textContent = '×';
+  close.addEventListener('click', () => box.remove());
+  box.append(close, title, text);
+  document.body.appendChild(box);
+  confirmTimer = setTimeout(() => box.remove(), 30000);
+}
+
 const FOCUS_CSS = `
   elevenlabs-convai { --bottom: 180px !important; bottom: 180px !important; }
   @media (max-width: 768px) {
@@ -158,6 +183,29 @@ const FOCUS_CSS = `
     0%   { box-shadow: 0 0 0 0 rgba(138,109,59,0); background-color: rgba(138,109,59,0); }
     20%  { box-shadow: 0 0 0 12px rgba(138,109,59,0.18); background-color: rgba(138,109,59,0.10); }
     100% { box-shadow: 0 0 0 0 rgba(138,109,59,0); background-color: rgba(138,109,59,0); }
+  }
+  .voice-agent-confirm {
+    position: fixed; top: 104px; left: 50%; transform: translateX(-50%);
+    z-index: 1001; width: min(440px, calc(100vw - 32px));
+    padding: 18px 44px 18px 22px; border-radius: 14px;
+    background: #F6F3EC; color: #1C2B27; border: 1px solid rgba(138,109,59,0.45);
+    box-shadow: 0 18px 40px rgba(28,43,39,0.18);
+    font-family: var(--font-main, 'Hanken Grotesk', Arial, sans-serif);
+    animation: voiceAgentConfirmIn 0.25s ease-out;
+  }
+  .voice-agent-confirm-label {
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #8A6D3B;
+  }
+  .voice-agent-confirm-value {
+    margin-top: 6px; font-size: 1.3rem; font-weight: 600; letter-spacing: 0.02em; word-break: break-all;
+  }
+  .voice-agent-confirm button {
+    position: absolute; top: 8px; right: 10px; border: 0; background: none; cursor: pointer;
+    font-size: 1.4rem; line-height: 1; color: #6B716C; padding: 4px 8px;
+  }
+  @keyframes voiceAgentConfirmIn {
+    from { opacity: 0; transform: translate(-50%, -8px); }
+    to   { opacity: 1; transform: translate(-50%, 0); }
   }
 `;
 
@@ -179,12 +227,13 @@ export default function VoiceAgent() {
       script.type = 'text/javascript';
       document.head.appendChild(script);
     }
-    if (!document.querySelector('#elevenlabs-widget-style')) {
-      const style = document.createElement('style');
+    let style = document.querySelector('#elevenlabs-widget-style');
+    if (!style) {
+      style = document.createElement('style');
       style.id = 'elevenlabs-widget-style';
-      style.textContent = FOCUS_CSS;
       document.head.appendChild(style);
     }
+    style.textContent = FOCUS_CSS;
 
     // Outils appelés par l'agent. Noms et paramètres identiques à la config ElevenLabs.
     const clientTools = {
@@ -220,6 +269,12 @@ export default function VoiceAgent() {
         focusSection(match);
         return JSON.stringify({ ok: true, focusedSection: match.title });
       },
+
+      showToConfirm: async ({ label, value } = {}) => {
+        if (!value) return JSON.stringify({ ok: false, error: 'Rien à afficher.' });
+        showConfirmation(label, String(value).trim());
+        return JSON.stringify({ ok: true, shown: String(value).trim() });
+      },
     };
 
     const onCall = (event) => {
@@ -241,6 +296,7 @@ export default function VoiceAgent() {
 
     return () => {
       clearTimeout(timer);
+      document.querySelector('.voice-agent-confirm')?.remove();
       if (widget) {
         widget.removeEventListener('elevenlabs-convai:call', onCall);
         widget.remove();
