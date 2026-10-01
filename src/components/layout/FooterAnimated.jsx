@@ -48,6 +48,12 @@ export default function FooterAnimated() {
               <li><Link href="/data/data-clean" className="footer-link">Nettoyage et enrich. Data</Link></li>
               <li><Link href="/data/data-seg" className="footer-link">Segmentation Data B2B</Link></li>
               <li><Link href="/data/data-lead" className="footer-link">Flux Data B2B</Link></li>
+              <li>
+                <Link href="/agent-vocal-ia" className="footer-link">
+                  Agent vocal IA
+                  <span style={{ marginLeft: '0.45rem', fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#8A6D3B', border: '1px solid rgba(138,109,59,0.5)', borderRadius: '999px', padding: '1px 6px', verticalAlign: 'middle' }}>Nouveau</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
