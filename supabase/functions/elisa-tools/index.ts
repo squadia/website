@@ -153,10 +153,11 @@ async function book(calKey: string, body: Record<string, string>) {
       bookingFieldsResponses: {
         Attente: subjects.length ? subjects : [CAL_SUBJECTS.prospection],
         title: `Meeting découverte ${company ?? ""}`.trim(),
-        notes: "RDV pris avec Elisa, l'assistante vocale du site squadia.io",
+        notes: `RDV pris avec Elisa, l'assistante vocale du site squadia.io.${conversation_id ? ` Réf. appel : ${conversation_id}` : ""}`,
       },
       metadata: {
         source: "elisa",
+        conversation_id: (conversation_id ?? "").slice(0, 100),
         company: (company ?? "").slice(0, 200),
         recap: (recap ?? "").slice(0, 450),
       },
