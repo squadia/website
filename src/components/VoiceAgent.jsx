@@ -122,13 +122,26 @@ function pageContext() {
   };
 }
 
-// Variables lues par le prompt au début de l'appel ({{salutation}}, {{page_actuelle}}, {{page_titre}})
+// Campagne du lien d'arrivée (utm_campaign, sinon utm_source), gardée pour toute la visite
+function landingCampaign() {
+  try {
+    const params = new URLSearchParams(window.location.search);
+    const campaign = params.get('utm_campaign') || params.get('utm_source');
+    if (campaign) sessionStorage.setItem('squadia_campagne', campaign.slice(0, 100));
+    return sessionStorage.getItem('squadia_campagne') || 'aucune';
+  } catch {
+    return 'aucune';
+  }
+}
+
+// Variables lues par le prompt au début de l'appel ({{salutation}}, {{page_actuelle}}, {{page_titre}}, {{campagne}})
 function setDynamicVariables(widget, pathname) {
   const path = normalizePath(pathname);
   widget.setAttribute('dynamic-variables', JSON.stringify({
     salutation: new Date().getHours() < 18 ? 'Bonjour' : 'Bonsoir',
     page_actuelle: path,
     page_titre: findPage(path)?.label || 'Accueil',
+    campagne: landingCampaign(),
   }));
 }
 

@@ -34,6 +34,9 @@ const LEAD_WEBHOOK_URL = "https://n8n.srv762881.hstgr.cloud/webhook/lead-magnet-
 
 const db = createClient(Deno.env.get("SUPABASE_URL")!, Deno.env.get("SUPABASE_SERVICE_ROLE_KEY")!);
 
+// "aucune" = valeur par défaut de la variable ElevenLabs quand le visiteur ne vient pas d'une campagne
+const campaignOf = (value?: string) => (value && value !== "aucune" ? value.slice(0, 100) : undefined);
+
 // Ne bloque jamais la conversation : une erreur d'écriture est seulement loguée
 async function saveLead(conversationId: string | undefined, fields: Record<string, unknown>) {
   const id = conversationId?.trim() || `sans-id-${Date.now()}`;
@@ -122,7 +125,7 @@ async function forwardLead(lead: Record<string, unknown>) {
 }
 
 async function book(calKey: string, body: Record<string, string>) {
-  const { start, first_name, last_name, company, email, phone, recap, sujets, conversation_id, page_depart } = body;
+  const { start, first_name, last_name, company, email, phone, recap, sujets, conversation_id, page_depart, campagne } = body;
   if (!start || !email || !first_name) return json({ ok: false, error: "champs_manquants" });
 
   // "data, prospection" → options Cal.com ; à défaut, déduit du récapitulatif
@@ -158,6 +161,7 @@ async function book(calKey: string, body: Record<string, string>) {
       metadata: {
         source: "elisa",
         conversation_id: (conversation_id ?? "").slice(0, 100),
+        campagne: campaignOf(campagne) ?? "",
         company: (company ?? "").slice(0, 200),
         recap: (recap ?? "").slice(0, 450),
       },
@@ -165,7 +169,7 @@ async function book(calKey: string, body: Record<string, string>) {
   });
 
   const leadRow = {
-    page_depart, entreprise: company, prenom: first_name, nom: last_name,
+    page_depart, campagne: campaignOf(campagne), entreprise: company, prenom: first_name, nom: last_name,
     email, telephone: phone, sujets, recap, rdv_creneau: label,
   };
 
@@ -224,7 +228,10 @@ async function companyNews(serperKey: string, body: Record<string, string>) {
     .slice(0, 5)
     .map((n) => ({ titre: n.title, extrait: n.snippet, mois: monthOf(n.age as number) }));
 
-  await saveLead(body.conversation_id, { entreprise: company, page_depart: body.page_depart, actualites: news, statut: "Entreprise donnée" });
+  await saveLead(body.conversation_id, {
+    entreprise: company, page_depart: body.page_depart, campagne: campaignOf(body.campagne),
+    actualites: news, statut: "Entreprise donnée",
+  });
   return json({ ok: true, company, news });
 }
 
