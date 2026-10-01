@@ -390,7 +390,7 @@ const FormationMarketingIA = () => {
                   <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
                     <div style={{ background: 'rgba(255,255,255,0.6)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid rgba(28,43,39,0.14)', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                       <div style={{ color: '#4A534F', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Inter</div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#1C2B27' }}>1 200 € HT</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#1C2B27' }}>1 500 € HT</div>
                       <div style={{ fontSize: '0.75rem', color: '#6B716C', marginTop: '0.2rem' }}>par personne</div>
                     </div>
                     <div style={{ background: 'rgba(31,58,51,0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #1F3A33', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>

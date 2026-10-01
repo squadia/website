@@ -7,6 +7,7 @@ import Navbar from '../src/components/layout/Navbar';
 import FooterAnimated from '../src/components/layout/FooterAnimated';
 import CookieConsentBanner from '../src/components/CookieConsent';
 import SiteEnhancer from '../src/components/SiteEnhancer';
+import VoiceAgent from '../src/components/VoiceAgent';
 import '../src/App.css';
 import '../src/index.css';
 
@@ -99,6 +100,7 @@ export default function RootLayout({ children }) {
           {children}
         </main>
         <SiteEnhancer />
+        <VoiceAgent />
 
         {/* Footer */}
         <FooterAnimated />

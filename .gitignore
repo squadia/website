@@ -30,3 +30,11 @@ screenshot-*.js
 /tmp/
 
 .vercel
+
+# Conversation workspace — private, never push to GitHub/Vercel
+conversation/
+
+# ElevenLabs : clés API, sauvegardes de config et prompt d'Elisa (dépôt public)
+.env*.local
+scripts/.elevenlabs-backups/
+scripts/elevenlabs/

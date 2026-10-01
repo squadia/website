@@ -1003,40 +1003,6 @@ const Home = () => {
     }
   }, []);
 
-  useEffect(() => {
-    if (window.innerWidth <= 768) return;
-    if (!document.querySelector('script[src*="elevenlabs/convai-widget-embed"]')) {
-      const script = document.createElement('script');
-      script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
-      script.async = true;
-      script.type = 'text/javascript';
-      document.head.appendChild(script);
-    }
-    if (!document.querySelector('#elevenlabs-widget-style')) {
-      const style = document.createElement('style');
-      style.id = 'elevenlabs-widget-style';
-      style.textContent = `
-        elevenlabs-convai { --bottom: 180px !important; bottom: 180px !important; }
-        @media (max-width: 768px) {
-          elevenlabs-convai { --bottom: 110px !important; bottom: 110px !important; }
-        }
-      `;
-      document.head.appendChild(style);
-    }
-    const timer = setTimeout(() => {
-      if (!document.querySelector('elevenlabs-convai')) {
-        const widget = document.createElement('elevenlabs-convai');
-        widget.setAttribute('agent-id', 'TWYUafGgpOMApu1OinUj');
-        document.body.appendChild(widget);
-      }
-    }, 3000);
-    return () => {
-      clearTimeout(timer);
-      const widget = document.querySelector('elevenlabs-convai');
-      if (widget) widget.remove();
-    };
-  }, []);
-
   return (
     <div className="home-page" style={{ backgroundColor: bgColor, color: '#1C2B27', transition: 'background-color 0.4s ease-out' }}>
       <style>{HomeCSS}</style>
