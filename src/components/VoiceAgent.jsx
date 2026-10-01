@@ -202,6 +202,11 @@ const FOCUS_CSS = `
     position: absolute; top: 8px; right: 10px; border: 0; background: none; cursor: pointer;
     font-size: 1.4rem; line-height: 1; color: #6B716C; padding: 4px 8px;
   }
+  .voice-agent-ping { animation: voiceAgentPing 1.4s ease-out 2; border-radius: 24px; }
+  @keyframes voiceAgentPing {
+    0%   { box-shadow: 0 0 0 0 rgba(138,109,59,0.55); }
+    100% { box-shadow: 0 0 0 18px rgba(138,109,59,0); }
+  }
   @keyframes voiceAgentConfirmIn {
     from { opacity: 0; transform: translate(-50%, -8px); }
     to   { opacity: 1; transform: translate(-50%, 0); }
@@ -277,6 +282,20 @@ export default function VoiceAgent() {
       },
     };
 
+    // Boutons « Parlez-lui maintenant » des pages : clic sur le bouton d'appel de la bulle,
+    // ou à défaut on la fait pulser pour la désigner
+    const onOpenRequest = () => {
+      const widget = document.querySelector('elevenlabs-convai');
+      const buttons = widget?.shadowRoot ? [...widget.shadowRoot.querySelectorAll('button')] : [];
+      const start = buttons.find((b) => /parler avec elisa/i.test(b.textContent || ''));
+      if (start) { start.click(); return; }
+      if (!widget) return;
+      widget.classList.remove('voice-agent-ping');
+      void widget.offsetWidth;
+      widget.classList.add('voice-agent-ping');
+    };
+    window.addEventListener('squadia:open-elisa', onOpenRequest);
+
     const onCall = (event) => {
       event.detail.config.clientTools = { ...(event.detail.config.clientTools || {}), ...clientTools };
     };
@@ -296,6 +315,7 @@ export default function VoiceAgent() {
 
     return () => {
       clearTimeout(timer);
+      window.removeEventListener('squadia:open-elisa', onOpenRequest);
       document.querySelector('.voice-agent-confirm')?.remove();
       if (widget) {
         widget.removeEventListener('elevenlabs-convai:call', onCall);

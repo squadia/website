@@ -35,6 +35,7 @@ export const VOICE_SITE_MAP = [
   { path: '/cas-clients/formation-vente', label: 'Cas : formation vente', summary: 'Formation des équipes de vente à l’IA.' },
   { path: '/cas-clients/formation-ia-com', label: 'Cas : formation IA communication', summary: 'Formation des équipes communication à l’IA générative.' },
 
+  { path: '/agent-vocal-ia', label: 'Agent vocal IA', summary: "L'offre agent vocal : un agent comme Elisa sur le site du client, mise en place et suivi." },
   { path: '/tarifs', label: 'Tarifs', summary: 'Tarifs data, prospection et formation.' },
   { path: '/contact', label: 'Contact', summary: 'Prendre rendez-vous avec Squadia.' },
   { path: '/notre-mission', label: 'Notre mission', summary: 'Mission, équipe et valeurs de Squadia.' },
