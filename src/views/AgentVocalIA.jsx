@@ -13,6 +13,7 @@ import { RevealHeader } from '../components/ui/RevealHeader';
 import { agentVocalFaqs } from '../data/agentVocalFaqs';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
+const heroBackground = '/assets/images/agentvocal/agent_ia_vocal.webp';
 
 const GREEN = '#1F3A33';
 const INK = '#1C2B27';
@@ -410,30 +411,6 @@ const UseCaseCard = ({ uc, index }) => {
   );
 };
 
-// Orbe vocal du haut de page : anneaux qui respirent et barres d'onde
-const VoiceOrb = () => (
-  <div style={{ position: 'relative', width: 'min(420px, 80vw)', aspectRatio: '1', margin: '0 auto' }}>
-    {[0, 1, 2].map((i) => (
-      <motion.div
-        key={i}
-        animate={{ scale: [1, 1.08, 1], opacity: [0.35 - i * 0.08, 0.15, 0.35 - i * 0.08] }}
-        transition={{ duration: 3.2, repeat: Infinity, delay: i * 0.5, ease: 'easeInOut' }}
-        style={{ position: 'absolute', inset: `${i * 11}%`, borderRadius: '50%', border: '1px solid rgba(176,141,87,0.6)' }}
-      />
-    ))}
-    <div style={{ position: 'absolute', inset: '30%', borderRadius: '50%', background: `radial-gradient(circle at 35% 30%, #2B4C43, ${GREEN} 60%, #16302A)`, boxShadow: '0 30px 60px rgba(31,58,51,0.35)', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '5px' }}>
-      {[0.5, 0.9, 0.6, 1, 0.7, 0.4, 0.8].map((h, i) => (
-        <motion.span
-          key={i}
-          animate={{ scaleY: [h * 0.4, h, h * 0.5] }}
-          transition={{ duration: 0.9 + i * 0.07, repeat: Infinity, repeatType: 'mirror', ease: 'easeInOut' }}
-          style={{ width: 6, height: 54, borderRadius: 4, background: i % 3 === 1 ? '#B08D57' : CREAM, transformOrigin: 'center' }}
-        />
-      ))}
-    </div>
-  </div>
-);
-
 /* ───────────────────────── Page ───────────────────────── */
 
 export default function AgentVocalIA() {
@@ -448,9 +425,15 @@ export default function AgentVocalIA() {
   return (
     <div style={{ background: CREAM, color: INK, minHeight: '100vh' }}>
       {/* HERO */}
-      <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '140px 0 80px' }}>
-        <div className="container hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center' }}>
-          <div>
+      <section style={{ position: 'relative', minHeight: '100vh', overflow: 'hidden', display: 'flex', alignItems: 'center' }}>
+        {/* Fond : même traitement que les pages Data et Prospection */}
+        <img src={heroBackground} alt="" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '78% center', pointerEvents: 'none', zIndex: 0 }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 1, background: 'rgba(246,243,236,0.4)' }} />
+        <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.75) 35%, rgba(246,243,236,0.4) 60%, transparent 100%)' }} />
+        <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
+
+        <div className="hero-content" style={{ position: 'relative', zIndex: 4, width: '100%', padding: '140px 1.5rem 80px 8%', boxSizing: 'border-box' }}>
+          <div style={{ maxWidth: '640px' }}>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -496,9 +479,6 @@ export default function AgentVocalIA() {
             </div>
             {isMobile && <p style={{ fontSize: '0.85rem', color: 'rgba(28,43,39,0.55)', marginTop: '1rem' }}>La démonstration en direct est disponible sur ordinateur.</p>}
           </div>
-          <motion.div initial={{ opacity: 0, scale: 0.94 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1.2, delay: 0.2 }}>
-            <VoiceOrb />
-          </motion.div>
         </div>
       </section>
 
@@ -741,12 +721,13 @@ export default function AgentVocalIA() {
       <style>{`
         .usecase-card:hover { border-color: #B08D57 !important; transform: translateY(-4px); }
         @media (max-width: 900px) {
-          .hero-grid, .demo-box { grid-template-columns: 1fr !important; }
+          .demo-box { grid-template-columns: 1fr !important; }
           .compare-box { grid-template-columns: 1fr !important; }
           .compare-vs { padding: 0.5rem 0; }
         }
         @media (max-width: 768px) {
           .grid-3 { grid-template-columns: 1fr !important; }
+          .hero-content { padding: 120px 1.25rem 60px !important; }
         }
       `}</style>
     </div>
