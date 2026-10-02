@@ -456,8 +456,9 @@ export default function AgentVocalIA() {
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(105deg, rgba(246,243,236,0.97) 0%, rgba(246,243,236,0.75) 35%, rgba(246,243,236,0.4) 60%, transparent 100%)' }} />
         <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, height: '140px', pointerEvents: 'none', zIndex: 2, background: 'linear-gradient(to bottom, transparent, #F6F3EC)' }} />
 
-        <div className="container hero-grid" style={{ position: 'relative', zIndex: 4, display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center', padding: '140px 0 80px' }}>
-          <div>
+        {/* Texte positionné comme sur Data Seg : à 8 % du bord gauche, centré en hauteur */}
+        <div className="hero-grid" style={{ position: 'relative', zIndex: 4, width: '100%', minHeight: '100vh', display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center', paddingLeft: '8%', paddingRight: '5%', boxSizing: 'border-box' }}>
+          <div style={{ maxWidth: '640px' }}>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
@@ -754,7 +755,7 @@ export default function AgentVocalIA() {
         }
         @media (max-width: 768px) {
           .grid-3 { grid-template-columns: 1fr !important; }
-          .hero-grid { padding: 120px 0 60px !important; }
+          .hero-grid { padding: 120px 1.25rem 60px !important; }
         }
       `}</style>
     </div>
