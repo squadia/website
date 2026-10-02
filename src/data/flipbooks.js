@@ -25,6 +25,29 @@ export const FLIPBOOKS = {
       rect: { top: 59.6, left: 50.1, width: 41.7, height: 16.6 },
     },
   },
+  'recrutement-commercial-7-leviers': {
+    title: 'Recruter un commercial : 7 leviers avant l\'onboarding',
+    pdf: '/flipbooks/recrutement-commercial-7-leviers.pdf',
+    formPath: '/ressources/recrutement-commercial-7-leviers/',
+    // Page 4 : emplacement gris sous « Segmenter le marché en 3 tiers » (mesuré sur le PDF).
+    // Le watermark Veed saute entre les 4 coins sur un fond bleu uni (#A1D7FF) : 4 pastilles de la même
+    // couleur le masquent, sans zoom ni rognage. Lecteur sous la vidéo, pas de plein écran.
+    video: {
+      page: 4,
+      src: '/flipbooks/tiering-strategy.mp4',
+      mode: 'below',
+      mask: {
+        color: '#A1D7FF',
+        rects: [
+          { top: 0, left: 0, width: 21.5, height: 11 },
+          { top: 0, left: 78, width: 22, height: 11 },
+          { top: 90, left: 0, width: 21.5, height: 10 },
+          { top: 90, left: 78, width: 22, height: 10 },
+        ],
+      },
+      rect: { top: 9.08, left: 10.73, width: 77.19, height: 29.49 },
+    },
+  },
   'channel-sales-plan': {
     title: 'Plan Partenaire Channel Sales',
     pdf: '/flipbooks/channel-sales-plan.pdf',

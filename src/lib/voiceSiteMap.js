@@ -41,6 +41,7 @@ export const VOICE_SITE_MAP = [
   { path: '/ressources/enquete-ia-b2b', label: 'Enquête IA B2B 2026', summary: 'Adoption de l’IA dans les équipes commerciales et marketing.' },
   { path: '/ressources/guide-sales-manager', label: 'Guide Sales Manager', summary: 'Pipeline, KPI, coaching.' },
   { path: '/ressources/guide-marketing-manager', label: 'Guide Marketing Manager', summary: 'Génération de leads, scoring, alignement vente.' },
+  { path: '/ressources/recrutement-commercial-7-leviers', label: 'Guide recrutement commercial', summary: '7 leviers à lancer avant l\'arrivée d\'un nouveau commercial.' },
   { path: '/ressources/channel-sales-plan', label: 'Channel Sales Plan', summary: 'Plan de vente indirecte et partenaires.' },
   { path: '/blog', label: 'Blog', summary: 'Articles sur prospection, IA, CRM et formation.' },
   { path: '/blog/formation-ia-automatisation-ordre', label: 'Article : formation IA ou automatisation ?', summary: 'Par quoi commencer : former les équipes ou automatiser les process.' },

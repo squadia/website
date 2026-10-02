@@ -52,7 +52,7 @@ const SECTIONS = [
     links: [
       { href: '/blog',                                label: 'Blog' },
       { href: '/automatisation-ia.html',              label: 'Automatisation IA' },
-      { href: '/ressources/enquete-ia-b2b',           label: 'Enquête IA 2026' },
+      { href: '/ressources/recrutement-commercial-7-leviers', label: 'Recruter un commercial' },
       { href: '/ressources/guide-sales-manager',      label: 'Guide Sales Manager' },
       { href: '/ressources/guide-marketing-manager',  label: 'Guide Marketing Manager' },
       { href: '/ressources/channel-sales-plan',       label: 'Channel Sales Plan' },

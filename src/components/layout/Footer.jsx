@@ -61,9 +61,9 @@ const Footer = () => (
           <ul style={{ display: 'flex', flexDirection: 'column' }}>
             <li><Link href="/blog" className="footer-link">Blog</Link></li>
             <li><a href="/automatisation-ia.html" className="footer-link">Automatisation IA</a></li>
-            <li><Link href="/ressources/enquete-ia-b2b" className="footer-link">Enquête IA 2026</Link></li>
             <li><Link href="/ressources/guide-sales-manager" className="footer-link">Guide Sales Manager</Link></li>
             <li><Link href="/ressources/guide-marketing-manager" className="footer-link">Guide Marketing Manager</Link></li>
+            <li><Link href="/ressources/recrutement-commercial-7-leviers" className="footer-link">Recruter un commercial</Link></li>
             <li><Link href="/ressources/channel-sales-plan" className="footer-link">Channel Sales Plan</Link></li>
             <li><Link href="/ressources/simulateur-roi" className="footer-link">Simulateur ROI</Link></li>
             <li><Link href="/ressources/planificateur-campagne" className="footer-link">Planificateur de campagne</Link></li>

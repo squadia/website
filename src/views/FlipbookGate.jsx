@@ -69,6 +69,8 @@ function FlipbookGateInner({ slug }) {
             title={config.title}
             videoPage={config.video?.page}
             videoSrc={config.video?.src}
+            videoMode={config.video?.mode}
+            videoMask={config.video?.mask}
             videoRect={config.video?.rect}
             trackingId={slug}
           />

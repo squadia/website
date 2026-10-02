@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock, Workflow } from 'lucide-react';
+import { FileText, ArrowRight, BarChart, BookOpen, Handshake, Clock, Calculator, CalendarClock, Workflow, Users } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 // Images ressources
@@ -33,10 +33,10 @@ export default function Ressources() {
 
   const resources = [
     {
-      title: "Enquête IA B2B",
-      link: "/ressources/enquete-ia-b2b",
-      icon: <BarChart size={24} color="#1F3A33" />,
-      cta: "Répondre"
+      title: "Recruter un commercial : 7 leviers",
+      link: "/ressources/recrutement-commercial-7-leviers",
+      icon: <Users size={24} color="#1F3A33" />,
+      cta: "Télécharger"
     },
     {
       title: "Guide Sales Manager",

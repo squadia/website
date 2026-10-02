@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState, useCallback } from 'react';
-import { Download, Loader2, ChevronLeft, ChevronRight, AlertTriangle, Play, Pause, RotateCcw } from 'lucide-react';
+import { Download, Loader2, ChevronLeft, ChevronRight, AlertTriangle, Play, Pause, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import { hasAnalyticsConsent } from '../CookieConsent';
 
 /**
@@ -14,6 +14,10 @@ import { hasAnalyticsConsent } from '../CookieConsent';
  *  - title (string)               utilisé pour l'alt text et le nom de téléchargement
  *  - videoPage (number)           page (1-indexée) où la vidéo doit s'auto-jouer
  *  - videoSrc (string)            chemin de la vidéo dans /public
+ *  - videoMode (string)           'overlay' (défaut : boutons sur la vidéo) ou 'below' (lecteur sous la vidéo,
+ *                                 plein écran/PiP/menu contextuel désactivés, préchargement différé)
+ *  - videoMask (object)           {color, rects:[{top,left,width,height}]} en % de l'image vidéo : pastilles de couleur
+ *                                 unie posées sur les coins pour cacher un watermark (fond uni uniquement)
  *  - videoRect (object)           {top,left,width,height} en % — zone couverte par la vidéo sur la page (défaut : pleine page)
  *  - trackingId (string)          identifiant envoyé aux events de tracking
  *  - onPageFlip(pageNumber)       callback optionnel, en plus du tracking par défaut
@@ -27,6 +31,8 @@ export default function FlipbookViewer({
   title = 'Document',
   videoPage = null,
   videoSrc = null,
+  videoMode = 'overlay',
+  videoMask = null,
   videoRect = { top: 0, left: 0, width: 100, height: 100 },
   trackingId,
   onPageFlip,
@@ -37,6 +43,7 @@ export default function FlipbookViewer({
   const containerRef = useRef(null);
   const pageFlipRef = useRef(null);
   const videoRef = useRef(null);
+  const maskCanvasRef = useRef(null);
   const flipAudioRef = useRef(null);
   const flipSoundTimersRef = useRef([]);
   const isInitialFlipRef = useRef(true);
@@ -48,6 +55,8 @@ export default function FlipbookViewer({
   const [errorMessage, setErrorMessage] = useState('');
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [showHint, setShowHint] = useState(true);
+  const [videoMuted, setVideoMuted] = useState(false);
+  const [videoTime, setVideoTime] = useState({ current: 0, duration: 0 });
 
   const videoPageIndex = videoPage ? videoPage - 1 : null; // 0-indexed pour matcher l'event page-flip
 
@@ -246,6 +255,35 @@ export default function FlipbookViewer({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status, pages]);
 
+  // Vidéo avec watermark : on la redessine dans un canvas et on remplit les coins avec une couleur
+  // échantillonnée dans l'image elle-même (un hex CSS ne colle jamais exactement à la vidéo décodée).
+  useEffect(() => {
+    if (status !== 'ready' || !videoMask) return undefined;
+    let raf;
+    let lastKey = '';
+    const draw = () => {
+      raf = requestAnimationFrame(draw);
+      const video = videoRef.current;
+      const canvas = maskCanvasRef.current;
+      if (!video || !canvas || video.readyState < 2 || !video.videoWidth) return;
+      const key = `${video.currentTime}|${video.videoWidth}`;
+      if (key === lastKey) return;
+      lastKey = key;
+      const w = video.videoWidth;
+      const h = video.videoHeight;
+      if (canvas.width !== w) { canvas.width = w; canvas.height = h; }
+      const ctx = canvas.getContext('2d', { willReadFrequently: true });
+      ctx.drawImage(video, 0, 0, w, h);
+      const [r, g, b] = ctx.getImageData(Math.round(w / 2), 6, 1, 1).data;
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      videoMask.rects.forEach((rect) => {
+        ctx.fillRect((rect.left / 100) * w, (rect.top / 100) * h, (rect.width / 100) * w, (rect.height / 100) * h);
+      });
+    };
+    raf = requestAnimationFrame(draw);
+    return () => cancelAnimationFrame(raf);
+  }, [status, videoMask]);
+
   const goPrev = () => pageFlipRef.current?.flipPrev();
   const goNext = () => pageFlipRef.current?.flipNext();
 
@@ -259,6 +297,27 @@ export default function FlipbookViewer({
     } else {
       video.pause();
     }
+  };
+
+  const toggleVideoMute = (e) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !video.muted;
+  };
+
+  const seekVideo = (e) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video || !video.duration) return;
+    video.currentTime = (Number(e.target.value) / 1000) * video.duration;
+  };
+
+  const formatTime = (t) => {
+    if (!Number.isFinite(t)) return '0:00';
+    const m = Math.floor(t / 60);
+    const sec = String(Math.floor(t % 60)).padStart(2, '0');
+    return `${m}:${sec}`;
   };
 
   const restartVideo = (e) => {
@@ -350,21 +409,90 @@ export default function FlipbookViewer({
                       height: `${videoRect.height}%`,
                     }}
                   >
-                    <video
-                      ref={videoRef}
-                      src={videoSrc}
-                      playsInline
-                      loop
-                      onPlay={() => setVideoPlaying(true)}
-                      onPause={() => setVideoPlaying(false)}
-                      style={{
-                        width: '100%',
-                        height: '100%',
-                        objectFit: 'cover',
-                        borderRadius: '2%',
-                        display: 'block',
-                      }}
-                    />
+                    <div style={{ position: 'absolute', inset: 0, overflow: 'hidden', borderRadius: '4%', background: '#000' }}>
+                      <div style={{ position: 'absolute', inset: 0 }}>
+                        <video
+                          ref={videoRef}
+                          src={videoSrc}
+                          playsInline
+                          loop
+                          preload={videoMode === 'below' && pageInfo.current < videoPage - 2 ? 'none' : 'auto'}
+                          {...(videoMode === 'below' ? {
+                            controlsList: 'nodownload nofullscreen noremoteplayback',
+                            disablePictureInPicture: true,
+                            disableRemotePlayback: true,
+                            onContextMenu: (e) => e.preventDefault(),
+                          } : {})}
+                          onPlay={() => setVideoPlaying(true)}
+                          onPause={() => setVideoPlaying(false)}
+                          onVolumeChange={(e) => setVideoMuted(e.currentTarget.muted)}
+                          onTimeUpdate={(e) => setVideoTime({ current: e.currentTarget.currentTime, duration: e.currentTarget.duration })}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            maxWidth: 'none',
+                            objectFit: 'cover',
+                            display: 'block',
+                            pointerEvents: videoMode === 'below' ? 'none' : 'auto',
+                            ...(videoMask ? { position: 'absolute', inset: 0, opacity: 0 } : {}),
+                          }}
+                        />
+                        {videoMask && (
+                          <canvas
+                            ref={maskCanvasRef}
+                            style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', display: 'block', pointerEvents: 'none' }}
+                          />
+                        )}
+                      </div>
+                    </div>
+                    {videoMode === 'below' ? (
+                      <div
+                        onMouseDown={stopFlipGesture}
+                        onMouseUp={stopFlipGesture}
+                        onTouchStart={stopFlipGesture}
+                        onTouchEnd={stopFlipGesture}
+                        style={{
+                          position: 'absolute',
+                          top: '100%',
+                          left: 0,
+                          right: 0,
+                          marginTop: '2.5%',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                        }}
+                      >
+                        <button
+                          type="button"
+                          onClick={toggleVideoPlay}
+                          aria-label={videoPlaying ? 'Mettre la vidéo en pause' : 'Lancer la vidéo'}
+                          className="flex items-center justify-center w-8 h-8 shrink-0 rounded-full bg-[#1F3A33] hover:bg-[#16302A] text-[#F6F3EC] transition-colors"
+                        >
+                          {videoPlaying ? <Pause size={14} /> : <Play size={14} />}
+                        </button>
+                        <button
+                          type="button"
+                          onClick={toggleVideoMute}
+                          aria-label={videoMuted ? 'Activer le son' : 'Couper le son'}
+                          className="flex items-center justify-center w-8 h-8 shrink-0 rounded-full bg-[#1F3A33] hover:bg-[#16302A] text-[#F6F3EC] transition-colors"
+                        >
+                          {videoMuted ? <VolumeX size={14} /> : <Volume2 size={14} />}
+                        </button>
+                        <input
+                          type="range"
+                          min={0}
+                          max={1000}
+                          value={videoTime.duration ? Math.round((videoTime.current / videoTime.duration) * 1000) : 0}
+                          onChange={seekVideo}
+                          onClick={(e) => e.stopPropagation()}
+                          aria-label="Position dans la vidéo"
+                          style={{ flex: 1, minWidth: 0, accentColor: '#1F3A33', height: '4px' }}
+                        />
+                        <span style={{ fontSize: '11px', color: '#4A534F', fontVariantNumeric: 'tabular-nums', flexShrink: 0 }}>
+                          {formatTime(videoTime.current)} / {formatTime(videoTime.duration)}
+                        </span>
+                      </div>
+                    ) : (
                     <div
                       style={{
                         position: 'absolute',
@@ -400,6 +528,7 @@ export default function FlipbookViewer({
                         <RotateCcw size={16} />
                       </button>
                     </div>
+                    )}
                   </div>
                 )}
               </div>

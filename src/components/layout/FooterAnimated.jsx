@@ -104,7 +104,7 @@ export default function FooterAnimated() {
             <h4 style={{ color: 'var(--text-primary)', marginBottom: '1rem', fontSize: '0.85rem', fontWeight: 600 }}>Ressources</h4>
             <ul style={{ display: 'flex', flexDirection: 'column' }}>
               <li><a href="/automatisation-ia.html" className="footer-link">Automatisation IA</a></li>
-              <li><Link href="/ressources/enquete-ia-b2b" className="footer-link">Enquête IA 2026</Link></li>
+              <li><Link href="/ressources/recrutement-commercial-7-leviers" className="footer-link">Recruter un commercial</Link></li>
               <li><Link href="/ressources/guide-sales-manager" className="footer-link">Guide Sales Manager</Link></li>
               <li><Link href="/ressources/guide-marketing-manager" className="footer-link">Guide Marketing Manager</Link></li>
               <li><Link href="/ressources/channel-sales-plan" className="footer-link">Channel Sales Plan</Link></li>
