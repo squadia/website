@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import {
@@ -7,6 +7,8 @@ import {
   ChevronDown, ChevronUp, Check, Search, Rocket, Shield
 } from 'lucide-react';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const fondData = '/assets/images/data/data.jpeg';
@@ -25,14 +27,6 @@ const DataCSS = `
 
 export default function Data() {
   const [openFAQ, setOpenFAQ] = useState(null);
-
-  useEffect(() => {
-    document.title = "Data B2B : Nettoyage, segmentation et leads : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia nettoie votre CRM, structure votre segmentation ICP et construit vos bases de prospection B2B. Données fiables et exploitables en moins de 30 jours.");
-    }
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -297,6 +291,9 @@ export default function Data() {
             ))}
           </div>
         </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/data')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

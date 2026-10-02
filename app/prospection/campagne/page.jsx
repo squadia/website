@@ -5,7 +5,7 @@ import { serviceSchema, breadcrumbSchema } from '@/src/lib/schemas';
 
 export const metadata = buildMetadata({
   title: "Campagnes de prospection multicanale B2B — Squadia",
-  description: "Lancez des campagnes de prospection B2B personnalisées par email, LinkedIn et téléphone. Séquences, réponses, rendez-vous qualifiés.",
+  description: "Squadia lance vos campagnes de prospection B2B par email et LinkedIn, personnalisées sur signal, jusqu'au rendez-vous qualifié.",
   path: "/prospection/campagne",
 });
 

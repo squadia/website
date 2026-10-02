@@ -5,7 +5,7 @@ import { courseSchema, faqPageSchema, breadcrumbSchema } from '@/src/lib/schemas
 
 export const metadata = buildMetadata({
   title: "Formation IA Marketing B2B — Contenus, campagnes, analyse — Squadia",
-  description: "Formez vos équipes marketing à l'IA : création de contenus, campagnes multicanal, scoring et analyse de performance.",
+  description: "Squadia forme vos équipes marketing à l'IA : création de contenus, campagnes multicanal, scoring et analyse de performance.",
   path: "/formation-marketing-et-ia",
 });
 

@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, BarChart3, ArrowRight, ShieldCheck, Rocket, ChevronDown, CheckCircle2, Star } from 'lucide-react';
@@ -8,6 +8,8 @@ import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 import { casesData } from '../data/cases';
 import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
 const formationImg = '/assets/images/formationB2B.png';
@@ -73,14 +75,6 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
 const LandingDG = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
-
-  useEffect(() => {
-    document.title = "Squadia pour les DG : data, prospection et formation IA pour la croissance PME/ETI";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "57% des dirigeants testent l'IA sans vision d'ensemble. Squadia aide les DG de PME/ETI à bâtir un système de génération de revenus mesurable en 90 jours.";
-    }
-  }, []);
 
   const enjeux = [
     { short: 'Croissance pilotée', title: 'Prouver que la croissance est pilotée, pas subie', desc: "Un board ou un investisseur ne juge pas une intention, il juge un chiffre. Sans dashboard commun entre marketing et ventes, impossible de montrer une trajectoire claire de vos revenus.", icon: <Target color="#8A6D3B" />, image: '/assets/images/dg/driving.webp' },
@@ -579,6 +573,9 @@ const LandingDG = () => {
           <ClientLogosSection contained={true} />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/directeur-general')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

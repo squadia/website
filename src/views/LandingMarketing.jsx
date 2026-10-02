@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, Zap, BarChart3, ArrowRight, MousePointer2, ChevronDown, CheckCircle2, ShieldAlert, BookOpen } from 'lucide-react';
@@ -11,6 +11,8 @@ const imgMarketingManager = '/assets/images/ressources/new-marketing-manager.jpe
 import { casesData } from '../data/cases';
 import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const kickerStyle = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8A6D3B', marginBottom: '0.75rem', textAlign: 'center' };
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
@@ -74,14 +76,6 @@ const AccordionItem = ({ question, answer, isOpen, onToggle }) => (
 const LandingMarketing = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
-
-  useEffect(() => {
-    document.title = "Squadia pour Directeurs Marketing : Pipeline B2B et IA";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia aide les directions marketing B2B à structurer un pipeline fiable, qualifier leurs leads et automatiser leurs campagnes. Pour PME et ETI en France.";
-    }
-  }, []);
 
   const enjeux = [
     { short: 'Leads non exploités', title: 'Les leads sont générés, mais pas exploités', desc: "Le marketing produit des contacts. Les commerciaux les jugent non qualifiés. Le débat recommence à chaque réunion de pipe review sans que rien ne change vraiment. Le problème n'est pas le volume, c'est le manque de contexte et de timing.", icon: <Target color="#8A6D3B" />, image: '/assets/images/marketingdirector/conflit.webp' },
@@ -586,6 +580,9 @@ const LandingMarketing = () => {
           <ClientLogosSection contained={true} />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/directeur-marketing')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

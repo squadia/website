@@ -32,6 +32,8 @@ const datasegVideo = '/assets/video/data-seg.mp4';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 import StackedStepCards from '../components/ui/StackedStepCards';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -208,14 +210,6 @@ export default function DataSeg() {
   const [isMuted, setIsMuted] = useState(true);
   const [videoStarted, setVideoStarted] = useState(false);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    document.title = "Data Seg : Segmentation CRM et scoring ICP : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia structure votre segmentation CRM : définition ICP, variables de scoring et architecture de données actionnable. Résultats en 30 jours pour PME et ETI.");
-    }
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -645,6 +639,9 @@ export default function DataSeg() {
             ))}
           </div>
         </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/data/data-seg')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

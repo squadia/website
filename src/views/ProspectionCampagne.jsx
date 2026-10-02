@@ -6,6 +6,8 @@ import { Linkedin, MessageSquare, Target, RefreshCw, BarChart3, Check, ArrowRigh
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import PartnerLogosMarquee from '../components/ui/PartnerLogosMarquee';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -240,14 +242,6 @@ export default function ProspectionCampagne() {
     window.addEventListener('resize', check);
     return () => window.removeEventListener('resize', check);
   }, []);
-  useEffect(() => {
-    document.title = "Prospection marketing B2B — Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Lancez des campagnes de prospection multicanale personnalisées. Séquences email et LinkedIn, traitement des réponses, enrichissement des contacts avec Repliik.");
-    }
-  }, []);
-
   return (
     <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       {/* HERO */}
@@ -427,6 +421,9 @@ export default function ProspectionCampagne() {
           <PricingProspection />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/prospection/campagne')} />
 
       {/* CTA FINAL */}
       <CtaFinalZoom

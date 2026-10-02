@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import Link from 'next/link';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
@@ -10,6 +10,8 @@ const fonds2 = '/assets/images/fonds2-CAwYIQyU.jpeg';
 import { casesData } from '../data/cases';
 import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const teamworkImg = '/assets/images/salesdirecteur/teamwork.png';
 const pipelineImg = '/assets/images/pipeline-b2b.jpeg';
@@ -138,14 +140,6 @@ const Timeline = () => {
 const LandingSales = () => {
   useScrollReveal();
   const [openFAQ, setOpenFAQ] = useState(0);
-
-  useEffect(() => {
-    document.title = "Squadia pour Directeurs Commerciaux : CRM et pipeline B2B";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d'achat. CRM et automatisation PME/ETI.";
-    }
-  }, []);
 
   const enjeux = [
     { short: 'Big Deals', title: 'Gagner les Big Deals', desc: "Pour anticiper les gros dossiers, il faut les signaux (projet, recrutement, réorganisation) qui permettent d'être en amont, d'influencer le cahier des charges et de devancer les concurrents.", icon: <Target color="#8A6D3B" />, image: '/assets/images/salesdirecteur/statscall.webp' },
@@ -629,6 +623,9 @@ const LandingSales = () => {
           <ClientLogosSection contained={true} />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/directeur-commercial')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

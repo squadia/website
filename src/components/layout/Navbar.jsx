@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { ChevronDown, Database, Zap, GraduationCap, X } from 'lucide-react';
+import { ChevronDown, Database, Zap, GraduationCap, Mic, X } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 const gmImg = '/assets/images/gm.png';
 const smImg = '/assets/images/sm.png';
@@ -157,7 +157,7 @@ const Navbar = () => {
         <div className="squad-dropdown-inner">
           <div className="squad-categories" style={{ position: 'relative' }}>
             <div className="squad-glider-track">
-              <div className="squad-glider" style={{ transform: `translateY(${['data','prospection','formation'].indexOf(activeCategory) * 100}%)` }}>
+              <div className="squad-glider" style={{ transform: `translateY(${['data','prospection','formation','agent'].indexOf(activeCategory) * 100}%)` }}>
                 <div className="squad-glider-glow" />
                 <div className="squad-glider-trail" />
               </div>
@@ -166,6 +166,7 @@ const Navbar = () => {
               { id: 'data', label: 'Data B2B', icon: <Database size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
               { id: 'prospection', label: 'Prospection', icon: <Zap size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
               { id: 'formation', label: 'Formation', icon: <GraduationCap size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
+              { id: 'agent', label: 'Agent vocal IA', icon: <Mic size={16} style={{ marginRight: '8px', color: '#1C2B27' }} /> },
             ].map(cat => (
               <div key={cat.id} className={`squad-cat ${activeCategory === cat.id ? 'active' : ''}`} onClick={() => setActiveCategory(cat.id)}>
                 {cat.icon}{cat.label}
@@ -216,6 +217,17 @@ const Navbar = () => {
                 </Link>
               </div>
               <Link href="/formations" onClick={() => setShowDropdown(false)} className="squad-all-link">Toutes nos formations →</Link>
+            </div>
+            <div style={{ display: activeCategory === 'agent' ? 'block' : 'none' }}>
+              <Link className="squad-item" onClick={() => setShowDropdown(false)} href="/agent-vocal-ia">
+                <span className="squad-item-title">Agent vocal IA</span><span className="squad-tag">Nouveau</span>
+                <p className="squad-item-desc">Un agent vocal sur votre site : il accueille vos visiteurs 24 h/24, les guide et prend les rendez-vous</p>
+              </Link>
+              <a className="squad-item" onClick={() => setShowDropdown(false)} href="/automatisation-ia.html">
+                <span className="squad-item-title">IA Playbook</span><span className="squad-tag">Automatisation</span>
+                <p className="squad-item-desc">18 automatisations IA pour la prospection, la qualification et le suivi CRM</p>
+              </a>
+              <Link href="/agent-vocal-ia" onClick={() => setShowDropdown(false)} className="squad-all-link">Découvrir l'agent vocal →</Link>
             </div>
           </div>
 
@@ -458,7 +470,7 @@ const Navbar = () => {
         /* Category tabs : grille 2×2 pour tout afficher sans scroll horizontal */
         .mob-cat-tabs {
           display: grid;
-          grid-template-columns: 1fr 1fr 1fr;
+          grid-template-columns: 1fr 1fr;
           gap: 6px;
           padding: 10px 16px;
           flex-shrink: 0;
@@ -623,6 +635,7 @@ const Navbar = () => {
                         { id: 'data', label: 'Data B2B' },
                         { id: 'prospection', label: 'Prospection' },
                         { id: 'formation', label: 'Formation' },
+                        { id: 'agent', label: 'Agent vocal IA' },
                       ].map(tab => (
                         <button
                           key={tab.id}
@@ -681,6 +694,18 @@ const Navbar = () => {
                             </Link>
                           </div>
                           <Link className="mob-all-link" href="/formations" onClick={closeMenu}>Toutes nos formations →</Link>
+                        </>
+                      )}
+                      {activeMobileCategory === 'agent' && (
+                        <>
+                          <Link className="mob-service-item" href="/agent-vocal-ia" onClick={closeMenu}>
+                            <div className="mob-service-top"><span className="mob-service-title">Agent vocal IA</span><span className="mob-service-tag">Nouveau</span></div>
+                            <p className="mob-service-desc">Accueil 24 h/24, visite guidée et prise de RDV</p>
+                          </Link>
+                          <a className="mob-service-item" href="/automatisation-ia.html" onClick={closeMenu}>
+                            <div className="mob-service-top"><span className="mob-service-title">IA Playbook</span><span className="mob-service-tag">Automatisation</span></div>
+                            <p className="mob-service-desc">18 automatisations IA pour la vente B2B</p>
+                          </a>
                         </>
                       )}
                     </div>

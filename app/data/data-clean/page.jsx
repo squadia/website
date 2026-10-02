@@ -3,7 +3,7 @@ import { buildMetadata } from '@/src/lib/metadata';
 
 export const metadata = buildMetadata({
   title: "Data Clean — Nettoyage et fiabilisation base CRM — Squadia",
-  description: "Supprimez les doublons, corrigez les données incomplètes et fiabilisez votre base CRM pour une prospection plus efficace.",
+  description: "Squadia nettoie et fiabilise votre CRM : doublons supprimés, données complétées, formats harmonisés. Audit gratuit de votre base.",
   path: "/data/data-clean",
 });
 

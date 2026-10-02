@@ -5,7 +5,7 @@ import { courseSchema, faqPageSchema, breadcrumbSchema } from '@/src/lib/schemas
 
 export const metadata = buildMetadata({
   title: "Formations IA pour équipes commerciales et marketing — Squadia",
-  description: "Formations pratiques à l'IA pour les équipes vente, marketing et communication. Ateliers, cas réels et plan d'action.",
+  description: "Squadia forme vos équipes vente, marketing et communication à l'IA : ateliers pratiques, cas réels et plan d'action.",
   path: "/formations",
 });
 

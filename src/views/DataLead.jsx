@@ -21,6 +21,8 @@ const dataleadVideo = '/assets/video/data-lead.mp4';
 import CardFlip from '../components/ui/flip-card';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 import StackedStepCards from '../components/ui/StackedStepCards';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -195,14 +197,6 @@ export default function DataLead() {
   const [isMuted, setIsMuted] = useState(true);
   const [videoStarted, setVideoStarted] = useState(false);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    document.title = "Data Lead : Base de prospection B2B qualifiée : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia construit votre base de contacts B2B ciblés. Fichier qualifié, enrichi et prêt à intégrer dans votre CRM. Pour PME et ETI en France.");
-    }
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -646,6 +640,9 @@ export default function DataLead() {
             ))}
           </div>
         </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/data/data-lead')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

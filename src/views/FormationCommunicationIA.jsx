@@ -12,6 +12,8 @@ const imgAutoComm = '/assets/images/automatisation/auto3.webp';
 const imgData = '/assets/images/data/data.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const DayBlock = ({ title, objective, children }) => {
@@ -90,11 +92,6 @@ const FormationCommunicationIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Communication & IA : 2 jours : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes communication à l'IA appliquée au message et à la production éditoriale. Programme 2 jours, outils concrets, ateliers pratiques.";
-    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -502,6 +499,9 @@ const FormationCommunicationIA = () => {
         </div>
       </section>
 
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/formation-communication-et-ia')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

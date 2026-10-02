@@ -5,7 +5,7 @@ import { courseSchema, faqPageSchema, breadcrumbSchema } from '@/src/lib/schemas
 
 export const metadata = buildMetadata({
   title: "Formation IA Ventes B2B — Prospection, closing, efficacité — Squadia",
-  description: "Formez vos commerciaux à l'IA : prospection augmentée, qualification, closing et outils adaptés au cycle de vente B2B.",
+  description: "Squadia forme vos commerciaux à l'IA : prospection augmentée, qualification, closing et méthode MEDDIC, en 2 jours.",
   path: "/formation-ventes-et-ia",
 });
 

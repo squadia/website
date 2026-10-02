@@ -12,6 +12,8 @@ const imgDataSeg = '/assets/images/dataseg/data-seg.jpeg';
 const imgDataLead = '/assets/images/datalead/datalead.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer }) => {
@@ -90,11 +92,6 @@ const FormationMarketingIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Marketing & IA : Contenus et campagnes : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes marketing à l'IA générative pour la création de contenu. Programme 2 jours, outils concrets, ateliers pratiques. PME et ETI.";
-    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -522,6 +519,9 @@ const FormationMarketingIA = () => {
           />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/formation-marketing-et-ia')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

@@ -5,6 +5,8 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { UserCheck, FileText, Calendar, RefreshCw, Check } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -159,14 +161,6 @@ const PricingProspection = () => {
 
 export default function ProspectionColdCall() {
   useScrollReveal();
-  useEffect(() => {
-    document.title = "Prospection phoning B2B — Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Prenez des rendez-vous qualifiés par téléphone avec un commercial B2B senior. Script construit avec vous, définition du rendez-vous qualifié, reporting hebdomadaire.");
-    }
-  }, []);
-
   return (
     <div style={{ background: '#F6F3EC', color: '#1C2B27', minHeight: '100vh' }}>
       {/* HERO */}
@@ -295,6 +289,9 @@ export default function ProspectionColdCall() {
           <PricingProspection />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/prospection/cold-call')} />
 
       {/* CTA FINAL */}
       <CtaFinalZoom

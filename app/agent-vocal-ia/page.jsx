@@ -6,7 +6,7 @@ import { agentVocalFaqs } from '@/src/data/agentVocalFaqs';
 
 export const metadata = buildMetadata({
   title: "Agent vocal IA pour site B2B : visite guidée et RDV — Squadia",
-  description: "Agent vocal IA pour votre site : il accueille vos visiteurs 24 h/24, les guide de page en page et réserve les rendez-vous dans votre agenda.",
+  description: "Squadia installe sur votre site un agent vocal IA qui accueille vos visiteurs 24 h/24, les guide et réserve vos rendez-vous.",
   path: "/agent-vocal-ia",
 });
 

@@ -1,11 +1,13 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
 import {
   Send, Phone, Users, BarChart3,
   ChevronDown, ChevronUp
 } from 'lucide-react';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const fondProspection = '/assets/images/campagne/prospectionteam.png';
@@ -15,14 +17,6 @@ const imgHybride = '/assets/images/hubspotcrm.jpeg';
 
 export default function Prospection() {
   const [openFAQ, setOpenFAQ] = useState(null);
-
-  useEffect(() => {
-    document.title = "Prospection B2B : campagnes multicanale et appels sortants : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia lance vos campagnes de prospection B2B : séquences email et LinkedIn avec Repliik, appels sortants par un commercial senior, ou les deux combinés.");
-    }
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -252,6 +246,9 @@ export default function Prospection() {
             ))}
           </div>
         </section>
+
+        {/* Maillage interne vers les offres liées */}
+        <RelatedLinks items={relatedLinksFor('/prospection')} />
 
         {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
         <CtaFinalZoom

@@ -5,7 +5,7 @@ import { serviceSchema, breadcrumbSchema } from '@/src/lib/schemas';
 
 export const metadata = buildMetadata({
   title: "Prospection B2B — Campagnes multicanale et appels sortants — Squadia",
-  description: "Squadia lance vos campagnes de prospection B2B : séquences email et LinkedIn avec Repliik, appels sortants par un commercial senior, ou les deux combinés.",
+  description: "Squadia lance vos campagnes de prospection B2B : séquences email et LinkedIn, appels sortants par un commercial senior, ou les deux.",
   path: "/prospection",
 });
 

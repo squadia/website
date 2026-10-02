@@ -5,7 +5,7 @@ import { courseSchema, faqPageSchema, breadcrumbSchema } from '@/src/lib/schemas
 
 export const metadata = buildMetadata({
   title: "Formation IA Communication B2B — Charte, rédaction, outils — Squadia",
-  description: "Formez vos équipes communication à l'IA : charte d'usage, rédaction augmentée, outils et gouvernance.",
+  description: "Squadia forme vos équipes communication à l'IA : charte d'usage, rédaction augmentée, outils et gouvernance.",
   path: "/formation-communication-et-ia",
 });
 

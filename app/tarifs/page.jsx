@@ -5,7 +5,7 @@ import { serviceSchema, breadcrumbSchema } from '@/src/lib/schemas';
 
 export const metadata = buildMetadata({
   title: "Tarifs Squadia — Data, prospection multicanale et formation IA",
-  description: "Découvrez les tarifs Squadia : data B2B, campagnes de prospection multicanale et formation IA. Périmètre ajusté avant engagement. Pour PME et ETI en France.",
+  description: "Les tarifs Squadia : data B2B, campagnes de prospection multicanale et formation IA. Périmètre ajusté avant engagement.",
   path: "/tarifs",
 });
 

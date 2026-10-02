@@ -12,6 +12,8 @@ const imgAutoVente = '/assets/images/automatisation/auto1.webp';
 const imgData = '/assets/images/data/data.jpeg';
 import CountdownCard from '../components/ui/CountdownCard';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
 const AccordionItem = ({ question, answer }) => {
@@ -90,11 +92,6 @@ const FormationVentesIA = () => {
   useScrollReveal();
 
   useEffect(() => {
-    document.title = "Formation Ventes & IA B2B : 2 jours : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes commerciales à la vente complexe et aux outils IA. Programme 2 jours, cas pratiques, pour profils juniors et seniors. PME et ETI.";
-    }
     window.scrollTo(0, 0);
   }, []);
 
@@ -527,6 +524,9 @@ const FormationVentesIA = () => {
           />
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/formation-ventes-et-ia')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

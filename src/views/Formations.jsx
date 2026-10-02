@@ -5,6 +5,8 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { Target, RefreshCw, Star, ArrowRight, CheckCircle2, Layout, Users, Zap, BookOpen, Award, MessageSquare, Briefcase, Megaphone, PieChart, Check } from 'lucide-react';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 import TestimonialsMarquee from '../components/ui/TestimonialsMarquee';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const formationBg = '/assets/images/formationB2B.png';
@@ -39,16 +41,6 @@ const Formations = () => {
   }, []);
 
   useEffect(() => {
-    document.title = "Formations IA pour équipes commerciales, marketing et communication : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.content = "Squadia forme vos équipes vente, marketing et communication à l'IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
-    } else {
-      const meta = document.createElement('meta');
-      meta.name = "description";
-      meta.content = "Squadia forme vos équipes vente, marketing et communication à l'IA appliquée à leur métier. 2 jours, cas pratiques, outils concrets. Inter ou intra, financement OPCO possible.";
-      document.head.appendChild(meta);
-    }
     window.scrollTo(0, 0);
 
     // SYNERGY COMPONENT LOGIC
@@ -782,6 +774,9 @@ const FormationCard = ({ category, title, forWho, description, link, image, dela
           </div>
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/formations')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

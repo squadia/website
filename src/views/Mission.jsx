@@ -2,17 +2,14 @@
 import React, { useEffect } from 'react';
 import Link from 'next/link';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 const jeromeImg = '/assets/images/notremission/jerome-final.png?v=' + Date.now();
 const julienImg = '/assets/images/notremission/julien-final.png?v=' + Date.now();
 const kavidaImg = '/assets/images/notremission/kavida-final.png';
 const Mission = () => {
   useEffect(() => {
-    document.title = "Notre Mission : Squadia, conseil B2B en IA et performance commerciale";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Découvrez la mission de Squadia : réconcilier la strategie et l'exécution pour les équipes commerciales B2B. Notre équipe, nos valeurs et notre engagement.");
-    }
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('mfv'); obs.unobserve(e.target); } });
     }, { threshold: 0.08 });
@@ -334,6 +331,9 @@ const Mission = () => {
           </div>
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/notre-mission')} />
 
       {/* ── CTA FINAL : REJOIGNEZ-NOUS ── */}
       <CtaFinalZoom

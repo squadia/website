@@ -23,6 +23,8 @@ const ctaImg = '/assets/images/cta.png';
 import CtaSection from '../components/ui/CtaSection';
 import ClientLogosSection from '../components/ui/ClientLogosSection';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 import StackedStepCards from '../components/ui/StackedStepCards';
 import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
@@ -201,14 +203,6 @@ export default function DataClean() {
   const [isMuted, setIsMuted] = useState(true);
   const [videoStarted, setVideoStarted] = useState(false);
   const videoRef = useRef(null);
-
-  useEffect(() => {
-    document.title = "Data Clean : Nettoyer et normaliser votre CRM B2B : Squadia";
-    const metaDescription = document.querySelector('meta[name="description"]');
-    if (metaDescription) {
-      metaDescription.setAttribute('content', "Squadia nettoie, déduplique et normalise votre base CRM. Préparez vos données pour la segmentation et la prospection active. Pour PME et ETI en France.");
-    }
-  }, []);
 
   const toggleFAQ = (index) => {
     setOpenFAQ(openFAQ === index ? null : index);
@@ -642,6 +636,9 @@ export default function DataClean() {
             ))}
           </div>
         </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/data/data-clean')} />
 
       {/* ═══ CTA FINAL : PROCHAINE ÉTAPE ═══ */}
       <CtaFinalZoom

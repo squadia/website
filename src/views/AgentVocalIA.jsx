@@ -9,6 +9,8 @@ import {
 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import RelatedLinks from '../components/ui/RelatedLinks';
+import { relatedLinksFor } from '../data/relatedLinks';
 import { RevealHeader } from '../components/ui/RevealHeader';
 import { agentVocalFaqs } from '../data/agentVocalFaqs';
 
@@ -442,10 +444,6 @@ export default function AgentVocalIA() {
   const isMobile = useIsMobile();
   const [openFAQ, setOpenFAQ] = useState(null);
 
-  useEffect(() => {
-    document.title = "Agent vocal IA pour site B2B : visite guidée et RDV — Squadia";
-  }, []);
-
   return (
     <div style={{ background: CREAM, color: INK, minHeight: '100vh' }}>
       {/* HERO */}
@@ -736,6 +734,9 @@ export default function AgentVocalIA() {
           ))}
         </div>
       </section>
+
+      {/* Maillage interne vers les offres liées */}
+      <RelatedLinks items={relatedLinksFor('/agent-vocal-ia')} />
 
       {/* CTA FINAL */}
       <CtaFinalZoom

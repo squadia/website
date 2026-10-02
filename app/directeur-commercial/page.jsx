@@ -5,7 +5,7 @@ import { serviceSchema, breadcrumbSchema } from '@/src/lib/schemas';
 
 export const metadata = buildMetadata({
   title: "Squadia pour Directeurs Commerciaux — Pipeline B2B",
-  description: "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les bons signaux d'achat. Pour PME et ETI en France.",
+  description: "Squadia aide les directions commerciales B2B à fiabiliser leur pipeline, structurer la prospection et exploiter les signaux d'achat.",
   path: "/directeur-commercial",
 });
 
