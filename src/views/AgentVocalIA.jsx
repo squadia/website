@@ -10,6 +10,7 @@ import {
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
 import { RevealHeader } from '../components/ui/RevealHeader';
+import { agentVocalFaqs } from '../data/agentVocalFaqs';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -358,15 +359,7 @@ const pricingCards = [
   },
 ];
 
-const faqs = [
-  { q: 'Combien de temps pour la mise en place ?', a: "Quelques semaines en général. Le délai exact est cadré ensemble selon le périmètre : nombre de pages, intégrations, voix standard ou clonée." },
-  { q: "Est-ce que l'agent peut se tromper ?", a: "Il s'appuie uniquement sur ce que vous lui confiez. Quand une information manque, il propose d'en parler avec votre équipe au lieu d'inventer. Les réglages sur de vraies conversations servent justement à lisser les écarts." },
-  { q: 'Combien coûte une minute de conversation ?', a: "De quelques centimes à quelques dizaines de centimes selon le volume et les options. La consommation est refacturée au réel." },
-  { q: 'Quelles langues parle-t-il ?', a: "Le français et des dizaines d'autres langues. Il peut répondre dans la langue du visiteur." },
-  { q: 'Que deviennent les enregistrements ?', a: "Ils servent à améliorer l'agent et sont supprimés automatiquement au bout de la durée que vous fixez. Le visiteur en est informé avant le premier appel." },
-  { q: 'Mon site est sous WordPress, est-ce possible ?', a: "Oui pour l'agent vocal. La visite guidée de page en page dépend de la technologie du site : on la vérifie lors du cadrage." },
-  { q: 'Le clonage de voix, comment ça marche ?', a: "La personne enregistre quelques minutes de voix et donne son accord écrit. L'agent l'utilise ensuite pour parler aux visiteurs, en précisant qu'il s'agit d'une voix générée par IA, comme l'exige l'AI Act." },
-];
+const faqs = agentVocalFaqs.map(({ question, answer }) => ({ q: question, a: answer }));
 
 /* ───────────────────────── Sous-composants ───────────────────────── */
 
@@ -449,7 +442,7 @@ export default function AgentVocalIA() {
   const [openFAQ, setOpenFAQ] = useState(null);
 
   useEffect(() => {
-    document.title = "Agent vocal IA pour votre site : il parle, guide et prend rendez-vous — Squadia";
+    document.title = "Agent vocal IA pour site B2B : visite guidée et RDV — Squadia";
   }, []);
 
   return (
@@ -458,14 +451,15 @@ export default function AgentVocalIA() {
       <section style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', padding: '140px 0 80px' }}>
         <div className="container hero-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: '3rem', alignItems: 'center' }}>
           <div>
-            <p style={{ color: GOLD, fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem' }}>Agent vocal IA</p>
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1.1 }}
               style={{ fontSize: 'clamp(2rem, 3.4vw, 3rem)', fontWeight: 700, lineHeight: 1.1, color: INK, marginBottom: '1.5rem', maxWidth: '640px' }}
             >
-              Votre site parle, guide<br />et prend rendez-vous.
+              <span style={{ display: 'block', color: GOLD, fontWeight: 700, textTransform: 'uppercase', marginBottom: '1.2rem', letterSpacing: '0.12em', fontSize: '0.9rem', lineHeight: 1.4 }}>Agent vocal IA</span>
+              <span style={{ position: 'absolute', width: 1, height: 1, overflow: 'hidden', clip: 'rect(0 0 0 0)', whiteSpace: 'nowrap' }}> : </span>
+              Votre site parle, guide{' '}<br />et prend rendez-vous.
             </motion.h1>
             <motion.div
               initial={{ opacity: 0, y: 15 }}

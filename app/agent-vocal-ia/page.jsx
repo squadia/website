@@ -1,11 +1,12 @@
 import PageClient from './_client';
 import { buildMetadata } from '@/src/lib/metadata';
 import JsonLd from '@/src/components/ui/JsonLd';
-import { serviceSchema, breadcrumbSchema } from '@/src/lib/schemas';
+import { serviceSchema, breadcrumbSchema, faqPageSchema } from '@/src/lib/schemas';
+import { agentVocalFaqs } from '@/src/data/agentVocalFaqs';
 
 export const metadata = buildMetadata({
-  title: "Agent vocal IA pour site B2B : il parle, guide et prend rendez-vous — Squadia",
-  description: "Un agent vocal IA qui accueille vos visiteurs 24 h/24, les guide de page en page, se renseigne en direct et réserve des rendez-vous dans votre agenda. Mise en place et suivi par Squadia.",
+  title: "Agent vocal IA pour site B2B : visite guidée et RDV — Squadia",
+  description: "Agent vocal IA pour votre site : il accueille vos visiteurs 24 h/24, les guide de page en page et réserve les rendez-vous dans votre agenda.",
   path: "/agent-vocal-ia",
 });
 
@@ -23,7 +24,7 @@ const breadcrumb = breadcrumbSchema([
 export default function Page() {
   return (
     <>
-      <JsonLd data={[service, breadcrumb]} />
+      <JsonLd data={[service, breadcrumb, faqPageSchema(agentVocalFaqs)]} />
       <PageClient />
     </>
   );
