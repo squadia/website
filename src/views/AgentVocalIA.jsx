@@ -9,6 +9,7 @@ import {
 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
+import { RevealHeader } from '../components/ui/RevealHeader';
 
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 
@@ -392,7 +393,8 @@ const UseCaseCard = ({ uc, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.5, delay: index * 0.08 }}
-      style={{ ...card, display: 'flex', flexDirection: 'column' }}
+      className="usecase-card"
+      style={{ ...card, background: '#FFFFFF', border: '1px solid #D8D1C2', display: 'flex', flexDirection: 'column', transition: 'border-color 0.3s ease, transform 0.3s ease' }}
     >
       <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(176,141,87,0.08)', border: '1px solid rgba(176,141,87,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
         <uc.Icon size={20} color={GOLD} />
@@ -597,13 +599,11 @@ export default function AgentVocalIA() {
         </div>
       </section>
 
-      {/* CAS D'USAGE */}
-      <section style={{ padding: '80px 0' }}>
+      {/* CAS D'USAGE : même bande sable que « Cas clients » sur l'accueil */}
+      <section className="section-padding" style={{ backgroundColor: '#EFEAE0', borderTop: '1px solid #D8D1C2', borderBottom: '1px solid #D8D1C2', paddingTop: '7rem', paddingBottom: '7rem', marginTop: '3rem' }}>
         <div className="container fade-in">
-          <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-            <p style={kicker}>CAS D'USAGE</p>
-            <h2 style={h2Style}>Là où un agent vocal change la donne</h2>
-          </div>
+          <RevealHeader center wrapStyle={{ marginBottom: '4rem' }} kickerText="CAS D'USAGE" title="Là où un agent vocal change la donne" titleStyle={{ marginBottom: '1.5rem' }}
+            text="Un même agent, des usages très différents" textStyle={{ fontSize: '1.2rem', maxWidth: '700px' }} />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '1.5rem', alignItems: 'start' }}>
             {useCases.map((uc, i) => <UseCaseCard key={uc.title} uc={uc} index={i} />)}
           </div>
@@ -745,6 +745,7 @@ export default function AgentVocalIA() {
       />
 
       <style>{`
+        .usecase-card:hover { border-color: #B08D57 !important; transform: translateY(-4px); }
         @media (max-width: 900px) {
           .hero-grid, .demo-box { grid-template-columns: 1fr !important; }
           .compare-box { grid-template-columns: 1fr !important; }
