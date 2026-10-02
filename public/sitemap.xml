@@ -6,12 +6,6 @@
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  <url>
-    <loc>https://www.squadia.io/a-propos/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
 
   <url>
     <loc>https://www.squadia.io/agent-vocal-ia/</loc>
@@ -206,18 +200,6 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.squadia.io/prospection/marketing/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.squadia.io/prospection/phoning/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://www.squadia.io/ressources/</loc>
     <lastmod>2026-08-21</lastmod>
     <changefreq>weekly</changefreq>
@@ -259,25 +241,13 @@
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://www.squadia.io/secteur-industrie/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.squadia.io/secteur-it-saas/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.squadia.io/secteur-public/</loc>
-    <lastmod>2026-08-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
 
+  <url>
+    <loc>https://www.squadia.io/ressources/simulateur-roi/</loc>
+    <lastmod>2026-10-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://www.squadia.io/tarifs/</loc>
     <lastmod>2026-08-21</lastmod>

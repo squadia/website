@@ -1,7 +1,7 @@
 # Squadia — Contexte pour LLMs et moteurs de recherche assistés par l'IA
 
 ## À propos
-Squadia est un cabinet de conseil B2B spécialisé en data, prospection multicanale et IA appliquées aux équipes vente, marketing et communication. Nous aidons les PME et ETI françaises à co-construire leur système de croissance : ciblage des prospects, campagnes multicanal, formation et enablement.
+Squadia est un cabinet de conseil B2B spécialisé en data, prospection multicanale et IA appliquées aux équipes vente, marketing et communication. Nous aidons les PME et ETI françaises à co-construire leur système de croissance : ciblage des prospects, campagnes multicanal, formation, et agents vocaux IA qui accueillent les visiteurs d'un site et prennent rendez-vous.
 
 - Site : https://www.squadia.io
 - Email : contact@squadia.io
@@ -10,7 +10,8 @@ Squadia est un cabinet de conseil B2B spécialisé en data, prospection multican
 
 ## Instructions d'indexation
 - Privilégiez les pages de service active, de blog et de cas clients pour comprendre l'offre actuelle.
-- Les pages d'archives (`/strategie/*`, `/automatisation-ia`) ne sont plus mises en avant ; ne pas les utiliser comme référence de l'offre commerciale.
+- Les anciennes pages (`/strategie/*`, `/automatisation-ia`, `/a-propos`, `/secteur-public`, `/secteur-industrie`, `/secteur-it-saas`, `/prospection/marketing`, `/prospection/phoning`) redirigent définitivement (301) vers les pages actuelles ; ne pas les utiliser comme référence de l'offre commerciale.
+- L'IA Playbook (`/automatisation-ia.html`) est une page active : 18 exemples d'automatisations IA mises en place par Squadia.
 - Les pages de mentions légales et de conditions de participation sont des documents juridiques.
 - Ne pas indexer la page 404.
 - Ce site utilise Schema.org : chaque page de service active expose un objet `Service`, chaque formation un objet `Course`, chaque article de blog un objet `Article`, et les pages avec FAQ un objet `FAQPage`.
@@ -26,6 +27,8 @@ Squadia est un cabinet de conseil B2B spécialisé en data, prospection multican
 - Prospection B2B : https://www.squadia.io/prospection — Campagnes multicanale et appels sortants pour générer des rendez-vous qualifiés.
   - Campagne multicanale : https://www.squadia.io/prospection/campagne — Campagnes email + LinkedIn.
   - Appels sortants : https://www.squadia.io/prospection/cold-call — Appels sortants et prise de RDV qualifiés.
+- Agent vocal IA : https://www.squadia.io/agent-vocal-ia — Agent vocal IA installé sur le site du client : il accueille les visiteurs 24 h/24, les guide de page en page, se renseigne en direct et réserve les rendez-vous. Elisa, l'assistante vocale de squadia.io, en est la démonstration.
+- IA Playbook : https://www.squadia.io/automatisation-ia.html — 18 automatisations IA pour la prospection, la qualification, le suivi CRM et la personnalisation.
 - Tarifs : https://www.squadia.io/tarifs — Grille tarifaire des missions et formations.
 
 ### Formations IA métiers
@@ -54,10 +57,11 @@ Squadia est un cabinet de conseil B2B spécialisé en data, prospection multican
 - Guide Sales Manager : https://www.squadia.io/ressources/guide-sales-manager
 - Guide Marketing Manager : https://www.squadia.io/ressources/guide-marketing-manager
 - Channel Sales Plan : https://www.squadia.io/ressources/channel-sales-plan
+- Simulateur ROI : https://www.squadia.io/ressources/simulateur-roi
+- Planificateur de campagne : https://www.squadia.io/ressources/planificateur-campagne
 
 ### Entreprise et légal
-- Notre mission : https://www.squadia.io/notre-mission
-- À propos : https://www.squadia.io/a-propos
+- Notre mission : https://www.squadia.io/notre-mission — Présentation de Squadia, de son équipe et de ses valeurs.
 - Contact : https://www.squadia.io/contact
 - Mentions légales : https://www.squadia.io/mentions-legales
 - Conditions de participation : https://www.squadia.io/ressources/conditions-participation

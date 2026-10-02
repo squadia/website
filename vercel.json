@@ -53,7 +53,7 @@
     },
     {
       "source": "/use-cases-secteur-activite/:path*",
-      "destination": "/secteur-industrie",
+      "destination": "/cas-clients/crm-industrie",
       "permanent": true
     },
     {
@@ -94,6 +94,66 @@
     {
       "source": "/blog/strategie-ia-pme-eti/",
       "destination": "/blog/strategie-ia-pme-sequence",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos",
+      "destination": "/notre-mission",
+      "permanent": true
+    },
+    {
+      "source": "/a-propos/",
+      "destination": "/notre-mission",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-public",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-public/",
+      "destination": "/formations",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-industrie",
+      "destination": "/cas-clients/crm-industrie",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-industrie/",
+      "destination": "/cas-clients/crm-industrie",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-it-saas",
+      "destination": "/prospection",
+      "permanent": true
+    },
+    {
+      "source": "/secteur-it-saas/",
+      "destination": "/prospection",
+      "permanent": true
+    },
+    {
+      "source": "/prospection/marketing",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/prospection/marketing/",
+      "destination": "/prospection/campagne",
+      "permanent": true
+    },
+    {
+      "source": "/prospection/phoning",
+      "destination": "/prospection/cold-call",
+      "permanent": true
+    },
+    {
+      "source": "/prospection/phoning/",
+      "destination": "/prospection/cold-call",
       "permanent": true
     }
   ]

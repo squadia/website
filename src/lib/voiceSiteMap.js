@@ -11,9 +11,7 @@ export const VOICE_SITE_MAP = [
 
   { path: '/prospection', label: 'Offre Prospection', summary: 'Campagnes email + LinkedIn avec Repliik, appels sortants, ou les deux.' },
   { path: '/prospection/campagne', label: 'Campagnes multicanales', summary: 'Séquences email, LinkedIn et téléphone personnalisées.' },
-  { path: '/prospection/marketing', label: 'Prospection marketing', summary: 'Copy, ciblage, A/B test et reporting des campagnes email et LinkedIn.' },
   { path: '/prospection/cold-call', label: 'Cold call', summary: 'Rendez-vous qualifiés par téléphone, script co-construit.' },
-  { path: '/prospection/phoning', label: 'Phoning', summary: 'Appels sortants B2B, méthode structurée, reporting.' },
 
   { path: '/formations', label: 'Formations IA', summary: 'Catalogue des formations IA pour vente, marketing et communication.' },
   { path: '/formation-ventes-et-ia', label: 'Formation Ventes & IA', summary: 'Prospection augmentée, qualification, closing avec l’IA.' },
@@ -24,9 +22,6 @@ export const VOICE_SITE_MAP = [
   { path: '/directeur-commercial', label: 'Pour les directeurs commerciaux', summary: 'Fiabiliser le pipeline, structurer la prospection.' },
   { path: '/directeur-marketing', label: 'Pour les directeurs marketing', summary: 'Pipeline fiable et qualification des leads.' },
 
-  { path: '/secteur-industrie', label: 'Secteur Industrie', summary: 'Prospection ciblée pour industriels B2B.' },
-  { path: '/secteur-it-saas', label: 'Secteur IT & SaaS', summary: 'Prospection pour éditeurs logiciels et entreprises IT.' },
-  { path: '/secteur-public', label: 'Secteur Public', summary: 'Prospection vers le secteur public et les collectivités.' },
 
   { path: '/cas-clients', label: 'Cas clients', summary: 'Tous les cas clients : prospection, CRM, data, formation.' },
   { path: '/cas-clients/pipeline-b2b', label: 'Cas : pipeline B2B', summary: 'Construction d’un pipeline qualifié et rendez-vous.' },
@@ -39,7 +34,6 @@ export const VOICE_SITE_MAP = [
   { path: '/tarifs', label: 'Tarifs', summary: 'Tarifs data, prospection et formation.' },
   { path: '/contact', label: 'Contact', summary: 'Prendre rendez-vous avec Squadia.' },
   { path: '/notre-mission', label: 'Notre mission', summary: 'Mission, équipe et valeurs de Squadia.' },
-  { path: '/a-propos', label: 'À propos', summary: 'Présentation de Squadia et de son approche.' },
 
   { path: '/ressources', label: 'Ressources', summary: 'Guides, enquêtes et outils.' },
   { path: '/ressources/simulateur-roi', label: 'Simulateur ROI', summary: 'Estimer le revenu additionnel lié à une donnée CRM propre.' },
