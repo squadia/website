@@ -50,6 +50,10 @@ export const FLIPBOOKS = {
     // Zones cliquables sur les boutons du PDF (positions mesurées sur le PDF, en % de la page)
     links: [
       { page: 3, href: '/ressources/simulateur-roi/', label: 'Calcul ROI : Temps de process vs Temps de vente', top: 58.5, left: 20, width: 56, height: 4.2 },
+      { page: 8, href: '/contact/', label: 'Venez tester en live avec Squadia', top: 84.7, left: 29, width: 38.8, height: 7 },
+      { page: 10, href: '/automatisation-ia.html', label: 'Découvrez les autres automatisations', top: 66, left: 25.5, width: 45.5, height: 4.5 },
+      { page: 13, href: '/contact/', label: 'Prendre RDV', top: 92.8, left: 12.5, width: 21.5, height: 4.6 },
+      { page: 13, href: '/formation-ventes-et-ia/', label: 'Formation Vente et IA', top: 81, left: 35.3, width: 62.5, height: 16 },
       { page: 15, href: '/contact/', label: 'Préparons son arrivée', top: 60, left: 10.5, width: 30, height: 3.6 },
     ],
   },
