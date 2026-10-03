@@ -49,8 +49,8 @@ export const FLIPBOOKS = {
     },
     // Zones cliquables sur les boutons du PDF (positions mesurées sur le PDF, en % de la page)
     links: [
-      { page: 3, href: '/ressources/simulateur-roi/', label: 'Calcul ROI : Temps de process vs Temps de vente', top: 43.6, left: 21, width: 56, height: 5.6 },
-      { page: 14, href: '/contact/', label: 'Préparons son arrivée', top: 60.1, left: 10.5, width: 30, height: 3.5 },
+      { page: 3, href: '/ressources/simulateur-roi/', label: 'Calcul ROI : Temps de process vs Temps de vente', top: 58.5, left: 20, width: 56, height: 4.2 },
+      { page: 15, href: '/contact/', label: 'Préparons son arrivée', top: 60, left: 10.5, width: 30, height: 3.6 },
     ],
   },
   'channel-sales-plan': {

@@ -40,7 +40,7 @@ export default function AgentVocalBanner() {
           }}
         >
           <span style={{ fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#1F3A33', background: '#D4B98A', borderRadius: '999px', padding: '3px 8px', flexShrink: 0 }}>Nouveau</span>
-          <span className="agent-vocal-banner-text" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Notre site vous répond de vive voix.</span>
+          <span className="agent-vocal-banner-text" style={{ whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>Elisa vous répond et vous guide.</span>
           <Link href="/agent-vocal-ia" style={{ color: '#F6F3EC', fontWeight: 700, textDecoration: 'none', borderBottom: '1px solid #B08D57', whiteSpace: 'nowrap', flexShrink: 0 }}>
             Découvrir →
           </Link>
