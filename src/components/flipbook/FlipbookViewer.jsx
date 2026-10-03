@@ -399,6 +399,38 @@ export default function FlipbookViewer({
                   draggable={false}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
                 />
+                {/* Bouton "Calculer ROI" sur la page 2 */}
+                {i === 1 && (
+                  <a
+                    href="https://www.squadia.io/ressources/simulateur-roi/"
+                    style={{
+                      position: 'absolute',
+                      top: '67%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '200px',
+                      height: '40px',
+                      cursor: 'pointer',
+                    }}
+                    aria-label="Calculer ROI"
+                  />
+                )}
+                {/* Bouton "Préparons son arrivée" sur la dernière page */}
+                {i === pages.length - 1 && (
+                  <a
+                    href="/contact/"
+                    style={{
+                      position: 'absolute',
+                      top: '26%',
+                      left: '50%',
+                      transform: 'translateX(-50%)',
+                      width: '150px',
+                      height: '40px',
+                      cursor: 'pointer',
+                    }}
+                    aria-label="Préparons son arrivée"
+                  />
+                )}
                 {videoPageIndex !== null && i === videoPageIndex && videoSrc && (
                   <div
                     style={{
