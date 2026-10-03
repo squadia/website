@@ -47,6 +47,11 @@ export const FLIPBOOKS = {
       },
       rect: { top: 9.08, left: 10.73, width: 77.19, height: 29.49 },
     },
+    // Zones cliquables sur les boutons du PDF (positions mesurées sur le PDF, en % de la page)
+    links: [
+      { page: 3, href: '/ressources/simulateur-roi/', label: 'Calcul ROI : Temps de process vs Temps de vente', top: 43.6, left: 21, width: 56, height: 5.6 },
+      { page: 14, href: '/contact/', label: 'Préparons son arrivée', top: 60.1, left: 10.5, width: 30, height: 3.5 },
+    ],
   },
   'channel-sales-plan': {
     title: 'Plan Partenaire Channel Sales',

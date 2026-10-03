@@ -19,6 +19,7 @@ import { hasAnalyticsConsent } from '../CookieConsent';
  *  - videoMask (object)           {color, rects:[{top,left,width,height}]} en % de l'image vidéo : pastilles de couleur
  *                                 unie posées sur les coins pour cacher un watermark (fond uni uniquement)
  *  - videoRect (object)           {top,left,width,height} en % — zone couverte par la vidéo sur la page (défaut : pleine page)
+ *  - links (array)                [{page, href, label, top,left,width,height}] zones cliquables posées sur une page (page 1-indexée, % de la page)
  *  - trackingId (string)          identifiant envoyé aux events de tracking
  *  - onPageFlip(pageNumber)       callback optionnel, en plus du tracking par défaut
  *  - onDownload()                 callback optionnel, en plus du tracking par défaut
@@ -34,6 +35,7 @@ export default function FlipbookViewer({
   videoMode = 'overlay',
   videoMask = null,
   videoRect = { top: 0, left: 0, width: 100, height: 100 },
+  links = [],
   trackingId,
   onPageFlip,
   onDownload,
@@ -399,48 +401,27 @@ export default function FlipbookViewer({
                   draggable={false}
                   style={{ width: '100%', height: '100%', objectFit: 'contain', display: 'block' }}
                 />
-                {/* Bouton "Calculer ROI" sur la page 2 */}
-                {i === 1 && (
-                  <button
-                    type="button"
-                    onClick={() => window.location.href = 'https://www.squadia.io/ressources/simulateur-roi/'}
+                {links.filter((l) => l.page - 1 === i).map((l) => (
+                  <a
+                    key={l.href}
+                    href={l.href}
+                    aria-label={l.label}
+                    onMouseDown={stopFlipGesture}
+                    onMouseUp={stopFlipGesture}
+                    onTouchStart={stopFlipGesture}
+                    onTouchEnd={stopFlipGesture}
+                    onClick={() => track('pdf_link_click', { href: l.href, page: l.page })}
                     style={{
                       position: 'absolute',
-                      top: '13%',
-                      left: '72%',
-                      transform: 'translateX(-50%)',
-                      width: '180px',
-                      height: '50px',
-                      cursor: 'pointer',
+                      top: `${l.top}%`,
+                      left: `${l.left}%`,
+                      width: `${l.width}%`,
+                      height: `${l.height}%`,
                       zIndex: 10,
-                      background: 'transparent',
-                      border: 'none',
-                      padding: 0,
-                    }}
-                    aria-label="Calculer ROI"
-                  />
-                )}
-                {/* Bouton "Préparons son arrivée" sur la dernière page */}
-                {i === pages.length - 1 && (
-                  <button
-                    type="button"
-                    onClick={() => window.location.href = '/contact/'}
-                    style={{
-                      position: 'absolute',
-                      top: '26%',
-                      left: '15%',
-                      transform: 'translateX(-50%)',
-                      width: '160px',
-                      height: '45px',
                       cursor: 'pointer',
-                      zIndex: 10,
-                      background: 'transparent',
-                      border: 'none',
-                      padding: 0,
                     }}
-                    aria-label="Préparons son arrivée"
                   />
-                )}
+                ))}
                 {videoPageIndex !== null && i === videoPageIndex && videoSrc && (
                   <div
                     style={{

@@ -72,6 +72,7 @@ function FlipbookGateInner({ slug }) {
             videoMode={config.video?.mode}
             videoMask={config.video?.mask}
             videoRect={config.video?.rect}
+            links={config.links}
             trackingId={slug}
           />
         )}
