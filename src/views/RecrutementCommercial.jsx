@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { CheckCircle2, BookOpen, Send, Loader2 } from 'lucide-react';
 import { submitLead } from '../lib/submitLead';
+import { isPersonalEmail, PERSONAL_EMAIL_MESSAGE } from '../lib/emailDomains';
 import { buildFlipbookUrl } from '../lib/flipbookAccess';
 const newSalesManager = '/assets/images/ressources/new-sales-manager.jpeg';
 
@@ -45,6 +46,7 @@ const RecrutementCommercial = () => {
       [e.target.name]: e.target.value
     });
     if (e.target.name === 'phone') setPhoneError('');
+    if (e.target.name === 'Email') setError('');
   };
 
   const handlePhoneBlur = () => {
@@ -55,6 +57,11 @@ const RecrutementCommercial = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isPersonalEmail(formData.Email)) {
+      setError(PERSONAL_EMAIL_MESSAGE);
+      return;
+    }
 
     if (!isValidPhone(formData.phone)) {
       setPhoneError("Numéro invalide. Utilisez uniquement des chiffres et éventuellement un indicatif pays (ex : +33 6 12 34 56 78 ou +1 555 123 4567).");
