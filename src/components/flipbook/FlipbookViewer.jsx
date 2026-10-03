@@ -401,32 +401,42 @@ export default function FlipbookViewer({
                 />
                 {/* Bouton "Calculer ROI" sur la page 2 */}
                 {i === 1 && (
-                  <a
-                    href="https://www.squadia.io/ressources/simulateur-roi/"
+                  <button
+                    type="button"
+                    onClick={() => window.location.href = 'https://www.squadia.io/ressources/simulateur-roi/'}
                     style={{
                       position: 'absolute',
-                      top: '67%',
-                      left: '50%',
+                      top: '13%',
+                      left: '72%',
                       transform: 'translateX(-50%)',
-                      width: '200px',
-                      height: '40px',
+                      width: '180px',
+                      height: '50px',
                       cursor: 'pointer',
+                      zIndex: 10,
+                      background: 'transparent',
+                      border: 'none',
+                      padding: 0,
                     }}
                     aria-label="Calculer ROI"
                   />
                 )}
                 {/* Bouton "Préparons son arrivée" sur la dernière page */}
                 {i === pages.length - 1 && (
-                  <a
-                    href="/contact/"
+                  <button
+                    type="button"
+                    onClick={() => window.location.href = '/contact/'}
                     style={{
                       position: 'absolute',
                       top: '26%',
-                      left: '50%',
+                      left: '15%',
                       transform: 'translateX(-50%)',
-                      width: '150px',
-                      height: '40px',
+                      width: '160px',
+                      height: '45px',
                       cursor: 'pointer',
+                      zIndex: 10,
+                      background: 'transparent',
+                      border: 'none',
+                      padding: 0,
                     }}
                     aria-label="Préparons son arrivée"
                   />
