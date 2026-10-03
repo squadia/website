@@ -339,6 +339,11 @@ html {
   animation: flipHintBlink 2.4s ease-in-out forwards;
 }
 
+.flipbook-page img {
+  border: none !important;
+  box-shadow: none !important;
+}
+
 /* Custom Additions */
 .pill-tag {
   background: rgba(176,141,87,0.06);
