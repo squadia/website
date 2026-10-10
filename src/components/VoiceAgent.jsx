@@ -13,7 +13,7 @@ import { VOICE_SITE_MAP, findPage, normalizePath } from '../lib/voiceSiteMap';
 const AGENT_ID = process.env.NEXT_PUBLIC_ELEVENLABS_AGENT_ID || 'TWYUafGgpOMApu1OinUj';
 const NAV_OFFSET = 96; // navbar fixe (80px) + marge
 // Pages non indexées, légales ou « conditions » : pas d'Elisa
-const HIDDEN_PREFIXES = ['/temoignage', '/mentions-legales', '/ressources/conditions-participation', '/ressources/flipbook'];
+const HIDDEN_PREFIXES = ['/admin', '/temoignage', '/mentions-legales', '/ressources/conditions-participation', '/ressources/flipbook'];
 
 const clean = (s) => (s || '')
   .normalize('NFD').replace(/[̀-ͯ]/g, '')

@@ -3,6 +3,10 @@ export const NOTION_RESOURCE_URL = 'https://app.notion.com/p/Bonus-Formation-3e0
 export const TESTIMONIALS_ADMIN_FUNCTION_URL =
   'https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/testimonials-admin';
 
+// Onglet Elisa de l'espace admin (/admin) : même connexion Google que les témoignages.
+export const ELISA_ADMIN_FUNCTION_URL =
+  'https://veofbxujodjoqeynzsbj.supabase.co/functions/v1/elisa-admin';
+
 export const TESTIMONIAL_PAGES = [
   { value: 'ventes', label: 'Formation Ventes & IA' },
   { value: 'marketing', label: 'Formation Marketing & IA' },

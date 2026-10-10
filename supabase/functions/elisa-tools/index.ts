@@ -7,7 +7,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 //
 //   POST /elisa-tools/slots          → créneaux libres Cal.com, lisibles à l'oral
 //   POST /elisa-tools/book           → réserve sur Cal.com (lead transmis à n8n seulement si échec)
-//   POST /elisa-tools/company-news   → actualités récentes d'une entreprise (Serper)
+//   POST /elisa-tools/company-news   → actualités récentes d'une entreprise (Serper), aucune pour un grand groupe
 //
 // Les clés ne sont pas stockées ici : ElevenLabs les envoie depuis ses secrets
 // de workspace dans les en-têtes x-cal-key et x-serper-key. Déployée sans
@@ -124,15 +124,32 @@ async function forwardLead(lead: Record<string, unknown>) {
   }
 }
 
+// Créneau déjà réservé pendant cette conversation, s'il y en a un
+async function bookedSlot(conversationId?: string): Promise<string | null> {
+  if (!conversationId) return null;
+  const { data } = await db.from("elisa_leads").select("rdv_pris, rdv_creneau")
+    .eq("conversation_id", conversationId).maybeSingle();
+  return data?.rdv_pris && data.rdv_creneau ? data.rdv_creneau : null;
+}
+
 async function book(calKey: string, body: Record<string, string>) {
   const { start, first_name, last_name, company, email, phone, recap, sujets, conversation_id, page_depart, campagne } = body;
   if (!start || !email || !first_name) return json({ ok: false, error: "champs_manquants" });
+
+  // Un appel interrompu par le visiteur est abandonné côté ElevenLabs mais va au bout ici :
+  // sans ce contrôle, Elisa relançait la réservation et créait un second RDV (8 oct.)
+  const label = spokenSlot(start);
+  const alreadyBooked = await bookedSlot(conversation_id);
+  if (alreadyBooked) {
+    return alreadyBooked === label
+      ? json({ ok: true, booked: label })
+      : json({ ok: false, error: "deja_reserve", booked: alreadyBooked });
+  }
 
   // "data, prospection" → options Cal.com ; à défaut, déduit du récapitulatif
   const wanted = `${sujets ?? ""} ${recap ?? ""}`.toLowerCase();
   const subjects = Object.entries(CAL_SUBJECTS).filter(([key]) => wanted.includes(key)).map(([, option]) => option);
 
-  const label = spokenSlot(start);
   const lead = { meetingdate: label, company, first_name, last_name, email, phone, recap, sujets };
 
   const res = await fetch("https://api.cal.com/v2/bookings", {
@@ -183,6 +200,8 @@ async function book(calKey: string, body: Record<string, string>) {
   const details = await res.text();
   console.error("cal.com booking", res.status, details.slice(0, 500));
   const unavailable = res.status === 409 || /not available|already|unavailable|no available/i.test(details);
+  // Créneau pris par la première tentative de ce même appel, encore en cours au moment de la relance
+  if (unavailable && (await bookedSlot(conversation_id)) === label) return json({ ok: true, booked: label });
   const statut = `À CONFIRMER, réservation Cal.com échouée (${res.status})`;
   await saveLead(conversation_id, { ...leadRow, statut });
   const saved = await forwardLead({ ...lead, status: statut });
@@ -205,6 +224,8 @@ function ageInDays(date?: string): number | null {
   const parsed = Date.parse(date);
   return Number.isNaN(parsed) ? null : Math.round((Date.now() - parsed) / 86400000);
 }
+
+const isTrue = (value: unknown) => value === true || /^(true|oui|yes)$/i.test(String(value ?? "").trim());
 
 const monthOf = (daysAgo: number) =>
   new Intl.DateTimeFormat("fr-FR", { timeZone: TIME_ZONE, month: "long" })
@@ -232,6 +253,9 @@ async function companyNews(serperKey: string, body: Record<string, string>) {
     entreprise: company, page_depart: body.page_depart, campagne: campaignOf(body.campagne),
     actualites: news, statut: "Entreprise donnée",
   });
+  // Grand groupe : ses actus ne parlent pas à la personne en face, et Elisa les citait
+  // malgré la consigne dès qu'elle les avait sous les yeux. Gardées pour l'équipe seulement.
+  if (isTrue(body.grand_groupe)) return json({ ok: true, company, news: [] });
   return json({ ok: true, company, news });
 }
 

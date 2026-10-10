@@ -1,17 +1,15 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { ShieldCheck, Trash2, Check, X, Loader2, Scissors, Send, RefreshCw } from 'lucide-react';
+import { Trash2, Check, X, Loader2, Scissors, Send, RefreshCw } from 'lucide-react';
 import TestimonialCutEditor from '@/src/components/ui/TestimonialCutEditor';
 import { useSkipCuts } from '@/src/lib/videoCuts';
-import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, GOOGLE_CLIENT_ID, ADMIN_EMAIL, AVATAR_CTA_PAGES, DEFAULT_AVATAR_CTA } from '@/src/lib/testimonialsConfig';
+import { TESTIMONIALS_ADMIN_FUNCTION_URL, TESTIMONIAL_PAGES, AVATAR_CTA_PAGES, DEFAULT_AVATAR_CTA } from '@/src/lib/testimonialsConfig';
 
 const STATUS_TABS = [
   { value: 'pending', label: 'En attente' },
   { value: 'approved', label: 'Publiés' },
   { value: 'rejected', label: 'Rejetés' },
 ];
-
-const GSI_SCRIPT_SRC = 'https://accounts.google.com/gsi/client';
 
 async function callFunction(idToken, action, params = {}) {
   const response = await fetch(TESTIMONIALS_ADMIN_FUNCTION_URL, {
@@ -39,59 +37,27 @@ const AdminVideo = ({ row }) => {
   return <video ref={videoRef} src={row.signed_url} controls style={{ width: '100%', borderRadius: '10px', marginBottom: '1rem', background: '#F6F3EC' }} />;
 };
 
-const TemoignageAdmin = () => {
-  const buttonRef = useRef(null);
-  const [idToken, setIdToken] = useState('');
-  const [loginError, setLoginError] = useState('');
-  const [gsiReady, setGsiReady] = useState(false);
+// Onglet de l'espace admin (AdminHub), qui gère la connexion Google
+const TemoignageAdmin = ({ idToken, onUnauthorized }) => {
   const [rows, setRows] = useState([]);
+  const [loaded, setLoaded] = useState(false);
   const [tab, setTab] = useState('pending');
   const [busyId, setBusyId] = useState(null);
   const [editingRow, setEditingRow] = useState(null);
   // Mot perso en cours de saisie : envoyé avec « Publier » pour ne pas dépendre de l'ordre blur/clic.
   const [noteDrafts, setNoteDrafts] = useState({});
 
-  const handleCredential = async (response) => {
-    setLoginError('');
-    try {
-      const data = await callFunction(response.credential, 'list');
-      setRows(data.rows || []);
-      setIdToken(response.credential);
-    } catch (err) {
-      setLoginError(
-        err.message === 'unauthorized'
-          ? `Accès réservé à ${ADMIN_EMAIL}.`
-          : err.message
-      );
-    }
+  const handleError = (err) => {
+    if (err.message === 'unauthorized') onUnauthorized();
+    else alert(err.message);
   };
 
   useEffect(() => {
-    if (idToken) return;
-    const script = document.createElement('script');
-    script.src = GSI_SCRIPT_SRC;
-    script.async = true;
-    script.defer = true;
-    script.onload = () => setGsiReady(true);
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    };
+    callFunction(idToken, 'list')
+      .then((data) => setRows(data.rows || []))
+      .catch(handleError)
+      .finally(() => setLoaded(true));
   }, [idToken]);
-
-  useEffect(() => {
-    if (!gsiReady || idToken || !window.google || !buttonRef.current) return;
-    window.google.accounts.id.initialize({
-      client_id: GOOGLE_CLIENT_ID,
-      callback: handleCredential,
-    });
-    window.google.accounts.id.renderButton(buttonRef.current, {
-      theme: 'filled_blue',
-      size: 'large',
-      text: 'signin_with',
-      shape: 'pill',
-    });
-  }, [gsiReady, idToken]);
 
   const refresh = async () => {
     const data = await callFunction(idToken, 'list');
@@ -105,8 +71,7 @@ const TemoignageAdmin = () => {
       if (result.avatar && !result.avatar.ok) alert(`Vidéo avatar non lancée : ${result.avatar.error}`);
       await refresh();
     } catch (err) {
-      if (err.message === 'unauthorized') setIdToken('');
-      else alert(err.message);
+      handleError(err);
     } finally {
       setBusyId(null);
     }
@@ -118,8 +83,7 @@ const TemoignageAdmin = () => {
       await refresh();
       setEditingRow(null);
     } catch (err) {
-      if (err.message === 'unauthorized') setIdToken('');
-      else alert(err.message);
+      handleError(err);
     }
   };
 
@@ -130,8 +94,7 @@ const TemoignageAdmin = () => {
       await callFunction(idToken, 'avatar_send', { id: row.id });
       await refresh();
     } catch (err) {
-      if (err.message === 'unauthorized') setIdToken('');
-      else alert(err.message);
+      handleError(err);
     } finally {
       setBusyId(null);
     }
@@ -154,36 +117,20 @@ const TemoignageAdmin = () => {
       await callFunction(idToken, 'delete', { id });
       await refresh();
     } catch (err) {
-      if (err.message === 'unauthorized') setIdToken('');
-      else alert(err.message);
+      handleError(err);
     } finally {
       setBusyId(null);
     }
   };
 
-  if (!idToken) {
-    return (
-      <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
-        <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '16px', padding: '3rem', width: '100%', maxWidth: '380px', textAlign: 'center' }}>
-          <ShieldCheck size={28} color="#8A6D3B" style={{ marginBottom: '1rem' }} />
-          <h1 style={{ fontSize: '1.3rem', fontWeight: 700, marginBottom: '0.5rem' }}>Espace admin</h1>
-          <p style={{ color: '#4A534F', fontSize: '0.85rem', marginBottom: '1.5rem' }}>Réservé à {ADMIN_EMAIL}</p>
-          <div ref={buttonRef} style={{ display: 'flex', justifyContent: 'center', minHeight: '44px' }} />
-          {!gsiReady && <p style={{ color: '#6B716C', fontSize: '0.8rem', marginTop: '1rem' }}>Chargement...</p>}
-          {loginError && <p style={{ color: '#A63D2F', fontSize: '0.85rem', marginTop: '1rem' }}>{loginError}</p>}
-        </div>
-      </div>
-    );
-  }
+  if (!loaded) return <p style={{ color: '#4A534F' }}>Chargement des témoignages...</p>;
 
   const filteredRows = rows.filter((r) => r.status === tab);
 
   return (
-    <div style={{ minHeight: '100vh', background: '#F6F3EC', color: '#1C2B27', padding: '100px 24px 80px' }}>
-      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
-        <h1 style={{ fontSize: '1.6rem', fontWeight: 800, marginBottom: '2rem' }}>Témoignages</h1>
-
-        <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem' }}>
+    <div>
+      <div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '2rem' }}>
           {STATUS_TABS.map((t) => (
             <button
               key={t.value}
