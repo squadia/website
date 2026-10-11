@@ -5,7 +5,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 // ElevenLabs en webhook. Ils mettent en forme pour l'oral ce que renvoient
 // Cal.com et Serper.
 //
-//   POST /elisa-tools/slots          → créneaux libres Cal.com, lisibles à l'oral
+//   POST /elisa-tools/slots          → créneaux libres Cal.com (30 jours, ou autour d'une date demandée), lisibles à l'oral
 //   POST /elisa-tools/book           → réserve sur Cal.com (lead transmis à n8n seulement si échec)
 //   POST /elisa-tools/company-news   → actualités récentes d'une entreprise (Serper), aucune pour un grand groupe
 //
@@ -18,7 +18,7 @@ import { createClient } from "jsr:@supabase/supabase-js@2";
 
 const TIME_ZONE = "Europe/Paris";
 const CAL_EVENT_TYPE_ID = 1027573; // « Meeting découverte », 45 min
-const SLOT_DAYS = 14;
+const SLOT_DAYS = 30;
 const MAX_SLOTS = 8;
 const NEWS_MAX_AGE_DAYS = 183;
 
@@ -69,9 +69,38 @@ function spokenSlot(iso: string): string {
   return `${parts.weekday} ${parts.day} ${parts.month} à ${Number(parts.hour)} h${minutes}`;
 }
 
-async function slots(calKey: string) {
-  const start = new Date();
-  const end = new Date(start.getTime() + SLOT_DAYS * 86400000);
+const MONTHS = ["janvier", "fevrier", "mars", "avril", "mai", "juin", "juillet", "aout", "septembre", "octobre", "novembre", "decembre"];
+
+// "5 novembre", "le 1er décembre", "2026-11-05" → minuit UTC du jour visé (prochaine occurrence) ; undefined si illisible
+function parseDate(value?: string): Date | undefined {
+  if (!value) return undefined;
+  const iso = value.match(/(\d{4})-(\d{2})-(\d{2})/);
+  if (iso) return new Date(Date.UTC(+iso[1], +iso[2] - 1, +iso[3]));
+  const plain = value.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const m = plain.match(/(\d{1,2})(?:er)?\s+([a-z]+)/);
+  // Accepte aussi les abréviations ("nov", "déc")
+  const month = m && m[2].length >= 3 ? MONTHS.findIndex((name) => name.startsWith(m[2].slice(0, 4))) : -1;
+  if (!m || month < 0) return undefined;
+  const now = new Date();
+  let date = new Date(Date.UTC(now.getUTCFullYear(), month, +m[1]));
+  if (date.getTime() < now.getTime() - 86400000) date = new Date(Date.UTC(now.getUTCFullYear() + 1, month, +m[1]));
+  return date;
+}
+
+const spokenDay = (d: Date) =>
+  new Intl.DateTimeFormat("fr-FR", { timeZone: TIME_ZONE, weekday: "long", day: "numeric", month: "long" }).format(d);
+
+// Sans date : les premiers créneaux libres. Avec une date demandée par le visiteur :
+// les créneaux de ce jour et des 3 suivants, tant qu'ils restent dans les SLOT_DAYS jours visibles.
+async function slots(calKey: string, body: Record<string, string>) {
+  const now = new Date();
+  const horizon = new Date(now.getTime() + SLOT_DAYS * 86400000);
+  const visible = { visible_jusqu_au: spokenDay(horizon) };
+  const wanted = parseDate(body.date);
+  if (wanted && wanted.getTime() > horizon.getTime()) return json({ ok: true, hors_agenda: true, slots: [], ...visible });
+  // Minuit à Paris tombe à 22 h ou 23 h UTC la veille : marge de 2 h
+  const start = wanted && wanted.getTime() - 7200000 > now.getTime() ? new Date(wanted.getTime() - 7200000) : now;
+  const end = wanted ? new Date(Math.min(wanted.getTime() + 4 * 86400000, horizon.getTime())) : horizon;
   const url = new URL("https://api.cal.com/v2/slots");
   url.searchParams.set("eventTypeId", String(CAL_EVENT_TYPE_ID));
   url.searchParams.set("start", start.toISOString());
@@ -99,7 +128,7 @@ async function slots(calKey: string) {
     }
     if (picked.length >= MAX_SLOTS) break;
   }
-  return json({ ok: true, slots: picked });
+  return json({ ok: true, slots: picked, ...visible });
 }
 
 // "06 12 34 56 78" → "+33612345678" ; renvoie undefined si inexploitable
@@ -268,7 +297,7 @@ Deno.serve(async (req) => {
   const serperKey = req.headers.get("x-serper-key") ?? "";
 
   try {
-    if (action === "slots" && calKey) return await slots(calKey);
+    if (action === "slots" && calKey) return await slots(calKey, body);
     if (action === "book" && calKey) return await book(calKey, body);
     if (action === "company-news" && serperKey) return await companyNews(serperKey, body);
     if (["slots", "book", "company-news"].includes(action ?? "")) return json({ ok: false, error: "unauthorized" }, 401);
