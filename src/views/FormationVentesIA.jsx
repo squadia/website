@@ -289,8 +289,8 @@ const FormationVentesIA = () => {
           <div style={{ position: 'sticky', top: '100px' }}>
             <CountdownCard
               title="Formation IA vente B2B : prospecter, qualifier et closer autrement."
-              dateStart={new Date('2026-10-01')}
-              dateLabel="1er & 2 Octobre 2026"
+              dateStart={new Date('2026-11-24')}
+              dateLabel="24 & 25 Novembre 2026"
               image={bgCommercial}
             />
           </div>
@@ -398,7 +398,7 @@ const FormationVentesIA = () => {
                     <div style={{ background: 'rgba(31,58,51,0.05)', padding: '1.5rem 1rem', borderRadius: '12px', border: '1px solid #1F3A33', position: 'relative', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                       <div style={{ position: 'absolute', top: '-12px', left: '50%', transform: 'translateX(-50%)', background: '#1F3A33', color: '#F6F3EC', padding: '3px 12px', borderRadius: '20px', fontSize: '0.65rem', fontWeight: 800, whiteSpace: 'nowrap' }}>RECOMMANDÉ</div>
                       <div style={{ color: '#4A534F', fontSize: '0.9rem', marginBottom: '0.4rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Tarif Intra*</div>
-                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#8A6D3B' }}>4 390 € HT</div>
+                      <div style={{ fontSize: '1.3rem', fontWeight: 800, color: '#8A6D3B' }}>4 590 € HT</div>
                       <div style={{ fontSize: '0.75rem', color: '#6B716C', marginTop: '0.2rem' }}>par groupe</div>
                     </div>
                   </div>
