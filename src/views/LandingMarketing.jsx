@@ -9,6 +9,7 @@ const c1 = '/assets/images/c1.png';
 const fonds1 = '/assets/images/fonds1.png';
 const imgMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
 const imgPlanPartenaire = '/assets/images/ressources/plan-partenaire.jpeg';
+const imgPlanificateur = '/assets/images/ressources/general_manager_evaluating_the_future_of_ai_for_his_business.jpeg';
 import { casesData } from '../data/cases';
 import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
@@ -506,6 +507,14 @@ const LandingMarketing = () => {
                 link: '/ressources/channel-sales-plan',
                 image: imgPlanPartenaire,
               },
+              {
+                category: 'Prospection multicanale',
+                title: "Planificateur de campagne : simuler le temps et le ROI d'une campagne",
+                description: "Estimez la durée réelle de votre séquence email, LinkedIn et appel selon vos contacts, vos délais de relance et votre capacité d'envoi quotidienne.",
+                link: '/ressources/planificateur-campagne',
+                image: imgPlanificateur,
+                cta: 'Estimer ma campagne →',
+              },
             ].map((ressource, idx) => (
               <Link
                 key={idx}
@@ -523,7 +532,7 @@ const LandingMarketing = () => {
                   <h3 style={{ color: '#1C2B27', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>{ressource.title}</h3>
                   <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>{ressource.description}</p>
                   <span style={{ alignSelf: 'flex-start', background: '#1F3A33', color: '#F6F3EC', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                    Télécharger gratuitement →
+                    {ressource.cta || 'Télécharger gratuitement →'}
                   </span>
                 </div>
               </Link>
