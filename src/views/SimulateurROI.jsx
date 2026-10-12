@@ -4,6 +4,10 @@ import Link from 'next/link';
 import { Calculator, SlidersHorizontal, Play, Volume2, VolumeX } from 'lucide-react';
 const simulateurRoiImg = '/assets/images/ressources/manager_reflexion_simulation_cout_externalisation_squadia.png';
 const simulateurVideo = '/assets/video/simulateurbudget.mp4';
+// Fin de vidéo : zoom sur le visage pour sortir les mains du cadre (object-view-box ne déplace pas les contrôles natifs)
+const ZOOM_START_BEFORE_END = 3;
+const ZOOM_VIEW_BOX = 'inset(3% 39.4% 46.5% 39.4%)';
+const canZoomView = () => typeof CSS !== 'undefined' && CSS.supports && CSS.supports('object-view-box', 'inset(0)');
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
@@ -112,6 +116,7 @@ export default function SimulateurROI() {
 
   const [isMuted, setIsMuted] = useState(true);
   const [videoStarted, setVideoStarted] = useState(false);
+  const [fadeEnd, setFadeEnd] = useState(false);
   const videoRef = useRef(null);
 
   const [team, setTeam] = useState(3);
@@ -427,13 +432,23 @@ export default function SimulateurROI() {
                 controls={videoStarted}
                 controlsList="nodownload nofullscreen noremoteplayback"
                 disablePictureInPicture
-                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block', transition: 'object-view-box 1.2s ease' }}
+                onTimeUpdate={(e) => {
+                  const v = e.target;
+                  const inEnd = v.duration > 0 && v.duration - v.currentTime <= ZOOM_START_BEFORE_END;
+                  if (canZoomView()) v.style.objectViewBox = inEnd ? ZOOM_VIEW_BOX : 'none';
+                  else setFadeEnd(inEnd);
+                }}
                 onPlay={(e) => {
                   e.target.parentElement.setAttribute('data-playing', 'true');
                   setVideoStarted(true);
                 }}
                 onPause={(e) => e.target.parentElement.setAttribute('data-playing', 'false')}
               />
+
+              {fadeEnd && (
+                <div style={{ position: 'absolute', inset: 0, zIndex: 2, pointerEvents: 'none', background: 'linear-gradient(to bottom, rgba(0,0,0,0) 40%, rgba(0,0,0,0.92) 62%)' }} />
+              )}
 
               <button
                 onClick={(e) => {
