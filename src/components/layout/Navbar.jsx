@@ -223,10 +223,6 @@ const Navbar = () => {
                 <span className="squad-item-title">Agent vocal IA</span><span className="squad-tag">Nouveau</span>
                 <p className="squad-item-desc">Un agent vocal sur votre site : il accueille vos visiteurs 24 h/24, les guide et prend les rendez-vous</p>
               </Link>
-              <a className="squad-item" onClick={() => setShowDropdown(false)} href="/automatisation-ia.html">
-                <span className="squad-item-title">IA Playbook</span><span className="squad-tag">Automatisation</span>
-                <p className="squad-item-desc">18 automatisations IA pour la prospection, la qualification et le suivi CRM</p>
-              </a>
               <Link href="/agent-vocal-ia" onClick={() => setShowDropdown(false)} className="squad-all-link">Découvrir l'agent vocal →</Link>
             </div>
           </div>
@@ -702,10 +698,6 @@ const Navbar = () => {
                             <div className="mob-service-top"><span className="mob-service-title">Agent vocal IA</span><span className="mob-service-tag">Nouveau</span></div>
                             <p className="mob-service-desc">Accueil 24 h/24, visite guidée et prise de RDV</p>
                           </Link>
-                          <a className="mob-service-item" href="/automatisation-ia.html" onClick={closeMenu}>
-                            <div className="mob-service-top"><span className="mob-service-title">IA Playbook</span><span className="mob-service-tag">Automatisation</span></div>
-                            <p className="mob-service-desc">18 automatisations IA pour la vente B2B</p>
-                          </a>
                         </>
                       )}
                     </div>
