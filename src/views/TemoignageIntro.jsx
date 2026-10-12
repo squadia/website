@@ -1,5 +1,5 @@
 'use client';
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { Play, Pause, ArrowRight, MessageCircleHeart } from 'lucide-react';
@@ -25,6 +25,14 @@ const TemoignageIntro = () => {
   const [accepted, setAccepted] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
   const [duration, setDuration] = useState(0);
+
+  // Les événements média peuvent partir avant l'hydratation React : on relit la durée au montage.
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && Number.isFinite(video.duration) && video.duration > 0) {
+      setDuration(video.duration);
+    }
+  }, []);
 
   const handlePlay = () => {
     const video = videoRef.current;
@@ -136,7 +144,12 @@ const TemoignageIntro = () => {
               }
               setCurrentTime(video.currentTime);
             }}
+            preload="metadata"
             onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+            onDurationChange={(e) => {
+              const d = e.currentTarget.duration;
+              if (Number.isFinite(d) && d > 0) setDuration(d);
+            }}
             style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
           />
 

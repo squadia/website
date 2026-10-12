@@ -30,10 +30,12 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
   if (insertError) throw insertError;
 
   if (email) {
+    // keepalive : la page redirige juste après, sans ça le navigateur annule la requête.
     fetch(THANK_YOU_WEBHOOK_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ firstName, email }),
+      keepalive: true,
     }).catch(() => {});
   }
 
