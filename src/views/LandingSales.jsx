@@ -544,12 +544,12 @@ const LandingSales = () => {
                 key={idx}
                 href={ressource.link}
                 className="ressource-card-link"
-                style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#1C2B27', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
+                style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#1C2B27', transition: 'border-color 0.3s, transform 0.3s', minHeight: '300px' }}
                 onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
                 onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
               >
-                <div className="ressource-img-mobile" style={{ flex: 1, minHeight: '100%', overflow: 'hidden' }}>
-                  <img src={ressource.image} alt={ressource.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                <div className="ressource-img-mobile" style={{ flex: 1, minHeight: '100%', overflow: 'hidden', position: 'relative' }}>
+                  <img src={ressource.image} alt={ressource.title} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top', display: 'block' }} />
                 </div>
                 <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                   <span style={{ color: '#8A6D3B', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{ressource.category}</span>
