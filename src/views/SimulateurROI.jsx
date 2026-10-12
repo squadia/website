@@ -1,8 +1,9 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Link from 'next/link';
-import { Calculator, SlidersHorizontal } from 'lucide-react';
+import { Calculator, SlidersHorizontal, Play, Volume2, VolumeX } from 'lucide-react';
 const simulateurRoiImg = '/assets/images/ressources/manager_reflexion_simulation_cout_externalisation_squadia.png';
+const simulateurVideo = '/assets/video/simulateurbudget.mp4';
 const teamSquadia = '/assets/images/notremission/team-squadia.png';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
@@ -23,7 +24,7 @@ const sliderStyle = {
   height: '4px',
   borderRadius: '2px',
   background: '#FFFFFF',
-  marginTop: '14px',
+  marginTop: '8px',
   accentColor: '#8A6D3B',
   cursor: 'pointer'
 };
@@ -39,8 +40,8 @@ const fieldRowStyle = {
 
 const valuePillStyle = {
   fontFamily: 'monospace',
-  fontWeight: 700,
-  fontSize: '14px',
+  fontWeight: 600,
+  fontSize: '13px',
   color: '#8A6D3B',
   background: 'rgba(176,141,87,0.1)',
   padding: '3px 10px',
@@ -52,11 +53,11 @@ function Field({ label, hint, value, valueLabel, min, max, step, onChange }) {
   return (
     <div style={{ padding: '0' }}>
       <div style={{ ...fieldRowStyle, borderTop: 'none', paddingTop: 0, paddingBottom: 0 }}>
-        <label style={{ fontSize: '0.95rem', fontWeight: 600, color: '#1C2B27' }}>{label}</label>
+        <label style={{ fontSize: '0.88rem', fontWeight: 500, color: '#1C2B27' }}>{label}</label>
         <span style={valuePillStyle}>{valueLabel}</span>
       </div>
       {hint && (
-        <span style={{ display: 'block', fontSize: '0.8rem', color: '#6B716C', marginTop: '4px' }}>{hint}</span>
+        <span style={{ display: 'block', fontSize: '0.75rem', color: '#6B716C', marginTop: '3px' }}>{hint}</span>
       )}
       <input
         type="range"
@@ -74,13 +75,13 @@ function Field({ label, hint, value, valueLabel, min, max, step, onChange }) {
 function FunnelRow({ label, value, barColor, barPct, minPct = 3, barHeight = 8 }) {
   const pct = Math.min(100, Math.max(barPct, minPct));
   return (
-    <div style={{ padding: '12px 0', borderTop: '1px solid #D8D1C2' }}>
+    <div style={{ padding: '7px 0', borderTop: '1px solid #D8D1C2' }}>
       <div style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '12px' }}>
-        <span style={{ fontSize: '0.85rem', color: '#4A534F' }}>{label}</span>
-        <span style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: '0.95rem', color: '#1C2B27' }}>{value}</span>
+        <span style={{ fontSize: '0.82rem', color: '#4A534F' }}>{label}</span>
+        <span style={{ fontFamily: 'monospace', fontWeight: 600, fontSize: '0.88rem', color: '#1C2B27' }}>{value}</span>
       </div>
       {barColor && (
-        <div style={{ marginTop: '8px', height: `${barHeight}px`, borderRadius: `${barHeight / 2}px`, background: '#F6F3EC', overflow: 'hidden' }}>
+        <div style={{ marginTop: '5px', height: `${barHeight}px`, borderRadius: `${barHeight / 2}px`, background: '#F6F3EC', overflow: 'hidden' }}>
           <div
             style={{
               height: '100%',
@@ -108,6 +109,10 @@ export default function SimulateurROI() {
     }
     window.scrollTo(0, 0);
   }, []);
+
+  const [isMuted, setIsMuted] = useState(true);
+  const [videoStarted, setVideoStarted] = useState(false);
+  const videoRef = useRef(null);
 
   const [team, setTeam] = useState(3);
   const [calls, setCalls] = useState(60);
@@ -160,16 +165,17 @@ export default function SimulateurROI() {
     background: '#F6F3EC',
     border: '1px solid rgba(28,43,39,0.224)',
     borderRadius: '14px',
-    padding: '2rem',
+    padding: '1rem 1.4rem',
+    lineHeight: 1.3,
     boxShadow: '0 4px 24px rgba(28,43,39,0.087)'
   };
 
   const StepTitle = ({ n, label, desc }) => (
-    <h2 style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.4rem', marginBottom: '1.25rem', fontWeight: 700 }}>
-      <span style={{ color: '#8A6D3B', fontSize: '0.95rem' }}>{n}.</span>
-      <span style={{ color: '#1C2B27', fontSize: '0.95rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</span>
-      <span style={{ color: '#4A534F', fontSize: '0.9rem', fontWeight: 500 }}>: {desc}</span>
-    </h2>
+    <div role="heading" aria-level={2} style={{ fontFamily: 'Newsreader, Georgia, serif', marginBottom: '0.7rem', fontSize: '0.9rem', fontWeight: 600, lineHeight: 1.35 }}>
+      <span style={{ color: '#8A6D3B', fontSize: '0.9rem' }}>{n}.</span>{' '}
+      <span style={{ color: '#1C2B27', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{label}</span>{' '}
+      <span style={{ display: 'block', color: '#4A534F', fontSize: '0.82rem', fontWeight: 400 }}>{desc}</span>
+    </div>
   );
 
   return (
@@ -220,28 +226,22 @@ export default function SimulateurROI() {
       </section>
 
       {/* SIMULATEUR */}
-      <section className="container" style={{ paddingTop: '8rem', paddingBottom: '9rem' }}>
-        <div className="fade-in" style={{ margin: '0 auto 3.5rem', textAlign: 'center' }}>
+      <section className="container" style={{ paddingTop: '5rem', paddingBottom: '7rem' }}>
+        <div className="fade-in" style={{ margin: '0 auto 2rem', textAlign: 'center' }}>
           <span style={{ display: 'block', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.12em', color: '#8A6D3B', marginBottom: '1rem' }}>
             Simulateur de performance
           </span>
-          <h2 style={{ fontSize: 'clamp(1.4rem, 2.4vw, 1.9rem)', fontWeight: 800, color: '#1C2B27', margin: '0 0 1.25rem' }}>
+          <h2 style={{ fontSize: 'clamp(1.4rem, 2.4vw, 1.9rem)', fontWeight: 800, color: '#1C2B27', margin: 0 }}>
             Calculez la rentabilité du temps économisé sur vos process commerciaux
           </h2>
-          <p style={{ fontSize: '1rem', color: '#4A534F', lineHeight: 1.7, textAlign: 'justify', marginBottom: '1.1rem' }}>
-            Ce simulateur évalue l'impact financier du temps gagné sur vos process commerciaux. Par défaut, il s'appuie sur une base de données de référence estimant à <strong style={{ color: '#1C2B27' }}>3 jours de prospection par mois et par commercial</strong> le gain généré.
-          </p>
-          <p style={{ fontSize: '1rem', color: '#4A534F', lineHeight: 1.7, textAlign: 'justify' }}>
-            Utilisez-le pour estimer le temps perdu sur vos process actuels, mesurer le volume de temps de vente récupéré et obtenir facilement les arguments chiffrés nécessaires pour valider votre budget avec Squadia et accélérer votre croissance.
-          </p>
         </div>
         <div
           className="grid-2"
-          style={{ gridTemplateColumns: 'minmax(0,1fr) minmax(320px,380px)', alignItems: 'start', gap: '1.5rem' }}
+          style={{ gridTemplateColumns: 'minmax(0,1fr) minmax(300px,340px) minmax(280px,380px)', alignItems: 'start', gap: '1.5rem' }}
         >
 
           {/* LEFT: parameters */}
-          <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div className="fade-in" style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div style={cardStyle}>
               <StepTitle n={1} label="Équipe" desc="précisez la structure de votre équipe" />
               <Field
@@ -251,7 +251,7 @@ export default function SimulateurROI() {
                 min={1} max={30} step={1}
                 onChange={setTeam}
               />
-              <div style={{ height: '18px' }} />
+              <div style={{ height: '8px' }} />
               <Field
                 label="Appels moyens / commercial / jour"
                 value={calls}
@@ -259,10 +259,10 @@ export default function SimulateurROI() {
                 min={20} max={100} step={5}
                 onChange={setCalls}
               />
-              <div style={{ height: '18px' }} />
+              <div style={{ height: '8px' }} />
               <Field
                 label="Jours de prospection gagnés / mois"
-                hint="Promesse Squadia sur le nettoyage & l'enrichissement — ajustable pour tester la sensibilité"
+                hint="Promesse Squadia, ajustable pour tester la sensibilité"
                 value={days}
                 valueLabel={days}
                 min={1} max={5} step={1}
@@ -279,7 +279,7 @@ export default function SimulateurROI() {
                 min={5} max={60} step={1}
                 onChange={setPickup}
               />
-              <div style={{ height: '18px' }} />
+              <div style={{ height: '8px' }} />
               <Field
                 label="Conversion en rendez-vous (R1)"
                 value={rdv}
@@ -287,7 +287,7 @@ export default function SimulateurROI() {
                 min={10} max={70} step={1}
                 onChange={setRdv}
               />
-              <div style={{ height: '18px' }} />
+              <div style={{ height: '8px' }} />
               <Field
                 label="Conversion lead → deal signé"
                 value={win}
@@ -299,7 +299,7 @@ export default function SimulateurROI() {
 
             <div style={cardStyle}>
               <StepTitle n={3} label="Valeur" desc="précisez la valeur moyenne d'un deal signé" />
-              <label style={{ fontSize: '0.95rem', fontWeight: 600, color: '#1C2B27', display: 'block', marginBottom: '10px' }}>
+              <label style={{ fontSize: '0.88rem', fontWeight: 500, color: '#1C2B27', display: 'block', marginBottom: '10px' }}>
                 Valeur moyenne d'un deal signé
               </label>
               <div style={{ display: 'flex', alignItems: 'center', border: '1px solid #D8D1C2', borderRadius: '9px', background: '#F6F3EC', overflow: 'hidden' }}>
@@ -312,14 +312,14 @@ export default function SimulateurROI() {
                   step={100}
                   value={dealvalue}
                   onChange={(e) => setDealvalue(e.target.value)}
-                  style={{ border: 'none', background: 'transparent', padding: '10px 12px', fontFamily: 'monospace', fontSize: '15px', fontWeight: 700, color: '#1C2B27', width: '100%', outline: 'none' }}
+                  style={{ border: 'none', background: 'transparent', padding: '10px 12px', fontFamily: 'monospace', fontSize: '14px', fontWeight: 600, color: '#1C2B27', width: '100%', outline: 'none' }}
                 />
               </div>
             </div>
           </div>
 
           {/* RIGHT: results */}
-          <div className="fade-in" style={{ position: 'sticky', top: '24px', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div className="fade-in" style={{ position: 'sticky', top: '24px', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
 
             <div style={{ position: 'relative' }}>
               <div style={{
@@ -328,7 +328,7 @@ export default function SimulateurROI() {
                 filter: 'blur(70px)', zIndex: 0, pointerEvents: 'none'
               }} />
               <div style={{ ...cardStyle, position: 'relative', zIndex: 1 }}>
-                <h2 style={{ fontSize: '1rem', fontWeight: 800, color: '#1C2B27', marginBottom: '0.75rem' }}>
+                <h2 style={{ fontSize: '1.05rem', fontWeight: 600, color: '#1C2B27', marginBottom: '0.5rem', lineHeight: 1.25 }}>
                   Gains potentiels d'équipe / mois
                 </h2>
 
@@ -337,16 +337,16 @@ export default function SimulateurROI() {
                   value={fmtInt(r.extraCallsTeam)}
                   barColor="#1F3A33"
                   barPct={appelsPct}
-                  barHeight={12}
+                  barHeight={8}
                 />
                 <FunnelRow
                   label="Leads créés (RDV pris) / mois"
                   value={fmtInt(r.leadsTeam)}
                   barColor="#1F3A33"
                   barPct={leadsPct}
-                  barHeight={12}
+                  barHeight={8}
                 />
-                <div style={{ fontSize: '0.75rem', color: '#6B716C', fontFamily: 'monospace', padding: '6px 0 0' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6B716C', fontFamily: 'monospace', padding: '3px 0 0' }}>
                   soit {fmtDec(r.leadsPerRep)} leads / commercial / mois
                 </div>
 
@@ -355,9 +355,9 @@ export default function SimulateurROI() {
                   value={fmtEuro(r.pipelineTeam)}
                   barColor="#1F3A33"
                   barPct={leadsPct}
-                  barHeight={12}
+                  barHeight={8}
                 />
-                <div style={{ fontSize: '0.75rem', color: '#6B716C', fontFamily: 'monospace', padding: '6px 0 0' }}>
+                <div style={{ fontSize: '0.75rem', color: '#6B716C', fontFamily: 'monospace', padding: '3px 0 0' }}>
                   soit {fmtEuro(r.pipelineTeam * 12)} / an
                 </div>
 
@@ -366,23 +366,23 @@ export default function SimulateurROI() {
                   value={fmtDec(r.dealsTeam)}
                   barColor="#1F3A33"
                   barPct={dealsPct}
-                  barHeight={12}
+                  barHeight={8}
                 />
               </div>
             </div>
 
-            <div style={{ background: 'rgba(63,122,94,0.08)', border: '1px solid rgba(63,122,94,0.35)', borderRadius: '14px', padding: '1.75rem' }}>
-              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 700, color: '#3F7A5E', marginBottom: '0.6rem' }}>
+            <div style={{ background: 'rgba(63,122,94,0.08)', border: '1px solid rgba(63,122,94,0.35)', borderRadius: '14px', padding: '1rem 1.4rem', lineHeight: 1.3 }}>
+              <div style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.06em', fontWeight: 600, color: '#3F7A5E', marginBottom: '0.6rem' }}>
                 Revenu additionnel espéré par an / équipe
               </div>
-              <div style={{ fontFamily: 'monospace', fontWeight: 800, fontSize: 'clamp(1.7rem, 3.6vw, 2.2rem)', color: '#3F7A5E', lineHeight: 1.05 }}>
+              <div style={{ fontFamily: 'monospace', fontWeight: 700, fontSize: 'clamp(1.5rem, 2.8vw, 1.9rem)', color: '#3F7A5E', lineHeight: 1.05 }}>
                 {fmtEuro(r.revenueYear)}
               </div>
-              <div style={{ marginTop: '6px', fontSize: '0.85rem', color: '#4A534F' }}>
+              <div style={{ marginTop: '6px', fontSize: '0.8rem', color: '#4A534F' }}>
                 {fmtEuro(r.revenueMonth)} / mois
               </div>
-              <p style={{ margin: '1rem 0 0', fontSize: '0.9rem', lineHeight: 1.6, color: '#4A534F' }}>
-                En travaillant avec <strong style={{ color: '#3F7A5E' }}>Squadia</strong> sur le nettoyage et l'enrichissement de la donnée CRM, cette équipe peut espérer générer jusqu'à <strong style={{ color: '#3F7A5E' }}>{fmtEuro(r.revenueYear)}</strong> de revenu additionnel par an, soit <strong style={{ color: '#3F7A5E' }}>{fmtDec(r.dealsTeam)}</strong> deals signés en plus chaque mois.
+              <p style={{ margin: '0.6rem 0 0', fontSize: '0.8rem', lineHeight: 1.5, color: '#4A534F' }}>
+                Avec <span style={{ color: '#3F7A5E' }}>Squadia</span>, cette équipe peut générer jusqu'à <span style={{ color: '#3F7A5E', fontWeight: 600 }}>{fmtEuro(r.revenueYear)}</span> de revenu additionnel par an, soit <span style={{ color: '#3F7A5E' }}>{fmtDec(r.dealsTeam)}</span> deals de plus chaque mois.
               </p>
             </div>
 
@@ -390,6 +390,108 @@ export default function SimulateurROI() {
               Calcul : ({fmtInt(calls)} appels/j × {days} j gagnés × {team} commerciaux) × {pickup}% décroché × {rdv}% RDV = leads → × {win}% deal → × {fmtEuroK(r.dv)}/deal = revenu.
             </div>
 
+          </div>
+
+          {/* VIDEO : mêmes commandes que la page Data Clean */}
+          <div className="fade-in" style={{ position: 'sticky', top: '24px' }}>
+            <div
+              onClick={() => {
+                if (videoRef.current) {
+                  if (isMuted || videoRef.current.paused) {
+                    videoRef.current.currentTime = 0;
+                    setIsMuted(false);
+                    videoRef.current.play();
+                  } else {
+                    videoRef.current.pause();
+                  }
+                }
+              }}
+              style={{
+                width: '100%',
+                aspectRatio: '3/4',
+                backgroundColor: '#F6F3EC',
+                borderRadius: '20px',
+                border: '6px solid #FFFFFF',
+                overflow: 'hidden',
+                position: 'relative',
+                boxShadow: '0 0 0 1px #E4DED2, 0 24px 48px -20px rgba(28,43,39,0.25)',
+                cursor: 'pointer'
+              }}
+            >
+              <video
+                ref={videoRef}
+                src={simulateurVideo}
+                muted={isMuted}
+                autoPlay
+                playsInline
+                controls={videoStarted}
+                controlsList="nodownload nofullscreen noremoteplayback"
+                disablePictureInPicture
+                style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                onPlay={(e) => {
+                  e.target.parentElement.setAttribute('data-playing', 'true');
+                  setVideoStarted(true);
+                }}
+                onPause={(e) => e.target.parentElement.setAttribute('data-playing', 'false')}
+              />
+
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  if (isMuted) {
+                    if (videoRef.current) videoRef.current.currentTime = 0;
+                    setIsMuted(false);
+                    if (videoRef.current) videoRef.current.play();
+                  } else {
+                    setIsMuted(true);
+                  }
+                }}
+                style={{
+                  position: 'absolute', top: '1.5rem', right: '1.5rem', zIndex: 10,
+                  background: 'rgba(246,243,236,0.5)', backdropFilter: 'blur(8px)',
+                  border: '1px solid rgba(176,141,87,0.3)', borderRadius: '50%',
+                  width: '44px', height: '44px', display: 'flex', alignItems: 'center',
+                  justifyContent: 'center', cursor: 'pointer', color: '#1C2B27',
+                  transition: 'all 0.3s ease'
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.1)')}
+                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
+              >
+                {isMuted ? <VolumeX size={20} /> : <Volume2 size={20} color="#8A6D3B" />}
+              </button>
+
+              <div className="play-button-overlay" style={{
+                position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+                width: '80px', height: '80px', backgroundColor: 'rgba(176,141,87,0.2)',
+                backdropFilter: 'blur(8px)', borderRadius: '50%', display: 'flex',
+                alignItems: 'center', justifyContent: 'center',
+                border: '1px solid rgba(176,141,87,0.4)',
+                transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)', zIndex: 3
+              }}>
+                <Play size={32} fill="#1F3A33" color="#8A6D3B" style={{ marginLeft: '4px' }} />
+              </div>
+
+              <style>{`
+                [data-playing="true"] .play-button-overlay {
+                  opacity: 0;
+                  transform: translate(-50%, -50%) scale(1.2);
+                  pointer-events: none;
+                }
+                .play-button-overlay:hover {
+                  background-color: rgba(138,109,59,0.8);
+                  transform: translate(-50%, -50%) scale(1.1);
+                }
+              `}</style>
+
+              <div style={{
+                position: 'absolute', bottom: 0, left: 0, right: 0, height: '100px',
+                backdropFilter: 'blur(15px) brightness(0.6)',
+                WebkitBackdropFilter: 'blur(15px) brightness(0.6)',
+                maskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)',
+                WebkitMaskImage: 'linear-gradient(to top, black 0%, rgba(28,43,39,0.175) 50%, transparent 100%)',
+                pointerEvents: 'none', zIndex: 1
+              }} />
+            </div>
           </div>
         </div>
       </section>
