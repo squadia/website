@@ -8,6 +8,7 @@ import EnjeuxCarousel from '../components/ui/EnjeuxCarousel';
 const c1 = '/assets/images/c1.png';
 const fonds1 = '/assets/images/fonds1.png';
 const imgMarketingManager = '/assets/images/ressources/new-marketing-manager.jpeg';
+const imgPlanPartenaire = '/assets/images/ressources/plan-partenaire.jpeg';
 import { casesData } from '../data/cases';
 import CasesShowcase from '../components/ui/CasesShowcase';
 import CtaFinalZoom from '../components/ui/CtaFinalZoom';
@@ -489,25 +490,45 @@ const LandingMarketing = () => {
         <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
           <p style={{ color: '#8A6D3B', fontWeight: 700, textTransform: 'uppercase', marginBottom: '1rem', letterSpacing: '0.1em', fontSize: '0.85rem' }}>RESSOURCES</p>
           <h2 style={{ fontSize: 'clamp(1.6rem, 2.6vw, 2.2rem)', fontWeight: 700, color: '#1C2B27', marginBottom: '3rem', lineHeight: 1.2 }}>Une ressource pour vous.</h2>
-          <Link
-            href="/ressources/guide-marketing-manager"
-            className="ressource-card-link"
-            style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#1C2B27', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
-          >
-            <div className="ressource-img-mobile" style={{ flex: 1, minHeight: '100%', overflow: 'hidden' }}>
-              <img src={imgMarketingManager} alt="Guide Marketing Manager" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
-            </div>
-            <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-              <span style={{ color: '#8A6D3B', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Marketing Manager</span>
-              <h3 style={{ color: '#1C2B27', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>Mini-guide Marketing Manager B2B : structurer et piloter votre strategie</h3>
-              <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.</p>
-              <span style={{ alignSelf: 'flex-start', background: '#1F3A33', color: '#F6F3EC', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
-                Télécharger gratuitement →
-              </span>
-            </div>
-          </Link>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
+            {[
+              {
+                category: 'Marketing Manager',
+                title: 'Mini-guide Marketing Manager B2B : structurer et piloter votre strategie',
+                description: 'Stratégie de contenu, pilotage de la demande, outils IA et KPIs marketing pour aligner vos actions sur les objectifs commerciaux.',
+                link: '/ressources/guide-marketing-manager',
+                image: imgMarketingManager,
+              },
+              {
+                category: 'Channel Sales',
+                title: 'Channel Sales Plan : structurer et piloter votre réseau de partenaires',
+                description: 'Plan partenaire B2B clé en main : co-marketing, co-selling, KPIs trimestriels et rituels de pilotage pour développer votre channel.',
+                link: '/ressources/channel-sales-plan',
+                image: imgPlanPartenaire,
+              },
+            ].map((ressource, idx) => (
+              <Link
+                key={idx}
+                href={ressource.link}
+                className="ressource-card-link"
+                style={{ textDecoration: 'none', display: 'flex', background: 'rgba(255,255,255,0.6)', border: '1px solid rgba(176,141,87,0.15)', borderRadius: '16px', overflow: 'hidden', color: '#1C2B27', transition: 'border-color 0.3s, transform 0.3s', minHeight: '200px' }}
+                onMouseEnter={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.5)'; e.currentTarget.style.transform = 'translateY(-2px)'; }}
+                onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(176,141,87,0.15)'; e.currentTarget.style.transform = 'translateY(0)'; }}
+              >
+                <div className="ressource-img-mobile" style={{ flex: 1, minHeight: '100%', overflow: 'hidden' }}>
+                  <img src={ressource.image} alt={ressource.title} style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
+                </div>
+                <div style={{ flex: 2, padding: '40px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                  <span style={{ color: '#8A6D3B', fontSize: '13px', fontWeight: 600, marginBottom: '12px', display: 'block', textTransform: 'uppercase', letterSpacing: '0.08em' }}>{ressource.category}</span>
+                  <h3 style={{ color: '#1C2B27', fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', lineHeight: 1.25 }}>{ressource.title}</h3>
+                  <p style={{ color: 'rgba(28,43,39,0.6)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '24px' }}>{ressource.description}</p>
+                  <span style={{ alignSelf: 'flex-start', background: '#1F3A33', color: '#F6F3EC', padding: '10px 22px', borderRadius: '8px', fontSize: '14px', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+                    Télécharger gratuitement →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
