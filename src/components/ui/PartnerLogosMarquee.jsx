@@ -13,7 +13,6 @@ const groupama = '/assets/images/icon/groupama.png';
 const laPoste = '/assets/images/icon/groupe-la-poste.png';
 const inocel = '/assets/images/icon/inocel.png';
 const meotec = '/assets/images/icon/meotec.png';
-const oracle = '/assets/images/icon/oracle.png';
 const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
@@ -22,7 +21,7 @@ const clarins = '/assets/images/icon/clarins.png';
 
 const allLogos = [
   dell, xerox, ovh, laPoste, groupama, lyon,
-  ceaAlsace, ceaAtomique, inocel, meotec, oracle,
+  ceaAlsace, ceaAtomique, inocel, meotec,
   fujitsu, cofaq, franceHydrogene
 ];
 

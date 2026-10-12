@@ -14,7 +14,6 @@ const groupama = '/assets/images/icon/groupama.png';
 const laPoste = '/assets/images/icon/groupe-la-poste.png';
 const inocel = '/assets/images/icon/inocel.png';
 const meotec = '/assets/images/icon/meotec.png';
-const oracle = '/assets/images/icon/oracle.png';
 const ovh = '/assets/images/icon/ovh-cloud.png';
 const lyon = '/assets/images/icon/ville-de-lyon.png';
 const xerox = '/assets/images/icon/xerox.png';
@@ -31,7 +30,6 @@ const allLogos = [
   { src: ceaAtomique, alt: 'CEA' },
   { src: inocel, alt: 'Inocel' },
   { src: meotec, alt: 'Meotec' },
-  { src: oracle, alt: 'Oracle' },
   { src: fujitsu, alt: 'Fujitsu' },
   { src: cofaq, alt: 'Cofaq' },
   { src: franceHydrogene, alt: 'France Hydrogène' }
