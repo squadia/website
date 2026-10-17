@@ -55,6 +55,16 @@ const AccordionItem = ({ question, answer }) => {
 
 const DayBlock = ({ title, objective, children }) => {
   const [open, setOpen] = useState(false);
+  // Elisa (agent vocal) peut ouvrir un jour du programme : événement émis par l'outil showTrainingProgram
+  useEffect(() => {
+    const mine = /^Jour (\d)/.exec(title)?.[1];
+    const onOpen = (e) => {
+      const day = String(e.detail?.day || 'all');
+      if (day === 'all' || day === mine) setOpen(true);
+    };
+    window.addEventListener('squadia:open-program', onOpen);
+    return () => window.removeEventListener('squadia:open-program', onOpen);
+  }, [title]);
   return (
     <div style={{ background: '#F6F3EC', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(176,141,87,0.1)' }}>
       <div style={{ background: 'rgba(176,141,87,0.05)', padding: '2rem 3rem', borderBottom: open ? '1px solid rgba(176,141,87,0.15)' : 'none' }}>

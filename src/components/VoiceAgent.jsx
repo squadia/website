@@ -275,6 +275,20 @@ export default function VoiceAgent() {
         return JSON.stringify({ ok: true, focusedSection: match.title });
       },
 
+      // Pages formation : déplie le Jour 1 et / ou le Jour 2 du programme (blocs repliés par défaut)
+      showTrainingProgram: async ({ day } = {}) => {
+        const wanted = /2/.test(String(day)) ? '2' : /1/.test(String(day)) ? '1' : 'all';
+        const headings = [...document.querySelectorAll('main h3')].filter((h) => /^Jour \d/.test(textOf(h)));
+        if (!headings.length) {
+          return JSON.stringify({ ok: false, error: "Cette page n'a pas de programme détaillé. Affiche d'abord la page de la formation avec navigateToPage." });
+        }
+        window.dispatchEvent(new CustomEvent('squadia:open-program', { detail: { day: wanted } }));
+        const target = headings.find((h) => wanted === 'all' || textOf(h).startsWith(`Jour ${wanted}`)) || headings[0];
+        await new Promise((resolve) => setTimeout(resolve, 450)); // fin de l'animation de dépliage
+        focusSection({ el: target, heading: target });
+        return JSON.stringify({ ok: true, shownDays: headings.map((h) => textOf(h)).filter((t) => wanted === 'all' || t.startsWith(`Jour ${wanted}`)) });
+      },
+
       showToConfirm: async ({ label, value } = {}) => {
         if (!value) return JSON.stringify({ ok: false, error: 'Rien à afficher.' });
         showConfirmation(label, String(value).trim());
