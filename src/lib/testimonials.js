@@ -1,5 +1,5 @@
 import { supabase } from './supabaseClient';
-import { THANK_YOU_WEBHOOK_URL } from './testimonialsConfig';
+import { THANK_YOU_WEBHOOK_URL, NEW_TESTIMONIAL_SMS_WEBHOOK_URL } from './testimonialsConfig';
 
 const BUCKET = 'testimonial-videos';
 const SIGNED_URL_TTL_SECONDS = 3600;
@@ -28,6 +28,14 @@ export async function uploadTestimonial(blob, durationSeconds, contact = {}) {
     label,
   });
   if (insertError) throw insertError;
+
+  // Alerte SMS à l'équipe, même sans email (le témoignage est déjà enregistré : un échec ici est sans effet)
+  fetch(NEW_TESTIMONIAL_SMS_WEBHOOK_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ firstName, role, company }),
+    keepalive: true,
+  }).catch(() => {});
 
   if (email) {
     // keepalive : la page redirige juste après, sans ça le navigateur annule la requête.

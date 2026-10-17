@@ -38,3 +38,4 @@ conversation/
 .env*.local
 scripts/.elevenlabs-backups/
 scripts/elevenlabs/
+scripts/n8n/squadia-sms-nouveau-temoignage.json
