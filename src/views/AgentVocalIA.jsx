@@ -84,8 +84,8 @@ const visuals = {
   dispo: (
     <Frame>
       <div style={{ textAlign: 'center', color: CREAM }}>
-        <div style={{ fontSize: '0.8rem', letterSpacing: '0.18em', textTransform: 'uppercase', opacity: 0.7 }}>Dimanche</div>
-        <div style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1.1, margin: '0.25rem 0 1rem' }}>23:47</div>
+        <div style={{ fontSize: '0.8rem', letterSpacing: '0.18em', textTransform: 'uppercase', opacity: 0.7 }}>Vendredi</div>
+        <div style={{ fontSize: '4.5rem', fontWeight: 700, lineHeight: 1.1, margin: '0.25rem 0 1rem' }}>19:32</div>
         <Panel style={{ textAlign: 'left' }}>
           <Pill tone="green">● En ligne</Pill>
           <p style={{ margin: '0.7rem 0 0', fontSize: '0.9rem' }}>Un visiteur arrive depuis votre newsletter. L'agent l'accueille, de vive voix.</p>
