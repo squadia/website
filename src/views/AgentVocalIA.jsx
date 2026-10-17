@@ -20,6 +20,7 @@ const heroBackground = '/assets/images/agentvocal/agent_ia_vocal.webp';
 const GREEN = '#1F3A33';
 const INK = '#1C2B27';
 const GOLD = '#8A6D3B';
+const GOLD_LIGHT = '#D4B98A';
 const CREAM = '#F6F3EC';
 
 const kicker = { fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: GOLD, marginBottom: '0.75rem' };
@@ -46,7 +47,7 @@ const useIsMobile = () => {
 const Frame = ({ children }) => (
   <div style={{
     height: '100%', borderRadius: '24px', background: `radial-gradient(120% 90% at 80% 10%, #2B4C43 0%, ${GREEN} 55%, #16302A 100%)`,
-    display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2.5rem', boxSizing: 'border-box',
+    border: '1px solid rgba(246,243,236,0.12)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '2.5rem', boxSizing: 'border-box',
   }}>
     <div style={{ width: '100%', maxWidth: '380px' }}>{children}</div>
   </div>
@@ -236,18 +237,27 @@ const storySteps = [
   { phase: "Après l'appel", Icon: Repeat, title: 'Le contact entre en nurturing', desc: "Selon son intérêt, avec ou sans scoring, il rejoint la bonne séquence. Rien ne se perd entre deux échanges.", visual: visuals.nurturing },
 ];
 
+// Section sur fond vert : textes en crème, accents en or clair
 const StepText = ({ step }) => (
   <div>
-    <p style={{ ...kicker, marginBottom: '1rem' }}>{step.phase}</p>
-    <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(176,141,87,0.1)', border: '1px solid rgba(176,141,87,0.25)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
-      <step.Icon size={22} color={GOLD} />
+    <p style={{ ...kicker, color: GOLD_LIGHT, marginBottom: '1rem' }}>{step.phase}</p>
+    <div style={{ width: 48, height: 48, borderRadius: 12, background: 'rgba(212,185,138,0.12)', border: '1px solid rgba(212,185,138,0.3)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>
+      <step.Icon size={22} color={GOLD_LIGHT} />
     </div>
-    <h3 style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.9rem)', fontWeight: 700, color: INK, lineHeight: 1.2, margin: '0 0 1rem' }}>{step.title}</h3>
-    <p style={{ fontSize: '1.05rem', color: 'rgba(28,43,39,0.65)', lineHeight: 1.65, margin: 0, maxWidth: '460px' }}>{step.desc}</p>
+    <h3 style={{ fontSize: 'clamp(1.4rem, 2.2vw, 1.9rem)', fontWeight: 700, color: CREAM, lineHeight: 1.2, margin: '0 0 1rem' }}>{step.title}</h3>
+    <p style={{ fontSize: '1.05rem', color: 'rgba(246,243,236,0.75)', lineHeight: 1.65, margin: 0, maxWidth: '460px' }}>{step.desc}</p>
   </div>
 );
 
-// Texte à gauche en fondu, visuels empilés à droite qui montent d'un cran à chaque étape
+const StoryHeader = ({ style }) => (
+  <div className="container" style={{ textAlign: 'center', ...style }}>
+    <p style={{ ...kicker, color: GOLD_LIGHT }}>CE QU'ELLE FAIT</p>
+    <h2 style={{ ...h2Style, color: CREAM }}>Pendant l'appel, et juste après</h2>
+  </div>
+);
+
+// Texte à gauche en fondu, visuels empilés à droite qui montent d'un cran à chaque étape.
+// Le titre vit dans le bloc sticky pour rester collé au contenu pendant tout le défilement.
 const CallStory = () => {
   const isMobile = useIsMobile();
   const ref = useRef(null);
@@ -258,14 +268,18 @@ const CallStory = () => {
   });
 
   if (isMobile) {
+    // ref posée aussi ici : sans élément cible, useScroll lève une erreur au montage
     return (
-      <div className="container" style={{ display: 'grid', gap: '3rem', padding: '0 1.25rem' }}>
-        {storySteps.map((step) => (
-          <div key={step.title}>
-            <StepText step={step} />
-            <div style={{ height: 320, marginTop: '1.5rem' }}>{step.visual}</div>
-          </div>
-        ))}
+      <div ref={ref}>
+        <StoryHeader style={{ marginBottom: '2.5rem' }} />
+        <div className="container" style={{ display: 'grid', gap: '3rem', padding: '0 1.25rem' }}>
+          {storySteps.map((step) => (
+            <div key={step.title}>
+              <StepText step={step} />
+              <div style={{ height: 320, marginTop: '1.5rem' }}>{step.visual}</div>
+            </div>
+          ))}
+        </div>
       </div>
     );
   }
@@ -273,14 +287,16 @@ const CallStory = () => {
   const phaseStart = storySteps.findIndex((s) => s.phase === "Après l'appel");
   return (
     <div ref={ref} style={{ height: `${storySteps.length * 75}vh`, position: 'relative' }}>
-      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', alignItems: 'center' }}>
+      {/* paddingTop : hauteur de la navbar fixe, pour que le titre ne passe jamais dessous */}
+      <div style={{ position: 'sticky', top: 0, height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'center', paddingTop: '64px', boxSizing: 'border-box' }}>
+        <StoryHeader style={{ marginBottom: '2.5rem', width: '100%' }} />
         <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', width: '100%' }}>
           <div>
             <div style={{ display: 'flex', gap: '6px', marginBottom: '2.5rem' }}>
               {storySteps.map((s, i) => (
                 <span key={s.title} style={{
                   height: 4, flex: 1, borderRadius: 4, transition: 'background 0.3s ease',
-                  background: i <= active ? (i >= phaseStart ? GOLD : GREEN) : 'rgba(28,43,39,0.12)',
+                  background: i <= active ? (i >= phaseStart ? GOLD_LIGHT : CREAM) : 'rgba(246,243,236,0.15)',
                 }} />
               ))}
             </div>
@@ -554,12 +570,11 @@ export default function AgentVocalIA() {
         </div>
       </section>
 
-      {/* PENDANT / APRÈS L'APPEL */}
-      <section style={{ paddingTop: '60px' }}>
-        <div className="container fade-in" style={{ textAlign: 'center', marginBottom: isMobile ? '2.5rem' : 0 }}>
-          <p style={kicker}>CE QU'ELLE FAIT</p>
-          <h2 style={h2Style}>Pendant l'appel, et juste après</h2>
-        </div>
+      {/* PENDANT / APRÈS L'APPEL : encadrée sur le vert des visuels pour marquer le changement de partie.
+          Mobile : bande pleine largeur, sinon la marge du cadre s'ajoute aux gouttières globales et les visuels débordent. */}
+      <section style={isMobile
+        ? { background: GREEN, color: CREAM, marginTop: '20px', padding: '64px 0' }
+        : { background: GREEN, color: CREAM, borderRadius: '32px', margin: '40px 1.25rem 0' }}>
         <CallStory />
       </section>
 
