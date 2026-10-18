@@ -2,6 +2,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Loader2, CalendarClock, Upload, FileText, Check, Archive, RotateCcw, ExternalLink, Save } from 'lucide-react';
 import { CONTENT_ADMIN_FUNCTION_URL, CONTENT_STATUSES, LINKEDIN_FOLD, LINKEDIN_MAX } from '@/src/lib/contentConfig';
+import ContentIdeas from '@/src/views/ContentIdeas';
 
 // Onglet « Contenus » de l'espace admin : les posts LinkedIn préparés par Claude,
 // à relire, illustrer, valider et programmer. La publication part toute seule à l'heure
@@ -214,7 +215,7 @@ const Editor = ({ idToken, id, onUnauthorized, onChanged }) => {
   );
 };
 
-const ContentAdmin = ({ idToken, onUnauthorized }) => {
+const PostsView = ({ idToken, onUnauthorized }) => {
   const [items, setItems] = useState(null);
   const [filter, setFilter] = useState('actifs');
   const [openId, setOpenId] = useState(null);
@@ -234,12 +235,9 @@ const ContentAdmin = ({ idToken, onUnauthorized }) => {
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-      <div>
-        <h2 style={{ fontSize: '1.15rem', fontWeight: 700, marginBottom: '0.35rem' }}>Contenus LinkedIn</h2>
-        <p style={{ color: '#4A534F', fontSize: '0.85rem' }}>
-          Les posts préparés par Claude. Relis, ajuste le texte ou le visuel, choisis une date, puis programme : la publication part toute seule.
-        </p>
-      </div>
+      <p style={{ color: '#4A534F', fontSize: '0.85rem' }}>
+        Les posts préparés par Claude. Relis, ajuste le texte ou le visuel, choisis une date, puis programme : la publication part toute seule.
+      </p>
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
         {FILTERS.map((f) => (
@@ -272,6 +270,34 @@ const ContentAdmin = ({ idToken, onUnauthorized }) => {
           {openId === i.id && <Editor key={i.id} idToken={idToken} id={i.id} onUnauthorized={onUnauthorized} onChanged={load} />}
         </div>
       ))}
+    </div>
+  );
+};
+
+const VIEWS = [
+  { value: 'posts', label: 'Posts' },
+  { value: 'idees', label: 'Idées' },
+];
+
+// Deux vues : les posts produits (à relire, programmer) et la réserve d'idées (file de production)
+const ContentAdmin = ({ idToken, onUnauthorized }) => {
+  const [view, setView] = useState('posts');
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+      <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between', gap: '0.75rem' }}>
+        <h2 style={{ fontSize: '1.15rem', fontWeight: 700 }}>Contenus LinkedIn</h2>
+        <div role="tablist" style={{ display: 'inline-flex', border: '1px solid #D8D1C2', borderRadius: '10px', overflow: 'hidden' }}>
+          {VIEWS.map((v) => (
+            <button key={v.value} role="tab" aria-selected={view === v.value} onClick={() => setView(v.value)}
+              style={{ padding: '0.45rem 1rem', border: 'none', cursor: 'pointer', fontWeight: 700, fontSize: '0.85rem', background: view === v.value ? '#1C2B27' : '#FFFFFF', color: view === v.value ? '#F6F3EC' : '#4A534F' }}>
+              {v.label}
+            </button>
+          ))}
+        </div>
+      </div>
+      {view === 'posts'
+        ? <PostsView idToken={idToken} onUnauthorized={onUnauthorized} />
+        : <ContentIdeas idToken={idToken} onUnauthorized={onUnauthorized} />}
     </div>
   );
 };

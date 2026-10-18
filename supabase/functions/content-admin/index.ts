@@ -156,6 +156,69 @@ async function selectAsset(assetId: string) {
   return get(asset.item_id);
 }
 
+// --- Idées : la réserve de sujets et la file de production ---
+
+const IDEA_FIELDS = "id, title, notes, theme, persona, status, triage_note, priority, requested_at, production_note, source, source_url, created_at, updated_at";
+const IDEA_STATUSES = ["idee", "retenue", "a_produire", "archivee"];
+const PERSONAS = ["dg", "sales_manager", "marketing_manager", "autre"];
+
+async function ideasList() {
+  const [{ data: ideas, error }, { data: items }] = await Promise.all([
+    db.from("content_ideas").select(IDEA_FIELDS).order("updated_at", { ascending: false }),
+    db.from("content_items").select("id, idea_id, status, title").not("idea_id", "is", null),
+  ]);
+  if (error) return json({ error: error.message }, 500);
+  const byIdea: Record<string, unknown[]> = {};
+  for (const it of items || []) (byIdea[it.idea_id] ||= []).push({ id: it.id, status: it.status });
+  return json({ ideas: (ideas || []).map((i) => ({ ...i, items: byIdea[i.id] || [] })) });
+}
+
+function ideaPatch(input: Record<string, unknown>) {
+  const out: Record<string, unknown> = {};
+  for (const f of ["title", "notes", "theme", "production_note", "source_url"]) {
+    const v = text(input[f], f === "title" ? 300 : 4000);
+    if (v !== undefined) out[f] = v.trim() || null;
+  }
+  if (typeof input.persona === "string") out.persona = PERSONAS.includes(input.persona) ? input.persona : null;
+  if (input.priority === "normale" || input.priority === "express") out.priority = input.priority;
+  if (typeof input.status === "string") {
+    if (!IDEA_STATUSES.includes(input.status)) throw new Error("Statut d'idée invalide");
+    out.status = input.status;
+    if (input.status === "a_produire") out.requested_at = new Date().toISOString();
+  }
+  return out;
+}
+
+async function ideaCreate(input: Record<string, unknown>) {
+  let patch: Record<string, unknown>;
+  try { patch = ideaPatch(input); } catch (err) { return json({ error: (err as Error).message }, 400); }
+  if (!patch.title) return json({ error: "Donne au moins un titre à l'idée." }, 400);
+  const produce = input.produce === "express" || input.produce === "normale" ? input.produce : null;
+  const row = {
+    ...patch, source: "manuel",
+    status: produce ? "a_produire" : "retenue",
+    priority: produce === "express" ? "express" : "normale",
+    requested_at: produce ? new Date().toISOString() : null,
+  };
+  const { error } = await db.from("content_ideas").insert(row);
+  if (error) return json({ error: error.message }, 500);
+  return ideasList();
+}
+
+async function ideaUpdate(id: string, input: Record<string, unknown>) {
+  let patch: Record<string, unknown>;
+  try { patch = ideaPatch(input); } catch (err) { return json({ error: (err as Error).message }, 400); }
+  if (!Object.keys(patch).length) return json({ error: "Rien à modifier" }, 400);
+  const { data: current } = await db.from("content_ideas").select("status").eq("id", id).maybeSingle();
+  if (!current) return json({ error: "Idée introuvable" }, 404);
+  if (current.status === "en_production" && patch.status && patch.status !== "archivee") {
+    return json({ error: "Cette idée est en cours de production." }, 409);
+  }
+  const { error } = await db.from("content_ideas").update(patch).eq("id", id);
+  if (error) return json({ error: error.message }, 500);
+  return ideasList();
+}
+
 Deno.serve(async (req) => {
   if (req.method === "OPTIONS") return new Response("ok", { headers: corsHeaders });
   if (req.method !== "POST") return json({ error: "POST attendu" }, 405);
@@ -189,6 +252,14 @@ Deno.serve(async (req) => {
     case "select_asset": {
       const id = uuid(body.assetId);
       return id ? selectAsset(id) : json({ error: "assetId manquant" }, 400);
+    }
+    case "ideas_list":
+      return ideasList();
+    case "idea_create":
+      return ideaCreate((body.idea as Record<string, unknown>) || {});
+    case "idea_update": {
+      const id = uuid(body.id);
+      return id ? ideaUpdate(id, (body.patch as Record<string, unknown>) || {}) : json({ error: "id manquant" }, 400);
     }
     default:
       return json({ error: "Action inconnue" }, 400);
