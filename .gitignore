@@ -39,3 +39,6 @@ conversation/
 scripts/.elevenlabs-backups/
 scripts/elevenlabs/
 scripts/n8n/squadia-sms-nouveau-temoignage.json
+
+# Studio de contenu : scripts internes (dépôt public)
+scripts/content/

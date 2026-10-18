@@ -1,19 +1,21 @@
 'use client';
 import React, { useEffect, useRef, useState } from 'react';
-import { ShieldCheck, AudioLines, Video } from 'lucide-react';
+import { ShieldCheck, AudioLines, Video, Newspaper } from 'lucide-react';
 import ElisaAdmin from '@/src/views/ElisaAdmin';
 import TemoignageAdmin from '@/src/views/TemoignageAdmin';
+import ContentAdmin from '@/src/views/ContentAdmin';
 import { ELISA_ADMIN_FUNCTION_URL, GOOGLE_CLIENT_ID, ADMIN_EMAIL } from '@/src/lib/testimonialsConfig';
 
 // Espace admin du site : une seule connexion Google (réservée à ADMIN_EMAIL,
 // vérifiée côté serveur par chaque fonction), puis un onglet par sujet.
-// L'onglet actif est dans l'ancre (#elisa, #temoignages) pour les liens des emails.
+// L'onglet actif est dans l'ancre (#elisa, #temoignages, #contenus) pour les liens des emails.
 
 const GSI_SCRIPT_SRC = 'https://accounts.google.com/gsi/client';
 
 const TABS = [
   { value: 'elisa', label: 'Elisa', icon: <AudioLines size={16} /> },
   { value: 'temoignages', label: 'Témoignages', icon: <Video size={16} /> },
+  { value: 'contenus', label: 'Contenus', icon: <Newspaper size={16} /> },
 ];
 
 const AdminHub = ({ initialTab = 'elisa' }) => {
@@ -114,9 +116,9 @@ const AdminHub = ({ initialTab = 'elisa' }) => {
             </button>
           ))}
         </div>
-        {tab === 'elisa'
-          ? <ElisaAdmin idToken={idToken} onUnauthorized={onUnauthorized} />
-          : <TemoignageAdmin idToken={idToken} onUnauthorized={onUnauthorized} />}
+        {tab === 'elisa' && <ElisaAdmin idToken={idToken} onUnauthorized={onUnauthorized} />}
+        {tab === 'temoignages' && <TemoignageAdmin idToken={idToken} onUnauthorized={onUnauthorized} />}
+        {tab === 'contenus' && <ContentAdmin idToken={idToken} onUnauthorized={onUnauthorized} />}
       </div>
       <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
     </div>
