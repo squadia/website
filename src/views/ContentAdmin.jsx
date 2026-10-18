@@ -44,6 +44,50 @@ const toLocalInput = (iso) => {
   const d = new Date(iso);
   return new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 16);
 };
+// Le raisonnement du post (brief rempli par Claude) : on juge le fond avant la forme
+const Brief = ({ brief }) => {
+  if (!brief) return null;
+  const fil = Array.isArray(brief.fil) ? brief.fil : [];
+  const toCheck = Array.isArray(brief.a_verifier) ? brief.a_verifier : [];
+  const hooks = Array.isArray(brief.hooks_proposes) ? brief.hooks_proposes : [];
+  if (!brief.these && !fil.length && !toCheck.length) return null;
+  const small = { fontSize: '0.85rem', color: '#1C2B27', lineHeight: 1.5 };
+  return (
+    <div style={{ background: '#F6F3EC', border: '1px solid #D8D1C2', borderRadius: '10px', padding: '0.9rem 1rem', display: 'flex', flexDirection: 'column', gap: '0.8rem' }}>
+      {brief.these && (
+        <div>
+          <span style={label}>Thèse</span>
+          <p style={{ ...small, fontWeight: 600 }}>{brief.these}</p>
+        </div>
+      )}
+      {fil.length > 0 && (
+        <div>
+          <span style={label}>Le fil, bloc par bloc</span>
+          <ol style={{ ...small, paddingLeft: '1.2rem', margin: 0 }}>
+            {fil.map((step) => <li key={step}>{step}</li>)}
+          </ol>
+        </div>
+      )}
+      {toCheck.length > 0 && (
+        <div>
+          <span style={{ ...label, color: '#8A6D3B' }}>À vérifier avant de valider</span>
+          <ul style={{ ...small, paddingLeft: '1.2rem', margin: 0 }}>
+            {toCheck.map((line) => <li key={line}>{line}</li>)}
+          </ul>
+        </div>
+      )}
+      {hooks.length > 0 && (
+        <details>
+          <summary style={{ cursor: 'pointer', fontSize: '0.82rem', color: '#4A534F' }}>Accroches proposées ({hooks.length})</summary>
+          <ul style={{ ...small, paddingLeft: '1.2rem', margin: '0.4rem 0 0' }}>
+            {hooks.map((h) => <li key={h}>{h}</li>)}
+          </ul>
+        </details>
+      )}
+    </div>
+  );
+};
+
 const StatusBadge = ({ status }) => {
   const s = CONTENT_STATUSES[status] || { label: status, color: '#6B716C' };
   return <span style={badge(s.color)}>{s.label}</span>;
@@ -125,6 +169,8 @@ const Editor = ({ idToken, id, onUnauthorized, onChanged }) => {
         {item.external_url && <a href={item.external_url} target="_blank" rel="noreferrer" style={{ ...ghostButton, padding: '0.3rem 0.6rem' }}><ExternalLink size={14} /> Voir le post</a>}
       </div>
       {item.error && <p style={{ color: '#A63D2F', fontSize: '0.85rem' }}>Dernière erreur : {item.error}</p>}
+
+      <Brief brief={item.brief} />
 
       <div>
         <label style={label} htmlFor="post-body">Texte du post</label>
