@@ -155,6 +155,26 @@
       "source": "/prospection/phoning/",
       "destination": "/prospection/cold-call",
       "permanent": true
+    },
+    {
+      "source": "/apropos",
+      "destination": "/notre-mission",
+      "permanent": true
+    },
+    {
+      "source": "/apropos/",
+      "destination": "/notre-mission",
+      "permanent": true
+    },
+    {
+      "source": "/casclient/:path*",
+      "destination": "/cas-clients",
+      "permanent": true
+    },
+    {
+      "source": "/formations/:path+",
+      "destination": "/formations",
+      "permanent": true
     }
   ]
 }
