@@ -1,7 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /404
-Disallow: /404.html
-Disallow: /strategie/
 
 Sitemap: https://www.squadia.io/sitemap.xml
